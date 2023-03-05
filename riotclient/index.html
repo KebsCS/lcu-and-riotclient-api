@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Riot Client Docs</title>
+        <link rel="stylesheet" type="text/css" href="../style.css" />
+    </head>
+    <body>
+        <div id="output"></div>
+
+        <script>
+            let html = "";
+
+            Promise.all([fetch("../proxy.php?url=./riotclient/data.json"), fetch("../proxy.php?url=./riotclient/data_info.json")])
+                .then(async ([aa, bb]) => {
+                    const data = await aa.json();
+                    const data_info = await bb.json();
+                    html += '<div class="container">';
+
+                    html += `<h1>Riot Client API Docs</h1>`;
+                    html += `<p>Updated 05.03.2023</p>`;
+
+                    for (const key in data) {
+                        html += `<h3 id="tag-${key}" class="swagger-summary-tag">Tag: ${key}</h3>`;
+                        html += `<table class="table table-bordered table-condensed swagger--summary">`;
+                        html += `<thead>`;
+                        html += `<tr>`;
+                        html += `<th>Operation</th>`;
+                        html += `<th>Description</th>`;
+                        html += `</tr>`;
+                        html += `</thead>`;
+                        html += `<tbody>`;
+
+                        // Loop through the values in the JSON array
+                        for (const value of data[key]) {
+                            html += `<tr>`;
+
+                            html += `<td><a href="#operation--${value}">${value}</a></td>`;
+
+                            html += `<td><p>${data_info[value]["description"]}</p></td>`;
+
+                            html += `</tr>`;
+                        }
+
+                        html += `</tbody>`;
+                        html += `</table>`;
+                    }
+
+                    for (const key in data_info) {
+                        const method = key.split(" ")[0].toLowerCase();
+                        html += `<div id="operation--${key}" class="swagger--panel-operation-${method} panel">`;
+                        html += `<div class="panel-heading">`;
+                        html += `<h3 class="panel-title"><strong>${key}</strong></h3>`;
+                        html += ` Tags: `;
+                        for (const tag of data_info[key]["tags"]) {
+                            html += `<a href="#tag-${tag}">${tag}</a>`;
+                            html += `, `;
+                        }
+                        html += `</div>`;
+
+                        html += `<div class="panel-body">`;
+
+                        html += `<section class="sw-operation-description">`;
+                        html += `<p>${data_info[key]["description"]}</p>`;
+                        html += `</section>`;
+
+                        if (data_info[key]["arguments"].length > 0) {
+                            html += `<section class="sw-request-params">`;
+                            html += `<table class="table">`;
+                            html += `<thead>`;
+                            html += `<tr>`;
+                            html += `<th> Name </th>`;
+                            html += `<th> Description </th>`;
+                            html += `<th> Type </th>`;
+                            html += `<th> Required </th>`;
+                            html += `</tr>`;
+                            html += `</thead>`;
+                            html += `<tbody>`;
+                            for (const arg of data_info[key]["arguments"]) {
+                                html += `<tr>`;
+                                html += `<td>${arg["name"]} </td>`;
+                                html += `<td> ${arg["description"]} </td>`;
+                                html += `<td> ${arg["type"]["type"]} </td>`;
+                                html += `<td> ${!arg["optional"]} </td>`;
+                                html += `</tr>`;
+                            }
+                            html += `</tbody>`;
+                            html += `</table>`;
+
+                            html += `</section>`;
+                        }
+                        html += `</div>`;
+                        html += `</div>`;
+                    }
+                    html += "</div>";
+                    document.getElementById("output").innerHTML = html;
+                })
+                .catch((error) => console.error(error));
+        </script>
+    </body>
+</html>
