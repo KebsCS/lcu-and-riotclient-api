@@ -63,7 +63,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "app-command"
+        ],
         "threadSafe": false
     },
     "DELETE /app-command/v1/focus-request": {
@@ -80,7 +82,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "app-command"
+        ],
         "threadSafe": false
     },
     "DELETE /chat/v2/me": {
@@ -116,7 +120,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "DELETE /chat/v3/blocked": {
@@ -152,7 +158,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "DELETE /chat/v3/errors": {
@@ -179,7 +187,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "DELETE /chat/v3/friendrequests": {
@@ -215,7 +225,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "DELETE /chat/v3/friends": {
@@ -251,7 +263,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "DELETE /chat/v3/groups": {
@@ -287,7 +301,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "DELETE /chat/v3/me": {
@@ -314,7 +330,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "DELETE /chat/v4/blocked": {
@@ -341,7 +359,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "DELETE /chat/v4/friendrequests": {
@@ -377,7 +397,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "DELETE /chat/v4/friends": {
@@ -404,7 +426,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "DELETE /chat/v4/groups": {
@@ -431,7 +455,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "DELETE /chat/v5/conversations": {
@@ -467,7 +493,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "DELETE /chat/v5/friendrequests": {
@@ -503,7 +531,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "DELETE /chat/v5/messages": {
@@ -539,7 +569,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "DELETE /chat/v6/conversations": {
@@ -575,7 +607,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "DELETE /chat/v6/conversations/active": {
@@ -592,7 +626,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "DELETE /chat/v6/friendrequests": {
@@ -619,7 +655,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "DELETE /chat/v6/messages": {
@@ -646,7 +684,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "DELETE /chat/v7/conversations": {
@@ -673,7 +713,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "DELETE /chat/v7/conversations/active": {
@@ -690,7 +732,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "DELETE /client-config/v1/authorization": {
@@ -707,7 +751,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "client-config"
+        ],
         "threadSafe": false
     },
     "DELETE /client-config/v2/entitlements-token": {
@@ -724,7 +770,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "client-config"
+        ],
         "threadSafe": false
     },
     "DELETE /client-feature-flags/v1/debug/mock-mode": {
@@ -741,7 +789,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "client-feature-flags"
+        ],
         "threadSafe": false
     },
     "DELETE /client-feature-flags/v1/debug/overrides/flags/{namespace}/{flag}": {
@@ -777,7 +827,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "client-feature-flags"
+        ],
         "threadSafe": false
     },
     "DELETE /cookie-jar/v1/cookies": {
@@ -804,7 +856,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "cookie-jar"
+        ],
         "threadSafe": false
     },
     "DELETE /eula/v1/product-context": {
@@ -821,7 +875,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "eula"
+        ],
         "threadSafe": false
     },
     "DELETE /external-message-handler/v1/patch-request": {
@@ -858,7 +914,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "ga-restriction"
+        ],
         "threadSafe": false
     },
     "DELETE /ga-restriction/v1/debug/penalty-notifications-data": {
@@ -875,7 +933,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "ga-restriction"
+        ],
         "threadSafe": false
     },
     "DELETE /ga-restriction/v1/debug/penalty-notifications-data/{messageId}": {
@@ -902,7 +962,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "ga-restriction"
+        ],
         "threadSafe": false
     },
     "DELETE /ga-restriction/v1/debug/time": {
@@ -919,7 +981,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "ga-restriction"
+        ],
         "threadSafe": false
     },
     "DELETE /ga-warning/v1/debug/caller-id/mock-id": {
@@ -936,7 +1000,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "ga-warning"
+        ],
         "threadSafe": false
     },
     "DELETE /ga-warning/v1/warnings/ack": {
@@ -953,7 +1019,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "ga-warning"
+        ],
         "threadSafe": false
     },
     "DELETE /ga-warning/v1/warnings/ack/{id}": {
@@ -980,7 +1048,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "ga-warning"
+        ],
         "threadSafe": false
     },
     "DELETE /game-session/v1/debug/caller-id/mock-id": {
@@ -997,7 +1067,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "game-session"
+        ],
         "threadSafe": false
     },
     "DELETE /game-session/v1/sessions/{sessionId}": {
@@ -1024,7 +1096,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "game-session"
+        ],
         "threadSafe": false
     },
     "DELETE /info-radiator/v1/custom-heartbeat-metric/{name}": {
@@ -1051,7 +1125,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "info-radiator"
+        ],
         "threadSafe": false
     },
     "DELETE /mailbox/v1/debug/caller-id/mock-id": {
@@ -1068,7 +1144,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "mailbox"
+        ],
         "threadSafe": false
     },
     "DELETE /patch-proxy/v1/patch-jobs/all": {
@@ -1154,7 +1232,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "DELETE /patch/v1/installs/{install-id}/requests/patch": {
@@ -1181,7 +1261,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "DELETE /patch/v1/installs/{install-id}/requests/preview": {
@@ -1208,7 +1290,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "DELETE /patch/v1/installs/{install-id}/requests/repair": {
@@ -1235,7 +1319,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "DELETE /patch/v1/installs/{install-id}/requests/seed": {
@@ -1262,7 +1348,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "DELETE /play-restrictions/v1/debug/caller-id/mock-id": {
@@ -1279,7 +1367,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "play-restrictions"
+        ],
         "threadSafe": false
     },
     "DELETE /player-preferences/v1/debug/caller-id/mock-id": {
@@ -1296,7 +1386,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-preferences"
+        ],
         "threadSafe": false
     },
     "DELETE /player-session-lifecycle/v1/session": {
@@ -1313,7 +1405,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-session-lifecycle"
+        ],
         "threadSafe": false
     },
     "DELETE /prime-gaming/v1/login": {
@@ -1330,7 +1424,9 @@
             "type": "PrimeGamingPrimeGamingLoginResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "prime-gaming"
+        ],
         "threadSafe": false
     },
     "DELETE /private-settings/v1/settings": {
@@ -1347,7 +1443,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "private-settings"
+        ],
         "threadSafe": false
     },
     "DELETE /process-control/v1/process/client-restarting": {
@@ -1402,7 +1500,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-integration-deps"
+        ],
         "threadSafe": false
     },
     "DELETE /product-integration-deps/v1/app-update/apply-requests/products/{productId}/patchlines/{patchlineId}": {
@@ -1438,7 +1538,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-integration-deps"
+        ],
         "threadSafe": false
     },
     "DELETE /product-integration/v1/app-repair/apply": {
@@ -1455,7 +1557,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-integration"
+        ],
         "threadSafe": false
     },
     "DELETE /product-integration/v1/debug/app-repair/apply": {
@@ -1482,7 +1586,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-integration"
+        ],
         "threadSafe": false
     },
     "DELETE /product-launcher/v1/default-product": {
@@ -1644,7 +1750,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-metadata"
+        ],
         "threadSafe": false
     },
     "DELETE /product-session/v1/sessions/{session-id}": {
@@ -1680,7 +1788,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-session"
+        ],
         "threadSafe": false
     },
     "DELETE /riot-client-lifecycle/v1/product-context": {
@@ -1737,7 +1847,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riot-messaging-service"
+        ],
         "threadSafe": false
     },
     "DELETE /riot-messaging-service/v1/entitlements": {
@@ -1754,7 +1866,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riot-messaging-service"
+        ],
         "threadSafe": false
     },
     "DELETE /riot-messaging-service/v1/session": {
@@ -1771,7 +1885,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riot-messaging-service"
+        ],
         "threadSafe": false
     },
     "DELETE /riot-messaging-service/v1/socket": {
@@ -1788,7 +1904,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riot-messaging-service"
+        ],
         "threadSafe": false
     },
     "DELETE /riotclient/affinity": {
@@ -2029,7 +2147,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "DELETE /rso-auth/v1/authorization": {
@@ -2046,7 +2166,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "DELETE /rso-auth/v1/authorization/userinfo": {
@@ -2063,7 +2185,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "DELETE /rso-auth/v1/session": {
@@ -2080,7 +2204,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "DELETE /rso-auth/v1/userinfo/{client-id}": {
@@ -2107,7 +2233,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "DELETE /rso-auth/v2/authorizations/{client-id}": {
@@ -2134,7 +2262,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "DELETE /rso-auth/v2/config": {
@@ -2151,7 +2281,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "DELETE /rso-authenticator/v1/authentication": {
@@ -2168,7 +2300,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-authenticator"
+        ],
         "threadSafe": false
     },
     "DELETE /rso-authenticator/v1/authentication/link/status": {
@@ -2185,7 +2319,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-authenticator"
+        ],
         "threadSafe": false
     },
     "DELETE /rso-mobile-ui/v1/region-election": {
@@ -2202,7 +2338,9 @@
             "type": "RsoMobileUiRegionElectionV1RegionElection"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-mobile-ui"
+        ],
         "threadSafe": false
     },
     "DELETE /startup-config/v1/registry-config": {
@@ -2286,7 +2424,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "DELETE /voice-chat/v2/sessions/{id}": {
@@ -2313,7 +2453,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "DELETE /voice-chat/v3/sessions/{productName}": {
@@ -2340,7 +2482,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "DELETE /voice-chat/v3/sessions/{productName}/{id}": {
@@ -2376,7 +2520,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "DELETE /voice-chat/v4/sessions/{productName}": {
@@ -2403,7 +2549,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "DELETE /voice-chat/v4/sessions/{productName}/{id}": {
@@ -2439,7 +2587,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "Exit": {
@@ -2475,7 +2625,9 @@
             "type": "AccountsSecurityAccountsSecurity"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "accounts-security"
+        ],
         "threadSafe": false
     },
     "GET /age-restriction/v1/age-restriction/products/{productId}": {
@@ -2502,7 +2654,9 @@
             "type": "AgeRestrictionAgeRestriction"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "age-restriction"
+        ],
         "threadSafe": false
     },
     "GET /agent/v1/requests": {
@@ -2608,7 +2762,9 @@
             "type": "AntiAddictionAntiAddictionState"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "anti-addiction"
+        ],
         "threadSafe": false
     },
     "GET /app-command/v1/auth/status": {
@@ -2625,7 +2781,9 @@
             "type": "AppCommandAuthStatus"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "app-command"
+        ],
         "threadSafe": false
     },
     "GET /app-command/v1/focus-request": {
@@ -2642,7 +2800,9 @@
             "type": "AppFocusRequest"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "app-command"
+        ],
         "threadSafe": false
     },
     "GET /chat/v1/debug": {
@@ -2659,7 +2819,9 @@
             "type": "ChatDebugConfig"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "GET /chat/v1/device-settings": {
@@ -2676,7 +2838,9 @@
             "type": "ChatDeviceChatSettings"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "GET /chat/v1/session": {
@@ -2693,7 +2857,9 @@
             "type": "ChatChatSession"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "GET /chat/v1/settings": {
@@ -2710,7 +2876,9 @@
             "type": "ChatAccountChatSettings"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "GET /chat/v2/session/state": {
@@ -2727,7 +2895,9 @@
             "type": "ChatSessionState"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "GET /chat/v3/blocked": {
@@ -2763,7 +2933,9 @@
             "type": "ChatChatBlockedList"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "GET /chat/v3/errors": {
@@ -2790,7 +2962,9 @@
             "type": "ChatErrorList"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "GET /chat/v3/friendrequests": {
@@ -2817,7 +2991,9 @@
             "type": "ChatFriendRequestList"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "GET /chat/v3/friends": {
@@ -2853,7 +3029,9 @@
             "type": "ChatChatFriends"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "GET /chat/v3/groups": {
@@ -2880,7 +3058,9 @@
             "type": "ChatChatGroupList"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "GET /chat/v4/blocked": {
@@ -2916,7 +3096,9 @@
             "type": "ChatChatBlockedList"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "GET /chat/v4/conversations/{cid}/participants": {
@@ -2943,7 +3125,9 @@
             "type": "ChatChatPlayerParticipants"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "GET /chat/v4/conversations/{cid}/participants/{pid}": {
@@ -2979,7 +3163,9 @@
             "type": "ChatChatPlayerParticipants"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "GET /chat/v4/friendrequests": {
@@ -3006,7 +3192,9 @@
             "type": "ChatFriendRequestList"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "GET /chat/v4/friends": {
@@ -3042,7 +3230,9 @@
             "type": "ChatChatFriends"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "GET /chat/v4/groups": {
@@ -3069,7 +3259,9 @@
             "type": "ChatChatGroupList"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "GET /chat/v4/presences": {
@@ -3114,7 +3306,9 @@
             "type": "ChatMultiGamePresenceList"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "GET /chat/v5/conversations": {
@@ -3141,7 +3335,9 @@
             "type": "ChatUIStateConversationList"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "GET /chat/v5/friendrequests": {
@@ -3168,7 +3364,9 @@
             "type": "ChatFriendRequestListPuuid"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "GET /chat/v5/messages": {
@@ -3204,7 +3402,9 @@
             "type": "ChatChatMessageList"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "GET /chat/v5/messages/{domain}": {
@@ -3240,7 +3440,9 @@
             "type": "ChatChatMessageList"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "GET /chat/v5/participants": {
@@ -3285,7 +3487,9 @@
             "type": "ChatChatParticipants"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "GET /chat/v5/participants/{domain}": {
@@ -3321,7 +3525,9 @@
             "type": "ChatChatParticipants"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "GET /chat/v6/conversations": {
@@ -3348,7 +3554,9 @@
             "type": "ChatUIStateConversationList"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "GET /chat/v6/conversations/active": {
@@ -3365,7 +3573,9 @@
             "type": "ChatUIStateConversationList"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "GET /chat/v6/conversations/{domain}": {
@@ -3401,7 +3611,9 @@
             "type": "ChatUIStateConversationList"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "GET /chat/v6/friendrequests": {
@@ -3428,7 +3640,9 @@
             "type": "ChatFriendRequestListPuuid"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "GET /chat/v6/messages": {
@@ -3464,7 +3678,9 @@
             "type": "ChatChatMessageList"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "GET /chat/v6/messages/{domain}": {
@@ -3500,7 +3716,9 @@
             "type": "ChatChatMessageList"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "GET /chat/v7/conversations": {
@@ -3527,7 +3745,9 @@
             "type": "ChatUIStateConversationList"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "GET /chat/v7/conversations/active": {
@@ -3544,7 +3764,9 @@
             "type": "ChatUIStateConversationList"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "GET /chat/v7/conversations/{domain}": {
@@ -3580,7 +3802,9 @@
             "type": "ChatUIStateConversationList"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "GET /client-config/v1/config": {
@@ -3652,7 +3876,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "client-config"
+        ],
         "threadSafe": false
     },
     "GET /client-config/v1/config/{name}": {
@@ -3724,7 +3950,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "client-config"
+        ],
         "threadSafe": false
     },
     "GET /client-config/v1/status/{type}": {
@@ -3751,7 +3979,9 @@
             "type": "ClientConfigConfigStatus"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "client-config"
+        ],
         "threadSafe": false
     },
     "GET /client-config/v1/url": {
@@ -3768,7 +3998,9 @@
             "type": "string"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "client-config"
+        ],
         "threadSafe": false
     },
     "GET /client-config/v2/config/{name}": {
@@ -3795,7 +4027,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "client-config"
+        ],
         "threadSafe": false
     },
     "GET /client-config/v2/namespace/{namespace}": {
@@ -3822,7 +4056,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "client-config"
+        ],
         "threadSafe": false
     },
     "GET /client-config/v2/namespace/{namespace}/player": {
@@ -3849,7 +4085,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "client-config"
+        ],
         "threadSafe": false
     },
     "GET /client-config/v2/namespace/{namespace}/public": {
@@ -3876,7 +4114,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "client-config"
+        ],
         "threadSafe": false
     },
     "GET /client-feature-flags/v1/debug/all-subscribed-flags": {
@@ -3893,7 +4133,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "client-feature-flags"
+        ],
         "threadSafe": false
     },
     "GET /client-feature-flags/v1/debug/mock-data": {
@@ -3910,7 +4152,9 @@
             "type": "ClientFeatureFlagsConfigurationSource"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "client-feature-flags"
+        ],
         "threadSafe": false
     },
     "GET /client-feature-flags/v1/debug/mock-mode": {
@@ -3927,7 +4171,9 @@
             "type": "bool"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "client-feature-flags"
+        ],
         "threadSafe": false
     },
     "GET /client-feature-flags/v1/debug/overrides/flags": {
@@ -3944,7 +4190,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "client-feature-flags"
+        ],
         "threadSafe": false
     },
     "GET /client-feature-flags/v1/flags/{namespace}/{flag}": {
@@ -3980,7 +4228,9 @@
             "type": "bool"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "client-feature-flags"
+        ],
         "threadSafe": false
     },
     "GET /cookie-jar/v1/cookies": {
@@ -3997,7 +4247,9 @@
             "type": "vector"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "cookie-jar"
+        ],
         "threadSafe": false
     },
     "GET /data-store/v1/install-settings/{+path}": {
@@ -4024,7 +4276,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "data-store"
+        ],
         "threadSafe": false
     },
     "GET /data-store/v1/paths": {
@@ -4041,7 +4295,9 @@
             "type": "DataPaths"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "data-store"
+        ],
         "threadSafe": false
     },
     "GET /data-store/v1/private-settings/{+path}": {
@@ -4068,7 +4324,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "data-store"
+        ],
         "threadSafe": false
     },
     "GET /data-store/v1/product-settings/products/{productId}/patchlines/{patchlineId}": {
@@ -4104,7 +4362,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "data-store"
+        ],
         "threadSafe": false
     },
     "GET /data-store/v1/product-settings/products/{productId}/patchlines/{patchlineId}/{+path}": {
@@ -4149,7 +4409,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "data-store"
+        ],
         "threadSafe": false
     },
     "GET /data-store/v1/system-settings/{+path}": {
@@ -4176,7 +4438,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "data-store"
+        ],
         "threadSafe": false
     },
     "GET /entitlements/v1/token": {
@@ -4193,7 +4457,9 @@
             "type": "EntitlementsToken"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "entitlements"
+        ],
         "threadSafe": false
     },
     "GET /entitlements/v2/token": {
@@ -4210,7 +4476,9 @@
             "type": "EntitlementsTokenV2"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "entitlements"
+        ],
         "threadSafe": false
     },
     "GET /eula/v1/agreement": {
@@ -4227,7 +4495,9 @@
             "type": "EulaAgreement"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "eula"
+        ],
         "threadSafe": false
     },
     "GET /eula/v1/agreement/acceptance": {
@@ -4244,7 +4514,9 @@
             "type": "EulaAcceptance"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "eula"
+        ],
         "threadSafe": false
     },
     "GET /eula/v1/agreement/content": {
@@ -4261,7 +4533,9 @@
             "type": "string"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "eula"
+        ],
         "threadSafe": false
     },
     "GET /eula/v1/external-legal-links": {
@@ -4278,7 +4552,9 @@
             "type": "EulaExternalLegalLinks"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "eula"
+        ],
         "threadSafe": false
     },
     "GET /eula/v1/privacy-policy": {
@@ -4295,7 +4571,9 @@
             "type": "EulaPrivacyPolicy"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "eula"
+        ],
         "threadSafe": false
     },
     "GET /eula/v1/privacy-policy/content": {
@@ -4312,7 +4590,9 @@
             "type": "string"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "eula"
+        ],
         "threadSafe": false
     },
     "GET /eula/v1/product-context": {
@@ -4329,7 +4609,9 @@
             "type": "EulaProductContext"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "eula"
+        ],
         "threadSafe": false
     },
     "GET /external-message-handler/v1/patch-request": {
@@ -4366,7 +4648,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "friends"
+        ],
         "threadSafe": false
     },
     "GET /friends/v2/namesets-for-puuid/{puuid}": {
@@ -4393,7 +4677,9 @@
             "type": "FriendsFriendsV1NamesetsResponseElement"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "friends"
+        ],
         "threadSafe": false
     },
     "GET /ga-restriction/v1/debug/caller-id/mock-id": {
@@ -4410,7 +4696,9 @@
             "type": "GaRestrictionPluginCallerId_MockCallerId"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "ga-restriction"
+        ],
         "threadSafe": false
     },
     "GET /ga-restriction/v1/debug/penalty-notifications-data": {
@@ -4427,7 +4715,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "ga-restriction"
+        ],
         "threadSafe": false
     },
     "GET /ga-restriction/v1/debug/time": {
@@ -4444,7 +4734,9 @@
             "type": "uint64"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "ga-restriction"
+        ],
         "threadSafe": false
     },
     "GET /ga-restriction/v1/penalty-notifications": {
@@ -4461,7 +4753,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "ga-restriction"
+        ],
         "threadSafe": false
     },
     "GET /ga-restriction/v1/unread-penalty-notifications": {
@@ -4478,7 +4772,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "ga-restriction"
+        ],
         "threadSafe": false
     },
     "GET /ga-warning/v1/debug/caller-id/mock-id": {
@@ -4495,7 +4791,9 @@
             "type": "GaWarningPluginCallerId_MockCallerId"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "ga-warning"
+        ],
         "threadSafe": false
     },
     "GET /ga-warning/v1/warnings": {
@@ -4512,7 +4810,9 @@
             "type": "GaWarningWarningResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "ga-warning"
+        ],
         "threadSafe": false
     },
     "GET /game-session/v1/clusters": {
@@ -4529,7 +4829,9 @@
             "type": "GameSessionGameSessionV1ClusterList"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "game-session"
+        ],
         "threadSafe": false
     },
     "GET /game-session/v1/debug/caller-id/mock-id": {
@@ -4546,7 +4848,9 @@
             "type": "GameSessionPluginCallerId_MockCallerId"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "game-session"
+        ],
         "threadSafe": false
     },
     "GET /game-session/v1/sessions/{sessionId}": {
@@ -4573,7 +4877,9 @@
             "type": "GameSessionGameSessionV1GameSessionResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "game-session"
+        ],
         "threadSafe": false
     },
     "GET /kr-account/config/v1/config": {
@@ -4590,7 +4896,9 @@
             "type": "KrAccountKrAccountPluginConfig"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "kr-account"
+        ],
         "threadSafe": false
     },
     "GET /kr-account/promotion/v1/session": {
@@ -4607,7 +4915,9 @@
             "type": "KrAccountAccountPromotionSession"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "kr-account"
+        ],
         "threadSafe": false
     },
     "GET /loyalty/v1/loyalty-resource": {
@@ -4624,7 +4934,9 @@
             "type": "LoyaltyV2PCBangInfo"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "loyalty"
+        ],
         "threadSafe": false
     },
     "GET /mailbox/v1/check-new-mail": {
@@ -4641,7 +4953,9 @@
             "type": "MailboxMailboxStatusUpdated"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "mailbox"
+        ],
         "threadSafe": false
     },
     "GET /mailbox/v1/check-new-product-mail/{productId}": {
@@ -4668,7 +4982,9 @@
             "type": "MailboxMailboxStatusUpdated"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "mailbox"
+        ],
         "threadSafe": false
     },
     "GET /mailbox/v1/debug/caller-id/mock-id": {
@@ -4685,7 +5001,9 @@
             "type": "MailboxPluginCallerId_MockCallerId"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "mailbox"
+        ],
         "threadSafe": false
     },
     "GET /mailbox/v1/enabled": {
@@ -4702,7 +5020,9 @@
             "type": "bool"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "mailbox"
+        ],
         "threadSafe": false
     },
     "GET /mailbox/v1/ready": {
@@ -4719,7 +5039,9 @@
             "type": "bool"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "mailbox"
+        ],
         "threadSafe": false
     },
     "GET /mobile-product-registry/v1/build-number": {
@@ -4736,7 +5058,9 @@
             "type": "int64"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "mobile-product-registry"
+        ],
         "threadSafe": false
     },
     "GET /mobile-product-registry/v1/is-game-obsolete": {
@@ -4753,7 +5077,9 @@
             "type": "MobileProductRegistryGameVersion"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "mobile-product-registry"
+        ],
         "threadSafe": false
     },
     "GET /mobile-product-registry/v1/valid-game-versions": {
@@ -4770,7 +5096,9 @@
             "type": "string"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "mobile-product-registry"
+        ],
         "threadSafe": false
     },
     "GET /name-check/v1/validate": {
@@ -4797,7 +5125,9 @@
             "type": "NameCheckNameValidationResult"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "name-check"
+        ],
         "threadSafe": false
     },
     "GET /nintendo-account/v1/player-nickname": {
@@ -4814,7 +5144,9 @@
             "type": "string"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "nintendo-account"
+        ],
         "threadSafe": false
     },
     "GET /patch-proxy/v1/active-updates": {
@@ -4910,7 +5242,9 @@
             "type": "PatchConfiguration"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "GET /patch/v1/installs": {
@@ -4927,7 +5261,9 @@
             "type": "vector"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "GET /patch/v1/installs/{install-id}": {
@@ -4954,7 +5290,9 @@
             "type": "PatchInstall"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "GET /patch/v1/installs/{install-id}/status": {
@@ -4981,7 +5319,9 @@
             "type": "PatchStatus"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "GET /patch/v1/installs/{install-id}/status/patch": {
@@ -5008,7 +5348,9 @@
             "type": "PatchPatchStatus"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "GET /patch/v1/installs/{install-id}/status/preview": {
@@ -5035,7 +5377,9 @@
             "type": "PatchPreviewStatus"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "GET /patch/v1/installs/{install-id}/status/repair": {
@@ -5062,7 +5406,9 @@
             "type": "PatchRepairStatus"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "GET /patch/v1/installs/{install-id}/status/seed": {
@@ -5089,7 +5435,9 @@
             "type": "PatchSeedStatus"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "GET /patch/v2/configuration": {
@@ -5106,7 +5454,9 @@
             "type": "PatchV2Configuration"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "GET /patch/v2/installs": {
@@ -5123,7 +5473,9 @@
             "type": "vector"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "GET /patch/v2/installs/{install-id}": {
@@ -5150,7 +5502,9 @@
             "type": "PatchInstallState"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "GET /patch/v2/installs/{install-id}/components/{component-id}": {
@@ -5186,7 +5540,9 @@
             "type": "PatchComponent"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "GET /patch/v2/requests/{request-id}": {
@@ -5213,7 +5569,9 @@
             "type": "PatchRequestStatus"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "GET /pay-mobile/v1/productListResult": {
@@ -5230,7 +5588,9 @@
             "type": "PayMobileProductListResult"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "pay-mobile"
+        ],
         "threadSafe": false
     },
     "GET /pay-mobile/v1/purchaseResult": {
@@ -5247,7 +5607,9 @@
             "type": "PayMobilePurchaseResult"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "pay-mobile"
+        ],
         "threadSafe": false
     },
     "GET /platform-login/v1/status": {
@@ -5264,7 +5626,9 @@
             "type": "PlatformLoginLoginStatus"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "platform-login"
+        ],
         "threadSafe": false
     },
     "GET /platform-ui-social/v1/friends": {
@@ -5281,7 +5645,9 @@
             "type": "PlatformUiSocialFriendList"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "platform-ui-social"
+        ],
         "threadSafe": false
     },
     "GET /platform-ui-social/v1/full-friends-list": {
@@ -5298,7 +5664,9 @@
             "type": "PlatformUiSocialFriendList"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "platform-ui-social"
+        ],
         "threadSafe": false
     },
     "GET /platform-ui-social/v1/initialize": {
@@ -5315,7 +5683,9 @@
             "type": "bool"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "platform-ui-social"
+        ],
         "threadSafe": false
     },
     "GET /platform-ui/v1/enabled": {
@@ -5332,7 +5702,9 @@
             "type": "bool"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "platform-ui"
+        ],
         "threadSafe": false
     },
     "GET /platform-ui/v1/sdk-instance-id": {
@@ -5349,7 +5721,9 @@
             "type": "string"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "platform-ui"
+        ],
         "threadSafe": false
     },
     "GET /platform-ui/v1/status": {
@@ -5366,7 +5740,9 @@
             "type": "PlatformUiPlatformUIState"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "platform-ui"
+        ],
         "threadSafe": false
     },
     "GET /play-restrictions/v1/debug/caller-id/mock-id": {
@@ -5383,7 +5759,9 @@
             "type": "PlayRestrictionsPluginCallerId_MockCallerId"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "play-restrictions"
+        ],
         "threadSafe": false
     },
     "GET /play-restrictions/v1/restrictions": {
@@ -5400,7 +5778,9 @@
             "type": "PlayRestrictionsPlayRestrictionV1Data"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "play-restrictions"
+        ],
         "threadSafe": false
     },
     "GET /player-account/aliases/v1/active": {
@@ -5417,7 +5797,9 @@
             "type": "PlayerAccountAliasesV1Alias"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-account"
+        ],
         "threadSafe": false
     },
     "GET /player-account/aliases/v1/aliases": {
@@ -5434,7 +5816,9 @@
             "type": "PlayerAccountAliasesV1AliasList"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-account"
+        ],
         "threadSafe": false
     },
     "GET /player-account/aliases/v1/display-name": {
@@ -5451,7 +5835,9 @@
             "type": "PlayerAccountGameNameAndTagLine"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-account"
+        ],
         "threadSafe": false
     },
     "GET /player-account/aliases/v1/required": {
@@ -5468,7 +5854,9 @@
             "type": "PlayerAccountAliasesV1RequiredResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-account"
+        ],
         "threadSafe": false
     },
     "GET /player-account/config/v1/config": {
@@ -5485,7 +5873,9 @@
             "type": "PlayerAccountPlayerAccountPluginConfig"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-account"
+        ],
         "threadSafe": false
     },
     "GET /player-account/promotion/v1/eligibility": {
@@ -5502,7 +5892,9 @@
             "type": "PlayerAccountPromotionV1EligibilityCheckResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-account"
+        ],
         "threadSafe": false
     },
     "GET /player-account/promotion/v1/fields": {
@@ -5519,7 +5911,9 @@
             "type": "PlayerAccountPromotionV1UpdateableFieldsResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-account"
+        ],
         "threadSafe": false
     },
     "GET /player-account/regions/v1/eligibility": {
@@ -5536,7 +5930,9 @@
             "type": "PlayerAccountRegionsV1EligibilityCheckResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-account"
+        ],
         "threadSafe": false
     },
     "GET /player-account/vng/v1/status/{productId}": {
@@ -5563,7 +5959,9 @@
             "type": "PlayerAccountVngV1StatusResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-account"
+        ],
         "threadSafe": false
     },
     "GET /player-account/vng/v1/status/ready": {
@@ -5580,7 +5978,9 @@
             "type": "bool"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-account"
+        ],
         "threadSafe": false
     },
     "GET /player-affinity/config/v1/config": {
@@ -5597,7 +5997,9 @@
             "type": "PlayerAffinityPlayerAffinityPluginConfig"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-affinity"
+        ],
         "threadSafe": false
     },
     "GET /player-affinity/config/v1/status": {
@@ -5614,7 +6016,9 @@
             "type": "PlayerAffinityPlayerAffinityPluginStatus"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-affinity"
+        ],
         "threadSafe": false
     },
     "GET /player-affinity/product/v1/token/{product}": {
@@ -5641,7 +6045,9 @@
             "type": "PlayerAffinityPlayerAffinityTokenProduct"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-affinity"
+        ],
         "threadSafe": false
     },
     "GET /player-affinity/product/v2/cached-affinity/{product}": {
@@ -5668,7 +6074,9 @@
             "type": "PlayerAffinityPlayerAffinityCachedProductAffinity"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-affinity"
+        ],
         "threadSafe": false
     },
     "GET /player-affinity/product/v2/token/{product}": {
@@ -5695,7 +6103,9 @@
             "type": "PlayerAffinityPlayerAffinityProductToken"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-affinity"
+        ],
         "threadSafe": false
     },
     "GET /player-affinity/service/v2/cached-affinity/{service}": {
@@ -5722,7 +6132,9 @@
             "type": "PlayerAffinityPlayerAffinityCachedServiceAffinity"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-affinity"
+        ],
         "threadSafe": false
     },
     "GET /player-preferences/v1/data/{type}": {
@@ -5749,7 +6161,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-preferences"
+        ],
         "threadSafe": false
     },
     "GET /player-preferences/v1/data-json/{type}": {
@@ -5776,7 +6190,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-preferences"
+        ],
         "threadSafe": false
     },
     "GET /player-preferences/v1/data-json/productId/{productId}/type/{type}": {
@@ -5812,7 +6228,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-preferences"
+        ],
         "threadSafe": false
     },
     "GET /player-preferences/v1/debug/caller-id/mock-id": {
@@ -5829,7 +6247,9 @@
             "type": "PlayerPreferencesPluginCallerId_MockCallerId"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-preferences"
+        ],
         "threadSafe": false
     },
     "GET /player-preferences/v1/ready": {
@@ -5846,7 +6266,9 @@
             "type": "bool"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-preferences"
+        ],
         "threadSafe": false
     },
     "GET /player-reporting/v1/reporter-feedback": {
@@ -5863,7 +6285,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-reporting"
+        ],
         "threadSafe": false
     },
     "GET /player-reporting/v1/status": {
@@ -5880,7 +6304,9 @@
             "type": "bool"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-reporting"
+        ],
         "threadSafe": false
     },
     "GET /player-session-lifecycle/v1/session": {
@@ -5897,7 +6323,9 @@
             "type": "PlayerSessionLifecyclePlayerSessionState"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-session-lifecycle"
+        ],
         "threadSafe": false
     },
     "GET /playstation-account/v1/authorization-consent": {
@@ -5914,7 +6342,9 @@
             "type": "bool"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "playstation-account"
+        ],
         "threadSafe": false
     },
     "GET /playstation-account/v1/player-nickname": {
@@ -5931,7 +6361,9 @@
             "type": "string"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "playstation-account"
+        ],
         "threadSafe": false
     },
     "GET /playstation-account/v1/player-nickname-without-consent": {
@@ -5948,7 +6380,9 @@
             "type": "string"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "playstation-account"
+        ],
         "threadSafe": false
     },
     "GET /playstation-account/v1/user": {
@@ -5965,7 +6399,9 @@
             "type": "PlaystationAccountUser"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "playstation-account"
+        ],
         "threadSafe": false
     },
     "GET /plugin-manager/v1/status": {
@@ -6107,7 +6543,9 @@
             "type": "PrimeGamingPrimeGamingLoginResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "prime-gaming"
+        ],
         "threadSafe": false
     },
     "GET /prime-gaming/v1/supported": {
@@ -6124,7 +6562,9 @@
             "type": "PrimeGamingPrimeGamingSupportStatus"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "prime-gaming"
+        ],
         "threadSafe": false
     },
     "GET /privacy/v1/tracking": {
@@ -6141,7 +6581,9 @@
             "type": "PrivacyPrivacySettings"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "privacy"
+        ],
         "threadSafe": false
     },
     "GET /private-settings/v1/settings/{userid}/{key}": {
@@ -6177,7 +6619,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "private-settings"
+        ],
         "threadSafe": false
     },
     "GET /private-settings/v1/token/{userid}": {
@@ -6204,7 +6648,9 @@
             "type": "string"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "private-settings"
+        ],
         "threadSafe": false
     },
     "GET /process-control/v1/process": {
@@ -6297,7 +6743,9 @@
             "type": "ProductIntegrationDepsAppRepairApplyRequest"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-integration-deps"
+        ],
         "threadSafe": false
     },
     "GET /product-integration-deps/v1/app-update/apply-requests/products/{productId}/patchlines/{patchlineId}": {
@@ -6333,7 +6781,9 @@
             "type": "ProductIntegrationDepsAppUpdateApplyRequest"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-integration-deps"
+        ],
         "threadSafe": false
     },
     "GET /product-integration-deps/v1/app-update/statuses/products/{productId}/patchlines/{patchlineId}": {
@@ -6369,7 +6819,9 @@
             "type": "ProductIntegrationDepsAppUpdateStatus"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-integration-deps"
+        ],
         "threadSafe": false
     },
     "GET /product-integration/v1/app-update/status": {
@@ -6386,7 +6838,9 @@
             "type": "ProductIntegrationProductIntegrationAppUpdateStatus"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-integration"
+        ],
         "threadSafe": false
     },
     "GET /product-integration/v1/debug/app-update/statuses": {
@@ -6403,7 +6857,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-integration"
+        ],
         "threadSafe": false
     },
     "GET /product-integration/v1/debug/app-update/statuses/{sessionId}": {
@@ -6430,7 +6886,9 @@
             "type": "ProductIntegrationProductIntegrationAppUpdateStatus"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-integration"
+        ],
         "threadSafe": false
     },
     "GET /product-integration/v1/detached-sessions": {
@@ -6447,7 +6905,9 @@
             "type": "vector"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-integration"
+        ],
         "threadSafe": false
     },
     "GET /product-integration/v1/locale": {
@@ -6464,7 +6924,9 @@
             "type": "string"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-integration"
+        ],
         "threadSafe": false
     },
     "GET /product-integration/v1/signout/permission": {
@@ -6481,7 +6943,9 @@
             "type": "ProductIntegrationSignoutPermission"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-integration"
+        ],
         "threadSafe": false
     },
     "GET /product-launcher/v1/launching_from_xbgp": {
@@ -6518,7 +6982,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-localization"
+        ],
         "threadSafe": false
     },
     "GET /product-localization/v1/products/{productId}/patchlines/{patchlineId}/translations/{locale}": {
@@ -6563,7 +7029,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-localization"
+        ],
         "threadSafe": false
     },
     "GET /product-localization/v1/products/{productId}/translations/{locale}": {
@@ -6599,7 +7067,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-localization"
+        ],
         "threadSafe": false
     },
     "GET /product-metadata/v1/cookies": {
@@ -6616,7 +7086,9 @@
             "type": "ProductMetadataCookieVector"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-metadata"
+        ],
         "threadSafe": false
     },
     "GET /product-metadata/v1/debug/mock-data/{source}": {
@@ -6643,7 +7115,9 @@
             "type": "ProductMetadataDebugClientConfigSource"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-metadata"
+        ],
         "threadSafe": false
     },
     "GET /product-metadata/v1/debug/mock-mode": {
@@ -6660,7 +7134,9 @@
             "type": "bool"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-metadata"
+        ],
         "threadSafe": false
     },
     "GET /product-metadata/v1/definitions/products": {
@@ -6677,7 +7153,9 @@
             "type": "ProductMetadataProductDefinitionMap"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-metadata"
+        ],
         "threadSafe": false
     },
     "GET /product-metadata/v1/definitions/products/{productId}": {
@@ -6704,7 +7182,9 @@
             "type": "ProductMetadataProductDefinition"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-metadata"
+        ],
         "threadSafe": false
     },
     "GET /product-metadata/v1/products/{productId}/patchlines/{patchlineId}/secondary-patchlines": {
@@ -6740,7 +7220,9 @@
             "type": "ProductMetadataSecondaryPatchlineMap"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-metadata"
+        ],
         "threadSafe": false
     },
     "GET /product-metadata/v1/products/{productId}/patchlines/{patchlineId}/secondary-patchlines/{secondaryPatchlineId}": {
@@ -6785,7 +7267,9 @@
             "type": "ProductMetadataSecondaryPatchlineMetadata"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-metadata"
+        ],
         "threadSafe": false
     },
     "GET /product-metadata/v1/publish-states/{configType}": {
@@ -6812,7 +7296,9 @@
             "type": "ProductMetadataPublishState"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-metadata"
+        ],
         "threadSafe": false
     },
     "GET /product-metadata/v2/products": {
@@ -6829,7 +7315,9 @@
             "type": "ProductMetadataProductMetadataMap"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-metadata"
+        ],
         "threadSafe": false
     },
     "GET /product-metadata/v2/products/{productId}": {
@@ -6856,7 +7344,9 @@
             "type": "ProductMetadataProductMetadata"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-metadata"
+        ],
         "threadSafe": false
     },
     "GET /product-metadata/v2/products/{productId}/patchlines/{patchlineId}": {
@@ -6892,7 +7382,9 @@
             "type": "ProductMetadataPatchlineMetadata"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-metadata"
+        ],
         "threadSafe": false
     },
     "GET /product-metadata/v2/products/{productId}/player-affinity-token": {
@@ -6919,7 +7411,9 @@
             "type": "ProductMetadataPlayerAffinityProductToken"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-metadata"
+        ],
         "threadSafe": false
     },
     "GET /product-metadata/v2/region-locale": {
@@ -6936,7 +7430,9 @@
             "type": "ProductMetadataRegionLocale"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-metadata"
+        ],
         "threadSafe": false
     },
     "GET /product-session/v1/data/path": {
@@ -6953,7 +7449,9 @@
             "type": "string"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-session"
+        ],
         "threadSafe": false
     },
     "GET /product-session/v1/data/path/{patchline-name}": {
@@ -6980,7 +7478,9 @@
             "type": "string"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-session"
+        ],
         "threadSafe": false
     },
     "GET /product-session/v1/external-sessions": {
@@ -6997,7 +7497,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-session"
+        ],
         "threadSafe": false
     },
     "GET /product-session/v1/external-sessions/{session-id}": {
@@ -7024,7 +7526,9 @@
             "type": "ProductSessionSession"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-session"
+        ],
         "threadSafe": false
     },
     "GET /product-session/v1/heartbeat/{session-id}": {
@@ -7051,7 +7555,9 @@
             "type": "bool"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-session"
+        ],
         "threadSafe": false
     },
     "GET /product-session/v1/host-session": {
@@ -7068,7 +7574,9 @@
             "type": "ProductSessionSession"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-session"
+        ],
         "threadSafe": false
     },
     "GET /product-session/v1/host-session/id": {
@@ -7085,7 +7593,9 @@
             "type": "string"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-session"
+        ],
         "threadSafe": false
     },
     "GET /product-session/v1/logs/path": {
@@ -7102,7 +7612,9 @@
             "type": "string"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-session"
+        ],
         "threadSafe": false
     },
     "GET /product-session/v1/logs/path/{patchline-name}": {
@@ -7129,7 +7641,9 @@
             "type": "string"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-session"
+        ],
         "threadSafe": false
     },
     "GET /product-session/v1/session-heartbeats/{session-id}": {
@@ -7156,7 +7670,9 @@
             "type": "ProductSessionSessionHeartbeat"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-session"
+        ],
         "threadSafe": false
     },
     "GET /product-session/v1/sessions": {
@@ -7173,7 +7689,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-session"
+        ],
         "threadSafe": false
     },
     "GET /product-session/v1/sessions/{session-id}": {
@@ -7200,7 +7718,9 @@
             "type": "ProductSessionSession"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-session"
+        ],
         "threadSafe": false
     },
     "GET /product-update-scanner/v1/scan-and-patch/next-scheduled": {
@@ -7451,7 +7971,9 @@
             "type": "RiotClientAuthApiAuthorization"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riot-client-auth"
+        ],
         "threadSafe": false
     },
     "GET /riot-client-auth/v1/home-base-country": {
@@ -7468,7 +7990,9 @@
             "type": "RiotClientAuthApiHomeBaseCountry"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riot-client-auth"
+        ],
         "threadSafe": false
     },
     "GET /riot-client-auth/v1/login-country": {
@@ -7485,7 +8009,9 @@
             "type": "RiotClientAuthApiLoginCountry"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riot-client-auth"
+        ],
         "threadSafe": false
     },
     "GET /riot-client-auth/v1/rso-client": {
@@ -7502,7 +8028,9 @@
             "type": "RiotClientAuthApiClientDetails"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riot-client-auth"
+        ],
         "threadSafe": false
     },
     "GET /riot-client-auth/v1/userinfo": {
@@ -7519,7 +8047,9 @@
             "type": "RiotClientAuthApiUserInfo"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riot-client-auth"
+        ],
         "threadSafe": false
     },
     "GET /riot-client-lifecycle-state/v1/state/{state}": {
@@ -7733,7 +8263,9 @@
             "type": "RiotLoginLoginStatus"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riot-login"
+        ],
         "threadSafe": false
     },
     "GET /riot-messaging-service/v1/message/{a}": {
@@ -7760,7 +8292,9 @@
             "type": "RiotMessagingServiceMessage"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riot-messaging-service"
+        ],
         "threadSafe": false
     },
     "GET /riot-messaging-service/v1/message/{a}/{b}": {
@@ -7796,7 +8330,9 @@
             "type": "RiotMessagingServiceMessage"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riot-messaging-service"
+        ],
         "threadSafe": false
     },
     "GET /riot-messaging-service/v1/message/{a}/{b}/{c}": {
@@ -7841,7 +8377,9 @@
             "type": "RiotMessagingServiceMessage"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riot-messaging-service"
+        ],
         "threadSafe": false
     },
     "GET /riot-messaging-service/v1/message/{a}/{b}/{c}/{d}": {
@@ -7895,7 +8433,9 @@
             "type": "RiotMessagingServiceMessage"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riot-messaging-service"
+        ],
         "threadSafe": false
     },
     "GET /riot-messaging-service/v1/message/{a}/{b}/{c}/{d}/{e}": {
@@ -7958,7 +8498,9 @@
             "type": "RiotMessagingServiceMessage"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riot-messaging-service"
+        ],
         "threadSafe": false
     },
     "GET /riot-messaging-service/v1/message/{a}/{b}/{c}/{d}/{e}/{f}": {
@@ -8030,7 +8572,9 @@
             "type": "RiotMessagingServiceMessage"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riot-messaging-service"
+        ],
         "threadSafe": false
     },
     "GET /riot-messaging-service/v1/messages/{+path}": {
@@ -8057,7 +8601,9 @@
             "type": "RiotMessagingServiceMessage"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riot-messaging-service"
+        ],
         "threadSafe": false
     },
     "GET /riot-messaging-service/v1/session": {
@@ -8074,7 +8620,9 @@
             "type": "RiotMessagingServiceSession"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riot-messaging-service"
+        ],
         "threadSafe": false
     },
     "GET /riot-messaging-service/v1/state": {
@@ -8091,7 +8639,9 @@
             "type": "RiotMessagingServiceState"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riot-messaging-service"
+        ],
         "threadSafe": false
     },
     "GET /riot-messaging-service/v1/user": {
@@ -8108,7 +8658,9 @@
             "type": "string"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riot-messaging-service"
+        ],
         "threadSafe": false
     },
     "GET /riot-status/v1/products/{productId}/patchlines/{patchlineId}/deployments/{deployment}": {
@@ -8153,7 +8705,9 @@
             "type": "string"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riot-status"
+        ],
         "threadSafe": false
     },
     "GET /riot-status/v1/riotclient": {
@@ -8180,7 +8734,9 @@
             "type": "string"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riot-status"
+        ],
         "threadSafe": false
     },
     "GET /riotclient/affinity": {
@@ -8216,7 +8772,9 @@
             "type": "string"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riotclient"
+        ],
         "threadSafe": false
     },
     "GET /riotclient/app-port": {
@@ -8271,7 +8829,9 @@
             "type": "int64"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riotclient"
+        ],
         "threadSafe": false
     },
     "GET /riotclient/command-line-args": {
@@ -8288,7 +8848,9 @@
             "type": "vector"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riotclient"
+        ],
         "threadSafe": false
     },
     "GET /riotclient/get_region_locale": {
@@ -8305,7 +8867,9 @@
             "type": "RegionLocale"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riotclient"
+        ],
         "threadSafe": false
     },
     "GET /riotclient/lifecycle": {
@@ -8322,7 +8886,9 @@
             "type": "LifecycleData"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riotclient"
+        ],
         "threadSafe": false
     },
     "GET /riotclient/machine-id": {
@@ -8339,7 +8905,9 @@
             "type": "string"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riotclient"
+        ],
         "threadSafe": false
     },
     "GET /riotclient/product-locales/products/{productId}/patchlines/{patchlineId}": {
@@ -8375,7 +8943,9 @@
             "type": "string"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riotclient"
+        ],
         "threadSafe": false
     },
     "GET /riotclient/region-locale": {
@@ -8392,7 +8962,9 @@
             "type": "RegionLocale"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riotclient"
+        ],
         "threadSafe": false
     },
     "GET /riotclient/secondary-args": {
@@ -8409,7 +8981,9 @@
             "type": "vector"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riotclient"
+        ],
         "threadSafe": false
     },
     "GET /riotclient/session-id": {
@@ -8426,7 +9000,9 @@
             "type": "string"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riotclient"
+        ],
         "threadSafe": false
     },
     "GET /riotclient/system-info/v1/basic-info": {
@@ -8462,7 +9038,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riotclient"
+        ],
         "threadSafe": false
     },
     "GET /riotclient/v1/app-info": {
@@ -8479,7 +9057,9 @@
             "type": "AppInfo"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riotclient"
+        ],
         "threadSafe": false
     },
     "GET /riotclient/v1/platform-user": {
@@ -8496,7 +9076,9 @@
             "type": "PlatformUser"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riotclient"
+        ],
         "threadSafe": false
     },
     "GET /riotclient/zoom-scale": {
@@ -9180,7 +9762,9 @@
             "type": "RnetSanitizerSanitizerStatus"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rnet-sanitizer"
+        ],
         "threadSafe": false
     },
     "GET /rnet-self-update/v1/enabled": {
@@ -9237,7 +9821,9 @@
             "type": "RsoAuthConfigV3AMRValuesSupported"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "GET /rso-auth/configuration/v3/client-id": {
@@ -9254,7 +9840,9 @@
             "type": "string"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "GET /rso-auth/configuration/v3/openid-configuration": {
@@ -9271,7 +9859,9 @@
             "type": "RsoAuthConfigV3OpenIdConfiguration"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "GET /rso-auth/configuration/v3/partner-auth-config": {
@@ -9288,7 +9878,9 @@
             "type": "RsoAuthConfigV3PartnerAuthConfig"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "GET /rso-auth/configuration/v3/ready-state": {
@@ -9305,7 +9897,9 @@
             "type": "RsoAuthConfigV3ReadyState"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "GET /rso-auth/v1/auth-hints/hint": {
@@ -9322,7 +9916,9 @@
             "type": "RsoAuthAuthHint"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "GET /rso-auth/v1/authorization": {
@@ -9339,7 +9935,9 @@
             "type": "RsoAuthAuthorization"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "GET /rso-auth/v1/authorization/access-token": {
@@ -9356,7 +9954,9 @@
             "type": "RsoAuthAccessToken"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "GET /rso-auth/v1/authorization/error": {
@@ -9373,7 +9973,9 @@
             "type": "RsoAuthAuthError"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "GET /rso-auth/v1/authorization/id-token": {
@@ -9390,7 +9992,9 @@
             "type": "RsoAuthIdToken"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "GET /rso-auth/v1/authorization/userinfo": {
@@ -9407,7 +10011,9 @@
             "type": "RsoAuthUserInfo"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "GET /rso-auth/v1/session": {
@@ -9424,7 +10030,9 @@
             "type": "RsoAuthSessionResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "GET /rso-auth/v1/session/persistence": {
@@ -9441,7 +10049,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "GET /rso-auth/v1/status-message": {
@@ -9458,7 +10068,9 @@
             "type": "RsoAuthStatusMessage"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "GET /rso-auth/v1/userinfo/{client-id}": {
@@ -9485,7 +10097,9 @@
             "type": "RsoAuthUserInfo"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "GET /rso-auth/v2/authorizations/{client-id}": {
@@ -9512,7 +10126,9 @@
             "type": "RsoAuthAuthorizationResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "GET /rso-authenticator/v1/authentication": {
@@ -9529,7 +10145,9 @@
             "type": "RsoAuthenticatorV1AuthenticationResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-authenticator"
+        ],
         "threadSafe": false
     },
     "GET /rso-authenticator/v1/authentication/link/status": {
@@ -9546,7 +10164,9 @@
             "type": "RsoAuthenticatorV1WebLinkingStatusResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-authenticator"
+        ],
         "threadSafe": false
     },
     "GET /rso-authenticator/v1/config": {
@@ -9563,7 +10183,9 @@
             "type": "RsoAuthenticatorPluginConfigResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-authenticator"
+        ],
         "threadSafe": false
     },
     "GET /rso-mobile-ui/v1/account-promotion/status": {
@@ -9580,7 +10202,9 @@
             "type": "RsoMobileUiAccountPromotionStatus"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-mobile-ui"
+        ],
         "threadSafe": false
     },
     "GET /rso-mobile-ui/v1/debug/configurations": {
@@ -9597,7 +10221,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-mobile-ui"
+        ],
         "threadSafe": false
     },
     "GET /rso-mobile-ui/v1/delete-account/status": {
@@ -9614,7 +10240,9 @@
             "type": "RsoMobileUiAccountDeletionV1AccountDeletionUIStatus"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-mobile-ui"
+        ],
         "threadSafe": false
     },
     "GET /rso-mobile-ui/v1/eula/status": {
@@ -9631,7 +10259,9 @@
             "type": "RsoMobileUiEULAUIStatus"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-mobile-ui"
+        ],
         "threadSafe": false
     },
     "GET /rso-mobile-ui/v1/login/status": {
@@ -9648,7 +10278,9 @@
             "type": "RsoMobileUiLoginStatus"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-mobile-ui"
+        ],
         "threadSafe": false
     },
     "GET /rso-mobile-ui/v1/login/strategies": {
@@ -9665,7 +10297,9 @@
             "type": "vector"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-mobile-ui"
+        ],
         "threadSafe": false
     },
     "GET /rso-mobile-ui/v1/region-election": {
@@ -9682,7 +10316,9 @@
             "type": "RsoMobileUiRegionElectionV1RegionElection"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-mobile-ui"
+        ],
         "threadSafe": false
     },
     "GET /rso-mobile-ui/v1/region-election/eligibility": {
@@ -9699,7 +10335,9 @@
             "type": "RsoMobileUiRegionElectionV1EligibilityResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-mobile-ui"
+        ],
         "threadSafe": false
     },
     "GET /rso-mobile-ui/v1/vng/status": {
@@ -9716,7 +10354,9 @@
             "type": "RsoMobileUiVngV1RegistrationUIStatus"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-mobile-ui"
+        ],
         "threadSafe": false
     },
     "GET /rso-mobile-ui/v2/eula": {
@@ -9733,7 +10373,9 @@
             "type": "RsoMobileUiEULAUIV2Config"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-mobile-ui"
+        ],
         "threadSafe": false
     },
     "GET /rso-mobile-ui/v2/eula/status": {
@@ -9750,7 +10392,9 @@
             "type": "RsoMobileUiEULAUIV2Status"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-mobile-ui"
+        ],
         "threadSafe": false
     },
     "GET /scd/v1/cookies": {
@@ -9767,7 +10411,9 @@
             "type": "ScdCookies"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "scd"
+        ],
         "threadSafe": false
     },
     "GET /scd/v1/enabled": {
@@ -9784,7 +10430,9 @@
             "type": "ScdScdEnabled"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "scd"
+        ],
         "threadSafe": false
     },
     "GET /scd/v1/enabled-in-config": {
@@ -9801,7 +10449,9 @@
             "type": "bool"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "scd"
+        ],
         "threadSafe": false
     },
     "GET /startup-config/v1/registry-config": {
@@ -9838,7 +10488,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "swagger"
+        ],
         "threadSafe": false
     },
     "GET /swagger/v2/swagger.json": {
@@ -9855,7 +10507,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "swagger"
+        ],
         "threadSafe": false
     },
     "GET /swagger/v3/openapi.json": {
@@ -9882,7 +10536,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "swagger"
+        ],
         "threadSafe": false
     },
     "GET /system-info/v1/processes": {
@@ -9957,7 +10613,9 @@
             "type": "TencentLauncherTencentLauncherLoginInfo"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "tencent-launcher"
+        ],
         "threadSafe": false
     },
     "GET /vanguard/v1/status": {
@@ -9994,7 +10652,9 @@
             "type": "string"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "GET /voice-chat/v1/audio-properties": {
@@ -10011,7 +10671,9 @@
             "type": "VoiceChatAudioPropertiesResource"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "GET /voice-chat/v1/heartbeat-metrics": {
@@ -10028,7 +10690,9 @@
             "type": "VoiceChatVoiceChatHeartbeatMetrics"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "GET /voice-chat/v1/push-to-talk": {
@@ -10045,7 +10709,9 @@
             "type": "VoiceChatPushToTalkResource"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "GET /voice-chat/v2/devices/capture": {
@@ -10062,7 +10728,9 @@
             "type": "vector"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "GET /voice-chat/v2/devices/capture/permission": {
@@ -10079,7 +10747,9 @@
             "type": "VoiceChatCaptureDevicePermissionStatus"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "GET /voice-chat/v2/devices/render": {
@@ -10096,7 +10766,9 @@
             "type": "vector"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "GET /voice-chat/v2/push-to-talk/{productName}": {
@@ -10123,7 +10795,9 @@
             "type": "VoiceChatPushToTalkResource"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "GET /voice-chat/v2/sessions": {
@@ -10140,7 +10814,9 @@
             "type": "vector"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "GET /voice-chat/v2/sessions/{id}": {
@@ -10167,7 +10843,9 @@
             "type": "VoiceChatSessionResource"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "GET /voice-chat/v2/sessions/{sessionId}/participants/{participantId}": {
@@ -10203,7 +10881,9 @@
             "type": "VoiceChatParticipantResource"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "GET /voice-chat/v2/settings": {
@@ -10220,7 +10900,9 @@
             "type": "VoiceChatSettingsResource"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "GET /voice-chat/v2/state": {
@@ -10237,7 +10919,9 @@
             "type": "VoiceChatStateResource"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "GET /voice-chat/v3/sessions/{productName}": {
@@ -10264,7 +10948,9 @@
             "type": "vector"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "GET /voice-chat/v3/sessions/{productName}/{id}": {
@@ -10300,7 +10986,9 @@
             "type": "VoiceChatSessionResource"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "GET /voice-chat/v3/sessions/{productName}/{sessionId}/participants/{participantId}": {
@@ -10345,7 +11033,9 @@
             "type": "VoiceChatParticipantResource"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "GET /voice-chat/v3/settings/{productName}": {
@@ -10372,7 +11062,9 @@
             "type": "VoiceChatSettingsResource"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "GET /voice-chat/v4/sessions/{productName}": {
@@ -10399,7 +11091,9 @@
             "type": "vector"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "GET /voice-chat/v4/sessions/{productName}/{id}": {
@@ -10435,7 +11129,9 @@
             "type": "VoiceChatSessionResource"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "GET /voice-chat/v4/sessions/{productName}/{sessionId}/participants/{participantId}": {
@@ -10480,7 +11176,9 @@
             "type": "VoiceChatParticipantResource"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "GET /xbox-account/v1/authorization-consent": {
@@ -10497,7 +11195,9 @@
             "type": "bool"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "xbox-account"
+        ],
         "threadSafe": false
     },
     "GET /xbox-account/v1/player-nickname": {
@@ -10514,7 +11214,9 @@
             "type": "string"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "xbox-account"
+        ],
         "threadSafe": false
     },
     "GET /xbox-account/v1/player-nickname-without-consent": {
@@ -10531,7 +11233,9 @@
             "type": "string"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "xbox-account"
+        ],
         "threadSafe": false
     },
     "Help": {
@@ -10596,7 +11300,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "PATCH /rnet-pft/v1/surveys/{survey-id}/questions/{question-id}": {
@@ -10680,7 +11386,9 @@
             "type": "RsoAuthAuthorizationResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "POST /agent/v1/connection-info": {
@@ -10916,7 +11624,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "anti-addiction"
+        ],
         "threadSafe": false
     },
     "POST /chat/v1/debug": {
@@ -10943,7 +11653,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "POST /chat/v1/debug/finalize/initialize": {
@@ -10960,7 +11672,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "POST /chat/v1/session/connect": {
@@ -10977,7 +11691,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "POST /chat/v1/session/debug/terminate/{product}": {
@@ -11004,7 +11720,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "POST /chat/v1/session/disconnect": {
@@ -11021,7 +11739,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "POST /chat/v1/session/platform": {
@@ -11048,7 +11768,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "POST /chat/v1/social": {
@@ -11075,7 +11797,9 @@
             "type": "ChatSocialData"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "POST /chat/v2/session/connect": {
@@ -11092,7 +11816,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "POST /chat/v2/session/debug/terminate/{product}": {
@@ -11119,7 +11845,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "POST /chat/v2/session/disconnect": {
@@ -11136,7 +11864,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "POST /chat/v2/session/platform": {
@@ -11163,7 +11893,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "POST /chat/v3/blocked": {
@@ -11199,7 +11931,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "POST /chat/v3/friendrequests": {
@@ -11235,7 +11969,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "POST /chat/v3/groups": {
@@ -11271,7 +12007,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "POST /chat/v3/me/debug-jwt": {
@@ -11298,7 +12036,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "POST /chat/v4/blocked": {
@@ -11325,7 +12065,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "POST /chat/v4/friendrequests": {
@@ -11361,7 +12103,9 @@
             "type": "ChatFriendRequestList"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "POST /chat/v4/groups": {
@@ -11388,7 +12132,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "POST /chat/v5/conversations": {
@@ -11424,7 +12170,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "POST /chat/v5/friendrequests": {
@@ -11460,7 +12208,9 @@
             "type": "ChatFriendRequestListPuuid"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "POST /chat/v5/messages": {
@@ -11496,7 +12246,9 @@
             "type": "ChatChatMessageList"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "POST /chat/v6/conversations": {
@@ -11532,7 +12284,9 @@
             "type": "ChatUIStateConversationList"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "POST /chat/v6/conversations/read": {
@@ -11559,7 +12313,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "POST /chat/v6/friendrequests": {
@@ -11586,7 +12342,9 @@
             "type": "ChatFriendRequestListPuuid"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "POST /chat/v6/messages": {
@@ -11613,7 +12371,9 @@
             "type": "ChatChatMessageList"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "POST /chat/v7/conversations": {
@@ -11640,7 +12400,9 @@
             "type": "ChatUIStateConversationList"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "POST /chat/v7/conversations/read": {
@@ -11667,7 +12429,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "POST /cookie-jar/v1/cookies": {
@@ -11694,7 +12458,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "cookie-jar"
+        ],
         "threadSafe": false
     },
     "POST /data-store/v1/install-settings/{+path}": {
@@ -11730,7 +12496,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "data-store"
+        ],
         "threadSafe": false
     },
     "POST /data-store/v1/private-settings/{+path}": {
@@ -11766,7 +12534,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "data-store"
+        ],
         "threadSafe": false
     },
     "POST /data-store/v1/product-settings/products/{productId}/patchlines/{patchlineId}": {
@@ -11811,7 +12581,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "data-store"
+        ],
         "threadSafe": false
     },
     "POST /data-store/v1/product-settings/products/{productId}/patchlines/{patchlineId}/{+path}": {
@@ -11865,7 +12637,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "data-store"
+        ],
         "threadSafe": false
     },
     "POST /data-store/v1/reload-product-settings/products/{productId}/patchlines/{patchlineId}": {
@@ -11901,7 +12675,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "data-store"
+        ],
         "threadSafe": false
     },
     "POST /disambiguation/v1/magic-link": {
@@ -11918,7 +12694,9 @@
             "type": "string"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "disambiguation"
+        ],
         "threadSafe": false
     },
     "POST /eula/v1/debug/agreement/force-requirement": {
@@ -11935,7 +12713,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "eula"
+        ],
         "threadSafe": false
     },
     "POST /first-party-fulfillment/v1/fulfill": {
@@ -11962,7 +12742,9 @@
             "type": "FirstPartyFulfillmentFirstPartyFulfillmentFulfillmentResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "first-party-fulfillment"
+        ],
         "threadSafe": false
     },
     "POST /friends/v2/namesets-for-puuids": {
@@ -11989,7 +12771,9 @@
             "type": "FriendsFriendsV1NamesetsResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "friends"
+        ],
         "threadSafe": false
     },
     "POST /friends/v2/puuids-for-consoleids": {
@@ -12016,7 +12800,9 @@
             "type": "FriendsFriendsConsoleIdsToPuuidsResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "friends"
+        ],
         "threadSafe": false
     },
     "POST /ga-warning/v1/debug/simulate-warning/{category}": {
@@ -12043,7 +12829,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "ga-warning"
+        ],
         "threadSafe": false
     },
     "POST /game-session/v1/sessions": {
@@ -12070,7 +12858,9 @@
             "type": "GameSessionGameSessionV1GameSessionId"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "game-session"
+        ],
         "threadSafe": false
     },
     "POST /info-radiator/v1/time-sample/{phaseName}/end": {
@@ -12097,7 +12887,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "info-radiator"
+        ],
         "threadSafe": false
     },
     "POST /info-radiator/v1/time-sample/{phaseName}/start": {
@@ -12124,7 +12916,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "info-radiator"
+        ],
         "threadSafe": false
     },
     "POST /jwt-authenticator/v1/verify": {
@@ -12151,7 +12945,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "jwt-authenticator"
+        ],
         "threadSafe": false
     },
     "POST /loyalty/v1/debug/set-loyalty-resource/{pcbId}": {
@@ -12178,7 +12974,9 @@
             "type": "LoyaltyV2PCBangInfo"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "loyalty"
+        ],
         "threadSafe": false
     },
     "POST /mailbox/v1/mail": {
@@ -12205,7 +13003,9 @@
             "type": "vector"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "mailbox"
+        ],
         "threadSafe": false
     },
     "POST /mailbox/v1/mail/{productId}": {
@@ -12241,7 +13041,9 @@
             "type": "vector"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "mailbox"
+        ],
         "threadSafe": false
     },
     "POST /mobile-product-registry/v1/build-number/{build}": {
@@ -12268,7 +13070,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "mobile-product-registry"
+        ],
         "threadSafe": false
     },
     "POST /mobile-push/v1/register": {
@@ -12295,7 +13099,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "mobile-push"
+        ],
         "threadSafe": false
     },
     "POST /mobile-push/v1/subscribe-topic": {
@@ -12322,7 +13128,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "mobile-push"
+        ],
         "threadSafe": false
     },
     "POST /native-ux/v1/show-alert": {
@@ -12387,7 +13195,9 @@
             "type": "NintendoAccountAuthorizationResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "nintendo-account"
+        ],
         "threadSafe": false
     },
     "POST /nintendo-account/v1/network-service-accountid-token": {
@@ -12414,7 +13224,9 @@
             "type": "NintendoAccountNetworkServiceAccountResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "nintendo-account"
+        ],
         "threadSafe": false
     },
     "POST /patch/v2/debug/set-up": {
@@ -12441,7 +13253,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "POST /patch/v2/installs/{install-id}/components/{component-id}/start-full-repair": {
@@ -12486,7 +13300,9 @@
             "type": "PatchRequestStatus"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "POST /patch/v2/installs/{install-id}/components/{component-id}/start-partial-repair": {
@@ -12531,7 +13347,9 @@
             "type": "PatchRequestStatus"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "POST /patch/v2/installs/{install-id}/components/{component-id}/start-patching": {
@@ -12576,7 +13394,9 @@
             "type": "PatchRequestStatus"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "POST /patch/v2/installs/{install-id}/components/{component-id}/start-preview": {
@@ -12621,7 +13441,9 @@
             "type": "PatchRequestStatus"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "POST /patch/v2/installs/{install-id}/components/{component-id}/start-seeding": {
@@ -12666,7 +13488,9 @@
             "type": "PatchRequestStatus"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "POST /patch/v2/installs/{install-id}/components/{component-id}/start-verify": {
@@ -12702,7 +13526,9 @@
             "type": "PatchRequestStatus"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "POST /patch/v2/installs/{install-id}/components/{component-id}/stop-full-repair": {
@@ -12738,7 +13564,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "POST /patch/v2/installs/{install-id}/components/{component-id}/stop-partial-repair": {
@@ -12774,7 +13602,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "POST /patch/v2/installs/{install-id}/components/{component-id}/stop-patching": {
@@ -12810,7 +13640,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "POST /patch/v2/installs/{install-id}/components/{component-id}/stop-preview": {
@@ -12846,7 +13678,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "POST /patch/v2/installs/{install-id}/components/{component-id}/stop-seeding": {
@@ -12882,7 +13716,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "POST /patch/v2/installs/{install-id}/components/{component-id}/stop-verify": {
@@ -12918,7 +13754,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "POST /patch/v2/patchsieve": {
@@ -12945,7 +13783,9 @@
             "type": "PatchPatchsieveReleases"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "POST /pay-mobile/v1/purchase/{productId}": {
@@ -12981,7 +13821,9 @@
             "type": "uint32"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "pay-mobile"
+        ],
         "threadSafe": false
     },
     "POST /pay-mobile/v1/request-external-products": {
@@ -13008,7 +13850,9 @@
             "type": "uint32"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "pay-mobile"
+        ],
         "threadSafe": false
     },
     "POST /pay-mobile/v1/request-price-point-products": {
@@ -13025,7 +13869,9 @@
             "type": "uint32"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "pay-mobile"
+        ],
         "threadSafe": false
     },
     "POST /pay-mobile/v1/request-products": {
@@ -13042,7 +13888,9 @@
             "type": "uint32"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "pay-mobile"
+        ],
         "threadSafe": false
     },
     "POST /pay-mobile/v1/session/resume": {
@@ -13059,7 +13907,9 @@
             "type": "uint32"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "pay-mobile"
+        ],
         "threadSafe": false
     },
     "POST /payments/v1/initialize-purchase": {
@@ -13076,7 +13926,9 @@
             "type": "PaymentsInitializedPurchase"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "payments"
+        ],
         "threadSafe": false
     },
     "POST /platform-ui-social/v1/initialize": {
@@ -13093,7 +13945,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "platform-ui-social"
+        ],
         "threadSafe": false
     },
     "POST /player-account/aliases/v1/aliases": {
@@ -13120,7 +13974,9 @@
             "type": "PlayerAccountAliasesV1StatusResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-account"
+        ],
         "threadSafe": false
     },
     "POST /player-account/aliases/v1/eligibility": {
@@ -13137,7 +13993,9 @@
             "type": "PlayerAccountEligibilityResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-account"
+        ],
         "threadSafe": false
     },
     "POST /player-account/aliases/v1/generate-tagline": {
@@ -13164,7 +14022,9 @@
             "type": "PlayerAccountGenerateTaglineResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-account"
+        ],
         "threadSafe": false
     },
     "POST /player-account/aliases/v1/validity": {
@@ -13191,7 +14051,9 @@
             "type": "PlayerAccountAliasesV1StatusResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-account"
+        ],
         "threadSafe": false
     },
     "POST /player-account/promotion/v1/eligibility": {
@@ -13208,7 +14070,9 @@
             "type": "PlayerAccountPromotionV1EligibilityCheckResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-account"
+        ],
         "threadSafe": false
     },
     "POST /player-account/promotion/v1/promotion": {
@@ -13235,7 +14099,9 @@
             "type": "PlayerAccountPromotionV1AccountPromotionResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-account"
+        ],
         "threadSafe": false
     },
     "POST /player-account/regions/v1/region/{regionCode}": {
@@ -13262,7 +14128,9 @@
             "type": "PlayerAccountRegionsV1RegionAssignmentResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-account"
+        ],
         "threadSafe": false
     },
     "POST /player-account/vng/v1/status/{productId}": {
@@ -13289,7 +14157,9 @@
             "type": "PlayerAccountVngV1StatusResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-account"
+        ],
         "threadSafe": false
     },
     "POST /player-account/vng/v1/web-url/{productId}": {
@@ -13325,7 +14195,9 @@
             "type": "PlayerAccountVngV1WebUrlResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-account"
+        ],
         "threadSafe": false
     },
     "POST /player-affinity/affinity/v1/token": {
@@ -13352,7 +14224,9 @@
             "type": "PlayerAffinityPlayerAffinityToken"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-affinity"
+        ],
         "threadSafe": false
     },
     "POST /player-affinity/product/v1/token": {
@@ -13379,7 +14253,9 @@
             "type": "PlayerAffinityPlayerAffinityTokenProduct"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-affinity"
+        ],
         "threadSafe": false
     },
     "POST /player-affinity/product/v1/token/debug": {
@@ -13406,7 +14282,9 @@
             "type": "PlayerAffinityPlayerAffinityTokenProduct"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-affinity"
+        ],
         "threadSafe": false
     },
     "POST /player-affinity/product/v2/token": {
@@ -13433,7 +14311,9 @@
             "type": "PlayerAffinityPlayerAffinityProductToken"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-affinity"
+        ],
         "threadSafe": false
     },
     "POST /player-affinity/product/v2/token/debug": {
@@ -13460,7 +14340,9 @@
             "type": "PlayerAffinityPlayerAffinityProductToken"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-affinity"
+        ],
         "threadSafe": false
     },
     "POST /player-affinity/service/v1/token": {
@@ -13487,7 +14369,9 @@
             "type": "PlayerAffinityPlayerAffinityToken"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-affinity"
+        ],
         "threadSafe": false
     },
     "POST /player-affinity/service/v2/token": {
@@ -13514,7 +14398,9 @@
             "type": "PlayerAffinityPlayerAffinityServiceToken"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-affinity"
+        ],
         "threadSafe": false
     },
     "POST /player-reporting/v1/debug/simulate-reporter-feedback/{category}": {
@@ -13541,7 +14427,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-reporting"
+        ],
         "threadSafe": false
     },
     "POST /player-reporting/v1/report": {
@@ -13568,7 +14456,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-reporting"
+        ],
         "threadSafe": false
     },
     "POST /player-reporting/v1/reporter-feedback/ack": {
@@ -13585,7 +14475,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-reporting"
+        ],
         "threadSafe": false
     },
     "POST /player-reporting/v1/reporter-feedback/ack/{id}": {
@@ -13612,7 +14504,9 @@
             "type": "bool"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-reporting"
+        ],
         "threadSafe": false
     },
     "POST /player-reporting/v2/report": {
@@ -13639,7 +14533,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-reporting"
+        ],
         "threadSafe": false
     },
     "POST /player-session-lifecycle/v1/session": {
@@ -13666,7 +14562,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-session-lifecycle"
+        ],
         "threadSafe": false
     },
     "POST /player-session-lifecycle/v1/session/retry": {
@@ -13683,7 +14581,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-session-lifecycle"
+        ],
         "threadSafe": false
     },
     "POST /playstation-account/v1/authorization": {
@@ -13710,7 +14610,9 @@
             "type": "PlaystationAccountAuthorizationResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "playstation-account"
+        ],
         "threadSafe": false
     },
     "POST /playstation-account/v1/user": {
@@ -13727,7 +14629,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "playstation-account"
+        ],
         "threadSafe": false
     },
     "POST /prime-gaming/v1/login": {
@@ -13744,7 +14648,9 @@
             "type": "PrimeGamingPrimeGamingLoginResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "prime-gaming"
+        ],
         "threadSafe": false
     },
     "POST /privacy/v1/tracking/request-permission": {
@@ -13761,7 +14667,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "privacy"
+        ],
         "threadSafe": false
     },
     "POST /process-control/v1/process/client-restarting": {
@@ -13883,7 +14791,9 @@
             "type": "ProductIntegrationSettingsToken"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-integration"
+        ],
         "threadSafe": false
     },
     "POST /product-integration/v1/signout": {
@@ -13900,7 +14810,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-integration"
+        ],
         "threadSafe": false
     },
     "POST /product-launcher/v1/default-product": {
@@ -14086,7 +14998,9 @@
             "type": "ProductLocalizationTranslateResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-localization"
+        ],
         "threadSafe": false
     },
     "POST /product-localization/v2/translate": {
@@ -14113,7 +15027,9 @@
             "type": "ProductLocalizationTranslateResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-localization"
+        ],
         "threadSafe": false
     },
     "POST /product-session/v1/host-session": {
@@ -14140,7 +15056,9 @@
             "type": "string"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-session"
+        ],
         "threadSafe": false
     },
     "POST /product-session/v1/sessions/{session-id}": {
@@ -14176,7 +15094,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-session"
+        ],
         "threadSafe": false
     },
     "POST /product-session/v2/heartbeat": {
@@ -14203,7 +15123,9 @@
             "type": "bool"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-session"
+        ],
         "threadSafe": false
     },
     "POST /product-session/v2/heartbeat/{session-id}": {
@@ -14239,7 +15161,9 @@
             "type": "bool"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-session"
+        ],
         "threadSafe": false
     },
     "POST /product-session/v2/heartbeat-internal/{session-id}": {
@@ -14275,7 +15199,9 @@
             "type": "bool"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-session"
+        ],
         "threadSafe": false
     },
     "POST /rc-auth/v1/xbgp/update-login-token": {
@@ -14502,7 +15428,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riot-messaging-service"
+        ],
         "threadSafe": false
     },
     "POST /riot-messaging-service/v1/connect": {
@@ -14529,7 +15457,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riot-messaging-service"
+        ],
         "threadSafe": false
     },
     "POST /riot-messaging-service/v1/entitlements": {
@@ -14556,7 +15486,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riot-messaging-service"
+        ],
         "threadSafe": false
     },
     "POST /riot-messaging-service/v1/reconnect": {
@@ -14573,7 +15505,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riot-messaging-service"
+        ],
         "threadSafe": false
     },
     "POST /riot-messaging-service/v1/simulate-message": {
@@ -14609,7 +15543,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riot-messaging-service"
+        ],
         "threadSafe": false
     },
     "POST /riot-messaging-service/v1/switch-servers": {
@@ -14626,7 +15562,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riot-messaging-service"
+        ],
         "threadSafe": false
     },
     "POST /riot-messaging-service/v1/token/refresh": {
@@ -14643,7 +15581,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riot-messaging-service"
+        ],
         "threadSafe": false
     },
     "POST /riot-messaging-service/v2/simulate-message": {
@@ -14670,7 +15610,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riot-messaging-service"
+        ],
         "threadSafe": false
     },
     "POST /riot-status/v1/debug/set-riotclient-patchline/{patchlineId}": {
@@ -14697,7 +15639,9 @@
             "type": "string"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riot-status"
+        ],
         "threadSafe": false
     },
     "POST /riotclient/affinity": {
@@ -14753,7 +15697,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riotclient"
+        ],
         "threadSafe": false
     },
     "POST /riotclient/set_region_locale": {
@@ -14789,7 +15735,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riotclient"
+        ],
         "threadSafe": false
     },
     "POST /riotclient/show-logs": {
@@ -15259,7 +16207,9 @@
             "type": "RnetSanitizerContainsSanitizedResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rnet-sanitizer"
+        ],
         "threadSafe": false
     },
     "POST /rnet-sanitizer/v1/sanitize": {
@@ -15286,7 +16236,9 @@
             "type": "RnetSanitizerSanitizeResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rnet-sanitizer"
+        ],
         "threadSafe": false
     },
     "POST /rso-auth/v1/auth-hints/hint": {
@@ -15313,7 +16265,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "POST /rso-auth/v1/authorization/gas": {
@@ -15340,7 +16294,9 @@
             "type": "RsoAuthAuthorization"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "POST /rso-auth/v1/authorization/refresh": {
@@ -15357,7 +16313,9 @@
             "type": "RsoAuthAuthorization"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "POST /rso-auth/v1/authorization/simulate-error": {
@@ -15384,7 +16342,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "POST /rso-auth/v1/authorization/userinfo": {
@@ -15401,7 +16361,9 @@
             "type": "RsoAuthUserInfo"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "POST /rso-auth/v1/device-id": {
@@ -15418,7 +16380,9 @@
             "type": "RsoAuthDeviceId"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "POST /rso-auth/v1/key/request": {
@@ -15445,7 +16409,9 @@
             "type": "RsoAuthAuthorizationKey"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "POST /rso-auth/v1/status-message": {
@@ -15472,7 +16438,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "POST /rso-auth/v1/userinfo/{client-id}": {
@@ -15499,7 +16467,9 @@
             "type": "RsoAuthUserInfo"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "POST /rso-auth/v1/userinfo/refresh": {
@@ -15516,7 +16486,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "POST /rso-auth/v2/authorizations": {
@@ -15543,7 +16515,9 @@
             "type": "RsoAuthAuthorizationResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "POST /rso-auth/v2/authorizations/{client-id}": {
@@ -15570,7 +16544,9 @@
             "type": "RsoAuthAuthorization"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "POST /rso-auth/v2/config": {
@@ -15597,7 +16573,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "POST /rso-auth/v2/partner-auth": {
@@ -15624,7 +16602,9 @@
             "type": "RsoAuthAuthorization"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "POST /rso-auth/v3/partner-auth": {
@@ -15651,7 +16631,9 @@
             "type": "RsoAuthAuthorization"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "POST /rso-authenticator/v1/authentication/apple": {
@@ -15678,7 +16660,9 @@
             "type": "RsoAuthenticatorV1AuthenticationResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-authenticator"
+        ],
         "threadSafe": false
     },
     "POST /rso-authenticator/v1/authentication/code": {
@@ -15705,7 +16689,9 @@
             "type": "RsoAuthenticatorV1AuthenticationResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-authenticator"
+        ],
         "threadSafe": false
     },
     "POST /rso-authenticator/v1/authentication/facebook": {
@@ -15732,7 +16718,9 @@
             "type": "RsoAuthenticatorV1AuthenticationResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-authenticator"
+        ],
         "threadSafe": false
     },
     "POST /rso-authenticator/v1/authentication/gamecenter": {
@@ -15759,7 +16747,9 @@
             "type": "RsoAuthenticatorV1AuthenticationResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-authenticator"
+        ],
         "threadSafe": false
     },
     "POST /rso-authenticator/v1/authentication/google": {
@@ -15786,7 +16776,9 @@
             "type": "RsoAuthenticatorV1AuthenticationResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-authenticator"
+        ],
         "threadSafe": false
     },
     "POST /rso-authenticator/v1/authentication/multifactor": {
@@ -15813,7 +16805,9 @@
             "type": "RsoAuthenticatorV1AuthenticationResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-authenticator"
+        ],
         "threadSafe": false
     },
     "POST /rso-authenticator/v1/authentication/nintendo": {
@@ -15840,7 +16834,9 @@
             "type": "RsoAuthenticatorV1AuthenticationResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-authenticator"
+        ],
         "threadSafe": false
     },
     "POST /rso-authenticator/v1/authentication/playstation": {
@@ -15867,7 +16863,9 @@
             "type": "RsoAuthenticatorV1AuthenticationResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-authenticator"
+        ],
         "threadSafe": false
     },
     "POST /rso-authenticator/v1/authentication/redirect": {
@@ -15894,7 +16892,9 @@
             "type": "RsoAuthenticatorV1AuthenticationResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-authenticator"
+        ],
         "threadSafe": false
     },
     "POST /rso-authenticator/v1/authentication/riot-identity/complete": {
@@ -15921,7 +16921,9 @@
             "type": "RsoAuthenticatorV1AuthenticationResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-authenticator"
+        ],
         "threadSafe": false
     },
     "POST /rso-authenticator/v1/authentication/riot-identity-signup/complete": {
@@ -15948,7 +16950,9 @@
             "type": "RsoAuthenticatorV1AuthenticationResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-authenticator"
+        ],
         "threadSafe": false
     },
     "POST /rso-authenticator/v1/authentication/riot-identity-signup/start": {
@@ -15975,7 +16979,9 @@
             "type": "RsoAuthenticatorV1AuthenticationResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-authenticator"
+        ],
         "threadSafe": false
     },
     "POST /rso-authenticator/v1/authentication/riot-identity/start": {
@@ -16002,7 +17008,9 @@
             "type": "RsoAuthenticatorV1AuthenticationResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-authenticator"
+        ],
         "threadSafe": false
     },
     "POST /rso-authenticator/v1/authentication/xbox": {
@@ -16029,7 +17037,9 @@
             "type": "RsoAuthenticatorV1AuthenticationResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-authenticator"
+        ],
         "threadSafe": false
     },
     "POST /rso-authenticator/v1/login": {
@@ -16056,7 +17066,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-authenticator"
+        ],
         "threadSafe": false
     },
     "POST /rso-authenticator/v1/web-authentication-url": {
@@ -16083,7 +17095,9 @@
             "type": "string"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-authenticator"
+        ],
         "threadSafe": false
     },
     "POST /rso-mobile-ui/v1/account-promotion/initiate": {
@@ -16100,7 +17114,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-mobile-ui"
+        ],
         "threadSafe": false
     },
     "POST /rso-mobile-ui/v1/authentication-redirect": {
@@ -16127,7 +17143,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-mobile-ui"
+        ],
         "threadSafe": false
     },
     "POST /rso-mobile-ui/v1/debug/browser/redirect": {
@@ -16154,7 +17172,9 @@
             "type": "bool"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-mobile-ui"
+        ],
         "threadSafe": false
     },
     "POST /rso-mobile-ui/v1/debug/sdk": {
@@ -16181,7 +17201,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-mobile-ui"
+        ],
         "threadSafe": false
     },
     "POST /rso-mobile-ui/v1/debug/webview/decide-navigation-policy": {
@@ -16208,7 +17230,9 @@
             "type": "string"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-mobile-ui"
+        ],
         "threadSafe": false
     },
     "POST /rso-mobile-ui/v1/debug/webview/javascript-message": {
@@ -16235,7 +17259,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-mobile-ui"
+        ],
         "threadSafe": false
     },
     "POST /rso-mobile-ui/v1/debug/webview/launch": {
@@ -16262,7 +17288,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-mobile-ui"
+        ],
         "threadSafe": false
     },
     "POST /rso-mobile-ui/v1/debug/webview/load-error-page": {
@@ -16289,7 +17317,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-mobile-ui"
+        ],
         "threadSafe": false
     },
     "POST /rso-mobile-ui/v1/debug/webview/simulate-onfinish": {
@@ -16316,7 +17346,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-mobile-ui"
+        ],
         "threadSafe": false
     },
     "POST /rso-mobile-ui/v1/delete-account": {
@@ -16333,7 +17365,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-mobile-ui"
+        ],
         "threadSafe": false
     },
     "POST /rso-mobile-ui/v1/eula/initiate": {
@@ -16360,7 +17394,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-mobile-ui"
+        ],
         "threadSafe": false
     },
     "POST /rso-mobile-ui/v1/federated-login": {
@@ -16387,7 +17423,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-mobile-ui"
+        ],
         "threadSafe": false
     },
     "POST /rso-mobile-ui/v1/ios-auth-redirect": {
@@ -16414,7 +17452,9 @@
             "type": "bool"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-mobile-ui"
+        ],
         "threadSafe": false
     },
     "POST /rso-mobile-ui/v1/login/initiate": {
@@ -16441,7 +17481,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-mobile-ui"
+        ],
         "threadSafe": false
     },
     "POST /rso-mobile-ui/v1/region-election": {
@@ -16468,7 +17510,9 @@
             "type": "RsoMobileUiRegionElectionV1RegionElection"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-mobile-ui"
+        ],
         "threadSafe": false
     },
     "POST /rso-mobile-ui/v1/show-game-out-of-date": {
@@ -16495,7 +17539,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-mobile-ui"
+        ],
         "threadSafe": false
     },
     "POST /rso-mobile-ui/v1/vng/profile/{productId}": {
@@ -16522,7 +17568,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-mobile-ui"
+        ],
         "threadSafe": false
     },
     "POST /rso-mobile-ui/v1/vng/register/{productId}": {
@@ -16549,7 +17597,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-mobile-ui"
+        ],
         "threadSafe": false
     },
     "POST /rso-mobile-ui/v2/eula/agreement": {
@@ -16576,7 +17626,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-mobile-ui"
+        ],
         "threadSafe": false
     },
     "POST /rso-mobile-ui/v2/eula/initiate": {
@@ -16593,7 +17645,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-mobile-ui"
+        ],
         "threadSafe": false
     },
     "POST /scd/v1/enabled": {
@@ -16620,7 +17674,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "scd"
+        ],
         "threadSafe": false
     },
     "POST /scd/v1/url-patterns/test": {
@@ -16647,7 +17703,9 @@
             "type": "bool"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "scd"
+        ],
         "threadSafe": false
     },
     "POST /telemetry/v1/common-data/{key}": {
@@ -16863,7 +17921,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "tencent-launcher"
+        ],
         "threadSafe": false
     },
     "POST /tencent-launcher/v1/login": {
@@ -16890,7 +17950,9 @@
             "type": "TencentLauncherAuthorization"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "tencent-launcher"
+        ],
         "threadSafe": false
     },
     "POST /vanguard/v1/check-vanguard-service": {
@@ -16946,7 +18008,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "POST /voice-chat/v1/push-to-talk/check-available": {
@@ -16973,7 +18037,9 @@
             "type": "bool"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "POST /voice-chat/v2/push-to-talk/check-available": {
@@ -17000,7 +18066,9 @@
             "type": "bool"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "POST /voice-chat/v2/sessions": {
@@ -17027,7 +18095,9 @@
             "type": "VoiceChatSessionResource"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "POST /voice-chat/v3/sessions/{productName}": {
@@ -17063,7 +18133,9 @@
             "type": "VoiceChatSessionResource"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "POST /voice-chat/v4/sessions/{productName}": {
@@ -17099,7 +18171,9 @@
             "type": "VoiceChatSessionResource"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "POST /xbox-account/v1/authorization": {
@@ -17126,7 +18200,9 @@
             "type": "XboxAccountAuthorizationResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "xbox-account"
+        ],
         "threadSafe": false
     },
     "POST /xbox-account/v1/user": {
@@ -17153,7 +18229,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "xbox-account"
+        ],
         "threadSafe": false
     },
     "PUT /age-restriction/v1/debug/age-restriction/products/{productId}": {
@@ -17189,7 +18267,9 @@
             "type": "AgeRestrictionAgeRestriction"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "age-restriction"
+        ],
         "threadSafe": false
     },
     "PUT /app-command/submit": {
@@ -17216,7 +18296,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "app-command"
+        ],
         "threadSafe": false
     },
     "PUT /chat/v1/device-settings": {
@@ -17243,7 +18325,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "PUT /chat/v1/settings": {
@@ -17270,7 +18354,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "PUT /chat/v2/me": {
@@ -17306,7 +18392,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "PUT /chat/v2/session/state": {
@@ -17333,7 +18421,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "PUT /chat/v3/friends": {
@@ -17369,7 +18459,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "PUT /chat/v3/groups": {
@@ -17405,7 +18497,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "PUT /chat/v3/groups/order": {
@@ -17441,7 +18535,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "PUT /chat/v3/me": {
@@ -17468,7 +18564,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "PUT /chat/v4/friends": {
@@ -17495,7 +18593,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "PUT /chat/v4/groups": {
@@ -17522,7 +18622,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "PUT /chat/v4/groups/order": {
@@ -17549,7 +18651,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "PUT /chat/v5/conversations": {
@@ -17585,7 +18689,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "PUT /chat/v5/participants": {
@@ -17612,7 +18718,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "PUT /chat/v6/conversations": {
@@ -17648,7 +18756,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "PUT /chat/v6/conversations/active": {
@@ -17675,7 +18785,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "PUT /chat/v7/conversations": {
@@ -17702,7 +18814,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "PUT /chat/v7/conversations/active": {
@@ -17729,7 +18843,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "chat"
+        ],
         "threadSafe": false
     },
     "PUT /client-config/v1/authorization": {
@@ -17756,7 +18872,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "client-config"
+        ],
         "threadSafe": false
     },
     "PUT /client-config/v1/refresh-config-status": {
@@ -17773,7 +18891,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "client-config"
+        ],
         "threadSafe": false
     },
     "PUT /client-config/v1/sessions": {
@@ -17800,7 +18920,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "client-config"
+        ],
         "threadSafe": false
     },
     "PUT /client-config/v2/entitlements-token": {
@@ -17827,7 +18949,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "client-config"
+        ],
         "threadSafe": false
     },
     "PUT /client-config/v2/namespace-changes": {
@@ -17854,7 +18978,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "client-config"
+        ],
         "threadSafe": false
     },
     "PUT /client-feature-flags/v1/debug/mock-data": {
@@ -17881,7 +19007,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "client-feature-flags"
+        ],
         "threadSafe": false
     },
     "PUT /client-feature-flags/v1/debug/mock-mode": {
@@ -17898,7 +19026,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "client-feature-flags"
+        ],
         "threadSafe": false
     },
     "PUT /client-feature-flags/v1/debug/overrides/flags/{namespace}/{flag}": {
@@ -17943,7 +19073,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "client-feature-flags"
+        ],
         "threadSafe": false
     },
     "PUT /eula/v1/agreement/acceptance": {
@@ -17960,7 +19092,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "eula"
+        ],
         "threadSafe": false
     },
     "PUT /eula/v1/agreement/reject": {
@@ -17987,7 +19121,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "eula"
+        ],
         "threadSafe": false
     },
     "PUT /eula/v1/debug/agreement/short-agreement-content": {
@@ -18004,7 +19140,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "eula"
+        ],
         "threadSafe": false
     },
     "PUT /eula/v1/product-context": {
@@ -18031,7 +19169,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "eula"
+        ],
         "threadSafe": false
     },
     "PUT /external-message-handler/v1/emulate": {
@@ -18166,7 +19306,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "friends"
+        ],
         "threadSafe": false
     },
     "PUT /ga-restriction/v1/debug/caller-id/mock-id": {
@@ -18193,7 +19335,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "ga-restriction"
+        ],
         "threadSafe": false
     },
     "PUT /ga-restriction/v1/debug/penalty-notifications-data/{messageId}": {
@@ -18229,7 +19373,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "ga-restriction"
+        ],
         "threadSafe": false
     },
     "PUT /ga-restriction/v1/debug/time/{millisSinceEpoch}": {
@@ -18256,7 +19402,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "ga-restriction"
+        ],
         "threadSafe": false
     },
     "PUT /ga-restriction/v1/penalty-notifications/{messageId}": {
@@ -18283,7 +19431,9 @@
             "type": "bool"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "ga-restriction"
+        ],
         "threadSafe": false
     },
     "PUT /ga-warning/v1/debug/caller-id/mock-id": {
@@ -18310,7 +19460,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "ga-warning"
+        ],
         "threadSafe": false
     },
     "PUT /game-session/v1/debug/caller-id/mock-id": {
@@ -18337,7 +19489,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "game-session"
+        ],
         "threadSafe": false
     },
     "PUT /info-radiator/v1/custom-heartbeat-metric/{name}": {
@@ -18373,7 +19527,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "info-radiator"
+        ],
         "threadSafe": false
     },
     "PUT /mailbox/v1/debug/caller-id/mock-id": {
@@ -18400,7 +19556,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "mailbox"
+        ],
         "threadSafe": false
     },
     "PUT /mailbox/v1/mail-state": {
@@ -18427,7 +19585,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "mailbox"
+        ],
         "threadSafe": false
     },
     "PUT /native-ux/v1/close-game-running-dialog": {
@@ -18694,7 +19854,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "PUT /patch/v1/installs/{install-id}": {
@@ -18730,7 +19892,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "PUT /patch/v1/installs/{install-id}/requests/patch": {
@@ -18766,7 +19930,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "PUT /patch/v1/installs/{install-id}/requests/preview": {
@@ -18802,7 +19968,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "PUT /patch/v1/installs/{install-id}/requests/repair": {
@@ -18838,7 +20006,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "PUT /patch/v1/installs/{install-id}/requests/seed": {
@@ -18874,7 +20044,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "PUT /patch/v2/configuration": {
@@ -18901,7 +20073,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "PUT /patch/v2/installs/{install-id}": {
@@ -18937,7 +20111,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "PUT /patch/v2/installs/{install-id}/components/{component-id}": {
@@ -18982,7 +20158,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "patch"
+        ],
         "threadSafe": false
     },
     "PUT /play-restrictions/v1/debug/caller-id/mock-id": {
@@ -19009,7 +20187,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "play-restrictions"
+        ],
         "threadSafe": false
     },
     "PUT /play-restrictions/v1/restrictions": {
@@ -19036,7 +20216,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "play-restrictions"
+        ],
         "threadSafe": false
     },
     "PUT /player-affinity/shard": {
@@ -19063,7 +20245,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-affinity"
+        ],
         "threadSafe": false
     },
     "PUT /player-preferences/v1/data/{type}": {
@@ -19099,7 +20283,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-preferences"
+        ],
         "threadSafe": false
     },
     "PUT /player-preferences/v1/data-json/{type}": {
@@ -19135,7 +20321,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-preferences"
+        ],
         "threadSafe": false
     },
     "PUT /player-preferences/v1/data-json/productId/{productId}/type/{type}": {
@@ -19180,7 +20368,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-preferences"
+        ],
         "threadSafe": false
     },
     "PUT /player-preferences/v1/debug/caller-id/mock-id": {
@@ -19207,7 +20397,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-preferences"
+        ],
         "threadSafe": false
     },
     "PUT /player-session-lifecycle/v1/session": {
@@ -19234,7 +20426,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "player-session-lifecycle"
+        ],
         "threadSafe": false
     },
     "PUT /playstation-account/v1/authorization-consent": {
@@ -19261,7 +20455,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "playstation-account"
+        ],
         "threadSafe": false
     },
     "PUT /private-settings/v1/settings/{userid}/{key}": {
@@ -19306,7 +20502,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "private-settings"
+        ],
         "threadSafe": false
     },
     "PUT /private-settings/v1/token/{userid}": {
@@ -19342,7 +20540,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "private-settings"
+        ],
         "threadSafe": false
     },
     "PUT /product-integration-deps/v1/app-repair/apply-requests/products/{productId}/patchlines/{patchlineId}": {
@@ -19387,7 +20587,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-integration-deps"
+        ],
         "threadSafe": false
     },
     "PUT /product-integration-deps/v1/app-update/apply-requests/products/{productId}/patchlines/{patchlineId}": {
@@ -19432,7 +20634,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-integration-deps"
+        ],
         "threadSafe": false
     },
     "PUT /product-integration-deps/v1/app-update/statuses/products/{productId}/patchlines/{patchlineId}": {
@@ -19477,7 +20681,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-integration-deps"
+        ],
         "threadSafe": false
     },
     "PUT /product-integration/v1/app-repair/apply": {
@@ -19504,7 +20710,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-integration"
+        ],
         "threadSafe": false
     },
     "PUT /product-integration/v1/app-repair/immediate-repair": {
@@ -19531,7 +20739,9 @@
             "type": "ProductIntegrationProductIntegrationAppImmediateRepairResponseBody"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-integration"
+        ],
         "threadSafe": false
     },
     "PUT /product-integration/v1/app-update/apply": {
@@ -19548,7 +20758,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-integration"
+        ],
         "threadSafe": false
     },
     "PUT /product-integration/v1/debug/app-repair/apply": {
@@ -19575,7 +20787,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-integration"
+        ],
         "threadSafe": false
     },
     "PUT /product-integration/v1/debug/app-repair/immediate-repair": {
@@ -19602,7 +20816,9 @@
             "type": "ProductIntegrationProductIntegrationAppImmediateRepairResponseBody"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-integration"
+        ],
         "threadSafe": false
     },
     "PUT /product-integration/v1/debug/app-update/apply": {
@@ -19629,7 +20845,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-integration"
+        ],
         "threadSafe": false
     },
     "PUT /product-integration/v1/debug/app-update/statuses/{sessionId}": {
@@ -19665,7 +20883,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-integration"
+        ],
         "threadSafe": false
     },
     "PUT /product-integration/v1/locale": {
@@ -19692,7 +20912,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-integration"
+        ],
         "threadSafe": false
     },
     "PUT /product-launcher/v1/products/{product-id}/patchlines/{patchline-id}": {
@@ -19776,7 +20998,9 @@
             "type": "map"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-metadata"
+        ],
         "threadSafe": false
     },
     "PUT /product-metadata/v1/debug/mock-mode": {
@@ -19793,7 +21017,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "product-metadata"
+        ],
         "threadSafe": false
     },
     "PUT /product-update-scanner/v1/scan-and-patch": {
@@ -20075,7 +21301,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riotclient"
+        ],
         "threadSafe": false
     },
     "PUT /riotclient/product-locales/products/{productId}/patchlines/{patchlineId}": {
@@ -20120,7 +21348,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riotclient"
+        ],
         "threadSafe": false
     },
     "PUT /riotclient/region-locale": {
@@ -20147,7 +21377,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riotclient"
+        ],
         "threadSafe": false
     },
     "PUT /riotclient/splash": {
@@ -20241,7 +21473,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "riotclient"
+        ],
         "threadSafe": false
     },
     "PUT /rnet-lifecycle/v1/hide": {
@@ -21004,7 +22238,9 @@
             "type": "RsoAuthSessionResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "PUT /rso-auth/v1/session/login-token": {
@@ -21031,7 +22267,9 @@
             "type": "RsoAuthSessionResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "PUT /rso-auth/v1/session/multifactor": {
@@ -21058,7 +22296,9 @@
             "type": "RsoAuthSessionResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "PUT /rso-auth/v1/session/persistence": {
@@ -21085,7 +22325,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "PUT /rso-auth/v1/session/reauthentication": {
@@ -21112,7 +22354,9 @@
             "type": "RsoAuthSessionResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "PUT /rso-auth/v1/session/signup-token": {
@@ -21139,7 +22383,9 @@
             "type": "RsoAuthSessionResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-auth"
+        ],
         "threadSafe": false
     },
     "PUT /rso-authenticator/v1/authentication": {
@@ -21166,7 +22412,9 @@
             "type": "RsoAuthenticatorV1AuthenticationResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-authenticator"
+        ],
         "threadSafe": false
     },
     "PUT /rso-authenticator/v1/authentication/link/apple": {
@@ -21193,7 +22441,9 @@
             "type": "RsoAuthenticatorV1AuthenticationResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-authenticator"
+        ],
         "threadSafe": false
     },
     "PUT /rso-authenticator/v1/authentication/link/code": {
@@ -21220,7 +22470,9 @@
             "type": "RsoAuthenticatorV1AuthenticationResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-authenticator"
+        ],
         "threadSafe": false
     },
     "PUT /rso-authenticator/v1/authentication/link/facebook": {
@@ -21247,7 +22499,9 @@
             "type": "RsoAuthenticatorV1AuthenticationResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-authenticator"
+        ],
         "threadSafe": false
     },
     "PUT /rso-authenticator/v1/authentication/link/gamecenter": {
@@ -21274,7 +22528,9 @@
             "type": "RsoAuthenticatorV1AuthenticationResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-authenticator"
+        ],
         "threadSafe": false
     },
     "PUT /rso-authenticator/v1/authentication/link/google": {
@@ -21301,7 +22557,9 @@
             "type": "RsoAuthenticatorV1AuthenticationResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-authenticator"
+        ],
         "threadSafe": false
     },
     "PUT /rso-authenticator/v1/authentication/link/nintendo": {
@@ -21328,7 +22586,9 @@
             "type": "RsoAuthenticatorV1AuthenticationResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-authenticator"
+        ],
         "threadSafe": false
     },
     "PUT /rso-authenticator/v1/authentication/link/playstation": {
@@ -21355,7 +22615,9 @@
             "type": "RsoAuthenticatorV1AuthenticationResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-authenticator"
+        ],
         "threadSafe": false
     },
     "PUT /rso-authenticator/v1/authentication/link/resendCode": {
@@ -21372,7 +22634,9 @@
             "type": "RsoAuthenticatorV1AuthenticationResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-authenticator"
+        ],
         "threadSafe": false
     },
     "PUT /rso-authenticator/v1/authentication/link/riot-identity": {
@@ -21399,7 +22663,9 @@
             "type": "RsoAuthenticatorV1AuthenticationResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-authenticator"
+        ],
         "threadSafe": false
     },
     "PUT /rso-authenticator/v1/authentication/link/rso": {
@@ -21426,7 +22692,9 @@
             "type": "RsoAuthenticatorV1AuthenticationResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-authenticator"
+        ],
         "threadSafe": false
     },
     "PUT /rso-authenticator/v1/authentication/link/xbox": {
@@ -21453,7 +22721,9 @@
             "type": "RsoAuthenticatorV1AuthenticationResponse"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-authenticator"
+        ],
         "threadSafe": false
     },
     "PUT /rso-mobile-ui/v1/region-election": {
@@ -21480,7 +22750,9 @@
             "type": "RsoMobileUiRegionElectionV1RegionElection"
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "rso-mobile-ui"
+        ],
         "threadSafe": false
     },
     "PUT /startup-config/v1/registry-config": {
@@ -21857,7 +23129,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "PUT /voice-chat/v2/devices/capture/prompt-for-permission": {
@@ -21874,7 +23148,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "PUT /voice-chat/v2/push-to-talk/{productName}": {
@@ -21910,7 +23186,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "PUT /voice-chat/v2/sessions": {
@@ -21937,7 +23215,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "PUT /voice-chat/v2/sessions/{id}": {
@@ -21973,7 +23253,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "PUT /voice-chat/v2/sessions/{sessionId}/participants/{participantId}": {
@@ -22018,7 +23300,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "PUT /voice-chat/v2/settings": {
@@ -22045,7 +23329,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "PUT /voice-chat/v3/sessions/{productName}": {
@@ -22081,7 +23367,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "PUT /voice-chat/v3/sessions/{productName}/{id}": {
@@ -22126,7 +23414,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "PUT /voice-chat/v3/sessions/{productName}/{sessionId}/participants/{participantId}": {
@@ -22180,7 +23470,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "PUT /voice-chat/v3/settings/{productName}": {
@@ -22216,7 +23508,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "PUT /voice-chat/v4/sessions/{productName}": {
@@ -22252,7 +23546,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "PUT /voice-chat/v4/sessions/{productName}/{id}": {
@@ -22297,7 +23593,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "PUT /voice-chat/v4/sessions/{productName}/{sessionId}/participants/{participantId}": {
@@ -22351,7 +23649,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "voice-chat"
+        ],
         "threadSafe": false
     },
     "PUT /xbox-account/v1/authorization-consent": {
@@ -22378,7 +23678,9 @@
             "type": ""
         },
         "subscribable": false,
-        "tags": [],
+        "tags": [
+            "xbox-account"
+        ],
         "threadSafe": false
     },
     "Subscribe": {
