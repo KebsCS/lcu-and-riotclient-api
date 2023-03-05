@@ -11,7 +11,7 @@
         <script>
             let html = "";
 
-            Promise.all([fetch("../proxy.php?url=./riotclient/data.json"), fetch("../proxy.php?url=./riotclient/data_info.json")])
+            Promise.all([fetch("../proxy.php?url=riotclient/data.json"), fetch("../proxy.php?url=riotclient/data_info.json")])
                 .then(async ([aa, bb]) => {
                     const data = await aa.json();
                     const data_info = await bb.json();
@@ -31,7 +31,6 @@
                         html += `</thead>`;
                         html += `<tbody>`;
 
-                        // Loop through the values in the JSON array
                         for (const value of data[key]) {
                             html += `<tr>`;
 
