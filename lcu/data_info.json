@@ -1858,7 +1858,7 @@
                 "optional": false,
                 "type": {
                     "elementType": "",
-                    "type": "ClientConfigConfigType"
+                    "type": "string"
                 }
             },
             {
@@ -1913,12 +1913,12 @@
         "name": "GetClientConfigV1Config",
         "nameSpace": "",
         "returns": {
-            "elementType": "object",
-            "type": "map"
+            "elementType": "",
+            "type": "object"
         },
         "tags": [
             "Plugins",
-            "Plugin client-config"
+            "Plugin rga-client-config"
         ],
         "threadSafe": false
     },
@@ -1939,7 +1939,7 @@
                 "optional": false,
                 "type": {
                     "elementType": "",
-                    "type": "ClientConfigConfigType"
+                    "type": "string"
                 }
             },
             {
@@ -1990,7 +1990,7 @@
         },
         "tags": [
             "Plugins",
-            "Plugin client-config"
+            "Plugin rga-client-config"
         ],
         "threadSafe": false
     },
@@ -2002,7 +2002,7 @@
                 "optional": false,
                 "type": {
                     "elementType": "",
-                    "type": "ClientConfigConfigType"
+                    "type": "string"
                 }
             }
         ],
@@ -2013,11 +2013,11 @@
         "nameSpace": "",
         "returns": {
             "elementType": "",
-            "type": "ClientConfigConfigStatus"
+            "type": "RgaClientConfigConfigStatus"
         },
         "tags": [
             "Plugins",
-            "Plugin client-config"
+            "Plugin rga-client-config"
         ],
         "threadSafe": false
     },
@@ -2044,7 +2044,7 @@
         },
         "tags": [
             "Plugins",
-            "Plugin client-config"
+            "Plugin rga-client-config"
         ],
         "threadSafe": false
     },
@@ -2066,12 +2066,12 @@
         "name": "GetClientConfigV2NamespaceByNamespace",
         "nameSpace": "",
         "returns": {
-            "elementType": "object",
-            "type": "map"
+            "elementType": "",
+            "type": "object"
         },
         "tags": [
             "Plugins",
-            "Plugin client-config"
+            "Plugin rga-client-config"
         ],
         "threadSafe": false
     },
@@ -2093,12 +2093,12 @@
         "name": "GetClientConfigV2NamespaceByNamespacePlayer",
         "nameSpace": "",
         "returns": {
-            "elementType": "object",
-            "type": "map"
+            "elementType": "",
+            "type": "object"
         },
         "tags": [
             "Plugins",
-            "Plugin client-config"
+            "Plugin rga-client-config"
         ],
         "threadSafe": false
     },
@@ -2120,12 +2120,12 @@
         "name": "GetClientConfigV2NamespaceByNamespacePublic",
         "nameSpace": "",
         "returns": {
-            "elementType": "object",
-            "type": "map"
+            "elementType": "",
+            "type": "object"
         },
         "tags": [
             "Plugins",
-            "Plugin client-config"
+            "Plugin rga-client-config"
         ],
         "threadSafe": false
     },
@@ -25364,77 +25364,6 @@
         },
         "tags": [
             "Tracing"
-        ],
-        "threadSafe": false
-    },
-    "PUT /client-config/v1/entitlements-token": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "update",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "ClientConfigEntitlementsUpdate"
-                }
-            }
-        ],
-        "async": "",
-        "description": "",
-        "help": "",
-        "name": "PutClientConfigV1EntitlementsToken",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "tags": [
-            "Plugins",
-            "Plugin client-config"
-        ],
-        "threadSafe": false
-    },
-    "PUT /client-config/v1/refresh-config-status": {
-        "arguments": [],
-        "async": "",
-        "description": "",
-        "help": "",
-        "name": "PutClientConfigV1RefreshConfigStatus",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "tags": [
-            "Plugins",
-            "Plugin client-config"
-        ],
-        "threadSafe": false
-    },
-    "PUT /client-config/v2/namespace-changes": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "namespaces",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "ClientConfigConfigNamespaceUpdate"
-                }
-            }
-        ],
-        "async": "",
-        "description": "",
-        "help": "",
-        "name": "PutClientConfigV2NamespaceChanges",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "tags": [
-            "Plugins",
-            "Plugin client-config"
         ],
         "threadSafe": false
     },

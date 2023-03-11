@@ -60,8 +60,12 @@
                         html += `<div class="panel-body">`;
 
                         html += `<section class="sw-operation-description">`;
-                        html += `<p>${data_info[key]["description"]} ${data_info[key]["help"]}</p>`;
+                        html += `<p>${data_info[key]["description"]}</p>`;
                         html += `</section>`;
+
+                        if (data_info[key]["help"].length > 0) {
+                            html += `<p>${data_info[key]["help"]}</p>`;
+                        }
 
                         if (data_info[key]["arguments"].length > 0) {
                             html += `<section class="sw-request-params">`;

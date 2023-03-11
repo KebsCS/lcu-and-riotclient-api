@@ -86,18 +86,6 @@
         "GET /{plugin}/assets/{+path}",
         "HEAD /{plugin}/assets/{+path}"
     ],
-    "Plugin client-config": [
-        "GET /client-config/v1/config",
-        "GET /client-config/v1/config/{name}",
-        "PUT /client-config/v1/entitlements-token",
-        "PUT /client-config/v1/refresh-config-status",
-        "GET /client-config/v1/status/{type}",
-        "GET /client-config/v2/config/{name}",
-        "PUT /client-config/v2/namespace-changes",
-        "GET /client-config/v2/namespace/{namespace}",
-        "GET /client-config/v2/namespace/{namespace}/player",
-        "GET /client-config/v2/namespace/{namespace}/public"
-    ],
     "Plugin entitlements": [
         "GET /entitlements/v1/token"
     ],
@@ -1331,6 +1319,15 @@
         "GET /player-notifications/v1/notifications/{id}",
         "PUT /player-notifications/v1/notifications/{id}"
     ],
+    "Plugin rga-client-config": [
+        "GET /client-config/v1/config",
+        "GET /client-config/v1/config/{name}",
+        "GET /client-config/v1/status/{type}",
+        "GET /client-config/v2/config/{name}",
+        "GET /client-config/v2/namespace/{namespace}",
+        "GET /client-config/v2/namespace/{namespace}/player",
+        "GET /client-config/v2/namespace/{namespace}/public"
+    ],
     "Plugin riot-messaging-service": [
         "DELETE /riot-messaging-service/v1/connect",
         "POST /riot-messaging-service/v1/connect",
@@ -1355,11 +1352,8 @@
         "GET /anti-addiction/v1/policies/{policyType}/anti-addiction-state",
         "GET /client-config/v1/config",
         "GET /client-config/v1/config/{name}",
-        "PUT /client-config/v1/entitlements-token",
-        "PUT /client-config/v1/refresh-config-status",
         "GET /client-config/v1/status/{type}",
         "GET /client-config/v2/config/{name}",
-        "PUT /client-config/v2/namespace-changes",
         "GET /client-config/v2/namespace/{namespace}",
         "GET /client-config/v2/namespace/{namespace}/player",
         "GET /client-config/v2/namespace/{namespace}/public",
