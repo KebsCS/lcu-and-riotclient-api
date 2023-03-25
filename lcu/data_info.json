@@ -610,40 +610,6 @@
         ],
         "threadSafe": false
     },
-    "DELETE /lol-honeyfruit/v1/debug-linking-status": {
-        "arguments": [],
-        "async": "",
-        "description": "",
-        "help": "",
-        "name": "DeleteLolHoneyfruitV1DebugLinkingStatus",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "object"
-        },
-        "tags": [
-            "Plugins",
-            "Plugin lol-honeyfruit"
-        ],
-        "threadSafe": false
-    },
-    "DELETE /lol-honeyfruit/v1/debug-vng-publisher-settings": {
-        "arguments": [],
-        "async": "",
-        "description": "",
-        "help": "",
-        "name": "DeleteLolHoneyfruitV1DebugVngPublisherSettings",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "object"
-        },
-        "tags": [
-            "Plugins",
-            "Plugin lol-honeyfruit"
-        ],
-        "threadSafe": false
-    },
     "DELETE /lol-leaver-buster/v1/notifications/{id}": {
         "arguments": [
             {
@@ -7318,23 +7284,6 @@
         ],
         "threadSafe": false
     },
-    "GET /lol-honeyfruit/v1/linking-status": {
-        "arguments": [],
-        "async": "",
-        "description": "",
-        "help": "",
-        "name": "GetLolHoneyfruitV1LinkingStatus",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "LolHoneyfruitHoneyfruitLinkingStatus"
-        },
-        "tags": [
-            "Plugins",
-            "Plugin lol-honeyfruit"
-        ],
-        "threadSafe": false
-    },
     "GET /lol-honeyfruit/v1/vng-publisher-settings": {
         "arguments": [],
         "async": "",
@@ -8278,6 +8227,23 @@
         ],
         "threadSafe": false
     },
+    "GET /lol-license-agreement/v1/agreement": {
+        "arguments": [],
+        "async": "",
+        "description": "",
+        "help": "",
+        "name": "GetLolLicenseAgreementV1Agreement",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "string"
+        },
+        "tags": [
+            "Plugins",
+            "Plugin lol-license-agreement"
+        ],
+        "threadSafe": false
+    },
     "GET /lol-license-agreement/v1/agreements": {
         "arguments": [],
         "async": "",
@@ -8305,6 +8271,23 @@
         "returns": {
             "elementType": "LolLicenseAgreementLicenseAgreement",
             "type": "vector"
+        },
+        "tags": [
+            "Plugins",
+            "Plugin lol-license-agreement"
+        ],
+        "threadSafe": false
+    },
+    "GET /lol-license-agreement/v1/privacy-policy": {
+        "arguments": [],
+        "async": "",
+        "description": "",
+        "help": "",
+        "name": "GetLolLicenseAgreementV1PrivacyPolicy",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "string"
         },
         "tags": [
             "Plugins",
@@ -23850,6 +23833,23 @@
         ],
         "threadSafe": false
     },
+    "POST /lol-tft/v1/tft/events/redirect": {
+        "arguments": [],
+        "async": "",
+        "description": "",
+        "help": "",
+        "name": "PostLolTftV1TftEventsRedirect",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "tags": [
+            "Plugins",
+            "Plugin lol-tft"
+        ],
+        "threadSafe": false
+    },
     "POST /lol-yourshop/v1/offers/{id}/purchase": {
         "arguments": [
             {
@@ -25887,87 +25887,6 @@
         "description": "",
         "help": "",
         "name": "PutLolHoneyfruitV1AccountClaimAutoDismiss",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "object"
-        },
-        "tags": [
-            "Plugins",
-            "Plugin lol-honeyfruit"
-        ],
-        "threadSafe": false
-    },
-    "PUT /lol-honeyfruit/v1/debug-linking-status": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "body",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "LolHoneyfruitHoneyfruitLinkingStatus"
-                }
-            }
-        ],
-        "async": "",
-        "description": "",
-        "help": "",
-        "name": "PutLolHoneyfruitV1DebugLinkingStatus",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "object"
-        },
-        "tags": [
-            "Plugins",
-            "Plugin lol-honeyfruit"
-        ],
-        "threadSafe": false
-    },
-    "PUT /lol-honeyfruit/v1/debug-vng-publisher-settings": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "body",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "LolHoneyfruitHoneyfruitVNGPublisherSettings"
-                }
-            }
-        ],
-        "async": "",
-        "description": "",
-        "help": "",
-        "name": "PutLolHoneyfruitV1DebugVngPublisherSettings",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "object"
-        },
-        "tags": [
-            "Plugins",
-            "Plugin lol-honeyfruit"
-        ],
-        "threadSafe": false
-    },
-    "PUT /lol-honeyfruit/v1/linking-status": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "body",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "LolHoneyfruitHoneyfruitLinkingAction"
-                }
-            }
-        ],
-        "async": "",
-        "description": "",
-        "help": "",
-        "name": "PutLolHoneyfruitV1LinkingStatus",
         "nameSpace": "",
         "returns": {
             "elementType": "",

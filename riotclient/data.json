@@ -455,6 +455,7 @@
         "PUT /external-message-handler/v1/emulate",
         "DELETE /external-message-handler/v1/patch-request",
         "GET /external-message-handler/v1/patch-request",
+        "DELETE /external-message-handler/v1/patch-request/products/{productId}/patchlines/{patchlineId}",
         "PUT /external-message-handler/v1/patch-request/products/{productId}/patchlines/{patchlineId}/pause",
         "PUT /external-message-handler/v1/patch-request/products/{productId}/patchlines/{patchlineId}/resume"
     ],
@@ -590,7 +591,6 @@
         "PUT /rnet-product-registry/v4/install-settings/products/{productId}/patchlines/{patchlineId}/{+path}",
         "DELETE /rnet-product-registry/v4/patch-requests/products/{productId}/patchlines/{patchlineId}",
         "PUT /rnet-product-registry/v4/patch-requests/products/{productId}/patchlines/{patchlineId}",
-        "POST /rnet-product-registry/v4/patch-requests/products/{productId}/patchlines/{patchlineId}/cancel-dependencies",
         "POST /rnet-product-registry/v4/patch-requests/products/{productId}/patchlines/{patchlineId}/install-dependencies",
         "POST /rnet-product-registry/v4/patch-requests/products/{productId}/patchlines/{patchlineId}/retry-dependencies",
         "GET /rnet-product-registry/v4/patch-states/out-of-date",
@@ -651,6 +651,7 @@
         "PUT /external-message-handler/v1/emulate",
         "DELETE /external-message-handler/v1/patch-request",
         "GET /external-message-handler/v1/patch-request",
+        "DELETE /external-message-handler/v1/patch-request/products/{productId}/patchlines/{patchlineId}",
         "PUT /external-message-handler/v1/patch-request/products/{productId}/patchlines/{patchlineId}/pause",
         "PUT /external-message-handler/v1/patch-request/products/{productId}/patchlines/{patchlineId}/resume",
         "GET /patch-proxy/v1/active-updates",
@@ -751,7 +752,6 @@
         "PUT /rnet-product-registry/v4/install-settings/products/{productId}/patchlines/{patchlineId}/{+path}",
         "DELETE /rnet-product-registry/v4/patch-requests/products/{productId}/patchlines/{patchlineId}",
         "PUT /rnet-product-registry/v4/patch-requests/products/{productId}/patchlines/{patchlineId}",
-        "POST /rnet-product-registry/v4/patch-requests/products/{productId}/patchlines/{patchlineId}/cancel-dependencies",
         "POST /rnet-product-registry/v4/patch-requests/products/{productId}/patchlines/{patchlineId}/install-dependencies",
         "POST /rnet-product-registry/v4/patch-requests/products/{productId}/patchlines/{patchlineId}/retry-dependencies",
         "GET /rnet-product-registry/v4/patch-states/out-of-date",
@@ -965,7 +965,6 @@
     ],
     "riotclientapp": [
         "GET /riotclientapp/v1/command-line-args",
-        "GET /riotclientapp/v1/isXbgpRunning",
         "POST /riotclientapp/v1/new-args",
         "GET /riotclientapp/v1/secondary-args"
     ],

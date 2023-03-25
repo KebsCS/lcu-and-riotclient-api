@@ -900,6 +900,45 @@
         ],
         "threadSafe": false
     },
+    "DELETE /external-message-handler/v1/patch-request/products/{productId}/patchlines/{patchlineId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "patchlineId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Cancel the current patch request.",
+        "help": "",
+        "internal": false,
+        "name": "DeleteExternalMessageHandlerV1PatchRequestProductsByProductIdPatchlinesByPatchlineId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "Plugins",
+            "Plugin external-message-handler"
+        ],
+        "threadSafe": false
+    },
     "DELETE /ga-restriction/v1/debug/caller-id/mock-id": {
         "arguments": [],
         "deprecated": false,
@@ -9119,25 +9158,6 @@
         ],
         "threadSafe": false
     },
-    "GET /riotclientapp/v1/isXbgpRunning": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "get if xbgp com server is running",
-        "help": "",
-        "internal": false,
-        "name": "GetRiotclientappV1IsXbgpRunning",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "bool"
-        },
-        "subscribable": false,
-        "tags": [
-            "riotclientapp"
-        ],
-        "threadSafe": false
-    },
     "GET /riotclientapp/v1/secondary-args": {
         "arguments": [],
         "deprecated": false,
@@ -16058,45 +16078,6 @@
         "returns": {
             "elementType": "",
             "type": "uint64"
-        },
-        "subscribable": false,
-        "tags": [
-            "Plugins",
-            "Plugin rnet-product-registry"
-        ],
-        "threadSafe": false
-    },
-    "POST /rnet-product-registry/v4/patch-requests/products/{productId}/patchlines/{patchlineId}/cancel-dependencies": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "productId",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "",
-                "name": "patchlineId",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Cancels dependency install and mark the patching as cancelled",
-        "help": "",
-        "internal": false,
-        "name": "PostRnetProductRegistryV4PatchRequestsProductsByProductIdPatchlinesByPatchlineIdCancelDependencies",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
         },
         "subscribable": false,
         "tags": [
