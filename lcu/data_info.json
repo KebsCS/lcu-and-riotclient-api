@@ -6236,6 +6236,23 @@
         ],
         "threadSafe": false
     },
+    "GET /lol-event-shop/v1/is-pass-purchase-enabled": {
+        "arguments": [],
+        "async": "",
+        "description": "",
+        "help": "",
+        "name": "GetLolEventShopV1IsPassPurchaseEnabled",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "bool"
+        },
+        "tags": [
+            "Plugins",
+            "Plugin lol-event-shop"
+        ],
+        "threadSafe": false
+    },
     "GET /lol-event-shop/v1/navigation-button-data": {
         "arguments": [],
         "async": "",
@@ -6263,6 +6280,23 @@
         "returns": {
             "elementType": "",
             "type": "LolEventShopEventBackgroundUIData"
+        },
+        "tags": [
+            "Plugins",
+            "Plugin lol-event-shop"
+        ],
+        "threadSafe": false
+    },
+    "GET /lol-event-shop/v1/pass-bundles": {
+        "arguments": [],
+        "async": "",
+        "description": "",
+        "help": "",
+        "name": "GetLolEventShopV1PassBundles",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "LolEventShopBundleOfferUIData",
+            "type": "vector"
         },
         "tags": [
             "Plugins",
@@ -11418,6 +11452,23 @@
         "tags": [
             "Plugins",
             "Plugin lol-player-preferences"
+        ],
+        "threadSafe": false
+    },
+    "GET /lol-player-report-sender/v1/in-game-reports": {
+        "arguments": [],
+        "async": "",
+        "description": "",
+        "help": "",
+        "name": "GetLolPlayerReportSenderV1InGameReports",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "LolPlayerReportSenderInGameReport",
+            "type": "vector"
+        },
+        "tags": [
+            "Plugins",
+            "Plugin lol-player-report-sender"
         ],
         "threadSafe": false
     },
@@ -22611,6 +22662,50 @@
         ],
         "threadSafe": false
     },
+    "POST /lol-player-report-sender/v1/in-game-reports": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "resource",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "LolPlayerReportSenderInGameReport"
+                }
+            }
+        ],
+        "async": "",
+        "description": "",
+        "help": "",
+        "name": "PostLolPlayerReportSenderV1InGameReports",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "object"
+        },
+        "tags": [
+            "Plugins",
+            "Plugin lol-player-report-sender"
+        ],
+        "threadSafe": false
+    },
+    "POST /lol-player-report-sender/v1/in-game-reports/submit": {
+        "arguments": [],
+        "async": "",
+        "description": "",
+        "help": "",
+        "name": "PostLolPlayerReportSenderV1InGameReportsSubmit",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "object"
+        },
+        "tags": [
+            "Plugins",
+            "Plugin lol-player-report-sender"
+        ],
+        "threadSafe": false
+    },
     "POST /lol-pre-end-of-game/v1/complete/{sequenceEventName}": {
         "arguments": [
             {
@@ -23390,6 +23485,33 @@
         "description": "",
         "help": "",
         "name": "PostLolSettingsV1AccountSave",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "tags": [
+            "Plugins",
+            "Plugin lol-settings"
+        ],
+        "threadSafe": false
+    },
+    "POST /lol-settings/v2/reload/{ppType}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "ppType",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "async": "",
+        "description": "",
+        "help": "",
+        "name": "PostLolSettingsV2ReloadByPpType",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -25980,6 +26102,33 @@
         "returns": {
             "elementType": "",
             "type": "bool"
+        },
+        "tags": [
+            "Plugins",
+            "Plugin lol-lobby"
+        ],
+        "threadSafe": false
+    },
+    "PUT /lol-lobby/v1/lobby/members/localMember/player-slots": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "playerSlots",
+                "optional": false,
+                "type": {
+                    "elementType": "LolLobbyQuickPlayPresetSlotDto",
+                    "type": "vector"
+                }
+            }
+        ],
+        "async": "",
+        "description": "",
+        "help": "",
+        "name": "PutLolLobbyV1LobbyMembersLocalMemberPlayerSlots",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "object"
         },
         "tags": [
             "Plugins",

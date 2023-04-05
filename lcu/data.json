@@ -439,8 +439,10 @@
         "GET /lol-event-shop/v1/failure-loading-token-shop",
         "GET /lol-event-shop/v1/info",
         "GET /lol-event-shop/v1/is-grace-period",
+        "GET /lol-event-shop/v1/is-pass-purchase-enabled",
         "GET /lol-event-shop/v1/navigation-button-data",
         "GET /lol-event-shop/v1/pass-background-data",
+        "GET /lol-event-shop/v1/pass-bundles",
         "GET /lol-event-shop/v1/progress-info-data",
         "POST /lol-event-shop/v1/purchase-offer",
         "GET /lol-event-shop/v1/reward-track-bonus-items",
@@ -667,6 +669,7 @@
         "GET /lol-lobby/v1/lobby/invitations",
         "POST /lol-lobby/v1/lobby/invitations",
         "GET /lol-lobby/v1/lobby/invitations/{id}",
+        "PUT /lol-lobby/v1/lobby/members/localMember/player-slots",
         "PUT /lol-lobby/v1/lobby/members/localMember/position-preferences",
         "PUT /lol-lobby/v1/parties/active",
         "GET /lol-lobby/v1/parties/gamemode",
@@ -978,7 +981,10 @@
     ],
     "Plugin lol-player-report-sender": [
         "POST /lol-player-report-sender/v1/champ-select-reports/category/{category}",
-        "POST /lol-player-report-sender/v1/end-of-game-reports"
+        "POST /lol-player-report-sender/v1/end-of-game-reports",
+        "GET /lol-player-report-sender/v1/in-game-reports",
+        "POST /lol-player-report-sender/v1/in-game-reports",
+        "POST /lol-player-report-sender/v1/in-game-reports/submit"
     ],
     "Plugin lol-pre-end-of-game": [
         "POST /lol-pre-end-of-game/v1/complete/{sequenceEventName}",
@@ -1128,7 +1134,8 @@
         "GET /lol-settings/v2/didreset/{ppType}",
         "GET /lol-settings/v2/local/{category}",
         "PATCH /lol-settings/v2/local/{category}",
-        "GET /lol-settings/v2/ready"
+        "GET /lol-settings/v2/ready",
+        "POST /lol-settings/v2/reload/{ppType}"
     ],
     "Plugin lol-shutdown": [
         "GET /lol-shutdown/v1/notification"
@@ -1665,8 +1672,10 @@
         "GET /lol-event-shop/v1/failure-loading-token-shop",
         "GET /lol-event-shop/v1/info",
         "GET /lol-event-shop/v1/is-grace-period",
+        "GET /lol-event-shop/v1/is-pass-purchase-enabled",
         "GET /lol-event-shop/v1/navigation-button-data",
         "GET /lol-event-shop/v1/pass-background-data",
+        "GET /lol-event-shop/v1/pass-bundles",
         "GET /lol-event-shop/v1/progress-info-data",
         "POST /lol-event-shop/v1/purchase-offer",
         "GET /lol-event-shop/v1/reward-track-bonus-items",
@@ -1893,6 +1902,7 @@
         "GET /lol-lobby/v1/lobby/invitations",
         "POST /lol-lobby/v1/lobby/invitations",
         "GET /lol-lobby/v1/lobby/invitations/{id}",
+        "PUT /lol-lobby/v1/lobby/members/localMember/player-slots",
         "PUT /lol-lobby/v1/lobby/members/localMember/position-preferences",
         "PUT /lol-lobby/v1/parties/active",
         "GET /lol-lobby/v1/parties/gamemode",
@@ -2126,6 +2136,9 @@
         "GET /lol-player-preferences/v1/preference/{type}",
         "POST /lol-player-report-sender/v1/champ-select-reports/category/{category}",
         "POST /lol-player-report-sender/v1/end-of-game-reports",
+        "GET /lol-player-report-sender/v1/in-game-reports",
+        "POST /lol-player-report-sender/v1/in-game-reports",
+        "POST /lol-player-report-sender/v1/in-game-reports/submit",
         "POST /lol-pre-end-of-game/v1/complete/{sequenceEventName}",
         "GET /lol-pre-end-of-game/v1/currentSequenceEvent",
         "DELETE /lol-pre-end-of-game/v1/registration/{sequenceEventName}",
@@ -2250,6 +2263,7 @@
         "GET /lol-settings/v2/local/{category}",
         "PATCH /lol-settings/v2/local/{category}",
         "GET /lol-settings/v2/ready",
+        "POST /lol-settings/v2/reload/{ppType}",
         "GET /lol-shutdown/v1/notification",
         "GET /lol-simple-dialog-messages/v1/messages",
         "POST /lol-simple-dialog-messages/v1/messages",
