@@ -47,6 +47,10 @@
                     }
 
                     for (const key in data_info) {
+                        if (key == "parameters") {
+                            continue;
+                        }
+
                         const method = key.split(" ")[0].toLowerCase();
                         html += `<div id="operation--${key}" class="swagger--panel-operation-${method} panel">`;
                         html += `<div class="panel-heading">`;
@@ -83,6 +87,19 @@
                                 html += `<td> ${arg["type"]["type"]} </td>`;
                                 html += `<td> ${!arg["optional"]} </td>`;
                                 html += `</tr>`;
+                                if (data_info["parameters"].hasOwnProperty(arg["type"]["type"])) {
+                                    if (data_info["parameters"][arg["type"]["type"]]["fields"].length > 0) {
+                                        for (const param of data_info["parameters"][arg["type"]["type"]]["fields"]) {
+                                            html += `<tr>`;
+                                            html += `<td>${param["name"]} </td>`;
+                                            //html += `<td> ${param["description"]} </td>`;
+                                            html += `<td>${arg["type"]["type"]}</td>`
+                                            html += `<td> ${param["type"]["type"]} </td>`;
+                                            html += `<td> ${!param["optional"]} </td>`;
+                                            html += `</tr>`;
+                                        }
+                                    }
+                                }
                             }
                             html += `</tbody>`;
                             html += `</table>`;
