@@ -86,6 +86,18 @@
         "GET /{plugin}/assets/{+path}",
         "HEAD /{plugin}/assets/{+path}"
     ],
+    "Plugin client-config": [
+        "GET /client-config/v1/config",
+        "GET /client-config/v1/config/{name}",
+        "PUT /client-config/v1/entitlements-token",
+        "PUT /client-config/v1/refresh-config-status",
+        "GET /client-config/v1/status/{type}",
+        "GET /client-config/v2/config/{name}",
+        "PUT /client-config/v2/namespace-changes",
+        "GET /client-config/v2/namespace/{namespace}",
+        "GET /client-config/v2/namespace/{namespace}/player",
+        "GET /client-config/v2/namespace/{namespace}/public"
+    ],
     "Plugin entitlements": [
         "GET /entitlements/v1/token"
     ],
@@ -141,7 +153,6 @@
         "GET /lol-challenges/v1/my-updated-challenges/{gameId}",
         "GET /lol-challenges/v1/penalty",
         "GET /lol-challenges/v1/seasons",
-        "GET /lol-challenges/v1/suggested-challenges/local-player",
         "GET /lol-challenges/v1/summary-player-data/local-player",
         "GET /lol-challenges/v1/summary-player-data/player/{puuid}",
         "GET /lol-challenges/v1/summary-players-data/players",
@@ -423,7 +434,7 @@
         "GET /lol-end-of-game/v1/reported-players",
         "POST /lol-end-of-game/v1/state/dismiss-stats",
         "GET /lol-end-of-game/v1/tft-eog-stats",
-        "POST /lol-end-of-game/v2/player-complaints"
+        "POST /lol-end-of-game/v2/player-reports"
     ],
     "Plugin lol-esport-stream-notifications": [
         "GET /lol-esport-stream-notifications/v1/live-streams",
@@ -434,7 +445,7 @@
         "GET /lol-event-shop/v1/categories-offers",
         "POST /lol-event-shop/v1/claim-select-all",
         "POST /lol-event-shop/v1/claim-select-bonus-iteration",
-        "GET /lol-event-shop/v1/event-header-data",
+        "GET /lol-event-shop/v1/event-details-data",
         "GET /lol-event-shop/v1/failure-loading-reward-track",
         "GET /lol-event-shop/v1/failure-loading-token-shop",
         "GET /lol-event-shop/v1/info",
@@ -444,6 +455,7 @@
         "GET /lol-event-shop/v1/pass-background-data",
         "GET /lol-event-shop/v1/pass-bundles",
         "GET /lol-event-shop/v1/progress-info-data",
+        "POST /lol-event-shop/v1/purchase-item",
         "POST /lol-event-shop/v1/purchase-offer",
         "GET /lol-event-shop/v1/reward-track-bonus-items",
         "GET /lol-event-shop/v1/reward-track-bonus-progress",
@@ -973,7 +985,6 @@
         "DELETE /lol-player-messaging/v1/notification/{id}/acknowledge"
     ],
     "Plugin lol-player-preferences": [
-        "POST /lol-player-preferences/v1/hash",
         "POST /lol-player-preferences/v1/player-preferences-endpoint-override",
         "GET /lol-player-preferences/v1/player-preferences-ready",
         "PUT /lol-player-preferences/v1/preference",
@@ -983,8 +994,7 @@
         "POST /lol-player-report-sender/v1/champ-select-reports/category/{category}",
         "POST /lol-player-report-sender/v1/end-of-game-reports",
         "GET /lol-player-report-sender/v1/in-game-reports",
-        "POST /lol-player-report-sender/v1/in-game-reports",
-        "POST /lol-player-report-sender/v1/in-game-reports/submit"
+        "POST /lol-player-report-sender/v1/in-game-reports"
     ],
     "Plugin lol-pre-end-of-game": [
         "POST /lol-pre-end-of-game/v1/complete/{sequenceEventName}",
@@ -1189,7 +1199,8 @@
         "GET /lol-store/v1/store-ready",
         "GET /lol-store/v1/wallet",
         "GET /lol-store/v1/{pageType}",
-        "GET /lol-store/v2/offers"
+        "GET /lol-store/v2/offers",
+        "POST /lol-store/v3/purchase"
     ],
     "Plugin lol-suggested-players": [
         "POST /lol-suggested-players/v1/reported-player",
@@ -1235,9 +1246,10 @@
         "GET /lol-tft/v1/tft/battlePassHub",
         "GET /lol-tft/v1/tft/directToHub",
         "GET /lol-tft/v1/tft/events",
-        "POST /lol-tft/v1/tft/events/redirect",
         "GET /lol-tft/v1/tft/homeHub",
+        "POST /lol-tft/v1/tft/homeHub/redirect",
         "GET /lol-tft/v1/tft/newsHub",
+        "GET /lol-tft/v1/tft/promoButtons",
         "PUT /lol-tft/v1/tft_experiment_bucket"
     ],
     "Plugin lol-tft-team-planner": [
@@ -1323,15 +1335,6 @@
         "GET /player-notifications/v1/notifications/{id}",
         "PUT /player-notifications/v1/notifications/{id}"
     ],
-    "Plugin rga-client-config": [
-        "GET /client-config/v1/config",
-        "GET /client-config/v1/config/{name}",
-        "GET /client-config/v1/status/{type}",
-        "GET /client-config/v2/config/{name}",
-        "GET /client-config/v2/namespace/{namespace}",
-        "GET /client-config/v2/namespace/{namespace}/player",
-        "GET /client-config/v2/namespace/{namespace}/public"
-    ],
     "Plugin riot-messaging-service": [
         "DELETE /riot-messaging-service/v1/connect",
         "POST /riot-messaging-service/v1/connect",
@@ -1356,8 +1359,11 @@
         "GET /anti-addiction/v1/policies/{policyType}/anti-addiction-state",
         "GET /client-config/v1/config",
         "GET /client-config/v1/config/{name}",
+        "PUT /client-config/v1/entitlements-token",
+        "PUT /client-config/v1/refresh-config-status",
         "GET /client-config/v1/status/{type}",
         "GET /client-config/v2/config/{name}",
+        "PUT /client-config/v2/namespace-changes",
         "GET /client-config/v2/namespace/{namespace}",
         "GET /client-config/v2/namespace/{namespace}/player",
         "GET /client-config/v2/namespace/{namespace}/public",
@@ -1400,7 +1406,6 @@
         "GET /lol-challenges/v1/my-updated-challenges/{gameId}",
         "GET /lol-challenges/v1/penalty",
         "GET /lol-challenges/v1/seasons",
-        "GET /lol-challenges/v1/suggested-challenges/local-player",
         "GET /lol-challenges/v1/summary-player-data/local-player",
         "GET /lol-challenges/v1/summary-player-data/player/{puuid}",
         "GET /lol-challenges/v1/summary-players-data/players",
@@ -1660,14 +1665,14 @@
         "GET /lol-end-of-game/v1/reported-players",
         "POST /lol-end-of-game/v1/state/dismiss-stats",
         "GET /lol-end-of-game/v1/tft-eog-stats",
-        "POST /lol-end-of-game/v2/player-complaints",
+        "POST /lol-end-of-game/v2/player-reports",
         "GET /lol-esport-stream-notifications/v1/live-streams",
         "POST /lol-esport-stream-notifications/v1/send-stats",
         "GET /lol-esport-stream-notifications/v1/stream-url",
         "GET /lol-event-shop/v1/categories-offers",
         "POST /lol-event-shop/v1/claim-select-all",
         "POST /lol-event-shop/v1/claim-select-bonus-iteration",
-        "GET /lol-event-shop/v1/event-header-data",
+        "GET /lol-event-shop/v1/event-details-data",
         "GET /lol-event-shop/v1/failure-loading-reward-track",
         "GET /lol-event-shop/v1/failure-loading-token-shop",
         "GET /lol-event-shop/v1/info",
@@ -1677,6 +1682,7 @@
         "GET /lol-event-shop/v1/pass-background-data",
         "GET /lol-event-shop/v1/pass-bundles",
         "GET /lol-event-shop/v1/progress-info-data",
+        "POST /lol-event-shop/v1/purchase-item",
         "POST /lol-event-shop/v1/purchase-offer",
         "GET /lol-event-shop/v1/reward-track-bonus-items",
         "GET /lol-event-shop/v1/reward-track-bonus-progress",
@@ -2129,7 +2135,6 @@
         "DELETE /lol-player-messaging/v1/celebration/notification/{id}/acknowledge",
         "GET /lol-player-messaging/v1/notification",
         "DELETE /lol-player-messaging/v1/notification/{id}/acknowledge",
-        "POST /lol-player-preferences/v1/hash",
         "POST /lol-player-preferences/v1/player-preferences-endpoint-override",
         "GET /lol-player-preferences/v1/player-preferences-ready",
         "PUT /lol-player-preferences/v1/preference",
@@ -2138,7 +2143,6 @@
         "POST /lol-player-report-sender/v1/end-of-game-reports",
         "GET /lol-player-report-sender/v1/in-game-reports",
         "POST /lol-player-report-sender/v1/in-game-reports",
-        "POST /lol-player-report-sender/v1/in-game-reports/submit",
         "POST /lol-pre-end-of-game/v1/complete/{sequenceEventName}",
         "GET /lol-pre-end-of-game/v1/currentSequenceEvent",
         "DELETE /lol-pre-end-of-game/v1/registration/{sequenceEventName}",
@@ -2306,6 +2310,7 @@
         "GET /lol-store/v1/wallet",
         "GET /lol-store/v1/{pageType}",
         "GET /lol-store/v2/offers",
+        "POST /lol-store/v3/purchase",
         "POST /lol-suggested-players/v1/reported-player",
         "GET /lol-suggested-players/v1/suggested-players",
         "DELETE /lol-suggested-players/v1/suggested-players/{summonerId}",
@@ -2354,9 +2359,10 @@
         "GET /lol-tft/v1/tft/battlePassHub",
         "GET /lol-tft/v1/tft/directToHub",
         "GET /lol-tft/v1/tft/events",
-        "POST /lol-tft/v1/tft/events/redirect",
         "GET /lol-tft/v1/tft/homeHub",
+        "POST /lol-tft/v1/tft/homeHub/redirect",
         "GET /lol-tft/v1/tft/newsHub",
+        "GET /lol-tft/v1/tft/promoButtons",
         "PUT /lol-tft/v1/tft_experiment_bucket",
         "GET /lol-tft/v2/tft/battlepass",
         "GET /lol-trophies/v1/current-summoner/trophies/profile",
