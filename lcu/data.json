@@ -141,6 +141,7 @@
     "Plugin lol-catalog": [
         "GET /lol-catalog/v1/item-details",
         "GET /lol-catalog/v1/items",
+        "GET /lol-catalog/v1/items-list-details/skip-cache",
         "GET /lol-catalog/v1/items/{inventoryType}"
     ],
     "Plugin lol-challenges": [
@@ -1179,6 +1180,7 @@
     ],
     "Plugin lol-store": [
         "GET /lol-store/v1/catalog",
+        "GET /lol-store/v1/catalog/items/skip-cache",
         "GET /lol-store/v1/catalog/sales",
         "GET /lol-store/v1/catalog/{inventoryType}",
         "GET /lol-store/v1/catalogByInstanceIds",
@@ -1222,6 +1224,7 @@
         "GET /lol-summoner/v1/current-summoner/rerollPoints",
         "GET /lol-summoner/v1/current-summoner/summoner-profile",
         "POST /lol-summoner/v1/current-summoner/summoner-profile",
+        "GET /lol-summoner/v1/player-name-mode",
         "GET /lol-summoner/v1/profile-privacy-enabled",
         "GET /lol-summoner/v1/status",
         "GET /lol-summoner/v1/summoner-profile",
@@ -1396,6 +1399,7 @@
         "GET /lol-career-stats/v1/summoner-stats/{puuid}/{season}/{queue}/{position}",
         "GET /lol-catalog/v1/item-details",
         "GET /lol-catalog/v1/items",
+        "GET /lol-catalog/v1/items-list-details/skip-cache",
         "GET /lol-catalog/v1/items/{inventoryType}",
         "POST /lol-challenges/v1/ack-challenge-update/{id}",
         "GET /lol-challenges/v1/available-queue-ids",
@@ -2289,6 +2293,7 @@
         "GET /lol-statstones/v2/player-statstones-self/{championItemId}",
         "GET /lol-statstones/v2/player-summary-self",
         "GET /lol-store/v1/catalog",
+        "GET /lol-store/v1/catalog/items/skip-cache",
         "GET /lol-store/v1/catalog/sales",
         "GET /lol-store/v1/catalog/{inventoryType}",
         "GET /lol-store/v1/catalogByInstanceIds",
@@ -2328,6 +2333,7 @@
         "GET /lol-summoner/v1/current-summoner/rerollPoints",
         "GET /lol-summoner/v1/current-summoner/summoner-profile",
         "POST /lol-summoner/v1/current-summoner/summoner-profile",
+        "GET /lol-summoner/v1/player-name-mode",
         "GET /lol-summoner/v1/profile-privacy-enabled",
         "GET /lol-summoner/v1/status",
         "GET /lol-summoner/v1/summoner-profile",
@@ -2498,6 +2504,7 @@
         "POST /tracing/v1/trace/event",
         "POST /tracing/v1/trace/module",
         "POST /tracing/v1/trace/non-timing-event/{eventName}",
+        "GET /tracing/v1/trace/payloads/enabled",
         "POST /tracing/v1/trace/phase/begin",
         "POST /tracing/v1/trace/phase/end",
         "POST /tracing/v1/trace/step-event",
