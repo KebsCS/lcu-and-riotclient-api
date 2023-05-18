@@ -1149,6 +1149,82 @@
         ],
         "threadSafe": false
     },
+    "DELETE /matchmaking-service/v1/match/{ticket_id}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "ticket_id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "",
+        "help": "\n**Description**\n\nThis endpoint removes a ticket with given id from the Matchmaking flow.\nIt's achived by calling equivalent endpoint in the matchmaking service.\n\n**Request Argument**\n\nPath argument:\n* `ticket_id` - id of a ticket to remove\n\n**Returns**\n\n* GenericSuccess on successful request\n* Failure object on failed request\n\n**Error Codes**\n\nPossible error codes with general information about possible root causes:\n\n* `httpStatus: 400`\n    * `errorCode: BAD_REQUEST` `message: Bad parameter used as input` - test text\n        * At least one of the parameters you provided are invalid and did not pass matchmaking service parsing.\n\n* `httpStatus: 401`\n    * `errorCode: UNAUTHORIZED` `message: Request lacks valid authentication` - ie. Unauthorized from Matchmaking Service\n        * The player is not part of the ticket you are trying to act on\n        * Invalid or missing claims\n        * Your product does not have access to matchmaking service\n\n    * `errorCode: UNAUTHORIZED` `message: Unauthorized` - ie. Unauthorized from SGP\n        * Invalid token - It may be expired or your product does not have access to matchmaking service\n\n* `httpStatus: 404` `errorCode: NOT_FOUND` `message: Resource not found`\n    * The resource you are trying to act on, such as deleting or retrieving a ticket, does not exist in the Matchmaking system.\n\n* `httpStatus: 409` `errorCode: CONFLICT` `message: conflict occurred (puuid: {PUUID}, ticket_id: {TICKET_ID})`\n    * Usually caused by attempting to create a ticket for a product and PUUID combination that already exists.\n\n* `httpStatus: 500`\n    * `errorCode: INTERNAL_SERVER_ERROR`\n        * There may be variations to the message to explain exactly what went wrong, but logs should have the details needed to triage. These errors are unexpected and warrant an investigation into the issue.\n\n    * `endpoint_dependency_not_ready`\n        * One or more dependencies for endpoint are not ready yet\n\n    * `no_base_url_detected`\n        * Key `service-plugin.matchmaking-service.base_url` is missing in ublic client-config\n",
+        "internal": false,
+        "name": "DeleteMatchmakingServiceV1MatchByTicketId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "matchmaking-service"
+        ],
+        "threadSafe": false
+    },
+    "DELETE /matchmaking-service/v1/matches": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "shard",
+                "optional": true,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "mode",
+                "optional": true,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "version",
+                "optional": true,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "",
+        "help": "\n**Description**\n\nThis endpoint removes a player from the matchmaking flow, ie. ends their current request for a match in matchmaking.\nIt's achived by calling equivalent endpoint in the matchmaking service.\n\n**Request Argument**\n\nQuery arguments\n* `shard`: optional parameter storing shard info\n\n* `mode`: optional parameter storing matchmaking mode\n\n* `version`: optional parameter storing matchmaking version\n\n**Returns**\n\nResponse Body:\n* GenericSuccess on successful request\n* Failure object on failed request\n\n**Error Codes**\n\nPossible error codes with general information about possible root causes:\n\n* `httpStatus: 400`\n    * `errorCode: BAD_REQUEST` `message: Bad parameter used as input` - test text\n        * At least one of the parameters you provided are invalid and did not pass matchmaking service parsing.\n\n* `httpStatus: 401`\n    * `errorCode: UNAUTHORIZED` `message: Request lacks valid authentication` - ie. Unauthorized from Matchmaking Service\n        * The player is not part of the ticket you are trying to act on\n        * Invalid or missing claims\n        * Your product does not have access to matchmaking service\n\n    * `errorCode: UNAUTHORIZED` `message: Unauthorized` - ie. Unauthorized from SGP\n        * Invalid token - It may be expired or your product does not have access to matchmaking service\n\n* `httpStatus: 404` `errorCode: NOT_FOUND` `message: Resource not found`\n    * The resource you are trying to act on, such as deleting or retrieving a ticket, does not exist in the Matchmaking system.\n\n* `httpStatus: 409` `errorCode: CONFLICT` `message: conflict occurred (puuid: {PUUID}, ticket_id: {TICKET_ID})`\n    * Usually caused by attempting to create a ticket for a product and PUUID combination that already exists.\n\n* `httpStatus: 500`\n    * `errorCode: INTERNAL_SERVER_ERROR`\n        * There may be variations to the message to explain exactly what went wrong, but logs should have the details needed to triage. These errors are unexpected and warrant an investigation into the issue.\n\n    * `endpoint_dependency_not_ready`\n        * One or more dependencies for endpoint are not ready yet\n\n    * `no_base_url_detected`\n        * Key `service-plugin.matchmaking-service.base_url` is missing in ublic client-config\n",
+        "internal": false,
+        "name": "DeleteMatchmakingServiceV1Matches",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "matchmaking-service"
+        ],
+        "threadSafe": false
+    },
     "DELETE /patch-proxy/v1/patch-jobs/all": {
         "arguments": [],
         "deprecated": false,
@@ -4443,6 +4519,25 @@
         ],
         "threadSafe": false
     },
+    "GET /entitlements-service/v1/token": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get the entitlements token from the service",
+        "help": "Calls the entitlements service, and retrieves the user's current entitlements token.\n\nReturns HTTP 400 if the token is not ready.",
+        "internal": false,
+        "name": "GetEntitlementsServiceV1Token",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "EntitlementsServiceEntitlementsServiceToken"
+        },
+        "subscribable": false,
+        "tags": [
+            "entitlements-service"
+        ],
+        "threadSafe": false
+    },
     "GET /entitlements/v1/token": {
         "arguments": [],
         "deprecated": false,
@@ -4646,35 +4741,6 @@
         "returns": {
             "elementType": "",
             "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "friends"
-        ],
-        "threadSafe": false
-    },
-    "GET /friends/v2/namesets-for-puuid/{puuid}": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "puuid",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Retrieves the namesets for a single PUUID",
-        "help": "\n**Description**\nRetrieves the namesets for the PUUID provided.\nA Nameset contains the user's name on the given platform.\nExample: SwitchNameset.name would be the Switch username associated with the user's PUUID on Switch\n\n** URL Argument **\n\n\"puuid\" - PUUIDs to retrieve namesets for\n    \nResponse Body:\n\nNamesetsResponseElement:\n    \"puuid\" - PUUID (String)\n    \"switchNameset\" - A SwitchNameset\n    \"playstationNameset\" - A PlaystationNameset\n    \"xboxNameset\" - An XboxNameset\n    \"alias\" - A RiotAlias\n    \"error\" - A String containing any errors\n\nSwitchNameset:\n    \"name\" - A String with the Switch name associated to the requested PUUID\n\nPlaystationNameset:\n    \"name\" - A String with the Playstation name associated to the requested PUUID\n\nXboxNameset:\n    \"name\" - A String with the Xbox name associated to the requested PUUID\n\nRiotAlias:\n    \"gameName\" - The users Game Name (String)\n    \"tagLine\" - The users Tag Line (String)\n\n",
-        "internal": false,
-        "name": "GetFriendsV2NamesetsForPuuidByPuuid",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "FriendsFriendsV1NamesetsResponseElement"
         },
         "subscribable": false,
         "tags": [
@@ -5041,6 +5107,82 @@
         "subscribable": false,
         "tags": [
             "mailbox"
+        ],
+        "threadSafe": false
+    },
+    "GET /matchmaking-service/v1/match/{ticket_id}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "ticket_id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "",
+        "help": "\n**Description**\n\nThis endpoint gets the current state of a specified ticket.\nIt's achived by calling equivalent endpoint in the matchmaking service.\n\n**Request Argument**\n\nPath argument:\n* `ticket_id` - id of a ticket to remove\n\n**Returns**\n\nResponse Body:\n* `TicketState` Object:\n    * `id` - A string that contains ticket id\n    * `product` - A string that contains product id\n    * `shard` - A string that contains information about shard info\n    * `mode` - A string that contains information about matchmaking mode\n    * `submode` - An optional string that contains information about matchmaking submode\n    * `version` - A string that contains information about matchmaking version\n    * `state` - A string that contains information about state of match\n    * `match_id` - A string that contains information about match id\n    * `puuids` - A list of strings containing puuid of players participating in match\n    * `created_at` - A string that contains information about creation time of ticket\n    * `updated_at` - A string that contains information about update time of ticket\n    * `state_updated_at` - A string that contains information about update time of match state\n    * `ticket_age_ms` - A string that contains information about age of ticket in miliseconds\n\n**Error Codes**\n\nPossible error codes with general information about possible root causes:\n\n* `httpStatus: 400`\n    * `errorCode: BAD_REQUEST` `message: Bad parameter used as input` - test text\n        * At least one of the parameters you provided are invalid and did not pass matchmaking service parsing.\n\n* `httpStatus: 401`\n    * `errorCode: UNAUTHORIZED` `message: Request lacks valid authentication` - ie. Unauthorized from Matchmaking Service\n        * The player is not part of the ticket you are trying to act on\n        * Invalid or missing claims\n        * Your product does not have access to matchmaking service\n\n    * `errorCode: UNAUTHORIZED` `message: Unauthorized` - ie. Unauthorized from SGP\n        * Invalid token - It may be expired or your product does not have access to matchmaking service\n\n* `httpStatus: 404` `errorCode: NOT_FOUND` `message: Resource not found`\n    * The resource you are trying to act on, such as deleting or retrieving a ticket, does not exist in the Matchmaking system.\n\n* `httpStatus: 409` `errorCode: CONFLICT` `message: conflict occurred (puuid: {PUUID}, ticket_id: {TICKET_ID})`\n    * Usually caused by attempting to create a ticket for a product and PUUID combination that already exists.\n\n* `httpStatus: 500`\n    * `errorCode: INTERNAL_SERVER_ERROR`\n        * There may be variations to the message to explain exactly what went wrong, but logs should have the details needed to triage. These errors are unexpected and warrant an investigation into the issue.\n\n    * `endpoint_dependency_not_ready`\n        * One or more dependencies for endpoint are not ready yet\n\n    * `no_base_url_detected`\n        * Key `service-plugin.matchmaking-service.base_url` is missing in ublic client-config\n",
+        "internal": false,
+        "name": "GetMatchmakingServiceV1MatchByTicketId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "MatchmakingServiceV1TicketState"
+        },
+        "subscribable": false,
+        "tags": [
+            "matchmaking-service"
+        ],
+        "threadSafe": false
+    },
+    "GET /matchmaking-service/v1/matches": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "shard",
+                "optional": true,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "mode",
+                "optional": true,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "version",
+                "optional": true,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "",
+        "help": "\n**Description**\n\nThis endpoint gets the current state of a player who has entered matchmaking.\nIt's achived by calling equivalent endpoint in the matchmaking service.\n\n**Request Argument**\n\nQuery arguments\n* `shard`: optional parameter storing shard info\n\n* `mode`: optional parameter storing matchmaking mode\n\n* `version`: optional parameter storing matchmaking version\n\n**Returns**\n\nResponse Body:\n* `TicketsState` Object:\n    * `tickets`: A list containg `TicketState` objects\n        * `id` - A string that contains ticket id\n        * `product` - A string that contains product id\n        * `shard` - A string that contains information about shard info\n        * `mode` - A string that contains information about matchmaking mode\n        * `submode` - An optional string that contains information about matchmaking submode\n        * `version` - A string that contains information about matchmaking version\n        * `state` - A string that contains information about state of match\n        * `match_id` - A string that contains information about match id\n        * `puuids` - A list of strings containing puuid of players participating in match\n        * `created_at` - A string that contains information about creation time of ticket\n        * `updated_at` - A string that contains information about update time of ticket\n        * `state_updated_at` - A string that contains information about update time of match state\n        * `ticket_age_ms` - A string that contains information about age of ticket in miliseconds\n\n\n**Error Codes**\n\nPossible error codes with general information about possible root causes:\n\n* `httpStatus: 400`\n    * `errorCode: BAD_REQUEST` `message: Bad parameter used as input`\n        * At least one of the parameters you provided are invalid and did not pass matchmaking service parsing.\n\n* `httpStatus: 401`\n    * `errorCode: UNAUTHORIZED` `message: Request lacks valid authentication` - ie. Unauthorized from Matchmaking Service\n        * The player is not part of the ticket you are trying to act on\n        * Invalid or missing claims\n        * Your product does not have access to matchmaking service\n\n    * `errorCode: UNAUTHORIZED` `message: Unauthorized` - ie. Unauthorized from SGP\n        * Invalid token - It may be expired or your product does not have access to matchmaking service\n\n* `httpStatus: 404` `errorCode: NOT_FOUND` `message: Resource not found`\n    * The resource you are trying to act on, such as deleting or retrieving a ticket, does not exist in the Matchmaking system.\n\n* `httpStatus: 409` `errorCode: CONFLICT` `message: conflict occurred (puuid: {PUUID}, ticket_id: {TICKET_ID})`\n    * Usually caused by attempting to create a ticket for a product and PUUID combination that already exists.\n\n* `httpStatus: 422` `errorCode: UNPROCESSABLE_ENTITY` `message: ProductAlgorithms.Ruleset config is not found`\n    * No matchmaking algorithm has been configured for the given ticket create parameters.\n\n* `httpStatus: 500`\n    * `errorCode: INTERNAL_SERVER_ERROR`\n        * There may be variations to the message to explain exactly what went wrong, but logs should have the details needed to triage. These errors are unexpected and warrant an investigation into the issue.\n\n    * `endpoint_dependency_not_ready`\n        * One or more dependencies for endpoint are not ready yet\n\n    * `no_base_url_detected`\n        * Key `service-plugin.matchmaking-service.base_url` is missing in ublic client-config\n",
+        "internal": false,
+        "name": "GetMatchmakingServiceV1Matches",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "MatchmakingServiceV1TicketsState"
+        },
+        "subscribable": false,
+        "tags": [
+            "matchmaking-service"
         ],
         "threadSafe": false
     },
@@ -5628,63 +5770,6 @@
         "subscribable": false,
         "tags": [
             "platform-login"
-        ],
-        "threadSafe": false
-    },
-    "GET /platform-ui-social/v1/friends": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "",
-        "help": "",
-        "internal": false,
-        "name": "GetPlatformUiSocialV1Friends",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "PlatformUiSocialFriendList"
-        },
-        "subscribable": false,
-        "tags": [
-            "platform-ui-social"
-        ],
-        "threadSafe": false
-    },
-    "GET /platform-ui-social/v1/full-friends-list": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "",
-        "help": "",
-        "internal": false,
-        "name": "GetPlatformUiSocialV1FullFriendsList",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "PlatformUiSocialFriendList"
-        },
-        "subscribable": false,
-        "tags": [
-            "platform-ui-social"
-        ],
-        "threadSafe": false
-    },
-    "GET /platform-ui-social/v1/initialize": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "",
-        "help": "",
-        "internal": false,
-        "name": "GetPlatformUiSocialV1Initialize",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "bool"
-        },
-        "subscribable": false,
-        "tags": [
-            "platform-ui-social"
         ],
         "threadSafe": false
     },
@@ -8606,6 +8691,25 @@
         ],
         "threadSafe": false
     },
+    "GET /riot-messaging-service/v1/out-of-sync": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "This is subscribe-only endpoint. Notification on this resource is triggered if RMS session is out of sync.",
+        "help": "",
+        "internal": false,
+        "name": "GetRiotMessagingServiceV1OutOfSync",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "map"
+        },
+        "subscribable": false,
+        "tags": [
+            "riot-messaging-service"
+        ],
+        "threadSafe": false
+    },
     "GET /riot-messaging-service/v1/session": {
         "arguments": [],
         "deprecated": false,
@@ -10016,6 +10120,25 @@
         ],
         "threadSafe": false
     },
+    "GET /rso-auth/v1/logout-reason": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns latest logout reason.",
+        "help": "",
+        "internal": false,
+        "name": "GetRsoAuthV1LogoutReason",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthLogoutReason"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-auth"
+        ],
+        "threadSafe": false
+    },
     "GET /rso-auth/v1/session": {
         "arguments": [],
         "deprecated": false,
@@ -10451,6 +10574,63 @@
         "subscribable": false,
         "tags": [
             "scd"
+        ],
+        "threadSafe": false
+    },
+    "GET /social/v1/friends": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "When subscribed to this endpoint will notify with the entire friend list on every create/update/delete.",
+        "help": "",
+        "internal": false,
+        "name": "GetSocialV1Friends",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "SocialFriendList"
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
+    "GET /social/v1/friends/patch": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "For subscriptions only. On update and delete will notify with patches (changed elements only) rather than the full list. For a simple GET use the non-patch version of this URL.",
+        "help": "",
+        "internal": false,
+        "name": "GetSocialV1FriendsPatch",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "SocialFriendList"
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
+    "GET /social/v1/ready": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "",
+        "help": "",
+        "internal": false,
+        "name": "GetSocialV1Ready",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "bool"
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
         ],
         "threadSafe": false
     },
@@ -12747,64 +12927,6 @@
         ],
         "threadSafe": false
     },
-    "POST /friends/v2/namesets-for-puuids": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "request",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "FriendsFriendsV1NamesetsRequest"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Retrieves the namesets for each PUUID provided",
-        "help": "\n**Description**\nRetrieves the namesets for each PUUID provided.\nA Nameset contains the user's name on the given platform.\nExample: SwitchNameset.name would be the Switch username associated with the user's PUUID on Switch\n\n** Request Arguments **\n\nRequest Body Object:\nNamesetsRequest Object:\n    \"puuids\" - A list of PUUIDs to retrieve namesets for\n    \n\nResponse Body:\n    \"namesets\" - A list of NamesetsResponseElements\n\n\n\nNamesetsResponseElement:\n    \"puuid\" - PUUID (String)\n    \"switchNameset\" - A SwitchNameset\n    \"playstationNameset\" - A PlaystationNameset\n    \"xboxNameset\" - An XboxNameset\n    \"alias\" - A RiotAlias\n    \"error\" - A String containing any errors\n\nSwitchNameset:\n    \"name\" - A String with the Switch name associated to the requested PUUID\n\nPlaystationNameset:\n    \"name\" - A String with the Playstation name associated to the requested PUUID\n\nXboxNameset:\n    \"name\" - A String with the Xbox name associated to the requested PUUID\n\nRiotAlias:\n    \"gameName\" - The users Game Name (String)\n    \"tagLine\" - The users Tag Line (String)\n\n",
-        "internal": false,
-        "name": "PostFriendsV2NamesetsForPuuids",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "FriendsFriendsV1NamesetsResponse"
-        },
-        "subscribable": false,
-        "tags": [
-            "friends"
-        ],
-        "threadSafe": false
-    },
-    "POST /friends/v2/puuids-for-consoleids": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "consoleIds",
-                "optional": false,
-                "type": {
-                    "elementType": "string",
-                    "type": "vector"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Retrieves the PUUIDs for each Console ID provided",
-        "help": "\n**Description**\nRetrieves the PUUIDs for each Console ID provided.\n\n** Request Arguments **\n\nRequest Body Object:\nConsoleIdsToPuuidsRequest Object:\n    \"consoleIds\" - A list of console IDs to retrieve PUUIDs for\n    \"environment\" - A String name for the platform environment (e.g. \"sp-int\")\n\nResponse Body:\n    \"response\" - A list of ConsoleIdToPuuidResponseElements\n\n\nConsoleIdToPuuidResponseElement:\n    \"puuid\" - The PUUID associated with the Console ID\n    \"providerId\" - A String ID for the provider (e.g. as \"123abc123\")\n    \"error\" - A String containing any errors (e.g. \"No matching account found.\")\n\n",
-        "internal": false,
-        "name": "PostFriendsV2PuuidsForConsoleids",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "FriendsFriendsConsoleIdsToPuuidsResponse"
-        },
-        "subscribable": false,
-        "tags": [
-            "friends"
-        ],
-        "threadSafe": false
-    },
     "POST /ga-warning/v1/debug/simulate-warning/{category}": {
         "arguments": [
             {
@@ -13043,6 +13165,93 @@
         "subscribable": false,
         "tags": [
             "mailbox"
+        ],
+        "threadSafe": false
+    },
+    "POST /matchmaking-service/v1/match/{check_id}/accept": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "check_id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "",
+        "help": "\n**Description**\n\nThis endpoint accepts the ready check and confirm the player is entering the match.\nIt's achived by calling equivalent endpoint in the matchmaking service.\n\n**Request Argument**\n\nPath argument\n* `check_id` - id of a ready check to accept\n\n**Returns**\n\n* GenericSuccess on successful request\n* Failure object on failed request\n\n**Error Codes**\n\nPossible error codes with general information about possible root causes:\n\n* `httpStatus: 400`\n    * `errorCode: BAD_REQUEST` `message: Bad parameter used as input` - test text\n        * At least one of the parameters you provided are invalid and did not pass matchmaking service parsing.\n\n* `httpStatus: 401`\n    * `errorCode: UNAUTHORIZED` `message: Request lacks valid authentication` - ie. Unauthorized from Matchmaking Service\n        * The player is not part of the ticket you are trying to act on\n        * Invalid or missing claims\n        * Your product does not have access to matchmaking service\n\n    * `errorCode: UNAUTHORIZED` `message: Unauthorized` - ie. Unauthorized from SGP\n        * Invalid token - It may be expired or your product does not have access to matchmaking service\n\n* `httpStatus: 404` `errorCode: NOT_FOUND` `message: Resource not found`\n    * The resource you are trying to act on, such as deleting or retrieving a ticket, does not exist in the Matchmaking system.\n\n* `httpStatus: 409` `errorCode: CONFLICT` `message: conflict occurred (puuid: {PUUID}, ticket_id: {TICKET_ID})`\n    * Usually caused by attempting to create a ticket for a product and PUUID combination that already exists.\n\n* `httpStatus: 500`\n    * `errorCode: INTERNAL_SERVER_ERROR`\n        * There may be variations to the message to explain exactly what went wrong, but logs should have the details needed to triage. These errors are unexpected and warrant an investigation into the issue.\n\n    * `endpoint_dependency_not_ready`\n        * One or more dependencies for endpoint are not ready yet\n\n    * `no_base_url_detected`\n        * Key `service-plugin.matchmaking-service.base_url` is missing in ublic client-config\n",
+        "internal": false,
+        "name": "PostMatchmakingServiceV1MatchByCheckIdAccept",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "matchmaking-service"
+        ],
+        "threadSafe": false
+    },
+    "POST /matchmaking-service/v1/match/{check_id}/decline": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "check_id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "",
+        "help": "\n**Description**\n\nThis endpoint declines the ready check and confirm the player is not entering the match.\nIt's achived by calling equivalent endpoint in the matchmaking service.\n\n**Request Argument**\n\nPath argument\n* `check_id` - id of a ready check to decline\n\n**Returns**\n\n* GenericSuccess on successful request\n* Failure object on failed request\n\n**Error Codes**\n\nPossible error codes with general information about possible root causes:\n\n* `httpStatus: 400`\n    * `errorCode: BAD_REQUEST` `message: Bad parameter used as input` - test text\n        * At least one of the parameters you provided are invalid and did not pass matchmaking service parsing.\n\n* `httpStatus: 401`\n    * `errorCode: UNAUTHORIZED` `message: Request lacks valid authentication` - ie. Unauthorized from Matchmaking Service\n        * The player is not part of the ticket you are trying to act on\n        * Invalid or missing claims\n        * Your product does not have access to matchmaking service\n\n    * `errorCode: UNAUTHORIZED` `message: Unauthorized` - ie. Unauthorized from SGP\n        * Invalid token - It may be expired or your product does not have access to matchmaking service\n\n* `httpStatus: 404` `errorCode: NOT_FOUND` `message: Resource not found`\n    * The resource you are trying to act on, such as deleting or retrieving a ticket, does not exist in the Matchmaking system.\n\n* `httpStatus: 409` `errorCode: CONFLICT` `message: conflict occurred (puuid: {PUUID}, ticket_id: {TICKET_ID})`\n    * Usually caused by attempting to create a ticket for a product and PUUID combination that already exists.\n\n* `httpStatus: 500`\n    * `errorCode: INTERNAL_SERVER_ERROR`\n        * There may be variations to the message to explain exactly what went wrong, but logs should have the details needed to triage. These errors are unexpected and warrant an investigation into the issue.\n\n    * `endpoint_dependency_not_ready`\n        * One or more dependencies for endpoint are not ready yet\n\n    * `no_base_url_detected`\n        * Key `service-plugin.matchmaking-service.base_url` is missing in ublic client-config\n",
+        "internal": false,
+        "name": "PostMatchmakingServiceV1MatchByCheckIdDecline",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "matchmaking-service"
+        ],
+        "threadSafe": false
+    },
+    "POST /matchmaking-service/v1/matches": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "params",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "MatchmakingServiceV1CreateMatchmakingTicketParams"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "",
+        "help": "\n**Description**\n\nThis endpoint creates a Matchmaking ticket with the provided params.\nIt's achived by calling equivalent endpoint in the matchmaking service.\n\n**Request Argument**\n\nBody argument\n\n* `CreateMatchmakingTicketParams` Object:\n    * `shard`: parameter storing shard info\n    * `mode`: parameter storing matchmaking mode\n    * `mode`: optional parameter storing matchmaking mode\n    * `version`: parameter storing matchmaking version\n    * `additionalDataForAlgorithm`: parameter storing additional data required by matchmaking algorithm\n\n**Returns**\n\nResponse Body:\n* `CreateMatchmakingTicketResult` Object:\n    * `ticketId`: A string that contains ticket id\n\n**Error Codes**\n\nPossible error codes with general information about possible root causes:\n\n* `httpStatus: 400`\n    * `errorCode: BAD_REQUEST` `message: Bad parameter used as input`\n        * At least one of the parameters you provided are invalid and did not pass matchmaking service parsing.\n\n* `httpStatus: 401`\n    * `errorCode: UNAUTHORIZED` `message: Request lacks valid authentication` - ie. Unauthorized from Matchmaking Service\n        * The player is not part of the ticket you are trying to act on\n        * Invalid or missing claims\n        * Your product does not have access to matchmaking service\n\n    * `errorCode: UNAUTHORIZED` `message: Unauthorized` - ie. Unauthorized from SGP\n        * Invalid token - It may be expired or your product does not have access to matchmaking service\n\n* `httpStatus: 404` `errorCode: NOT_FOUND` `message: Resource not found`\n    * The resource you are trying to act on, such as deleting or retrieving a ticket, does not exist in the Matchmaking system.\n\n* `httpStatus: 409` `errorCode: CONFLICT` `message: conflict occurred (puuid: {PUUID}, ticket_id: {TICKET_ID})`\n    * Usually caused by attempting to create a ticket for a product and PUUID combination that already exists.\n\n* `httpStatus: 422` `errorCode: UNPROCESSABLE_ENTITY` `message: ProductAlgorithms.Ruleset config is not found`\n    * No matchmaking algorithm has been configured for the given ticket create parameters.\n\n* `httpStatus: 500`\n    * `errorCode: INTERNAL_SERVER_ERROR`\n        * There may be variations to the message to explain exactly what went wrong, but logs should have the details needed to triage. These errors are unexpected and warrant an investigation into the issue.\n\n    * `endpoint_dependency_not_ready`\n        * One or more dependencies for endpoint are not ready yet\n\n    * `no_base_url_detected`\n        * Key `service-plugin.matchmaking-service.base_url` is missing in ublic client-config\n",
+        "internal": false,
+        "name": "PostMatchmakingServiceV1Matches",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "MatchmakingServiceV1CreateMatchmakingTicketResult"
+        },
+        "subscribable": false,
+        "tags": [
+            "matchmaking-service"
         ],
         "threadSafe": false
     },
@@ -13931,25 +14140,6 @@
         ],
         "threadSafe": false
     },
-    "POST /platform-ui-social/v1/initialize": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "",
-        "help": "",
-        "internal": false,
-        "name": "PostPlatformUiSocialV1Initialize",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "platform-ui-social"
-        ],
-        "threadSafe": false
-    },
     "POST /player-account/aliases/v1/aliases": {
         "arguments": [
             {
@@ -14049,6 +14239,122 @@
         "returns": {
             "elementType": "",
             "type": "PlayerAccountAliasesV1StatusResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "player-account"
+        ],
+        "threadSafe": false
+    },
+    "POST /player-account/lookup/v1/namesets-for-puuid": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "request",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlayerAccountLookupV1NamesetsForPuuidRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Retrieves the namesets for a single PUUID",
+        "help": "\n**Description**\nRetrieves the namesets for the PUUID provided.\nA Nameset contains the user's name on the given platform.\nExample: SwitchNameset.name would be the Switch username associated with the user's PUUID on Switch\n\n** Body Argument **\n\n\"NamesetsForPuuidRequest\"\n    \"puuid\" - PUUID (String)\n\nResponse Body:\nNamesetsForPuuidResponse:\n    \"puuid\" - PUUID (String)\n    \"switchNameset\" - A SwitchNameset\n    \"playstationNameset\" - A PlaystationNameset\n    \"xboxNameset\" - An XboxNameset\n    \"alias\" - A RiotAlias\n    \"error\" - A String containing any errors\n\nSwitchNameset:\n    \"name\" - A String with the Switch name associated to the requested PUUID\n\nPlaystationNameset:\n    \"name\" - A String with the Playstation name associated to the requested PUUID\n\nXboxNameset:\n    \"name\" - A String with the Xbox name associated to the requested PUUID\n\nRiotAlias:\n    \"gameName\" - The users Game Name (String)\n    \"tagLine\" - The users Tag Line (String)\n\n",
+        "internal": false,
+        "name": "PostPlayerAccountLookupV1NamesetsForPuuid",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlayerAccountLookupV1NamesetsForPuuidResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "player-account"
+        ],
+        "threadSafe": false
+    },
+    "POST /player-account/lookup/v1/namesets-for-puuids": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "request",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlayerAccountLookupV1NamesetsForPuuidsRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Retrieves the namesets for each PUUID provided",
+        "help": "\n**Description**\nRetrieves the namesets for each PUUID provided.\nA Nameset contains the user's name on the given platform.\nExample: SwitchNameset.name would be the Switch username associated with the user's PUUID on Switch\n\n** Request Arguments **\n\nRequest Body Object:\nNamesetsForPuuidsRequest Object:\n    \"puuids\" - A list of PUUIDs to retrieve namesets for\n\nNamesetsForPuuidsResponse Body:\n    \"namesets\" - A list of NamesetsResponseElements\n\nNamesetsResponseElement:\n    \"puuid\" - PUUID (String)\n    \"switchNameset\" - A SwitchNameset\n    \"playstationNameset\" - A PlaystationNameset\n    \"xboxNameset\" - An XboxNameset\n    \"alias\" - A RiotAlias\n    \"error\" - A String containing any errors\n\nSwitchNameset:\n    \"name\" - A String with the Switch name associated to the requested PUUID\n\nPlaystationNameset:\n    \"name\" - A String with the Playstation name associated to the requested PUUID\n\nXboxNameset:\n    \"name\" - A String with the Xbox name associated to the requested PUUID\n\nRiotAlias:\n    \"gameName\" - The users Game Name (String)\n    \"tagLine\" - The users Tag Line (String)\n\n",
+        "internal": false,
+        "name": "PostPlayerAccountLookupV1NamesetsForPuuids",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlayerAccountLookupV1NamesetsForPuuidsResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "player-account"
+        ],
+        "threadSafe": false
+    },
+    "POST /player-account/lookup/v1/puuids-for-consoleids": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "request",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlayerAccountLookupV1PuuidsForConsoleIdsRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Retrieves the PUUIDs for each Console ID provided",
+        "help": "\n**Description**\nRetrieves the PUUIDs for each Console ID provided.\n\n** Request Arguments **\n\nRequest Body Object:\nConsoleIdsToPuuidsRequest Object:\n    \"consoleIds\" - A list of console IDs to retrieve PUUIDs for\n    \"environment\" - A String name for the platform environment (e.g. \"sp-int\")\n\nConsoleIdsToPuuidsResponse Body:\n    \"response\" - A list of ConsoleIdToPuuidResponseElements\n\nPuuidAndProvider:\n    \"puuid\" - The PUUID associated with the Console ID\n    \"providerId\" - A String ID for the provider (e.g. as \"123abc123\")\n    \"error\" - A String containing any errors (e.g. \"No matching account found.\")\n\n",
+        "internal": false,
+        "name": "PostPlayerAccountLookupV1PuuidsForConsoleids",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlayerAccountLookupV1PuuidsForConsoleIdsResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "player-account"
+        ],
+        "threadSafe": false
+    },
+    "POST /player-account/lookup/v1/toggle-mock-api": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "request",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlayerAccountLookupV1ToggleMockApiRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Set whether the plugin should use a mock friends API or not and if so, how the mock API should behave",
+        "help": "\n**Description**\n-- To be filled out when Mock implementation is done.\nSDKFEAT-1393: [Mock] Get Console Blocked User List\n",
+        "internal": false,
+        "name": "PostPlayerAccountLookupV1ToggleMockApi",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
         },
         "subscribable": false,
         "tags": [
@@ -14247,35 +14553,6 @@
         "help": "Endpoint deleted November 2021; Please use 'player-affinity/product/v2/token'.",
         "internal": false,
         "name": "PostPlayerAffinityProductV1Token",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "PlayerAffinityPlayerAffinityTokenProduct"
-        },
-        "subscribable": false,
-        "tags": [
-            "player-affinity"
-        ],
-        "threadSafe": false
-    },
-    "POST /player-affinity/product/v1/token/debug": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "input",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "PlayerAffinityPlayerAffinityTokenProduct"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "DEBUG: For debugging subscribers. Save a new product affinity token to the local cache then notify subscribers.",
-        "help": "Endpoint deleted November 2021; Please use 'player-affinity/product/v2/token/debug.",
-        "internal": false,
-        "name": "PostPlayerAffinityProductV1TokenDebug",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -17708,6 +17985,35 @@
         ],
         "threadSafe": false
     },
+    "POST /social/v1/initialize": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "product_context",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "SocialProductContext"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "",
+        "help": "",
+        "internal": false,
+        "name": "PostSocialV1Initialize",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
     "POST /telemetry/v1/common-data/{key}": {
         "arguments": [
             {
@@ -17948,6 +18254,25 @@
         "returns": {
             "elementType": "",
             "type": "TencentLauncherAuthorization"
+        },
+        "subscribable": false,
+        "tags": [
+            "tencent-launcher"
+        ],
+        "threadSafe": false
+    },
+    "POST /tencent-launcher/v1/repair-on-shutdown": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Initializes repair on shutdown flow in the ACLOS",
+        "help": "\n            **Description**\n            After the game shuts down Tencent Launcher will repair the game and then relaunch it.\n        ",
+        "internal": false,
+        "name": "PostTencentLauncherV1RepairOnShutdown",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
         },
         "subscribable": false,
         "tags": [
@@ -21061,6 +21386,35 @@
         "tags": [
             "Plugins",
             "Plugin product-update-scanner"
+        ],
+        "threadSafe": false
+    },
+    "PUT /reference/v1/echo": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "echo",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "ReferenceEchoRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns the user input string",
+        "help": "\n**Description**\n\nThis API is intended as a reference on how to create a plugin for new developers. The endpoint simply returns a string that the user inputs\n\nRequired arguments:\n```\necho: A string that will be returned to the user\n```\n",
+        "internal": false,
+        "name": "PutReferenceV1Echo",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "ReferenceEchoResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "reference"
         ],
         "threadSafe": false
     },

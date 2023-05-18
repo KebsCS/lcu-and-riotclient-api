@@ -177,6 +177,9 @@
         "GET /entitlements/v1/token",
         "GET /entitlements/v2/token"
     ],
+    "entitlements-service": [
+        "GET /entitlements-service/v1/token"
+    ],
     "eula": [
         "GET /eula/v1/agreement",
         "GET /eula/v1/agreement/acceptance",
@@ -197,10 +200,7 @@
     ],
     "friends": [
         "GET /friends/v2/make-platform-blocks-riot-blocks",
-        "PUT /friends/v2/mock-api/state",
-        "GET /friends/v2/namesets-for-puuid/{puuid}",
-        "POST /friends/v2/namesets-for-puuids",
-        "POST /friends/v2/puuids-for-consoleids"
+        "PUT /friends/v2/mock-api/state"
     ],
     "ga-restriction": [
         "DELETE /ga-restriction/v1/debug/caller-id/mock-id",
@@ -263,6 +263,15 @@
         "PUT /mailbox/v1/mail-state",
         "POST /mailbox/v1/mail/{productId}",
         "GET /mailbox/v1/ready"
+    ],
+    "matchmaking-service": [
+        "POST /matchmaking-service/v1/match/{check_id}/accept",
+        "POST /matchmaking-service/v1/match/{check_id}/decline",
+        "DELETE /matchmaking-service/v1/match/{ticket_id}",
+        "GET /matchmaking-service/v1/match/{ticket_id}",
+        "DELETE /matchmaking-service/v1/matches",
+        "GET /matchmaking-service/v1/matches",
+        "POST /matchmaking-service/v1/matches"
     ],
     "mobile-product-registry": [
         "GET /mobile-product-registry/v1/build-number",
@@ -348,12 +357,6 @@
         "GET /platform-ui/v1/sdk-instance-id",
         "GET /platform-ui/v1/status"
     ],
-    "platform-ui-social": [
-        "GET /platform-ui-social/v1/friends",
-        "GET /platform-ui-social/v1/full-friends-list",
-        "GET /platform-ui-social/v1/initialize",
-        "POST /platform-ui-social/v1/initialize"
-    ],
     "play-restrictions": [
         "DELETE /play-restrictions/v1/debug/caller-id/mock-id",
         "GET /play-restrictions/v1/debug/caller-id/mock-id",
@@ -371,6 +374,10 @@
         "GET /player-account/aliases/v1/required",
         "POST /player-account/aliases/v1/validity",
         "GET /player-account/config/v1/config",
+        "POST /player-account/lookup/v1/namesets-for-puuid",
+        "POST /player-account/lookup/v1/namesets-for-puuids",
+        "POST /player-account/lookup/v1/puuids-for-consoleids",
+        "POST /player-account/lookup/v1/toggle-mock-api",
         "GET /player-account/promotion/v1/eligibility",
         "POST /player-account/promotion/v1/eligibility",
         "GET /player-account/promotion/v1/fields",
@@ -387,7 +394,6 @@
         "GET /player-affinity/config/v1/config",
         "GET /player-affinity/config/v1/status",
         "POST /player-affinity/product/v1/token",
-        "POST /player-affinity/product/v1/token/debug",
         "GET /player-affinity/product/v1/token/{product}",
         "GET /player-affinity/product/v2/cached-affinity/{product}",
         "POST /player-affinity/product/v2/token",
@@ -886,6 +892,9 @@
         "POST /product-session/v2/heartbeat-internal/{session-id}",
         "POST /product-session/v2/heartbeat/{session-id}"
     ],
+    "reference": [
+        "PUT /reference/v1/echo"
+    ],
     "riot-client-auth": [
         "GET /riot-client-auth/v1/authorization",
         "GET /riot-client-auth/v1/home-base-country",
@@ -909,6 +918,7 @@
         "GET /riot-messaging-service/v1/message/{a}/{b}/{c}/{d}/{e}",
         "GET /riot-messaging-service/v1/message/{a}/{b}/{c}/{d}/{e}/{f}",
         "GET /riot-messaging-service/v1/messages/{+path}",
+        "GET /riot-messaging-service/v1/out-of-sync",
         "POST /riot-messaging-service/v1/reconnect",
         "DELETE /riot-messaging-service/v1/session",
         "GET /riot-messaging-service/v1/session",
@@ -994,6 +1004,7 @@
         "POST /rso-auth/v1/authorization/userinfo",
         "POST /rso-auth/v1/device-id",
         "POST /rso-auth/v1/key/request",
+        "GET /rso-auth/v1/logout-reason",
         "DELETE /rso-auth/v1/session",
         "GET /rso-auth/v1/session",
         "PUT /rso-auth/v1/session/credentials",
@@ -1096,6 +1107,12 @@
         "GET /scd/v1/enabled-in-config",
         "POST /scd/v1/url-patterns/test"
     ],
+    "social": [
+        "GET /social/v1/friends",
+        "GET /social/v1/friends/patch",
+        "POST /social/v1/initialize",
+        "GET /social/v1/ready"
+    ],
     "swagger": [
         "GET /swagger/v1/api-docs",
         "GET /swagger/v2/swagger.json",
@@ -1120,7 +1137,8 @@
     "tencent-launcher": [
         "POST /tencent-launcher/v1/debug/force-load",
         "POST /tencent-launcher/v1/login",
-        "GET /tencent-launcher/v1/login-info"
+        "GET /tencent-launcher/v1/login-info",
+        "POST /tencent-launcher/v1/repair-on-shutdown"
     ],
     "voice-chat": [
         "GET /voice-chat/v1/active-product",
