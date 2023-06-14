@@ -17,6 +17,11 @@
         "DELETE /app-command/v1/focus-request",
         "GET /app-command/v1/focus-request"
     ],
+    "apple-account": [
+        "DELETE /apple-account/v1/authorization",
+        "GET /apple-account/v1/authorization",
+        "POST /apple-account/v1/authorization"
+    ],
     "builtin": [
         "Exit",
         "Help",
@@ -235,6 +240,11 @@
         "DELETE /game-session/v1/sessions/{sessionId}",
         "GET /game-session/v1/sessions/{sessionId}"
     ],
+    "google-account": [
+        "DELETE /google-account/v1/authorization",
+        "GET /google-account/v1/authorization",
+        "POST /google-account/v1/authorization"
+    ],
     "info-radiator": [
         "DELETE /info-radiator/v1/custom-heartbeat-metric/{name}",
         "PUT /info-radiator/v1/custom-heartbeat-metric/{name}",
@@ -264,6 +274,15 @@
         "POST /mailbox/v1/mail/{productId}",
         "GET /mailbox/v1/ready"
     ],
+    "matchmaking": [
+        "DELETE /matchmaking/v1/debug/caller-id/mock-id",
+        "GET /matchmaking/v1/debug/caller-id/mock-id",
+        "PUT /matchmaking/v1/debug/caller-id/mock-id",
+        "DELETE /matchmaking/v1/tickets/{ticket_id}",
+        "GET /matchmaking/v1/tickets/{ticket_id}",
+        "GET /matchmaking/v1/tickets/{ticket_id}/ready-check",
+        "POST /matchmaking/v1/tickets/{ticket_id}/ready-check"
+    ],
     "matchmaking-service": [
         "POST /matchmaking-service/v1/match/{check_id}/accept",
         "POST /matchmaking-service/v1/match/{check_id}/decline",
@@ -280,6 +299,10 @@
         "GET /mobile-product-registry/v1/valid-game-versions"
     ],
     "mobile-push": [
+        "POST /mobile-push/v1/filter",
+        "DELETE /mobile-push/v1/filter/{application}/{filterId}",
+        "GET /mobile-push/v1/filter/{application}/{filterId}",
+        "GET /mobile-push/v1/filters/{application}",
         "POST /mobile-push/v1/register",
         "POST /mobile-push/v1/subscribe-topic"
     ],
@@ -313,29 +336,7 @@
         "GET /patch/v1/installs/{install-id}/status/patch",
         "GET /patch/v1/installs/{install-id}/status/preview",
         "GET /patch/v1/installs/{install-id}/status/repair",
-        "GET /patch/v1/installs/{install-id}/status/seed",
-        "GET /patch/v2/configuration",
-        "PUT /patch/v2/configuration",
-        "POST /patch/v2/debug/set-up",
-        "GET /patch/v2/installs",
-        "GET /patch/v2/installs/{install-id}",
-        "PUT /patch/v2/installs/{install-id}",
-        "GET /patch/v2/installs/{install-id}/components/{component-id}",
-        "PUT /patch/v2/installs/{install-id}/components/{component-id}",
-        "POST /patch/v2/installs/{install-id}/components/{component-id}/start-full-repair",
-        "POST /patch/v2/installs/{install-id}/components/{component-id}/start-partial-repair",
-        "POST /patch/v2/installs/{install-id}/components/{component-id}/start-patching",
-        "POST /patch/v2/installs/{install-id}/components/{component-id}/start-preview",
-        "POST /patch/v2/installs/{install-id}/components/{component-id}/start-seeding",
-        "POST /patch/v2/installs/{install-id}/components/{component-id}/start-verify",
-        "POST /patch/v2/installs/{install-id}/components/{component-id}/stop-full-repair",
-        "POST /patch/v2/installs/{install-id}/components/{component-id}/stop-partial-repair",
-        "POST /patch/v2/installs/{install-id}/components/{component-id}/stop-patching",
-        "POST /patch/v2/installs/{install-id}/components/{component-id}/stop-preview",
-        "POST /patch/v2/installs/{install-id}/components/{component-id}/stop-seeding",
-        "POST /patch/v2/installs/{install-id}/components/{component-id}/stop-verify",
-        "POST /patch/v2/patchsieve",
-        "GET /patch/v2/requests/{request-id}"
+        "GET /patch/v1/installs/{install-id}/status/seed"
     ],
     "pay-mobile": [
         "GET /pay-mobile/v1/productListResult",
@@ -354,6 +355,9 @@
     ],
     "platform-ui": [
         "GET /platform-ui/v1/enabled",
+        "DELETE /platform-ui/v1/fre",
+        "GET /platform-ui/v1/fre",
+        "POST /platform-ui/v1/fre",
         "GET /platform-ui/v1/sdk-instance-id",
         "GET /platform-ui/v1/status"
     ],
@@ -371,9 +375,13 @@
         "GET /player-account/aliases/v1/display-name",
         "POST /player-account/aliases/v1/eligibility",
         "POST /player-account/aliases/v1/generate-tagline",
+        "GET /player-account/aliases/v1/lookup",
         "GET /player-account/aliases/v1/required",
         "POST /player-account/aliases/v1/validity",
         "GET /player-account/config/v1/config",
+        "GET /player-account/login-history/v1/debug/cache",
+        "PUT /player-account/login-history/v1/debug/cache",
+        "POST /player-account/login-history/v1/history",
         "POST /player-account/lookup/v1/namesets-for-puuid",
         "POST /player-account/lookup/v1/namesets-for-puuids",
         "POST /player-account/lookup/v1/puuids-for-consoleids",
@@ -388,6 +396,9 @@
         "GET /player-account/vng/v1/status/{productId}",
         "POST /player-account/vng/v1/status/{productId}",
         "POST /player-account/vng/v1/web-url/{productId}"
+    ],
+    "player-account-service": [
+        "POST /player-account-service/v1/login-history/history"
     ],
     "player-affinity": [
         "POST /player-affinity/affinity/v1/token",
@@ -426,6 +437,7 @@
         "POST /player-reporting/v2/report"
     ],
     "player-session-lifecycle": [
+        "PUT /player-session-lifecycle/v1/login-strategy",
         "DELETE /player-session-lifecycle/v1/session",
         "GET /player-session-lifecycle/v1/session",
         "POST /player-session-lifecycle/v1/session",
@@ -820,12 +832,10 @@
     "product-integration": [
         "DELETE /product-integration/v1/app-repair/apply",
         "PUT /product-integration/v1/app-repair/apply",
-        "PUT /product-integration/v1/app-repair/immediate-repair",
         "PUT /product-integration/v1/app-update/apply",
         "GET /product-integration/v1/app-update/status",
         "DELETE /product-integration/v1/debug/app-repair/apply",
         "PUT /product-integration/v1/debug/app-repair/apply",
-        "PUT /product-integration/v1/debug/app-repair/immediate-repair",
         "PUT /product-integration/v1/debug/app-update/apply",
         "GET /product-integration/v1/debug/app-update/statuses",
         "GET /product-integration/v1/debug/app-update/statuses/{sessionId}",
@@ -833,6 +843,8 @@
         "GET /product-integration/v1/detached-sessions",
         "GET /product-integration/v1/locale",
         "PUT /product-integration/v1/locale",
+        "GET /product-integration/v1/locale/products/{productId}/patchlines/{patchlineId}",
+        "PUT /product-integration/v1/locale/products/{productId}/patchlines/{patchlineId}",
         "POST /product-integration/v1/settings-token",
         "POST /product-integration/v1/signout",
         "GET /product-integration/v1/signout/permission"
@@ -1138,7 +1150,8 @@
         "POST /tencent-launcher/v1/debug/force-load",
         "POST /tencent-launcher/v1/login",
         "GET /tencent-launcher/v1/login-info",
-        "POST /tencent-launcher/v1/repair-on-shutdown"
+        "POST /tencent-launcher/v1/repair-on-shutdown",
+        "GET /tencent-launcher/v1/update-status"
     ],
     "voice-chat": [
         "GET /voice-chat/v1/active-product",

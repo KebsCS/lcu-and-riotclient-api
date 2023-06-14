@@ -87,6 +87,25 @@
         ],
         "threadSafe": false
     },
+    "DELETE /apple-account/v1/authorization": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Delete authorization status for Apple",
+        "help": "",
+        "internal": false,
+        "name": "DeleteAppleAccountV1Authorization",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "apple-account"
+        ],
+        "threadSafe": false
+    },
     "DELETE /chat/v2/me": {
         "arguments": [
             {
@@ -1101,6 +1120,25 @@
         ],
         "threadSafe": false
     },
+    "DELETE /google-account/v1/authorization": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Delete the current Google authorization session.",
+        "help": "",
+        "internal": false,
+        "name": "DeleteGoogleAccountV1Authorization",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "google-account"
+        ],
+        "threadSafe": false
+    },
     "DELETE /info-radiator/v1/custom-heartbeat-metric/{name}": {
         "arguments": [
             {
@@ -1222,6 +1260,92 @@
         "subscribable": false,
         "tags": [
             "matchmaking-service"
+        ],
+        "threadSafe": false
+    },
+    "DELETE /matchmaking/v1/debug/caller-id/mock-id": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Stops mocking the caller ID for Swagger calls",
+        "help": "Deletes the currently set `productId` and `patchlineId`. Plugin APIs will receive `swagger` as the `productId`.",
+        "internal": false,
+        "name": "DeleteMatchmakingV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "matchmaking"
+        ],
+        "threadSafe": false
+    },
+    "DELETE /matchmaking/v1/tickets/{ticket_id}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "ticket_id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Delete the matchmaking ticket and remove player from matchmaking queue",
+        "help": "",
+        "internal": false,
+        "name": "DeleteMatchmakingV1TicketsByTicketId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "matchmaking"
+        ],
+        "threadSafe": false
+    },
+    "DELETE /mobile-push/v1/filter/{application}/{filterId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "application",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "filterId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Delete specific filter/unmute conversation, after this call conversation will again receive push notifications",
+        "help": "",
+        "internal": false,
+        "name": "DeleteMobilePushV1FilterByApplicationByFilterId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "mobile-push"
         ],
         "threadSafe": false
     },
@@ -1426,6 +1550,25 @@
         "subscribable": false,
         "tags": [
             "patch"
+        ],
+        "threadSafe": false
+    },
+    "DELETE /platform-ui/v1/fre": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Disable FRE",
+        "help": "",
+        "internal": false,
+        "name": "DeletePlatformUiV1Fre",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-ui"
         ],
         "threadSafe": false
     },
@@ -2878,6 +3021,25 @@
         "subscribable": false,
         "tags": [
             "app-command"
+        ],
+        "threadSafe": false
+    },
+    "GET /apple-account/v1/authorization": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Retrieve authorization from the Sign In with Apple Account",
+        "help": "",
+        "internal": false,
+        "name": "GetAppleAccountV1Authorization",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "AppleAccountAppleAuthorizationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "apple-account"
         ],
         "threadSafe": false
     },
@@ -4948,6 +5110,25 @@
         ],
         "threadSafe": false
     },
+    "GET /google-account/v1/authorization": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Gets the current Google authorization status.",
+        "help": "",
+        "internal": false,
+        "name": "GetGoogleAccountV1Authorization",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "GoogleAccountGoogleAuthorizationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "google-account"
+        ],
+        "threadSafe": false
+    },
     "GET /kr-account/config/v1/config": {
         "arguments": [],
         "deprecated": false,
@@ -5186,6 +5367,83 @@
         ],
         "threadSafe": false
     },
+    "GET /matchmaking/v1/debug/caller-id/mock-id": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Checks the caller ID in use when APIs are called from Swagger",
+        "help": "Returns the `productId` and `patchlineId` being passed to APIs in this plugin when called via Swagger.\n\nReturns 404 if a mock caller ID is not in use.",
+        "internal": false,
+        "name": "GetMatchmakingV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "MatchmakingPluginCallerId_MockCallerId"
+        },
+        "subscribable": false,
+        "tags": [
+            "matchmaking"
+        ],
+        "threadSafe": false
+    },
+    "GET /matchmaking/v1/tickets/{ticket_id}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "ticket_id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get a Matchmaking Ticket associated with a ticketid",
+        "help": "",
+        "internal": false,
+        "name": "GetMatchmakingV1TicketsByTicketId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "MatchmakingV1MatchmakingTicket"
+        },
+        "subscribable": false,
+        "tags": [
+            "matchmaking"
+        ],
+        "threadSafe": false
+    },
+    "GET /matchmaking/v1/tickets/{ticket_id}/ready-check": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "ticket_id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get the ready-check status of the current ticket, if it exists",
+        "help": "",
+        "internal": false,
+        "name": "GetMatchmakingV1TicketsByTicketIdReadyCheck",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "MatchmakingV1MatchmakingReadyCheck"
+        },
+        "subscribable": false,
+        "tags": [
+            "matchmaking"
+        ],
+        "threadSafe": false
+    },
     "GET /mobile-product-registry/v1/build-number": {
         "arguments": [],
         "deprecated": false,
@@ -5240,6 +5498,73 @@
         "subscribable": false,
         "tags": [
             "mobile-product-registry"
+        ],
+        "threadSafe": false
+    },
+    "GET /mobile-push/v1/filter/{application}/{filterId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "application",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "filterId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Fetch specific filter data for logged in user",
+        "help": "",
+        "internal": false,
+        "name": "GetMobilePushV1FilterByApplicationByFilterId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "string"
+        },
+        "subscribable": false,
+        "tags": [
+            "mobile-push"
+        ],
+        "threadSafe": false
+    },
+    "GET /mobile-push/v1/filters/{application}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "application",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Fetch all filters for logged in user",
+        "help": "",
+        "internal": false,
+        "name": "GetMobilePushV1FiltersByApplication",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "string"
+        },
+        "subscribable": false,
+        "tags": [
+            "mobile-push"
         ],
         "threadSafe": false
     },
@@ -5582,140 +5907,6 @@
         ],
         "threadSafe": false
     },
-    "GET /patch/v2/configuration": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Retrieve the configuration",
-        "help": "",
-        "internal": false,
-        "name": "GetPatchV2Configuration",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "PatchV2Configuration"
-        },
-        "subscribable": false,
-        "tags": [
-            "patch"
-        ],
-        "threadSafe": false
-    },
-    "GET /patch/v2/installs": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Get list of installs on disk",
-        "help": "",
-        "internal": false,
-        "name": "GetPatchV2Installs",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "string",
-            "type": "vector"
-        },
-        "subscribable": false,
-        "tags": [
-            "patch"
-        ],
-        "threadSafe": false
-    },
-    "GET /patch/v2/installs/{install-id}": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "install-id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Returns the state of the entire install along with the state of its components.",
-        "help": "",
-        "internal": false,
-        "name": "GetPatchV2InstallsByInstallId",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "PatchInstallState"
-        },
-        "subscribable": false,
-        "tags": [
-            "patch"
-        ],
-        "threadSafe": false
-    },
-    "GET /patch/v2/installs/{install-id}/components/{component-id}": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "install-id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "",
-                "name": "component-id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Returns the state of a component.",
-        "help": "",
-        "internal": false,
-        "name": "GetPatchV2InstallsByInstallIdComponentsByComponentId",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "PatchComponent"
-        },
-        "subscribable": false,
-        "tags": [
-            "patch"
-        ],
-        "threadSafe": false
-    },
-    "GET /patch/v2/requests/{request-id}": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "request-id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Returns the state of a component for a specific request.",
-        "help": "",
-        "internal": false,
-        "name": "GetPatchV2RequestsByRequestId",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "PatchRequestStatus"
-        },
-        "subscribable": false,
-        "tags": [
-            "patch"
-        ],
-        "threadSafe": false
-    },
     "GET /pay-mobile/v1/productListResult": {
         "arguments": [],
         "deprecated": false,
@@ -5785,6 +5976,25 @@
         "returns": {
             "elementType": "",
             "type": "bool"
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-ui"
+        ],
+        "threadSafe": false
+    },
+    "GET /platform-ui/v1/fre": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get FRE status",
+        "help": "",
+        "internal": false,
+        "name": "GetPlatformUiV1Fre",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlatformUiFREStatus"
         },
         "subscribable": false,
         "tags": [
@@ -5891,7 +6101,7 @@
         "arguments": [],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "Gets a list of all aliaes for the player.",
+        "description": "Gets a list of all aliases for the player.",
         "help": "",
         "internal": false,
         "name": "GetPlayerAccountAliasesV1Aliases",
@@ -5918,6 +6128,44 @@
         "returns": {
             "elementType": "",
             "type": "PlayerAccountGameNameAndTagLine"
+        },
+        "subscribable": false,
+        "tags": [
+            "player-account"
+        ],
+        "threadSafe": false
+    },
+    "GET /player-account/aliases/v1/lookup": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "gameName",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "tagLine",
+                "optional": true,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Lookup a list of aliases with the provided gameName and optional tagLine.",
+        "help": "",
+        "internal": false,
+        "name": "GetPlayerAccountAliasesV1Lookup",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "PlayerAccountAliasesV1AliasLookupResponse",
+            "type": "vector"
         },
         "subscribable": false,
         "tags": [
@@ -5956,6 +6204,25 @@
         "returns": {
             "elementType": "",
             "type": "PlayerAccountPlayerAccountPluginConfig"
+        },
+        "subscribable": false,
+        "tags": [
+            "player-account"
+        ],
+        "threadSafe": false
+    },
+    "GET /player-account/login-history/v1/debug/cache": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "",
+        "help": "This endpoint is used to get the conent of cache.\n",
+        "internal": false,
+        "name": "GetPlayerAccountLoginHistoryV1DebugCache",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "PlayerAccountV1PlayerLoginLocationHistory",
+            "type": "map"
         },
         "subscribable": false,
         "tags": [
@@ -7003,6 +7270,44 @@
         "help": "Returns the locale the product should be running with. Prioritizes the product locale setting, followed by the SDK locale, and falling back to `en_US` if all else fails.",
         "internal": false,
         "name": "GetProductIntegrationV1Locale",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "string"
+        },
+        "subscribable": false,
+        "tags": [
+            "product-integration"
+        ],
+        "threadSafe": false
+    },
+    "GET /product-integration/v1/locale/products/{productId}/patchlines/{patchlineId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "patchlineId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns the locale of the product setting if in Standalone mode, or else returns the locale of the product/patchline setting in Riot Client",
+        "help": "\n## Context\nThis endpoint is similar to the `GET /product-integration/v1/locale` endpoint except that the product and patchline IDs are provided. Note that the product and patchline IDs are only used if Standalone mode is NOT enabled since it takes priority.\n\nThis endpoint was added to give game teams the flexibility to switch between Standalone mode and Riot Client mode via configuration (no code changes). As soon as all games have migrated to Standalone mode, we can remove this endpoint.\n",
+        "internal": false,
+        "name": "GetProductIntegrationV1LocaleProductsByProductIdPatchlinesByPatchlineId",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -10798,6 +11103,25 @@
         ],
         "threadSafe": false
     },
+    "GET /tencent-launcher/v1/update-status": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Gets the current update status. This will be no-update-available until ACLSDK tells us that there is an update.",
+        "help": "",
+        "internal": false,
+        "name": "GetTencentLauncherV1UpdateStatus",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "TencentLauncherProductIntegrationAppUpdateStatus"
+        },
+        "subscribable": false,
+        "tags": [
+            "tencent-launcher"
+        ],
+        "threadSafe": false
+    },
     "GET /vanguard/v1/status": {
         "arguments": [],
         "deprecated": false,
@@ -11806,6 +12130,35 @@
         "subscribable": false,
         "tags": [
             "anti-addiction"
+        ],
+        "threadSafe": false
+    },
+    "POST /apple-account/v1/authorization": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "AuthorizationParameters",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "AppleAccountAppleAuthorizationParameters"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Create authorization from the Sign In with Apple Account",
+        "help": "",
+        "internal": false,
+        "name": "PostAppleAccountV1Authorization",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "apple-account"
         ],
         "threadSafe": false
     },
@@ -12985,6 +13338,35 @@
         ],
         "threadSafe": false
     },
+    "POST /google-account/v1/authorization": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "AuthorizationRequestParameters",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "GoogleAccountGoogleAuthorizationParameters"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Start an authorization request with Google.",
+        "help": "",
+        "internal": false,
+        "name": "PostGoogleAccountV1Authorization",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "google-account"
+        ],
+        "threadSafe": false
+    },
     "POST /info-radiator/v1/time-sample/{phaseName}/end": {
         "arguments": [
             {
@@ -13000,7 +13382,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Mark the end of the time phase sample and send an event to Analytics Platform conforming to the `riotclient__TimeSample__v4` schema.",
-        "help": "",
+        "help": "The time-sample APIs are deprecated and no longer do useful work. They will be removed in March 2024.",
         "internal": false,
         "name": "PostInfoRadiatorV1TimeSampleByPhaseNameEnd",
         "nameSpace": "",
@@ -13029,7 +13411,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Track the start time for a time phase sample of interest. Call `/info-radiator/v1/time-sample/{phase}/end` to mark the end of the sample.",
-        "help": "",
+        "help": "The time-sample APIs are deprecated and no longer do useful work. They will be removed in March 2024.",
         "internal": false,
         "name": "PostInfoRadiatorV1TimeSampleByPhaseNameStart",
         "nameSpace": "",
@@ -13255,6 +13637,44 @@
         ],
         "threadSafe": false
     },
+    "POST /matchmaking/v1/tickets/{ticket_id}/ready-check": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "ticket_id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "accept_ready",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "MatchmakingV1AcceptReady"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Accept or decline the ready check associated with a ticket id",
+        "help": "",
+        "internal": false,
+        "name": "PostMatchmakingV1TicketsByTicketIdReadyCheck",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "matchmaking"
+        ],
+        "threadSafe": false
+    },
     "POST /mobile-product-registry/v1/build-number/{build}": {
         "arguments": [
             {
@@ -13281,6 +13701,35 @@
         "subscribable": false,
         "tags": [
             "mobile-product-registry"
+        ],
+        "threadSafe": false
+    },
+    "POST /mobile-push/v1/filter": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "filter",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "MobilePushMobilePushCreateFilter"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Create a filter for specific conversation to skip sending push notifications",
+        "help": "",
+        "internal": false,
+        "name": "PostMobilePushV1Filter",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "mobile-push"
         ],
         "threadSafe": false
     },
@@ -13438,565 +13887,6 @@
         ],
         "threadSafe": false
     },
-    "POST /patch/v2/debug/set-up": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "params",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "PatchDebugSetup"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Takes care of setup and returns a patch url and bundles url that can be used to issue patch, seed, partial-repair, full-repair and preview requests.",
-        "help": "",
-        "internal": false,
-        "name": "PostPatchV2DebugSetUp",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "patch"
-        ],
-        "threadSafe": false
-    },
-    "POST /patch/v2/installs/{install-id}/components/{component-id}/start-full-repair": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "install-id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "",
-                "name": "component-id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "",
-                "name": "params",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "PatchStartFullRepairRequest"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Schedules a full repair operation.",
-        "help": "\n**Data**\n* `headers`:                (Required on Mobile) Headers to send with every request. If the manifest url is behind SCD then a Cookie header is required.\n",
-        "internal": false,
-        "name": "PostPatchV2InstallsByInstallIdComponentsByComponentIdStartFullRepair",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "PatchRequestStatus"
-        },
-        "subscribable": false,
-        "tags": [
-            "patch"
-        ],
-        "threadSafe": false
-    },
-    "POST /patch/v2/installs/{install-id}/components/{component-id}/start-partial-repair": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "install-id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "",
-                "name": "component-id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "",
-                "name": "params",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "PatchStartPartialRepairRequest"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Schedules a partial repair operation.",
-        "help": "\n**Notes**\n* Allows caller to perform a repair on a set of files without having to wait or game client to exit. Only use this if absolutely certain that the files are not currently in use.\n\n**Data**\n* `files`:                  A list of file paths for files that need to be repaired. File paths must be relative to the install root.\n* `headers`:                (Required on Mobile) Headers to send with every request. If the manifest url is behind SCD then a Cookie header is required.\n",
-        "internal": false,
-        "name": "PostPatchV2InstallsByInstallIdComponentsByComponentIdStartPartialRepair",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "PatchRequestStatus"
-        },
-        "subscribable": false,
-        "tags": [
-            "patch"
-        ],
-        "threadSafe": false
-    },
-    "POST /patch/v2/installs/{install-id}/components/{component-id}/start-patching": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "install-id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "",
-                "name": "component-id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "",
-                "name": "params",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "PatchStartPatchingOrSeedingRequest"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Schedules a patching operation.",
-        "help": "\n**Data**\n* `headers`:                (Required on Mobile) Headers to send with every request. If the manifest url is behind SCD then a Cookie header is required.\n* `stage`:                  (Optional) Only patch up to the specified stage.\n* `tempPath`:               (Optional) Custom directory to use for working storage during patching.\n",
-        "internal": false,
-        "name": "PostPatchV2InstallsByInstallIdComponentsByComponentIdStartPatching",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "PatchRequestStatus"
-        },
-        "subscribable": false,
-        "tags": [
-            "patch"
-        ],
-        "threadSafe": false
-    },
-    "POST /patch/v2/installs/{install-id}/components/{component-id}/start-preview": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "install-id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "",
-                "name": "component-id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "",
-                "name": "params",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "PatchStartPreviewRequest"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Schedules a preview operation.",
-        "help": "\n**Data**\n* `headers`:                (Required on Mobile) Headers to send with every request. If the manifest url is behind SCD then a Cookie header is required.\n* `stage`:                  (Optional) Only preview the specified stage.\n",
-        "internal": false,
-        "name": "PostPatchV2InstallsByInstallIdComponentsByComponentIdStartPreview",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "PatchRequestStatus"
-        },
-        "subscribable": false,
-        "tags": [
-            "patch"
-        ],
-        "threadSafe": false
-    },
-    "POST /patch/v2/installs/{install-id}/components/{component-id}/start-seeding": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "install-id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "",
-                "name": "component-id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "",
-                "name": "params",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "PatchStartPatchingOrSeedingRequest"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Schedules a seed operation.",
-        "help": "\n**Data**\n* `headers`:                (Required on Mobile) Headers to send with every request. If the manifest url is behind SCD then a Cookie header is required.\n* `stage`:                  (Optional) Only patch up to the specified stage.\n* `tempPath`:               (Optional) Custom directory to use for working storage during patching.\n",
-        "internal": false,
-        "name": "PostPatchV2InstallsByInstallIdComponentsByComponentIdStartSeeding",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "PatchRequestStatus"
-        },
-        "subscribable": false,
-        "tags": [
-            "patch"
-        ],
-        "threadSafe": false
-    },
-    "POST /patch/v2/installs/{install-id}/components/{component-id}/start-verify": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "install-id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "",
-                "name": "component-id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Schedules a verify operation.",
-        "help": "",
-        "internal": false,
-        "name": "PostPatchV2InstallsByInstallIdComponentsByComponentIdStartVerify",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "PatchRequestStatus"
-        },
-        "subscribable": false,
-        "tags": [
-            "patch"
-        ],
-        "threadSafe": false
-    },
-    "POST /patch/v2/installs/{install-id}/components/{component-id}/stop-full-repair": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "install-id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "",
-                "name": "component-id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Stop a full repair operation.",
-        "help": "",
-        "internal": false,
-        "name": "PostPatchV2InstallsByInstallIdComponentsByComponentIdStopFullRepair",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "patch"
-        ],
-        "threadSafe": false
-    },
-    "POST /patch/v2/installs/{install-id}/components/{component-id}/stop-partial-repair": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "install-id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "",
-                "name": "component-id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Stop a partial operation.",
-        "help": "",
-        "internal": false,
-        "name": "PostPatchV2InstallsByInstallIdComponentsByComponentIdStopPartialRepair",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "patch"
-        ],
-        "threadSafe": false
-    },
-    "POST /patch/v2/installs/{install-id}/components/{component-id}/stop-patching": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "install-id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "",
-                "name": "component-id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Stop a patching operation.",
-        "help": "",
-        "internal": false,
-        "name": "PostPatchV2InstallsByInstallIdComponentsByComponentIdStopPatching",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "patch"
-        ],
-        "threadSafe": false
-    },
-    "POST /patch/v2/installs/{install-id}/components/{component-id}/stop-preview": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "install-id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "",
-                "name": "component-id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Stop a preview operation.",
-        "help": "",
-        "internal": false,
-        "name": "PostPatchV2InstallsByInstallIdComponentsByComponentIdStopPreview",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "patch"
-        ],
-        "threadSafe": false
-    },
-    "POST /patch/v2/installs/{install-id}/components/{component-id}/stop-seeding": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "install-id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "",
-                "name": "component-id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Stop a seed operation.",
-        "help": "",
-        "internal": false,
-        "name": "PostPatchV2InstallsByInstallIdComponentsByComponentIdStopSeeding",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "patch"
-        ],
-        "threadSafe": false
-    },
-    "POST /patch/v2/installs/{install-id}/components/{component-id}/stop-verify": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "install-id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "",
-                "name": "component-id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Stop a verify operation.",
-        "help": "",
-        "internal": false,
-        "name": "PostPatchV2InstallsByInstallIdComponentsByComponentIdStopVerify",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "patch"
-        ],
-        "threadSafe": false
-    },
-    "POST /patch/v2/patchsieve": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "request",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "PatchPatchsieveRequest"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Fetch component state from info",
-        "help": "",
-        "internal": false,
-        "name": "PostPatchV2Patchsieve",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "PatchPatchsieveReleases"
-        },
-        "subscribable": false,
-        "tags": [
-            "patch"
-        ],
-        "threadSafe": false
-    },
     "POST /pay-mobile/v1/purchase/{productId}": {
         "arguments": [
             {
@@ -14140,6 +14030,25 @@
         ],
         "threadSafe": false
     },
+    "POST /platform-ui/v1/fre": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Enable FRE",
+        "help": "",
+        "internal": false,
+        "name": "PostPlatformUiV1Fre",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-ui"
+        ],
+        "threadSafe": false
+    },
     "POST /player-account/aliases/v1/aliases": {
         "arguments": [
             {
@@ -14154,7 +14063,7 @@
         ],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "Sets a new set of aliaes for the player.",
+        "description": "Sets a new set of aliases for the player.",
         "help": "",
         "internal": false,
         "name": "PostPlayerAccountAliasesV1Aliases",
@@ -14239,6 +14148,35 @@
         "returns": {
             "elementType": "",
             "type": "PlayerAccountAliasesV1StatusResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "player-account"
+        ],
+        "threadSafe": false
+    },
+    "POST /player-account/login-history/v1/history": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "request",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlayerAccountV1RequestedPlayersLoginLocationHistory"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "",
+        "help": "This endpoint returns login location history records for each requested PUUID. \nThe most recent login location is the record provided. \nIf the caching mechanism is enabled, it will retrieve as many PUUIDs' records as possible from the cache, \nfor the remaining PUUIDs, it will call the service to retrieve appropriate records. \nIn the opposite case, all records will be retrieved from the service. \n\n",
+        "internal": false,
+        "name": "PostPlayerAccountLoginHistoryV1History",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlayerAccountV1PlayersLoginLocationHistory"
         },
         "subscribable": false,
         "tags": [
@@ -14436,6 +14374,35 @@
         "subscribable": false,
         "tags": [
             "player-account"
+        ],
+        "threadSafe": false
+    },
+    "POST /player-account-service/v1/login-history/history": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "request",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlayerAccountServiceV1RequestedPlayersLoginLocationHistory"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "",
+        "help": "This endpoint retrieves location history records for given PUUIDs by making a call to the service. \nFor each PUUID there will be only one location history record - the most recent one. \nThe limit on the list of puuids is 200. If more than 200 PUUIDs are in the request body, the service will return a HTTP 400. \n",
+        "internal": false,
+        "name": "PostPlayerAccountServiceV1LoginHistoryHistory",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlayerAccountServiceV1PlayersLoginLocationHistory"
+        },
+        "subscribable": false,
+        "tags": [
+            "player-account-service"
         ],
         "threadSafe": false
     },
@@ -19915,6 +19882,35 @@
         ],
         "threadSafe": false
     },
+    "PUT /matchmaking/v1/debug/caller-id/mock-id": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "callerId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "MatchmakingPluginCallerId_MockCallerId"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Sets the caller ID to use when calling this plugin from Swagger",
+        "help": "Sets the `productId` and `patchlineId` to pass to APIs in this plugin during future calls from Swagger.\n\nUse this functionality to test APIs in this plugin with Swagger, as if they were being called from another product.",
+        "internal": false,
+        "name": "PutMatchmakingV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "matchmaking"
+        ],
+        "threadSafe": false
+    },
     "PUT /patch-proxy/v1/patch-jobs/cancel-active": {
         "arguments": [],
         "deprecated": false,
@@ -20326,120 +20322,6 @@
         ],
         "threadSafe": false
     },
-    "PUT /patch/v2/configuration": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "params",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "PatchV2Configuration"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Configure patcher settings such as thread count and timeout.",
-        "help": "\n**Data**\n* `chunkBatchSize`:     Maximum size in bytes of each batched chunk request. Downloads are split into requests of this size in order to better parallelize the download of chunks across connections. Default: 2097152 (2MB)\n* `chunkingThreads`:    Number of threads to use for rechunking, in case a repair is needed. Note: By default, the patcher will select the number of chunking threads automatically. If the drive is detected as an SSD, it will use as many threads as there are processors, otherwise it will use a single thread. This option can be used to override this detection and use the specified number of threads.\n* `connections`:        Number of concurrent connections to use for downloading. Default: 8\n* `dnsTTL`:             Time in seconds to keep resolved IP addresses before performing another name resolution operation. This allows the download process to operate with the latest available CDN edge server addresses in case they change rapidly. Default:60\n* `downloadBuffer`:     Specifies the size of the libcurl receive buffer. Larger receive buffers can help with throughput for high-latency links when using HTTP/3. Default: 64KB\n* `downloadLimit`:      Maximum amount of downloaded chunk data that will be kept in memory at any one time. The patcher won't issue additional chunk downloads until downloaded data goes under this limit. The limit is important to ensure that even in the event of very fast downloads and very slow disk operations memory usage doesn't grow uncontrollably. Default: 128MB\n* `ipv4Only`:           Whether to ignore any non-IPv4 addresses that download servers resolve to. Use this if your DNS server returns IPv6 addresses but you don't have IPv6 connectivity.\n* `maxByteRanges`:      Maximum number of discontiguous byte ranges to request from the server. The chunk downloader will split a request if it would result in more than this many ranges in the range request. This helps prevent issues when communicating with edge servers that can't support large amounts of independent ranges. Default: 64\n* `maxDownloadSpeed`:   Maximum download speed. Default: 0 (no limit)\n* `maxManifestSize`:    Maximum release manifest size that we're willing to load. If zero, the size is unlimited. Default: 64MB\n* `receiveBuffer`:      Specifies the size of the TCP receive buffer. Larger receive buffers can help with TCP throughput for high-latency links.\n* `sliceSize`:          Size in bytes of each slice, that is, the size of the write buffer used when updating files. Default: 65536 (64 MB)\n* `timeout`:            Time in seconds to wait before canceling an update that is not making any progress. If zero, this timeout is disabled. Default: 60\n",
-        "internal": false,
-        "name": "PutPatchV2Configuration",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "patch"
-        ],
-        "threadSafe": false
-    },
-    "PUT /patch/v2/installs/{install-id}": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "install-id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "",
-                "name": "install",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "PatchInstallRequest"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Register a new install",
-        "help": "\n**Data**\n* `components`: List of components. A component is a patchable artifact that is part of the install of a specific product. For example, League of Legends has a Client component and a Game component.\n    * `id`:                     The id of the component.\n    * `installPath`:            The install location of the component. Absolute file path required.\n    * `metadataPath`:           The location for the install .db and .manifest files. The extension will be directly appended to this path. Absolute file path required.\n    * `seedPath`:               The location where updated chunks will be stored for this install when performing a seed operation, and the location where chunks will be sourced from when performing a patch operation. Absolute file path required.\n    * `deleteForeignPaths`:     If set, extra paths that don't belong to the release will be deleted during the repair processes.\n    * `excludedPaths`:          List of paths (relative to the install root) that are excluded from the update. Files under these paths won't be checked during the verification and repair processes.\n    * `tags`:                   Tags to filter which content gets patched. These are different from the params used to fetch the release from Patchsieve https://riotsdk.rpg.riotgames.com/docs/for-users/patching/onboarding/localization/.\n    * `sieveProductId`:         The id used to fetch a product in the Patchsieve service. It can differ from the product-id.\n    * `versionSet`:             The id used to fetch a version set of a specific product in the Patchsieve Service.\n    * `params`:                 Params/Labels used to filter which release is fetched from Patchsieve Service.\n",
-        "internal": false,
-        "name": "PutPatchV2InstallsByInstallId",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "patch"
-        ],
-        "threadSafe": false
-    },
-    "PUT /patch/v2/installs/{install-id}/components/{component-id}": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "install-id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "",
-                "name": "component-id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "",
-                "name": "component",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "PatchComponentRequest"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Register a new component.",
-        "help": "\n**Data**\n* `installPath`:            The install location of the component. Absolute file path required.\n* `metadataPath`:           The location for the install .db and .manifest files. The extension will be directly appended to this path. Absolute file path required.\n* `seedPath`:               The location where updated chunks will be stored for this install when performing a seed operation, and the location where chunks will be sourced from when performing a patch operation. Absolute file path required.\n* `deleteForeignPaths`:     If set, extra paths that don't belong to the release will be deleted during the repair processes.\n* `excludedPaths`:          List of paths (relative to the install root) that are excluded from the update. Files under these paths won't be checked during the verification and repair processes.\n* `dependsOn`:              The id of the component it is depedent on. If set, will keep artifact version id's in lockstep while the primary component is running.\n* `tags`:                   Tags to filter which content gets patched. These are different from the params used to fetch the release from Patchsieve https://riotsdk.rpg.riotgames.com/docs/for-users/patching/onboarding/localization/.\n* `sieveProductId`:         The id used to fetch a product in the Patchsieve service. It can differ from the product-id.\n* `versionSet`:             The id used to fetch a version set of a specific product in the Patchsieve Service.\n* `params`:                 Params/Labels used to filter which release is fetched from Patchsieve Service.\n",
-        "internal": false,
-        "name": "PutPatchV2InstallsByInstallIdComponentsByComponentId",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "patch"
-        ],
-        "threadSafe": false
-    },
     "PUT /play-restrictions/v1/debug/caller-id/mock-id": {
         "arguments": [
             {
@@ -20495,6 +20377,35 @@
         "subscribable": false,
         "tags": [
             "play-restrictions"
+        ],
+        "threadSafe": false
+    },
+    "PUT /player-account/login-history/v1/debug/cache": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "newPlayersLoginLocationHistoryCache",
+                "optional": false,
+                "type": {
+                    "elementType": "PlayerAccountV1PlayerLoginLocationHistory",
+                    "type": "map"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "",
+        "help": "This endpoint is used to set the content of cache.\n",
+        "internal": false,
+        "name": "PutPlayerAccountLoginHistoryV1DebugCache",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "player-account"
         ],
         "threadSafe": false
     },
@@ -20679,6 +20590,35 @@
         ],
         "threadSafe": false
     },
+    "PUT /player-session-lifecycle/v1/login-strategy": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "UpdateLoginStrategyRequest",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlayerSessionLifecycleUpdateLoginStrategyRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Set a Login Strategy for the current session.",
+        "help": "",
+        "internal": false,
+        "name": "PutPlayerSessionLifecycleV1LoginStrategy",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "player-session-lifecycle"
+        ],
+        "threadSafe": false
+    },
     "PUT /player-session-lifecycle/v1/session": {
         "arguments": [
             {
@@ -20693,7 +20633,7 @@
         ],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "Update a session used to retrieve common player authentication information.",
+        "description": "Update a session used to retrieve common player authentication information. Remember to pass all of the session config values on update. Use `PUT /player-session-lifecycle/v1/login-strategy` when updating the login strategy.",
         "help": "",
         "internal": false,
         "name": "PutPlayerSessionLifecycleV1Session",
@@ -20992,35 +20932,6 @@
         ],
         "threadSafe": false
     },
-    "PUT /product-integration/v1/app-repair/immediate-repair": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "file_paths",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "ProductIntegrationProductIntegrationAppImmediateRepairRequestBody"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Starts a game repair and returns a repair status callback path.",
-        "help": "\n**Notes**\n* Allows you to perform a partial repair on a set of files without having to wait or game client to exit. Only use this if you're\nabsolutely certain that the files are not currently in use by the client.\n* Immediate repair does not open Riot Client so the game is responsible for displaying repair progress.\n\n**Data**\n* `files`: a list of file paths for files that need to be repaired. If none specified then the patcher will perform a full repair. File paths must\nbe relative to the install root. Does not accept wildcard * symbols or ~ for home directory.\n",
-        "internal": false,
-        "name": "PutProductIntegrationV1AppRepairImmediateRepair",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "ProductIntegrationProductIntegrationAppImmediateRepairResponseBody"
-        },
-        "subscribable": false,
-        "tags": [
-            "product-integration"
-        ],
-        "threadSafe": false
-    },
     "PUT /product-integration/v1/app-update/apply": {
         "arguments": [],
         "deprecated": false,
@@ -21062,35 +20973,6 @@
         "returns": {
             "elementType": "",
             "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "product-integration"
-        ],
-        "threadSafe": false
-    },
-    "PUT /product-integration/v1/debug/app-repair/immediate-repair": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "file_paths",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "ProductIntegrationAppImmediateRepairRequest"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Starts a game repair and returns a repair status callback path.",
-        "help": "\n**Notes**\n* Allows you to perform a partial repair on a set of files without having to wait or game client to exit. Only use this if you're\nabsolutely certain that the files are not currently in use by the client.\n* Immediate repair does not open Riot Client so the game is responsible for displaying repair progress.\n\n**Data**\n* `files`: a list of file paths for files that need to be repaired. If none specified then the patcher will perform a full repair. File paths must\nbe relative to the install root. Does not accept wildcard * symbols or ~ for home directory.\n",
-        "internal": false,
-        "name": "PutProductIntegrationV1DebugAppRepairImmediateRepair",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "ProductIntegrationProductIntegrationAppImmediateRepairResponseBody"
         },
         "subscribable": false,
         "tags": [
@@ -21183,6 +21065,53 @@
         "help": "\n## Context\nThis function is being added the support the ability for standalone games to set product locale. The behavior works as follows:\n- First verify that the locale attempting to be set is listed as an available product locale. No actual validation is done on the product locale itself, just that it is present\nin the list of available locales stored in the configuration keyed locale_data.available_locales.\n- After confirming the validity, we attempt to find the product settings file. If it exists, it means that we are in standalone SDK mode. We then propagate the locale to the file\nto persist it across sessions\n- If the file does not exist, it means that we are being run through the Riot Client, and instead we call the `PUT /riotclient/product-locales/products/%s/patchlines/%s`\nendpoint to set the product locale for that product + patchline combination.\n\n### Legacy support\nLeague of Legends unofficially supports players setting their locale to values that are not available to the region. For example, setting their NA client to ja_JP. This is done\ncurrently via modifying the LeagueClientSettings.yaml file and explicitly setting their locale to their locale of choice. We want to continue to support this behavior on behalf\nof League. This function does not modify the validation or ability to override your locale. The validation done here on this function behaves the same as the existing Riot Client\nvalidation, which continues to allow for player modifications.\n\nIf that should change in the future, this function will need to be updated to reflect the changes as well as the `PUT /riotclient/product-locales/products/%s/patchlines/%s` endpoint.\n\n## Arguments\n- locale\n  - the 4 letter code representing the country + language specified separated by an underscore. For example, ja_JP is Japanese, and en_US is US English.\n  - no validation on the 4 letter codes are done; we merely check for its existence in the list of available locales.\n",
         "internal": false,
         "name": "PutProductIntegrationV1Locale",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "product-integration"
+        ],
+        "threadSafe": false
+    },
+    "PUT /product-integration/v1/locale/products/{productId}/patchlines/{patchlineId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "patchlineId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "locale",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "ProductIntegrationLocaleUpdate"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Applies the locale specified in the body to the product and patchline provided. Locale should be in language_country format. for example, zh_CN or ko_KR",
+        "help": "\n## Context\nThis endpoint is similar to the `PUT /product-integration/v1/locale` endpoint except that the product and patchline IDs are provided. Note that the product and patchline IDs are only used if Standalone mode is NOT enabled since it takes priority.\n\nThis endpoint was added to give game teams the flexibility to switch between Standalone mode and Riot Client mode via configuration (no code changes). As soon as all games have migrated to Standalone mode, we can remove this endpoint.\n",
+        "internal": false,
+        "name": "PutProductIntegrationV1LocaleProductsByProductIdPatchlinesByPatchlineId",
         "nameSpace": "",
         "returns": {
             "elementType": "",

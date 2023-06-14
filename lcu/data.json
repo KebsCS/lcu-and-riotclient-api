@@ -414,9 +414,12 @@
         "GET /lol-cosmetics/v1/inventories/{setName}/companions",
         "GET /lol-cosmetics/v1/inventories/{setName}/damage-skins",
         "GET /lol-cosmetics/v1/inventories/{setName}/map-skins",
+        "GET /lol-cosmetics/v1/inventories/{setName}/playbooks",
         "PATCH /lol-cosmetics/v1/recent/{type}",
         "DELETE /lol-cosmetics/v1/selection/companion",
         "PUT /lol-cosmetics/v1/selection/companion",
+        "DELETE /lol-cosmetics/v1/selection/playbook",
+        "PUT /lol-cosmetics/v1/selection/playbook",
         "DELETE /lol-cosmetics/v1/selection/tft-damage-skin",
         "PUT /lol-cosmetics/v1/selection/tft-damage-skin",
         "DELETE /lol-cosmetics/v1/selection/tft-map-skin",
@@ -809,6 +812,7 @@
         "GET /lol-login/v2/league-session-init-token"
     ],
     "Plugin lol-loot": [
+        "POST /lol-loot/v1/craft/mass",
         "GET /lol-loot/v1/currency-configuration",
         "GET /lol-loot/v1/enabled",
         "GET /lol-loot/v1/loot-grants",
@@ -1139,6 +1143,10 @@
         "GET /lol-rso-auth/v1/status/{platformId}",
         "DELETE /lol-rso-auth/v2/config",
         "POST /lol-rso-auth/v2/config"
+    ],
+    "Plugin lol-seasons": [
+        "GET /lol-seasons/v1/allSeasons/product/{product}",
+        "GET /lol-seasons/v1/season/product/{product}"
     ],
     "Plugin lol-service-status": [
         "GET /lol-service-status/v1/lcu-status",
@@ -1684,9 +1692,12 @@
         "GET /lol-cosmetics/v1/inventories/{setName}/companions",
         "GET /lol-cosmetics/v1/inventories/{setName}/damage-skins",
         "GET /lol-cosmetics/v1/inventories/{setName}/map-skins",
+        "GET /lol-cosmetics/v1/inventories/{setName}/playbooks",
         "PATCH /lol-cosmetics/v1/recent/{type}",
         "DELETE /lol-cosmetics/v1/selection/companion",
         "PUT /lol-cosmetics/v1/selection/companion",
+        "DELETE /lol-cosmetics/v1/selection/playbook",
+        "PUT /lol-cosmetics/v1/selection/playbook",
         "DELETE /lol-cosmetics/v1/selection/tft-damage-skin",
         "PUT /lol-cosmetics/v1/selection/tft-damage-skin",
         "DELETE /lol-cosmetics/v1/selection/tft-map-skin",
@@ -2025,6 +2036,7 @@
         "POST /lol-login/v1/summoner-session-failed",
         "GET /lol-login/v1/wallet",
         "GET /lol-login/v2/league-session-init-token",
+        "POST /lol-loot/v1/craft/mass",
         "GET /lol-loot/v1/currency-configuration",
         "GET /lol-loot/v1/enabled",
         "GET /lol-loot/v1/loot-grants",
@@ -2298,6 +2310,8 @@
         "GET /lol-rso-auth/v1/status/{platformId}",
         "DELETE /lol-rso-auth/v2/config",
         "POST /lol-rso-auth/v2/config",
+        "GET /lol-seasons/v1/allSeasons/product/{product}",
+        "GET /lol-seasons/v1/season/product/{product}",
         "GET /lol-service-status/v1/lcu-status",
         "GET /lol-service-status/v1/ticker-messages",
         "GET /lol-settings/v1/account/didreset",
