@@ -41,8 +41,7 @@
         "LoggingMetrics",
         "LoggingMetricsMetadata",
         "LoggingStart",
-        "LoggingStop",
-        "MemoryPools"
+        "LoggingStop"
     ],
     "crash-reporting": [
         "GET /crash-reporting/v1/crash-status"
@@ -72,8 +71,7 @@
     "memory": [
         "GET /memory/v1/fe-processes-ready",
         "POST /memory/v1/notify-fe-processes-ready",
-        "POST /memory/v1/snapshot",
-        "MemoryPools"
+        "POST /memory/v1/snapshot"
     ],
     "performance": [
         "GET /performance/v1/memory",
@@ -485,7 +483,10 @@
         "GET /lol-game-client-chat/v1/ignored-summoners",
         "POST /lol-game-client-chat/v1/instant-messages",
         "GET /lol-game-client-chat/v1/muted-summoners",
-        "POST /lol-game-client-chat/v1/party-messages"
+        "GET /lol-game-client-chat/v2/buddies",
+        "GET /lol-game-client-chat/v2/ignored-players",
+        "POST /lol-game-client-chat/v2/instant-messages",
+        "GET /lol-game-client-chat/v2/muted-players"
     ],
     "Plugin lol-game-queues": [
         "GET /lol-game-queues/v1/custom",
@@ -1147,6 +1148,7 @@
     ],
     "Plugin lol-seasons": [
         "GET /lol-seasons/v1/allSeasons/product/{product}",
+        "GET /lol-seasons/v1/season/LOL/current-split-seasons",
         "GET /lol-seasons/v1/season/product/{product}"
     ],
     "Plugin lol-service-status": [
@@ -1235,7 +1237,6 @@
     "Plugin lol-summoner": [
         "GET /lol-summoner/v1/check-name-availability-new-summoners/{name}",
         "GET /lol-summoner/v1/check-name-availability/{name}",
-        "GET /lol-summoner/v1/current-alias-state",
         "GET /lol-summoner/v1/current-summoner",
         "GET /lol-summoner/v1/current-summoner/account-and-summoner-ids",
         "GET /lol-summoner/v1/current-summoner/autofill",
@@ -1247,6 +1248,7 @@
         "GET /lol-summoner/v1/current-summoner/rerollPoints",
         "GET /lol-summoner/v1/current-summoner/summoner-profile",
         "POST /lol-summoner/v1/current-summoner/summoner-profile",
+        "GET /lol-summoner/v1/player-alias-state",
         "GET /lol-summoner/v1/player-name-mode",
         "GET /lol-summoner/v1/profile-privacy-enabled",
         "POST /lol-summoner/v1/save-alias",
@@ -1754,7 +1756,10 @@
         "GET /lol-game-client-chat/v1/ignored-summoners",
         "POST /lol-game-client-chat/v1/instant-messages",
         "GET /lol-game-client-chat/v1/muted-summoners",
-        "POST /lol-game-client-chat/v1/party-messages",
+        "GET /lol-game-client-chat/v2/buddies",
+        "GET /lol-game-client-chat/v2/ignored-players",
+        "POST /lol-game-client-chat/v2/instant-messages",
+        "GET /lol-game-client-chat/v2/muted-players",
         "GET /lol-game-queues/v1/custom",
         "GET /lol-game-queues/v1/custom-non-default",
         "GET /lol-game-queues/v1/game-type-config/{gameTypeConfigId}",
@@ -2315,6 +2320,7 @@
         "DELETE /lol-rso-auth/v2/config",
         "POST /lol-rso-auth/v2/config",
         "GET /lol-seasons/v1/allSeasons/product/{product}",
+        "GET /lol-seasons/v1/season/LOL/current-split-seasons",
         "GET /lol-seasons/v1/season/product/{product}",
         "GET /lol-service-status/v1/lcu-status",
         "GET /lol-service-status/v1/ticker-messages",
@@ -2383,7 +2389,6 @@
         "POST /lol-suggested-players/v1/victorious-comrade",
         "GET /lol-summoner/v1/check-name-availability-new-summoners/{name}",
         "GET /lol-summoner/v1/check-name-availability/{name}",
-        "GET /lol-summoner/v1/current-alias-state",
         "GET /lol-summoner/v1/current-summoner",
         "GET /lol-summoner/v1/current-summoner/account-and-summoner-ids",
         "GET /lol-summoner/v1/current-summoner/autofill",
@@ -2395,6 +2400,7 @@
         "GET /lol-summoner/v1/current-summoner/rerollPoints",
         "GET /lol-summoner/v1/current-summoner/summoner-profile",
         "POST /lol-summoner/v1/current-summoner/summoner-profile",
+        "GET /lol-summoner/v1/player-alias-state",
         "GET /lol-summoner/v1/player-name-mode",
         "GET /lol-summoner/v1/profile-privacy-enabled",
         "POST /lol-summoner/v1/save-alias",
