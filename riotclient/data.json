@@ -200,6 +200,11 @@
         "GET /eula/v1/product-context",
         "PUT /eula/v1/product-context"
     ],
+    "facebook-account": [
+        "DELETE /facebook-account/v1/authorization",
+        "GET /facebook-account/v1/authorization",
+        "POST /facebook-account/v1/authorization"
+    ],
     "first-party-fulfillment": [
         "POST /first-party-fulfillment/v1/fulfill"
     ],
@@ -240,6 +245,11 @@
         "DELETE /game-session/v1/sessions/{sessionId}",
         "GET /game-session/v1/sessions/{sessionId}"
     ],
+    "gamecenter-account": [
+        "DELETE /gamecenter-account/v1/authorization",
+        "GET /gamecenter-account/v1/authorization",
+        "POST /gamecenter-account/v1/authorization"
+    ],
     "google-account": [
         "DELETE /google-account/v1/authorization",
         "GET /google-account/v1/authorization",
@@ -252,6 +262,7 @@
         "POST /info-radiator/v1/time-sample/{phaseName}/start"
     ],
     "jwt-authenticator": [
+        "POST /jwt-authenticator/v1/issue",
         "POST /jwt-authenticator/v1/verify"
     ],
     "kr-account": [
@@ -273,24 +284,6 @@
         "PUT /mailbox/v1/mail-state",
         "POST /mailbox/v1/mail/{productId}",
         "GET /mailbox/v1/ready"
-    ],
-    "matchmaking": [
-        "DELETE /matchmaking/v1/debug/caller-id/mock-id",
-        "GET /matchmaking/v1/debug/caller-id/mock-id",
-        "PUT /matchmaking/v1/debug/caller-id/mock-id",
-        "DELETE /matchmaking/v1/tickets/{ticket_id}",
-        "GET /matchmaking/v1/tickets/{ticket_id}",
-        "GET /matchmaking/v1/tickets/{ticket_id}/ready-check",
-        "POST /matchmaking/v1/tickets/{ticket_id}/ready-check"
-    ],
-    "matchmaking-service": [
-        "POST /matchmaking-service/v1/match/{check_id}/accept",
-        "POST /matchmaking-service/v1/match/{check_id}/decline",
-        "DELETE /matchmaking-service/v1/match/{ticket_id}",
-        "GET /matchmaking-service/v1/match/{ticket_id}",
-        "DELETE /matchmaking-service/v1/matches",
-        "GET /matchmaking-service/v1/matches",
-        "POST /matchmaking-service/v1/matches"
     ],
     "mobile-product-registry": [
         "GET /mobile-product-registry/v1/build-number",
@@ -351,6 +344,8 @@
         "POST /payments/v1/initialize-purchase"
     ],
     "platform-login": [
+        "GET /platform-login/v1/config",
+        "PUT /platform-login/v1/config",
         "GET /platform-login/v1/status"
     ],
     "platform-ui": [
@@ -915,6 +910,8 @@
         "GET /riot-client-auth/v1/userinfo"
     ],
     "riot-login": [
+        "GET /riot-login/v1/config",
+        "PUT /riot-login/v1/config",
         "GET /riot-login/v1/status"
     ],
     "riot-messaging-service": [
@@ -1094,6 +1091,7 @@
         "POST /rso-mobile-ui/v1/eula/initiate",
         "GET /rso-mobile-ui/v1/eula/status",
         "POST /rso-mobile-ui/v1/federated-login",
+        "POST /rso-mobile-ui/v1/internal/display-error-page",
         "POST /rso-mobile-ui/v1/ios-auth-redirect",
         "POST /rso-mobile-ui/v1/login/initiate",
         "GET /rso-mobile-ui/v1/login/status",
@@ -1156,6 +1154,7 @@
     "voice-chat": [
         "GET /voice-chat/v1/active-product",
         "GET /voice-chat/v1/audio-properties",
+        "POST /voice-chat/v1/debug/simulate",
         "GET /voice-chat/v1/heartbeat-metrics",
         "POST /voice-chat/v1/initialize-provider/{productName}",
         "GET /voice-chat/v1/push-to-talk",
@@ -1180,6 +1179,10 @@
         "GET /voice-chat/v2/settings",
         "PUT /voice-chat/v2/settings",
         "GET /voice-chat/v2/state",
+        "GET /voice-chat/v3/push-to-talk/{productName}",
+        "PUT /voice-chat/v3/push-to-talk/{productName}",
+        "GET /voice-chat/v3/push-to-talk/{productName}/{sessionId}",
+        "PUT /voice-chat/v3/push-to-talk/{productName}/{sessionId}",
         "DELETE /voice-chat/v3/sessions/{productName}",
         "GET /voice-chat/v3/sessions/{productName}",
         "POST /voice-chat/v3/sessions/{productName}",

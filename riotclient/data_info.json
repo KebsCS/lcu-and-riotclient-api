@@ -919,6 +919,25 @@
         ],
         "threadSafe": false
     },
+    "DELETE /facebook-account/v1/authorization": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Delete authorization status for Facebook",
+        "help": "",
+        "internal": false,
+        "name": "DeleteFacebookAccountV1Authorization",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "facebook-account"
+        ],
+        "threadSafe": false
+    },
     "DELETE /ga-restriction/v1/debug/caller-id/mock-id": {
         "arguments": [],
         "deprecated": false,
@@ -1120,6 +1139,25 @@
         ],
         "threadSafe": false
     },
+    "DELETE /gamecenter-account/v1/authorization": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Delete authorization status of Game Center",
+        "help": "",
+        "internal": false,
+        "name": "DeleteGamecenterAccountV1Authorization",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "gamecenter-account"
+        ],
+        "threadSafe": false
+    },
     "DELETE /google-account/v1/authorization": {
         "arguments": [],
         "deprecated": false,
@@ -1184,130 +1222,6 @@
         "subscribable": false,
         "tags": [
             "mailbox"
-        ],
-        "threadSafe": false
-    },
-    "DELETE /matchmaking-service/v1/match/{ticket_id}": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "ticket_id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "",
-        "help": "\n**Description**\n\nThis endpoint removes a ticket with given id from the Matchmaking flow.\nIt's achived by calling equivalent endpoint in the matchmaking service.\n\n**Request Argument**\n\nPath argument:\n* `ticket_id` - id of a ticket to remove\n\n**Returns**\n\n* GenericSuccess on successful request\n* Failure object on failed request\n\n**Error Codes**\n\nPossible error codes with general information about possible root causes:\n\n* `httpStatus: 400`\n    * `errorCode: BAD_REQUEST` `message: Bad parameter used as input` - test text\n        * At least one of the parameters you provided are invalid and did not pass matchmaking service parsing.\n\n* `httpStatus: 401`\n    * `errorCode: UNAUTHORIZED` `message: Request lacks valid authentication` - ie. Unauthorized from Matchmaking Service\n        * The player is not part of the ticket you are trying to act on\n        * Invalid or missing claims\n        * Your product does not have access to matchmaking service\n\n    * `errorCode: UNAUTHORIZED` `message: Unauthorized` - ie. Unauthorized from SGP\n        * Invalid token - It may be expired or your product does not have access to matchmaking service\n\n* `httpStatus: 404` `errorCode: NOT_FOUND` `message: Resource not found`\n    * The resource you are trying to act on, such as deleting or retrieving a ticket, does not exist in the Matchmaking system.\n\n* `httpStatus: 409` `errorCode: CONFLICT` `message: conflict occurred (puuid: {PUUID}, ticket_id: {TICKET_ID})`\n    * Usually caused by attempting to create a ticket for a product and PUUID combination that already exists.\n\n* `httpStatus: 500`\n    * `errorCode: INTERNAL_SERVER_ERROR`\n        * There may be variations to the message to explain exactly what went wrong, but logs should have the details needed to triage. These errors are unexpected and warrant an investigation into the issue.\n\n    * `endpoint_dependency_not_ready`\n        * One or more dependencies for endpoint are not ready yet\n\n    * `no_base_url_detected`\n        * Key `service-plugin.matchmaking-service.base_url` is missing in ublic client-config\n",
-        "internal": false,
-        "name": "DeleteMatchmakingServiceV1MatchByTicketId",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "matchmaking-service"
-        ],
-        "threadSafe": false
-    },
-    "DELETE /matchmaking-service/v1/matches": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "shard",
-                "optional": true,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "",
-                "name": "mode",
-                "optional": true,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "",
-                "name": "version",
-                "optional": true,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "",
-        "help": "\n**Description**\n\nThis endpoint removes a player from the matchmaking flow, ie. ends their current request for a match in matchmaking.\nIt's achived by calling equivalent endpoint in the matchmaking service.\n\n**Request Argument**\n\nQuery arguments\n* `shard`: optional parameter storing shard info\n\n* `mode`: optional parameter storing matchmaking mode\n\n* `version`: optional parameter storing matchmaking version\n\n**Returns**\n\nResponse Body:\n* GenericSuccess on successful request\n* Failure object on failed request\n\n**Error Codes**\n\nPossible error codes with general information about possible root causes:\n\n* `httpStatus: 400`\n    * `errorCode: BAD_REQUEST` `message: Bad parameter used as input` - test text\n        * At least one of the parameters you provided are invalid and did not pass matchmaking service parsing.\n\n* `httpStatus: 401`\n    * `errorCode: UNAUTHORIZED` `message: Request lacks valid authentication` - ie. Unauthorized from Matchmaking Service\n        * The player is not part of the ticket you are trying to act on\n        * Invalid or missing claims\n        * Your product does not have access to matchmaking service\n\n    * `errorCode: UNAUTHORIZED` `message: Unauthorized` - ie. Unauthorized from SGP\n        * Invalid token - It may be expired or your product does not have access to matchmaking service\n\n* `httpStatus: 404` `errorCode: NOT_FOUND` `message: Resource not found`\n    * The resource you are trying to act on, such as deleting or retrieving a ticket, does not exist in the Matchmaking system.\n\n* `httpStatus: 409` `errorCode: CONFLICT` `message: conflict occurred (puuid: {PUUID}, ticket_id: {TICKET_ID})`\n    * Usually caused by attempting to create a ticket for a product and PUUID combination that already exists.\n\n* `httpStatus: 500`\n    * `errorCode: INTERNAL_SERVER_ERROR`\n        * There may be variations to the message to explain exactly what went wrong, but logs should have the details needed to triage. These errors are unexpected and warrant an investigation into the issue.\n\n    * `endpoint_dependency_not_ready`\n        * One or more dependencies for endpoint are not ready yet\n\n    * `no_base_url_detected`\n        * Key `service-plugin.matchmaking-service.base_url` is missing in ublic client-config\n",
-        "internal": false,
-        "name": "DeleteMatchmakingServiceV1Matches",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "matchmaking-service"
-        ],
-        "threadSafe": false
-    },
-    "DELETE /matchmaking/v1/debug/caller-id/mock-id": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Stops mocking the caller ID for Swagger calls",
-        "help": "Deletes the currently set `productId` and `patchlineId`. Plugin APIs will receive `swagger` as the `productId`.",
-        "internal": false,
-        "name": "DeleteMatchmakingV1DebugCallerIdMockId",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "matchmaking"
-        ],
-        "threadSafe": false
-    },
-    "DELETE /matchmaking/v1/tickets/{ticket_id}": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "ticket_id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Delete the matchmaking ticket and remove player from matchmaking queue",
-        "help": "",
-        "internal": false,
-        "name": "DeleteMatchmakingV1TicketsByTicketId",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "matchmaking"
         ],
         "threadSafe": false
     },
@@ -3535,7 +3449,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Get multi-game presences",
-        "help": "",
+        "help": "ChatPartyMembers may show up with no ID or other data as there are valid cases that we may not have data on said player; this is expected behavior.",
         "internal": false,
         "name": "GetChatV4Presences",
         "nameSpace": "",
@@ -4891,6 +4805,25 @@
         ],
         "threadSafe": false
     },
+    "GET /facebook-account/v1/authorization": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Retrieve authorization from the Sign In with Facebook Account",
+        "help": "",
+        "internal": false,
+        "name": "GetFacebookAccountV1Authorization",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "FacebookAccountFacebookAuthorizationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "facebook-account"
+        ],
+        "threadSafe": false
+    },
     "GET /friends/v2/make-platform-blocks-riot-blocks": {
         "arguments": [],
         "deprecated": false,
@@ -5110,6 +5043,25 @@
         ],
         "threadSafe": false
     },
+    "GET /gamecenter-account/v1/authorization": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Retrieve authorization for the Game Center Account",
+        "help": "",
+        "internal": false,
+        "name": "GetGamecenterAccountV1Authorization",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "GamecenterAccountGameCenterAuthorizationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "gamecenter-account"
+        ],
+        "threadSafe": false
+    },
     "GET /google-account/v1/authorization": {
         "arguments": [],
         "deprecated": false,
@@ -5288,159 +5240,6 @@
         "subscribable": false,
         "tags": [
             "mailbox"
-        ],
-        "threadSafe": false
-    },
-    "GET /matchmaking-service/v1/match/{ticket_id}": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "ticket_id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "",
-        "help": "\n**Description**\n\nThis endpoint gets the current state of a specified ticket.\nIt's achived by calling equivalent endpoint in the matchmaking service.\n\n**Request Argument**\n\nPath argument:\n* `ticket_id` - id of a ticket to remove\n\n**Returns**\n\nResponse Body:\n* `TicketState` Object:\n    * `id` - A string that contains ticket id\n    * `product` - A string that contains product id\n    * `shard` - A string that contains information about shard info\n    * `mode` - A string that contains information about matchmaking mode\n    * `submode` - An optional string that contains information about matchmaking submode\n    * `version` - A string that contains information about matchmaking version\n    * `state` - A string that contains information about state of match\n    * `match_id` - A string that contains information about match id\n    * `puuids` - A list of strings containing puuid of players participating in match\n    * `created_at` - A string that contains information about creation time of ticket\n    * `updated_at` - A string that contains information about update time of ticket\n    * `state_updated_at` - A string that contains information about update time of match state\n    * `ticket_age_ms` - A string that contains information about age of ticket in miliseconds\n\n**Error Codes**\n\nPossible error codes with general information about possible root causes:\n\n* `httpStatus: 400`\n    * `errorCode: BAD_REQUEST` `message: Bad parameter used as input` - test text\n        * At least one of the parameters you provided are invalid and did not pass matchmaking service parsing.\n\n* `httpStatus: 401`\n    * `errorCode: UNAUTHORIZED` `message: Request lacks valid authentication` - ie. Unauthorized from Matchmaking Service\n        * The player is not part of the ticket you are trying to act on\n        * Invalid or missing claims\n        * Your product does not have access to matchmaking service\n\n    * `errorCode: UNAUTHORIZED` `message: Unauthorized` - ie. Unauthorized from SGP\n        * Invalid token - It may be expired or your product does not have access to matchmaking service\n\n* `httpStatus: 404` `errorCode: NOT_FOUND` `message: Resource not found`\n    * The resource you are trying to act on, such as deleting or retrieving a ticket, does not exist in the Matchmaking system.\n\n* `httpStatus: 409` `errorCode: CONFLICT` `message: conflict occurred (puuid: {PUUID}, ticket_id: {TICKET_ID})`\n    * Usually caused by attempting to create a ticket for a product and PUUID combination that already exists.\n\n* `httpStatus: 500`\n    * `errorCode: INTERNAL_SERVER_ERROR`\n        * There may be variations to the message to explain exactly what went wrong, but logs should have the details needed to triage. These errors are unexpected and warrant an investigation into the issue.\n\n    * `endpoint_dependency_not_ready`\n        * One or more dependencies for endpoint are not ready yet\n\n    * `no_base_url_detected`\n        * Key `service-plugin.matchmaking-service.base_url` is missing in ublic client-config\n",
-        "internal": false,
-        "name": "GetMatchmakingServiceV1MatchByTicketId",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "MatchmakingServiceV1TicketState"
-        },
-        "subscribable": false,
-        "tags": [
-            "matchmaking-service"
-        ],
-        "threadSafe": false
-    },
-    "GET /matchmaking-service/v1/matches": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "shard",
-                "optional": true,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "",
-                "name": "mode",
-                "optional": true,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "",
-                "name": "version",
-                "optional": true,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "",
-        "help": "\n**Description**\n\nThis endpoint gets the current state of a player who has entered matchmaking.\nIt's achived by calling equivalent endpoint in the matchmaking service.\n\n**Request Argument**\n\nQuery arguments\n* `shard`: optional parameter storing shard info\n\n* `mode`: optional parameter storing matchmaking mode\n\n* `version`: optional parameter storing matchmaking version\n\n**Returns**\n\nResponse Body:\n* `TicketsState` Object:\n    * `tickets`: A list containg `TicketState` objects\n        * `id` - A string that contains ticket id\n        * `product` - A string that contains product id\n        * `shard` - A string that contains information about shard info\n        * `mode` - A string that contains information about matchmaking mode\n        * `submode` - An optional string that contains information about matchmaking submode\n        * `version` - A string that contains information about matchmaking version\n        * `state` - A string that contains information about state of match\n        * `match_id` - A string that contains information about match id\n        * `puuids` - A list of strings containing puuid of players participating in match\n        * `created_at` - A string that contains information about creation time of ticket\n        * `updated_at` - A string that contains information about update time of ticket\n        * `state_updated_at` - A string that contains information about update time of match state\n        * `ticket_age_ms` - A string that contains information about age of ticket in miliseconds\n\n\n**Error Codes**\n\nPossible error codes with general information about possible root causes:\n\n* `httpStatus: 400`\n    * `errorCode: BAD_REQUEST` `message: Bad parameter used as input`\n        * At least one of the parameters you provided are invalid and did not pass matchmaking service parsing.\n\n* `httpStatus: 401`\n    * `errorCode: UNAUTHORIZED` `message: Request lacks valid authentication` - ie. Unauthorized from Matchmaking Service\n        * The player is not part of the ticket you are trying to act on\n        * Invalid or missing claims\n        * Your product does not have access to matchmaking service\n\n    * `errorCode: UNAUTHORIZED` `message: Unauthorized` - ie. Unauthorized from SGP\n        * Invalid token - It may be expired or your product does not have access to matchmaking service\n\n* `httpStatus: 404` `errorCode: NOT_FOUND` `message: Resource not found`\n    * The resource you are trying to act on, such as deleting or retrieving a ticket, does not exist in the Matchmaking system.\n\n* `httpStatus: 409` `errorCode: CONFLICT` `message: conflict occurred (puuid: {PUUID}, ticket_id: {TICKET_ID})`\n    * Usually caused by attempting to create a ticket for a product and PUUID combination that already exists.\n\n* `httpStatus: 422` `errorCode: UNPROCESSABLE_ENTITY` `message: ProductAlgorithms.Ruleset config is not found`\n    * No matchmaking algorithm has been configured for the given ticket create parameters.\n\n* `httpStatus: 500`\n    * `errorCode: INTERNAL_SERVER_ERROR`\n        * There may be variations to the message to explain exactly what went wrong, but logs should have the details needed to triage. These errors are unexpected and warrant an investigation into the issue.\n\n    * `endpoint_dependency_not_ready`\n        * One or more dependencies for endpoint are not ready yet\n\n    * `no_base_url_detected`\n        * Key `service-plugin.matchmaking-service.base_url` is missing in ublic client-config\n",
-        "internal": false,
-        "name": "GetMatchmakingServiceV1Matches",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "MatchmakingServiceV1TicketsState"
-        },
-        "subscribable": false,
-        "tags": [
-            "matchmaking-service"
-        ],
-        "threadSafe": false
-    },
-    "GET /matchmaking/v1/debug/caller-id/mock-id": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Checks the caller ID in use when APIs are called from Swagger",
-        "help": "Returns the `productId` and `patchlineId` being passed to APIs in this plugin when called via Swagger.\n\nReturns 404 if a mock caller ID is not in use.",
-        "internal": false,
-        "name": "GetMatchmakingV1DebugCallerIdMockId",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "MatchmakingPluginCallerId_MockCallerId"
-        },
-        "subscribable": false,
-        "tags": [
-            "matchmaking"
-        ],
-        "threadSafe": false
-    },
-    "GET /matchmaking/v1/tickets/{ticket_id}": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "ticket_id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Get a Matchmaking Ticket associated with a ticketid",
-        "help": "",
-        "internal": false,
-        "name": "GetMatchmakingV1TicketsByTicketId",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "MatchmakingV1MatchmakingTicket"
-        },
-        "subscribable": false,
-        "tags": [
-            "matchmaking"
-        ],
-        "threadSafe": false
-    },
-    "GET /matchmaking/v1/tickets/{ticket_id}/ready-check": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "ticket_id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Get the ready-check status of the current ticket, if it exists",
-        "help": "",
-        "internal": false,
-        "name": "GetMatchmakingV1TicketsByTicketIdReadyCheck",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "MatchmakingV1MatchmakingReadyCheck"
-        },
-        "subscribable": false,
-        "tags": [
-            "matchmaking"
         ],
         "threadSafe": false
     },
@@ -5942,6 +5741,25 @@
         "subscribable": false,
         "tags": [
             "pay-mobile"
+        ],
+        "threadSafe": false
+    },
+    "GET /platform-login/v1/config": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns the plugin config and enabled status",
+        "help": "",
+        "internal": false,
+        "name": "GetPlatformLoginV1Config",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlatformLoginLoginPersistenceConfig"
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-login"
         ],
         "threadSafe": false
     },
@@ -8639,6 +8457,25 @@
         ],
         "threadSafe": false
     },
+    "GET /riot-login/v1/config": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns the plugin config and enabled status",
+        "help": "",
+        "internal": false,
+        "name": "GetRiotLoginV1Config",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RiotLoginLoginPersistenceConfig"
+        },
+        "subscribable": false,
+        "tags": [
+            "riot-login"
+        ],
+        "threadSafe": false
+    },
     "GET /riot-login/v1/status": {
         "arguments": [],
         "deprecated": false,
@@ -11290,7 +11127,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Get voice chat push to talk configuration status",
-        "help": "",
+        "help": "Endpoint is deprecated and will be deleted. Please check /voice-chat/v3/push-to-talk/",
         "internal": false,
         "name": "GetVoiceChatV2PushToTalkByProductName",
         "nameSpace": "",
@@ -11421,6 +11258,73 @@
         "returns": {
             "elementType": "",
             "type": "VoiceChatStateResource"
+        },
+        "subscribable": false,
+        "tags": [
+            "voice-chat"
+        ],
+        "threadSafe": false
+    },
+    "GET /voice-chat/v3/push-to-talk/{productName}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productName",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get voice chat push to talk configuration state",
+        "help": "Returns a structure with the current PTT state\nisEnabled: Is push-to-talk enabled?\nmode: (Exclusive) PTT channels will automatically mute other channels when they are enabled \n      (Inclusive) Other channels will stay open when PTT channels are enabled \npttSessions: Array with current PTT channel`s transmit states\n\tsessionId: channel identifier\n\ttransmit: defines if the channel should have voice channel open or not",
+        "internal": false,
+        "name": "GetVoiceChatV3PushToTalkByProductName",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "VoiceChatPushToTalkResource"
+        },
+        "subscribable": false,
+        "tags": [
+            "voice-chat"
+        ],
+        "threadSafe": false
+    },
+    "GET /voice-chat/v3/push-to-talk/{productName}/{sessionId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productName",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "sessionId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get voice chat push to talk transmit state for a specific channel",
+        "help": "Returns a structure with the current PTT state of a specific channelor returns an error if there is no PTT channel with the provided id\n\tsessionId: channel identifier\n\ttransmit: defines if the channel should have voice channel open or not",
+        "internal": false,
+        "name": "GetVoiceChatV3PushToTalkByProductNameBySessionId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "VoiceChatPushToTalkTransmitState"
         },
         "subscribable": false,
         "tags": [
@@ -13251,6 +13155,35 @@
         ],
         "threadSafe": false
     },
+    "POST /facebook-account/v1/authorization": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "AuthorizationParameters",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "FacebookAccountFacebookAuthorizationParameters"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Create authorization from the Sign In with Facebook Account",
+        "help": "",
+        "internal": false,
+        "name": "PostFacebookAccountV1Authorization",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "facebook-account"
+        ],
+        "threadSafe": false
+    },
     "POST /first-party-fulfillment/v1/fulfill": {
         "arguments": [
             {
@@ -13266,7 +13199,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Initiate a fulfillment attempt",
-        "help": "\n**Description**\n\nThis API will check if the user has made any purchases on the first party store and will attempt to fulfill them.\nThis should typically be called when the game is launched or resumed.\n\nNOTE: Currently, this endpoint only supports PlayStation 4, PlayStation 5, and Switch fulfillment. Xbox support will be added in the future.\n\n** Request Arguments **\n\nRequest Body:\n* `firstPartyAuthToken`: Authentication token for the first party platform required to perform fulfillment.\n    * On Nintendo Switch, provide the NSA ID token if available. Otherwise, RiotGamesApi will fetch the NSA ID token itself.\n    * On Playstation 4 and Playstation 5, provide an NP auth code that includes the \"psn:s2s\" and \"openid\" scopes.\n    * On Xbox, no token is required and an empty string can be provided.\n* `fulfillmentId`: UUID that identifies a unique fulfillment attempt.\n* `fulfillmentReason`: The reason why the fulfillment attempt was made. Possible options are listed below:\n    * `GameLaunched`: Fulfillment was initiated because a purchase may have occurred while the game was not running.\n    * `GameReturnedToForeground`: Fulfillment was initiated because a purchase may have occurred while the game was in the background.\n    * `PurchaseCompleted`: Fulfillment was initiated because a purchase was completed (likely from the in-game store).\n    * `Other`: DO NOT USE without consulting the SDK Features team first. This is a fallback reason for why a fulfillment was initiated if it\n      is not covered by any of the existing reasons. However, you should only use this if SDK Features is not able to add a reason that covers\n      your use case before you need to use it and once SDK Features does add the reason, you are expected to update to using it as soon as it\n      has been made available in the next SDK release.\n\n** Returns **\n\nResponse Body:\n* `FulfillmentResponse` Object:\n    * `fulfillmentRequired`: Bool indicating whether the player owned anything that needed to be fulfilled.\n    * `fulfilledItems`: An `ItemFulfillmentSuccessInfo` object\n        * `itemId`: A string that identifies the item that was fulfilled.\n        * `quantity`: An integer representing how many of the item was fulfilled.\n    * `unfulfilledItems`: An `ItemFulfillmentFailureInfo` object\n        * `itemId`: A string that identifies the item that was unable to be fulfilled.\n        * `quantity`: An integer representing how many of the item could not be fulfilled.\n        * `reason`: A string describing why the item could not be fulfilled.\n\n** Error Codes **\n* Possible error codes: 400, 403, 412, 417, 500, 502, 504, 512\n* Error codes fall into the following categories: recoverable, retriable, and hard failure.\n* Recoverable errors (400, 403, 412) will succeed when the root issue is resolved such as \"412 Unable to perform fulfillment because plugin is not enabled.\" - in this case the plugin needs to be enabled in the config\n* Retriable errors (500, 502, 503, 504) may succeed if another attempt is made later. This could include issues such as the network temporarily being down.\n* Hard failure (417, 512) errors are unlikely to succeed when retried and the root issue is unexpected. An example of this would be the first party libraries failing to load.\n* For more details on error codes and how to handle them please see https://platform.riotgames.com/riotgamesapi-sdk/features/first-party-fulfillment/integrating-first-party-fulfillment\n\n",
+        "help": "\n**Description**\n\nThis API will check if the user has made any purchases on the first party store and will attempt to fulfill them.\nThis should typically be called when the game is launched or resumed.\n\n** Request Arguments **\n\nRequest Body:\n* `firstPartyAuthToken`: Authentication token for the first party platform required to perform fulfillment.\n    * On Nintendo Switch, provide the NSA ID token if available. Otherwise, RiotGamesApi will fetch the NSA ID token itself.\n    * On Playstation 4 and Playstation 5, provide an NP auth code that includes the \"psn:s2s\" and \"openid\" scopes.\n    * On Xbox, no token is required and an empty string can be provided.\n* `fulfillmentId`: UUID that identifies a unique fulfillment attempt.\n* `fulfillmentReason`: The reason why the fulfillment attempt was made. Possible options are listed below:\n    * `GameLaunched`: Fulfillment was initiated because a purchase may have occurred while the game was not running.\n    * `GameReturnedToForeground`: Fulfillment was initiated because a purchase may have occurred while the game was in the background.\n    * `PurchaseCompleted`: Fulfillment was initiated because a purchase was completed (likely from the in-game store).\n    * `Other`: DO NOT USE without consulting the SDK Features team first. This is a fallback reason for why a fulfillment was initiated if it\n      is not covered by any of the existing reasons. However, you should only use this if SDK Features is not able to add a reason that covers\n      your use case before you need to use it and once SDK Features does add the reason, you are expected to update to using it as soon as it\n      has been made available in the next SDK release.\n\n** Returns **\n\nResponse Body:\n* `FulfillmentResponse` Object:\n    * `fulfillmentRequired`: Bool indicating whether the player owned anything that needed to be fulfilled.\n    * `fulfilledItems`: An `ItemFulfillmentSuccessInfo` object\n        * `itemId`: A string that identifies the item that was fulfilled.\n        * `quantity`: An integer representing how many of the item was fulfilled.\n    * `unfulfilledItems`: An `ItemFulfillmentFailureInfo` object\n        * `itemId`: A string that identifies the item that was unable to be fulfilled.\n        * `quantity`: An integer representing how many of the item could not be fulfilled.\n        * `reason`: A string describing why the item could not be fulfilled.\n\n** Error Codes **\n* Possible error codes: 400, 403, 412, 417, 500, 502, 504, 512\n* Error codes fall into the following categories: recoverable, retriable, and hard failure.\n* Recoverable errors (400, 403, 412) will succeed when the root issue is resolved such as \"412 Unable to perform fulfillment because plugin is not enabled.\" - in this case the plugin needs to be enabled in the config\n* Retriable errors (500, 502, 503, 504) may succeed if another attempt is made later. This could include issues such as the network temporarily being down.\n* Hard failure (417, 512) errors are unlikely to succeed when retried and the root issue is unexpected. An example of this would be the first party libraries failing to load.\n* For more details on error codes and how to handle them please see https://platform.riotgames.com/riotgamesapi-sdk/features/first-party-fulfillment/integrating-first-party-fulfillment\n\n",
         "internal": false,
         "name": "PostFirstPartyFulfillmentV1Fulfill",
         "nameSpace": "",
@@ -13335,6 +13268,25 @@
         "subscribable": false,
         "tags": [
             "game-session"
+        ],
+        "threadSafe": false
+    },
+    "POST /gamecenter-account/v1/authorization": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Create authorization for the Game Center Account",
+        "help": "",
+        "internal": false,
+        "name": "PostGamecenterAccountV1Authorization",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "gamecenter-account"
         ],
         "threadSafe": false
     },
@@ -13425,6 +13377,35 @@
         ],
         "threadSafe": false
     },
+    "POST /jwt-authenticator/v1/issue": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "payload",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "JwtAuthenticatorJWTIssueResource"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Issue a JWT using the provided JWKS service URL and the provided payload",
+        "help": "",
+        "internal": false,
+        "name": "PostJwtAuthenticatorV1Issue",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "string"
+        },
+        "subscribable": false,
+        "tags": [
+            "jwt-authenticator"
+        ],
+        "threadSafe": false
+    },
     "POST /jwt-authenticator/v1/verify": {
         "arguments": [
             {
@@ -13446,7 +13427,7 @@
         "nameSpace": "",
         "returns": {
             "elementType": "",
-            "type": "map"
+            "type": ""
         },
         "subscribable": false,
         "tags": [
@@ -13547,131 +13528,6 @@
         "subscribable": false,
         "tags": [
             "mailbox"
-        ],
-        "threadSafe": false
-    },
-    "POST /matchmaking-service/v1/match/{check_id}/accept": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "check_id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "",
-        "help": "\n**Description**\n\nThis endpoint accepts the ready check and confirm the player is entering the match.\nIt's achived by calling equivalent endpoint in the matchmaking service.\n\n**Request Argument**\n\nPath argument\n* `check_id` - id of a ready check to accept\n\n**Returns**\n\n* GenericSuccess on successful request\n* Failure object on failed request\n\n**Error Codes**\n\nPossible error codes with general information about possible root causes:\n\n* `httpStatus: 400`\n    * `errorCode: BAD_REQUEST` `message: Bad parameter used as input` - test text\n        * At least one of the parameters you provided are invalid and did not pass matchmaking service parsing.\n\n* `httpStatus: 401`\n    * `errorCode: UNAUTHORIZED` `message: Request lacks valid authentication` - ie. Unauthorized from Matchmaking Service\n        * The player is not part of the ticket you are trying to act on\n        * Invalid or missing claims\n        * Your product does not have access to matchmaking service\n\n    * `errorCode: UNAUTHORIZED` `message: Unauthorized` - ie. Unauthorized from SGP\n        * Invalid token - It may be expired or your product does not have access to matchmaking service\n\n* `httpStatus: 404` `errorCode: NOT_FOUND` `message: Resource not found`\n    * The resource you are trying to act on, such as deleting or retrieving a ticket, does not exist in the Matchmaking system.\n\n* `httpStatus: 409` `errorCode: CONFLICT` `message: conflict occurred (puuid: {PUUID}, ticket_id: {TICKET_ID})`\n    * Usually caused by attempting to create a ticket for a product and PUUID combination that already exists.\n\n* `httpStatus: 500`\n    * `errorCode: INTERNAL_SERVER_ERROR`\n        * There may be variations to the message to explain exactly what went wrong, but logs should have the details needed to triage. These errors are unexpected and warrant an investigation into the issue.\n\n    * `endpoint_dependency_not_ready`\n        * One or more dependencies for endpoint are not ready yet\n\n    * `no_base_url_detected`\n        * Key `service-plugin.matchmaking-service.base_url` is missing in ublic client-config\n",
-        "internal": false,
-        "name": "PostMatchmakingServiceV1MatchByCheckIdAccept",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "matchmaking-service"
-        ],
-        "threadSafe": false
-    },
-    "POST /matchmaking-service/v1/match/{check_id}/decline": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "check_id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "",
-        "help": "\n**Description**\n\nThis endpoint declines the ready check and confirm the player is not entering the match.\nIt's achived by calling equivalent endpoint in the matchmaking service.\n\n**Request Argument**\n\nPath argument\n* `check_id` - id of a ready check to decline\n\n**Returns**\n\n* GenericSuccess on successful request\n* Failure object on failed request\n\n**Error Codes**\n\nPossible error codes with general information about possible root causes:\n\n* `httpStatus: 400`\n    * `errorCode: BAD_REQUEST` `message: Bad parameter used as input` - test text\n        * At least one of the parameters you provided are invalid and did not pass matchmaking service parsing.\n\n* `httpStatus: 401`\n    * `errorCode: UNAUTHORIZED` `message: Request lacks valid authentication` - ie. Unauthorized from Matchmaking Service\n        * The player is not part of the ticket you are trying to act on\n        * Invalid or missing claims\n        * Your product does not have access to matchmaking service\n\n    * `errorCode: UNAUTHORIZED` `message: Unauthorized` - ie. Unauthorized from SGP\n        * Invalid token - It may be expired or your product does not have access to matchmaking service\n\n* `httpStatus: 404` `errorCode: NOT_FOUND` `message: Resource not found`\n    * The resource you are trying to act on, such as deleting or retrieving a ticket, does not exist in the Matchmaking system.\n\n* `httpStatus: 409` `errorCode: CONFLICT` `message: conflict occurred (puuid: {PUUID}, ticket_id: {TICKET_ID})`\n    * Usually caused by attempting to create a ticket for a product and PUUID combination that already exists.\n\n* `httpStatus: 500`\n    * `errorCode: INTERNAL_SERVER_ERROR`\n        * There may be variations to the message to explain exactly what went wrong, but logs should have the details needed to triage. These errors are unexpected and warrant an investigation into the issue.\n\n    * `endpoint_dependency_not_ready`\n        * One or more dependencies for endpoint are not ready yet\n\n    * `no_base_url_detected`\n        * Key `service-plugin.matchmaking-service.base_url` is missing in ublic client-config\n",
-        "internal": false,
-        "name": "PostMatchmakingServiceV1MatchByCheckIdDecline",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "matchmaking-service"
-        ],
-        "threadSafe": false
-    },
-    "POST /matchmaking-service/v1/matches": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "params",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "MatchmakingServiceV1CreateMatchmakingTicketParams"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "",
-        "help": "\n**Description**\n\nThis endpoint creates a Matchmaking ticket with the provided params.\nIt's achived by calling equivalent endpoint in the matchmaking service.\n\n**Request Argument**\n\nBody argument\n\n* `CreateMatchmakingTicketParams` Object:\n    * `shard`: parameter storing shard info\n    * `mode`: parameter storing matchmaking mode\n    * `mode`: optional parameter storing matchmaking mode\n    * `version`: parameter storing matchmaking version\n    * `additionalDataForAlgorithm`: parameter storing additional data required by matchmaking algorithm\n\n**Returns**\n\nResponse Body:\n* `CreateMatchmakingTicketResult` Object:\n    * `ticketId`: A string that contains ticket id\n\n**Error Codes**\n\nPossible error codes with general information about possible root causes:\n\n* `httpStatus: 400`\n    * `errorCode: BAD_REQUEST` `message: Bad parameter used as input`\n        * At least one of the parameters you provided are invalid and did not pass matchmaking service parsing.\n\n* `httpStatus: 401`\n    * `errorCode: UNAUTHORIZED` `message: Request lacks valid authentication` - ie. Unauthorized from Matchmaking Service\n        * The player is not part of the ticket you are trying to act on\n        * Invalid or missing claims\n        * Your product does not have access to matchmaking service\n\n    * `errorCode: UNAUTHORIZED` `message: Unauthorized` - ie. Unauthorized from SGP\n        * Invalid token - It may be expired or your product does not have access to matchmaking service\n\n* `httpStatus: 404` `errorCode: NOT_FOUND` `message: Resource not found`\n    * The resource you are trying to act on, such as deleting or retrieving a ticket, does not exist in the Matchmaking system.\n\n* `httpStatus: 409` `errorCode: CONFLICT` `message: conflict occurred (puuid: {PUUID}, ticket_id: {TICKET_ID})`\n    * Usually caused by attempting to create a ticket for a product and PUUID combination that already exists.\n\n* `httpStatus: 422` `errorCode: UNPROCESSABLE_ENTITY` `message: ProductAlgorithms.Ruleset config is not found`\n    * No matchmaking algorithm has been configured for the given ticket create parameters.\n\n* `httpStatus: 500`\n    * `errorCode: INTERNAL_SERVER_ERROR`\n        * There may be variations to the message to explain exactly what went wrong, but logs should have the details needed to triage. These errors are unexpected and warrant an investigation into the issue.\n\n    * `endpoint_dependency_not_ready`\n        * One or more dependencies for endpoint are not ready yet\n\n    * `no_base_url_detected`\n        * Key `service-plugin.matchmaking-service.base_url` is missing in ublic client-config\n",
-        "internal": false,
-        "name": "PostMatchmakingServiceV1Matches",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "MatchmakingServiceV1CreateMatchmakingTicketResult"
-        },
-        "subscribable": false,
-        "tags": [
-            "matchmaking-service"
-        ],
-        "threadSafe": false
-    },
-    "POST /matchmaking/v1/tickets/{ticket_id}/ready-check": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "ticket_id",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "",
-                "name": "accept_ready",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "MatchmakingV1AcceptReady"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Accept or decline the ready check associated with a ticket id",
-        "help": "",
-        "internal": false,
-        "name": "PostMatchmakingV1TicketsByTicketIdReadyCheck",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "matchmaking"
         ],
         "threadSafe": false
     },
@@ -17672,6 +17528,35 @@
         ],
         "threadSafe": false
     },
+    "POST /rso-mobile-ui/v1/internal/display-error-page": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "errorCode",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "",
+        "help": "Launches a WebView to display an error page. Used by `platform-ui` as a temporary solution before it handles error pages on it's own. DON'T USE IT!",
+        "internal": false,
+        "name": "PostRsoMobileUiV1InternalDisplayErrorPage",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "map"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-mobile-ui"
+        ],
+        "threadSafe": false
+    },
     "POST /rso-mobile-ui/v1/ios-auth-redirect": {
         "arguments": [
             {
@@ -18267,6 +18152,35 @@
         ],
         "threadSafe": false
     },
+    "POST /voice-chat/v1/debug/simulate": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "simulationConfig",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "VoiceChatDebugSimulationResource"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Simulate provider/player behavior for testing.",
+        "help": "",
+        "internal": false,
+        "name": "PostVoiceChatV1DebugSimulate",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "voice-chat"
+        ],
+        "threadSafe": false
+    },
     "POST /voice-chat/v1/initialize-provider/{productName}": {
         "arguments": [
             {
@@ -18349,7 +18263,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Use to check if we have permissions to start push to talk",
-        "help": "",
+        "help": "Endpoint is deprecated and will be deleted. Please check /voice-chat/v3/push-to-talk/",
         "internal": false,
         "name": "PostVoiceChatV2PushToTalkCheckAvailable",
         "nameSpace": "",
@@ -19882,35 +19796,6 @@
         ],
         "threadSafe": false
     },
-    "PUT /matchmaking/v1/debug/caller-id/mock-id": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "callerId",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "MatchmakingPluginCallerId_MockCallerId"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Sets the caller ID to use when calling this plugin from Swagger",
-        "help": "Sets the `productId` and `patchlineId` to pass to APIs in this plugin during future calls from Swagger.\n\nUse this functionality to test APIs in this plugin with Swagger, as if they were being called from another product.",
-        "internal": false,
-        "name": "PutMatchmakingV1DebugCallerIdMockId",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "matchmaking"
-        ],
-        "threadSafe": false
-    },
     "PUT /patch-proxy/v1/patch-jobs/cancel-active": {
         "arguments": [],
         "deprecated": false,
@@ -20319,6 +20204,35 @@
         "subscribable": false,
         "tags": [
             "patch"
+        ],
+        "threadSafe": false
+    },
+    "PUT /platform-login/v1/config": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "LoginPersistenceConfig",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlatformLoginLoginPersistenceConfig"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Allows to modify the plugin config (e.g. enable or disable login persistence)",
+        "help": "",
+        "internal": false,
+        "name": "PutPlatformLoginV1Config",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-login"
         ],
         "threadSafe": false
     },
@@ -21509,6 +21423,35 @@
         "tags": [
             "Plugins",
             "Plugin riot-client-lifecycle"
+        ],
+        "threadSafe": false
+    },
+    "PUT /riot-login/v1/config": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "LoginPersistenceConfig",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RiotLoginLoginPersistenceConfig"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Allows to modify the plugin config (e.g. enable or disable login persistence)",
+        "help": "",
+        "internal": false,
+        "name": "PutRiotLoginV1Config",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "riot-login"
         ],
         "threadSafe": false
     },
@@ -23412,7 +23355,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Set voice chat push to talk configuration",
-        "help": "",
+        "help": "Endpoint is deprecated and will be deleted. Please check /voice-chat/v3/push-to-talk/",
         "internal": false,
         "name": "PutVoiceChatV2PushToTalkByProductName",
         "nameSpace": "",
@@ -23558,6 +23501,91 @@
         "help": "Endpoint deleted March 2021.",
         "internal": false,
         "name": "PutVoiceChatV2Settings",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "voice-chat"
+        ],
+        "threadSafe": false
+    },
+    "PUT /voice-chat/v3/push-to-talk/{productName}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productName",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "pushToTalk",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "VoiceChatV3PushToTalkResource"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Set voice chat push to talk configuration",
+        "help": "Allows the game to toggle voice channel's PTT state\nNOTE: Games should use their own input state to toggle transmit state of PTT channels. It DOES NOT bind into OS input.\nisEnabled: Is push-to-talk enabled?\nmode: (Exclusive) PTT channels will automatically mute other channels when they are enabled \n      (Inclusive) Other channels will stay open when PTT channels are enabled \npttSessions: Array with PTT channel`s transmit states\n\tsessionId: channel identifier\n\ttransmit: defines if the channel should have voice channel open or not",
+        "internal": false,
+        "name": "PutVoiceChatV3PushToTalkByProductName",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "voice-chat"
+        ],
+        "threadSafe": false
+    },
+    "PUT /voice-chat/v3/push-to-talk/{productName}/{sessionId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productName",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "sessionId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "transmitState",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "VoiceChatPushToTalkTransmitState"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Set voice chat push to talk transmit state for a specific channel",
+        "help": "Updates the transmit state of a specific channel or returns an error if there is no PTT channel with the provided id\n\tsessionId: channel identifier\n\ttransmit: defines if the channel should have voice channel open or not",
+        "internal": false,
+        "name": "PutVoiceChatV3PushToTalkByProductNameBySessionId",
         "nameSpace": "",
         "returns": {
             "elementType": "",
