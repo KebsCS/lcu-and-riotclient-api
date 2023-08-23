@@ -1543,6 +1543,25 @@
         ],
         "threadSafe": false
     },
+    "DELETE /playstation-account/v2/authorization": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Deletes the current Playstation authorization session",
+        "help": "",
+        "internal": false,
+        "name": "DeletePlaystationAccountV2Authorization",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "playstation-account"
+        ],
+        "threadSafe": false
+    },
     "DELETE /prime-gaming/v1/login": {
         "arguments": [],
         "deprecated": false,
@@ -2722,6 +2741,25 @@
         "subscribable": false,
         "tags": [
             "voice-chat"
+        ],
+        "threadSafe": false
+    },
+    "DELETE /xbox-account/v2/authorization": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Deletes the current Xbox authorization session",
+        "help": "",
+        "internal": false,
+        "name": "DeleteXboxAccountV2Authorization",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "xbox-account"
         ],
         "threadSafe": false
     },
@@ -6567,6 +6605,25 @@
         "returns": {
             "elementType": "",
             "type": "PlaystationAccountUser"
+        },
+        "subscribable": false,
+        "tags": [
+            "playstation-account"
+        ],
+        "threadSafe": false
+    },
+    "GET /playstation-account/v2/authorization": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Gets current Playstation authorization status",
+        "help": "",
+        "internal": false,
+        "name": "GetPlaystationAccountV2Authorization",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlaystationAccountV2AuthorizationResponse"
         },
         "subscribable": false,
         "tags": [
@@ -11646,6 +11703,25 @@
         ],
         "threadSafe": false
     },
+    "GET /xbox-account/v2/authorization": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Gets current Xbox authorization status",
+        "help": "",
+        "internal": false,
+        "name": "GetXboxAccountV2Authorization",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "XboxAccountV2AuthorizationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "xbox-account"
+        ],
+        "threadSafe": false
+    },
     "Help": {
         "arguments": [
             {
@@ -14734,6 +14810,35 @@
         ],
         "threadSafe": false
     },
+    "POST /playstation-account/v2/authorization": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "AuthorizationParameters",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlaystationAccountV2AuthorizationParameters"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Gets authorization from the Playstation Account of the player logged in the Playstation or start authentication with native browser",
+        "help": "",
+        "internal": false,
+        "name": "PostPlaystationAccountV2Authorization",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "playstation-account"
+        ],
+        "threadSafe": false
+    },
     "POST /prime-gaming/v1/login": {
         "arguments": [],
         "deprecated": false,
@@ -15331,6 +15436,66 @@
         "tags": [
             "Plugins",
             "Plugin rc-auth"
+        ],
+        "threadSafe": false
+    },
+    "POST /rc-info-radiator/v1/time-sample/{phaseName}/end": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "phaseName",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Mark the end of the time phase sample and send an event to Analytics Platform conforming to the `riotclient__TimeSample__v4` schema.",
+        "help": "",
+        "internal": false,
+        "name": "PostRcInfoRadiatorV1TimeSampleByPhaseNameEnd",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "object"
+        },
+        "subscribable": false,
+        "tags": [
+            "Plugins",
+            "Plugin rc-info-radiator"
+        ],
+        "threadSafe": false
+    },
+    "POST /rc-info-radiator/v1/time-sample/{phaseName}/start": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "phaseName",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Track the start time for a time phase sample of interest. Call `/info-radiator/v1/time-sample/{phase}/end` to mark the end of the sample.",
+        "help": "",
+        "internal": false,
+        "name": "PostRcInfoRadiatorV1TimeSampleByPhaseNameStart",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "object"
+        },
+        "subscribable": false,
+        "tags": [
+            "Plugins",
+            "Plugin rc-info-radiator"
         ],
         "threadSafe": false
     },
@@ -18429,6 +18594,35 @@
         "help": "",
         "internal": false,
         "name": "PostXboxAccountV1User",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "xbox-account"
+        ],
+        "threadSafe": false
+    },
+    "POST /xbox-account/v2/authorization": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "AuthorizationParameters",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "XboxAccountV2AuthorizationParameters"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Gets authorization from the Xbox Account of the player logged in the Xbox or start authentication with native browser",
+        "help": "",
+        "internal": false,
+        "name": "PostXboxAccountV2Authorization",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -22271,6 +22465,45 @@
         "help": "",
         "internal": false,
         "name": "PutRnetProductRegistryV4ProductsByProductIdPatchlinesByPatchlineIdUninstallKey",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "object"
+        },
+        "subscribable": false,
+        "tags": [
+            "Plugins",
+            "Plugin rnet-product-registry"
+        ],
+        "threadSafe": false
+    },
+    "PUT /rnet-product-registry/v4/repair-requests/products/{productId}/patchlines/{patchlineId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "patchlineId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Notify Product Registry that a user has requested to repair a product.",
+        "help": "",
+        "internal": false,
+        "name": "PutRnetProductRegistryV4RepairRequestsProductsByProductIdPatchlinesByPatchlineId",
         "nameSpace": "",
         "returns": {
             "elementType": "",

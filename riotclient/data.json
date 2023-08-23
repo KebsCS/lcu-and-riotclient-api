@@ -446,7 +446,10 @@
         "GET /playstation-account/v1/player-nickname",
         "GET /playstation-account/v1/player-nickname-without-consent",
         "GET /playstation-account/v1/user",
-        "POST /playstation-account/v1/user"
+        "POST /playstation-account/v1/user",
+        "DELETE /playstation-account/v2/authorization",
+        "GET /playstation-account/v2/authorization",
+        "POST /playstation-account/v2/authorization"
     ],
     "Plugin agent": [
         "POST /agent/v1/connection-info",
@@ -526,6 +529,10 @@
     "Plugin rc-auth": [
         "GET /rc-auth/v1/xbgp/login-status",
         "POST /rc-auth/v1/xbgp/update-login-token"
+    ],
+    "Plugin rc-info-radiator": [
+        "POST /rc-info-radiator/v1/time-sample/{phaseName}/end",
+        "POST /rc-info-radiator/v1/time-sample/{phaseName}/start"
     ],
     "Plugin restriction": [
         "GET /restriction/v1/launchRestrictedProducts",
@@ -617,6 +624,7 @@
         "PUT /rnet-product-registry/v4/products/{productId}/patchlines/{patchlineId}/shortcut",
         "PUT /rnet-product-registry/v4/products/{productId}/patchlines/{patchlineId}/uninstall-key",
         "GET /rnet-product-registry/v4/public-products-state",
+        "PUT /rnet-product-registry/v4/repair-requests/products/{productId}/patchlines/{patchlineId}",
         "DELETE /rnet-product-registry/v4/session-patch-lock/products/{productId}/patchline/{patchlineId}",
         "PUT /rnet-product-registry/v4/session-patch-lock/products/{productId}/patchline/{patchlineId}"
     ],
@@ -701,6 +709,8 @@
         "GET /publishing-content/v1/promo/{productId}",
         "GET /rc-auth/v1/xbgp/login-status",
         "POST /rc-auth/v1/xbgp/update-login-token",
+        "POST /rc-info-radiator/v1/time-sample/{phaseName}/end",
+        "POST /rc-info-radiator/v1/time-sample/{phaseName}/start",
         "GET /restriction/v1/launchRestrictedProducts",
         "GET /restriction/v1/launchRestrictions",
         "GET /restriction/v1/ready",
@@ -778,6 +788,7 @@
         "PUT /rnet-product-registry/v4/products/{productId}/patchlines/{patchlineId}/shortcut",
         "PUT /rnet-product-registry/v4/products/{productId}/patchlines/{patchlineId}/uninstall-key",
         "GET /rnet-product-registry/v4/public-products-state",
+        "PUT /rnet-product-registry/v4/repair-requests/products/{productId}/patchlines/{patchlineId}",
         "DELETE /rnet-product-registry/v4/session-patch-lock/products/{productId}/patchline/{patchlineId}",
         "PUT /rnet-product-registry/v4/session-patch-lock/products/{productId}/patchline/{patchlineId}",
         "GET /rnet-self-update/v1/enabled",
@@ -1213,6 +1224,9 @@
         "PUT /xbox-account/v1/authorization-consent",
         "GET /xbox-account/v1/player-nickname",
         "GET /xbox-account/v1/player-nickname-without-consent",
-        "POST /xbox-account/v1/user"
+        "POST /xbox-account/v1/user",
+        "DELETE /xbox-account/v2/authorization",
+        "GET /xbox-account/v2/authorization",
+        "POST /xbox-account/v2/authorization"
     ]
 }
