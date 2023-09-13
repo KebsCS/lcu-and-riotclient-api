@@ -23496,14 +23496,54 @@
         ],
         "threadSafe": false
     },
-    "PUT /vanguard/v1/update": {
-        "arguments": [],
+    "PUT /vanguard/v1/installed-products": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "products",
+                "optional": false,
+                "type": {
+                    "elementType": "string",
+                    "type": "vector"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Intended to provide product arguments to Vanguard installer",
+        "help": "",
+        "internal": false,
+        "name": "PutVanguardV1InstalledProducts",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "Plugins",
+            "Plugin vanguard"
+        ],
+        "threadSafe": false
+    },
+    "PUT /vanguard/v1/update/products/{productId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Request that Vanguard update, prompting UAC if required.",
         "help": "",
         "internal": false,
-        "name": "PutVanguardV1Update",
+        "name": "PutVanguardV1UpdateProductsByProductId",
         "nameSpace": "",
         "returns": {
             "elementType": "",

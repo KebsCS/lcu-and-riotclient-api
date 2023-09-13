@@ -651,8 +651,9 @@
     ],
     "Plugin vanguard": [
         "POST /vanguard/v1/check-vanguard-service",
+        "PUT /vanguard/v1/installed-products",
         "GET /vanguard/v1/status",
-        "PUT /vanguard/v1/update"
+        "PUT /vanguard/v1/update/products/{productId}"
     ],
     "Plugins": [
         "POST /agent/v1/connection-info",
@@ -805,8 +806,9 @@
         "PUT /system-info/v1/routine/stop",
         "PUT /system-tray/v1/native-notification/show",
         "POST /vanguard/v1/check-vanguard-service",
+        "PUT /vanguard/v1/installed-products",
         "GET /vanguard/v1/status",
-        "PUT /vanguard/v1/update"
+        "PUT /vanguard/v1/update/products/{productId}"
     ],
     "prime-gaming": [
         "DELETE /prime-gaming/v1/login",

@@ -653,7 +653,6 @@
         "GET /lol-kr-shutdown-law/v1/status"
     ],
     "Plugin lol-l10n": [
-        "GET /riotclient/get_region_locale",
         "GET /riotclient/region-locale"
     ],
     "Plugin lol-league-session": [
@@ -1011,6 +1010,12 @@
         "GET /lol-player-messaging/v1/notification",
         "DELETE /lol-player-messaging/v1/notification/{id}/acknowledge"
     ],
+    "Plugin lol-player-name-transition": [
+        "POST /lol-player-name-transition/v1/dismiss",
+        "GET /lol-player-name-transition/v1/modal-state",
+        "POST /lol-player-name-transition/v1/open-faq",
+        "POST /lol-player-name-transition/v1/open-name-change"
+    ],
     "Plugin lol-player-preferences": [
         "POST /lol-player-preferences/v1/player-preferences-endpoint-override",
         "GET /lol-player-preferences/v1/player-preferences-ready",
@@ -1196,7 +1201,8 @@
     "Plugin lol-spectator": [
         "POST /lol-spectator/v1/buddy/spectate",
         "GET /lol-spectator/v1/spectate",
-        "POST /lol-spectator/v1/spectate/launch"
+        "POST /lol-spectator/v1/spectate/launch",
+        "POST /lol-spectator/v2/buddy/spectate"
     ],
     "Plugin lol-statstones": [
         "GET /lol-statstones/v1/eog-notifications/{gameId}",
@@ -1243,6 +1249,7 @@
         "POST /lol-suggested-players/v1/victorious-comrade"
     ],
     "Plugin lol-summoner": [
+        "GET /lol-summoner/v1/alias/lookup",
         "GET /lol-summoner/v1/check-name-availability-new-summoners/{name}",
         "GET /lol-summoner/v1/check-name-availability/{name}",
         "GET /lol-summoner/v1/current-summoner",
@@ -1268,6 +1275,7 @@
         "GET /lol-summoner/v1/summoners",
         "POST /lol-summoner/v1/summoners",
         "GET /lol-summoner/v1/summoners-by-puuid-cached/{puuid}",
+        "POST /lol-summoner/v1/summoners/aliases",
         "GET /lol-summoner/v1/summoners/{id}",
         "POST /lol-summoner/v1/validate-alias",
         "GET /lol-summoner/v2/summoner-icons",
@@ -2218,6 +2226,10 @@
         "DELETE /lol-player-messaging/v1/celebration/notification/{id}/acknowledge",
         "GET /lol-player-messaging/v1/notification",
         "DELETE /lol-player-messaging/v1/notification/{id}/acknowledge",
+        "POST /lol-player-name-transition/v1/dismiss",
+        "GET /lol-player-name-transition/v1/modal-state",
+        "POST /lol-player-name-transition/v1/open-faq",
+        "POST /lol-player-name-transition/v1/open-name-change",
         "POST /lol-player-preferences/v1/player-preferences-endpoint-override",
         "GET /lol-player-preferences/v1/player-preferences-ready",
         "PUT /lol-player-preferences/v1/preference",
@@ -2365,6 +2377,7 @@
         "POST /lol-spectator/v1/buddy/spectate",
         "GET /lol-spectator/v1/spectate",
         "POST /lol-spectator/v1/spectate/launch",
+        "POST /lol-spectator/v2/buddy/spectate",
         "GET /lol-statstones/v1/eog-notifications/{gameId}",
         "GET /lol-statstones/v1/featured-champion-statstones/{championItemId}",
         "POST /lol-statstones/v1/featured-champion-statstones/{championItemId}/{statstoneId}",
@@ -2403,6 +2416,7 @@
         "GET /lol-suggested-players/v1/suggested-players",
         "DELETE /lol-suggested-players/v1/suggested-players/{summonerId}",
         "POST /lol-suggested-players/v1/victorious-comrade",
+        "GET /lol-summoner/v1/alias/lookup",
         "GET /lol-summoner/v1/check-name-availability-new-summoners/{name}",
         "GET /lol-summoner/v1/check-name-availability/{name}",
         "GET /lol-summoner/v1/current-summoner",
@@ -2428,6 +2442,7 @@
         "GET /lol-summoner/v1/summoners",
         "POST /lol-summoner/v1/summoners",
         "GET /lol-summoner/v1/summoners-by-puuid-cached/{puuid}",
+        "POST /lol-summoner/v1/summoners/aliases",
         "GET /lol-summoner/v1/summoners/{id}",
         "POST /lol-summoner/v1/validate-alias",
         "GET /lol-summoner/v2/summoner-icons",
@@ -2533,7 +2548,6 @@
         "DELETE /riot-messaging-service/v1/session",
         "GET /riot-messaging-service/v1/session",
         "GET /riot-messaging-service/v1/state",
-        "GET /riotclient/get_region_locale",
         "GET /riotclient/region-locale",
         "POST /sanitizer/v1/containsSanitized",
         "POST /sanitizer/v1/sanitize",
