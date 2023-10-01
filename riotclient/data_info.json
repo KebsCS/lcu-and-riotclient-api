@@ -1263,6 +1263,25 @@
         ],
         "threadSafe": false
     },
+    "DELETE /nintendo-account/v2/authorization": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Deletes the current Nintendo authorization session",
+        "help": "",
+        "internal": false,
+        "name": "DeleteNintendoAccountV2Authorization",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "nintendo-account"
+        ],
+        "threadSafe": false
+    },
     "DELETE /patch-proxy/v1/patch-jobs/all": {
         "arguments": [],
         "deprecated": false,
@@ -5453,6 +5472,25 @@
         ],
         "threadSafe": false
     },
+    "GET /nintendo-account/v2/authorization": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Gets current Nintendo authorization status",
+        "help": "",
+        "internal": false,
+        "name": "GetNintendoAccountV2Authorization",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "NintendoAccountV2AuthorizationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "nintendo-account"
+        ],
+        "threadSafe": false
+    },
     "GET /patch-proxy/v1/active-updates": {
         "arguments": [],
         "deprecated": false,
@@ -5779,6 +5817,25 @@
         "subscribable": false,
         "tags": [
             "pay-mobile"
+        ],
+        "threadSafe": false
+    },
+    "GET /permissions/v1/request": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "[WIP] Gets values for all requested permissions.",
+        "help": "",
+        "internal": false,
+        "name": "GetPermissionsV1Request",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PermissionsPermissionsResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "permissions"
         ],
         "threadSafe": false
     },
@@ -9175,25 +9232,6 @@
         ],
         "threadSafe": false
     },
-    "GET /riotclient/lifecycle": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Get the current lifecycle events.",
-        "help": "Endpoint will be deleted after July 2023 [SDKEXP-2014]",
-        "internal": false,
-        "name": "GetRiotclientLifecycle",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "LifecycleData"
-        },
-        "subscribable": false,
-        "tags": [
-            "riotclient"
-        ],
-        "threadSafe": false
-    },
     "GET /riotclient/machine-id": {
         "arguments": [],
         "deprecated": false,
@@ -10655,6 +10693,25 @@
         "returns": {
             "elementType": "",
             "type": "RsoMobileUiRegionElectionV1EligibilityResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-mobile-ui"
+        ],
+        "threadSafe": false
+    },
+    "GET /rso-mobile-ui/v1/riot-id-prompt/status": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "",
+        "help": "Get the current Riot ID Prompt UI status.",
+        "internal": false,
+        "name": "GetRsoMobileUiV1RiotIdPromptStatus",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoMobileUiRiotIDPromptV1RiotIDPrompt"
         },
         "subscribable": false,
         "tags": [
@@ -12190,6 +12247,25 @@
         ],
         "threadSafe": false
     },
+    "POST /chat/v1/resume": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Resume operations, connect to the chat service, and perform other operations specified on suspend",
+        "help": "",
+        "internal": false,
+        "name": "PostChatV1Resume",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "chat"
+        ],
+        "threadSafe": false
+    },
     "POST /chat/v1/session/connect": {
         "arguments": [],
         "deprecated": false,
@@ -12308,6 +12384,35 @@
         "returns": {
             "elementType": "",
             "type": "ChatSocialData"
+        },
+        "subscribable": false,
+        "tags": [
+            "chat"
+        ],
+        "threadSafe": false
+    },
+    "POST /chat/v1/suspend": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "config",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "ChatSessionSuspendConfig"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Suspend operations, disconnect from the chat service, and disallow reconnects",
+        "help": "",
+        "internal": false,
+        "name": "PostChatV1Suspend",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
         },
         "subscribable": false,
         "tags": [
@@ -13819,6 +13924,35 @@
         ],
         "threadSafe": false
     },
+    "POST /nintendo-account/v2/authorization": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "AuthorizationParameters",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "NintendoAccountV2AuthorizationParameters"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Gets authorization from the Nintendo Account of the player logged in the Nintendo or start authentication with native browser",
+        "help": "",
+        "internal": false,
+        "name": "PostNintendoAccountV2Authorization",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "nintendo-account"
+        ],
+        "threadSafe": false
+    },
     "POST /pay-mobile/v1/purchase/{productId}": {
         "arguments": [
             {
@@ -13959,6 +14093,35 @@
         "subscribable": false,
         "tags": [
             "payments"
+        ],
+        "threadSafe": false
+    },
+    "POST /permissions/v1/request": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "PermissionsRequestParameters",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PermissionsPermissionsRequestParameters"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "[WIP] Request current permission status of a given permission permissionId.",
+        "help": "",
+        "internal": false,
+        "name": "PostPermissionsV1Request",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PermissionsPermissionsResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "permissions"
         ],
         "threadSafe": false
     },
@@ -14131,7 +14294,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Retrieves the namesets for a single PUUID",
-        "help": "\n**Description**\nRetrieves the namesets for the PUUID provided.\nA Nameset contains the user's name on the given platform.\nExample: SwitchNameset.name would be the Switch username associated with the user's PUUID on Switch\n\n** Body Argument **\n\n\"NamesetsForPuuidRequest\"\n    \"puuid\" - PUUID (String)\n\nResponse Body:\nNamesetsForPuuidResponse:\n    \"puuid\" - PUUID (String)\n    \"switchNameset\" - A SwitchNameset\n    \"playstationNameset\" - A PlaystationNameset\n    \"xboxNameset\" - An XboxNameset\n    \"alias\" - A RiotAlias\n    \"error\" - A String containing any errors\n\nSwitchNameset:\n    \"name\" - A String with the Switch name associated to the requested PUUID\n\nPlaystationNameset:\n    \"name\" - A String with the Playstation name associated to the requested PUUID\n\nXboxNameset:\n    \"name\" - A String with the Xbox name associated to the requested PUUID\n\nRiotAlias:\n    \"gameName\" - The users Game Name (String)\n    \"tagLine\" - The users Tag Line (String)\n\n",
+        "help": "\n**Description**\nRetrieves the namesets for the PUUID provided.\nA Nameset contains the player's name on the given platform.\nExample: SwitchNameset.name would be the Switch username associated with the player's PUUID\n\n** Body Argument **\n\n\"NamesetsForPuuidRequest\"\n* \"puuid\" - PUUID (String)\n\nResponse Body:\nNamesetsForPuuidResponse:\n* \"puuid\" - PUUID (String)\n* \"providerId\" - player's provider id\n* \"switchNameset\" - A SwitchNameset\n* \"playstationNameset\" - A PlaystationNameset\n* \"xboxNameset\" - An XboxNameset\n* \"gnt\" - A Riot ID\n* \"error\" - A String containing any errors\n\nSwitchNameset:\n    \"name\" - A String with the Switch name associated to the requested PUUID\n\nPlaystationNameset:\n    \"name\" - A String with the Playstation name associated to the requested PUUID\n\nXboxNameset:\n    \"name\" - A String with the Xbox name associated to the requested PUUID\n\nRiot ID:\n    \"gameName\" - The player's Game Name (String)\n    \"tagLine\" - The player's Tag Line (String)\n\n",
         "internal": false,
         "name": "PostPlayerAccountLookupV1NamesetsForPuuid",
         "nameSpace": "",
@@ -14160,7 +14323,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Retrieves the namesets for each PUUID provided",
-        "help": "\n**Description**\nRetrieves the namesets for each PUUID provided.\nA Nameset contains the user's name on the given platform.\nExample: SwitchNameset.name would be the Switch username associated with the user's PUUID on Switch\n\n** Request Arguments **\n\nRequest Body Object:\nNamesetsForPuuidsRequest Object:\n    \"puuids\" - A list of PUUIDs to retrieve namesets for\n\nNamesetsForPuuidsResponse Body:\n    \"namesets\" - A list of NamesetsResponseElements\n\nNamesetsResponseElement:\n    \"puuid\" - PUUID (String)\n    \"switchNameset\" - A SwitchNameset\n    \"playstationNameset\" - A PlaystationNameset\n    \"xboxNameset\" - An XboxNameset\n    \"alias\" - A RiotAlias\n    \"error\" - A String containing any errors\n\nSwitchNameset:\n    \"name\" - A String with the Switch name associated to the requested PUUID\n\nPlaystationNameset:\n    \"name\" - A String with the Playstation name associated to the requested PUUID\n\nXboxNameset:\n    \"name\" - A String with the Xbox name associated to the requested PUUID\n\nRiotAlias:\n    \"gameName\" - The users Game Name (String)\n    \"tagLine\" - The users Tag Line (String)\n\n",
+        "help": "\n**Description**\nRetrieves the namesets for each PUUID provided.\nA Nameset contains the player's name on the given platform.\nExample: SwitchNameset.name would be the Switch username associated with the player's PUUID\n\n** Request Arguments **\n\nRequest Body Object:\nNamesetsForPuuidsRequest Object:\n    \"puuids\" - A list of PUUIDs to retrieve namesets for\n\nNamesetsForPuuidsResponse Body:\n    \"namesets\" - A list of NamesetsResponseElements\n\nNamesetsResponseElement:\n* \"puuid\" - PUUID (String)\n* \"providerId\" - player's provider id\n* \"switchNameset\" - A SwitchNameset\n* \"playstationNameset\" - A PlaystationNameset\n* \"xboxNameset\" - An XboxNameset\n* \"gnt\" - A Riot ID\n* \"error\" - A String containing any errors\n\nSwitchNameset:\n    \"name\" - A String with the Switch name associated to the requested PUUID\n\nPlaystationNameset:\n    \"name\" - A String with the Playstation name associated to the requested PUUID\n\nXboxNameset:\n    \"name\" - A String with the Xbox name associated to the requested PUUID\n\nRiot ID:\n    \"gameName\" - The player's Game Name (String)\n    \"tagLine\" - The player's Tag Line (String)\n\n",
         "internal": false,
         "name": "PostPlayerAccountLookupV1NamesetsForPuuids",
         "nameSpace": "",
@@ -14189,42 +14352,13 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Retrieves the PUUIDs for each Console ID provided",
-        "help": "\n**Description**\nRetrieves the PUUIDs for each Console ID provided.\n\n** Request Arguments **\n\nRequest Body Object:\nConsoleIdsToPuuidsRequest Object:\n    \"consoleIds\" - A list of console IDs to retrieve PUUIDs for\n    \"environment\" - A String name for the platform environment (e.g. \"sp-int\")\n\nConsoleIdsToPuuidsResponse Body:\n    \"response\" - A list of ConsoleIdToPuuidResponseElements\n\nPuuidAndProvider:\n    \"puuid\" - The PUUID associated with the Console ID\n    \"providerId\" - A String ID for the provider (e.g. as \"123abc123\")\n    \"error\" - A String containing any errors (e.g. \"No matching account found.\")\n\n",
+        "help": "\n**Description**\nRetrieves the PUUIDs for each Console ID provided.\n\n** Request Arguments **\n\nRequest Body Object:\nConsoleIdsToPuuidsRequest Object:\n    \"consoleIds\" - A list of console IDs to retrieve PUUIDs for\n    \"environment\" - A String name for the platform environment (e.g. \"sp-int\")\n\nConsoleIdsToPuuidsResponse Body:\n    \"response\" - A list of ConsoleIdToPuuidResponseElements\n\nPuuidAndProvider:\n    \"puuid\" - The PUUID associated with the Console ID\n    \"provider\" - A String for the account provider (platform, e.g. \"xbox\")\n    \"providerId\" - A String ID for the provider (e.g. as \"123abc123\")\n    \"error\" - A String containing any errors (e.g. \"No matching account found.\")\n\n",
         "internal": false,
         "name": "PostPlayerAccountLookupV1PuuidsForConsoleids",
         "nameSpace": "",
         "returns": {
             "elementType": "",
             "type": "PlayerAccountLookupV1PuuidsForConsoleIdsResponse"
-        },
-        "subscribable": false,
-        "tags": [
-            "player-account"
-        ],
-        "threadSafe": false
-    },
-    "POST /player-account/lookup/v1/toggle-mock-api": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "request",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "PlayerAccountLookupV1ToggleMockApiRequest"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Set whether the plugin should use a mock friends API or not and if so, how the mock API should behave",
-        "help": "\n**Description**\n-- To be filled out when Mock implementation is done.\nSDKFEAT-1393: [Mock] Get Console Blocked User List\n",
-        "internal": false,
-        "name": "PostPlayerAccountLookupV1ToggleMockApi",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
         },
         "subscribable": false,
         "tags": [
@@ -17802,6 +17936,35 @@
         "returns": {
             "elementType": "",
             "type": "RsoMobileUiRegionElectionV1RegionElection"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-mobile-ui"
+        ],
+        "threadSafe": false
+    },
+    "POST /rso-mobile-ui/v1/riot-id-prompt/initiate": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "request",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoMobileUiRiotIDPromptV1InitiateRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "",
+        "help": "Launches a UI to prompt user to set a RiotID for their account",
+        "internal": false,
+        "name": "PostRsoMobileUiV1RiotIdPromptInitiate",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoMobileUiRiotIDPromptV1RiotIDPrompt"
         },
         "subscribable": false,
         "tags": [
@@ -21646,35 +21809,6 @@
         "subscribable": false,
         "tags": [
             "riot-login"
-        ],
-        "threadSafe": false
-    },
-    "PUT /riotclient/lifecycle": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "data",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "LifecycleData"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Update the current app lifecycle events.",
-        "help": "Endpoint will be deleted after July 2023 [SDKEXP-2014]",
-        "internal": false,
-        "name": "PutRiotclientLifecycle",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "riotclient"
         ],
         "threadSafe": false
     },

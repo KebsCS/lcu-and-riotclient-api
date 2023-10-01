@@ -519,7 +519,6 @@
         "GET /lol-gameflow/v1/battle-training",
         "POST /lol-gameflow/v1/battle-training/start",
         "POST /lol-gameflow/v1/battle-training/stop",
-        "POST /lol-gameflow/v1/client-received-message",
         "POST /lol-gameflow/v1/early-exit",
         "GET /lol-gameflow/v1/early-exit-enabled",
         "DELETE /lol-gameflow/v1/early-exit-notifications/eog",
@@ -661,7 +660,8 @@
     "Plugin lol-leaver-buster": [
         "GET /lol-leaver-buster/v1/notifications",
         "DELETE /lol-leaver-buster/v1/notifications/{id}",
-        "GET /lol-leaver-buster/v1/notifications/{id}"
+        "GET /lol-leaver-buster/v1/notifications/{id}",
+        "GET /lol-leaver-buster/v1/ranked-restriction"
     ],
     "Plugin lol-license-agreement": [
         "GET /lol-license-agreement/v1/agreement",
@@ -702,6 +702,7 @@
         "GET /lol-lobby/v1/lobby/invitations",
         "POST /lol-lobby/v1/lobby/invitations",
         "GET /lol-lobby/v1/lobby/invitations/{id}",
+        "GET /lol-lobby/v1/lobby/members/localMember/player-slots",
         "PUT /lol-lobby/v1/lobby/members/localMember/player-slots",
         "POST /lol-lobby/v1/lobby/members/localMember/player-slots/{slotsIndex}/{perksString}",
         "PUT /lol-lobby/v1/lobby/members/localMember/position-preferences",
@@ -752,7 +753,8 @@
         "GET /lol-lobby/v2/received-invitations",
         "POST /lol-lobby/v2/received-invitations/{invitationId}/accept",
         "POST /lol-lobby/v2/received-invitations/{invitationId}/decline",
-        "GET /lol-lobby/v2/registration-status"
+        "GET /lol-lobby/v2/registration-status",
+        "PUT /lol-lobby/v2/tft/gamesPlayedWon"
     ],
     "Plugin lol-lobby-team-builder": [
         "GET /lol-lobby-team-builder/champ-select/v1/bannable-champion-ids",
@@ -836,8 +838,6 @@
         "POST /lol-loot/v1/milestones/{lootMilestonesId}/claim",
         "GET /lol-loot/v1/milestones/{lootMilestonesId}/claimProgress",
         "GET /lol-loot/v1/milestones/{lootMilestonesId}/counter",
-        "GET /lol-loot/v1/new-player-check-done",
-        "POST /lol-loot/v1/new-player-check-done/{newValue}",
         "GET /lol-loot/v1/player-display-categories",
         "GET /lol-loot/v1/player-loot",
         "GET /lol-loot/v1/player-loot-map",
@@ -1310,6 +1310,8 @@
     ],
     "Plugin lol-tft-team-planner": [
         "GET /lol-tft-team-planner/v1/config",
+        "GET /lol-tft-team-planner/v1/ftue/hasViewed",
+        "PATCH /lol-tft-team-planner/v1/ftue/hasViewed",
         "PUT /lol-tft-team-planner/v1/team",
         "DELETE /lol-tft-team-planner/v1/team/champions",
         "PATCH /lol-tft-team-planner/v1/team/champions",
@@ -1806,7 +1808,6 @@
         "GET /lol-gameflow/v1/battle-training",
         "POST /lol-gameflow/v1/battle-training/start",
         "POST /lol-gameflow/v1/battle-training/stop",
-        "POST /lol-gameflow/v1/client-received-message",
         "POST /lol-gameflow/v1/early-exit",
         "GET /lol-gameflow/v1/early-exit-enabled",
         "DELETE /lol-gameflow/v1/early-exit-notifications/eog",
@@ -1922,6 +1923,7 @@
         "GET /lol-leaver-buster/v1/notifications",
         "DELETE /lol-leaver-buster/v1/notifications/{id}",
         "GET /lol-leaver-buster/v1/notifications/{id}",
+        "GET /lol-leaver-buster/v1/ranked-restriction",
         "GET /lol-license-agreement/v1/agreement",
         "GET /lol-license-agreement/v1/agreements",
         "POST /lol-license-agreement/v1/agreements/{id}/accept",
@@ -1993,6 +1995,7 @@
         "GET /lol-lobby/v1/lobby/invitations",
         "POST /lol-lobby/v1/lobby/invitations",
         "GET /lol-lobby/v1/lobby/invitations/{id}",
+        "GET /lol-lobby/v1/lobby/members/localMember/player-slots",
         "PUT /lol-lobby/v1/lobby/members/localMember/player-slots",
         "POST /lol-lobby/v1/lobby/members/localMember/player-slots/{slotsIndex}/{perksString}",
         "PUT /lol-lobby/v1/lobby/members/localMember/position-preferences",
@@ -2044,6 +2047,7 @@
         "POST /lol-lobby/v2/received-invitations/{invitationId}/accept",
         "POST /lol-lobby/v2/received-invitations/{invitationId}/decline",
         "GET /lol-lobby/v2/registration-status",
+        "PUT /lol-lobby/v2/tft/gamesPlayedWon",
         "GET /lol-login/v1/account-state",
         "POST /lol-login/v1/account-state",
         "POST /lol-login/v1/change-summoner-name",
@@ -2084,8 +2088,6 @@
         "POST /lol-loot/v1/milestones/{lootMilestonesId}/claim",
         "GET /lol-loot/v1/milestones/{lootMilestonesId}/claimProgress",
         "GET /lol-loot/v1/milestones/{lootMilestonesId}/counter",
-        "GET /lol-loot/v1/new-player-check-done",
-        "POST /lol-loot/v1/new-player-check-done/{newValue}",
         "GET /lol-loot/v1/player-display-categories",
         "GET /lol-loot/v1/player-loot",
         "GET /lol-loot/v1/player-loot-map",
@@ -2461,6 +2463,8 @@
         "POST /lol-tft-pass/v1/passes",
         "GET /lol-tft-pass/v1/reward-notification",
         "GET /lol-tft-team-planner/v1/config",
+        "GET /lol-tft-team-planner/v1/ftue/hasViewed",
+        "PATCH /lol-tft-team-planner/v1/ftue/hasViewed",
         "PUT /lol-tft-team-planner/v1/team",
         "DELETE /lol-tft-team-planner/v1/team/champions",
         "PATCH /lol-tft-team-planner/v1/team/champions",

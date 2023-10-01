@@ -35,6 +35,7 @@
         "POST /chat/v1/debug/finalize/initialize",
         "GET /chat/v1/device-settings",
         "PUT /chat/v1/device-settings",
+        "POST /chat/v1/resume",
         "GET /chat/v1/session",
         "POST /chat/v1/session/connect",
         "POST /chat/v1/session/debug/terminate/{product}",
@@ -44,6 +45,7 @@
         "PATCH /chat/v1/settings",
         "PUT /chat/v1/settings",
         "POST /chat/v1/social",
+        "POST /chat/v1/suspend",
         "DELETE /chat/v2/me",
         "PUT /chat/v2/me",
         "POST /chat/v2/session/connect",
@@ -308,7 +310,10 @@
     "nintendo-account": [
         "POST /nintendo-account/v1/authorization",
         "POST /nintendo-account/v1/network-service-accountid-token",
-        "GET /nintendo-account/v1/player-nickname"
+        "GET /nintendo-account/v1/player-nickname",
+        "DELETE /nintendo-account/v2/authorization",
+        "GET /nintendo-account/v2/authorization",
+        "POST /nintendo-account/v2/authorization"
     ],
     "patch": [
         "GET /patch/v1/configuration",
@@ -342,6 +347,10 @@
     ],
     "payments": [
         "POST /payments/v1/initialize-purchase"
+    ],
+    "permissions": [
+        "GET /permissions/v1/request",
+        "POST /permissions/v1/request"
     ],
     "platform-login": [
         "GET /platform-login/v1/config",
@@ -380,7 +389,6 @@
         "POST /player-account/lookup/v1/namesets-for-puuid",
         "POST /player-account/lookup/v1/namesets-for-puuids",
         "POST /player-account/lookup/v1/puuids-for-consoleids",
-        "POST /player-account/lookup/v1/toggle-mock-api",
         "GET /player-account/promotion/v1/eligibility",
         "POST /player-account/promotion/v1/eligibility",
         "GET /player-account/promotion/v1/fields",
@@ -967,8 +975,6 @@
         "GET /riotclient/build-number",
         "GET /riotclient/command-line-args",
         "GET /riotclient/get_region_locale",
-        "GET /riotclient/lifecycle",
-        "PUT /riotclient/lifecycle",
         "GET /riotclient/machine-id",
         "POST /riotclient/new-args",
         "GET /riotclient/product-locales/products/{productId}/patchlines/{patchlineId}",
@@ -1114,6 +1120,8 @@
         "POST /rso-mobile-ui/v1/region-election",
         "PUT /rso-mobile-ui/v1/region-election",
         "GET /rso-mobile-ui/v1/region-election/eligibility",
+        "POST /rso-mobile-ui/v1/riot-id-prompt/initiate",
+        "GET /rso-mobile-ui/v1/riot-id-prompt/status",
         "POST /rso-mobile-ui/v1/show-game-out-of-date",
         "POST /rso-mobile-ui/v1/vng/profile/{productId}",
         "POST /rso-mobile-ui/v1/vng/register/{productId}",
