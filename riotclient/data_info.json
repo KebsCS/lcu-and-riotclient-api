@@ -756,6 +756,73 @@
         ],
         "threadSafe": false
     },
+    "DELETE /chatbox/v1/chatboxes/{id}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "",
+        "help": "",
+        "internal": false,
+        "name": "DeleteChatboxV1ChatboxesById",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "chatbox"
+        ],
+        "threadSafe": false
+    },
+    "DELETE /chatbox/v1/chatboxes/{id}/channels/{channelName}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "channelName",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "",
+        "help": "",
+        "internal": false,
+        "name": "DeleteChatboxV1ChatboxesByIdChannelsByChannelName",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "chatbox"
+        ],
+        "threadSafe": false
+    },
     "DELETE /client-config/v1/authorization": {
         "arguments": [],
         "deprecated": false,
@@ -2581,6 +2648,35 @@
         ],
         "threadSafe": false
     },
+    "DELETE /voice-chat/v1/block-list/users": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "unblocklist",
+                "optional": false,
+                "type": {
+                    "elementType": "string",
+                    "type": "vector"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Removes a list of users from the voice provider block list",
+        "help": "The users unblocked by this endpoint will still be muted if they are blocked on either chat and/or platform blocklists",
+        "internal": false,
+        "name": "DeleteVoiceChatV1BlockListUsers",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "voice-chat"
+        ],
+        "threadSafe": false
+    },
     "DELETE /voice-chat/v2/sessions": {
         "arguments": [],
         "deprecated": false,
@@ -4016,6 +4112,303 @@
         ],
         "threadSafe": false
     },
+    "GET /chatbox/v1/chatboxes/{id}/broadcasts": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get all broadcasts for the specified chatbox",
+        "help": "",
+        "internal": false,
+        "name": "GetChatboxV1ChatboxesByIdBroadcasts",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "ChatboxChatboxMessageList"
+        },
+        "subscribable": false,
+        "tags": [
+            "chatbox"
+        ],
+        "threadSafe": false
+    },
+    "GET /chatbox/v1/chatboxes/{id}/broadcasts/{channelName}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "channelName",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get all broadcasts for the specified chatbox",
+        "help": "",
+        "internal": false,
+        "name": "GetChatboxV1ChatboxesByIdBroadcastsByChannelName",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "ChatboxChatboxMessageList"
+        },
+        "subscribable": false,
+        "tags": [
+            "chatbox"
+        ],
+        "threadSafe": false
+    },
+    "GET /chatbox/v1/chatboxes/{id}/channels": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get all channels for the specified chatbox",
+        "help": "",
+        "internal": false,
+        "name": "GetChatboxV1ChatboxesByIdChannels",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "ChatboxChatboxChannels"
+        },
+        "subscribable": false,
+        "tags": [
+            "chatbox"
+        ],
+        "threadSafe": false
+    },
+    "GET /chatbox/v1/chatboxes/{id}/messages": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get all messages for the specified chatbox",
+        "help": "",
+        "internal": false,
+        "name": "GetChatboxV1ChatboxesByIdMessages",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "ChatboxChatboxMessageList"
+        },
+        "subscribable": false,
+        "tags": [
+            "chatbox"
+        ],
+        "threadSafe": false
+    },
+    "GET /chatbox/v1/chatboxes/{id}/messages/channels/{channelName}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "channelName",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get all messages of the specified channel for the specified chatbox",
+        "help": "",
+        "internal": false,
+        "name": "GetChatboxV1ChatboxesByIdMessagesChannelsByChannelName",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "ChatboxChatboxMessageList"
+        },
+        "subscribable": false,
+        "tags": [
+            "chatbox"
+        ],
+        "threadSafe": false
+    },
+    "GET /chatbox/v1/chatboxes/{id}/messages/whispers/{puuid}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "puuid",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get whisper messages for the specified chatbox",
+        "help": "",
+        "internal": false,
+        "name": "GetChatboxV1ChatboxesByIdMessagesWhispersByPuuid",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "ChatboxChatboxMessageList"
+        },
+        "subscribable": false,
+        "tags": [
+            "chatbox"
+        ],
+        "threadSafe": false
+    },
+    "GET /chatbox/v1/chatboxes/{id}/participants": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get all participants for the specified chatbox",
+        "help": "",
+        "internal": false,
+        "name": "GetChatboxV1ChatboxesByIdParticipants",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "ChatboxChatParticipants"
+        },
+        "subscribable": false,
+        "tags": [
+            "chatbox"
+        ],
+        "threadSafe": false
+    },
+    "GET /chatbox/v1/chatboxes/{id}/participants/whispers": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get all participants in whisper channels with friends (for the specified chatbox)",
+        "help": "",
+        "internal": false,
+        "name": "GetChatboxV1ChatboxesByIdParticipantsWhispers",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "ChatboxChatParticipants"
+        },
+        "subscribable": false,
+        "tags": [
+            "chatbox"
+        ],
+        "threadSafe": false
+    },
+    "GET /chatbox/v1/friends": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get all friends of the user",
+        "help": "",
+        "internal": false,
+        "name": "GetChatboxV1Friends",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "ChatboxChatboxFriends"
+        },
+        "subscribable": false,
+        "tags": [
+            "chatbox"
+        ],
+        "threadSafe": false
+    },
+    "GET /chatbox/v1/ready": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "",
+        "help": "",
+        "internal": false,
+        "name": "GetChatboxV1Ready",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "bool"
+        },
+        "subscribable": false,
+        "tags": [
+            "chatbox"
+        ],
+        "threadSafe": false
+    },
     "GET /client-config/v1/config": {
         "arguments": [
             {
@@ -4878,25 +5271,6 @@
         "subscribable": false,
         "tags": [
             "facebook-account"
-        ],
-        "threadSafe": false
-    },
-    "GET /friends/v2/make-platform-blocks-riot-blocks": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Request a synchronization of blocked users from console to Riot ecosystem",
-        "help": "\n**Description**\nThis endpoint queries the console for blocked users, looks them up in the Riot system, and checks if all of them are blocked in the Riot ecosystem.\nIf not, the blocks are 'promoted' to Riot blocks. Game teams are required to determined where this endpoint should be invoked in their app lifecycle.\n",
-        "internal": false,
-        "name": "GetFriendsV2MakePlatformBlocksRiotBlocks",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "friends"
         ],
         "threadSafe": false
     },
@@ -5874,6 +6248,44 @@
         "subscribable": false,
         "tags": [
             "platform-login"
+        ],
+        "threadSafe": false
+    },
+    "GET /platform-social/v1/block-list": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Retrieves the currently-authenticated player's list of blocked users on the current platform as a list of Riot PUUIDs",
+        "help": "",
+        "internal": false,
+        "name": "GetPlatformSocialV1BlockList",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlatformSocialPlatformSocialBlockList"
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-social"
+        ],
+        "threadSafe": false
+    },
+    "GET /platform-social/v1/voice-permission": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns if the current player has permissions from the platform to use voice chat and if not, why that is the case.",
+        "help": "",
+        "internal": false,
+        "name": "GetPlatformSocialV1VoicePermission",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlatformSocialPlatformSocialVoicePermissionDetails"
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-social"
         ],
         "threadSafe": false
     },
@@ -10833,6 +11245,25 @@
         ],
         "threadSafe": false
     },
+    "GET /social/v1/blocklist": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns the consolidated block list combining Riot block list with the platform block lists",
+        "help": "",
+        "internal": false,
+        "name": "GetSocialV1Blocklist",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "SocialBlockList"
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
     "GET /social/v1/friends": {
         "arguments": [],
         "deprecated": false,
@@ -11124,6 +11555,35 @@
         "returns": {
             "elementType": "",
             "type": "VoiceChatAudioPropertiesResource"
+        },
+        "subscribable": false,
+        "tags": [
+            "voice-chat"
+        ],
+        "threadSafe": false
+    },
+    "GET /voice-chat/v1/block-list/{providerName}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "providerName",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get the current Block List of a voice provider. Internal use only",
+        "help": "",
+        "internal": false,
+        "name": "GetVoiceChatV1BlockListByProviderName",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "string",
+            "type": "vector"
         },
         "subscribable": false,
         "tags": [
@@ -13052,6 +13512,328 @@
         ],
         "threadSafe": false
     },
+    "POST /chatbox/v1/{id}/whispers/{puuid}/messages": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "puuid",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "chatbox_message",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "ChatboxChatboxMessagePost"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Send a whisper to the specified puuid of the specified chatbox",
+        "help": "",
+        "internal": false,
+        "name": "PostChatboxV1ByIdWhispersByPuuidMessages",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "chatbox"
+        ],
+        "threadSafe": false
+    },
+    "POST /chatbox/v1/chatboxes/{id}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "chatbox_instance_resource",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "ChatboxChatboxChannelResource"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "",
+        "help": "",
+        "internal": false,
+        "name": "PostChatboxV1ChatboxesById",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "chatbox"
+        ],
+        "threadSafe": false
+    },
+    "POST /chatbox/v1/chatboxes/{id}/broadcasts/{channelName}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "channelName",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "chatbox_message",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "ChatboxChatboxMessagePost"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Send a broadcast to the specified chatbox",
+        "help": "",
+        "internal": false,
+        "name": "PostChatboxV1ChatboxesByIdBroadcastsByChannelName",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "chatbox"
+        ],
+        "threadSafe": false
+    },
+    "POST /chatbox/v1/chatboxes/{id}/channels": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "chatbox_channel_resource",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "ChatboxChatboxChannelResource"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "",
+        "help": "",
+        "internal": false,
+        "name": "PostChatboxV1ChatboxesByIdChannels",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "chatbox"
+        ],
+        "threadSafe": false
+    },
+    "POST /chatbox/v1/chatboxes/{id}/messages": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "chatbox_message",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "ChatboxChatboxMessagePost"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Send a message to the default channel of the specified chatbox",
+        "help": "",
+        "internal": false,
+        "name": "PostChatboxV1ChatboxesByIdMessages",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "chatbox"
+        ],
+        "threadSafe": false
+    },
+    "POST /chatbox/v1/chatboxes/{id}/messages/channels/{channelName}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "channelName",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "chatbox_message",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "ChatboxChatboxMessagePost"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Send a message to the specified channel of the specified chatbox",
+        "help": "",
+        "internal": false,
+        "name": "PostChatboxV1ChatboxesByIdMessagesChannelsByChannelName",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "chatbox"
+        ],
+        "threadSafe": false
+    },
+    "POST /chatbox/v1/chatboxes/{id}/messages/read": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Mark all messages as read in a specified chatbox",
+        "help": "",
+        "internal": false,
+        "name": "PostChatboxV1ChatboxesByIdMessagesRead",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "chatbox"
+        ],
+        "threadSafe": false
+    },
+    "POST /chatbox/v1/chatboxes/{id}/messages/whispers/{puuid}/read": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "puuid",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Mark messages as read for a specified whisper channel in a specified chatbox",
+        "help": "",
+        "internal": false,
+        "name": "PostChatboxV1ChatboxesByIdMessagesWhispersByPuuidRead",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "chatbox"
+        ],
+        "threadSafe": false
+    },
     "POST /cookie-jar/v1/cookies": {
         "arguments": [
             {
@@ -14144,6 +14926,64 @@
         ],
         "threadSafe": false
     },
+    "POST /player-account/aliases/purchase/v1/aliases": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "data",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlayerAccountAliasesV1PurchaseAliasInput"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Sets a new purchased set of aliases for the player.",
+        "help": "",
+        "internal": false,
+        "name": "PostPlayerAccountAliasesPurchaseV1Aliases",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlayerAccountAliasesV1StatusResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "player-account"
+        ],
+        "threadSafe": false
+    },
+    "POST /player-account/aliases/purchase/v1/eligibility": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "purchaseSource",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlayerAccountAliasesV1PurchaseEligibilityInput"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Check if a player is eligible for a free or paid name change.",
+        "help": "Please use /player-account/aliases/v1/eligibility if you only need information about free alias changes.",
+        "internal": false,
+        "name": "PostPlayerAccountAliasesPurchaseV1Eligibility",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlayerAccountAliasesV1PurchaseEligibilityResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "player-account"
+        ],
+        "threadSafe": false
+    },
     "POST /player-account/aliases/v1/aliases": {
         "arguments": [
             {
@@ -14177,8 +15017,8 @@
         "arguments": [],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "Check if a player is eligible for a name change.",
-        "help": "",
+        "description": "Check if a player is eligible for a free name change.",
+        "help": "Use /player-account/aliases/purchase/v1/eligibility if you also need information about paid alias changes.",
         "internal": false,
         "name": "PostPlayerAccountAliasesV1Eligibility",
         "nameSpace": "",
@@ -18480,6 +19320,35 @@
         ],
         "threadSafe": false
     },
+    "POST /voice-chat/v1/block-list/users": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "blocklist",
+                "optional": false,
+                "type": {
+                    "elementType": "string",
+                    "type": "vector"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Adds a list of users to the voice provider block list",
+        "help": "The users blocked by this endpoint will be muted regardless if they muted on chat and/or platform blocklists",
+        "internal": false,
+        "name": "PostVoiceChatV1BlockListUsers",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "voice-chat"
+        ],
+        "threadSafe": false
+    },
     "POST /voice-chat/v1/debug/simulate": {
         "arguments": [
             {
@@ -18502,6 +19371,35 @@
         "returns": {
             "elementType": "",
             "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "voice-chat"
+        ],
+        "threadSafe": false
+    },
+    "POST /voice-chat/v1/debug/write-csr-data-to-file": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "csrWritingResource",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "VoiceChatDebugCSRFileWritingRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Write CSR data for a particular channel and product to the provided filepath",
+        "help": "",
+        "internal": false,
+        "name": "PostVoiceChatV1DebugWriteCsrDataToFile",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "VoiceChatDebugCSRFileWritingResponse"
         },
         "subscribable": false,
         "tags": [
@@ -19842,35 +20740,6 @@
         "tags": [
             "Plugins",
             "Plugin external-message-handler"
-        ],
-        "threadSafe": false
-    },
-    "PUT /friends/v2/mock-api/state": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "state",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "FriendsFriendsV2MockApiState"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Set whether the plugin should use a mock friends API or not and if so, how the mock API should behave",
-        "help": "\n**Description**\n-- To be filled out when Mock implementation is done.\nSDKFEAT-1393: [Mock] Get Console Blocked User List\n",
-        "internal": false,
-        "name": "PutFriendsV2MockApiState",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "friends"
         ],
         "threadSafe": false
     },

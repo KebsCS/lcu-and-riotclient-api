@@ -703,6 +703,7 @@
         "PUT /lol-lobby/v1/lobby/members/localMember/player-slots",
         "POST /lol-lobby/v1/lobby/members/localMember/player-slots/{slotsIndex}/{perksString}",
         "PUT /lol-lobby/v1/lobby/members/localMember/position-preferences",
+        "GET /lol-lobby/v1/lobby/tft-ranked-history",
         "PUT /lol-lobby/v1/parties/active",
         "GET /lol-lobby/v1/parties/gamemode",
         "PUT /lol-lobby/v1/parties/metadata",
@@ -1009,9 +1010,7 @@
     ],
     "Plugin lol-player-name-transition": [
         "POST /lol-player-name-transition/v1/dismiss",
-        "GET /lol-player-name-transition/v1/modal-state",
-        "POST /lol-player-name-transition/v1/open-faq",
-        "POST /lol-player-name-transition/v1/open-name-change"
+        "GET /lol-player-name-transition/v1/modal-state"
     ],
     "Plugin lol-player-preferences": [
         "POST /lol-player-preferences/v1/player-preferences-endpoint-override",
@@ -1151,13 +1150,14 @@
         "GET /lol-rso-auth/v1/authorization/userinfo",
         "POST /lol-rso-auth/v1/authorization/userinfo",
         "POST /lol-rso-auth/v1/device-id",
+        "POST /lol-rso-auth/v1/external-session-config",
         "DELETE /lol-rso-auth/v1/session",
         "GET /lol-rso-auth/v1/status/{platformId}",
         "DELETE /lol-rso-auth/v2/config",
         "POST /lol-rso-auth/v2/config"
     ],
     "Plugin lol-seasons": [
-        "GET /lol-seasons/v1/allSeasons/product/{product}",
+        "POST /lol-seasons/v1/allSeasons/product/{product}",
         "GET /lol-seasons/v1/season/LOL/current-split-seasons",
         "GET /lol-seasons/v1/season/product/{product}",
         "GET /lol-seasons/v1/season/recent-final-split"
@@ -1392,7 +1392,8 @@
         "PUT /patcher/v1/ux"
     ],
     "Plugin payments": [
-        "POST /payments/v1/pmc-start-url"
+        "POST /payments/v1/pmc-start-url",
+        "POST /payments/v1/updatePaymentTelemetryState"
     ],
     "Plugin player-notifications": [
         "GET /player-notifications/v1/config",
@@ -1994,6 +1995,7 @@
         "PUT /lol-lobby/v1/lobby/members/localMember/player-slots",
         "POST /lol-lobby/v1/lobby/members/localMember/player-slots/{slotsIndex}/{perksString}",
         "PUT /lol-lobby/v1/lobby/members/localMember/position-preferences",
+        "GET /lol-lobby/v1/lobby/tft-ranked-history",
         "PUT /lol-lobby/v1/parties/active",
         "GET /lol-lobby/v1/parties/gamemode",
         "PUT /lol-lobby/v1/parties/metadata",
@@ -2225,8 +2227,6 @@
         "DELETE /lol-player-messaging/v1/notification/{id}/acknowledge",
         "POST /lol-player-name-transition/v1/dismiss",
         "GET /lol-player-name-transition/v1/modal-state",
-        "POST /lol-player-name-transition/v1/open-faq",
-        "POST /lol-player-name-transition/v1/open-name-change",
         "POST /lol-player-preferences/v1/player-preferences-endpoint-override",
         "GET /lol-player-preferences/v1/player-preferences-ready",
         "PUT /lol-player-preferences/v1/preference",
@@ -2340,11 +2340,12 @@
         "GET /lol-rso-auth/v1/authorization/userinfo",
         "POST /lol-rso-auth/v1/authorization/userinfo",
         "POST /lol-rso-auth/v1/device-id",
+        "POST /lol-rso-auth/v1/external-session-config",
         "DELETE /lol-rso-auth/v1/session",
         "GET /lol-rso-auth/v1/status/{platformId}",
         "DELETE /lol-rso-auth/v2/config",
         "POST /lol-rso-auth/v2/config",
-        "GET /lol-seasons/v1/allSeasons/product/{product}",
+        "POST /lol-seasons/v1/allSeasons/product/{product}",
         "GET /lol-seasons/v1/season/LOL/current-split-seasons",
         "GET /lol-seasons/v1/season/product/{product}",
         "GET /lol-seasons/v1/season/recent-final-split",
@@ -2521,6 +2522,7 @@
         "GET /patcher/v1/status",
         "PUT /patcher/v1/ux",
         "POST /payments/v1/pmc-start-url",
+        "POST /payments/v1/updatePaymentTelemetryState",
         "GET /player-notifications/v1/config",
         "PUT /player-notifications/v1/config",
         "GET /player-notifications/v1/notifications",

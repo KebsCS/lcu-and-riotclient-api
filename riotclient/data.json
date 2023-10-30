@@ -130,6 +130,28 @@
         "POST /chat/v7/conversations/read",
         "GET /chat/v7/conversations/{domain}"
     ],
+    "chatbox": [
+        "DELETE /chatbox/v1/chatboxes/{id}",
+        "POST /chatbox/v1/chatboxes/{id}",
+        "GET /chatbox/v1/chatboxes/{id}/broadcasts",
+        "GET /chatbox/v1/chatboxes/{id}/broadcasts/{channelName}",
+        "POST /chatbox/v1/chatboxes/{id}/broadcasts/{channelName}",
+        "GET /chatbox/v1/chatboxes/{id}/channels",
+        "POST /chatbox/v1/chatboxes/{id}/channels",
+        "DELETE /chatbox/v1/chatboxes/{id}/channels/{channelName}",
+        "GET /chatbox/v1/chatboxes/{id}/messages",
+        "POST /chatbox/v1/chatboxes/{id}/messages",
+        "GET /chatbox/v1/chatboxes/{id}/messages/channels/{channelName}",
+        "POST /chatbox/v1/chatboxes/{id}/messages/channels/{channelName}",
+        "POST /chatbox/v1/chatboxes/{id}/messages/read",
+        "GET /chatbox/v1/chatboxes/{id}/messages/whispers/{puuid}",
+        "POST /chatbox/v1/chatboxes/{id}/messages/whispers/{puuid}/read",
+        "GET /chatbox/v1/chatboxes/{id}/participants",
+        "GET /chatbox/v1/chatboxes/{id}/participants/whispers",
+        "GET /chatbox/v1/friends",
+        "GET /chatbox/v1/ready",
+        "POST /chatbox/v1/{id}/whispers/{puuid}/messages"
+    ],
     "client-config": [
         "DELETE /client-config/v1/authorization",
         "PUT /client-config/v1/authorization",
@@ -209,10 +231,6 @@
     ],
     "first-party-fulfillment": [
         "POST /first-party-fulfillment/v1/fulfill"
-    ],
-    "friends": [
-        "GET /friends/v2/make-platform-blocks-riot-blocks",
-        "PUT /friends/v2/mock-api/state"
     ],
     "ga-restriction": [
         "DELETE /ga-restriction/v1/debug/caller-id/mock-id",
@@ -357,6 +375,10 @@
         "PUT /platform-login/v1/config",
         "GET /platform-login/v1/status"
     ],
+    "platform-social": [
+        "GET /platform-social/v1/block-list",
+        "GET /platform-social/v1/voice-permission"
+    ],
     "platform-ui": [
         "GET /platform-ui/v1/enabled",
         "DELETE /platform-ui/v1/fre",
@@ -373,6 +395,8 @@
         "PUT /play-restrictions/v1/restrictions"
     ],
     "player-account": [
+        "POST /player-account/aliases/purchase/v1/aliases",
+        "POST /player-account/aliases/purchase/v1/eligibility",
         "GET /player-account/aliases/v1/active",
         "GET /player-account/aliases/v1/aliases",
         "POST /player-account/aliases/v1/aliases",
@@ -1139,6 +1163,7 @@
         "POST /scd/v1/url-patterns/test"
     ],
     "social": [
+        "GET /social/v1/blocklist",
         "GET /social/v1/friends",
         "GET /social/v1/friends/patch",
         "POST /social/v1/initialize",
@@ -1175,7 +1200,11 @@
     "voice-chat": [
         "GET /voice-chat/v1/active-product",
         "GET /voice-chat/v1/audio-properties",
+        "DELETE /voice-chat/v1/block-list/users",
+        "POST /voice-chat/v1/block-list/users",
+        "GET /voice-chat/v1/block-list/{providerName}",
         "POST /voice-chat/v1/debug/simulate",
+        "POST /voice-chat/v1/debug/write-csr-data-to-file",
         "GET /voice-chat/v1/heartbeat-metrics",
         "POST /voice-chat/v1/initialize-provider/{productName}",
         "GET /voice-chat/v1/push-to-talk",
