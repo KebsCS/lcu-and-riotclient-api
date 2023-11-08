@@ -572,7 +572,10 @@
         "GET /restriction/v1/ready"
     ],
     "Plugin riot-client-app-command": [
+        "PUT /riot-client-app-command/submit",
         "POST /riot-client-app-command/v1/debug/use-local-uri-handler",
+        "DELETE /riot-client-app-command/v1/launch-request",
+        "GET /riot-client-app-command/v1/launch-request",
         "GET /riot-client-app-command/v1/uri-handler",
         "POST /riot-client-app-command/v1/uri-handler"
     ],
@@ -649,6 +652,7 @@
         "DELETE /rnet-product-registry/v4/priority-patch-requests/products/{productId}/patchlines/{patchlineId}",
         "GET /rnet-product-registry/v4/priority-patch-requests/products/{productId}/patchlines/{patchlineId}",
         "PUT /rnet-product-registry/v4/priority-patch-requests/products/{productId}/patchlines/{patchlineId}",
+        "GET /rnet-product-registry/v4/product-size/products/{productId}/patchlines/{patchlineId}",
         "GET /rnet-product-registry/v4/products",
         "GET /rnet-product-registry/v4/products/{productId}/patchlines/{patchlineId}",
         "PUT /rnet-product-registry/v4/products/{productId}/patchlines/{patchlineId}",
@@ -747,7 +751,10 @@
         "GET /restriction/v1/launchRestrictedProducts",
         "GET /restriction/v1/launchRestrictions",
         "GET /restriction/v1/ready",
+        "PUT /riot-client-app-command/submit",
         "POST /riot-client-app-command/v1/debug/use-local-uri-handler",
+        "DELETE /riot-client-app-command/v1/launch-request",
+        "GET /riot-client-app-command/v1/launch-request",
         "GET /riot-client-app-command/v1/uri-handler",
         "POST /riot-client-app-command/v1/uri-handler",
         "GET /riot-client-lifecycle-state/v1/state/{state}",
@@ -814,6 +821,7 @@
         "DELETE /rnet-product-registry/v4/priority-patch-requests/products/{productId}/patchlines/{patchlineId}",
         "GET /rnet-product-registry/v4/priority-patch-requests/products/{productId}/patchlines/{patchlineId}",
         "PUT /rnet-product-registry/v4/priority-patch-requests/products/{productId}/patchlines/{patchlineId}",
+        "GET /rnet-product-registry/v4/product-size/products/{productId}/patchlines/{patchlineId}",
         "GET /rnet-product-registry/v4/products",
         "GET /rnet-product-registry/v4/products/{productId}/patchlines/{patchlineId}",
         "PUT /rnet-product-registry/v4/products/{productId}/patchlines/{patchlineId}",

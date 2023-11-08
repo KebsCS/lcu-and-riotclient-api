@@ -2031,6 +2031,26 @@
         ],
         "threadSafe": false
     },
+    "DELETE /riot-client-app-command/v1/launch-request": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Acknowledge the current launch request",
+        "help": "",
+        "internal": false,
+        "name": "DeleteRiotClientAppCommandV1LaunchRequest",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "Plugins",
+            "Plugin riot-client-app-command"
+        ],
+        "threadSafe": false
+    },
     "DELETE /riot-client-lifecycle/v1/product-context": {
         "arguments": [],
         "deprecated": false,
@@ -8671,6 +8691,26 @@
         ],
         "threadSafe": false
     },
+    "GET /riot-client-app-command/v1/launch-request": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns the current launch request, if one exists",
+        "help": "",
+        "internal": false,
+        "name": "GetRiotClientAppCommandV1LaunchRequest",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "AppCommandLaunchRequest"
+        },
+        "subscribable": true,
+        "tags": [
+            "Plugins",
+            "Plugin riot-client-app-command"
+        ],
+        "threadSafe": false
+    },
     "GET /riot-client-app-command/v1/uri-handler": {
         "arguments": [],
         "deprecated": false,
@@ -10416,6 +10456,45 @@
             "type": ""
         },
         "subscribable": true,
+        "tags": [
+            "Plugins",
+            "Plugin rnet-product-registry"
+        ],
+        "threadSafe": false
+    },
+    "GET /rnet-product-registry/v4/product-size/products/{productId}/patchlines/{patchlineId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "patchlineId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Retrieves the total size, size after update and the difference for the given product and patchline.",
+        "help": "",
+        "internal": false,
+        "name": "GetRnetProductRegistryV4ProductSizeProductsByProductIdPatchlinesByPatchlineId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RnetProductRegistryProductPatchlineSize"
+        },
+        "subscribable": false,
         "tags": [
             "Plugins",
             "Plugin rnet-product-registry"
@@ -22484,6 +22563,36 @@
         "subscribable": false,
         "tags": [
             "reference"
+        ],
+        "threadSafe": false
+    },
+    "PUT /riot-client-app-command/submit": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "command",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "AppCommandCommand"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Used to coerce an application to invoke a registered command.",
+        "help": "",
+        "internal": false,
+        "name": "PutRiotClientAppCommandSubmit",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "Plugins",
+            "Plugin riot-client-app-command"
         ],
         "threadSafe": false
     },

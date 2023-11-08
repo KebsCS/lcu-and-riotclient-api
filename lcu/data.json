@@ -96,6 +96,10 @@
         "GET /client-config/v2/namespace/{namespace}/player",
         "GET /client-config/v2/namespace/{namespace}/public"
     ],
+    "Plugin deep-links": [
+        "POST /deep-links/v1/launch-lor-link",
+        "GET /deep-links/v1/settings"
+    ],
     "Plugin entitlements": [
         "GET /entitlements/v1/token"
     ],
@@ -1436,6 +1440,8 @@
         "GET /client-config/v2/namespace/{namespace}",
         "GET /client-config/v2/namespace/{namespace}/player",
         "GET /client-config/v2/namespace/{namespace}/public",
+        "POST /deep-links/v1/launch-lor-link",
+        "GET /deep-links/v1/settings",
         "GET /entitlements/v1/token",
         "POST /lol-account-verification/v1/confirmActivationPin",
         "POST /lol-account-verification/v1/confirmDeactivationPin",
