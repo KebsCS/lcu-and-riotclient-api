@@ -5465,6 +5465,25 @@
         ],
         "threadSafe": false
     },
+    "GET /game-session/v1/ready": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns the readiness of the plugin to accept requests.",
+        "help": "",
+        "internal": false,
+        "name": "GetGameSessionV1Ready",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "bool"
+        },
+        "subscribable": false,
+        "tags": [
+            "game-session"
+        ],
+        "threadSafe": false
+    },
     "GET /game-session/v1/sessions/{sessionId}": {
         "arguments": [
             {
@@ -6214,6 +6233,25 @@
         ],
         "threadSafe": false
     },
+    "GET /payments/v1/ready": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "True if the plugin is ready to call initialize-purchase",
+        "help": "",
+        "internal": false,
+        "name": "GetPaymentsV1Ready",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "bool"
+        },
+        "subscribable": false,
+        "tags": [
+            "payments"
+        ],
+        "threadSafe": false
+    },
     "GET /permissions/v1/request": {
         "arguments": [],
         "deprecated": false,
@@ -6226,6 +6264,35 @@
         "returns": {
             "elementType": "",
             "type": "PermissionsPermissionsResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "permissions"
+        ],
+        "threadSafe": false
+    },
+    "GET /permissions/v1/request/{permissionId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "permissionId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "[WIP] Gets the details for the permission specified.",
+        "help": "",
+        "internal": false,
+        "name": "GetPermissionsV1RequestByPermissionId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PermissionsPermissionDetails"
         },
         "subscribable": false,
         "tags": [
@@ -8590,6 +8657,15 @@
                 "type": {
                     "elementType": "",
                     "type": "int32"
+                }
+            },
+            {
+                "description": "",
+                "name": "locale",
+                "optional": true,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
                 }
             }
         ],
@@ -11701,6 +11777,25 @@
         "returns": {
             "elementType": "",
             "type": "VoiceChatPushToTalkResource"
+        },
+        "subscribable": false,
+        "tags": [
+            "voice-chat"
+        ],
+        "threadSafe": false
+    },
+    "GET /voice-chat/v1/status": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get the status of the voice-chat plugin to know whether or not to expect if the feature is usable.",
+        "help": "\n**Description**\nGet the status of the voice-chat plugin to know whether or not to expect if the feature is usable. Game teams are encouraged to subscribe\nto this endpoint so that the game can behave correctly depending on what the current state of the plugin is. For example, if the status of\nthe plugin is `permissionDenied`, game teams should not attempt to join voice sessions since the player does not have permissions to do so,\npossibly due to behavioural restrictions or parental control settings.\n\n** Returns **\n\nA PluginStatus value representing the current status of the plugin.\n* `PluginStatus` values:\n    * `permissionDenied`: The player does not have permission to use voice chat. Attempting to join a voice session will always return an error and existing sessions will be left.\n    * `awaitingAuth`: The player has not signed in, so the plugin does not have the information required to join a voice session.\n    * `ready`: Voice chat is usable and voice sessions can be joined.\n    * `unknown`: The status of the plugin is currently unknown. This is the default value while the plugin is initializing and its status has yet to be determined.\n",
+        "internal": false,
+        "name": "GetVoiceChatV1Status",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "VoiceChatPluginStatus"
         },
         "subscribable": false,
         "tags": [
@@ -19546,6 +19641,35 @@
         "returns": {
             "elementType": "",
             "type": "bool"
+        },
+        "subscribable": false,
+        "tags": [
+            "voice-chat"
+        ],
+        "threadSafe": false
+    },
+    "POST /voice-chat/v1/upload-audio/{productName}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productName",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Trigger the upload of the client-side recorded audio data for all sessions with client-side recording enabled",
+        "help": "A successful response by this endpoint means that the upload procedure has been successfully initiated, not that it has been successfully completed",
+        "internal": false,
+        "name": "PostVoiceChatV1UploadAudioByProductName",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
         },
         "subscribable": false,
         "tags": [

@@ -261,6 +261,7 @@
         "DELETE /game-session/v1/debug/caller-id/mock-id",
         "GET /game-session/v1/debug/caller-id/mock-id",
         "PUT /game-session/v1/debug/caller-id/mock-id",
+        "GET /game-session/v1/ready",
         "POST /game-session/v1/sessions",
         "DELETE /game-session/v1/sessions/{sessionId}",
         "GET /game-session/v1/sessions/{sessionId}"
@@ -364,11 +365,13 @@
         "POST /pay-mobile/v1/session/resume"
     ],
     "payments": [
-        "POST /payments/v1/initialize-purchase"
+        "POST /payments/v1/initialize-purchase",
+        "GET /payments/v1/ready"
     ],
     "permissions": [
         "GET /permissions/v1/request",
-        "POST /permissions/v1/request"
+        "POST /permissions/v1/request",
+        "GET /permissions/v1/request/{permissionId}"
     ],
     "platform-login": [
         "GET /platform-login/v1/config",
@@ -1218,6 +1221,8 @@
         "GET /voice-chat/v1/push-to-talk",
         "PUT /voice-chat/v1/push-to-talk",
         "POST /voice-chat/v1/push-to-talk/check-available",
+        "GET /voice-chat/v1/status",
+        "POST /voice-chat/v1/upload-audio/{productName}",
         "GET /voice-chat/v2/devices/capture",
         "GET /voice-chat/v2/devices/capture/permission",
         "PUT /voice-chat/v2/devices/capture/prompt-for-permission",
