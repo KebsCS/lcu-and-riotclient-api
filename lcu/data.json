@@ -435,6 +435,7 @@
         "GET /lol-drops/v1/drop-tables/{dropTableId}/odds-tree",
         "GET /lol-drops/v1/drop-tables/{dropTableId}/players/{playerId}/pity-count",
         "GET /lol-drops/v1/players/{playerId}/pity-counts",
+        "GET /lol-drops/v1/players/{playerId}/total-rolls-counts",
         "GET /lol-drops/v1/ready"
     ],
     "Plugin lol-email-verification": [
@@ -1745,6 +1746,7 @@
         "GET /lol-drops/v1/drop-tables/{dropTableId}/odds-tree",
         "GET /lol-drops/v1/drop-tables/{dropTableId}/players/{playerId}/pity-count",
         "GET /lol-drops/v1/players/{playerId}/pity-counts",
+        "GET /lol-drops/v1/players/{playerId}/total-rolls-counts",
         "GET /lol-drops/v1/ready",
         "POST /lol-email-verification/v1/confirm-email",
         "GET /lol-email-verification/v1/email",
