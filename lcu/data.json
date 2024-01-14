@@ -395,6 +395,7 @@
         "GET /lol-clash/v2/playmode-restricted"
     ],
     "Plugin lol-client-config": [
+        "GET /lol-client-config/v3/client-config/operational/{name}",
         "GET /lol-client-config/v3/client-config/{name}"
     ],
     "Plugin lol-collections": [
@@ -962,7 +963,6 @@
         "GET /lol-perks/v1/perks/disabled",
         "GET /lol-perks/v1/perks/gameplay-updated",
         "GET /lol-perks/v1/quick-play-selections/champion/{championId}/position/{position}",
-        "POST /lol-perks/v1/quick-play-selections/champion/{championId}/slot/{slotId}",
         "GET /lol-perks/v1/recommended-pages-position/champion/{championId}",
         "POST /lol-perks/v1/recommended-pages-position/champion/{championId}/position/{position}",
         "GET /lol-perks/v1/recommended-pages/champion/{championId}/position/{position}/map/{mapId}",
@@ -1135,6 +1135,7 @@
     ],
     "Plugin lol-rewards": [
         "GET /lol-rewards/v1/grants",
+        "PATCH /lol-rewards/v1/grants/view",
         "POST /lol-rewards/v1/grants/{grantId}/select",
         "PATCH /lol-rewards/v1/grants/{grantId}/view",
         "GET /lol-rewards/v1/groups",
@@ -1205,8 +1206,11 @@
     "Plugin lol-spectator": [
         "POST /lol-spectator/v1/buddy/spectate",
         "GET /lol-spectator/v1/spectate",
+        "GET /lol-spectator/v1/spectate/config",
         "POST /lol-spectator/v1/spectate/launch",
-        "POST /lol-spectator/v2/buddy/spectate"
+        "POST /lol-spectator/v2/buddy/spectate",
+        "GET /lol-spectator/v3/buddy/spectate",
+        "POST /lol-spectator/v3/buddy/spectate"
     ],
     "Plugin lol-statstones": [
         "GET /lol-statstones/v1/eog-notifications/{gameId}",
@@ -1305,6 +1309,7 @@
         "POST /lol-tft/v1/tft/homeHub/redirect",
         "GET /lol-tft/v1/tft/newsHub",
         "GET /lol-tft/v1/tft/promoButtons",
+        "GET /lol-tft/v1/tft/tencentEventhubConfigs",
         "PUT /lol-tft/v1/tft_experiment_bucket"
     ],
     "Plugin lol-tft-pass": [
@@ -1714,6 +1719,7 @@
         "POST /lol-clash/v1/voice-delay/{delaySeconds}",
         "GET /lol-clash/v1/voice-enabled",
         "GET /lol-clash/v2/playmode-restricted",
+        "GET /lol-client-config/v3/client-config/operational/{name}",
         "GET /lol-client-config/v3/client-config/{name}",
         "GET /lol-collections/v1/inventories/chest-eligibility",
         "GET /lol-collections/v1/inventories/local-player/champion-mastery-score",
@@ -2197,7 +2203,6 @@
         "GET /lol-perks/v1/perks/disabled",
         "GET /lol-perks/v1/perks/gameplay-updated",
         "GET /lol-perks/v1/quick-play-selections/champion/{championId}/position/{position}",
-        "POST /lol-perks/v1/quick-play-selections/champion/{championId}/slot/{slotId}",
         "GET /lol-perks/v1/recommended-pages-position/champion/{championId}",
         "POST /lol-perks/v1/recommended-pages-position/champion/{championId}/position/{position}",
         "GET /lol-perks/v1/recommended-pages/champion/{championId}/position/{position}/map/{mapId}",
@@ -2336,6 +2341,7 @@
         "POST /lol-replays/v1/rofls/{gameId}/watch",
         "POST /lol-replays/v2/metadata/{gameId}/create",
         "GET /lol-rewards/v1/grants",
+        "PATCH /lol-rewards/v1/grants/view",
         "POST /lol-rewards/v1/grants/{grantId}/select",
         "PATCH /lol-rewards/v1/grants/{grantId}/view",
         "GET /lol-rewards/v1/groups",
@@ -2388,8 +2394,11 @@
         "GET /lol-social-leaderboard/v1/social-leaderboard-data",
         "POST /lol-spectator/v1/buddy/spectate",
         "GET /lol-spectator/v1/spectate",
+        "GET /lol-spectator/v1/spectate/config",
         "POST /lol-spectator/v1/spectate/launch",
         "POST /lol-spectator/v2/buddy/spectate",
+        "GET /lol-spectator/v3/buddy/spectate",
+        "POST /lol-spectator/v3/buddy/spectate",
         "GET /lol-statstones/v1/eog-notifications/{gameId}",
         "GET /lol-statstones/v1/featured-champion-statstones/{championItemId}",
         "POST /lol-statstones/v1/featured-champion-statstones/{championItemId}/{statstoneId}",
@@ -2505,6 +2514,7 @@
         "POST /lol-tft/v1/tft/homeHub/redirect",
         "GET /lol-tft/v1/tft/newsHub",
         "GET /lol-tft/v1/tft/promoButtons",
+        "GET /lol-tft/v1/tft/tencentEventhubConfigs",
         "PUT /lol-tft/v1/tft_experiment_bucket",
         "GET /lol-tft/v2/tft/battlepass",
         "GET /lol-trophies/v1/current-summoner/trophies/profile",
