@@ -143,6 +143,7 @@
     "Plugin lol-catalog": [
         "GET /lol-catalog/v1/item-details",
         "GET /lol-catalog/v1/items",
+        "GET /lol-catalog/v1/items-list-details",
         "GET /lol-catalog/v1/items-list-details/skip-cache",
         "GET /lol-catalog/v1/items/{inventoryType}"
     ],
@@ -260,13 +261,10 @@
         "DELETE /lol-chat/v1/conversations/{id}",
         "GET /lol-chat/v1/conversations/{id}",
         "PUT /lol-chat/v1/conversations/{id}",
-        "POST /lol-chat/v1/conversations/{id}/closed",
-        "PUT /lol-chat/v1/conversations/{id}/closed",
         "DELETE /lol-chat/v1/conversations/{id}/messages",
         "GET /lol-chat/v1/conversations/{id}/messages",
         "POST /lol-chat/v1/conversations/{id}/messages",
         "GET /lol-chat/v1/conversations/{id}/participants",
-        "POST /lol-chat/v1/conversations/{id}/participants",
         "GET /lol-chat/v1/conversations/{id}/participants/{pid}",
         "GET /lol-chat/v1/errors",
         "DELETE /lol-chat/v1/errors/{id}",
@@ -278,7 +276,6 @@
         "DELETE /lol-chat/v1/friend-groups/{id}",
         "GET /lol-chat/v1/friend-groups/{id}",
         "PUT /lol-chat/v1/friend-groups/{id}",
-        "GET /lol-chat/v1/friend-groups/{id}/friends",
         "GET /lol-chat/v1/friends",
         "DELETE /lol-chat/v1/friends/{id}",
         "GET /lol-chat/v1/friends/{id}",
@@ -288,16 +285,10 @@
         "DELETE /lol-chat/v1/player-mutes",
         "GET /lol-chat/v1/player-mutes",
         "POST /lol-chat/v1/player-mutes",
-        "GET /lol-chat/v1/proxy-mode-enabled",
         "GET /lol-chat/v1/resources",
-        "DELETE /lol-chat/v1/session",
         "GET /lol-chat/v1/session",
-        "POST /lol-chat/v1/session/rso",
         "GET /lol-chat/v1/settings",
         "PUT /lol-chat/v1/settings",
-        "DELETE /lol-chat/v1/settings/{key}",
-        "GET /lol-chat/v1/settings/{key}",
-        "PUT /lol-chat/v1/settings/{key}",
         "POST /lol-chat/v1/system-mutes",
         "GET /lol-chat/v2/friend-requests",
         "POST /lol-chat/v2/friend-requests",
@@ -642,8 +633,7 @@
         "GET /lol-kickout/v1/notification"
     ],
     "Plugin lol-kr-playtime-reminder": [
-        "GET /lol-kr-playtime-reminder/v1/message",
-        "GET /lol-kr-playtime-reminder/v1/playtime"
+        "GET /lol-kr-playtime-reminder/v1/hours-played"
     ],
     "Plugin lol-kr-shutdown-law": [
         "GET /lol-kr-shutdown-law/v1/custom-status",
@@ -1027,6 +1017,7 @@
     "Plugin lol-player-report-sender": [
         "POST /lol-player-report-sender/v1/champ-select-reports",
         "POST /lol-player-report-sender/v1/end-of-game-reports",
+        "GET /lol-player-report-sender/v1/game-ids-with-verbal-abuse-report",
         "GET /lol-player-report-sender/v1/in-game-reports",
         "POST /lol-player-report-sender/v1/in-game-reports",
         "POST /lol-player-report-sender/v1/match-history-reports",
@@ -1120,6 +1111,9 @@
         "GET /lol-regalia/v2/summoners/{summonerId}/regalia/async",
         "GET /lol-regalia/v3/inventory/{inventoryType}",
         "GET /lol-regalia/v3/summoners/{summonerId}/regalia"
+    ],
+    "Plugin lol-remedy": [
+        "GET /lol-remedy/v1/config/is-verbal-abuse-remedy-modal-enabled"
     ],
     "Plugin lol-replays": [
         "GET /lol-replays/v1/configuration",
@@ -1312,6 +1306,9 @@
         "GET /lol-tft/v1/tft/tencentEventhubConfigs",
         "PUT /lol-tft/v1/tft_experiment_bucket"
     ],
+    "Plugin lol-tft-event": [
+        "GET /lol-event-mission/v1/event-mission"
+    ],
     "Plugin lol-tft-pass": [
         "GET /lol-tft-pass/v1/battle-pass",
         "GET /lol-tft-pass/v1/enabled",
@@ -1350,6 +1347,11 @@
     "Plugin lol-trophies": [
         "GET /lol-trophies/v1/current-summoner/trophies/profile",
         "GET /lol-trophies/v1/players/{puuid}/trophies/profile"
+    ],
+    "Plugin lol-vanguard": [
+        "GET /lol-vanguard/v1/config/days-to-reshow-modal",
+        "GET /lol-vanguard/v1/machine-specs",
+        "POST /lol-vanguard/v1/telemetry/system-check"
     ],
     "Plugin lol-yourshop": [
         "GET /lol-yourshop/v1/has-permissions",
@@ -1481,6 +1483,7 @@
         "GET /lol-career-stats/v1/summoner-stats/{puuid}/{season}/{queue}/{position}",
         "GET /lol-catalog/v1/item-details",
         "GET /lol-catalog/v1/items",
+        "GET /lol-catalog/v1/items-list-details",
         "GET /lol-catalog/v1/items-list-details/skip-cache",
         "GET /lol-catalog/v1/items/{inventoryType}",
         "POST /lol-challenges/v1/ack-challenge-update/{id}",
@@ -1588,13 +1591,10 @@
         "DELETE /lol-chat/v1/conversations/{id}",
         "GET /lol-chat/v1/conversations/{id}",
         "PUT /lol-chat/v1/conversations/{id}",
-        "POST /lol-chat/v1/conversations/{id}/closed",
-        "PUT /lol-chat/v1/conversations/{id}/closed",
         "DELETE /lol-chat/v1/conversations/{id}/messages",
         "GET /lol-chat/v1/conversations/{id}/messages",
         "POST /lol-chat/v1/conversations/{id}/messages",
         "GET /lol-chat/v1/conversations/{id}/participants",
-        "POST /lol-chat/v1/conversations/{id}/participants",
         "GET /lol-chat/v1/conversations/{id}/participants/{pid}",
         "GET /lol-chat/v1/errors",
         "DELETE /lol-chat/v1/errors/{id}",
@@ -1606,7 +1606,6 @@
         "DELETE /lol-chat/v1/friend-groups/{id}",
         "GET /lol-chat/v1/friend-groups/{id}",
         "PUT /lol-chat/v1/friend-groups/{id}",
-        "GET /lol-chat/v1/friend-groups/{id}/friends",
         "GET /lol-chat/v1/friends",
         "DELETE /lol-chat/v1/friends/{id}",
         "GET /lol-chat/v1/friends/{id}",
@@ -1616,16 +1615,10 @@
         "DELETE /lol-chat/v1/player-mutes",
         "GET /lol-chat/v1/player-mutes",
         "POST /lol-chat/v1/player-mutes",
-        "GET /lol-chat/v1/proxy-mode-enabled",
         "GET /lol-chat/v1/resources",
-        "DELETE /lol-chat/v1/session",
         "GET /lol-chat/v1/session",
-        "POST /lol-chat/v1/session/rso",
         "GET /lol-chat/v1/settings",
         "PUT /lol-chat/v1/settings",
-        "DELETE /lol-chat/v1/settings/{key}",
-        "GET /lol-chat/v1/settings/{key}",
-        "PUT /lol-chat/v1/settings/{key}",
         "POST /lol-chat/v1/system-mutes",
         "GET /lol-chat/v2/friend-requests",
         "POST /lol-chat/v2/friend-requests",
@@ -1766,6 +1759,7 @@
         "GET /lol-esport-stream-notifications/v1/live-streams",
         "POST /lol-esport-stream-notifications/v1/send-stats",
         "GET /lol-esport-stream-notifications/v1/stream-url",
+        "GET /lol-event-mission/v1/event-mission",
         "GET /lol-event-shop/v1/categories-offers",
         "POST /lol-event-shop/v1/claim-select-all",
         "POST /lol-event-shop/v1/claim-select-bonus-iteration",
@@ -1924,8 +1918,7 @@
         "POST /lol-item-sets/v1/item-sets/{summonerId}/sets",
         "PUT /lol-item-sets/v1/item-sets/{summonerId}/sets",
         "GET /lol-kickout/v1/notification",
-        "GET /lol-kr-playtime-reminder/v1/message",
-        "GET /lol-kr-playtime-reminder/v1/playtime",
+        "GET /lol-kr-playtime-reminder/v1/hours-played",
         "GET /lol-kr-shutdown-law/v1/custom-status",
         "GET /lol-kr-shutdown-law/v1/disabled-queues",
         "GET /lol-kr-shutdown-law/v1/is-enabled",
@@ -2251,6 +2244,7 @@
         "GET /lol-player-preferences/v1/preference/{type}",
         "POST /lol-player-report-sender/v1/champ-select-reports",
         "POST /lol-player-report-sender/v1/end-of-game-reports",
+        "GET /lol-player-report-sender/v1/game-ids-with-verbal-abuse-report",
         "GET /lol-player-report-sender/v1/in-game-reports",
         "POST /lol-player-report-sender/v1/in-game-reports",
         "POST /lol-player-report-sender/v1/match-history-reports",
@@ -2330,6 +2324,7 @@
         "GET /lol-regalia/v2/summoners/{summonerId}/regalia/async",
         "GET /lol-regalia/v3/inventory/{inventoryType}",
         "GET /lol-regalia/v3/summoners/{summonerId}/regalia",
+        "GET /lol-remedy/v1/config/is-verbal-abuse-remedy-modal-enabled",
         "GET /lol-replays/v1/configuration",
         "GET /lol-replays/v1/metadata/{gameId}",
         "POST /lol-replays/v1/metadata/{gameId}/create/gameVersion/{gameVersion}/gameType/{gameType}/queueId/{queueId}",
@@ -2519,6 +2514,9 @@
         "GET /lol-tft/v2/tft/battlepass",
         "GET /lol-trophies/v1/current-summoner/trophies/profile",
         "GET /lol-trophies/v1/players/{puuid}/trophies/profile",
+        "GET /lol-vanguard/v1/config/days-to-reshow-modal",
+        "GET /lol-vanguard/v1/machine-specs",
+        "POST /lol-vanguard/v1/telemetry/system-check",
         "GET /lol-yourshop/v1/has-permissions",
         "GET /lol-yourshop/v1/modal",
         "GET /lol-yourshop/v1/offers",

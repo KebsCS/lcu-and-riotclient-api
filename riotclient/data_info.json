@@ -10568,7 +10568,7 @@
         "nameSpace": "",
         "returns": {
             "elementType": "",
-            "type": "RnetProductRegistryProductPatchlineSize"
+            "type": "uint64"
         },
         "subscribable": false,
         "tags": [
