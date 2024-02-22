@@ -143,8 +143,11 @@
         "POST /chatbox/v1/chatboxes/{id}/messages",
         "GET /chatbox/v1/chatboxes/{id}/messages/channels/{channelName}",
         "POST /chatbox/v1/chatboxes/{id}/messages/channels/{channelName}",
+        "GET /chatbox/v1/chatboxes/{id}/messages/channels/{channelName}/patch",
+        "GET /chatbox/v1/chatboxes/{id}/messages/patch",
         "POST /chatbox/v1/chatboxes/{id}/messages/read",
         "GET /chatbox/v1/chatboxes/{id}/messages/whispers/{puuid}",
+        "GET /chatbox/v1/chatboxes/{id}/messages/whispers/{puuid}/patch",
         "POST /chatbox/v1/chatboxes/{id}/messages/whispers/{puuid}/read",
         "GET /chatbox/v1/chatboxes/{id}/participants",
         "GET /chatbox/v1/chatboxes/{id}/participants/whispers",
@@ -157,6 +160,7 @@
         "PUT /client-config/v1/authorization",
         "GET /client-config/v1/config",
         "GET /client-config/v1/config/{name}",
+        "PUT /client-config/v1/environment",
         "PUT /client-config/v1/refresh-config-status",
         "PUT /client-config/v1/sessions",
         "GET /client-config/v1/status/{type}",
@@ -180,6 +184,12 @@
         "DELETE /client-feature-flags/v1/debug/overrides/flags/{namespace}/{flag}",
         "PUT /client-feature-flags/v1/debug/overrides/flags/{namespace}/{flag}",
         "GET /client-feature-flags/v1/flags/{namespace}/{flag}"
+    ],
+    "commerce": [
+        "DELETE /commerce/v1/debug/caller-id/mock-id",
+        "GET /commerce/v1/debug/caller-id/mock-id",
+        "PUT /commerce/v1/debug/caller-id/mock-id",
+        "GET /commerce/v1/store/listing"
     ],
     "cookie-jar": [
         "DELETE /cookie-jar/v1/cookies",
@@ -290,6 +300,12 @@
         "GET /kr-account/config/v1/config",
         "GET /kr-account/promotion/v1/session"
     ],
+    "launch-restriction": [
+        "GET /launch-restriction/v1/products",
+        "GET /launch-restriction/v1/ready",
+        "GET /launch-restriction/v1/restrictions",
+        "GET /launch-restriction/v1/restrictions/{product-id}"
+    ],
     "loyalty": [
         "POST /loyalty/v1/debug/set-loyalty-resource/{pcbId}",
         "GET /loyalty/v1/loyalty-resource"
@@ -362,7 +378,13 @@
         "POST /pay-mobile/v1/request-external-products",
         "POST /pay-mobile/v1/request-price-point-products",
         "POST /pay-mobile/v1/request-products",
-        "POST /pay-mobile/v1/session/resume"
+        "POST /pay-mobile/v1/session/resume",
+        "GET /pay-mobile/v2/productListResult",
+        "POST /pay-mobile/v2/purchase/{productId}",
+        "GET /pay-mobile/v2/purchaseResult",
+        "POST /pay-mobile/v2/request-external-products",
+        "POST /pay-mobile/v2/request-price-point-products",
+        "POST /pay-mobile/v2/session/resume"
     ],
     "payments": [
         "POST /payments/v1/initialize-purchase",
@@ -380,6 +402,14 @@
     ],
     "platform-social": [
         "GET /platform-social/v1/block-list",
+        "GET /platform-social/v1/block-list/patch",
+        "GET /platform-social/v1/crossplay-permission",
+        "GET /platform-social/v1/friend-list",
+        "GET /platform-social/v1/friend-list/patch",
+        "GET /platform-social/v1/multiplayer-permission",
+        "GET /platform-social/v1/platform-profile",
+        "POST /platform-social/v1/platform-profile/{consoleId}",
+        "GET /platform-social/v1/text-permission",
         "GET /platform-social/v1/voice-permission"
     ],
     "platform-ui": [
@@ -387,6 +417,7 @@
         "DELETE /platform-ui/v1/fre",
         "GET /platform-ui/v1/fre",
         "POST /platform-ui/v1/fre",
+        "POST /platform-ui/v1/fre/telemetry",
         "GET /platform-ui/v1/sdk-instance-id",
         "GET /platform-ui/v1/status"
     ],
@@ -409,6 +440,8 @@
         "GET /player-account/aliases/v1/lookup",
         "GET /player-account/aliases/v1/required",
         "POST /player-account/aliases/v1/validity",
+        "POST /player-account/aliases/v2/generate-tagline",
+        "POST /player-account/aliases/v2/validity",
         "GET /player-account/config/v1/config",
         "GET /player-account/login-history/v1/debug/cache",
         "PUT /player-account/login-history/v1/debug/cache",
@@ -458,7 +491,11 @@
         "GET /player-preferences/v1/ready"
     ],
     "player-reporting": [
-        "POST /player-reporting/v1/debug/simulate-reporter-feedback/{category}",
+        "DELETE /player-reporting/v1/debug/caller-id/mock-id",
+        "GET /player-reporting/v1/debug/caller-id/mock-id",
+        "PUT /player-reporting/v1/debug/caller-id/mock-id",
+        "POST /player-reporting/v1/debug/simulate-bystander-feedback/product/{productId}/category/{category}",
+        "POST /player-reporting/v1/debug/simulate-reporter-feedback/product/{productId}/category/{category}",
         "POST /player-reporting/v1/report",
         "GET /player-reporting/v1/reporter-feedback",
         "POST /player-reporting/v1/reporter-feedback/ack",
@@ -1178,7 +1215,8 @@
         "GET /social/v1/friends",
         "GET /social/v1/friends/patch",
         "POST /social/v1/initialize",
-        "GET /social/v1/ready"
+        "GET /social/v1/ready",
+        "POST /social/v1/view-profile/{puuid}"
     ],
     "swagger": [
         "GET /swagger/v1/api-docs",
@@ -1274,9 +1312,13 @@
         "POST /xbox-account/v1/authorization",
         "GET /xbox-account/v1/authorization-consent",
         "PUT /xbox-account/v1/authorization-consent",
+        "GET /xbox-account/v1/config",
         "GET /xbox-account/v1/player-nickname",
         "GET /xbox-account/v1/player-nickname-without-consent",
+        "DELETE /xbox-account/v1/user",
+        "GET /xbox-account/v1/user",
         "POST /xbox-account/v1/user",
+        "POST /xbox-account/v1/user/confirm",
         "DELETE /xbox-account/v2/authorization",
         "GET /xbox-account/v2/authorization",
         "POST /xbox-account/v2/authorization"

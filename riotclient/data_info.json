@@ -918,6 +918,25 @@
         ],
         "threadSafe": false
     },
+    "DELETE /commerce/v1/debug/caller-id/mock-id": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Stops mocking the caller ID for Swagger calls",
+        "help": "Deletes the currently set `productId` and `patchlineId`. Plugin APIs will receive `swagger` as the `productId`.",
+        "internal": false,
+        "name": "DeleteCommerceV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "commerce"
+        ],
+        "threadSafe": false
+    },
     "DELETE /cookie-jar/v1/cookies": {
         "arguments": [
             {
@@ -1607,6 +1626,25 @@
         "subscribable": false,
         "tags": [
             "player-preferences"
+        ],
+        "threadSafe": false
+    },
+    "DELETE /player-reporting/v1/debug/caller-id/mock-id": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Stops mocking the caller ID for Swagger calls",
+        "help": "Deletes the currently set `productId` and `patchlineId`. Plugin APIs will receive `swagger` as the `productId`.",
+        "internal": false,
+        "name": "DeletePlayerReportingV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "player-reporting"
         ],
         "threadSafe": false
     },
@@ -2876,6 +2914,25 @@
         "subscribable": false,
         "tags": [
             "voice-chat"
+        ],
+        "threadSafe": false
+    },
+    "DELETE /xbox-account/v1/user": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Resets user selection",
+        "help": "",
+        "internal": false,
+        "name": "DeleteXboxAccountV1User",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "xbox-account"
         ],
         "threadSafe": false
     },
@@ -4295,6 +4352,73 @@
         ],
         "threadSafe": false
     },
+    "GET /chatbox/v1/chatboxes/{id}/messages/channels/{channelName}/patch": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "channelName",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Gets all messages in channel as get.  When subscribed, returns only new messages in the channel when updated",
+        "help": "",
+        "internal": false,
+        "name": "GetChatboxV1ChatboxesByIdMessagesChannelsByChannelNamePatch",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "ChatboxChatboxMessageList"
+        },
+        "subscribable": false,
+        "tags": [
+            "chatbox"
+        ],
+        "threadSafe": false
+    },
+    "GET /chatbox/v1/chatboxes/{id}/messages/patch": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Gets all messages in the chatbox as get.  When subscribed, returns only new messages in the chatbox when updated",
+        "help": "",
+        "internal": false,
+        "name": "GetChatboxV1ChatboxesByIdMessagesPatch",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "ChatboxChatboxMessageList"
+        },
+        "subscribable": false,
+        "tags": [
+            "chatbox"
+        ],
+        "threadSafe": false
+    },
     "GET /chatbox/v1/chatboxes/{id}/messages/whispers/{puuid}": {
         "arguments": [
             {
@@ -4322,6 +4446,44 @@
         "help": "",
         "internal": false,
         "name": "GetChatboxV1ChatboxesByIdMessagesWhispersByPuuid",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "ChatboxChatboxMessageList"
+        },
+        "subscribable": false,
+        "tags": [
+            "chatbox"
+        ],
+        "threadSafe": false
+    },
+    "GET /chatbox/v1/chatboxes/{id}/messages/whispers/{puuid}/patch": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "puuid",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get whisper messages for the specified chatbox as get.  Returns only new whispers on update.",
+        "help": "",
+        "internal": false,
+        "name": "GetChatboxV1ChatboxesByIdMessagesWhispersByPuuidPatch",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -4852,6 +5014,44 @@
         "subscribable": false,
         "tags": [
             "client-feature-flags"
+        ],
+        "threadSafe": false
+    },
+    "GET /commerce/v1/debug/caller-id/mock-id": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Checks the caller ID in use when APIs are called from Swagger",
+        "help": "Returns the `productId` and `patchlineId` being passed to APIs in this plugin when called via Swagger.\n\nReturns 404 if a mock caller ID is not in use.",
+        "internal": false,
+        "name": "GetCommerceV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "CommercePluginCallerId_MockCallerId"
+        },
+        "subscribable": false,
+        "tags": [
+            "commerce"
+        ],
+        "threadSafe": false
+    },
+    "GET /commerce/v1/store/listing": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get the store listing of products available for the player to purchase.",
+        "help": "\n**Description**\nThis endpoint returns a StoreListing, which contains a list of Products, for the current platform.\n",
+        "internal": false,
+        "name": "GetCommerceV1StoreListing",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "CommerceV1StoreListing"
+        },
+        "subscribable": false,
+        "tags": [
+            "commerce"
         ],
         "threadSafe": false
     },
@@ -5589,6 +5789,92 @@
         ],
         "threadSafe": false
     },
+    "GET /launch-restriction/v1/products": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns all product ids the player is launch restricted for",
+        "help": "WARNING: Should not be used to enforce a restriction.\nThese restrictions are based on data from an unsigned user info token thatplayers *can* tamper with./n/nLaunch restrictions include restrictions with a type of TIME_BAN or PERMANENT_BAN",
+        "internal": false,
+        "name": "GetLaunchRestrictionV1Products",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "string",
+            "type": "vector"
+        },
+        "subscribable": false,
+        "tags": [
+            "launch-restriction"
+        ],
+        "threadSafe": false
+    },
+    "GET /launch-restriction/v1/ready": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns true when the plugin is ready. Consumers are expected to wait until the plugin is ready to request restrictions",
+        "help": "",
+        "internal": false,
+        "name": "GetLaunchRestrictionV1Ready",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "bool"
+        },
+        "subscribable": false,
+        "tags": [
+            "launch-restriction"
+        ],
+        "threadSafe": false
+    },
+    "GET /launch-restriction/v1/restrictions": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns all launch restrictions for the logged in player",
+        "help": "WARNING: Should not be used to enforce a restriction.\nThese restrictions are based on data from an unsigned user info token thatplayers *can* tamper with./n/nLaunch restrictions include restrictions with a type of TIME_BAN or PERMANENT_BAN",
+        "internal": false,
+        "name": "GetLaunchRestrictionV1Restrictions",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "LaunchRestrictionLaunchRestrictions",
+            "type": "vector"
+        },
+        "subscribable": false,
+        "tags": [
+            "launch-restriction"
+        ],
+        "threadSafe": false
+    },
+    "GET /launch-restriction/v1/restrictions/{product-id}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "product-id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns all launch restrictions for the logged in player and given product-id",
+        "help": "WARNING: Should not be used to enforce a restriction.\nThese restrictions are based on data from an unsigned user info token thatplayers *can* tamper with./n/nLaunch restrictions include restrictions with a type of TIME_BAN or PERMANENT_BAN",
+        "internal": false,
+        "name": "GetLaunchRestrictionV1RestrictionsByProductId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "LaunchRestrictionLaunchRestrictions",
+            "type": "vector"
+        },
+        "subscribable": false,
+        "tags": [
+            "launch-restriction"
+        ],
+        "threadSafe": false
+    },
     "GET /loyalty/v1/loyalty-resource": {
         "arguments": [],
         "deprecated": false,
@@ -6233,6 +6519,44 @@
         ],
         "threadSafe": false
     },
+    "GET /pay-mobile/v2/productListResult": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Available products notification",
+        "help": "",
+        "internal": false,
+        "name": "GetPayMobileV2ProductListResult",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PayMobileProductListResult"
+        },
+        "subscribable": false,
+        "tags": [
+            "pay-mobile"
+        ],
+        "threadSafe": false
+    },
+    "GET /pay-mobile/v2/purchaseResult": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Purchase notification",
+        "help": "",
+        "internal": false,
+        "name": "GetPayMobileV2PurchaseResult",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PayMobilePurchaseResult"
+        },
+        "subscribable": false,
+        "tags": [
+            "pay-mobile"
+        ],
+        "threadSafe": false
+    },
     "GET /payments/v1/ready": {
         "arguments": [],
         "deprecated": false,
@@ -6342,7 +6666,7 @@
         "arguments": [],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "Retrieves the currently-authenticated player's list of blocked users on the current platform as a list of Riot PUUIDs",
+        "description": "Retrieves the currently-authenticated player's list of blocked users on the current platform as a list of Riot PUUIDs.",
         "help": "",
         "internal": false,
         "name": "GetPlatformSocialV1BlockList",
@@ -6350,6 +6674,139 @@
         "returns": {
             "elementType": "",
             "type": "PlatformSocialPlatformSocialBlockList"
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-social"
+        ],
+        "threadSafe": false
+    },
+    "GET /platform-social/v1/block-list/patch": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "For subscriptions only. On update and delete will notify with patches (changed elements only) rather than the full list. For a simple GET use the non-patch version of this URL.",
+        "help": "",
+        "internal": false,
+        "name": "GetPlatformSocialV1BlockListPatch",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlatformSocialPlatformSocialBlockList"
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-social"
+        ],
+        "threadSafe": false
+    },
+    "GET /platform-social/v1/crossplay-permission": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns if the current player has permissions from the platform to use cross play and if not, why that is the case.",
+        "help": "",
+        "internal": false,
+        "name": "GetPlatformSocialV1CrossplayPermission",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlatformSocialPlatformSocialCrossPlayPermissionDetails"
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-social"
+        ],
+        "threadSafe": false
+    },
+    "GET /platform-social/v1/friend-list": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Retrieves the currently-authenticated player's friend list on the current platform as a list of Riot PUUIDs.",
+        "help": "",
+        "internal": false,
+        "name": "GetPlatformSocialV1FriendList",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlatformSocialPlatformSocialConsoleFriendsList"
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-social"
+        ],
+        "threadSafe": false
+    },
+    "GET /platform-social/v1/friend-list/patch": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "For subscriptions only. On update and delete will notify with patches (changed elements only) rather than the full list. For a simple GET use the non-patch version of this URL.",
+        "help": "",
+        "internal": false,
+        "name": "GetPlatformSocialV1FriendListPatch",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlatformSocialPlatformSocialConsoleFriendsList"
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-social"
+        ],
+        "threadSafe": false
+    },
+    "GET /platform-social/v1/multiplayer-permission": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns if the current player has permissions from the platform to use multiplayer features and if not, why that is the case.",
+        "help": "",
+        "internal": false,
+        "name": "GetPlatformSocialV1MultiplayerPermission",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlatformSocialPlatformSocialMultiplayerPermissionDetails"
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-social"
+        ],
+        "threadSafe": false
+    },
+    "GET /platform-social/v1/platform-profile": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Subscriptions to this endpoint will be notified when the platform's system UI for displaying a user profile is invoked and dismissed.",
+        "help": "",
+        "internal": false,
+        "name": "GetPlatformSocialV1PlatformProfile",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "bool"
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-social"
+        ],
+        "threadSafe": false
+    },
+    "GET /platform-social/v1/text-permission": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns if the current player has permissions from the platform to use text chat and if not, why that is the case.",
+        "help": "",
+        "internal": false,
+        "name": "GetPlatformSocialV1TextPermission",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlatformSocialPlatformSocialTextPermissionDetails"
         },
         "subscribable": false,
         "tags": [
@@ -7035,12 +7492,31 @@
         ],
         "threadSafe": false
     },
+    "GET /player-reporting/v1/debug/caller-id/mock-id": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Checks the caller ID in use when APIs are called from Swagger",
+        "help": "Returns the `productId` and `patchlineId` being passed to APIs in this plugin when called via Swagger.\n\nReturns 404 if a mock caller ID is not in use.",
+        "internal": false,
+        "name": "GetPlayerReportingV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlayerReportingPluginCallerId_MockCallerId"
+        },
+        "subscribable": false,
+        "tags": [
+            "player-reporting"
+        ],
+        "threadSafe": false
+    },
     "GET /player-reporting/v1/reporter-feedback": {
         "arguments": [],
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Provides a list of unacknowledged localized reporter feedback messages to show the player.",
-        "help": "\n**Data**\n* Response is a JSON map of `id` --> individual reporter feedback messages. Example:\n```json\n{\n\"1\": {\n    \"locale\": \"en_US\",\n    \"category\": \"CHEATING\",\n    \"message\": \"Your report of cheating has been verified.\",\n    \"title\": \"Report Feedback\"\n}\n}\n```\n\n* `locale`: Detected locale of player and what locale the message was localized to.\n* `category`: Category of the report--an internal string. Category keys to different localized messages.\n* `message`: Localized message to display to player.\n* `title`: Localized message title to display to player.\n\nResponse will be an empty map `{}` if there are no reporter-feedback messages to display.\n",
+        "help": "\n**Data**\n* Response is a JSON map of `id` --> individual reporter feedback messages. Example:\n```json\n{\n\"1\": {\n    \"locale\": \"en_US\",\n    \"product\": \"league_of_legends\",\n    \"category\": \"CHEATING\",\n    \"recipientType\": \"\",\n    \"message\": \"Your report of cheating has been verified.\",\n    \"title\": \"Report Feedback\"\n}\n}\n```\n\n* `locale`: Detected locale of player and what locale the message was localized to.\n* 'product': The product that this game is intended for. Can be a specific product, such as \"league_of_legends\", or it can be \"riot\", denoting that it's for all/any product to view.\n* `category`: Category of the report--an internal string. Category keys to different localized messages.\n* 'recipientType': Category of the recipient's role in the report--an internal string. recipientType keys to different localized messages. Examples are \"BYSTANDER\" or \"\". Empty string denotes the recipient was the Reporter, for backwards compatibility with old messages.\n* `message`: Localized message to display to player.\n* `title`: Localized message title to display to player.\n\nResponse will be an empty map `{}` if there are no reporter-feedback messages to display.\n",
         "internal": false,
         "name": "GetPlayerReportingV1ReporterFeedback",
         "nameSpace": "",
@@ -12356,6 +12832,25 @@
         ],
         "threadSafe": false
     },
+    "GET /xbox-account/v1/config": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Retrieve Xbox Account plugin config",
+        "help": "",
+        "internal": false,
+        "name": "GetXboxAccountV1Config",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "XboxAccountConfig"
+        },
+        "subscribable": false,
+        "tags": [
+            "xbox-account"
+        ],
+        "threadSafe": false
+    },
     "GET /xbox-account/v1/player-nickname": {
         "arguments": [],
         "deprecated": false,
@@ -12387,6 +12882,25 @@
         "returns": {
             "elementType": "",
             "type": "string"
+        },
+        "subscribable": false,
+        "tags": [
+            "xbox-account"
+        ],
+        "threadSafe": false
+    },
+    "GET /xbox-account/v1/user": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Retrieve Xbox Live profile info",
+        "help": "",
+        "internal": false,
+        "name": "GetXboxAccountV1User",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "XboxAccountUser"
         },
         "subscribable": false,
         "tags": [
@@ -15033,6 +15547,111 @@
         ],
         "threadSafe": false
     },
+    "POST /pay-mobile/v2/purchase/{productId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "orderId",
+                "optional": true,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Purchase the given product",
+        "help": "",
+        "internal": false,
+        "name": "PostPayMobileV2PurchaseByProductId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "pay-mobile"
+        ],
+        "threadSafe": false
+    },
+    "POST /pay-mobile/v2/request-external-products": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "externalProductIds",
+                "optional": false,
+                "type": {
+                    "elementType": "string",
+                    "type": "vector"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Retrieve available products for purchase from set of product ids",
+        "help": "",
+        "internal": false,
+        "name": "PostPayMobileV2RequestExternalProducts",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "pay-mobile"
+        ],
+        "threadSafe": false
+    },
+    "POST /pay-mobile/v2/request-price-point-products": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Retrieve available price point products for purchase",
+        "help": "",
+        "internal": false,
+        "name": "PostPayMobileV2RequestPricePointProducts",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "pay-mobile"
+        ],
+        "threadSafe": false
+    },
+    "POST /pay-mobile/v2/session/resume": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Resume the purchase session",
+        "help": "",
+        "internal": false,
+        "name": "PostPayMobileV2SessionResume",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "pay-mobile"
+        ],
+        "threadSafe": false
+    },
     "POST /payments/v1/initialize-purchase": {
         "arguments": [],
         "deprecated": false,
@@ -15081,6 +15700,35 @@
         ],
         "threadSafe": false
     },
+    "POST /platform-social/v1/platform-profile/{consoleId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "consoleId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Displays the specified player's platform profile.",
+        "help": "",
+        "internal": false,
+        "name": "PostPlatformSocialV1PlatformProfileByConsoleId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-social"
+        ],
+        "threadSafe": false
+    },
     "POST /platform-ui/v1/fre": {
         "arguments": [],
         "deprecated": false,
@@ -15089,6 +15737,35 @@
         "help": "",
         "internal": false,
         "name": "PostPlatformUiV1Fre",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-ui"
+        ],
+        "threadSafe": false
+    },
+    "POST /platform-ui/v1/fre/telemetry": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "TelemetryEvent",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlatformUiPlatformUIWebTelemetryEventData"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Send telemetry event",
+        "help": "",
+        "internal": false,
+        "name": "PostPlatformUiV1FreTelemetry",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -15220,7 +15897,7 @@
         ],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "Returns a random tagline that is valid for the player.",
+        "description": "Returns a random tagline that is valid for the player. This endpoint also verifies free eligibility. If you need validation in the Paid Name Change context use the V2 endpoint instead.",
         "help": "",
         "internal": false,
         "name": "PostPlayerAccountAliasesV1GenerateTagline",
@@ -15249,7 +15926,7 @@
         ],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "Checks a name for validity without saving it.",
+        "description": "Checks a name for validity without saving it. This endpoint also verifies free eligibility. If you need validation in the Paid Name Change context use the V2 endpoint instead.",
         "help": "",
         "internal": false,
         "name": "PostPlayerAccountAliasesV1Validity",
@@ -15257,6 +15934,64 @@
         "returns": {
             "elementType": "",
             "type": "PlayerAccountAliasesV1StatusResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "player-account"
+        ],
+        "threadSafe": false
+    },
+    "POST /player-account/aliases/v2/generate-tagline": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "gameName",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlayerAccountAliasesV2GenerateTaglineInput"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns a random tagline that is valid for the player. This endpoint will not check eligiblity like V1 does.",
+        "help": "",
+        "internal": false,
+        "name": "PostPlayerAccountAliasesV2GenerateTagline",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlayerAccountAliasesV2GenerateTaglineResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "player-account"
+        ],
+        "threadSafe": false
+    },
+    "POST /player-account/aliases/v2/validity": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "alias",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlayerAccountAliasesV2ValidityAliasInput"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Checks a name for validity without saving it. This endpoint will not check eligiblity like V1 does.",
+        "help": "",
+        "internal": false,
+        "name": "PostPlayerAccountAliasesV2Validity",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlayerAccountAliasesV2ValidityAliasResponse"
         },
         "subscribable": false,
         "tags": [
@@ -15727,8 +16462,17 @@
         ],
         "threadSafe": false
     },
-    "POST /player-reporting/v1/debug/simulate-reporter-feedback/{category}": {
+    "POST /player-reporting/v1/debug/simulate-bystander-feedback/product/{productId}/category/{category}": {
         "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
             {
                 "description": "",
                 "name": "category",
@@ -15741,10 +16485,48 @@
         ],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "Simulate sending a reporting feedback message to this player with a specific report category.",
+        "description": "Simulate sending a Bystander Feedback message to this player with a specific transgression category.",
+        "help": "\n**Data**\n* `category`: The category is a key used to create the localized message for the player. As an example, `INAPPROPRIATE_TEXT` is the category\nsent when a player was penalized for Inappropriate Text Chat. If the category is unrecognized, no notification will be made.\n",
+        "internal": false,
+        "name": "PostPlayerReportingV1DebugSimulateBystanderFeedbackProductByProductIdCategoryByCategory",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "player-reporting"
+        ],
+        "threadSafe": false
+    },
+    "POST /player-reporting/v1/debug/simulate-reporter-feedback/product/{productId}/category/{category}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "category",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Simulate sending a Reporter Feedback message to this player with a specific report category.",
         "help": "\n**Data**\n* `category`: The category is a key used to create the localized message for the player. As an example, `CHEATING` is the category\nsent when a player's report for cheating was utilized for penalizing a cheater. If the category is unrecognized, a fallback message will be used.\n",
         "internal": false,
-        "name": "PostPlayerReportingV1DebugSimulateReporterFeedbackByCategory",
+        "name": "PostPlayerReportingV1DebugSimulateReporterFeedbackProductByProductIdCategoryByCategory",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -19208,6 +19990,35 @@
         ],
         "threadSafe": false
     },
+    "POST /social/v1/view-profile/{puuid}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "puuid",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "",
+        "help": "",
+        "internal": false,
+        "name": "PostSocialV1ViewProfileByPuuid",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
     "POST /telemetry/v1/common-data/{key}": {
         "arguments": [
             {
@@ -19858,6 +20669,25 @@
         "help": "",
         "internal": false,
         "name": "PostXboxAccountV1User",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "xbox-account"
+        ],
+        "threadSafe": false
+    },
+    "POST /xbox-account/v1/user/confirm": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Confirms selected Xbox Live user as the Platform User",
+        "help": "",
+        "internal": false,
+        "name": "PostXboxAccountV1UserConfirm",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -20541,6 +21371,35 @@
         ],
         "threadSafe": false
     },
+    "PUT /client-config/v1/environment": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "environment",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Updates the 1st party environment the device is currently using so it can be mapped to matching SDK environment.",
+        "help": "",
+        "internal": false,
+        "name": "PutClientConfigV1Environment",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "client-config"
+        ],
+        "threadSafe": false
+    },
     "PUT /client-config/v1/refresh-config-status": {
         "arguments": [],
         "deprecated": false,
@@ -20739,6 +21598,35 @@
         "subscribable": false,
         "tags": [
             "client-feature-flags"
+        ],
+        "threadSafe": false
+    },
+    "PUT /commerce/v1/debug/caller-id/mock-id": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "callerId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "CommercePluginCallerId_MockCallerId"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Sets the caller ID to use when calling this plugin from Swagger",
+        "help": "Sets the `productId` and `patchlineId` to pass to APIs in this plugin during future calls from Swagger.\n\nUse this functionality to test APIs in this plugin with Swagger, as if they were being called from another product.",
+        "internal": false,
+        "name": "PutCommerceV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "commerce"
         ],
         "threadSafe": false
     },
@@ -21930,6 +22818,35 @@
         "subscribable": false,
         "tags": [
             "player-preferences"
+        ],
+        "threadSafe": false
+    },
+    "PUT /player-reporting/v1/debug/caller-id/mock-id": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "callerId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlayerReportingPluginCallerId_MockCallerId"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Sets the caller ID to use when calling this plugin from Swagger",
+        "help": "Sets the `productId` and `patchlineId` to pass to APIs in this plugin during future calls from Swagger.\n\nUse this functionality to test APIs in this plugin with Swagger, as if they were being called from another product.",
+        "internal": false,
+        "name": "PutPlayerReportingV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "player-reporting"
         ],
         "threadSafe": false
     },
