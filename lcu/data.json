@@ -459,6 +459,7 @@
         "GET /lol-event-hub/v1/events/{eventId}/event-details-data",
         "GET /lol-event-hub/v1/events/{eventId}/info",
         "GET /lol-event-hub/v1/events/{eventId}/is-grace-period",
+        "GET /lol-event-hub/v1/events/{eventId}/narrative",
         "GET /lol-event-hub/v1/events/{eventId}/pass-background-data",
         "GET /lol-event-hub/v1/events/{eventId}/pass-bundles",
         "GET /lol-event-hub/v1/events/{eventId}/progress-info-data",
@@ -652,6 +653,7 @@
         "GET /lol-inventory/v1/signedInventoryCache",
         "GET /lol-inventory/v1/signedWallet",
         "GET /lol-inventory/v1/signedWallet/{currencyType}",
+        "GET /lol-inventory/v1/strawberryInventory",
         "GET /lol-inventory/v1/wallet",
         "GET /lol-inventory/v1/wallet/{currencyType}",
         "GET /lol-inventory/v1/xbox-subscription-status",
@@ -734,6 +736,7 @@
         "PUT /lol-lobby/v1/lobby/members/localMember/player-slots",
         "POST /lol-lobby/v1/lobby/members/localMember/player-slots/{slotsIndex}/{perksString}",
         "PUT /lol-lobby/v1/lobby/members/localMember/position-preferences",
+        "PUT /lol-lobby/v1/lobby/members/localMember/quickplayPlayerState",
         "GET /lol-lobby/v1/lobby/tft-ranked-history",
         "PUT /lol-lobby/v1/parties/active",
         "GET /lol-lobby/v1/parties/gamemode",
@@ -1347,9 +1350,9 @@
         "GET /lol-tft-pass/v1/enabled",
         "GET /lol-tft-pass/v1/event-pass",
         "POST /lol-tft-pass/v1/pass/{id}",
+        "PUT /lol-tft-pass/v1/pass/{id}/milestone/{milestoneId}/reward",
         "POST /lol-tft-pass/v1/passes",
-        "GET /lol-tft-pass/v1/reward-notification",
-        "PUT lol-tft-pass/v1/pass/{id}/milestone/{milestoneId}/reward"
+        "GET /lol-tft-pass/v1/reward-notification"
     ],
     "Plugin lol-tft-team-planner": [
         "GET /lol-tft-team-planner/v1/config",
@@ -1384,8 +1387,10 @@
     ],
     "Plugin lol-vanguard": [
         "GET /lol-vanguard/v1/config/days-to-reshow-modal",
+        "GET /lol-vanguard/v1/config/enabled",
         "GET /lol-vanguard/v1/is-playing-in-pcb",
         "GET /lol-vanguard/v1/machine-specs",
+        "GET /lol-vanguard/v1/session",
         "POST /lol-vanguard/v1/telemetry/system-check"
     ],
     "Plugin lol-yourshop": [
@@ -1804,6 +1809,7 @@
         "GET /lol-event-hub/v1/events/{eventId}/event-details-data",
         "GET /lol-event-hub/v1/events/{eventId}/info",
         "GET /lol-event-hub/v1/events/{eventId}/is-grace-period",
+        "GET /lol-event-hub/v1/events/{eventId}/narrative",
         "GET /lol-event-hub/v1/events/{eventId}/pass-background-data",
         "GET /lol-event-hub/v1/events/{eventId}/pass-bundles",
         "GET /lol-event-hub/v1/events/{eventId}/progress-info-data",
@@ -1976,6 +1982,7 @@
         "GET /lol-inventory/v1/signedInventoryCache",
         "GET /lol-inventory/v1/signedWallet",
         "GET /lol-inventory/v1/signedWallet/{currencyType}",
+        "GET /lol-inventory/v1/strawberryInventory",
         "GET /lol-inventory/v1/wallet",
         "GET /lol-inventory/v1/wallet/{currencyType}",
         "GET /lol-inventory/v1/xbox-subscription-status",
@@ -2074,6 +2081,7 @@
         "PUT /lol-lobby/v1/lobby/members/localMember/player-slots",
         "POST /lol-lobby/v1/lobby/members/localMember/player-slots/{slotsIndex}/{perksString}",
         "PUT /lol-lobby/v1/lobby/members/localMember/position-preferences",
+        "PUT /lol-lobby/v1/lobby/members/localMember/quickplayPlayerState",
         "GET /lol-lobby/v1/lobby/tft-ranked-history",
         "PUT /lol-lobby/v1/parties/active",
         "GET /lol-lobby/v1/parties/gamemode",
@@ -2545,6 +2553,7 @@
         "GET /lol-tft-pass/v1/enabled",
         "GET /lol-tft-pass/v1/event-pass",
         "POST /lol-tft-pass/v1/pass/{id}",
+        "PUT /lol-tft-pass/v1/pass/{id}/milestone/{milestoneId}/reward",
         "POST /lol-tft-pass/v1/passes",
         "GET /lol-tft-pass/v1/reward-notification",
         "GET /lol-tft-team-planner/v1/config",
@@ -2583,8 +2592,10 @@
         "GET /lol-trophies/v1/current-summoner/trophies/profile",
         "GET /lol-trophies/v1/players/{puuid}/trophies/profile",
         "GET /lol-vanguard/v1/config/days-to-reshow-modal",
+        "GET /lol-vanguard/v1/config/enabled",
         "GET /lol-vanguard/v1/is-playing-in-pcb",
         "GET /lol-vanguard/v1/machine-specs",
+        "GET /lol-vanguard/v1/session",
         "POST /lol-vanguard/v1/telemetry/system-check",
         "GET /lol-yourshop/v1/has-permissions",
         "GET /lol-yourshop/v1/modal",
@@ -2648,8 +2659,7 @@
         "POST /sanitizer/v1/sanitize",
         "GET /sanitizer/v1/status",
         "GET /{plugin}/assets/{+path}",
-        "HEAD /{plugin}/assets/{+path}",
-        "PUT lol-tft-pass/v1/pass/{id}/milestone/{milestoneId}/reward"
+        "HEAD /{plugin}/assets/{+path}"
     ],
     "process-control": [
         "GET /process-control/v1/process",
