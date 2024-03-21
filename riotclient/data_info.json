@@ -5513,6 +5513,25 @@
         ],
         "threadSafe": false
     },
+    "GET /ga-restriction/v1/debug/callerIds": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get a list of the currently-subscribed callerIds.",
+        "help": "",
+        "internal": false,
+        "name": "GetGaRestrictionV1DebugCallerIds",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "string",
+            "type": "vector"
+        },
+        "subscribable": false,
+        "tags": [
+            "ga-restriction"
+        ],
+        "threadSafe": false
+    },
     "GET /ga-restriction/v1/debug/penalty-notifications-data": {
         "arguments": [],
         "deprecated": false,
@@ -5523,7 +5542,7 @@
         "name": "GetGaRestrictionV1DebugPenaltyNotificationsData",
         "nameSpace": "",
         "returns": {
-            "elementType": "GaRestrictionPenaltyNotificationsByMessageId",
+            "elementType": "GaRestrictionCachedPenaltyNotificationDtoV1",
             "type": "map"
         },
         "subscribable": false,
@@ -6814,6 +6833,53 @@
         ],
         "threadSafe": false
     },
+    "GET /platform-social/v1/users-communication-permissions": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "uids",
+                "optional": false,
+                "type": {
+                    "elementType": "string",
+                    "type": "vector"
+                }
+            },
+            {
+                "description": "",
+                "name": "checkForCrossNetworkFriend",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "bool"
+                }
+            },
+            {
+                "description": "",
+                "name": "checkForCrossNetworkUser",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "bool"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns communications permissions for a given set of users from the platform and if not, why that is the case.",
+        "help": "",
+        "internal": false,
+        "name": "GetPlatformSocialV1UsersCommunicationPermissions",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlatformSocialPlatformSocialUserCommunicationPermission"
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-social"
+        ],
+        "threadSafe": false
+    },
     "GET /platform-social/v1/voice-permission": {
         "arguments": [],
         "deprecated": false,
@@ -7137,6 +7203,25 @@
         ],
         "threadSafe": false
     },
+    "GET /player-account/regions/v1/available": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get a list of available LoL regions for the currently signed in player.",
+        "help": "",
+        "internal": false,
+        "name": "GetPlayerAccountRegionsV1Available",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlayerAccountRegionsV1AvailableRegionsResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "player-account"
+        ],
+        "threadSafe": false
+    },
     "GET /player-account/regions/v1/eligibility": {
         "arguments": [],
         "deprecated": false,
@@ -7149,6 +7234,35 @@
         "returns": {
             "elementType": "",
             "type": "PlayerAccountRegionsV1EligibilityCheckResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "player-account"
+        ],
+        "threadSafe": false
+    },
+    "GET /player-account/vng/v1/profile/{productId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Fetch a VNG profile of the currently signed in player.",
+        "help": "",
+        "internal": false,
+        "name": "GetPlayerAccountVngV1ProfileByProductId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlayerAccountVngV1Profile"
         },
         "subscribable": false,
         "tags": [
@@ -7358,6 +7472,44 @@
         ],
         "threadSafe": false
     },
+    "GET /player-behavior-token/v1/jwt": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "[WIP] Get the currently cached Player Behavior Token as a raw jwt (base64 encoded). Use this endpoint when you want to pass the PB Token to another backend service.",
+        "help": "",
+        "internal": false,
+        "name": "GetPlayerBehaviorTokenV1Jwt",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "string"
+        },
+        "subscribable": false,
+        "tags": [
+            "player-behavior-token"
+        ],
+        "threadSafe": false
+    },
+    "GET /player-behavior-token/v1/jwt/payload": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "[WIP] Get the currently cached Player Behavior Token's payload as a json blob. Use this endpoint when you want to use the PB Token locally, such as for displaying the data to the player.",
+        "help": "",
+        "internal": false,
+        "name": "GetPlayerBehaviorTokenV1JwtPayload",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "map"
+        },
+        "subscribable": false,
+        "tags": [
+            "player-behavior-token"
+        ],
+        "threadSafe": false
+    },
     "GET /player-preferences/v1/data/{type}": {
         "arguments": [
             {
@@ -7516,7 +7668,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Provides a list of unacknowledged localized reporter feedback messages to show the player.",
-        "help": "\n**Data**\n* Response is a JSON map of `id` --> individual reporter feedback messages. Example:\n```json\n{\n\"1\": {\n    \"locale\": \"en_US\",\n    \"product\": \"league_of_legends\",\n    \"category\": \"CHEATING\",\n    \"recipientType\": \"\",\n    \"message\": \"Your report of cheating has been verified.\",\n    \"title\": \"Report Feedback\"\n}\n}\n```\n\n* `locale`: Detected locale of player and what locale the message was localized to.\n* 'product': The product that this game is intended for. Can be a specific product, such as \"league_of_legends\", or it can be \"riot\", denoting that it's for all/any product to view.\n* `category`: Category of the report--an internal string. Category keys to different localized messages.\n* 'recipientType': Category of the recipient's role in the report--an internal string. recipientType keys to different localized messages. Examples are \"BYSTANDER\" or \"\". Empty string denotes the recipient was the Reporter, for backwards compatibility with old messages.\n* `message`: Localized message to display to player.\n* `title`: Localized message title to display to player.\n\nResponse will be an empty map `{}` if there are no reporter-feedback messages to display.\n",
+        "help": "\n**Data**\n* Response is a JSON map of `id` --> individual reporter feedback messages. Example:\n```json\n{\n\"1\": {\n\"locale\": \"en_US\",\n\"product\": \"league_of_legends\",\n\"category\": \"CHEATING\",\n\"recipientType\": \"\",\n\"message\": \"Your report of cheating has been verified.\",\n\"title\": \"Report Feedback\"\n}\n}\n```\n\n* `locale`: Detected locale of player and what locale the message was localized to.\n* 'product': The product that this game is intended for. Can be a specific product, such as \"league_of_legends\", or it can be \"riot\", denoting that it's for all/any product to view.\n* `category`: Category of the report--an internal string. Category keys to different localized messages.\n* 'recipientType': Category of the recipient's role in the report--an internal string. recipientType keys to different localized messages. Examples are \"BYSTANDER\" or \"\". Empty string denotes the recipient was the Reporter, for backwards compatibility with old messages.\n* `message`: Localized message to display to player.\n* `title`: Localized message title to display to player.\n\nResponse will be an empty map `{}` if there are no reporter-feedback messages to display.\n",
         "internal": false,
         "name": "GetPlayerReportingV1ReporterFeedback",
         "nameSpace": "",
@@ -11895,6 +12047,25 @@
         ],
         "threadSafe": false
     },
+    "GET /social/v1/blocklist/patch": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "For subscriptions only. On update and delete will notify with patches (changed elements only) rather than the full list. For a simple GET use the non-patch version of this URL.",
+        "help": "",
+        "internal": false,
+        "name": "GetSocialV1BlocklistPatch",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "SocialBlockList"
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
     "GET /social/v1/friends": {
         "arguments": [],
         "deprecated": false,
@@ -14522,6 +14693,35 @@
         ],
         "threadSafe": false
     },
+    "POST /commerce/v1/store/purchase": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "PurchaseRequest",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "CommerceV1PurchaseRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Initiate the purchase of a store product.",
+        "help": "\n**Description**\nThis endpoint initiates a store product purchase request and returns a status response.\n",
+        "internal": false,
+        "name": "PostCommerceV1StorePurchase",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "CommerceV1PurchaseResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "commerce"
+        ],
+        "threadSafe": false
+    },
     "POST /cookie-jar/v1/cookies": {
         "arguments": [
             {
@@ -15700,6 +15900,35 @@
         ],
         "threadSafe": false
     },
+    "POST /permissions/v1/user-communication-permissions": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "puuids",
+                "optional": false,
+                "type": {
+                    "elementType": "string",
+                    "type": "vector"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Queries whether the current user has the necessary permissions to communicate with a given set of users and if not, why that is the case",
+        "help": "",
+        "internal": false,
+        "name": "PostPermissionsV1UserCommunicationPermissions",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "PermissionsUserCommunicationPermissions",
+            "type": "vector"
+        },
+        "subscribable": false,
+        "tags": [
+            "permissions"
+        ],
+        "threadSafe": false
+    },
     "POST /platform-social/v1/platform-profile/{consoleId}": {
         "arguments": [
             {
@@ -16028,6 +16257,35 @@
         ],
         "threadSafe": false
     },
+    "POST /player-account/lookup/v1/consoleids-for-puuids": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "request",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlayerAccountLookupV1ConsoleIdsForPuuidsRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Retrieves the Console IDs for each PUUID provided",
+        "help": "\n**Description**\nRetrieves the Console IDs for each PUUID provided\n\n** Request Arguments **\n\nRequest Body Object:\nPuuidsToConsoleIdsRequest Object:\n    \"puuids\" - A list of PUUIDs to retrieve Console IDs for\n\nPuuidsToConsoleIdsResponse Body:\n    \"response\" - A list of PuuidToConsoleIdResponseElements\n\nPuuidAndProvider:\n    \"puuid\" - The PUUID associated with the Console ID\n    \"provider\" - A String for the account provider (platform, e.g. \"xbox\")\n    \"providerId\" - A String ID for the provider (e.g. as \"123abc123\")\n    \"error\" - A String containing any errors (e.g. \"No matching account found.\")\n\n",
+        "internal": false,
+        "name": "PostPlayerAccountLookupV1ConsoleidsForPuuids",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlayerAccountLookupV1ConsoleIdsForPuuidsResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "player-account"
+        ],
+        "threadSafe": false
+    },
     "POST /player-account/lookup/v1/namesets-for-puuid": {
         "arguments": [
             {
@@ -16218,6 +16476,44 @@
         "subscribable": false,
         "tags": [
             "player-account-service"
+        ],
+        "threadSafe": false
+    },
+    "POST /player-account/vng/v1/profile/{productId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "profile",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlayerAccountVngV1Profile"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Create a VNG profile for the currently signed in player.",
+        "help": "",
+        "internal": false,
+        "name": "PostPlayerAccountVngV1ProfileByProductId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlayerAccountVngV1SetProfileResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "player-account"
         ],
         "threadSafe": false
     },
@@ -16462,6 +16758,25 @@
         ],
         "threadSafe": false
     },
+    "POST /player-behavior-token/v1/debug/jwt/force-refresh": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Forcibly fetch a new Player Behavior Token. This is intended for debug purposes only, since this will always result in making an external call to the backend service.",
+        "help": "",
+        "internal": false,
+        "name": "PostPlayerBehaviorTokenV1DebugJwtForceRefresh",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "string"
+        },
+        "subscribable": false,
+        "tags": [
+            "player-behavior-token"
+        ],
+        "threadSafe": false
+    },
     "POST /player-reporting/v1/debug/simulate-bystander-feedback/product/{productId}/category/{category}": {
         "arguments": [
             {
@@ -16608,6 +16923,35 @@
         "returns": {
             "elementType": "",
             "type": "bool"
+        },
+        "subscribable": false,
+        "tags": [
+            "player-reporting"
+        ],
+        "threadSafe": false
+    },
+    "POST /player-reporting/v1/unsigned-report": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "request",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlayerReportingUnsignedPlayerReportV1"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "",
+        "help": "\nUsed to submit a player report when no signed token is available\n**Data**\n* `offenderId`: The id of the offender. For players this is their puuid.\n* `categories`: List of category strings that player is reporting another player for. Different products use different categories.\n* `location`: The location where the offending behavior occurred. Example: `in-game`.\n* `comment`: Player written comment associated with this report.\n* `conversationContext`: (OPTIONAL) The ID and type of conversation from where the report was filed\n* `unstructuredContext`: (OPTIONAL) An additional payload where game teams can pass in custom payload to CPD for analysis \n",
+        "internal": false,
+        "name": "PostPlayerReportingV1UnsignedReport",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
         },
         "subscribable": false,
         "tags": [

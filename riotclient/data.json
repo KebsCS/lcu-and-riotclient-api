@@ -189,7 +189,8 @@
         "DELETE /commerce/v1/debug/caller-id/mock-id",
         "GET /commerce/v1/debug/caller-id/mock-id",
         "PUT /commerce/v1/debug/caller-id/mock-id",
-        "GET /commerce/v1/store/listing"
+        "GET /commerce/v1/store/listing",
+        "POST /commerce/v1/store/purchase"
     ],
     "cookie-jar": [
         "DELETE /cookie-jar/v1/cookies",
@@ -246,6 +247,7 @@
         "DELETE /ga-restriction/v1/debug/caller-id/mock-id",
         "GET /ga-restriction/v1/debug/caller-id/mock-id",
         "PUT /ga-restriction/v1/debug/caller-id/mock-id",
+        "GET /ga-restriction/v1/debug/callerIds",
         "DELETE /ga-restriction/v1/debug/penalty-notifications-data",
         "GET /ga-restriction/v1/debug/penalty-notifications-data",
         "DELETE /ga-restriction/v1/debug/penalty-notifications-data/{messageId}",
@@ -393,7 +395,8 @@
     "permissions": [
         "GET /permissions/v1/request",
         "POST /permissions/v1/request",
-        "GET /permissions/v1/request/{permissionId}"
+        "GET /permissions/v1/request/{permissionId}",
+        "POST /permissions/v1/user-communication-permissions"
     ],
     "platform-login": [
         "GET /platform-login/v1/config",
@@ -410,6 +413,7 @@
         "GET /platform-social/v1/platform-profile",
         "POST /platform-social/v1/platform-profile/{consoleId}",
         "GET /platform-social/v1/text-permission",
+        "GET /platform-social/v1/users-communication-permissions",
         "GET /platform-social/v1/voice-permission"
     ],
     "platform-ui": [
@@ -446,6 +450,7 @@
         "GET /player-account/login-history/v1/debug/cache",
         "PUT /player-account/login-history/v1/debug/cache",
         "POST /player-account/login-history/v1/history",
+        "POST /player-account/lookup/v1/consoleids-for-puuids",
         "POST /player-account/lookup/v1/namesets-for-puuid",
         "POST /player-account/lookup/v1/namesets-for-puuids",
         "POST /player-account/lookup/v1/puuids-for-consoleids",
@@ -453,8 +458,11 @@
         "POST /player-account/promotion/v1/eligibility",
         "GET /player-account/promotion/v1/fields",
         "POST /player-account/promotion/v1/promotion",
+        "GET /player-account/regions/v1/available",
         "GET /player-account/regions/v1/eligibility",
         "POST /player-account/regions/v1/region/{regionCode}",
+        "GET /player-account/vng/v1/profile/{productId}",
+        "POST /player-account/vng/v1/profile/{productId}",
         "GET /player-account/vng/v1/status/ready",
         "GET /player-account/vng/v1/status/{productId}",
         "POST /player-account/vng/v1/status/{productId}",
@@ -477,6 +485,11 @@
         "GET /player-affinity/service/v2/cached-affinity/{service}",
         "POST /player-affinity/service/v2/token",
         "PUT /player-affinity/shard"
+    ],
+    "player-behavior-token": [
+        "POST /player-behavior-token/v1/debug/jwt/force-refresh",
+        "GET /player-behavior-token/v1/jwt",
+        "GET /player-behavior-token/v1/jwt/payload"
     ],
     "player-preferences": [
         "GET /player-preferences/v1/data-json/productId/{productId}/type/{type}",
@@ -501,6 +514,7 @@
         "POST /player-reporting/v1/reporter-feedback/ack",
         "POST /player-reporting/v1/reporter-feedback/ack/{id}",
         "GET /player-reporting/v1/status",
+        "POST /player-reporting/v1/unsigned-report",
         "POST /player-reporting/v2/report"
     ],
     "player-session-lifecycle": [
@@ -1212,6 +1226,7 @@
     ],
     "social": [
         "GET /social/v1/blocklist",
+        "GET /social/v1/blocklist/patch",
         "GET /social/v1/friends",
         "GET /social/v1/friends/patch",
         "POST /social/v1/initialize",
