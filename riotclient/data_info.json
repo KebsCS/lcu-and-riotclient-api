@@ -9258,6 +9258,63 @@
         ],
         "threadSafe": false
     },
+    "GET /publishing-content/v1/non-player-promo/{productId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "from",
+                "optional": true,
+                "type": {
+                    "elementType": "",
+                    "type": "int32"
+                }
+            },
+            {
+                "description": "",
+                "name": "to",
+                "optional": true,
+                "type": {
+                    "elementType": "",
+                    "type": "int32"
+                }
+            },
+            {
+                "description": "",
+                "name": "locale",
+                "optional": true,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns the promotional publishing content for the non player product details page for the productId",
+        "help": "",
+        "internal": false,
+        "name": "GetPublishingContentV1NonPlayerPromoByProductId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PublishingContentNewsFeed"
+        },
+        "subscribable": true,
+        "tags": [
+            "Plugins",
+            "Plugin publishing-content"
+        ],
+        "threadSafe": false
+    },
     "GET /publishing-content/v1/promo/{productId}": {
         "arguments": [
             {
@@ -20428,73 +20485,6 @@
         "help": "",
         "internal": false,
         "name": "PostTelemetryV1EventsByEventType",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "telemetry"
-        ],
-        "threadSafe": false
-    },
-    "POST /telemetry/v1/singular/event/{eventName}": {
-        "arguments": [
-            {
-                "description": "The name of the Singular event",
-                "name": "eventName",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "A map of event data",
-                "name": "eventData",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "object"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Sends an event to Singular (hits a derivative of the Singular s2s 'event' endpoint).",
-        "help": "",
-        "internal": false,
-        "name": "PostTelemetryV1SingularEventByEventName",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "telemetry"
-        ],
-        "threadSafe": false
-    },
-    "POST /telemetry/v1/singular/session": {
-        "arguments": [
-            {
-                "description": "A map of session data",
-                "name": "sessionData",
-                "optional": false,
-                "type": {
-                    "elementType": "object",
-                    "type": "map"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Starts a session with Singular (hits the Singular s2s 'launch' endpoint).",
-        "help": "",
-        "internal": false,
-        "name": "PostTelemetryV1SingularSession",
         "nameSpace": "",
         "returns": {
             "elementType": "",

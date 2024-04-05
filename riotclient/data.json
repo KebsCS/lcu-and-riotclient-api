@@ -610,6 +610,7 @@
     ],
     "Plugin publishing-content": [
         "GET /publishing-content/v1/news-feed",
+        "GET /publishing-content/v1/non-player-promo/{productId}",
         "GET /publishing-content/v1/promo/{productId}"
     ],
     "Plugin rc-auth": [
@@ -797,6 +798,7 @@
         "PUT /product-update-scanner/v1/scan-and-patch/routine/resume",
         "PUT /product-update-scanner/v1/scan-and-patch/routine/stop",
         "GET /publishing-content/v1/news-feed",
+        "GET /publishing-content/v1/non-player-promo/{productId}",
         "GET /publishing-content/v1/promo/{productId}",
         "GET /rc-auth/v1/xbgp/login-status",
         "POST /rc-auth/v1/xbgp/update-login-token",
@@ -1245,8 +1247,6 @@
         "POST /telemetry/v1/events/{eventType}",
         "PUT /telemetry/v1/metrics/config",
         "PUT /telemetry/v1/metrics/{name}",
-        "POST /telemetry/v1/singular/event/{eventName}",
-        "POST /telemetry/v1/singular/session",
         "PUT /telemetry/v1/structured_logs",
         "PUT /telemetry/v2/events-extended/{id}",
         "PUT /telemetry/v2/events-schemaless/{id}",
