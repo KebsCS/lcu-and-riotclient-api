@@ -1667,6 +1667,25 @@
         ],
         "threadSafe": false
     },
+    "DELETE /playstation-account/v1/user": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Resets user selection",
+        "help": "",
+        "internal": false,
+        "name": "DeletePlaystationAccountV1User",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "playstation-account"
+        ],
+        "threadSafe": false
+    },
     "DELETE /playstation-account/v2/authorization": {
         "arguments": [],
         "deprecated": false,
@@ -6704,7 +6723,7 @@
         "arguments": [],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "For subscriptions only. On update and delete will notify with patches (changed elements only) rather than the full list. For a simple GET use the non-patch version of this URL.",
+        "description": "For subscriptions only - will return existing list of platform friends otherwise. On update and delete will notify with patches (changed elements only) rather than the full list. For a simple GET use the non-patch version of this URL.",
         "help": "",
         "internal": false,
         "name": "GetPlatformSocialV1BlockListPatch",
@@ -6761,7 +6780,7 @@
         "arguments": [],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "For subscriptions only. On update and delete will notify with patches (changed elements only) rather than the full list. For a simple GET use the non-patch version of this URL.",
+        "description": "For subscriptions only - will return existing list of platform friends otherwise. On update and delete will notify with patches (changed elements only) rather than the full list. For a simple GET use the non-patch version of this URL.",
         "help": "",
         "internal": false,
         "name": "GetPlatformSocialV1FriendListPatch",
@@ -7732,6 +7751,25 @@
         "returns": {
             "elementType": "",
             "type": "bool"
+        },
+        "subscribable": false,
+        "tags": [
+            "playstation-account"
+        ],
+        "threadSafe": false
+    },
+    "GET /playstation-account/v1/config": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Retrieve PlayStation Account plugin config",
+        "help": "",
+        "internal": false,
+        "name": "GetPlaystationAccountV1Config",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlaystationAccountConfig"
         },
         "subscribable": false,
         "tags": [
@@ -15961,10 +15999,10 @@
         "arguments": [
             {
                 "description": "",
-                "name": "puuids",
+                "name": "users",
                 "optional": false,
                 "type": {
-                    "elementType": "string",
+                    "elementType": "PermissionsRiotUser",
                     "type": "vector"
                 }
             }
@@ -17130,6 +17168,25 @@
         "help": "",
         "internal": false,
         "name": "PostPlaystationAccountV1User",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "playstation-account"
+        ],
+        "threadSafe": false
+    },
+    "POST /playstation-account/v1/user/confirm": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Confirms currently active Playstation profile as the Platform User",
+        "help": "",
+        "internal": false,
+        "name": "PostPlaystationAccountV1UserConfirm",
         "nameSpace": "",
         "returns": {
             "elementType": "",

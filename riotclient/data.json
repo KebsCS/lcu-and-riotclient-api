@@ -529,10 +529,13 @@
         "POST /playstation-account/v1/authorization",
         "GET /playstation-account/v1/authorization-consent",
         "PUT /playstation-account/v1/authorization-consent",
+        "GET /playstation-account/v1/config",
         "GET /playstation-account/v1/player-nickname",
         "GET /playstation-account/v1/player-nickname-without-consent",
+        "DELETE /playstation-account/v1/user",
         "GET /playstation-account/v1/user",
         "POST /playstation-account/v1/user",
+        "POST /playstation-account/v1/user/confirm",
         "DELETE /playstation-account/v2/authorization",
         "GET /playstation-account/v2/authorization",
         "POST /playstation-account/v2/authorization"
