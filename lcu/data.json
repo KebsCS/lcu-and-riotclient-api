@@ -448,7 +448,8 @@
     ],
     "Plugin lol-dx9-deprecation": [
         "POST /dx9-deprecation/legacy-mode-notification/ack",
-        "GET /dx9-deprecation/notification-type"
+        "GET /dx9-deprecation/notification-type",
+        "GET /lol-dx9-deprecation/needs-hardware-upgrade"
     ],
     "Plugin lol-email-verification": [
         "POST /lol-email-verification/v1/confirm-email",
@@ -1011,7 +1012,6 @@
         "GET /lol-player-behavior/v1/code-of-conduct-notification",
         "GET /lol-player-behavior/v1/config",
         "GET /lol-player-behavior/v1/credibility-behavior-warnings",
-        "GET /lol-player-behavior/v1/ranked-restriction",
         "GET /lol-player-behavior/v1/reform-card",
         "GET /lol-player-behavior/v1/reporter-feedback",
         "DELETE /lol-player-behavior/v1/reporter-feedback/{id}",
@@ -1324,6 +1324,7 @@
         "GET /lol-tastes/v1/tft-overview-model"
     ],
     "Plugin lol-tft": [
+        "GET /lol-tft/v1/tft/backgrounds",
         "GET /lol-tft/v1/tft/battlePassHub",
         "GET /lol-tft/v1/tft/directToHub",
         "GET /lol-tft/v1/tft/events",
@@ -1796,6 +1797,7 @@
         "GET /lol-drops/v1/players/{playerId}/pity-counts",
         "GET /lol-drops/v1/players/{playerId}/total-rolls-counts",
         "GET /lol-drops/v1/ready",
+        "GET /lol-dx9-deprecation/needs-hardware-upgrade",
         "POST /lol-email-verification/v1/confirm-email",
         "GET /lol-email-verification/v1/email",
         "PUT /lol-email-verification/v1/email",
@@ -2277,7 +2279,6 @@
         "GET /lol-player-behavior/v1/code-of-conduct-notification",
         "GET /lol-player-behavior/v1/config",
         "GET /lol-player-behavior/v1/credibility-behavior-warnings",
-        "GET /lol-player-behavior/v1/ranked-restriction",
         "GET /lol-player-behavior/v1/reform-card",
         "GET /lol-player-behavior/v1/reporter-feedback",
         "DELETE /lol-player-behavior/v1/reporter-feedback/{id}",
@@ -2563,6 +2564,7 @@
         "DELETE /lol-tft-troves/v1/roll-rewards",
         "GET /lol-tft-troves/v1/roll-rewards",
         "GET /lol-tft-troves/v1/status-notifications",
+        "GET /lol-tft/v1/tft/backgrounds",
         "GET /lol-tft/v1/tft/battlePassHub",
         "GET /lol-tft/v1/tft/directToHub",
         "GET /lol-tft/v1/tft/events",
