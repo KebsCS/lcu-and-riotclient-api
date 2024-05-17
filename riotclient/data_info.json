@@ -5141,35 +5141,6 @@
         ],
         "threadSafe": false
     },
-    "GET /data-store/v1/private-settings/{+path}": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "path",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Get the data for the specified key from the private settings.",
-        "help": "",
-        "internal": false,
-        "name": "GetDataStoreV1PrivateSettingsByPath",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "map"
-        },
-        "subscribable": false,
-        "tags": [
-            "data-store"
-        ],
-        "threadSafe": false
-    },
     "GET /data-store/v1/product-settings/products/{productId}/patchlines/{patchlineId}": {
         "arguments": [
             {
@@ -5786,6 +5757,25 @@
         "subscribable": false,
         "tags": [
             "google-account"
+        ],
+        "threadSafe": false
+    },
+    "GET /jwt-authenticator/v1/headers": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns our current headers - currently only used in integration tests",
+        "help": "",
+        "internal": false,
+        "name": "GetJwtAuthenticatorV1Headers",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "JwtAuthenticatorHeaders"
+        },
+        "subscribable": false,
+        "tags": [
+            "jwt-authenticator"
         ],
         "threadSafe": false
     },
@@ -7808,6 +7798,25 @@
         "returns": {
             "elementType": "",
             "type": "string"
+        },
+        "subscribable": false,
+        "tags": [
+            "playstation-account"
+        ],
+        "threadSafe": false
+    },
+    "GET /playstation-account/v1/premium-status": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Retrieve Playstation+ status. This endpoint only evaluates the status on initialization and does not update if the subscription status updates for the signed in user after initialization.",
+        "help": "",
+        "internal": false,
+        "name": "GetPlaystationAccountV1PremiumStatus",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlaystationAccountPremiumStatus"
         },
         "subscribable": false,
         "tags": [
@@ -12166,13 +12175,13 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "When subscribed to this endpoint will notify with the entire friend list on every create/update/delete.",
-        "help": "",
+        "help": "Endpoint deleted April 2024.",
         "internal": false,
         "name": "GetSocialV1Friends",
         "nameSpace": "",
         "returns": {
             "elementType": "",
-            "type": "SocialFriendList"
+            "type": "SocialFriendListV1"
         },
         "subscribable": false,
         "tags": [
@@ -12185,13 +12194,13 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "For subscriptions only. On update and delete will notify with patches (changed elements only) rather than the full list. For a simple GET use the non-patch version of this URL.",
-        "help": "",
+        "help": "Endpoint deleted April 2024.",
         "internal": false,
         "name": "GetSocialV1FriendsPatch",
         "nameSpace": "",
         "returns": {
             "elementType": "",
-            "type": "SocialFriendList"
+            "type": "SocialFriendListV1"
         },
         "subscribable": false,
         "tags": [
@@ -12211,6 +12220,44 @@
         "returns": {
             "elementType": "",
             "type": "bool"
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
+    "GET /social/v2/friends": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "When subscribed to this endpoint will notify with the entire friend list on every create/update/delete.",
+        "help": "",
+        "internal": false,
+        "name": "GetSocialV2Friends",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "SocialFriendList"
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
+    "GET /social/v2/friends/patch": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "For subscriptions only. On update and delete will notify with patches (changed elements only) rather than the full list. For a simple GET use the non-patch version of this URL.",
+        "help": "",
+        "internal": false,
+        "name": "GetSocialV2FriendsPatch",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "SocialFriendList"
         },
         "subscribable": false,
         "tags": [
@@ -12418,6 +12465,83 @@
         "tags": [
             "Plugins",
             "Plugin vanguard"
+        ],
+        "threadSafe": false
+    },
+    "GET /vng/v1/profile/{productId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Fetch a VNG profile of the currently signed in player.",
+        "help": "",
+        "internal": false,
+        "name": "GetVngV1ProfileByProductId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "VngV1Profile"
+        },
+        "subscribable": false,
+        "tags": [
+            "vng"
+        ],
+        "threadSafe": false
+    },
+    "GET /vng/v1/status/{productId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Check with VNG if a player must register with the Vietnamese government.",
+        "help": "",
+        "internal": false,
+        "name": "GetVngV1StatusByProductId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "VngV1StatusResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "vng"
+        ],
+        "threadSafe": false
+    },
+    "GET /vng/v1/status/ready": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Whether VNG status endpoints are ready to handle requests (RSO access token is present)",
+        "help": "",
+        "internal": false,
+        "name": "GetVngV1StatusReady",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "bool"
+        },
+        "subscribable": false,
+        "tags": [
+            "vng"
         ],
         "threadSafe": false
     },
@@ -14884,44 +15008,6 @@
         ],
         "threadSafe": false
     },
-    "POST /data-store/v1/private-settings/{+path}": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "path",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "",
-                "name": "data",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "map"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Set the data for the specified key from the private settings.",
-        "help": "",
-        "internal": false,
-        "name": "PostDataStoreV1PrivateSettingsByPath",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "data-store"
-        ],
-        "threadSafe": false
-    },
     "POST /data-store/v1/product-settings/products/{productId}/patchlines/{patchlineId}": {
         "arguments": [
             {
@@ -15966,6 +16052,35 @@
         ],
         "threadSafe": false
     },
+    "POST /payments/v2/initialize-purchase": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "initializePurchaseRequest",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PaymentsInitializePurchaseRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Begin the purchase flow, receiving the URL to a web client.",
+        "help": "\n**Description**\n\nBegin the purchase flow, receiving the URL to a web client.\n\n** Request Arguments **\n\nRequest Body:\n* `InitializePurchaseRequest` Object:\n    * `minVirtualAmount`: [Optional] Minimal amount of virtual currency required to purchase a given content.\n\n** Returns **\n\nResponse Body:\n* `InitializedPurchase` Object:\n    * `purchaseStartUrl`: The URL that allows the player to start their purchase flow in an embedded or external web browser.\n\n",
+        "internal": false,
+        "name": "PostPaymentsV2InitializePurchase",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PaymentsInitializedPurchase"
+        },
+        "subscribable": false,
+        "tags": [
+            "payments"
+        ],
+        "threadSafe": false
+    },
     "POST /permissions/v1/request": {
         "arguments": [
             {
@@ -16080,7 +16195,7 @@
                 "optional": false,
                 "type": {
                     "elementType": "",
-                    "type": "PlatformUiPlatformUIWebTelemetryEventData"
+                    "type": "PlatformUiPlatformUIMobileFREEventData"
                 }
             }
         ],
@@ -19724,6 +19839,35 @@
         ],
         "threadSafe": false
     },
+    "POST /rso-authenticator/v1/username-validation": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "request",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1UsernameValidationRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Checks username availability",
+        "help": "",
+        "internal": false,
+        "name": "PostRsoAuthenticatorV1UsernameValidation",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1UsernameValidationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
     "POST /rso-authenticator/v1/web-authentication-url": {
         "arguments": [
             {
@@ -20693,6 +20837,44 @@
         "tags": [
             "Plugins",
             "Plugin vanguard"
+        ],
+        "threadSafe": false
+    },
+    "POST /vng/v1/profile/{productId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "profile",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "VngV1Profile"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Create a VNG profile for the currently signed in player.",
+        "help": "",
+        "internal": false,
+        "name": "PostVngV1ProfileByProductId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "VngV1SubmitProfileResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "vng"
         ],
         "threadSafe": false
     },

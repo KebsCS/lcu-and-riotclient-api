@@ -201,8 +201,6 @@
         "GET /data-store/v1/install-settings/{+path}",
         "POST /data-store/v1/install-settings/{+path}",
         "GET /data-store/v1/paths",
-        "GET /data-store/v1/private-settings/{+path}",
-        "POST /data-store/v1/private-settings/{+path}",
         "GET /data-store/v1/product-settings/products/{productId}/patchlines/{patchlineId}",
         "POST /data-store/v1/product-settings/products/{productId}/patchlines/{patchlineId}",
         "GET /data-store/v1/product-settings/products/{productId}/patchlines/{patchlineId}/{+path}",
@@ -295,6 +293,7 @@
         "POST /info-radiator/v1/time-sample/{phaseName}/start"
     ],
     "jwt-authenticator": [
+        "GET /jwt-authenticator/v1/headers",
         "POST /jwt-authenticator/v1/issue",
         "POST /jwt-authenticator/v1/verify"
     ],
@@ -390,7 +389,8 @@
     ],
     "payments": [
         "POST /payments/v1/initialize-purchase",
-        "GET /payments/v1/ready"
+        "GET /payments/v1/ready",
+        "POST /payments/v2/initialize-purchase"
     ],
     "permissions": [
         "GET /permissions/v1/request",
@@ -532,6 +532,7 @@
         "GET /playstation-account/v1/config",
         "GET /playstation-account/v1/player-nickname",
         "GET /playstation-account/v1/player-nickname-without-consent",
+        "GET /playstation-account/v1/premium-status",
         "DELETE /playstation-account/v1/user",
         "GET /playstation-account/v1/user",
         "POST /playstation-account/v1/user",
@@ -1182,6 +1183,7 @@
         "POST /rso-authenticator/v1/authentication/xbox",
         "GET /rso-authenticator/v1/config",
         "POST /rso-authenticator/v1/login",
+        "POST /rso-authenticator/v1/username-validation",
         "POST /rso-authenticator/v1/web-authentication-url"
     ],
     "rso-mobile-ui": [
@@ -1236,7 +1238,9 @@
         "GET /social/v1/friends/patch",
         "POST /social/v1/initialize",
         "GET /social/v1/ready",
-        "POST /social/v1/view-profile/{puuid}"
+        "POST /social/v1/view-profile/{puuid}",
+        "GET /social/v2/friends",
+        "GET /social/v2/friends/patch"
     ],
     "swagger": [
         "GET /swagger/v1/api-docs",
@@ -1263,6 +1267,12 @@
         "GET /tencent-launcher/v1/login-info",
         "POST /tencent-launcher/v1/repair-on-shutdown",
         "GET /tencent-launcher/v1/update-status"
+    ],
+    "vng": [
+        "GET /vng/v1/profile/{productId}",
+        "POST /vng/v1/profile/{productId}",
+        "GET /vng/v1/status/ready",
+        "GET /vng/v1/status/{productId}"
     ],
     "voice-chat": [
         "GET /voice-chat/v1/active-product",
