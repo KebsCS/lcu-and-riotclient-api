@@ -160,7 +160,8 @@
         "PUT /client-config/v1/authorization",
         "GET /client-config/v1/config",
         "GET /client-config/v1/config/{name}",
-        "PUT /client-config/v1/environment",
+        "GET /client-config/v1/first-party-environment",
+        "PUT /client-config/v1/first-party-environment",
         "PUT /client-config/v1/refresh-config-status",
         "PUT /client-config/v1/sessions",
         "GET /client-config/v1/status/{type}",
@@ -406,6 +407,7 @@
     "platform-social": [
         "GET /platform-social/v1/block-list",
         "GET /platform-social/v1/block-list/patch",
+        "GET /platform-social/v1/block-list/xbox/refresh",
         "GET /platform-social/v1/crossplay-permission",
         "GET /platform-social/v1/friend-list",
         "GET /platform-social/v1/friend-list/patch",
@@ -1054,10 +1056,12 @@
     ],
     "riot-status": [
         "POST /riot-status/v1/debug/set-riotclient-patchline/{patchlineId}",
+        "GET /riot-status/v1/products/async/{productId}/patchlines/{patchlineId}/deployments/{deployment}",
         "GET /riot-status/v1/products/{productId}/patchlines/{patchlineId}/deployments/{deployment}",
         "GET /riot-status/v1/riotclient"
     ],
     "riotclient": [
+        "GET /riot-status/v1/riotclient/async/{patchlineId}",
         "DELETE /riotclient/affinity",
         "GET /riotclient/affinity",
         "POST /riotclient/affinity",
@@ -1287,6 +1291,7 @@
         "GET /voice-chat/v1/push-to-talk",
         "PUT /voice-chat/v1/push-to-talk",
         "POST /voice-chat/v1/push-to-talk/check-available",
+        "PUT /voice-chat/v1/settings/sync/{productName}",
         "GET /voice-chat/v1/status",
         "POST /voice-chat/v1/upload-audio/{productName}",
         "GET /voice-chat/v2/devices/capture",

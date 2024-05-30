@@ -85,8 +85,6 @@
         "HEAD /{plugin}/assets/{+path}"
     ],
     "Plugin client-config": [
-        "GET /client-config/v1/config",
-        "GET /client-config/v1/config/{name}",
         "PUT /client-config/v1/entitlements-token",
         "PUT /client-config/v1/refresh-config-status",
         "GET /client-config/v1/status/{type}",
@@ -402,7 +400,6 @@
         "GET /lol-client-config/v3/client-config/{name}"
     ],
     "Plugin lol-collections": [
-        "GET /lol-collections/v1/inventories/chest-eligibility",
         "GET /lol-collections/v1/inventories/local-player/champion-mastery-score",
         "GET /lol-collections/v1/inventories/scouting",
         "GET /lol-collections/v1/inventories/{puuid}/champion-mastery",
@@ -763,6 +760,7 @@
         "POST /lol-lobby/v2/lobby/members/{summonerId}/promote",
         "POST /lol-lobby/v2/lobby/members/{summonerId}/revoke-invite",
         "PUT /lol-lobby/v2/lobby/partyType",
+        "PUT /lol-lobby/v2/lobby/strawberryMapId",
         "PUT /lol-lobby/v2/lobby/subteamData",
         "POST /lol-lobby/v2/lobby/team/{team}",
         "POST /lol-lobby/v2/matchmaking/quick-search",
@@ -933,8 +931,7 @@
         "PUT /lol-missions/v1/player",
         "PUT /lol-missions/v1/player/{missionId}",
         "GET /lol-missions/v1/series",
-        "PUT /lol-missions/v2/player/opt",
-        "GET /lol-tft/v2/tft/battlepass"
+        "PUT /lol-missions/v2/player/opt"
     ],
     "Plugin lol-npe-rewards": [
         "POST /lol-npe-rewards/v1/challenges/opt",
@@ -988,6 +985,7 @@
         "GET /lol-perks/v1/perks/disabled",
         "GET /lol-perks/v1/perks/gameplay-updated",
         "GET /lol-perks/v1/quick-play-selections/champion/{championId}/position/{position}",
+        "GET /lol-perks/v1/recommended-champion-positions",
         "GET /lol-perks/v1/recommended-pages-position/champion/{championId}",
         "POST /lol-perks/v1/recommended-pages-position/champion/{championId}/position/{position}",
         "GET /lol-perks/v1/recommended-pages/champion/{championId}/position/{position}/map/{mapId}",
@@ -1484,10 +1482,11 @@
         "POST /sanitizer/v1/sanitize",
         "GET /sanitizer/v1/status"
     ],
+    "Plugin services-api": [
+        "PUT /services-api/game-session/v1/game-session-token"
+    ],
     "Plugins": [
         "GET /anti-addiction/v1/policies/{policyType}/anti-addiction-state",
-        "GET /client-config/v1/config",
-        "GET /client-config/v1/config/{name}",
         "PUT /client-config/v1/entitlements-token",
         "PUT /client-config/v1/refresh-config-status",
         "GET /client-config/v1/status/{type}",
@@ -1770,7 +1769,6 @@
         "GET /lol-clash/v2/playmode-restricted",
         "GET /lol-client-config/v3/client-config/operational/{name}",
         "GET /lol-client-config/v3/client-config/{name}",
-        "GET /lol-collections/v1/inventories/chest-eligibility",
         "GET /lol-collections/v1/inventories/local-player/champion-mastery-score",
         "GET /lol-collections/v1/inventories/scouting",
         "GET /lol-collections/v1/inventories/{puuid}/champion-mastery",
@@ -2110,6 +2108,7 @@
         "POST /lol-lobby/v2/lobby/members/{summonerId}/promote",
         "POST /lol-lobby/v2/lobby/members/{summonerId}/revoke-invite",
         "PUT /lol-lobby/v2/lobby/partyType",
+        "PUT /lol-lobby/v2/lobby/strawberryMapId",
         "PUT /lol-lobby/v2/lobby/subteamData",
         "POST /lol-lobby/v2/lobby/team/{team}",
         "POST /lol-lobby/v2/matchmaking/quick-search",
@@ -2269,6 +2268,7 @@
         "GET /lol-perks/v1/perks/disabled",
         "GET /lol-perks/v1/perks/gameplay-updated",
         "GET /lol-perks/v1/quick-play-selections/champion/{championId}/position/{position}",
+        "GET /lol-perks/v1/recommended-champion-positions",
         "GET /lol-perks/v1/recommended-pages-position/champion/{championId}",
         "POST /lol-perks/v1/recommended-pages-position/champion/{championId}/position/{position}",
         "GET /lol-perks/v1/recommended-pages/champion/{championId}/position/{position}/map/{mapId}",
@@ -2592,7 +2592,6 @@
         "GET /lol-tft/v1/tft/promoButtons",
         "GET /lol-tft/v1/tft/tencentEventhubConfigs",
         "PUT /lol-tft/v1/tft_experiment_bucket",
-        "GET /lol-tft/v2/tft/battlepass",
         "GET /lol-trophies/v1/current-summoner/trophies/profile",
         "GET /lol-trophies/v1/players/{puuid}/trophies/profile",
         "GET /lol-vanguard/v1/config/days-to-reshow-modal",
@@ -2662,6 +2661,7 @@
         "POST /sanitizer/v1/containsSanitized",
         "POST /sanitizer/v1/sanitize",
         "GET /sanitizer/v1/status",
+        "PUT /services-api/game-session/v1/game-session-token",
         "GET /{plugin}/assets/{+path}",
         "HEAD /{plugin}/assets/{+path}"
     ],

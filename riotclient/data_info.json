@@ -4758,6 +4758,25 @@
         ],
         "threadSafe": false
     },
+    "GET /client-config/v1/first-party-environment": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns the 1st party environment the device is currently using.",
+        "help": "",
+        "internal": false,
+        "name": "GetClientConfigV1FirstPartyEnvironment",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "string"
+        },
+        "subscribable": false,
+        "tags": [
+            "client-config"
+        ],
+        "threadSafe": false
+    },
     "GET /client-config/v1/status/{type}": {
         "arguments": [
             {
@@ -6721,6 +6740,25 @@
         "returns": {
             "elementType": "",
             "type": "PlatformSocialPlatformSocialBlockList"
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-social"
+        ],
+        "threadSafe": false
+    },
+    "GET /platform-social/v1/block-list/xbox/refresh": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "INTERNAL ONLY, XBOX ONLYSince Xbox does not notify when a player platform blocks another, we use this endpoint internally refresh platform block data when we need to reference iteg: when we join a voice room, or when a participant joins a voice roomNOTE: No data is returned by this. Please subscribe to social/v1/block-list OR platform-social/v1/block-list for the latest data",
+        "help": "",
+        "internal": false,
+        "name": "GetPlatformSocialV1BlockListXboxRefresh",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
         },
         "subscribable": false,
         "tags": [
@@ -10283,6 +10321,53 @@
         ],
         "threadSafe": false
     },
+    "GET /riot-status/v1/products/async/{productId}/patchlines/{patchlineId}/deployments/{deployment}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "patchlineId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "deployment",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns raw JSON service status information for a specific game service cluster. This is an async version of the endpoint so it returns a succes with no body immediately and the status data will be sent to the client when it is available.",
+        "help": "",
+        "internal": false,
+        "name": "GetRiotStatusV1ProductsAsyncByProductIdPatchlinesByPatchlineIdDeploymentsByDeployment",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "string"
+        },
+        "subscribable": false,
+        "tags": [
+            "riot-status"
+        ],
+        "threadSafe": false
+    },
     "GET /riot-status/v1/products/{productId}/patchlines/{patchlineId}/deployments/{deployment}": {
         "arguments": [
             {
@@ -10356,6 +10441,35 @@
         "subscribable": false,
         "tags": [
             "riot-status"
+        ],
+        "threadSafe": false
+    },
+    "GET /riot-status/v1/riotclient/async/{patchlineId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "patchlineId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns raw JSON service status information for issues affecting multiple games. This is an async version of the endpoint so it returns a succes with no body immediately and the status data will be sent to the client when it is available.",
+        "help": "",
+        "internal": false,
+        "name": "GetRiotStatusV1RiotclientAsyncByPatchlineId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "string"
+        },
+        "subscribable": false,
+        "tags": [
+            "riotclient"
         ],
         "threadSafe": false
     },
@@ -21944,7 +22058,7 @@
         ],
         "threadSafe": false
     },
-    "PUT /client-config/v1/environment": {
+    "PUT /client-config/v1/first-party-environment": {
         "arguments": [
             {
                 "description": "",
@@ -21961,7 +22075,7 @@
         "description": "Updates the 1st party environment the device is currently using so it can be mapped to matching SDK environment.",
         "help": "",
         "internal": false,
-        "name": "PutClientConfigV1Environment",
+        "name": "PutClientConfigV1FirstPartyEnvironment",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -26304,6 +26418,44 @@
         "returns": {
             "elementType": "",
             "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "voice-chat"
+        ],
+        "threadSafe": false
+    },
+    "PUT /voice-chat/v1/settings/sync/{productName}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productName",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "settings",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "VoiceChatUpdateSettingsResource"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Update current voice chat settings synchronously",
+        "help": "One of the challenges of using the asynchronous voice-chat settings endpoint (e.g., PUT /voice-chat/vX/settings/{productName}) is that a successful response returned by the endpoint simply means that the updates were received by the RiotGamesApi and will eventually be applied. Game teams are required to subscribe to the corresponding GET endpoint to receive notifications for when the change actually goes through, making it tricky to create a good UI experience around the voice settings. \nThe main advantage of this synchronous version of the voice-chat settings endpoint is that it ensures the voice-chat settings update will either happen successfully or will be reverted back to the original voice-chat settings. Hence, game teams will be able to update their UI once a success is returned or do nothing if a failure is returned.",
+        "internal": false,
+        "name": "PutVoiceChatV1SettingsSyncByProductName",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "VoiceChatSettingsResource"
         },
         "subscribable": false,
         "tags": [
