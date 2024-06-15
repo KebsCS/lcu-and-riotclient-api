@@ -400,10 +400,6 @@
         "GET /lol-client-config/v3/client-config/{name}"
     ],
     "Plugin lol-collections": [
-        "GET /lol-collections/v1/inventories/local-player/champion-mastery-score",
-        "GET /lol-collections/v1/inventories/scouting",
-        "GET /lol-collections/v1/inventories/{puuid}/champion-mastery",
-        "GET /lol-collections/v1/inventories/{puuid}/champion-mastery/top",
         "GET /lol-collections/v1/inventories/{summonerId}/backdrop",
         "GET /lol-collections/v1/inventories/{summonerId}/spells",
         "GET /lol-collections/v1/inventories/{summonerId}/ward-skins",
@@ -621,7 +617,9 @@
         "GET /lol-honor-v2/v1/reward-granted",
         "POST /lol-honor-v2/v1/reward-granted/ack",
         "GET /lol-honor-v2/v1/team-choices",
-        "GET /lol-honor-v2/v1/vote-completion"
+        "GET /lol-honor-v2/v1/vote-completion",
+        "POST /lol-honor/v1/ballot",
+        "POST /lol-honor/v1/honor"
     ],
     "Plugin lol-hovercard": [
         "GET /lol-hovercard/v1/friend-info-by-summoner/{summonerId}",
@@ -713,8 +711,8 @@
         "GET /lol-lobby/v1/lobby/availability",
         "GET /lol-lobby/v1/lobby/countdown",
         "POST /lol-lobby/v1/lobby/custom/bots",
-        "DELETE /lol-lobby/v1/lobby/custom/bots/{summonerInternalName}",
-        "POST /lol-lobby/v1/lobby/custom/bots/{summonerInternalName}/{botToDeletePosition}",
+        "POST /lol-lobby/v1/lobby/custom/bots/{summonerInternalName}/{botUuidToDelete}",
+        "DELETE /lol-lobby/v1/lobby/custom/bots/{summonerInternalName}/{botUuidToDelete}/{teamId}",
         "POST /lol-lobby/v1/lobby/custom/cancel-champ-select",
         "POST /lol-lobby/v1/lobby/custom/start-champ-select",
         "POST /lol-lobby/v1/lobby/custom/switch-teams",
@@ -833,7 +831,6 @@
         "POST /lol-login/v1/service-proxy-uuid-requests",
         "DELETE /lol-login/v1/session",
         "GET /lol-login/v1/session",
-        "POST /lol-login/v1/session",
         "POST /lol-login/v1/session/invoke",
         "DELETE /lol-login/v1/shutdown-locks/{lockName}",
         "PUT /lol-login/v1/shutdown-locks/{lockName}",
@@ -1358,6 +1355,7 @@
         "GET /lol-tft-team-planner/v1/config",
         "GET /lol-tft-team-planner/v1/ftue/hasViewed",
         "PATCH /lol-tft-team-planner/v1/ftue/hasViewed",
+        "PATCH /lol-tft-team-planner/v1/set",
         "PUT /lol-tft-team-planner/v1/team",
         "DELETE /lol-tft-team-planner/v1/team/champions",
         "PATCH /lol-tft-team-planner/v1/team/champions",
@@ -1483,6 +1481,7 @@
         "GET /sanitizer/v1/status"
     ],
     "Plugin services-api": [
+        "POST /services-api/config/v1/client-config",
         "PUT /services-api/game-session/v1/game-session-token"
     ],
     "Plugins": [
@@ -1769,10 +1768,6 @@
         "GET /lol-clash/v2/playmode-restricted",
         "GET /lol-client-config/v3/client-config/operational/{name}",
         "GET /lol-client-config/v3/client-config/{name}",
-        "GET /lol-collections/v1/inventories/local-player/champion-mastery-score",
-        "GET /lol-collections/v1/inventories/scouting",
-        "GET /lol-collections/v1/inventories/{puuid}/champion-mastery",
-        "GET /lol-collections/v1/inventories/{puuid}/champion-mastery/top",
         "GET /lol-collections/v1/inventories/{summonerId}/backdrop",
         "GET /lol-collections/v1/inventories/{summonerId}/spells",
         "GET /lol-collections/v1/inventories/{summonerId}/ward-skins",
@@ -1958,6 +1953,8 @@
         "POST /lol-honor-v2/v1/reward-granted/ack",
         "GET /lol-honor-v2/v1/team-choices",
         "GET /lol-honor-v2/v1/vote-completion",
+        "POST /lol-honor/v1/ballot",
+        "POST /lol-honor/v1/honor",
         "GET /lol-hovercard/v1/friend-info-by-summoner/{summonerId}",
         "GET /lol-hovercard/v1/friend-info/{puuid}",
         "GET /lol-inventory/v1/champSelectInventory",
@@ -2061,8 +2058,8 @@
         "GET /lol-lobby/v1/lobby/availability",
         "GET /lol-lobby/v1/lobby/countdown",
         "POST /lol-lobby/v1/lobby/custom/bots",
-        "DELETE /lol-lobby/v1/lobby/custom/bots/{summonerInternalName}",
-        "POST /lol-lobby/v1/lobby/custom/bots/{summonerInternalName}/{botToDeletePosition}",
+        "POST /lol-lobby/v1/lobby/custom/bots/{summonerInternalName}/{botUuidToDelete}",
+        "DELETE /lol-lobby/v1/lobby/custom/bots/{summonerInternalName}/{botUuidToDelete}/{teamId}",
         "POST /lol-lobby/v1/lobby/custom/cancel-champ-select",
         "POST /lol-lobby/v1/lobby/custom/start-champ-select",
         "POST /lol-lobby/v1/lobby/custom/switch-teams",
@@ -2140,7 +2137,6 @@
         "POST /lol-login/v1/service-proxy-uuid-requests",
         "DELETE /lol-login/v1/session",
         "GET /lol-login/v1/session",
-        "POST /lol-login/v1/session",
         "POST /lol-login/v1/session/invoke",
         "DELETE /lol-login/v1/shutdown-locks/{lockName}",
         "PUT /lol-login/v1/shutdown-locks/{lockName}",
@@ -2560,6 +2556,7 @@
         "GET /lol-tft-team-planner/v1/config",
         "GET /lol-tft-team-planner/v1/ftue/hasViewed",
         "PATCH /lol-tft-team-planner/v1/ftue/hasViewed",
+        "PATCH /lol-tft-team-planner/v1/set",
         "PUT /lol-tft-team-planner/v1/team",
         "DELETE /lol-tft-team-planner/v1/team/champions",
         "PATCH /lol-tft-team-planner/v1/team/champions",
@@ -2661,6 +2658,7 @@
         "POST /sanitizer/v1/containsSanitized",
         "POST /sanitizer/v1/sanitize",
         "GET /sanitizer/v1/status",
+        "POST /services-api/config/v1/client-config",
         "PUT /services-api/game-session/v1/game-session-token",
         "GET /{plugin}/assets/{+path}",
         "HEAD /{plugin}/assets/{+path}"
