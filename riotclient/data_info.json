@@ -2108,6 +2108,44 @@
         ],
         "threadSafe": false
     },
+    "DELETE /riot-client-auth/v1/debug/override-home-base-country": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Delete override for home base country",
+        "help": "*Internal Riot Client API. Please don't use outside of Riot Client.*\n\nIf an override is active, deletes it, and restores home-base-country to its original value.",
+        "internal": false,
+        "name": "DeleteRiotClientAuthV1DebugOverrideHomeBaseCountry",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "riot-client-auth"
+        ],
+        "threadSafe": false
+    },
+    "DELETE /riot-client-auth/v1/debug/override-login-country": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Delete override for login country",
+        "help": "*Internal Riot Client API. Please don't use outside of Riot Client.*\n\nIf an override is active, deletes it, and restores login-country to its original value.",
+        "internal": false,
+        "name": "DeleteRiotClientAuthV1DebugOverrideLoginCountry",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "riot-client-auth"
+        ],
+        "threadSafe": false
+    },
     "DELETE /riot-client-lifecycle/v1/product-context": {
         "arguments": [],
         "deprecated": false,
@@ -9589,6 +9627,44 @@
         "returns": {
             "elementType": "",
             "type": "RiotClientAuthApiAuthorization"
+        },
+        "subscribable": false,
+        "tags": [
+            "riot-client-auth"
+        ],
+        "threadSafe": false
+    },
+    "GET /riot-client-auth/v1/debug/override-home-base-country": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "The current override for home base country",
+        "help": "*Internal Riot Client API. Please don't use outside of Riot Client.*\n\nIf set, returns the current value for the override of the home base country.",
+        "internal": false,
+        "name": "GetRiotClientAuthV1DebugOverrideHomeBaseCountry",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RiotClientAuthApiHomeBaseCountry"
+        },
+        "subscribable": false,
+        "tags": [
+            "riot-client-auth"
+        ],
+        "threadSafe": false
+    },
+    "GET /riot-client-auth/v1/debug/override-login-country": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "The current override for login country",
+        "help": "*Internal Riot Client API. Please don't use outside of Riot Client.*\n\nIf set, returns the current value for the override of the login country.",
+        "internal": false,
+        "name": "GetRiotClientAuthV1DebugOverrideLoginCountry",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RiotClientAuthApiLoginCountry"
         },
         "subscribable": false,
         "tags": [
@@ -22521,6 +22597,122 @@
         ],
         "threadSafe": false
     },
+    "PUT /first-party-fulfillment/v1/mock-api/consoleEntitlements": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "mockConsoleEntitlements",
+                "optional": false,
+                "type": {
+                    "elementType": "string",
+                    "type": "vector"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Set mock console entitlements, if mock fulfillment API is used.",
+        "help": "",
+        "internal": false,
+        "name": "PutFirstPartyFulfillmentV1MockApiConsoleEntitlements",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "first-party-fulfillment"
+        ],
+        "threadSafe": false
+    },
+    "PUT /first-party-fulfillment/v1/mock-api/fulfilledItems": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "mockFulfilledItems",
+                "optional": false,
+                "type": {
+                    "elementType": "FirstPartyFulfillmentFirstPartyFulfillmentItemFulfillmentSuccessInfo",
+                    "type": "vector"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Set a list of mock fulfilled items returned by mock implementation, if mock fulfillment API is used.",
+        "help": "\n**Description**\n\nSets a list of mock fulfilled items returned by mock implementation, if mock fulfillment API is used.\n\n**Argument**\n\n* `mockFulfilledItems`: A list of `ItemFulfillmentSuccessInfo` objects, An `ItemFulfillmentSuccessInfo` object:\n    * `itemId`: A string that identifies the item that was fulfilled.\n    * `quantity`: An integer representing how many of the item was fulfilled.\n",
+        "internal": false,
+        "name": "PutFirstPartyFulfillmentV1MockApiFulfilledItems",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "first-party-fulfillment"
+        ],
+        "threadSafe": false
+    },
+    "PUT /first-party-fulfillment/v1/mock-api/state": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "state",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "FirstPartyFulfillmentFirstPartyFulfillmentMockApiState"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Set whether the plugin should use a mock fulfillment API or not and if so, how the mock API should behave",
+        "help": "\n**Description**\n\nSets whether or not the plugin should use a mock fulfillment API or not, and if it should, how the mock API should behave.\n\n**Argument**\n\n* `state`: String value determining if the mock fulfillment API should be used, and if so, how it will behave. Possible values are listed below:\n    * `NoMock`: The plugin will not use the mock API and will toggle back to using the fulfillment API it was initialized with.\n    * `NoFulfillmentRequired`: The plugin is set to use the mock API. The mock API will return that no fulfillment is required.\n    * `FirstPartyQueryConsumableFailed`: The plugin is set to use the mock API. The mock API will return an error when attempting to query if there are\n      consumable items to fulfill.\n    * `FirstPartyQueryNonConsumableFailed`: The plugin is set to use the mock API. The mock API will return an error when attempting to query if there are\n      non-consumable items to fulfill.\n    * `FirstPartyAuthorizationFailed`: The plugin is set to use the mock API. The mock API will return an error when attempting to fetch the\n      first party authorization.\n    * `FirstPartyQueryByRiotPayFailed`: The plugin is set to use the mock API. The mock API will return an error indicating RiotPay could not\n      call the first party services to verify the fulfillment request.\n    * `RiotPayFulfillmentFailed`: The plugin is set to use the mock API. The mock API will return an error indicating RiotPay failed to complete\n      the fulfillment request entirely.\n    * `PartialFulfillmentCompleted`: The plugin is set to use the mock API. The mock API will return a response indicating that RiotPay managed\n      to fulfill some items, but failed to fulfill others.\n    * `SuccessConsumable`: The plugin is set to use the mock API. The mock API will return as if all consumable items have been fulfilled successfully.\n    * `SuccessNonConsumable`: The plugin is set to use the mock API. The mock API will return as if all non-consumable items have been fulfilled successfully.\n",
+        "internal": false,
+        "name": "PutFirstPartyFulfillmentV1MockApiState",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "first-party-fulfillment"
+        ],
+        "threadSafe": false
+    },
+    "PUT /first-party-fulfillment/v1/mock-api/unfulfilledItems": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "mockUnfulfilledItems",
+                "optional": false,
+                "type": {
+                    "elementType": "FirstPartyFulfillmentFirstPartyFulfillmentItemFulfillmentFailureInfo",
+                    "type": "vector"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Set list of mock unfulfilled items returned by mock implementation, if mock fulfillment API is used.",
+        "help": "\n**Description**\n\nSets a list of mock unfulfilled items returned by mock implementation, if mock fulfillment API is used.\n\n**Argument**\n\n* `mockFulfilledItems`: A list of `ItemFulfillmentFailureInfo` objects, An `ItemFulfillmentFailureInfo` object:\n    * `itemId`: A string that identifies the item that was unable to be fulfilled.\n    * `quantity`: An integer representing how many of the item could not be fulfilled.\n    * `reason`: A string describing why the item could not be fulfilled.\n",
+        "internal": false,
+        "name": "PutFirstPartyFulfillmentV1MockApiUnfulfilledItems",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "first-party-fulfillment"
+        ],
+        "threadSafe": false
+    },
     "PUT /ga-restriction/v1/debug/caller-id/mock-id": {
         "arguments": [
             {
@@ -23211,6 +23403,139 @@
         ],
         "threadSafe": false
     },
+    "PUT /pay-mobile/v1/debug/consume-purchases": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "",
+        "help": "",
+        "internal": false,
+        "name": "PutPayMobileV1DebugConsumePurchases",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "pay-mobile"
+        ],
+        "threadSafe": false
+    },
+    "PUT /pay-mobile/v1/debug/mock-purchase-result": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "mockPurchaseResult",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PayMobileMobileStoreStatus"
+                }
+            },
+            {
+                "description": "",
+                "name": "transactionIsEmpty",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "bool"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Set mock result code returned by inAppPurchase implementation when calling /pay-mobile/v1/purchase/{productId} endpoint. Only useable with MockInAppPurchase implementation",
+        "help": "",
+        "internal": false,
+        "name": "PutPayMobileV1DebugMockPurchaseResult",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "pay-mobile"
+        ],
+        "threadSafe": false
+    },
+    "PUT /pay-mobile/v1/debug/mock-request-products-result": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "mockRequestProductsResult",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PayMobileMobileStoreStatus"
+                }
+            },
+            {
+                "description": "",
+                "name": "noProdcuts",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "bool"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Set mock result code returned by inAppPurchase implementation when calling /pay-mobile/v1/request-price-point-products endpoint. Only useable with MockInAppPurchase implementation",
+        "help": "",
+        "internal": false,
+        "name": "PutPayMobileV1DebugMockRequestProductsResult",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "pay-mobile"
+        ],
+        "threadSafe": false
+    },
+    "PUT /pay-mobile/v1/debug/trigger-purchase-success": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "responseCode",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "uint32"
+                }
+            },
+            {
+                "description": "",
+                "name": "requestTransaction",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PayMobilePurchaseTransaction"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Simulate successful purchase callback",
+        "help": "",
+        "internal": false,
+        "name": "PutPayMobileV1DebugTriggerPurchaseSuccess",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "pay-mobile"
+        ],
+        "threadSafe": false
+    },
     "PUT /platform-login/v1/config": {
         "arguments": [
             {
@@ -23237,6 +23562,35 @@
         "subscribable": false,
         "tags": [
             "platform-login"
+        ],
+        "threadSafe": false
+    },
+    "PUT /platform-social/v1/mock-api/state": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "state",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlatformSocialPlatformSocialMockApiState"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Set whether the plugin should use a mock fulfillment API or not and if so, how the mock API should behave.",
+        "help": "\n**Description**\n\nSets whether or not the plugin should use a mock platform social API or not, and if it should, how the mock API should behave.\n\n**Argument**\n\n* `state`: String value determining if the mock fulfillment API should be used, and if so, how it will behave. Possible values are listed below:\n    * `NoMock`: The plugin will not use the mock API and will toggle back to using the fulfillment API it was initialized with.\n    * `FriendListEmpty`: The plugin is set to use the mock API. The mock API will return an empty friend list and allow voice chat to be used.\n    * `BlockListEmpty`: The plugin is set to use the mock API. The mock API will return an empty block list and allow voice chat to be used.\n    * `BlockListNotifyUpdate`: The plugin is set to use the mock API. The mock API will send a notification with a non-empty block list and allow voice chat to be used.\n    * `BlockListNotifyDelete`: The plugin is set to use the mock API. The mock API will send a notification with an empty block list and allow voice chat to be used.\n    * `FriendListNotifyUpdate`: The plugin is set to use the mock API. The mock API will send a notification with a non-empty friend list and allow voice chat to be used.\n    * `FriendListNotifyDelete`: The plugin is set to use the mock API. The mock API will send a notification with an empty friend list and allow voice chat to be used.\n    * `TextPermissionNotAllowed`: The plugin is set to use the mock API. The mock API will return a populated block list and not allow text chat to be used.\n    * `VoicePermissionNotAllowed`: The plugin is set to use the mock API. The mock API will return a populated block list and not allow voice chat to be used.\n    * `CrossPlayPermissionNotAllowed`: The plugin is set to use the mock API. The mock API will return a populated block list and not allow cross play to be used.\n    * `MultiplayerPermissionNotAllowed`: The plugin is set to use the mock API. The mock API will return a populated block list and not allow multiplayer features to be used.\n    * `Success`: The plugin is set to use the mock API. The mock API will return a populated block list and allow voice chat to be used.\n",
+        "internal": false,
+        "name": "PutPlatformSocialV1MockApiState",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-social"
         ],
         "threadSafe": false
     },
@@ -24321,6 +24675,64 @@
         "tags": [
             "Plugins",
             "Plugin riot-client-app-command"
+        ],
+        "threadSafe": false
+    },
+    "PUT /riot-client-auth/v1/debug/override-home-base-country": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "homeBaseCountry",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RiotClientAuthApiHomeBaseCountry"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Set override for home base country",
+        "help": "*Internal Riot Client API. Please don't use outside of Riot Client.*\n\nWhen set, replaces the value of home-base-country with the passed-in value. Further updates to home-base-country from RSO data will be ignored, until the override is deleted.",
+        "internal": false,
+        "name": "PutRiotClientAuthV1DebugOverrideHomeBaseCountry",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "riot-client-auth"
+        ],
+        "threadSafe": false
+    },
+    "PUT /riot-client-auth/v1/debug/override-login-country": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "loginCountry",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RiotClientAuthApiLoginCountry"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Set override for login country",
+        "help": "*Internal Riot Client API. Please don't use outside of Riot Client.*\n\nWhen set, replaces the value of login-country with the passed-in value. Further updates to login-country from RSO data will be ignored, until the override is deleted.",
+        "internal": false,
+        "name": "PutRiotClientAuthV1DebugOverrideLoginCountry",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "riot-client-auth"
         ],
         "threadSafe": false
     },

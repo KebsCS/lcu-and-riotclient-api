@@ -1482,7 +1482,8 @@
     ],
     "Plugin services-api": [
         "POST /services-api/config/v1/client-config",
-        "PUT /services-api/game-session/v1/game-session-token"
+        "PUT /services-api/game-session/v1/game-session-token",
+        "POST /services-api/riot-message-service/v1/data"
     ],
     "Plugins": [
         "GET /anti-addiction/v1/policies/{policyType}/anti-addiction-state",
@@ -2660,6 +2661,7 @@
         "GET /sanitizer/v1/status",
         "POST /services-api/config/v1/client-config",
         "PUT /services-api/game-session/v1/game-session-token",
+        "POST /services-api/riot-message-service/v1/data",
         "GET /{plugin}/assets/{+path}",
         "HEAD /{plugin}/assets/{+path}"
     ],

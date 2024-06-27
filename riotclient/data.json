@@ -240,7 +240,11 @@
         "POST /facebook-account/v1/authorization"
     ],
     "first-party-fulfillment": [
-        "POST /first-party-fulfillment/v1/fulfill"
+        "POST /first-party-fulfillment/v1/fulfill",
+        "PUT /first-party-fulfillment/v1/mock-api/consoleEntitlements",
+        "PUT /first-party-fulfillment/v1/mock-api/fulfilledItems",
+        "PUT /first-party-fulfillment/v1/mock-api/state",
+        "PUT /first-party-fulfillment/v1/mock-api/unfulfilledItems"
     ],
     "ga-restriction": [
         "DELETE /ga-restriction/v1/debug/caller-id/mock-id",
@@ -374,6 +378,10 @@
         "GET /patch/v1/installs/{install-id}/status/seed"
     ],
     "pay-mobile": [
+        "PUT /pay-mobile/v1/debug/consume-purchases",
+        "PUT /pay-mobile/v1/debug/mock-purchase-result",
+        "PUT /pay-mobile/v1/debug/mock-request-products-result",
+        "PUT /pay-mobile/v1/debug/trigger-purchase-success",
         "GET /pay-mobile/v1/productListResult",
         "POST /pay-mobile/v1/purchase/{productId}",
         "GET /pay-mobile/v1/purchaseResult",
@@ -411,6 +419,7 @@
         "GET /platform-social/v1/crossplay-permission",
         "GET /platform-social/v1/friend-list",
         "GET /platform-social/v1/friend-list/patch",
+        "PUT /platform-social/v1/mock-api/state",
         "GET /platform-social/v1/multiplayer-permission",
         "GET /platform-social/v1/platform-profile",
         "POST /platform-social/v1/platform-profile/{consoleId}",
@@ -1019,6 +1028,12 @@
     ],
     "riot-client-auth": [
         "GET /riot-client-auth/v1/authorization",
+        "DELETE /riot-client-auth/v1/debug/override-home-base-country",
+        "GET /riot-client-auth/v1/debug/override-home-base-country",
+        "PUT /riot-client-auth/v1/debug/override-home-base-country",
+        "DELETE /riot-client-auth/v1/debug/override-login-country",
+        "GET /riot-client-auth/v1/debug/override-login-country",
+        "PUT /riot-client-auth/v1/debug/override-login-country",
         "GET /riot-client-auth/v1/home-base-country",
         "GET /riot-client-auth/v1/login-country",
         "GET /riot-client-auth/v1/rso-client",
