@@ -297,6 +297,10 @@
         "POST /info-radiator/v1/time-sample/{phaseName}/end",
         "POST /info-radiator/v1/time-sample/{phaseName}/start"
     ],
+    "integration-test": [
+        "POST /integration-test/v1/external-request/async",
+        "POST /integration-test/v1/external-request/sync"
+    ],
     "jwt-authenticator": [
         "GET /jwt-authenticator/v1/headers",
         "POST /jwt-authenticator/v1/issue",
@@ -434,7 +438,10 @@
         "POST /platform-ui/v1/fre",
         "POST /platform-ui/v1/fre/telemetry",
         "GET /platform-ui/v1/sdk-instance-id",
-        "GET /platform-ui/v1/status"
+        "GET /platform-ui/v1/status",
+        "DELETE /platform-ui/v1/vng-edit-profile",
+        "GET /platform-ui/v1/vng-edit-profile",
+        "POST /platform-ui/v1/vng-edit-profile"
     ],
     "play-restrictions": [
         "DELETE /play-restrictions/v1/debug/caller-id/mock-id",
@@ -921,12 +928,6 @@
         "GET /vanguard/v1/status",
         "PUT /vanguard/v1/update/products/{productId}"
     ],
-    "prime-gaming": [
-        "DELETE /prime-gaming/v1/login",
-        "GET /prime-gaming/v1/login",
-        "POST /prime-gaming/v1/login",
-        "GET /prime-gaming/v1/supported"
-    ],
     "privacy": [
         "GET /privacy/v1/tracking",
         "POST /privacy/v1/tracking/request-permission"
@@ -1268,12 +1269,8 @@
     ],
     "telemetry": [
         "GET /telemetry/v1/application-start-time",
-        "GET /telemetry/v1/availability",
         "POST /telemetry/v1/common-data/{key}",
         "POST /telemetry/v1/events/{eventType}",
-        "PUT /telemetry/v1/metrics/config",
-        "PUT /telemetry/v1/metrics/{name}",
-        "PUT /telemetry/v1/structured_logs",
         "PUT /telemetry/v2/events-extended/{id}",
         "PUT /telemetry/v2/events-schemaless/{id}",
         "PUT /telemetry/v2/events/{id}",

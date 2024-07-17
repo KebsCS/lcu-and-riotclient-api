@@ -1591,6 +1591,25 @@
         ],
         "threadSafe": false
     },
+    "DELETE /platform-ui/v1/vng-edit-profile": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Force close VNG Edit Profile UI",
+        "help": "",
+        "internal": false,
+        "name": "DeletePlatformUiV1VngEditProfile",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-ui"
+        ],
+        "threadSafe": false
+    },
     "DELETE /play-restrictions/v1/debug/caller-id/mock-id": {
         "arguments": [],
         "deprecated": false,
@@ -1702,25 +1721,6 @@
         "subscribable": false,
         "tags": [
             "playstation-account"
-        ],
-        "threadSafe": false
-    },
-    "DELETE /prime-gaming/v1/login": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Logout from Amazon",
-        "help": "\n**PrimeGamingPrimeGamingLoginResponse**\nLoginStatus consisting of:\n* `status`: The current state of the login with Amazon. One of: `logged_out`, `logging_in`, `logged_in`, `logging_out`, `error` (PrimeGamingPrimeGamingLoginStatus enum)\n* `amazonAccessToken`: The access token of the Amazon login, or empty `\"\"` if none is present.\n",
-        "internal": false,
-        "name": "DeletePrimeGamingV1Login",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "PrimeGamingPrimeGamingLoginResponse"
-        },
-        "subscribable": false,
-        "tags": [
-            "prime-gaming"
         ],
         "threadSafe": false
     },
@@ -7060,6 +7060,25 @@
         ],
         "threadSafe": false
     },
+    "GET /platform-ui/v1/vng-edit-profile": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Subscribe to get VNG Edit Profile availability status",
+        "help": "",
+        "internal": false,
+        "name": "GetPlatformUiV1VngEditProfile",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlatformUiPlatformUIVNGEditProfileStatus"
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-ui"
+        ],
+        "threadSafe": false
+    },
     "GET /play-restrictions/v1/debug/caller-id/mock-id": {
         "arguments": [],
         "deprecated": false,
@@ -8060,44 +8079,6 @@
             "Plugins",
             "Plugin Manager",
             "Plugin Manager Diagnostics"
-        ],
-        "threadSafe": false
-    },
-    "GET /prime-gaming/v1/login": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Get the Amazon login status",
-        "help": "\n**PrimeGamingPrimeGamingLoginResponse**\n* `status`: The current state of the login with Amazon. One of: `logged_out`, `logging_in`, `logged_in`, `logging_out`, `error` (PrimeGamingPrimeGamingLoginStatus enum)\n* `amazonAccessToken`: The access token of the Amazon login, or empty `\"\"` if none is present.\n",
-        "internal": false,
-        "name": "GetPrimeGamingV1Login",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "PrimeGamingPrimeGamingLoginResponse"
-        },
-        "subscribable": false,
-        "tags": [
-            "prime-gaming"
-        ],
-        "threadSafe": false
-    },
-    "GET /prime-gaming/v1/supported": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Check whether Prime Gaming is supported on the current platform",
-        "help": "\n**PrimeGamingPrimeGamingSupportStatus**\n* `supported`: true if Prime Gaming is supported in this game, false otherwise\n* `details`: Description about why Prime Gaming may not be supported in this game. This is for debugging purposes only.\n",
-        "internal": false,
-        "name": "GetPrimeGamingV1Supported",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "PrimeGamingPrimeGamingSupportStatus"
-        },
-        "subscribable": false,
-        "tags": [
-            "prime-gaming"
         ],
         "threadSafe": false
     },
@@ -12213,7 +12194,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "",
-        "help": "Get the current VNG Registration UI status.",
+        "help": "Get the current VNG Registration UI status.\n\nEndpoint deleted December 2024; No action required if you migrated to PlatformUI MobileFRE already.",
         "internal": false,
         "name": "GetRsoMobileUiV1VngStatus",
         "nameSpace": "",
@@ -12574,25 +12555,6 @@
         "returns": {
             "elementType": "",
             "type": "uint64"
-        },
-        "subscribable": false,
-        "tags": [
-            "telemetry"
-        ],
-        "threadSafe": false
-    },
-    "GET /telemetry/v1/availability": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Returns the availability for each telemetry ingest endpoint. This is not updated dynamically.",
-        "help": "",
-        "internal": false,
-        "name": "GetTelemetryV1Availability",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "CollectorAvailability",
-            "type": "map"
         },
         "subscribable": false,
         "tags": [
@@ -15599,6 +15561,64 @@
         ],
         "threadSafe": false
     },
+    "POST /integration-test/v1/external-request/async": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "ExternalRequest",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "IntegrationTestV1ExternalRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "[FOR TESTING ONLY] Test endpoint to dispatch an external HTTP asynchronous request",
+        "help": "",
+        "internal": false,
+        "name": "PostIntegrationTestV1ExternalRequestAsync",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "IntegrationTestV1ExternalResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "integration-test"
+        ],
+        "threadSafe": false
+    },
+    "POST /integration-test/v1/external-request/sync": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "ExternalRequest",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "IntegrationTestV1ExternalRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "[FOR TESTING ONLY] Test endpoint to dispatch an external HTTP synchronous request",
+        "help": "",
+        "internal": false,
+        "name": "PostIntegrationTestV1ExternalRequestSync",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "IntegrationTestV1ExternalResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "integration-test"
+        ],
+        "threadSafe": false
+    },
     "POST /jwt-authenticator/v1/issue": {
         "arguments": [
             {
@@ -16395,6 +16415,25 @@
         "help": "",
         "internal": false,
         "name": "PostPlatformUiV1FreTelemetry",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-ui"
+        ],
+        "threadSafe": false
+    },
+    "POST /platform-ui/v1/vng-edit-profile": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Trigger VNG Edit Profile UI",
+        "help": "",
+        "internal": false,
+        "name": "PostPlatformUiV1VngEditProfile",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -17345,7 +17384,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "",
-        "help": "\nUsed to submit a player report when no signed token is available\n**Data**\n* `offenderId`: The id of the offender. For players this is their puuid.\n* `categories`: List of category strings that player is reporting another player for. Different products use different categories.\n* `location`: The location where the offending behavior occurred. Example: `in-game`.\n* `comment`: Player written comment associated with this report.\n* `conversationContext`: (OPTIONAL) The ID and type of conversation from where the report was filed\n* `unstructuredContext`: (OPTIONAL) An additional payload where game teams can pass in custom payload to CPD for analysis \n",
+        "help": "\nUsed to submit a player report when no signed token is available\n**Data**\n* `offenderId`: The id of the offender. For players this is their puuid.\n* `categories`: List of category strings that player is reporting another player for. Different products use different categories.\n* `location`: The location where the offending behavior occurred. Example: `in-game`.\n* `comment`: Player written comment associated with this report.\n* `conversationContext`: (OPTIONAL) The ID and type of conversation from where the report was filed\n* `unstructuredContext`: (OPTIONAL) An additional payload where game teams can pass in custom payload to CPD for analysis\n",
         "internal": false,
         "name": "PostPlayerReportingV1UnsignedReport",
         "nameSpace": "",
@@ -17529,25 +17568,6 @@
         "subscribable": false,
         "tags": [
             "playstation-account"
-        ],
-        "threadSafe": false
-    },
-    "POST /prime-gaming/v1/login": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Initiate Login with Amazon to enable Prime Gaming",
-        "help": "\n**PrimeGamingPrimeGamingLoginResponse**\n* `status`: The current state of the login with Amazon. One of: `logged_out`, `logging_in`, `logged_in`, `logging_out`, `error` (PrimeGamingPrimeGamingLoginStatus enum)\n* `amazonAccessToken`: The access token of the Amazon login, or empty `\"\"` if none is present.",
-        "internal": false,
-        "name": "PostPrimeGamingV1Login",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "PrimeGamingPrimeGamingLoginResponse"
-        },
-        "subscribable": false,
-        "tags": [
-            "prime-gaming"
         ],
         "threadSafe": false
     },
@@ -20604,7 +20624,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "",
-        "help": "Launches a WebView to edit VNG (Vietnam) profile registration",
+        "help": "Launches a WebView to edit VNG (Vietnam) profile registration\n\nEndpoint deleted December 2024; Please use '/platform-ui/v1/vng-edit-profile' instead.",
         "internal": false,
         "name": "PostRsoMobileUiV1VngProfileByProductId",
         "nameSpace": "",
@@ -20633,7 +20653,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "",
-        "help": "Launches a WebView (if necessary) to handle initial, one-time, game-specific, required VNG (Vietnam) profile registration",
+        "help": "Launches a WebView (if necessary) to handle initial, one-time, game-specific, required VNG (Vietnam) profile registration\n\nEndpoint deleted December 2024; No action required if you migrated to PlatformUI MobileFRE already.",
         "internal": false,
         "name": "PostRsoMobileUiV1VngRegisterByProductId",
         "nameSpace": "",
@@ -26535,102 +26555,6 @@
         "tags": [
             "Plugins",
             "Plugin system-tray"
-        ],
-        "threadSafe": false
-    },
-    "PUT /telemetry/v1/metrics/{name}": {
-        "arguments": [
-            {
-                "description": "Name format should indicate the source and context (i.e. 'rso.login') and must be dot-separated terms. A standard prefix for this application will be automatically applied to each sample name.",
-                "name": "name",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "Metric value to report. Must be string, bool, or number.",
-                "name": "value",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "object"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Pushes a metric sample to a public collector endpoint.",
-        "help": "",
-        "internal": false,
-        "name": "PutTelemetryV1MetricsByName",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "telemetry"
-        ],
-        "threadSafe": false
-    },
-    "PUT /telemetry/v1/metrics/config": {
-        "arguments": [
-            {
-                "description": "Struct containing configuration fields. See 'Help' section for more details.",
-                "name": "config",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "object"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Updates the configuration for sending metrics to the public collectors.Values are persisted to install settings for this installation.",
-        "help": "**Body:**  Object containing metrics configuration fields. All are optional. If a field is ommitted, that configuration does not change.\n\n```\n{ \n    \"enabled\":      (bool) True to have metrics enabled for this session, if a collector is configured. False to forcibly disable metrics.\n    \"api_key\":      (string) API key to use for the public metrics telemetry collector.\n    \"send_retries\": (uint32) Number of times to retry sending metric samples to the public collector. Takes effect when application restarts.\n}\n```\n",
-        "internal": false,
-        "name": "PutTelemetryV1MetricsConfig",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "telemetry"
-        ],
-        "threadSafe": false
-    },
-    "PUT /telemetry/v1/structured_logs": {
-        "arguments": [
-            {
-                "description": "A list of structured log requests containing unformatted message and field data",
-                "name": "log",
-                "optional": false,
-                "type": {
-                    "elementType": "StructuredLogRequest",
-                    "type": "vector"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Handles a new structured log message for pushing to a public Collector-V1 endpoint. Structured log fields must be of the following types: bool, string, float, int, uint",
-        "help": "",
-        "internal": false,
-        "name": "PutTelemetryV1StructuredLogs",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "telemetry"
         ],
         "threadSafe": false
     },

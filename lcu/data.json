@@ -28,9 +28,6 @@
         "Unsubscribe",
         "WebSocketFormat"
     ],
-    "Config": [
-        "GET /config/v1/config"
-    ],
     "cookie-jar": [
         "GET /cookie-jar/v1/cookies",
         "POST /cookie-jar/v1/cookies"
@@ -925,6 +922,7 @@
         "GET /lol-missions/v1/data",
         "POST /lol-missions/v1/force",
         "GET /lol-missions/v1/missions",
+        "GET /lol-missions/v1/missions/series/{seriesName}",
         "PUT /lol-missions/v1/player",
         "PUT /lol-missions/v1/player/{missionId}",
         "GET /lol-missions/v1/series",
@@ -1479,11 +1477,6 @@
         "POST /sanitizer/v1/containsSanitized",
         "POST /sanitizer/v1/sanitize",
         "GET /sanitizer/v1/status"
-    ],
-    "Plugin services-api": [
-        "POST /services-api/config/v1/client-config",
-        "PUT /services-api/game-session/v1/game-session-token",
-        "POST /services-api/riot-message-service/v1/data"
     ],
     "Plugins": [
         "GET /anti-addiction/v1/policies/{policyType}/anti-addiction-state",
@@ -2216,6 +2209,7 @@
         "GET /lol-missions/v1/data",
         "POST /lol-missions/v1/force",
         "GET /lol-missions/v1/missions",
+        "GET /lol-missions/v1/missions/series/{seriesName}",
         "PUT /lol-missions/v1/player",
         "PUT /lol-missions/v1/player/{missionId}",
         "GET /lol-missions/v1/series",
@@ -2659,9 +2653,6 @@
         "POST /sanitizer/v1/containsSanitized",
         "POST /sanitizer/v1/sanitize",
         "GET /sanitizer/v1/status",
-        "POST /services-api/config/v1/client-config",
-        "PUT /services-api/game-session/v1/game-session-token",
-        "POST /services-api/riot-message-service/v1/data",
         "GET /{plugin}/assets/{+path}",
         "HEAD /{plugin}/assets/{+path}"
     ],
