@@ -812,6 +812,9 @@
         "POST /lol-lobby-team-builder/v1/ready-check/accept",
         "POST /lol-lobby-team-builder/v1/ready-check/decline"
     ],
+    "Plugin lol-lock-and-load": [
+        "GET /lol-lock-and-load/v1/should-wait-for-home-hubs"
+    ],
     "Plugin lol-login": [
         "GET /lol-login/v1/account-state",
         "POST /lol-login/v1/account-state",
@@ -1059,6 +1062,7 @@
         "GET /lol-premade-voice/v1/availability",
         "GET /lol-premade-voice/v1/capturedevices",
         "PUT /lol-premade-voice/v1/capturedevices",
+        "GET /lol-premade-voice/v1/devices/capture/permission",
         "GET /lol-premade-voice/v1/first-experience",
         "POST /lol-premade-voice/v1/first-experience/game",
         "POST /lol-premade-voice/v1/first-experience/lcu",
@@ -1326,7 +1330,6 @@
     "Plugin lol-tft": [
         "GET /lol-tft/v1/tft/backgrounds",
         "GET /lol-tft/v1/tft/battlePassHub",
-        "GET /lol-tft/v1/tft/directToHub",
         "GET /lol-tft/v1/tft/events",
         "GET /lol-tft/v1/tft/homeHub",
         "POST /lol-tft/v1/tft/homeHub/redirect",
@@ -2116,6 +2119,7 @@
         "POST /lol-lobby/v2/received-invitations/{invitationId}/accept",
         "POST /lol-lobby/v2/received-invitations/{invitationId}/decline",
         "GET /lol-lobby/v2/registration-status",
+        "GET /lol-lock-and-load/v1/should-wait-for-home-hubs",
         "GET /lol-login/v1/account-state",
         "POST /lol-login/v1/account-state",
         "POST /lol-login/v1/change-summoner-name",
@@ -2320,6 +2324,7 @@
         "GET /lol-premade-voice/v1/availability",
         "GET /lol-premade-voice/v1/capturedevices",
         "PUT /lol-premade-voice/v1/capturedevices",
+        "GET /lol-premade-voice/v1/devices/capture/permission",
         "GET /lol-premade-voice/v1/first-experience",
         "POST /lol-premade-voice/v1/first-experience/game",
         "POST /lol-premade-voice/v1/first-experience/lcu",
@@ -2576,7 +2581,6 @@
         "GET /lol-tft-troves/v1/status-notifications",
         "GET /lol-tft/v1/tft/backgrounds",
         "GET /lol-tft/v1/tft/battlePassHub",
-        "GET /lol-tft/v1/tft/directToHub",
         "GET /lol-tft/v1/tft/events",
         "GET /lol-tft/v1/tft/homeHub",
         "POST /lol-tft/v1/tft/homeHub/redirect",
