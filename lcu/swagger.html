@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swagger UI</title>
+
+    <!-- Link to Swagger UI CSS -->
+    <link rel="stylesheet" type="text/css" href="swagger-ui.css">
+</head>
+<body>
+
+	<div>
+        <p>Original LCU Swagger, retrieved by patching the executable</p>
+		<p>Client Version: 14.15</p>
+        <a href="https://github.com/KebsCS/lcu-and-riotclient-api">GitHub repository</a>
+    </div>
+
+    <!-- Container for Swagger UI -->
+    <div id="swagger-ui"></div>
+
+    <!-- Swagger UI JavaScript bundles -->
+    <script src="swagger-ui-bundle.js"></script>
+    <script src="swagger-ui-standalone-preset.js"></script>
+
+    <!-- Initialize Swagger UI -->
+    <script>
+    window.onload = function() {
+      const ui = SwaggerUIBundle({
+        url: "https://lcu.kebs.dev/swagger.json", // Replace with the URL to your Swagger JSON file
+        dom_id: '#swagger-ui',
+        presets: [
+          SwaggerUIBundle.presets.apis,
+          SwaggerUIStandalonePreset
+        ]
+      });
+
+      window.ui = ui;
+    }
+    </script>
+</body>
+</html>
