@@ -823,6 +823,25 @@
         ],
         "threadSafe": false
     },
+    "DELETE /chatbox/v1/debug/caller-id/mock-id": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Stops mocking the caller ID for Swagger calls",
+        "help": "Deletes the currently set `productId` and `patchlineId`. Plugin APIs will receive `swagger` as the `productId`.",
+        "internal": false,
+        "name": "DeleteChatboxV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "chatbox"
+        ],
+        "threadSafe": false
+    },
     "DELETE /client-config/v1/authorization": {
         "arguments": [],
         "deprecated": false,
@@ -1569,6 +1588,25 @@
         "subscribable": false,
         "tags": [
             "patch"
+        ],
+        "threadSafe": false
+    },
+    "DELETE /payments/v1/debug/countryCodeOverride": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "DEBUG: Clears country code override used during call to `GET /payments/v2/products`",
+        "help": "",
+        "internal": false,
+        "name": "DeletePaymentsV1DebugCountryCodeOverride",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "payments"
         ],
         "threadSafe": false
     },
@@ -2682,7 +2720,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Programmatically dismiss the Region Election UI. Note that this endpoit returns immediately, but the resource is finalized synchronously.",
-        "help": "",
+        "help": "Endpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
         "internal": false,
         "name": "DeleteRsoMobileUiV1RegionElection",
         "nameSpace": "",
@@ -4603,6 +4641,25 @@
         "returns": {
             "elementType": "",
             "type": "ChatboxChatParticipants"
+        },
+        "subscribable": false,
+        "tags": [
+            "chatbox"
+        ],
+        "threadSafe": false
+    },
+    "GET /chatbox/v1/debug/caller-id/mock-id": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Checks the caller ID in use when APIs are called from Swagger",
+        "help": "Returns the `productId` and `patchlineId` being passed to APIs in this plugin when called via Swagger.\n\nReturns 404 if a mock caller ID is not in use.",
+        "internal": false,
+        "name": "GetChatboxV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "ChatboxPluginCallerId_MockCallerId"
         },
         "subscribable": false,
         "tags": [
@@ -6661,6 +6718,25 @@
         ],
         "threadSafe": false
     },
+    "GET /payments/v2/products": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get a list of bundles available for the player to purchase.",
+        "help": "\n**Description**\nThis endpoint returns a list of Riot Bundles.\n\nResponse Body:\n* list of `Product` Objects:\n  * `id`: Product id used to start the purchase\n  * `riotSku`: Riot SKU\n  * `realAmountCents`: Real Currency Price\n  * `realCurrencyCode`: Currency code\n\n",
+        "internal": false,
+        "name": "GetPaymentsV2Products",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "PaymentsProduct",
+            "type": "vector"
+        },
+        "subscribable": false,
+        "tags": [
+            "payments"
+        ],
+        "threadSafe": false
+    },
     "GET /permissions/v1/request": {
         "arguments": [],
         "deprecated": false,
@@ -6778,25 +6854,6 @@
         "returns": {
             "elementType": "",
             "type": "PlatformSocialPlatformSocialBlockList"
-        },
-        "subscribable": false,
-        "tags": [
-            "platform-social"
-        ],
-        "threadSafe": false
-    },
-    "GET /platform-social/v1/block-list/xbox/refresh": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "INTERNAL ONLY, XBOX ONLYSince Xbox does not notify when a player platform blocks another, we use this endpoint internally refresh platform block data when we need to reference iteg: when we join a voice room, or when a participant joins a voice roomNOTE: No data is returned by this. Please subscribe to social/v1/block-list OR platform-social/v1/block-list for the latest data",
-        "help": "",
-        "internal": false,
-        "name": "GetPlatformSocialV1BlockListXboxRefresh",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
         },
         "subscribable": false,
         "tags": [
@@ -12080,7 +12137,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "",
-        "help": "Get the current EULA UI status.",
+        "help": "Get the current EULA UI status.\n\nEndpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
         "internal": false,
         "name": "GetRsoMobileUiV1EulaStatus",
         "nameSpace": "",
@@ -12099,7 +12156,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Get the current login UI status",
-        "help": "",
+        "help": "Endpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
         "internal": false,
         "name": "GetRsoMobileUiV1LoginStatus",
         "nameSpace": "",
@@ -12118,7 +12175,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "",
-        "help": "Returns a list of strategies supported by the rso-mobile-ui plugin for this SDK version and client id",
+        "help": "Returns a list of strategies supported by the rso-mobile-ui plugin for this SDK version and client id\n\nEndpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
         "internal": false,
         "name": "GetRsoMobileUiV1LoginStrategies",
         "nameSpace": "",
@@ -12137,7 +12194,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Fetches the state of the Region Election UI",
-        "help": "",
+        "help": "Endpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
         "internal": false,
         "name": "GetRsoMobileUiV1RegionElection",
         "nameSpace": "",
@@ -12156,7 +12213,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Check if a player is eligible for region election with UI",
-        "help": "",
+        "help": "Endpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
         "internal": false,
         "name": "GetRsoMobileUiV1RegionElectionEligibility",
         "nameSpace": "",
@@ -12175,7 +12232,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "",
-        "help": "Get the current Riot ID Prompt UI status.",
+        "help": "Get the current Riot ID Prompt UI status.\n\nEndpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
         "internal": false,
         "name": "GetRsoMobileUiV1RiotIdPromptStatus",
         "nameSpace": "",
@@ -12194,7 +12251,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "",
-        "help": "Get the current VNG Registration UI status.\n\nEndpoint deleted December 2024; No action required if you migrated to PlatformUI MobileFRE already.",
+        "help": "Get the current VNG Registration UI status.\n\nEndpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
         "internal": false,
         "name": "GetRsoMobileUiV1VngStatus",
         "nameSpace": "",
@@ -12213,7 +12270,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "",
-        "help": "Get the current EULA UI V2 content.",
+        "help": "Get the current EULA UI V2 content.\n\nEndpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
         "internal": false,
         "name": "GetRsoMobileUiV2Eula",
         "nameSpace": "",
@@ -12232,7 +12289,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "",
-        "help": "Get the current EULA UI V2 status.",
+        "help": "Get the current EULA UI V2 status.\n\nEndpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
         "internal": false,
         "name": "GetRsoMobileUiV2EulaStatus",
         "nameSpace": "",
@@ -12807,7 +12864,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Get the status of the voice-chat plugin to know whether or not to expect if the feature is usable.",
-        "help": "\n**Description**\nGet the status of the voice-chat plugin to know whether or not to expect if the feature is usable. Game teams are encouraged to subscribe\nto this endpoint so that the game can behave correctly depending on what the current state of the plugin is. For example, if the status of\nthe plugin is `permissionDenied`, game teams should not attempt to join voice sessions since the player does not have permissions to do so,\npossibly due to behavioural restrictions or parental control settings.\n\n** Returns **\n\nA PluginStatus value representing the current status of the plugin.\n* `PluginStatus` values:\n    * `permissionDenied`: The player does not have permission to use voice chat. Attempting to join a voice session will always return an error and existing sessions will be left.\n    * `awaitingAuth`: The player has not signed in, so the plugin does not have the information required to join a voice session.\n    * `ready`: Voice chat is usable and voice sessions can be joined.\n    * `unknown`: The status of the plugin is currently unknown. This is the default value while the plugin is initializing and its status has yet to be determined.\n",
+        "help": "\n**Description**\nGet the status of the voice-chat plugin to know whether or not to expect if the feature is usable. Game teams are encouraged to subscribe\nto this endpoint so that the game can behave correctly depending on what the current state of the plugin is. For example, if the status of\nthe plugin is `permissionDenied`, game teams should not attempt to join voice sessions since the player does not have permissions to do so,\npossibly due to behavioural restrictions or parental control settings.\n\n** Returns **\n\nA PluginStatus value representing the current status of the plugin.\n* `PluginStatus` values:\n    * `unknown`: The status of the plugin is currently unknown. This is the default value while the plugin is initializing and its status has yet to be determined.\n    * `awaitingAuth`: The player has not signed in, so the plugin does not have the information required to join a voice session.\n    * `permissionDenied`: The player has signed in, but the player does not have permission to use voice chat. Attempting to join a voice session will always return an error and existing sessions will be left.\n    * `ready`: Voice chat is usable and voice sessions can be joined.\n",
         "internal": false,
         "name": "GetVoiceChatV1Status",
         "nameSpace": "",
@@ -16243,14 +16300,72 @@
         ],
         "threadSafe": false
     },
+    "POST /payments/v1/debug/countryCodeOverride/{countryCode}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "countryCode",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "DEBUG: Sets country code override used during call to `GET /payments/v2/products`",
+        "help": "",
+        "internal": false,
+        "name": "PostPaymentsV1DebugCountryCodeOverrideByCountryCode",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "payments"
+        ],
+        "threadSafe": false
+    },
     "POST /payments/v1/initialize-purchase": {
         "arguments": [],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "Begin the purchase flow, receiving the URL to a web client.",
+        "description": "Begin the purchase flow, receiving the URL to the payment service to start the purchase.",
         "help": "",
         "internal": false,
         "name": "PostPaymentsV1InitializePurchase",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PaymentsInitializedPurchase"
+        },
+        "subscribable": false,
+        "tags": [
+            "payments"
+        ],
+        "threadSafe": false
+    },
+    "POST /payments/v2/initialize-preselected-purchase": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "initializePreselectedPurchaseRequest",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PaymentsInitializePreselectedPurchaseRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Begin the purchase flow with a preselected price point id, receiving the URL to the payment service to start the purchase.",
+        "help": "\n**Description**\n\nBegin the purchase flow with a preselected price point ID, receiving the URL to the payment service to start the purchase\n\n** Request Arguments **\n\nRequest Body:\n* `InitializePreselectedPurchaseRequest` Object:\n    * `pricePointId`: A price point ID that will preselected.\n    *\n** Returns **\n\nResponse Body:\n* `InitializedPurchase` Object:\n    * `purchaseStartUrl`: The URL to the payments service to start the purchase flow in an embedded or external web browser.\n    *\n",
+        "internal": false,
+        "name": "PostPaymentsV2InitializePreselectedPurchase",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -16276,8 +16391,8 @@
         ],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "Begin the purchase flow, receiving the URL to a web client.",
-        "help": "\n**Description**\n\nBegin the purchase flow, receiving the URL to a web client.\n\n** Request Arguments **\n\nRequest Body:\n* `InitializePurchaseRequest` Object:\n    * `minVirtualAmount`: [Optional] Minimal amount of virtual currency required to purchase a given content.\n\n** Returns **\n\nResponse Body:\n* `InitializedPurchase` Object:\n    * `purchaseStartUrl`: The URL that allows the player to start their purchase flow in an embedded or external web browser.\n\n",
+        "description": "Begin the purchase flow, receiving the URL to the payment service to start the purchase.",
+        "help": "\n**Description**\n\nBegin the purchase flow, receiving the URL to the payment service to start the purchase.\n\n** Request Arguments **\n\nRequest Body:\n* `InitializePurchaseRequest` Object:\n    * `minVirtualAmount`: [Optional] Minimal amount of virtual currency required to purchase a given content.\n\n** Returns **\n\nResponse Body:\n* `InitializedPurchase` Object:\n    * `purchaseStartUrl`: The URL to the payments service to start the purchase flow in an embedded or external web browser.\n\n",
         "internal": false,
         "name": "PostPaymentsV2InitializePurchase",
         "nameSpace": "",
@@ -16371,6 +16486,35 @@
         "returns": {
             "elementType": "",
             "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-social"
+        ],
+        "threadSafe": false
+    },
+    "POST /platform-social/v1/player/platform-username": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "uids",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlatformSocialConsolueUsernameForIdRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns platform IDs (Online ID for PS5, Modern Gamertag + Classic Gamertag for Xbox) for console IDs (XUIDs for Xbox, Account IDs for PS5)",
+        "help": "",
+        "internal": false,
+        "name": "PostPlatformSocialV1PlayerPlatformUsername",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlatformSocialConsoleUsernameForIdResponse"
         },
         "subscribable": false,
         "tags": [
@@ -20392,7 +20536,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "",
-        "help": "Launches a dialog UI for requesting player acceptance to the current EULA from rcp-be-eula",
+        "help": "Launches a dialog UI for requesting player acceptance to the current EULA from rcp-be-eula\n\nEndpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
         "internal": false,
         "name": "PostRsoMobileUiV1EulaInitiate",
         "nameSpace": "",
@@ -20450,7 +20594,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "",
-        "help": "Launches a WebView to display an error page. Used by `platform-ui` as a temporary solution before it handles error pages on it's own. DON'T USE IT!",
+        "help": "Launches a WebView to display an error page. Used by `platform-ui` as a temporary solution before it handles error pages on it's own. DON'T USE IT!\n\nEndpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
         "internal": false,
         "name": "PostRsoMobileUiV1InternalDisplayErrorPage",
         "nameSpace": "",
@@ -20479,7 +20623,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "iOS application open url event",
-        "help": "",
+        "help": "Endpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
         "internal": false,
         "name": "PostRsoMobileUiV1IosAuthRedirect",
         "nameSpace": "",
@@ -20508,7 +20652,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "",
-        "help": "Launches an Android Activity or iOS UIView to display a login flow to the player using a WebView",
+        "help": "Launches an Android Activity or iOS UIView to display a login flow to the player using a WebView\n\nEndpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
         "internal": false,
         "name": "PostRsoMobileUiV1LoginInitiate",
         "nameSpace": "",
@@ -20537,7 +20681,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Initiates the display of the Region Election UI",
-        "help": "",
+        "help": "Endpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
         "internal": false,
         "name": "PostRsoMobileUiV1RegionElection",
         "nameSpace": "",
@@ -20566,7 +20710,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "",
-        "help": "Launches a UI to prompt user to set a RiotID for their account",
+        "help": "Launches a UI to prompt user to set a RiotID for their account\n\nEndpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
         "internal": false,
         "name": "PostRsoMobileUiV1RiotIdPromptInitiate",
         "nameSpace": "",
@@ -20595,7 +20739,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Show a native dialog displaying game is out of date and redirecting user to app store",
-        "help": "",
+        "help": "Endpoint to be deleted December 2024; There are no known customers of this endpoint. If you require similar functionality, please contact the SDK Account Experiences team.",
         "internal": false,
         "name": "PostRsoMobileUiV1ShowGameOutOfDate",
         "nameSpace": "",
@@ -20624,7 +20768,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "",
-        "help": "Launches a WebView to edit VNG (Vietnam) profile registration\n\nEndpoint deleted December 2024; Please use '/platform-ui/v1/vng-edit-profile' instead.",
+        "help": "Launches a WebView to edit VNG (Vietnam) profile registration\n\nEndpoint to be deleted December 2024; Please use '/platform-ui/v1/vng-edit-profile' instead.",
         "internal": false,
         "name": "PostRsoMobileUiV1VngProfileByProductId",
         "nameSpace": "",
@@ -20653,7 +20797,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "",
-        "help": "Launches a WebView (if necessary) to handle initial, one-time, game-specific, required VNG (Vietnam) profile registration\n\nEndpoint deleted December 2024; No action required if you migrated to PlatformUI MobileFRE already.",
+        "help": "Launches a WebView (if necessary) to handle initial, one-time, game-specific, required VNG (Vietnam) profile registration\n\nEndpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
         "internal": false,
         "name": "PostRsoMobileUiV1VngRegisterByProductId",
         "nameSpace": "",
@@ -20682,7 +20826,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "",
-        "help": "Saves agreement status",
+        "help": "Saves agreement status\n\nEndpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
         "internal": false,
         "name": "PostRsoMobileUiV2EulaAgreement",
         "nameSpace": "",
@@ -20701,7 +20845,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "",
-        "help": "Launches a WebView for requesting player acceptance to the current EULA from rcp-be-eula",
+        "help": "Launches a WebView for requesting player acceptance to the current EULA from rcp-be-eula\n\nEndpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
         "internal": false,
         "name": "PostRsoMobileUiV2EulaInitiate",
         "nameSpace": "",
@@ -22122,6 +22266,35 @@
         "subscribable": false,
         "tags": [
             "chat"
+        ],
+        "threadSafe": false
+    },
+    "PUT /chatbox/v1/debug/caller-id/mock-id": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "callerId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "ChatboxPluginCallerId_MockCallerId"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Sets the caller ID to use when calling this plugin from Swagger",
+        "help": "Sets the `productId` and `patchlineId` to pass to APIs in this plugin during future calls from Swagger.\n\nUse this functionality to test APIs in this plugin with Swagger, as if they were being called from another product.",
+        "internal": false,
+        "name": "PutChatboxV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "chatbox"
         ],
         "threadSafe": false
     },
@@ -26424,7 +26597,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Programmatically update the state of the Region Election UI",
-        "help": "",
+        "help": "Endpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
         "internal": false,
         "name": "PutRsoMobileUiV1RegionElection",
         "nameSpace": "",

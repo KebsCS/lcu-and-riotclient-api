@@ -151,6 +151,9 @@
         "POST /chatbox/v1/chatboxes/{id}/messages/whispers/{puuid}/read",
         "GET /chatbox/v1/chatboxes/{id}/participants",
         "GET /chatbox/v1/chatboxes/{id}/participants/whispers",
+        "DELETE /chatbox/v1/debug/caller-id/mock-id",
+        "GET /chatbox/v1/debug/caller-id/mock-id",
+        "PUT /chatbox/v1/debug/caller-id/mock-id",
         "GET /chatbox/v1/friends",
         "GET /chatbox/v1/ready",
         "POST /chatbox/v1/{id}/whispers/{puuid}/messages"
@@ -401,9 +404,13 @@
         "POST /pay-mobile/v2/session/resume"
     ],
     "payments": [
+        "DELETE /payments/v1/debug/countryCodeOverride",
+        "POST /payments/v1/debug/countryCodeOverride/{countryCode}",
         "POST /payments/v1/initialize-purchase",
         "GET /payments/v1/ready",
-        "POST /payments/v2/initialize-purchase"
+        "POST /payments/v2/initialize-preselected-purchase",
+        "POST /payments/v2/initialize-purchase",
+        "GET /payments/v2/products"
     ],
     "permissions": [
         "GET /permissions/v1/request",
@@ -419,7 +426,6 @@
     "platform-social": [
         "GET /platform-social/v1/block-list",
         "GET /platform-social/v1/block-list/patch",
-        "GET /platform-social/v1/block-list/xbox/refresh",
         "GET /platform-social/v1/crossplay-permission",
         "GET /platform-social/v1/friend-list",
         "GET /platform-social/v1/friend-list/patch",
@@ -427,6 +433,7 @@
         "GET /platform-social/v1/multiplayer-permission",
         "GET /platform-social/v1/platform-profile",
         "POST /platform-social/v1/platform-profile/{consoleId}",
+        "POST /platform-social/v1/player/platform-username",
         "GET /platform-social/v1/text-permission",
         "GET /platform-social/v1/users-communication-permissions",
         "GET /platform-social/v1/voice-permission"

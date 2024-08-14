@@ -2972,6 +2972,9 @@
         },
         "LcdsPlayerGcoTokens": {
             "properties": {
+                "entitlementsToken": {
+                    "type": "string"
+                },
                 "idToken": {
                     "type": "string"
                 },
@@ -3918,215 +3921,6 @@
                 }
             },
             "type": "object"
-        },
-        "LolCareerStatsCareerStatsQueueType": {
-            "enum": [
-                "draft5",
-                "rank5flex",
-                "rank5solo",
-                "blind5",
-                "aram",
-                "blind3",
-                "rank3flex",
-                "quickplay5",
-                "other"
-            ],
-            "type": "string"
-        },
-        "LolCareerStatsChampionQueueStatsResponse": {
-            "properties": {
-                "championId": {
-                    "format": "int32",
-                    "type": "integer"
-                },
-                "position": {
-                    "$ref": "#/definitions/LolCareerStatsSummonersRiftPosition"
-                },
-                "queueType": {
-                    "$ref": "#/definitions/LolCareerStatsCareerStatsQueueType"
-                },
-                "rankTier": {
-                    "type": "string"
-                },
-                "stats": {
-                    "additionalProperties": true,
-                    "type": "object"
-                }
-            },
-            "type": "object"
-        },
-        "LolCareerStatsChampionStatistics": {
-            "properties": {
-                "championId": {
-                    "format": "int32",
-                    "type": "integer"
-                },
-                "experts": {
-                    "items": {
-                        "$ref": "#/definitions/LolCareerStatsExpertPlayer"
-                    },
-                    "type": "array"
-                },
-                "queueStats": {
-                    "items": {
-                        "$ref": "#/definitions/LolCareerStatsStatisticsByQueue"
-                    },
-                    "type": "array"
-                }
-            },
-            "type": "object"
-        },
-        "LolCareerStatsEntitlementsToken": {
-            "properties": {
-                "entitlements": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                }
-            },
-            "type": "object"
-        },
-        "LolCareerStatsExpertPlayer": {
-            "properties": {
-                "championId": {
-                    "format": "int32",
-                    "type": "integer"
-                },
-                "expertRank": {
-                    "format": "int32",
-                    "type": "integer"
-                },
-                "numOfGames": {
-                    "format": "int32",
-                    "type": "integer"
-                },
-                "position": {
-                    "$ref": "#/definitions/LolCareerStatsSummonersRiftPosition"
-                },
-                "summonerId": {
-                    "format": "int64",
-                    "type": "integer"
-                },
-                "summonerName": {
-                    "type": "string"
-                },
-                "winRate": {
-                    "format": "float",
-                    "type": "number"
-                }
-            },
-            "type": "object"
-        },
-        "LolCareerStatsPositionStatistics": {
-            "properties": {
-                "experts": {
-                    "items": {
-                        "$ref": "#/definitions/LolCareerStatsExpertPlayer"
-                    },
-                    "type": "array"
-                },
-                "position": {
-                    "$ref": "#/definitions/LolCareerStatsSummonersRiftPosition"
-                },
-                "queueStats": {
-                    "items": {
-                        "$ref": "#/definitions/LolCareerStatsStatisticsByQueue"
-                    },
-                    "type": "array"
-                }
-            },
-            "type": "object"
-        },
-        "LolCareerStatsPositionStatsQueryRequest": {
-            "properties": {
-                "position": {
-                    "$ref": "#/definitions/LolCareerStatsSummonersRiftPosition"
-                },
-                "queueType": {
-                    "$ref": "#/definitions/LolCareerStatsCareerStatsQueueType"
-                },
-                "rankTier": {
-                    "type": "string"
-                },
-                "season": {
-                    "format": "int32",
-                    "type": "integer"
-                }
-            },
-            "type": "object"
-        },
-        "LolCareerStatsStatisticsByQueue": {
-            "properties": {
-                "queueType": {
-                    "$ref": "#/definitions/LolCareerStatsCareerStatsQueueType"
-                },
-                "stats": {
-                    "additionalProperties": true,
-                    "type": "object"
-                }
-            },
-            "type": "object"
-        },
-        "LolCareerStatsStatisticsPercentilesResponse": {
-            "properties": {
-                "championId": {
-                    "format": "int32",
-                    "type": "integer"
-                },
-                "position": {
-                    "$ref": "#/definitions/LolCareerStatsSummonersRiftPosition"
-                },
-                "queueType": {
-                    "$ref": "#/definitions/LolCareerStatsCareerStatsQueueType"
-                },
-                "rankTier": {
-                    "type": "string"
-                },
-                "season": {
-                    "format": "int32",
-                    "type": "integer"
-                },
-                "stats": {
-                    "additionalProperties": true,
-                    "type": "object"
-                }
-            },
-            "type": "object"
-        },
-        "LolCareerStatsStatsQueryRequest": {
-            "properties": {
-                "championId": {
-                    "format": "int32",
-                    "type": "integer"
-                },
-                "position": {
-                    "$ref": "#/definitions/LolCareerStatsSummonersRiftPosition"
-                },
-                "queueType": {
-                    "$ref": "#/definitions/LolCareerStatsCareerStatsQueueType"
-                },
-                "rankTier": {
-                    "type": "string"
-                },
-                "season": {
-                    "format": "int32",
-                    "type": "integer"
-                }
-            },
-            "type": "object"
-        },
-        "LolCareerStatsSummonersRiftPosition": {
-            "enum": [
-                "ALL",
-                "UNKNOWN",
-                "TOP",
-                "JUNGLE",
-                "MID",
-                "BOTTOM",
-                "SUPPORT"
-            ],
-            "type": "string"
         },
         "LolCatalogBundled": {
             "properties": {
@@ -20183,6 +19977,26 @@
             },
             "type": "object"
         },
+        "LolEventHubNextRewardUIData": {
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "level": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "state": {
+                    "$ref": "#/definitions/LolEventHubRewardTrackItemHeaderType"
+                },
+                "thumbIconPath": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
         "LolEventHubOffer": {
             "properties": {
                 "id": {
@@ -21581,6 +21395,26 @@
                 "UNLOCKED"
             ],
             "type": "string"
+        },
+        "LolEventHubTrackProgressNextReward": {
+            "properties": {
+                "currentLevel": {
+                    "format": "int64",
+                    "type": "integer"
+                },
+                "currentXP": {
+                    "format": "int64",
+                    "type": "integer"
+                },
+                "nextLevelXP": {
+                    "format": "int64",
+                    "type": "integer"
+                },
+                "nextReward": {
+                    "$ref": "#/definitions/LolEventHubNextRewardUIData"
+                }
+            },
+            "type": "object"
         },
         "LolEventHubTransaction": {
             "properties": {
@@ -30560,6 +30394,14 @@
             },
             "type": "object"
         },
+        "LolLobbyTeamBuilderGameflowGameData": {
+            "properties": {
+                "queue": {
+                    "$ref": "#/definitions/LolLobbyTeamBuilderGameflowQueue"
+                }
+            },
+            "type": "object"
+        },
         "LolLobbyTeamBuilderGameflowGameMap": {
             "properties": {
                 "perPositionDisallowedSummonerSpells": {
@@ -30577,10 +30419,22 @@
             },
             "type": "object"
         },
+        "LolLobbyTeamBuilderGameflowQueue": {
+            "properties": {
+                "id": {
+                    "format": "int32",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
         "LolLobbyTeamBuilderGameflowSession": {
             "properties": {
                 "gameClient": {
                     "$ref": "#/definitions/LolLobbyTeamBuilderGameflowGameClient"
+                },
+                "gameData": {
+                    "$ref": "#/definitions/LolLobbyTeamBuilderGameflowGameData"
                 },
                 "map": {
                     "$ref": "#/definitions/LolLobbyTeamBuilderGameflowGameMap"
@@ -48116,6 +47970,9 @@
                 "isSpectatorDelayConfigurable": {
                     "type": "boolean"
                 },
+                "isUsingClientConfigForSpectator": {
+                    "type": "boolean"
+                },
                 "spectatableQueues": {
                     "items": {
                         "format": "int32",
@@ -48132,6 +47989,20 @@
                     "type": "boolean"
                 },
                 "isSpectatorDelayConfigurable": {
+                    "type": "boolean"
+                },
+                "isUsingOperationalConfig": {
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        },
+        "LolSpectatorSpectatorOperationalConfiguration": {
+            "properties": {
+                "enabled": {
+                    "type": "boolean"
+                },
+                "enforceGridSpectating": {
                     "type": "boolean"
                 }
             },
@@ -52714,6 +52585,9 @@
                 },
                 "eventPassId": {
                     "type": "string"
+                },
+                "skillTreePassId": {
+                    "type": "string"
                 }
             },
             "type": "object"
@@ -53271,7 +53145,21 @@
                     },
                     "type": "array"
                 },
+                "id": {
+                    "type": "string"
+                },
                 "setName": {
+                    "type": "string"
+                },
+                "timeOfCreationInMs": {
+                    "format": "int64",
+                    "type": "integer"
+                },
+                "timeOfLastViewInMs": {
+                    "format": "int64",
+                    "type": "integer"
+                },
+                "title": {
                     "type": "string"
                 }
             },
@@ -60865,7 +60753,7 @@
         },
         "/async/v1/result/{asyncToken}": {
             "get": {
-                "operationId": "HttpAsyncResult",
+                "operationId": "Http2AsyncResult",
                 "parameters": [
                     {
                         "description": "ID of the asynchronous operation to check",
@@ -60901,7 +60789,7 @@
         },
         "/async/v1/status/{asyncToken}": {
             "delete": {
-                "operationId": "Http2AsyncDelete",
+                "operationId": "HttpAsyncDelete",
                 "parameters": [
                     {
                         "description": "ID of the asynchronous operation to remove",
@@ -61692,635 +61580,6 @@
                 ]
             }
         },
-        "/lol-career-stats/v1/champion-averages/season/{season}/{championId}/{position}/{tier}/{queue}": {
-            "get": {
-                "operationId": "GetLolCareerStatsV1ChampionAveragesSeasonBySeasonByChampionIdByPositionByTierByQueue",
-                "parameters": [
-                    {
-                        "format": "int32",
-                        "in": "path",
-                        "name": "season",
-                        "required": true,
-                        "type": "integer"
-                    },
-                    {
-                        "format": "int32",
-                        "in": "path",
-                        "name": "championId",
-                        "required": true,
-                        "type": "integer"
-                    },
-                    {
-                        "enum": [
-                            "ALL",
-                            "UNKNOWN",
-                            "TOP",
-                            "JUNGLE",
-                            "MID",
-                            "BOTTOM",
-                            "SUPPORT"
-                        ],
-                        "in": "path",
-                        "name": "position",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "in": "path",
-                        "name": "tier",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "enum": [
-                            "draft5",
-                            "rank5flex",
-                            "rank5solo",
-                            "blind5",
-                            "aram",
-                            "blind3",
-                            "rank3flex",
-                            "quickplay5",
-                            "other"
-                        ],
-                        "in": "path",
-                        "name": "queue",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "schema": {
-                            "$ref": "#/definitions/LolCareerStatsChampionQueueStatsResponse"
-                        }
-                    }
-                },
-                "tags": [
-                    "Plugins",
-                    "Plugin lol-career-stats"
-                ]
-            }
-        },
-        "/lol-career-stats/v1/champion-averages/{championId}/{position}/{tier}/{queue}": {
-            "get": {
-                "operationId": "GetLolCareerStatsV1ChampionAveragesByChampionIdByPositionByTierByQueue",
-                "parameters": [
-                    {
-                        "format": "int32",
-                        "in": "path",
-                        "name": "championId",
-                        "required": true,
-                        "type": "integer"
-                    },
-                    {
-                        "enum": [
-                            "ALL",
-                            "UNKNOWN",
-                            "TOP",
-                            "JUNGLE",
-                            "MID",
-                            "BOTTOM",
-                            "SUPPORT"
-                        ],
-                        "in": "path",
-                        "name": "position",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "in": "path",
-                        "name": "tier",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "enum": [
-                            "draft5",
-                            "rank5flex",
-                            "rank5solo",
-                            "blind5",
-                            "aram",
-                            "blind3",
-                            "rank3flex",
-                            "quickplay5",
-                            "other"
-                        ],
-                        "in": "path",
-                        "name": "queue",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "schema": {
-                            "$ref": "#/definitions/LolCareerStatsChampionQueueStatsResponse"
-                        }
-                    }
-                },
-                "tags": [
-                    "Plugins",
-                    "Plugin lol-career-stats"
-                ]
-            }
-        },
-        "/lol-career-stats/v1/champion-experts/season/{season}/{championId}/{position}": {
-            "get": {
-                "operationId": "GetLolCareerStatsV1ChampionExpertsSeasonBySeasonByChampionIdByPosition",
-                "parameters": [
-                    {
-                        "format": "int32",
-                        "in": "path",
-                        "name": "season",
-                        "required": true,
-                        "type": "integer"
-                    },
-                    {
-                        "format": "int32",
-                        "in": "path",
-                        "name": "championId",
-                        "required": true,
-                        "type": "integer"
-                    },
-                    {
-                        "enum": [
-                            "ALL",
-                            "UNKNOWN",
-                            "TOP",
-                            "JUNGLE",
-                            "MID",
-                            "BOTTOM",
-                            "SUPPORT"
-                        ],
-                        "in": "path",
-                        "name": "position",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "schema": {
-                            "items": {
-                                "$ref": "#/definitions/LolCareerStatsExpertPlayer"
-                            },
-                            "type": "array"
-                        }
-                    }
-                },
-                "tags": [
-                    "Plugins",
-                    "Plugin lol-career-stats"
-                ]
-            }
-        },
-        "/lol-career-stats/v1/champion-experts/{championId}/{position}": {
-            "get": {
-                "operationId": "GetLolCareerStatsV1ChampionExpertsByChampionIdByPosition",
-                "parameters": [
-                    {
-                        "format": "int32",
-                        "in": "path",
-                        "name": "championId",
-                        "required": true,
-                        "type": "integer"
-                    },
-                    {
-                        "enum": [
-                            "ALL",
-                            "UNKNOWN",
-                            "TOP",
-                            "JUNGLE",
-                            "MID",
-                            "BOTTOM",
-                            "SUPPORT"
-                        ],
-                        "in": "path",
-                        "name": "position",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "schema": {
-                            "items": {
-                                "$ref": "#/definitions/LolCareerStatsExpertPlayer"
-                            },
-                            "type": "array"
-                        }
-                    }
-                },
-                "tags": [
-                    "Plugins",
-                    "Plugin lol-career-stats"
-                ]
-            }
-        },
-        "/lol-career-stats/v1/champion-stats-percentiles": {
-            "post": {
-                "operationId": "PostLolCareerStatsV1ChampionStatsPercentiles",
-                "parameters": [
-                    {
-                        "in": "body",
-                        "name": "body",
-                        "required": true,
-                        "schema": {
-                            "items": {
-                                "$ref": "#/definitions/LolCareerStatsStatsQueryRequest"
-                            },
-                            "type": "array"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "schema": {
-                            "items": {
-                                "$ref": "#/definitions/LolCareerStatsStatisticsPercentilesResponse"
-                            },
-                            "type": "array"
-                        }
-                    }
-                },
-                "tags": [
-                    "Plugins",
-                    "Plugin lol-career-stats"
-                ]
-            }
-        },
-        "/lol-career-stats/v1/position-averages/season/{season}/{position}/{tier}/{queue}": {
-            "get": {
-                "operationId": "GetLolCareerStatsV1PositionAveragesSeasonBySeasonByPositionByTierByQueue",
-                "parameters": [
-                    {
-                        "format": "int32",
-                        "in": "path",
-                        "name": "season",
-                        "required": true,
-                        "type": "integer"
-                    },
-                    {
-                        "enum": [
-                            "ALL",
-                            "UNKNOWN",
-                            "TOP",
-                            "JUNGLE",
-                            "MID",
-                            "BOTTOM",
-                            "SUPPORT"
-                        ],
-                        "in": "path",
-                        "name": "position",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "in": "path",
-                        "name": "tier",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "enum": [
-                            "draft5",
-                            "rank5flex",
-                            "rank5solo",
-                            "blind5",
-                            "aram",
-                            "blind3",
-                            "rank3flex",
-                            "quickplay5",
-                            "other"
-                        ],
-                        "in": "path",
-                        "name": "queue",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "schema": {
-                            "$ref": "#/definitions/LolCareerStatsChampionQueueStatsResponse"
-                        }
-                    }
-                },
-                "tags": [
-                    "Plugins",
-                    "Plugin lol-career-stats"
-                ]
-            }
-        },
-        "/lol-career-stats/v1/position-averages/{position}/{tier}/{queue}": {
-            "get": {
-                "operationId": "GetLolCareerStatsV1PositionAveragesByPositionByTierByQueue",
-                "parameters": [
-                    {
-                        "enum": [
-                            "ALL",
-                            "UNKNOWN",
-                            "TOP",
-                            "JUNGLE",
-                            "MID",
-                            "BOTTOM",
-                            "SUPPORT"
-                        ],
-                        "in": "path",
-                        "name": "position",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "in": "path",
-                        "name": "tier",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "enum": [
-                            "draft5",
-                            "rank5flex",
-                            "rank5solo",
-                            "blind5",
-                            "aram",
-                            "blind3",
-                            "rank3flex",
-                            "quickplay5",
-                            "other"
-                        ],
-                        "in": "path",
-                        "name": "queue",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "schema": {
-                            "$ref": "#/definitions/LolCareerStatsChampionQueueStatsResponse"
-                        }
-                    }
-                },
-                "tags": [
-                    "Plugins",
-                    "Plugin lol-career-stats"
-                ]
-            }
-        },
-        "/lol-career-stats/v1/position-experts/season/{season}/{position}": {
-            "get": {
-                "operationId": "GetLolCareerStatsV1PositionExpertsSeasonBySeasonByPosition",
-                "parameters": [
-                    {
-                        "format": "int32",
-                        "in": "path",
-                        "name": "season",
-                        "required": true,
-                        "type": "integer"
-                    },
-                    {
-                        "enum": [
-                            "ALL",
-                            "UNKNOWN",
-                            "TOP",
-                            "JUNGLE",
-                            "MID",
-                            "BOTTOM",
-                            "SUPPORT"
-                        ],
-                        "in": "path",
-                        "name": "position",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "schema": {
-                            "items": {
-                                "$ref": "#/definitions/LolCareerStatsExpertPlayer"
-                            },
-                            "type": "array"
-                        }
-                    }
-                },
-                "tags": [
-                    "Plugins",
-                    "Plugin lol-career-stats"
-                ]
-            }
-        },
-        "/lol-career-stats/v1/position-experts/{position}": {
-            "get": {
-                "operationId": "GetLolCareerStatsV1PositionExpertsByPosition",
-                "parameters": [
-                    {
-                        "enum": [
-                            "ALL",
-                            "UNKNOWN",
-                            "TOP",
-                            "JUNGLE",
-                            "MID",
-                            "BOTTOM",
-                            "SUPPORT"
-                        ],
-                        "in": "path",
-                        "name": "position",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "schema": {
-                            "items": {
-                                "$ref": "#/definitions/LolCareerStatsExpertPlayer"
-                            },
-                            "type": "array"
-                        }
-                    }
-                },
-                "tags": [
-                    "Plugins",
-                    "Plugin lol-career-stats"
-                ]
-            }
-        },
-        "/lol-career-stats/v1/position-stats-percentiles": {
-            "post": {
-                "operationId": "PostLolCareerStatsV1PositionStatsPercentiles",
-                "parameters": [
-                    {
-                        "in": "body",
-                        "name": "body",
-                        "required": true,
-                        "schema": {
-                            "items": {
-                                "$ref": "#/definitions/LolCareerStatsPositionStatsQueryRequest"
-                            },
-                            "type": "array"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "schema": {
-                            "items": {
-                                "$ref": "#/definitions/LolCareerStatsStatisticsPercentilesResponse"
-                            },
-                            "type": "array"
-                        }
-                    }
-                },
-                "tags": [
-                    "Plugins",
-                    "Plugin lol-career-stats"
-                ]
-            }
-        },
-        "/lol-career-stats/v1/summoner-games/{puuid}": {
-            "get": {
-                "operationId": "GetLolCareerStatsV1SummonerGamesByPuuid",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "puuid",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "schema": {
-                            "additionalProperties": true,
-                            "type": "object"
-                        }
-                    }
-                },
-                "tags": [
-                    "Plugins",
-                    "Plugin lol-career-stats"
-                ]
-            }
-        },
-        "/lol-career-stats/v1/summoner-games/{puuid}/season/{season}": {
-            "get": {
-                "operationId": "GetLolCareerStatsV1SummonerGamesByPuuidSeasonBySeason",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "puuid",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "format": "int32",
-                        "in": "path",
-                        "name": "season",
-                        "required": true,
-                        "type": "integer"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "schema": {
-                            "additionalProperties": true,
-                            "type": "object"
-                        }
-                    }
-                },
-                "tags": [
-                    "Plugins",
-                    "Plugin lol-career-stats"
-                ]
-            }
-        },
-        "/lol-career-stats/v1/summoner-stats/{puuid}/{season}/{queue}/{position}": {
-            "get": {
-                "operationId": "GetLolCareerStatsV1SummonerStatsByPuuidBySeasonByQueueByPosition",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "puuid",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "format": "int32",
-                        "in": "path",
-                        "name": "season",
-                        "required": true,
-                        "type": "integer"
-                    },
-                    {
-                        "enum": [
-                            "draft5",
-                            "rank5flex",
-                            "rank5solo",
-                            "blind5",
-                            "aram",
-                            "blind3",
-                            "rank3flex",
-                            "quickplay5",
-                            "other"
-                        ],
-                        "in": "path",
-                        "name": "queue",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "enum": [
-                            "ALL",
-                            "UNKNOWN",
-                            "TOP",
-                            "JUNGLE",
-                            "MID",
-                            "BOTTOM",
-                            "SUPPORT"
-                        ],
-                        "in": "path",
-                        "name": "position",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "format": "int32",
-                        "in": "query",
-                        "name": "championId",
-                        "required": false,
-                        "type": "integer"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "schema": {
-                            "additionalProperties": true,
-                            "type": "object"
-                        }
-                    }
-                },
-                "tags": [
-                    "Plugins",
-                    "Plugin lol-career-stats"
-                ]
-            }
-        },
         "/lol-catalog/v1/item-details": {
             "get": {
                 "operationId": "GetLolCatalogV1ItemDetails",
@@ -62640,6 +61899,27 @@
                         "description": "Successful response",
                         "schema": {
                             "$ref": "#/definitions/LolChallengesUIChallengePenalty"
+                        }
+                    }
+                },
+                "tags": [
+                    "Plugins",
+                    "Plugin lol-challenges"
+                ]
+            }
+        },
+        "/lol-challenges/v1/rsbot-challenges": {
+            "post": {
+                "operationId": "PostLolChallengesV1RsbotChallenges",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "additionalProperties": {
+                                "$ref": "#/definitions/LolChallengesUIChallenge"
+                            },
+                            "type": "object"
                         }
                     }
                 },
@@ -69948,10 +69228,7 @@
                     "200": {
                         "description": "Successful response",
                         "schema": {
-                            "items": {
-                                "$ref": "#/definitions/LolEventHubNavigationButtonUIData"
-                            },
-                            "type": "array"
+                            "$ref": "#/definitions/LolEventHubNavigationButtonUIData"
                         }
                     }
                 },
@@ -76257,6 +75534,24 @@
                 "tags": [
                     "Plugins",
                     "Plugin lol-lobby"
+                ]
+            }
+        },
+        "/lol-lock-and-load/v1/should-show-progress-bar-text": {
+            "get": {
+                "operationId": "GetLolLockAndLoadV1ShouldShowProgressBarText",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    }
+                },
+                "tags": [
+                    "Plugins",
+                    "Plugin lol-lock-and-load"
                 ]
             }
         },
@@ -86507,6 +85802,24 @@
                 ]
             }
         },
+        "/lol-tft-pass/v1/ready": {
+            "get": {
+                "operationId": "GetLolTftPassV1Ready",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    }
+                },
+                "tags": [
+                    "Plugins",
+                    "Plugin lol-tft-pass"
+                ]
+            }
+        },
         "/lol-tft-pass/v1/reward-notification": {
             "get": {
                 "operationId": "GetLolTftPassV1RewardNotification",
@@ -86516,6 +85829,24 @@
                         "description": "Successful response",
                         "schema": {
                             "$ref": "#/definitions/LolTftPassTFTPassRewardNotification"
+                        }
+                    }
+                },
+                "tags": [
+                    "Plugins",
+                    "Plugin lol-tft-pass"
+                ]
+            }
+        },
+        "/lol-tft-pass/v1/skill-tree-pass": {
+            "get": {
+                "operationId": "GetLolTftPassV1SkillTreePass",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "$ref": "#/definitions/LolTftPassTftBattlepass"
                         }
                     }
                 },
@@ -86598,6 +85929,425 @@
                         "schema": {
                             "type": "string"
                         }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "Plugins",
+                    "Plugin lol-tft-team-planner"
+                ]
+            }
+        },
+        "/lol-tft-team-planner/v1/sets/dirty": {
+            "get": {
+                "operationId": "GetLolTftTeamPlannerV1SetsDirty",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "additionalProperties": {
+                                "$ref": "#/definitions/LolTftTeamPlannerTeamsForSet"
+                            },
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "Plugins",
+                    "Plugin lol-tft-team-planner"
+                ]
+            }
+        },
+        "/lol-tft-team-planner/v1/sets/save-all": {
+            "put": {
+                "operationId": "PutLolTftTeamPlannerV1SetsSaveAll",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "Plugins",
+                    "Plugin lol-tft-team-planner"
+                ]
+            }
+        },
+        "/lol-tft-team-planner/v1/sets/{set}/teams/{team}": {
+            "delete": {
+                "operationId": "DeleteLolTftTeamPlannerV1SetsBySetTeamsByTeam",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "set",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "team",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "Plugins",
+                    "Plugin lol-tft-team-planner"
+                ]
+            },
+            "post": {
+                "operationId": "PostLolTftTeamPlannerV1SetsBySetTeamsByTeam",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "set",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "team",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "Plugins",
+                    "Plugin lol-tft-team-planner"
+                ]
+            }
+        },
+        "/lol-tft-team-planner/v1/sets/{set}/teams/{team}/champions": {
+            "delete": {
+                "operationId": "DeleteLolTftTeamPlannerV1SetsBySetTeamsByTeamChampions",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "set",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "team",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "Plugins",
+                    "Plugin lol-tft-team-planner"
+                ]
+            },
+            "patch": {
+                "operationId": "PatchLolTftTeamPlannerV1SetsBySetTeamsByTeamChampions",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "set",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "team",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "indices",
+                        "required": true,
+                        "schema": {
+                            "items": {
+                                "format": "int64",
+                                "type": "integer"
+                            },
+                            "type": "array"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "Plugins",
+                    "Plugin lol-tft-team-planner"
+                ]
+            }
+        },
+        "/lol-tft-team-planner/v1/sets/{set}/teams/{team}/champions/{championId}": {
+            "delete": {
+                "operationId": "DeleteLolTftTeamPlannerV1SetsBySetTeamsByTeamChampionsByChampionId",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "set",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "team",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "championId",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "Plugins",
+                    "Plugin lol-tft-team-planner"
+                ]
+            },
+            "post": {
+                "operationId": "PostLolTftTeamPlannerV1SetsBySetTeamsByTeamChampionsByChampionId",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "set",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "team",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "championId",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "Plugins",
+                    "Plugin lol-tft-team-planner"
+                ]
+            }
+        },
+        "/lol-tft-team-planner/v1/sets/{set}/teams/{team}/champions/{championId}/{index}": {
+            "delete": {
+                "operationId": "DeleteLolTftTeamPlannerV1SetsBySetTeamsByTeamChampionsByChampionIdByIndex",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "set",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "team",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "championId",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "format": "int64",
+                        "in": "path",
+                        "name": "index",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "Plugins",
+                    "Plugin lol-tft-team-planner"
+                ]
+            },
+            "post": {
+                "operationId": "PostLolTftTeamPlannerV1SetsBySetTeamsByTeamChampionsByChampionIdByIndex",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "set",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "team",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "championId",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "format": "int64",
+                        "in": "path",
+                        "name": "index",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "Plugins",
+                    "Plugin lol-tft-team-planner"
+                ]
+            }
+        },
+        "/lol-tft-team-planner/v1/sets/{set}/teams/{team}/import": {
+            "post": {
+                "operationId": "PostLolTftTeamPlannerV1SetsBySetTeamsByTeamImport",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "set",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "team",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "champions",
+                        "required": true,
+                        "schema": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "Plugins",
+                    "Plugin lol-tft-team-planner"
+                ]
+            }
+        },
+        "/lol-tft-team-planner/v1/sets/{set}/teams/{team}/{name}": {
+            "patch": {
+                "operationId": "PatchLolTftTeamPlannerV1SetsBySetTeamsByTeamByName",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "set",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "team",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "name",
+                        "required": true,
+                        "type": "string"
                     }
                 ],
                 "responses": {
@@ -86868,6 +86618,50 @@
                         "required": true,
                         "schema": {
                             "type": "boolean"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "additionalProperties": true,
+                            "type": "object"
+                        }
+                    }
+                },
+                "tags": [
+                    "Plugins",
+                    "Plugin lol-tft-team-planner"
+                ]
+            }
+        },
+        "/lol-tft-team-planner/v2/reminders": {
+            "get": {
+                "operationId": "GetLolTftTeamPlannerV2Reminders",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "tags": [
+                    "Plugins",
+                    "Plugin lol-tft-team-planner"
+                ]
+            },
+            "patch": {
+                "operationId": "PatchLolTftTeamPlannerV2Reminders",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "team",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
                         }
                     }
                 ],
@@ -89773,7 +89567,7 @@
         },
         "/swagger/v1/api-docs": {
             "get": {
-                "operationId": "Http2ApiDocsV1",
+                "operationId": "HttpApiDocsV1",
                 "parameters": [],
                 "responses": {
                     "200": {
@@ -89845,7 +89639,7 @@
         },
         "/swagger/v3/openapi.json": {
             "get": {
-                "operationId": "HttpApiDocsV3",
+                "operationId": "Http2ApiDocsV3",
                 "parameters": [],
                 "responses": {
                     "200": {
@@ -90407,24 +90201,6 @@
                     }
                 },
                 "summary": "Record a non timing telemetry event.",
-                "tags": [
-                    "Tracing"
-                ]
-            }
-        },
-        "/tracing/v1/trace/payloads/enabled": {
-            "get": {
-                "operationId": "GetTracingV1TracePayloadsEnabled",
-                "parameters": [],
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "schema": {
-                            "type": "boolean"
-                        }
-                    }
-                },
-                "summary": "Returns whether payloads are included in the tracing log.",
                 "tags": [
                     "Tracing"
                 ]
