@@ -823,25 +823,6 @@
         ],
         "threadSafe": false
     },
-    "DELETE /chatbox/v1/debug/caller-id/mock-id": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Stops mocking the caller ID for Swagger calls",
-        "help": "Deletes the currently set `productId` and `patchlineId`. Plugin APIs will receive `swagger` as the `productId`.",
-        "internal": false,
-        "name": "DeleteChatboxV1DebugCallerIdMockId",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "chatbox"
-        ],
-        "threadSafe": false
-    },
     "DELETE /client-config/v1/authorization": {
         "arguments": [],
         "deprecated": false,
@@ -1387,6 +1368,25 @@
         ],
         "threadSafe": false
     },
+    "DELETE /okta-account/v1/authorization": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Delete authorization status for Okta Account",
+        "help": "",
+        "internal": false,
+        "name": "DeleteOktaAccountV1Authorization",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "okta-account"
+        ],
+        "threadSafe": false
+    },
     "DELETE /patch-proxy/v1/patch-jobs/all": {
         "arguments": [],
         "deprecated": false,
@@ -1607,6 +1607,25 @@
         "subscribable": false,
         "tags": [
             "payments"
+        ],
+        "threadSafe": false
+    },
+    "DELETE /platform-login/v1/persistence": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Deletes stored session data",
+        "help": "",
+        "internal": false,
+        "name": "DeletePlatformLoginV1Persistence",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-login"
         ],
         "threadSafe": false
     },
@@ -2186,6 +2205,25 @@
         ],
         "threadSafe": false
     },
+    "DELETE /riot-login/v1/persistence": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Deletes stored session data",
+        "help": "",
+        "internal": false,
+        "name": "DeleteRiotLoginV1Persistence",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "riot-login"
+        ],
+        "threadSafe": false
+    },
     "DELETE /riot-messaging-service/v1/connect": {
         "arguments": [],
         "deprecated": false,
@@ -2693,6 +2731,25 @@
         "subscribable": false,
         "tags": [
             "rso-mobile-ui"
+        ],
+        "threadSafe": false
+    },
+    "DELETE /social/v1/debug/caller-id/mock-id": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Stops mocking the caller ID for Swagger calls",
+        "help": "Deletes the currently set `productId` and `patchlineId`. Plugin APIs will receive `swagger` as the `productId`.",
+        "internal": false,
+        "name": "DeleteSocialV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
         ],
         "threadSafe": false
     },
@@ -3869,7 +3926,7 @@
         ],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "Get messages by domain (optional query args: cid &/or mid)",
+        "description": "Get messages by domain (optional query args: cid)",
         "help": "Endpoint deleted August 2021; Please use 'chat/v6/messages/{domain}'.",
         "internal": false,
         "name": "GetChatV5MessagesByDomain",
@@ -4145,7 +4202,7 @@
         ],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "Get messages by domain (optional query args: cid &/or mid)",
+        "description": "Get messages by domain (optional query args: cid)",
         "help": "",
         "internal": false,
         "name": "GetChatV6MessagesByDomain",
@@ -4566,7 +4623,7 @@
         ],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "Get all participants for the specified chatbox",
+        "description": "Get all participants for the specified chatbox. Patch create notifications are sent for the very first added participants only. Patch update notifications are sent for subsequent added participants only. Patch delete notifications are sent for removed participants only.",
         "help": "",
         "internal": false,
         "name": "GetChatboxV1ChatboxesByIdParticipants",
@@ -4595,7 +4652,7 @@
         ],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "Get all participants in whisper channels with friends (for the specified chatbox)",
+        "description": "Get all participants in whisper channels with friends (for the specified chatbox). Patch create notifications are sent for the very first added participants only. Patch update notifications are sent for subsequent added participants only. Patch delete notifications are sent for removed participants only.",
         "help": "",
         "internal": false,
         "name": "GetChatboxV1ChatboxesByIdParticipantsWhispers",
@@ -4603,25 +4660,6 @@
         "returns": {
             "elementType": "",
             "type": "ChatboxChatParticipants"
-        },
-        "subscribable": false,
-        "tags": [
-            "chatbox"
-        ],
-        "threadSafe": false
-    },
-    "GET /chatbox/v1/debug/caller-id/mock-id": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Checks the caller ID in use when APIs are called from Swagger",
-        "help": "Returns the `productId` and `patchlineId` being passed to APIs in this plugin when called via Swagger.\n\nReturns 404 if a mock caller ID is not in use.",
-        "internal": false,
-        "name": "GetChatboxV1DebugCallerIdMockId",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "ChatboxPluginCallerId_MockCallerId"
         },
         "subscribable": false,
         "tags": [
@@ -4653,13 +4691,32 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "",
-        "help": "",
+        "help": "Endpoint deprecated July 30, 2024; please use '/chatbox/v1/status' instead.",
         "internal": false,
         "name": "GetChatboxV1Ready",
         "nameSpace": "",
         "returns": {
             "elementType": "",
             "type": "bool"
+        },
+        "subscribable": false,
+        "tags": [
+            "chatbox"
+        ],
+        "threadSafe": false
+    },
+    "GET /chatbox/v1/status": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get the status of the chatbox plugin to know whether or not to expect if the feature is usable.",
+        "help": "\n**Description**\nGet the status of the chatbox plugin to know whether or not to expect if the feature is usable. Game teams are encouraged to subscribe\nto this endpoint so that the game can behave correctly depending on what the current state of the plugin is. For example, if the status of\nthe plugin is `permissionDenied`, game teams should not attempt to create a chatbox instance since the player does not have permissions to do so,\npossibly due to behavioural restrictions or parental control settings.\n\n** Returns **\n\nA PluginStatus value representing the current status of the plugin.\n* `PluginStatus` values:\n    * `permissionDenied`: The player does not have permission to use text chat. Attempting to use the plugin will always return an error and\n         existing chatbox instances will be destroyed.\n    * `awaitingChatConnection`: The player has not been connected to the chat service, so the plugin will not be able to create functional chatboxes.\n    * `ready`: The plugin is usable and chatboxes can be created.\n    * `unknown`: The status of the plugin is currently unknown. This is the default value while the plugin is initializing and its status has yet to be determined.\n",
+        "internal": false,
+        "name": "GetChatboxV1Status",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "ChatboxPluginStatus"
         },
         "subscribable": false,
         "tags": [
@@ -5328,25 +5385,6 @@
         "subscribable": false,
         "tags": [
             "data-store"
-        ],
-        "threadSafe": false
-    },
-    "GET /entitlements-service/v1/token": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Get the entitlements token from the service",
-        "help": "Calls the entitlements service, and retrieves the user's current entitlements token.\n\nReturns HTTP 400 if the token is not ready.",
-        "internal": false,
-        "name": "GetEntitlementsServiceV1Token",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "EntitlementsServiceEntitlementsServiceToken"
-        },
-        "subscribable": false,
-        "tags": [
-            "entitlements-service"
         ],
         "threadSafe": false
     },
@@ -6291,6 +6329,25 @@
         "subscribable": false,
         "tags": [
             "nintendo-account"
+        ],
+        "threadSafe": false
+    },
+    "GET /okta-account/v1/authorization": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Retrieve authorization from the Okta Account",
+        "help": "",
+        "internal": false,
+        "name": "GetOktaAccountV1Authorization",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "OktaAccountOktaAuthorizationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "okta-account"
         ],
         "threadSafe": false
     },
@@ -11789,6 +11846,25 @@
         ],
         "threadSafe": false
     },
+    "GET /rso-auth/v1/authorization/refresh-token": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Retrieve a refresh and id token used to rehydrate an authorization on a new SDK launch. This endpoint should NOT be used for any other purpose than to persist an authorization across SDK launches.",
+        "help": "",
+        "internal": false,
+        "name": "GetRsoAuthV1AuthorizationRefreshToken",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthRefreshTokenRequest"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-auth"
+        ],
+        "threadSafe": false
+    },
     "GET /rso-auth/v1/authorization/userinfo": {
         "arguments": [],
         "deprecated": false,
@@ -11992,6 +12068,44 @@
         "returns": {
             "elementType": "",
             "type": "RsoAuthenticatorPluginConfigResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "GET /rso-authenticator/v1/session/info": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "suuid",
+                "optional": true,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "cluster",
+                "optional": true,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get additional session information for authentication purposes.",
+        "help": "",
+        "internal": false,
+        "name": "GetRsoAuthenticatorV1SessionInfo",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1SessionInfoResponse"
         },
         "subscribable": false,
         "tags": [
@@ -12322,6 +12436,25 @@
         ],
         "threadSafe": false
     },
+    "GET /social/v1/debug/caller-id/mock-id": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Checks the caller ID in use when APIs are called from Swagger",
+        "help": "Returns the `productId` and `patchlineId` being passed to APIs in this plugin when called via Swagger.\n\nReturns 404 if a mock caller ID is not in use.",
+        "internal": false,
+        "name": "GetSocialV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "SocialPluginCallerId_MockCallerId"
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
     "GET /social/v1/friends": {
         "arguments": [],
         "deprecated": false,
@@ -12384,7 +12517,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "When subscribed to this endpoint will notify with the entire friend list on every create/update/delete.",
-        "help": "",
+        "help": "Endpoint deleted August 2025.",
         "internal": false,
         "name": "GetSocialV2Friends",
         "nameSpace": "",
@@ -12403,13 +12536,51 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "For subscriptions only. On update and delete will notify with patches (changed elements only) rather than the full list. For a simple GET use the non-patch version of this URL.",
-        "help": "",
+        "help": "Endpoint deleted August 2025.",
         "internal": false,
         "name": "GetSocialV2FriendsPatch",
         "nameSpace": "",
         "returns": {
             "elementType": "",
             "type": "SocialFriendList"
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
+    "GET /social/v3/friends": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "When subscribed to this endpoint will notify with the entire friend list on every create/update/delete.",
+        "help": "",
+        "internal": false,
+        "name": "GetSocialV3Friends",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "SocialFriendListV3"
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
+    "GET /social/v3/friends/patch": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "For subscriptions only. On update and delete will notify with patches (changed elements only) rather than the full list. For a simple GET use the non-patch version of this URL.",
+        "help": "",
+        "internal": false,
+        "name": "GetSocialV3FriendsPatch",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "SocialFriendListV3"
         },
         "subscribable": false,
         "tags": [
@@ -13374,11 +13545,30 @@
         ],
         "threadSafe": false
     },
+    "GET /xbox-account/v1/modern-gamertag": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get player's Xbox Modern Gamertag (modern / modern suffix / unique modern)",
+        "help": "",
+        "internal": false,
+        "name": "GetXboxAccountV1ModernGamertag",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "XboxAccountModernGamertag"
+        },
+        "subscribable": false,
+        "tags": [
+            "xbox-account"
+        ],
+        "threadSafe": false
+    },
     "GET /xbox-account/v1/player-nickname": {
         "arguments": [],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "Get user's Xbox gamertag",
+        "description": "Get player's Xbox Classic Gamertag (with checking authorization consent)",
         "help": "",
         "internal": false,
         "name": "GetXboxAccountV1PlayerNickname",
@@ -13397,7 +13587,7 @@
         "arguments": [],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "Get user's Xbox gamertag without checking authorization consent",
+        "description": "Get player's Xbox Classic Gamertag (without checking authorization consent)",
         "help": "",
         "internal": false,
         "name": "GetXboxAccountV1PlayerNicknameWithoutConsent",
@@ -15301,6 +15491,25 @@
         ],
         "threadSafe": false
     },
+    "POST /eula/v1/agreement/content/retry": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Attempt to asynchronously fetch the current version EULA content if it previously failed to load.",
+        "help": "",
+        "internal": false,
+        "name": "PostEulaV1AgreementContentRetry",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "eula"
+        ],
+        "threadSafe": false
+    },
     "POST /eula/v1/debug/agreement/force-requirement": {
         "arguments": [],
         "deprecated": false,
@@ -15995,6 +16204,35 @@
         ],
         "threadSafe": false
     },
+    "POST /okta-account/v1/authorization": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "AuthorizationParameters",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "OktaAccountOktaAuthorizationParameters"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Create authorization using Okta Account",
+        "help": "",
+        "internal": false,
+        "name": "PostOktaAccountV1Authorization",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "okta-account"
+        ],
+        "threadSafe": false
+    },
     "POST /pay-mobile/v1/purchase/{productId}": {
         "arguments": [
             {
@@ -16385,6 +16623,35 @@
         "subscribable": false,
         "tags": [
             "permissions"
+        ],
+        "threadSafe": false
+    },
+    "POST /platform-social/v1/debug/mock-block-list": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "puuid",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "DO NOT USE, this endpoint is intended for use internally by the SDK team to help test the platform social plugin",
+        "help": "",
+        "internal": false,
+        "name": "PostPlatformSocialV1DebugMockBlockList",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-social"
         ],
         "threadSafe": false
     },
@@ -16873,6 +17140,64 @@
         "returns": {
             "elementType": "",
             "type": "PlayerAccountLookupV1PuuidsForConsoleIdsResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "player-account"
+        ],
+        "threadSafe": false
+    },
+    "POST /player-account/lookup/v2/namesets-for-puuid": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "request",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlayerAccountLookupV2NamesetsForPuuidRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Retrieves the namesets for a single PUUID",
+        "help": "\n**Description**\nRetrieves the namesets for the PUUID provided.\nA Nameset contains the player's name on the given platform.\nExample: SwitchNameset.name would be the Switch username associated with the player's PUUID\n\n** Body Argument **\n\n\"NamesetsForPuuidRequest\"\n* \"puuid\" - PUUID (String)\n\nResponse Body:\nNamesetsForPuuidResponse:\n* \"puuid\" - PUUID (String)\n* \"providerId\" - player's provider id\n* \"error\" - A String containing any errors\n* \"alias\" - A Riot ID\n* \"switchNameset\" - A SwitchNameset\n* \"xboxNameset\" - An XboxNameset\n* \"playstationNameset\" - A PlaystationNameset\n\nSwitchNameset:\n    \"nickname\" - A String with the Switch name associated to the requested PUUID\n\nPlaystationNameset:\n    \"onlineId\" - A String with the Playstation name associated to the requested PUUID\n\nXboxNameset:\n    \"classicGamertag\" - A String with the Xbox classic name associated to the requested PUUID\n    \"modernGamertag\" - A String with the Xbox modern name associated to the requested PUUID\n    \"modernSuffix\" - A String with the Xbox modern name suffix associated to the requested PUUID\n\nRiot ID:\n    \"gameName\" - The player's Game Name (String)\n    \"tagLine\" - The player's Tag Line (String)\n\n",
+        "internal": false,
+        "name": "PostPlayerAccountLookupV2NamesetsForPuuid",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlayerAccountLookupV2NamesetsForPuuidResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "player-account"
+        ],
+        "threadSafe": false
+    },
+    "POST /player-account/lookup/v2/namesets-for-puuids": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "request",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlayerAccountLookupV2NamesetsForPuuidsRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Retrieves the namesets for each PUUID provided",
+        "help": "\n**Description**\nRetrieves the namesets for each PUUID provided.\nA Nameset contains the player's name on the given platform.\nExample: SwitchNameset.name would be the Switch username associated with the player's PUUID\n\n** Request Arguments **\n\nRequest Body Object:\nNamesetsForPuuidsRequest Object:\n    \"puuids\" - A list of PUUIDs to retrieve namesets for\n\nNamesetsForPuuidsResponse Body:\n    \"namesets\" - A list of NamesetsResponseElements\n\nNamesetsResponseElement:\n* \"puuid\" - PUUID (String)\n* \"providerId\" - player's provider id\n* \"error\" - A String containing any errors\n* \"alias\" - A Riot ID\n* \"switchNameset\" - A SwitchNameset\n* \"xboxNameset\" - An XboxNameset\n* \"playstationNameset\" - A PlaystationNameset\n\nSwitchNameset:\n    \"nickname\" - A String with the Switch name associated to the requested PUUID\n\nPlaystationNameset:\n    \"onlineId\" - A String with the Playstation name associated to the requested PUUID\n\nXboxNameset:\n    \"classicGamertag\" - A String with the Xbox classic name associated to the requested PUUID\n    \"modernGamertag\" - A String with the Xbox modern name associated to the requested PUUID\n    \"modernSuffix\" - A String with the Xbox modern name suffix associated to the requested PUUID\n\nRiot ID:\n    \"gameName\" - The player's Game Name (String)\n    \"tagLine\" - The player's Tag Line (String)\n\n",
+        "internal": false,
+        "name": "PostPlayerAccountLookupV2NamesetsForPuuids",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlayerAccountLookupV2NamesetsForPuuidsResponse"
         },
         "subscribable": false,
         "tags": [
@@ -19393,6 +19718,35 @@
         ],
         "threadSafe": false
     },
+    "POST /rso-auth/v1/authorization/token-exchange": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "loginToken",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthLoginToken"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Creates an authorization from an authentication session using a login token from rso-authenticator.",
+        "help": "",
+        "internal": false,
+        "name": "PostRsoAuthV1AuthorizationTokenExchange",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthAuthorizationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-auth"
+        ],
+        "threadSafe": false
+    },
     "POST /rso-auth/v1/authorization/userinfo": {
         "arguments": [],
         "deprecated": false,
@@ -19914,6 +20268,35 @@
         ],
         "threadSafe": false
     },
+    "POST /rso-authenticator/v1/authentication/qrcode": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "qrCodeStart",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1QrCodeAuthStartInput"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Start polling for authentication provided by Riot Mobile.",
+        "help": "",
+        "internal": false,
+        "name": "PostRsoAuthenticatorV1AuthenticationQrcode",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
     "POST /rso-authenticator/v1/authentication/redirect": {
         "arguments": [
             {
@@ -20110,6 +20493,35 @@
         "returns": {
             "elementType": "",
             "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "POST /rso-authenticator/v1/session/authentication": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "session_details",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1SessionDetails"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Authenticate another session using the currently active authorization.",
+        "help": "",
+        "internal": false,
+        "name": "PostRsoAuthenticatorV1SessionAuthentication",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1SessionAuthenticationResponse"
         },
         "subscribable": false,
         "tags": [
@@ -20856,7 +21268,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "",
-        "help": "",
+        "help": "Endpoint deprecated and will be deleted July 2025.  Please use /social/v2/initialize",
         "internal": false,
         "name": "PostSocialV1Initialize",
         "nameSpace": "",
@@ -20888,6 +21300,25 @@
         "help": "",
         "internal": false,
         "name": "PostSocialV1ViewProfileByPuuid",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
+    "POST /social/v2/initialize": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Initializes the social plugin.",
+        "help": "",
+        "internal": false,
+        "name": "PostSocialV2Initialize",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -22190,35 +22621,6 @@
         "subscribable": false,
         "tags": [
             "chat"
-        ],
-        "threadSafe": false
-    },
-    "PUT /chatbox/v1/debug/caller-id/mock-id": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "callerId",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "ChatboxPluginCallerId_MockCallerId"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Sets the caller ID to use when calling this plugin from Swagger",
-        "help": "Sets the `productId` and `patchlineId` to pass to APIs in this plugin during future calls from Swagger.\n\nUse this functionality to test APIs in this plugin with Swagger, as if they were being called from another product.",
-        "internal": false,
-        "name": "PutChatboxV1DebugCallerIdMockId",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "chatbox"
         ],
         "threadSafe": false
     },
@@ -25658,6 +26060,35 @@
         ],
         "threadSafe": false
     },
+    "PUT /rso-auth/v1/authorization/refresh-token": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "refreshToken",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthRefreshTokenRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Restore a player's refresh token along with an id token to refill some claims for the authorization.",
+        "help": "",
+        "internal": false,
+        "name": "PutRsoAuthV1AuthorizationRefreshToken",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthAuthorizationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-auth"
+        ],
+        "threadSafe": false
+    },
     "PUT /rso-auth/v1/session/credentials": {
         "arguments": [
             {
@@ -26196,6 +26627,35 @@
         "subscribable": false,
         "tags": [
             "rso-mobile-ui"
+        ],
+        "threadSafe": false
+    },
+    "PUT /social/v1/debug/caller-id/mock-id": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "callerId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "SocialPluginCallerId_MockCallerId"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Sets the caller ID to use when calling this plugin from Swagger",
+        "help": "Sets the `productId` and `patchlineId` to pass to APIs in this plugin during future calls from Swagger.\n\nUse this functionality to test APIs in this plugin with Swagger, as if they were being called from another product.",
+        "internal": false,
+        "name": "PutSocialV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
         ],
         "threadSafe": false
     },

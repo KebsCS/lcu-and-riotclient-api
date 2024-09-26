@@ -151,11 +151,9 @@
         "POST /chatbox/v1/chatboxes/{id}/messages/whispers/{puuid}/read",
         "GET /chatbox/v1/chatboxes/{id}/participants",
         "GET /chatbox/v1/chatboxes/{id}/participants/whispers",
-        "DELETE /chatbox/v1/debug/caller-id/mock-id",
-        "GET /chatbox/v1/debug/caller-id/mock-id",
-        "PUT /chatbox/v1/debug/caller-id/mock-id",
         "GET /chatbox/v1/friends",
         "GET /chatbox/v1/ready",
+        "GET /chatbox/v1/status",
         "POST /chatbox/v1/{id}/whispers/{puuid}/messages"
     ],
     "client-config": [
@@ -219,14 +217,12 @@
         "GET /entitlements/v1/token",
         "GET /entitlements/v2/token"
     ],
-    "entitlements-service": [
-        "GET /entitlements-service/v1/token"
-    ],
     "eula": [
         "GET /eula/v1/agreement",
         "GET /eula/v1/agreement/acceptance",
         "PUT /eula/v1/agreement/acceptance",
         "GET /eula/v1/agreement/content",
+        "POST /eula/v1/agreement/content/retry",
         "PUT /eula/v1/agreement/reject",
         "POST /eula/v1/debug/agreement/force-requirement",
         "PUT /eula/v1/debug/agreement/short-agreement-content",
@@ -359,6 +355,11 @@
         "GET /nintendo-account/v2/authorization",
         "POST /nintendo-account/v2/authorization"
     ],
+    "okta-account": [
+        "DELETE /okta-account/v1/authorization",
+        "GET /okta-account/v1/authorization",
+        "POST /okta-account/v1/authorization"
+    ],
     "patch": [
         "GET /patch/v1/configuration",
         "PUT /patch/v1/configuration",
@@ -413,12 +414,14 @@
     "platform-login": [
         "GET /platform-login/v1/config",
         "PUT /platform-login/v1/config",
+        "DELETE /platform-login/v1/persistence",
         "GET /platform-login/v1/status"
     ],
     "platform-social": [
         "GET /platform-social/v1/block-list",
         "GET /platform-social/v1/block-list/patch",
         "GET /platform-social/v1/crossplay-permission",
+        "POST /platform-social/v1/debug/mock-block-list",
         "GET /platform-social/v1/friend-list",
         "GET /platform-social/v1/friend-list/patch",
         "GET /platform-social/v1/multiplayer-permission",
@@ -470,6 +473,8 @@
         "POST /player-account/lookup/v1/namesets-for-puuid",
         "POST /player-account/lookup/v1/namesets-for-puuids",
         "POST /player-account/lookup/v1/puuids-for-consoleids",
+        "POST /player-account/lookup/v2/namesets-for-puuid",
+        "POST /player-account/lookup/v2/namesets-for-puuids",
         "GET /player-account/promotion/v1/eligibility",
         "POST /player-account/promotion/v1/eligibility",
         "GET /player-account/promotion/v1/fields",
@@ -1035,6 +1040,7 @@
     "riot-login": [
         "GET /riot-login/v1/config",
         "PUT /riot-login/v1/config",
+        "DELETE /riot-login/v1/persistence",
         "GET /riot-login/v1/status"
     ],
     "riot-messaging-service": [
@@ -1130,7 +1136,10 @@
         "POST /rso-auth/v1/authorization/gas",
         "GET /rso-auth/v1/authorization/id-token",
         "POST /rso-auth/v1/authorization/refresh",
+        "GET /rso-auth/v1/authorization/refresh-token",
+        "PUT /rso-auth/v1/authorization/refresh-token",
         "POST /rso-auth/v1/authorization/simulate-error",
+        "POST /rso-auth/v1/authorization/token-exchange",
         "DELETE /rso-auth/v1/authorization/userinfo",
         "GET /rso-auth/v1/authorization/userinfo",
         "POST /rso-auth/v1/authorization/userinfo",
@@ -1187,6 +1196,7 @@
         "POST /rso-authenticator/v1/authentication/multifactor",
         "POST /rso-authenticator/v1/authentication/nintendo",
         "POST /rso-authenticator/v1/authentication/playstation",
+        "POST /rso-authenticator/v1/authentication/qrcode",
         "POST /rso-authenticator/v1/authentication/redirect",
         "POST /rso-authenticator/v1/authentication/riot-identity-signup/complete",
         "POST /rso-authenticator/v1/authentication/riot-identity-signup/start",
@@ -1195,6 +1205,8 @@
         "POST /rso-authenticator/v1/authentication/xbox",
         "GET /rso-authenticator/v1/config",
         "POST /rso-authenticator/v1/login",
+        "POST /rso-authenticator/v1/session/authentication",
+        "GET /rso-authenticator/v1/session/info",
         "POST /rso-authenticator/v1/username-validation",
         "POST /rso-authenticator/v1/web-authentication-url"
     ],
@@ -1246,13 +1258,19 @@
     "social": [
         "GET /social/v1/blocklist",
         "GET /social/v1/blocklist/patch",
+        "DELETE /social/v1/debug/caller-id/mock-id",
+        "GET /social/v1/debug/caller-id/mock-id",
+        "PUT /social/v1/debug/caller-id/mock-id",
         "GET /social/v1/friends",
         "GET /social/v1/friends/patch",
         "POST /social/v1/initialize",
         "GET /social/v1/ready",
         "POST /social/v1/view-profile/{puuid}",
         "GET /social/v2/friends",
-        "GET /social/v2/friends/patch"
+        "GET /social/v2/friends/patch",
+        "POST /social/v2/initialize",
+        "GET /social/v3/friends",
+        "GET /social/v3/friends/patch"
     ],
     "swagger": [
         "GET /swagger/v1/api-docs",
@@ -1350,6 +1368,7 @@
         "GET /xbox-account/v1/authorization-consent",
         "PUT /xbox-account/v1/authorization-consent",
         "GET /xbox-account/v1/config",
+        "GET /xbox-account/v1/modern-gamertag",
         "GET /xbox-account/v1/player-nickname",
         "GET /xbox-account/v1/player-nickname-without-consent",
         "DELETE /xbox-account/v1/user",
