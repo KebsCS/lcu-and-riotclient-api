@@ -409,7 +409,8 @@
         "GET /permissions/v1/request",
         "POST /permissions/v1/request",
         "GET /permissions/v1/request/{permissionId}",
-        "POST /permissions/v1/user-communication-permissions"
+        "POST /permissions/v1/user-communication-permissions",
+        "POST /permissions/v2/user-communication-permissions"
     ],
     "platform-login": [
         "GET /platform-login/v1/config",
@@ -443,13 +444,6 @@
         "DELETE /platform-ui/v1/vng-edit-profile",
         "GET /platform-ui/v1/vng-edit-profile",
         "POST /platform-ui/v1/vng-edit-profile"
-    ],
-    "play-restrictions": [
-        "DELETE /play-restrictions/v1/debug/caller-id/mock-id",
-        "GET /play-restrictions/v1/debug/caller-id/mock-id",
-        "PUT /play-restrictions/v1/debug/caller-id/mock-id",
-        "GET /play-restrictions/v1/restrictions",
-        "PUT /play-restrictions/v1/restrictions"
     ],
     "player-account": [
         "POST /player-account/aliases/purchase/v1/aliases",
@@ -510,7 +504,8 @@
     "player-behavior-token": [
         "POST /player-behavior-token/v1/debug/jwt/force-refresh",
         "GET /player-behavior-token/v1/jwt",
-        "GET /player-behavior-token/v1/jwt/payload"
+        "GET /player-behavior-token/v1/jwt/payload",
+        "GET /player-behavior-token/v1/ready"
     ],
     "player-preferences": [
         "GET /player-preferences/v1/data-json/productId/{productId}/type/{type}",
@@ -1037,6 +1032,10 @@
         "GET /riot-client-auth/v1/rso-client",
         "GET /riot-client-auth/v1/userinfo"
     ],
+    "riot-friends": [
+        "GET /riot-friends/v1/friends",
+        "POST /riot-friends/v1/friends"
+    ],
     "riot-login": [
         "GET /riot-login/v1/config",
         "PUT /riot-login/v1/config",
@@ -1144,6 +1143,7 @@
         "GET /rso-auth/v1/authorization/userinfo",
         "POST /rso-auth/v1/authorization/userinfo",
         "POST /rso-auth/v1/device-id",
+        "GET /rso-auth/v1/home-base-country",
         "POST /rso-auth/v1/key/request",
         "GET /rso-auth/v1/logout-reason",
         "DELETE /rso-auth/v1/session",

@@ -1667,25 +1667,6 @@
         ],
         "threadSafe": false
     },
-    "DELETE /play-restrictions/v1/debug/caller-id/mock-id": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Stops mocking the caller ID for Swagger calls",
-        "help": "Deletes the currently set `productId` and `patchlineId`. Plugin APIs will receive `swagger` as the `productId`.",
-        "internal": false,
-        "name": "DeletePlayRestrictionsV1DebugCallerIdMockId",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "play-restrictions"
-        ],
-        "threadSafe": false
-    },
     "DELETE /player-preferences/v1/debug/caller-id/mock-id": {
         "arguments": [],
         "deprecated": false,
@@ -4710,7 +4691,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Get the status of the chatbox plugin to know whether or not to expect if the feature is usable.",
-        "help": "\n**Description**\nGet the status of the chatbox plugin to know whether or not to expect if the feature is usable. Game teams are encouraged to subscribe\nto this endpoint so that the game can behave correctly depending on what the current state of the plugin is. For example, if the status of\nthe plugin is `permissionDenied`, game teams should not attempt to create a chatbox instance since the player does not have permissions to do so,\npossibly due to behavioural restrictions or parental control settings.\n\n** Returns **\n\nA PluginStatus value representing the current status of the plugin.\n* `PluginStatus` values:\n    * `permissionDenied`: The player does not have permission to use text chat. Attempting to use the plugin will always return an error and\n         existing chatbox instances will be destroyed.\n    * `awaitingChatConnection`: The player has not been connected to the chat service, so the plugin will not be able to create functional chatboxes.\n    * `ready`: The plugin is usable and chatboxes can be created.\n    * `unknown`: The status of the plugin is currently unknown. This is the default value while the plugin is initializing and its status has yet to be determined.\n",
+        "help": "\n**Description**\nGet the status of the chatbox plugin to know whether or not to expect if the feature is usable. Game teams are encouraged to subscribe\nto this endpoint so that the game can behave correctly depending on what the current state of the plugin is. For example, if the status of\nthe plugin is `permissionDenied`, game teams should not attempt to create a chatbox instance since the player does not have permissions to do so,\npossibly due to behavioural restrictions or parental control settings.\n\n** Returns **\n\nA PluginStatus value representing the current status of the plugin.\n* `PluginStatus` values:\n    * `unknown`: The status of the plugin is currently unknown. This is the default value while the plugin is initializing and its status has yet to be determined.\n    * `awaitingChatConnection`: The player has not been connected to the chat service, so the plugin will not be able to create functional chatboxes.\n    * `permissionUnknown`: The chat session has been established, but the plugin is unable to look up whether or not the player has permission to use text chat.\n         Attempting to create a chatbox will not work until the permission query succeeds.\n    * `permissionDenied`: The player does not have permission to use text chat. Attempting to use the plugin will always return an error and\n         existing chatbox instances will be destroyed.\n    * `ready`: The plugin is usable and chatboxes can be created.\n",
         "internal": false,
         "name": "GetChatboxV1Status",
         "nameSpace": "",
@@ -7155,44 +7136,6 @@
         ],
         "threadSafe": false
     },
-    "GET /play-restrictions/v1/debug/caller-id/mock-id": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Checks the caller ID in use when APIs are called from Swagger",
-        "help": "Returns the `productId` and `patchlineId` being passed to APIs in this plugin when called via Swagger.\n\nReturns 404 if a mock caller ID is not in use.",
-        "internal": false,
-        "name": "GetPlayRestrictionsV1DebugCallerIdMockId",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "PlayRestrictionsPluginCallerId_MockCallerId"
-        },
-        "subscribable": false,
-        "tags": [
-            "play-restrictions"
-        ],
-        "threadSafe": false
-    },
-    "GET /play-restrictions/v1/restrictions": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Get the current play restrictions",
-        "help": "",
-        "internal": false,
-        "name": "GetPlayRestrictionsV1Restrictions",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "PlayRestrictionsPlayRestrictionV1Data"
-        },
-        "subscribable": false,
-        "tags": [
-            "play-restrictions"
-        ],
-        "threadSafe": false
-    },
     "GET /player-account/aliases/v1/active": {
         "arguments": [],
         "deprecated": false,
@@ -7656,7 +7599,7 @@
         "arguments": [],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "[WIP] Get the currently cached Player Behavior Token as a raw jwt (base64 encoded). Use this endpoint when you want to pass the PB Token to another backend service.",
+        "description": "Get the currently cached Player Behavior Token as a raw jwt (base64 encoded). Use this endpoint when you want to pass the PB Token to another backend service.",
         "help": "",
         "internal": false,
         "name": "GetPlayerBehaviorTokenV1Jwt",
@@ -7675,7 +7618,7 @@
         "arguments": [],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "[WIP] Get the currently cached Player Behavior Token's payload as a json blob. Use this endpoint when you want to use the PB Token locally, such as for displaying the data to the player.",
+        "description": "Get the currently cached Player Behavior Token's payload as a json blob. Use this endpoint when you want to use the PB Token locally, such as for displaying the data to the player.",
         "help": "",
         "internal": false,
         "name": "GetPlayerBehaviorTokenV1JwtPayload",
@@ -7683,6 +7626,25 @@
         "returns": {
             "elementType": "",
             "type": "map"
+        },
+        "subscribable": false,
+        "tags": [
+            "player-behavior-token"
+        ],
+        "threadSafe": false
+    },
+    "GET /player-behavior-token/v1/ready": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get the ready state of the Player Behavior Token. Use this endpoint when you want to check the ready state of the PB Token plugin.",
+        "help": "",
+        "internal": false,
+        "name": "GetPlayerBehaviorTokenV1Ready",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "bool"
         },
         "subscribable": false,
         "tags": [
@@ -9964,6 +9926,25 @@
         ],
         "threadSafe": false
     },
+    "GET /riot-friends/v1/friends": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Query Riot friends for the current player",
+        "help": "",
+        "internal": false,
+        "name": "GetRiotFriendsV1Friends",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RiotFriendsChatFriends"
+        },
+        "subscribable": false,
+        "tags": [
+            "riot-friends"
+        ],
+        "threadSafe": false
+    },
     "GET /riot-login/v1/config": {
         "arguments": [],
         "deprecated": false,
@@ -11884,6 +11865,25 @@
         ],
         "threadSafe": false
     },
+    "GET /rso-auth/v1/home-base-country": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns the players home base country (HBC).",
+        "help": "",
+        "internal": false,
+        "name": "GetRsoAuthV1HomeBaseCountry",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthHomeBaseCountry"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-auth"
+        ],
+        "threadSafe": false
+    },
     "GET /rso-auth/v1/logout-reason": {
         "arguments": [],
         "deprecated": false,
@@ -12959,7 +12959,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Get the status of the voice-chat plugin to know whether or not to expect if the feature is usable.",
-        "help": "\n**Description**\nGet the status of the voice-chat plugin to know whether or not to expect if the feature is usable. Game teams are encouraged to subscribe\nto this endpoint so that the game can behave correctly depending on what the current state of the plugin is. For example, if the status of\nthe plugin is `permissionDenied`, game teams should not attempt to join voice sessions since the player does not have permissions to do so,\npossibly due to behavioural restrictions or parental control settings.\n\n** Returns **\n\nA PluginStatus value representing the current status of the plugin.\n* `PluginStatus` values:\n    * `unknown`: The status of the plugin is currently unknown. This is the default value while the plugin is initializing and its status has yet to be determined.\n    * `awaitingAuth`: The player has not signed in, so the plugin does not have the information required to join a voice session.\n    * `permissionDenied`: The player has signed in, but the player does not have permission to use voice chat. Attempting to join a voice session will always return an error and existing sessions will be left.\n    * `ready`: Voice chat is usable and voice sessions can be joined.\n",
+        "help": "\n**Description**\nGet the status of the voice-chat plugin to know whether or not to expect if the feature is usable. Game teams are encouraged to subscribe\nto this endpoint so that the game can behave correctly depending on what the current state of the plugin is. For example, if the status of\nthe plugin is `permissionDenied`, game teams should not attempt to join voice sessions since the player does not have permissions to do so,\npossibly due to behavioural restrictions or parental control settings.\n\n** Returns **\n\nA PluginStatus value representing the current status of the plugin.\n* `PluginStatus` values:\n    * `unknown`: The status of the plugin is currently unknown. This is the default value while the plugin is initializing and its status has yet to be determined.\n    * `awaitingAuth`: The player has not signed in, so the plugin does not have the information required to join a voice session.\n    * `permissionUnknown`: The player has signed in, but the plugin is unable to look up whether or not the player has permission to use voice chat.\n         Attempting to join a voice session will not work until the permission query succeeds.\n    * `permissionDenied`: The player has signed in, but the player does not have permission to use voice chat. Attempting to join a voice session will always\n         return an error and existing sessions will be left.\n    * `ready`: Voice chat is usable and voice sessions can be joined.\n",
         "internal": false,
         "name": "GetVoiceChatV1Status",
         "nameSpace": "",
@@ -16626,6 +16626,35 @@
         ],
         "threadSafe": false
     },
+    "POST /permissions/v2/user-communication-permissions": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "request",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PermissionsUserCommunicationPermissionsV2Request"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Queries whether the current user has the necessary permissions to communicate with a given set of users and if not, why that is the case.",
+        "help": "",
+        "internal": false,
+        "name": "PostPermissionsV2UserCommunicationPermissions",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "PermissionsUserCommunicationPermissions",
+            "type": "vector"
+        },
+        "subscribable": false,
+        "tags": [
+            "permissions"
+        ],
+        "threadSafe": false
+    },
     "POST /platform-social/v1/debug/mock-block-list": {
         "arguments": [
             {
@@ -18772,6 +18801,35 @@
         "tags": [
             "Plugins",
             "Plugin riot-client-lifecycle"
+        ],
+        "threadSafe": false
+    },
+    "POST /riot-friends/v1/friends": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "chatFriends",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RiotFriendsChatFriends"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Update the Riot friends list stored in the plugin",
+        "help": "",
+        "internal": false,
+        "name": "PostRiotFriendsV1Friends",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "riot-friends"
         ],
         "threadSafe": false
     },
@@ -23832,64 +23890,6 @@
         "subscribable": false,
         "tags": [
             "platform-login"
-        ],
-        "threadSafe": false
-    },
-    "PUT /play-restrictions/v1/debug/caller-id/mock-id": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "callerId",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "PlayRestrictionsPluginCallerId_MockCallerId"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Sets the caller ID to use when calling this plugin from Swagger",
-        "help": "Sets the `productId` and `patchlineId` to pass to APIs in this plugin during future calls from Swagger.\n\nUse this functionality to test APIs in this plugin with Swagger, as if they were being called from another product.",
-        "internal": false,
-        "name": "PutPlayRestrictionsV1DebugCallerIdMockId",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "play-restrictions"
-        ],
-        "threadSafe": false
-    },
-    "PUT /play-restrictions/v1/restrictions": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "data",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "PlayRestrictionsPlayRestrictionV1Data"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Set the play restrictions for the SDK",
-        "help": "\n**Description**\nAllows game teams to configure how various services pertaining to play restrictions (being able to communicate with other players in-game) are configured.\n\n**Argument**\n* `data`: A struct containing booleans for each service that comes under play-restrictions.\n",
-        "internal": false,
-        "name": "PutPlayRestrictionsV1Restrictions",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "play-restrictions"
         ],
         "threadSafe": false
     },
