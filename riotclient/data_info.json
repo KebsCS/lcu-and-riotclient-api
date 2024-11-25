@@ -1648,6 +1648,25 @@
         ],
         "threadSafe": false
     },
+    "DELETE /platform-ui/v1/riot-id-change": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Force close Riot ID Change UI",
+        "help": "",
+        "internal": false,
+        "name": "DeletePlatformUiV1RiotIdChange",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-ui"
+        ],
+        "threadSafe": false
+    },
     "DELETE /platform-ui/v1/vng-edit-profile": {
         "arguments": [],
         "deprecated": false,
@@ -4872,6 +4891,25 @@
         ],
         "threadSafe": false
     },
+    "GET /client-config/v1/public-config-loaded": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns true if the public config has been loaded from the service or the cache.",
+        "help": "",
+        "internal": false,
+        "name": "GetClientConfigV1PublicConfigLoaded",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "bool"
+        },
+        "subscribable": false,
+        "tags": [
+            "client-config"
+        ],
+        "threadSafe": false
+    },
     "GET /client-config/v1/status/{type}": {
         "arguments": [
             {
@@ -5627,7 +5665,7 @@
         "name": "GetGaRestrictionV1DebugPenaltyNotificationsData",
         "nameSpace": "",
         "returns": {
-            "elementType": "GaRestrictionCachedPenaltyNotificationDtoV1",
+            "elementType": "GaRestrictionCachedPenaltyNotificationDtoV2",
             "type": "map"
         },
         "subscribable": false,
@@ -5660,7 +5698,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Provides a list of penalty notifications to show to the player for the callerId.",
-        "help": "",
+        "help": "Deprecating V1 endpoint in favor of V2. Please use the /ga-restriction/v2/penalty-notifications endpoint going forward.",
         "internal": false,
         "name": "GetGaRestrictionV1PenaltyNotifications",
         "nameSpace": "",
@@ -5679,12 +5717,50 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Provides a list of unread penalty notifications to show to the player for the callerId.",
-        "help": "",
+        "help": "Deprecating V1 endpoint in favor of V2. Please use the /ga-restriction/v2/unread-penalty-notifications endpoint going forward.",
         "internal": false,
         "name": "GetGaRestrictionV1UnreadPenaltyNotifications",
         "nameSpace": "",
         "returns": {
             "elementType": "GaRestrictionPenaltyNotification",
+            "type": "map"
+        },
+        "subscribable": false,
+        "tags": [
+            "ga-restriction"
+        ],
+        "threadSafe": false
+    },
+    "GET /ga-restriction/v2/penalty-notifications": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Provides a list of penalty notifications that can include evidence from multiple transgressions to show to the player for the callerId.",
+        "help": "",
+        "internal": false,
+        "name": "GetGaRestrictionV2PenaltyNotifications",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "GaRestrictionPenaltyNotificationV2",
+            "type": "map"
+        },
+        "subscribable": false,
+        "tags": [
+            "ga-restriction"
+        ],
+        "threadSafe": false
+    },
+    "GET /ga-restriction/v2/unread-penalty-notifications": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Provides a list of unread penalty notifications that can include evidence from multiple transgressions to show to the player for the callerId.",
+        "help": "",
+        "internal": false,
+        "name": "GetGaRestrictionV2UnreadPenaltyNotifications",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "GaRestrictionPenaltyNotificationV2",
             "type": "map"
         },
         "subscribable": false,
@@ -6823,6 +6899,25 @@
         ],
         "threadSafe": false
     },
+    "GET /platform-notifications/v1/broadcast": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Subscription-only API. Subscribers will receive a broadcast message. All GET calls will return success and an empty broadcast.",
+        "help": "",
+        "internal": false,
+        "name": "GetPlatformNotificationsV1Broadcast",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlatformNotificationsBroadcast"
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-notifications"
+        ],
+        "threadSafe": false
+    },
     "GET /platform-social/v1/block-list": {
         "arguments": [],
         "deprecated": false,
@@ -7072,6 +7167,25 @@
         "returns": {
             "elementType": "",
             "type": "PlatformUiFREStatus"
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-ui"
+        ],
+        "threadSafe": false
+    },
+    "GET /platform-ui/v1/riot-id-change": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Subscribe to get RiotID Change UI availability and visibility status",
+        "help": "",
+        "internal": false,
+        "name": "GetPlatformUiV1RiotIdChange",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlatformUiPlatformUIRiotIDStatus"
         },
         "subscribable": false,
         "tags": [
@@ -10477,7 +10591,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Returns raw JSON service status information for a specific game service cluster",
-        "help": "",
+        "help": "This endpoint has been deprecated and can block. Please use the async version /riot-status/v1/products/async/{productId}/patchlines/{patchlineId}/deployments/{deployment}",
         "internal": false,
         "name": "GetRiotStatusV1ProductsByProductIdPatchlinesByPatchlineIdDeploymentsByDeployment",
         "nameSpace": "",
@@ -15235,6 +15349,64 @@
         ],
         "threadSafe": false
     },
+    "POST /chatbox/v1/chatboxes/{id}/no-channel": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "",
+        "help": "",
+        "internal": false,
+        "name": "PostChatboxV1ChatboxesByIdNoChannel",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "chatbox"
+        ],
+        "threadSafe": false
+    },
+    "POST /chatbox/v1/global-broadcast": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "chatboxMessage",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "ChatboxChatboxMessagePost"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Sends a broadcast for all chatboxes and default channels",
+        "help": "",
+        "internal": false,
+        "name": "PostChatboxV1GlobalBroadcast",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "chatbox"
+        ],
+        "threadSafe": false
+    },
     "POST /commerce/v1/store/purchase": {
         "arguments": [
             {
@@ -16655,6 +16827,35 @@
         ],
         "threadSafe": false
     },
+    "POST /platform-notifications/v1/broadcast": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "message",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlatformNotificationsBroadcastRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Send a broadcast message to all subscribers.",
+        "help": "",
+        "internal": false,
+        "name": "PostPlatformNotificationsV1Broadcast",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-notifications"
+        ],
+        "threadSafe": false
+    },
     "POST /platform-social/v1/debug/mock-block-list": {
         "arguments": [
             {
@@ -16779,6 +16980,25 @@
         "help": "",
         "internal": false,
         "name": "PostPlatformUiV1FreTelemetry",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-ui"
+        ],
+        "threadSafe": false
+    },
+    "POST /platform-ui/v1/riot-id-change": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Trigger Riot ID Change UI",
+        "help": "",
+        "internal": false,
+        "name": "PostPlatformUiV1RiotIdChange",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -19829,7 +20049,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Retrieves device ID configuration.",
-        "help": "Provides client-side settings for collecting device ID information, including a session id, collector server and merchant id. The session ID is programmatically generated by the plugin at startup.\n\nThis endpoint is not available until the OpenID configuration is retrieved.",
+        "help": "Provides client-side settings for collecting device ID information, including a session id, collector server and merchant id. The session ID is programmatically generated by the plugin at startup.\n\nThis endpoint is not available until the OpenID configuration is retrieved.\n\nEndpoint to be deleted March 2025; This endpoint has no function anymore.",
         "internal": false,
         "name": "PostRsoAuthV1DeviceId",
         "nameSpace": "",
@@ -23220,7 +23440,7 @@
                 "optional": false,
                 "type": {
                     "elementType": "",
-                    "type": "GaRestrictionCachedPenaltyNotificationDtoV1"
+                    "type": "GaRestrictionCachedPenaltyNotificationDtoV2"
                 }
             }
         ],
@@ -23285,9 +23505,38 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Marks a penalty notification as read. Read messages will still be accessible, but they don't need to be immediately displayed to the player.",
-        "help": "",
+        "help": "Deprecating V1 endpoint in favor of V2. Please use the /ga-restriction/v2/penalty-notifications/{messageId} endpoint going forward.",
         "internal": false,
         "name": "PutGaRestrictionV1PenaltyNotificationsByMessageId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "bool"
+        },
+        "subscribable": false,
+        "tags": [
+            "ga-restriction"
+        ],
+        "threadSafe": false
+    },
+    "PUT /ga-restriction/v2/penalty-notifications/{messageId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "messageId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Marks a penalty notification as read. Read messages will still be accessible, but they don't need to be immediately displayed to the player.",
+        "help": "",
+        "internal": false,
+        "name": "PutGaRestrictionV2PenaltyNotificationsByMessageId",
         "nameSpace": "",
         "returns": {
             "elementType": "",

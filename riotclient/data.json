@@ -149,9 +149,11 @@
         "GET /chatbox/v1/chatboxes/{id}/messages/whispers/{puuid}",
         "GET /chatbox/v1/chatboxes/{id}/messages/whispers/{puuid}/patch",
         "POST /chatbox/v1/chatboxes/{id}/messages/whispers/{puuid}/read",
+        "POST /chatbox/v1/chatboxes/{id}/no-channel",
         "GET /chatbox/v1/chatboxes/{id}/participants",
         "GET /chatbox/v1/chatboxes/{id}/participants/whispers",
         "GET /chatbox/v1/friends",
+        "POST /chatbox/v1/global-broadcast",
         "GET /chatbox/v1/ready",
         "GET /chatbox/v1/status",
         "POST /chatbox/v1/{id}/whispers/{puuid}/messages"
@@ -163,6 +165,7 @@
         "GET /client-config/v1/config/{name}",
         "GET /client-config/v1/first-party-environment",
         "PUT /client-config/v1/first-party-environment",
+        "GET /client-config/v1/public-config-loaded",
         "PUT /client-config/v1/refresh-config-status",
         "PUT /client-config/v1/sessions",
         "GET /client-config/v1/status/{type}",
@@ -255,7 +258,10 @@
         "PUT /ga-restriction/v1/debug/time/{millisSinceEpoch}",
         "GET /ga-restriction/v1/penalty-notifications",
         "PUT /ga-restriction/v1/penalty-notifications/{messageId}",
-        "GET /ga-restriction/v1/unread-penalty-notifications"
+        "GET /ga-restriction/v1/unread-penalty-notifications",
+        "GET /ga-restriction/v2/penalty-notifications",
+        "PUT /ga-restriction/v2/penalty-notifications/{messageId}",
+        "GET /ga-restriction/v2/unread-penalty-notifications"
     ],
     "ga-warning": [
         "DELETE /ga-warning/v1/debug/caller-id/mock-id",
@@ -418,6 +424,10 @@
         "DELETE /platform-login/v1/persistence",
         "GET /platform-login/v1/status"
     ],
+    "platform-notifications": [
+        "GET /platform-notifications/v1/broadcast",
+        "POST /platform-notifications/v1/broadcast"
+    ],
     "platform-social": [
         "GET /platform-social/v1/block-list",
         "GET /platform-social/v1/block-list/patch",
@@ -439,6 +449,9 @@
         "GET /platform-ui/v1/fre",
         "POST /platform-ui/v1/fre",
         "POST /platform-ui/v1/fre/telemetry",
+        "DELETE /platform-ui/v1/riot-id-change",
+        "GET /platform-ui/v1/riot-id-change",
+        "POST /platform-ui/v1/riot-id-change",
         "GET /platform-ui/v1/sdk-instance-id",
         "GET /platform-ui/v1/status",
         "DELETE /platform-ui/v1/vng-edit-profile",

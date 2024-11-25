@@ -109,6 +109,13 @@
     "Plugin lol-active-boosts": [
         "GET /lol-active-boosts/v1/active-boosts"
     ],
+    "Plugin lol-activity-center": [
+        "POST /lol-activity-center/v1/clear-cache",
+        "GET /lol-activity-center/v1/config-data",
+        "GET /lol-activity-center/v1/content/client-nav",
+        "GET /lol-activity-center/v1/content/{pageName}",
+        "GET /lol-activity-center/v1/overrides"
+    ],
     "Plugin lol-anti-addiction": [
         "GET /anti-addiction/v1/policies/{policyType}/anti-addiction-state",
         "GET /lol-anti-addiction/v1/anti-addiction-token"
@@ -136,7 +143,7 @@
         "GET /lol-challenges/v1/level-points",
         "GET /lol-challenges/v1/my-updated-challenges/{gameId}",
         "GET /lol-challenges/v1/penalty",
-        "POST /lol-challenges/v1/rsbot-challenges",
+        "POST /lol-challenges/v1/rsbot-challenges/{gameId}",
         "GET /lol-challenges/v1/seasons",
         "GET /lol-challenges/v1/summary-player-data/local-player",
         "GET /lol-challenges/v1/summary-player-data/player/{puuid}",
@@ -572,6 +579,7 @@
         "PUT /lol-highlights/v1/highlights/{id}"
     ],
     "Plugin lol-honor-v2": [
+        "POST /lol-honor-v2/v1/ack-honor-notification/{mailId}",
         "GET /lol-honor-v2/v1/ballot",
         "GET /lol-honor-v2/v1/config",
         "POST /lol-honor-v2/v1/honor-player",
@@ -579,6 +587,7 @@
         "POST /lol-honor-v2/v1/late-recognition/ack",
         "GET /lol-honor-v2/v1/latest-eligible-game",
         "GET /lol-honor-v2/v1/level-change",
+        "GET /lol-honor-v2/v1/level-change-notifications",
         "POST /lol-honor-v2/v1/level-change/ack",
         "GET /lol-honor-v2/v1/mutual-honor",
         "POST /lol-honor-v2/v1/mutual-honor/ack",
@@ -925,6 +934,10 @@
         "PATCH /lol-npe-tutorial-path/v1/tutorials/init",
         "PUT /lol-npe-tutorial-path/v1/tutorials/{tutorialId}/view"
     ],
+    "Plugin lol-objectives": [
+        "GET /lol-objectives/v1/missions-by-tag",
+        "GET /lol-objectives/v1/objectives/{gameType}"
+    ],
     "Plugin lol-patch": [
         "GET /lol-patch/v1/checking-enabled",
         "GET /lol-patch/v1/environment",
@@ -1138,6 +1151,7 @@
         "POST /lol-replays/v2/metadata/{gameId}/create"
     ],
     "Plugin lol-rewards": [
+        "POST /lol-rewards/v1/celebrations/fsc",
         "GET /lol-rewards/v1/grants",
         "PATCH /lol-rewards/v1/grants/view",
         "POST /lol-rewards/v1/grants/{grantId}/select",
@@ -1172,7 +1186,8 @@
         "POST /lol-seasons/v1/allSeasons/product/{product}",
         "GET /lol-seasons/v1/season/LOL/current-split-seasons",
         "GET /lol-seasons/v1/season/product/{product}",
-        "GET /lol-seasons/v1/season/recent-final-split"
+        "GET /lol-seasons/v1/season/recent-final-split",
+        "GET /lol-seasons/v1/season/should-ac-refresh"
     ],
     "Plugin lol-service-status": [
         "GET /lol-service-status/v1/lcu-status",
@@ -1349,6 +1364,8 @@
         "GET /lol-tft-team-planner/v1/config",
         "GET /lol-tft-team-planner/v1/ftue/hasViewed",
         "PATCH /lol-tft-team-planner/v1/ftue/hasViewed",
+        "GET /lol-tft-team-planner/v1/previous-context",
+        "PUT /lol-tft-team-planner/v1/previous-context",
         "PATCH /lol-tft-team-planner/v1/set",
         "PATCH /lol-tft-team-planner/v1/set/lastViewed",
         "GET /lol-tft-team-planner/v1/sets/dirty",
@@ -1365,11 +1382,12 @@
         "DELETE /lol-tft-team-planner/v1/sets/{set}/teams/{team}/champions/{championId}/{index}",
         "POST /lol-tft-team-planner/v1/sets/{set}/teams/{team}/champions/{championId}/{index}",
         "POST /lol-tft-team-planner/v1/sets/{set}/teams/{team}/import",
+        "POST /lol-tft-team-planner/v1/sets/{set}/teams/{team}/lastView",
         "PATCH /lol-tft-team-planner/v1/sets/{set}/teams/{team}/{name}",
         "GET /lol-tft-team-planner/v1/sort-option",
         "PATCH /lol-tft-team-planner/v1/sort-option",
         "PUT /lol-tft-team-planner/v1/team",
-        "POST /lol-tft-team-planner/v1/team-code/clipboard",
+        "POST /lol-tft-team-planner/v1/team-code/clipboard/{set}",
         "DELETE /lol-tft-team-planner/v1/team/champions",
         "PATCH /lol-tft-team-planner/v1/team/champions",
         "DELETE /lol-tft-team-planner/v1/team/champions/{index}",
@@ -1529,6 +1547,11 @@
         "POST /lol-account-verification/v1/sendActivationPin",
         "POST /lol-account-verification/v1/sendDeactivationPin",
         "GET /lol-active-boosts/v1/active-boosts",
+        "POST /lol-activity-center/v1/clear-cache",
+        "GET /lol-activity-center/v1/config-data",
+        "GET /lol-activity-center/v1/content/client-nav",
+        "GET /lol-activity-center/v1/content/{pageName}",
+        "GET /lol-activity-center/v1/overrides",
         "GET /lol-anti-addiction/v1/anti-addiction-token",
         "GET /lol-banners/v1/current-summoner/flags",
         "GET /lol-banners/v1/current-summoner/flags/equipped",
@@ -1548,7 +1571,7 @@
         "GET /lol-challenges/v1/level-points",
         "GET /lol-challenges/v1/my-updated-challenges/{gameId}",
         "GET /lol-challenges/v1/penalty",
-        "POST /lol-challenges/v1/rsbot-challenges",
+        "POST /lol-challenges/v1/rsbot-challenges/{gameId}",
         "GET /lol-challenges/v1/seasons",
         "GET /lol-challenges/v1/summary-player-data/local-player",
         "GET /lol-challenges/v1/summary-player-data/player/{puuid}",
@@ -1939,6 +1962,7 @@
         "PUT /lol-highlights/v1/highlights/{id}",
         "GET /lol-honeyfruit/v1/vng-publisher-settings",
         "POST /lol-honeyfruit/v1/vng-publisher-settings",
+        "POST /lol-honor-v2/v1/ack-honor-notification/{mailId}",
         "GET /lol-honor-v2/v1/ballot",
         "GET /lol-honor-v2/v1/config",
         "POST /lol-honor-v2/v1/honor-player",
@@ -1946,6 +1970,7 @@
         "POST /lol-honor-v2/v1/late-recognition/ack",
         "GET /lol-honor-v2/v1/latest-eligible-game",
         "GET /lol-honor-v2/v1/level-change",
+        "GET /lol-honor-v2/v1/level-change-notifications",
         "POST /lol-honor-v2/v1/level-change/ack",
         "GET /lol-honor-v2/v1/mutual-honor",
         "POST /lol-honor-v2/v1/mutual-honor/ack",
@@ -2240,6 +2265,8 @@
         "GET /lol-npe-tutorial-path/v1/tutorials",
         "PATCH /lol-npe-tutorial-path/v1/tutorials/init",
         "PUT /lol-npe-tutorial-path/v1/tutorials/{tutorialId}/view",
+        "GET /lol-objectives/v1/missions-by-tag",
+        "GET /lol-objectives/v1/objectives/{gameType}",
         "GET /lol-patch/v1/checking-enabled",
         "GET /lol-patch/v1/environment",
         "PUT /lol-patch/v1/game-patch-url",
@@ -2416,6 +2443,7 @@
         "POST /lol-replays/v1/rofls/{gameId}/download/graceful",
         "POST /lol-replays/v1/rofls/{gameId}/watch",
         "POST /lol-replays/v2/metadata/{gameId}/create",
+        "POST /lol-rewards/v1/celebrations/fsc",
         "GET /lol-rewards/v1/grants",
         "PATCH /lol-rewards/v1/grants/view",
         "POST /lol-rewards/v1/grants/{grantId}/select",
@@ -2445,6 +2473,7 @@
         "GET /lol-seasons/v1/season/LOL/current-split-seasons",
         "GET /lol-seasons/v1/season/product/{product}",
         "GET /lol-seasons/v1/season/recent-final-split",
+        "GET /lol-seasons/v1/season/should-ac-refresh",
         "GET /lol-service-status/v1/lcu-status",
         "GET /lol-service-status/v1/ticker-messages",
         "GET /lol-settings/v1/account/didreset",
@@ -2577,6 +2606,8 @@
         "GET /lol-tft-team-planner/v1/config",
         "GET /lol-tft-team-planner/v1/ftue/hasViewed",
         "PATCH /lol-tft-team-planner/v1/ftue/hasViewed",
+        "GET /lol-tft-team-planner/v1/previous-context",
+        "PUT /lol-tft-team-planner/v1/previous-context",
         "PATCH /lol-tft-team-planner/v1/set",
         "PATCH /lol-tft-team-planner/v1/set/lastViewed",
         "GET /lol-tft-team-planner/v1/sets/dirty",
@@ -2593,11 +2624,12 @@
         "DELETE /lol-tft-team-planner/v1/sets/{set}/teams/{team}/champions/{championId}/{index}",
         "POST /lol-tft-team-planner/v1/sets/{set}/teams/{team}/champions/{championId}/{index}",
         "POST /lol-tft-team-planner/v1/sets/{set}/teams/{team}/import",
+        "POST /lol-tft-team-planner/v1/sets/{set}/teams/{team}/lastView",
         "PATCH /lol-tft-team-planner/v1/sets/{set}/teams/{team}/{name}",
         "GET /lol-tft-team-planner/v1/sort-option",
         "PATCH /lol-tft-team-planner/v1/sort-option",
         "PUT /lol-tft-team-planner/v1/team",
-        "POST /lol-tft-team-planner/v1/team-code/clipboard",
+        "POST /lol-tft-team-planner/v1/team-code/clipboard/{set}",
         "DELETE /lol-tft-team-planner/v1/team/champions",
         "PATCH /lol-tft-team-planner/v1/team/champions",
         "DELETE /lol-tft-team-planner/v1/team/champions/{index}",
