@@ -3,117 +3,99 @@
     <head>
         <meta charset="UTF-8" />
         <title>LCU Docs</title>
-        <link rel="stylesheet" type="text/css" href="../style.css" />
+        <link rel="stylesheet" type="text/css" href="https://kebs.dev/lcuapi/style.css" />
     </head>
     <body>
         <div id="output"></div>
 
         <script>
-            let html = "";
+            Promise.all([
+                fetch("https://kebs.dev/lcuapi/proxy.php?url=lcu/data.json"),
+                fetch("https://kebs.dev/lcuapi/proxy.php?url=lcu/data_info.json")
+            ])
+            .then(async ([aa, bb]) => {
+                const data = await aa.json();
+                const dataInfo = await bb.json();
+                const content = `
+                <div class="container">
+                    <h1>League of Legends LCU Docs</h1>
+                    <p>Client Version: 14.23</p>
+                    <a href="https://github.com/KebsCS/lcu-and-riotclient-api">GitHub repository</a>
+                    | <a href="https://lcu.kebs.dev/swagger.html">Original Swagger</a>
 
-            Promise.all([fetch("../proxy.php?url=lcu/data.json"), fetch("../proxy.php?url=lcu/data_info.json")])
-                .then(async ([aa, bb]) => {
-                    const data = await aa.json();
-                    const data_info = await bb.json();
-                    html += '<div class="container">';
+                    ${Object.keys(data).map(key => `
+                        <h3 id="tag-${key}" class="swagger-summary-tag">Tag: ${key}</h3>
+                        <table class="table table-bordered table-condensed swagger--summary">
+                            <thead>
+                                <tr>
+                                    <th>Operation</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${data[key].map(value => `
+                                    <tr>
+                                        <td><a href="#operation--${value}">${value}</a></td>
+                                        <td><p>${dataInfo[value]?.description || ''}</p></td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    `).join('')}
 
-                    html += `<h1>League of Legends LCU Docs</h1>`;
-                    html += `<p>Client Version: 14.23</p>`;
-                    html += `<a href="https://github.com/KebsCS/lcu-and-riotclient-api">GitHub repository</a>`;
-                    html += ` | <a href="https://lcu.kebs.dev/swagger.html">Original Swagger</a>`;
-
-                    for (const key in data) {
-                        html += `<h3 id="tag-${key}" class="swagger-summary-tag">Tag: ${key}</h3>`;
-                        html += `<table class="table table-bordered table-condensed swagger--summary">`;
-                        html += `<thead>`;
-                        html += `<tr>`;
-                        html += `<th>Operation</th>`;
-                        html += `<th>Description</th>`;
-                        html += `</tr>`;
-                        html += `</thead>`;
-                        html += `<tbody>`;
-
-                        for (const value of data[key]) {
-                            html += `<tr>`;
-
-                            html += `<td><a href="#operation--${value}">${value}</a></td>`;
-
-                            html += `<td><p>${data_info[value]["description"]}</p></td>`;
-
-                            html += `</tr>`;
-                        }
-
-                        html += `</tbody>`;
-                        html += `</table>`;
-                    }
-
-                    for (const key in data_info) {
-                        if (key == "parameters") {
-                            continue;
-                        }
-
+                    ${Object.keys(dataInfo).filter(key => key !== "parameters").map(key => {
                         const method = key.split(" ")[0].toLowerCase();
-                        html += `<div id="operation--${key}" class="swagger--panel-operation-${method} panel">`;
-                        html += `<div class="panel-heading">`;
-                        html += `<h3 class="panel-title"><strong>${key}</strong></h3>`;
-                        html += ` Tags: `;
-                        for (const tag of data_info[key]["tags"]) {
-                            html += `<a href="#tag-${tag}">${tag}</a>`;
-                            html += `, `;
-                        }
-                        html += `</div>`;
-
-                        html += `<div class="panel-body">`;
-
-                        html += `<section class="sw-operation-description">`;
-                        html += `<p>${data_info[key]["description"]}</p>`;
-                        html += `</section>`;
-
-                        if (data_info[key]["arguments"].length > 0) {
-                            html += `<section class="sw-request-params">`;
-                            html += `<table class="table">`;
-                            html += `<thead>`;
-                            html += `<tr>`;
-                            html += `<th> Name </th>`;
-                            html += `<th> Description </th>`;
-                            html += `<th> Type </th>`;
-                            html += `<th> Required </th>`;
-                            html += `</tr>`;
-                            html += `</thead>`;
-                            html += `<tbody>`;
-                            for (const arg of data_info[key]["arguments"]) {
-                                html += `<tr>`;
-                                html += `<td>${arg["name"]} </td>`;
-                                html += `<td> ${arg["description"]} </td>`;
-                                html += `<td> ${arg["type"]["type"]} </td>`;
-                                html += `<td> ${!arg["optional"]} </td>`;
-                                html += `</tr>`;
-                                if (data_info["parameters"].hasOwnProperty(arg["type"]["type"])) {
-                                    if (data_info["parameters"][arg["type"]["type"]]["fields"].length > 0) {
-                                        for (const param of data_info["parameters"][arg["type"]["type"]]["fields"]) {
-                                            html += `<tr>`;
-                                            html += `<td>${param["name"]} </td>`;
-                                            //html += `<td> ${param["description"]} </td>`;
-                                            html += `<td>${arg["type"]["type"]}</td>`
-                                            html += `<td> ${param["type"]["type"]} </td>`;
-                                            html += `<td> ${!param["optional"]} </td>`;
-                                            html += `</tr>`;
-                                        }
-                                    }
-                                }
-                            }
-                            html += `</tbody>`;
-                            html += `</table>`;
-
-                            html += `</section>`;
-                        }
-                        html += `</div>`;
-                        html += `</div>`;
-                    }
-                    html += "</div>";
-                    document.getElementById("output").innerHTML = html;
-                })
-                .catch((error) => console.error(error));
+                        return `
+                            <div id="operation--${key}" class="swagger--panel-operation-${method} panel">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><strong>${key}</strong></h3>
+                                    Tags: ${dataInfo[key].tags.map(tag => `<a href="#tag-${tag}">${tag}</a>`).join(', ')}
+                                </div>
+                                <div class="panel-body">
+                                    <section class="sw-operation-description">
+                                        <p>${dataInfo[key].description}</p>
+                                    </section>
+                                    ${dataInfo[key].arguments.length > 0 ? `
+                                        <section class="sw-request-params">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>Description</th>
+                                                        <th>Type</th>
+                                                        <th>Required</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    ${dataInfo[key].arguments.map(arg => `
+                                                        <tr>
+                                                            <td>${arg.name}</td>
+                                                            <td>${arg.description}</td>
+                                                            <td>${arg.type.type}</td>
+                                                            <td>${!arg.optional}</td>
+                                                        </tr>
+                                                        ${dataInfo.parameters?.[arg.type.type]?.fields?.map(param => `
+                                                            <tr>
+                                                                <td>${param.name}</td>
+                                                                <td>${arg.type.type}</td>
+                                                                <td>${param.type.type}</td>
+                                                                <td>${!param.optional}</td>
+                                                            </tr>
+                                                        `).join('') || ''}
+                                                    `).join('')}
+                                                </tbody>
+                                            </table>
+                                        </section>
+                                    ` : ''}
+                                </div>
+                            </div>
+                        `;
+                    }).join('')}
+                </div>
+                `;
+                document.getElementById("output").innerHTML = content;
+            })
+            .catch((error) => console.error(error));
         </script>
     </body>
 </html>

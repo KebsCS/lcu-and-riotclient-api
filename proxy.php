@@ -1,23 +1,13 @@
 <?php
-$url = $_GET['url'];
-$realurl = "";
-switch ($url) {
-    case 'lcu/data.json':
-        $realurl ='lcu/data.json';
-        break;
-    case 'lcu/data_info.json':
-        $realurl ='lcu/data_info.json';
-        break;
-    case 'riotclient/data.json':
-        $realurl ='riotclient/data.json';
-        break;
-    case 'riotclient/data_info.json':
-        $realurl ='riotclient/data_info.json';
-        break;
-    
-}
-$response = file_get_contents($realurl);
+$url = $_GET['url'] ?? null;
+$allowedPaths = [
+    'lcu/data.json' => 'lcu/data.json',
+    'lcu/data_info.json' => 'lcu/data_info.json',
+    'riotclient/data.json' => 'riotclient/data.json',
+    'riotclient/data_info.json' => 'riotclient/data_info.json',
+];
+$realUrl = $allowedPaths[$url];
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
-echo $response;
+echo file_get_contents($realUrl);
 ?>
