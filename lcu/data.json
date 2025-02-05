@@ -907,7 +907,9 @@
         "GET /lol-marketing-preferences/v1/ready"
     ],
     "Plugin lol-marketplace": [
+        "GET /lol-marketplace/v1/products/{product}/purchases",
         "POST /lol-marketplace/v1/products/{product}/purchases",
+        "POST /lol-marketplace/v1/products/{product}/refunds",
         "GET /lol-marketplace/v1/products/{product}/stores",
         "GET /lol-marketplace/v1/purchases/{purchaseId}"
     ],
@@ -955,6 +957,7 @@
         "POST /lol-nacho/v1/mock-roll-rewards",
         "GET /lol-nacho/v1/pity-counter",
         "POST /lol-nacho/v1/purchase/blessing-token",
+        "POST /lol-nacho/v1/purchase/catalog-item",
         "POST /lol-nacho/v1/purchase/roll",
         "GET /lol-nacho/v1/purchases/{purchaseId}",
         "GET /lol-nacho/v1/roll-purchase-enabled",
@@ -1477,10 +1480,12 @@
         "GET /lol-trophies/v1/players/{puuid}/trophies/profile"
     ],
     "Plugin lol-vanguard": [
+        "PUT /lol-vanguard/v1/ack-notification/{mailId}",
         "GET /lol-vanguard/v1/config/days-to-reshow-modal",
         "GET /lol-vanguard/v1/config/enabled",
         "GET /lol-vanguard/v1/is-playing-in-pcb",
         "GET /lol-vanguard/v1/machine-specs",
+        "GET /lol-vanguard/v1/notification",
         "GET /lol-vanguard/v1/session",
         "POST /lol-vanguard/v1/telemetry/system-check"
     ],
@@ -2301,7 +2306,9 @@
         "GET /lol-marketing-preferences/v1/partition/{partitionKey}",
         "POST /lol-marketing-preferences/v1/partition/{partitionKey}",
         "GET /lol-marketing-preferences/v1/ready",
+        "GET /lol-marketplace/v1/products/{product}/purchases",
         "POST /lol-marketplace/v1/products/{product}/purchases",
+        "POST /lol-marketplace/v1/products/{product}/refunds",
         "GET /lol-marketplace/v1/products/{product}/stores",
         "GET /lol-marketplace/v1/purchases/{purchaseId}",
         "POST /lol-match-history/v1/acs-endpoint-override",
@@ -2341,6 +2348,7 @@
         "POST /lol-nacho/v1/mock-roll-rewards",
         "GET /lol-nacho/v1/pity-counter",
         "POST /lol-nacho/v1/purchase/blessing-token",
+        "POST /lol-nacho/v1/purchase/catalog-item",
         "POST /lol-nacho/v1/purchase/roll",
         "GET /lol-nacho/v1/purchases/{purchaseId}",
         "GET /lol-nacho/v1/roll-purchase-enabled",
@@ -2770,10 +2778,12 @@
         "PUT /lol-tft/v1/tft_experiment_bucket",
         "GET /lol-trophies/v1/current-summoner/trophies/profile",
         "GET /lol-trophies/v1/players/{puuid}/trophies/profile",
+        "PUT /lol-vanguard/v1/ack-notification/{mailId}",
         "GET /lol-vanguard/v1/config/days-to-reshow-modal",
         "GET /lol-vanguard/v1/config/enabled",
         "GET /lol-vanguard/v1/is-playing-in-pcb",
         "GET /lol-vanguard/v1/machine-specs",
+        "GET /lol-vanguard/v1/notification",
         "GET /lol-vanguard/v1/session",
         "POST /lol-vanguard/v1/telemetry/system-check",
         "GET /lol-yourshop/v1/has-permissions",
