@@ -3904,10 +3904,6 @@
 				{
 					"type" : "string"
 				},
-				"idToken" : 
-				{
-					"type" : "string"
-				},
 				"summonerToken" : 
 				{
 					"type" : "string"
@@ -15927,7 +15923,8 @@
 			[
 				"None",
 				"Warning",
-				"Penalty"
+				"Penalty",
+				"ConnectionWarning"
 			],
 			"type" : "string"
 		},
@@ -24935,6 +24932,10 @@
 				"localizedTitle" : 
 				{
 					"type" : "string"
+				},
+				"objectiveBannerImage" : 
+				{
+					"type" : "string"
 				}
 			},
 			"type" : "object"
@@ -28491,6 +28492,10 @@
 				"resourceOperation" : 
 				{
 					"type" : "string"
+				},
+				"tiers" : 
+				{
+					"type" : "string"
 				}
 			},
 			"type" : "object"
@@ -31954,6 +31959,17 @@
 			},
 			"type" : "object"
 		},
+		"LolHeartbeatLcdsConnection" : 
+		{
+			"properties" : 
+			{
+				"stableConnection" : 
+				{
+					"type" : "boolean"
+				}
+			},
+			"type" : "object"
+		},
 		"LolHeartbeatLoginSession" : 
 		{
 			"properties" : 
@@ -34053,6 +34069,10 @@
 					"type" : "string"
 				},
 				"resourceOperation" : 
+				{
+					"type" : "string"
+				},
+				"tiers" : 
 				{
 					"type" : "string"
 				}
@@ -36273,26 +36293,6 @@
 			},
 			"type" : "object"
 		},
-		"LolLobbyCustomGameSettingsDto" : 
-		{
-			"properties" : 
-			{
-				"gameId" : 
-				{
-					"format" : "int64",
-					"type" : "integer"
-				},
-				"lobbyName" : 
-				{
-					"type" : "string"
-				},
-				"lobbyPassword" : 
-				{
-					"type" : "string"
-				}
-			},
-			"type" : "object"
-		},
 		"LolLobbyCustomJoinOptionsDto" : 
 		{
 			"properties" : 
@@ -36568,17 +36568,9 @@
 				{
 					"type" : "string"
 				},
-				"botDifficulty" : 
+				"customGameMode" : 
 				{
 					"type" : "string"
-				},
-				"customsSettings" : 
-				{
-					"$ref" : "#/definitions/LolLobbyCustomGameSettingsDto"
-				},
-				"displayLobbyInCustomGameBrowser" : 
-				{
-					"type" : "boolean"
 				},
 				"gameCustomization" : 
 				{
@@ -38103,10 +38095,6 @@
 				{
 					"type" : "string"
 				},
-				"quickplayPlayerState" : 
-				{
-					"type" : "string"
-				},
 				"ready" : 
 				{
 					"type" : "boolean"
@@ -38778,10 +38766,6 @@
 					"additionalProperties" : true,
 					"type" : "object"
 				},
-				"quickplayPlayerState" : 
-				{
-					"type" : "string"
-				},
 				"subteamData" : 
 				{
 					"$ref" : "#/definitions/LolLobbySubteamDataDto"
@@ -39196,6 +39180,18 @@
 				{
 					"type" : "string"
 				},
+				"gameSelectCategory" : 
+				{
+					"type" : "string"
+				},
+				"gameSelectModeGroup" : 
+				{
+					"type" : "string"
+				},
+				"gameSelectPriority" : 
+				{
+					"type" : "integer"
+				},
 				"gameTypeConfig" : 
 				{
 					"$ref" : "#/definitions/LolLobbyQueueGameTypeConfig"
@@ -39205,11 +39201,23 @@
 					"format" : "int32",
 					"type" : "integer"
 				},
+				"isCustom" : 
+				{
+					"type" : "boolean"
+				},
 				"isRanked" : 
 				{
 					"type" : "boolean"
 				},
+				"isSkillTreeQueue" : 
+				{
+					"type" : "boolean"
+				},
 				"isTeamBuilderManaged" : 
+				{
+					"type" : "boolean"
+				},
+				"isVisible" : 
 				{
 					"type" : "boolean"
 				},
@@ -39231,6 +39239,11 @@
 				"maxDivisionForPremadeSize2" : 
 				{
 					"type" : "string"
+				},
+				"maxLobbySpectatorCount" : 
+				{
+					"format" : "int32",
+					"type" : "integer"
 				},
 				"maxTierForPremadeSize2" : 
 				{
@@ -39256,6 +39269,11 @@
 					"type" : "string"
 				},
 				"numPlayersPerTeam" : 
+				{
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"numberOfTeamsInLobby" : 
 				{
 					"format" : "int32",
 					"type" : "integer"
@@ -39782,6 +39800,47 @@
 				"url" : 
 				{
 					"type" : "string"
+				}
+			},
+			"type" : "object"
+		},
+		"LolLobbySetGameModeRequestDto" : 
+		{
+			"properties" : 
+			{
+				"allowSpectators" : 
+				{
+					"type" : "string"
+				},
+				"displayLobbyInCustomGameBrowser" : 
+				{
+					"type" : "boolean"
+				},
+				"gameCustomization" : 
+				{
+					"additionalProperties" : 
+					{
+						"type" : "string"
+					},
+					"type" : "object"
+				},
+				"lobbyName" : 
+				{
+					"type" : "string"
+				},
+				"lobbyPassword" : 
+				{
+					"type" : "string"
+				},
+				"maxTeamSize" : 
+				{
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"queueId" : 
+				{
+					"format" : "int32",
+					"type" : "integer"
 				}
 			},
 			"type" : "object"
@@ -48751,6 +48810,17 @@
 			},
 			"type" : "object"
 		},
+		"LolMatchmakingLcdsConnection" : 
+		{
+			"properties" : 
+			{
+				"stableConnection" : 
+				{
+					"type" : "boolean"
+				}
+			},
+			"type" : "object"
+		},
 		"LolMatchmakingLobbyStatus" : 
 		{
 			"properties" : 
@@ -48865,7 +48935,8 @@
 			[
 				"None",
 				"Warning",
-				"Penalty"
+				"Penalty",
+				"ConnectionWarning"
 			],
 			"type" : "string"
 		},
@@ -50016,6 +50087,10 @@
 		{
 			"properties" : 
 			{
+				"capWalletCurrencyId" : 
+				{
+					"type" : "string"
+				},
 				"children" : 
 				{
 					"items" : 
@@ -50050,6 +50125,11 @@
 					"type" : "string"
 				},
 				"priority" : 
+				{
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"quantity" : 
 				{
 					"format" : "int32",
 					"type" : "integer"
@@ -50138,10 +50218,6 @@
 		{
 			"properties" : 
 			{
-				"activationTime" : 
-				{
-					"type" : "string"
-				},
 				"bannerBackgroundParallax" : 
 				{
 					"type" : "string"
@@ -50158,21 +50234,13 @@
 				{
 					"type" : "string"
 				},
-				"bannerCurrencyId" : 
+				"bannerCurrency" : 
 				{
-					"type" : "string"
+					"$ref" : "#/definitions/LolNachoGameDataNachoCurrency"
 				},
 				"bannerSkin" : 
 				{
 					"$ref" : "#/definitions/LolNachoGameDataBannerSkin"
-				},
-				"capCatalogEntryId" : 
-				{
-					"type" : "string"
-				},
-				"capCatalogStoreId" : 
-				{
-					"type" : "string"
 				},
 				"chaseCelebrationIntroWebmPath" : 
 				{
@@ -50190,10 +50258,6 @@
 				{
 					"format" : "int32",
 					"type" : "integer"
-				},
-				"deactivationTime" : 
-				{
-					"type" : "string"
 				},
 				"description" : 
 				{
@@ -50317,6 +50381,29 @@
 			},
 			"type" : "object"
 		},
+		"LolNachoGameDataNachoCurrency" : 
+		{
+			"properties" : 
+			{
+				"capCatalogEntryId" : 
+				{
+					"type" : "string"
+				},
+				"currencyId" : 
+				{
+					"type" : "string"
+				},
+				"id" : 
+				{
+					"type" : "string"
+				},
+				"name" : 
+				{
+					"type" : "string"
+				}
+			},
+			"type" : "object"
+		},
 		"LolNachoGameDataNachoReward" : 
 		{
 			"properties" : 
@@ -50397,6 +50484,10 @@
 		{
 			"properties" : 
 			{
+				"bannerId" : 
+				{
+					"type" : "string"
+				},
 				"catalogEntryId" : 
 				{
 					"type" : "string"
@@ -50436,9 +50527,9 @@
 				{
 					"type" : "string"
 				},
-				"bannerDeactivationDateTime" : 
+				"bannerCurrency" : 
 				{
-					"type" : "string"
+					"$ref" : "#/definitions/LolNachoGameDataNachoCurrency"
 				},
 				"bannerSkin" : 
 				{
@@ -50473,6 +50564,11 @@
 				{
 					"type" : "string"
 				},
+				"endDate" : 
+				{
+					"format" : "int64",
+					"type" : "integer"
+				},
 				"highlightPityThreshold" : 
 				{
 					"format" : "int32",
@@ -50490,6 +50586,10 @@
 				{
 					"type" : "string"
 				},
+				"pityCounter" : 
+				{
+					"$ref" : "#/definitions/LolNachoCapCounterData"
+				},
 				"rollVignette" : 
 				{
 					"$ref" : "#/definitions/LolNachoNachoVignette"
@@ -50501,6 +50601,11 @@
 				"rollVignetteSkinIntroWebmPath" : 
 				{
 					"type" : "string"
+				},
+				"startDate" : 
+				{
+					"format" : "int64",
+					"type" : "integer"
 				}
 			},
 			"type" : "object"
@@ -50724,6 +50829,17 @@
 			},
 			"type" : "object"
 		},
+		"LolNachoSanctumDisplayMetaData" : 
+		{
+			"properties" : 
+			{
+				"bannerId" : 
+				{
+					"type" : "string"
+				}
+			},
+			"type" : "object"
+		},
 		"LolNachoSetActiveStoresRequest" : 
 		{
 			"properties" : 
@@ -50845,6 +50961,25 @@
 						"$ref" : "#/definitions/LolNachoStoreDigest"
 					},
 					"type" : "array"
+				}
+			},
+			"type" : "object"
+		},
+		"LolNachoStoreSanctumDisplayMetaData" : 
+		{
+			"properties" : 
+			{
+				"endDate" : 
+				{
+					"type" : "string"
+				},
+				"sanctum" : 
+				{
+					"$ref" : "#/definitions/LolNachoSanctumDisplayMetaData"
+				},
+				"startDate" : 
+				{
+					"type" : "string"
 				}
 			},
 			"type" : "object"
@@ -74206,6 +74341,10 @@
 				"resourceOperation" : 
 				{
 					"type" : "string"
+				},
+				"tiers" : 
+				{
+					"type" : "string"
 				}
 			},
 			"type" : "object"
@@ -76281,10 +76420,6 @@
 					"type" : "boolean"
 				},
 				"multipleSetsEnabled" : 
-				{
-					"type" : "boolean"
-				},
-				"multipleTeamsEnabled" : 
 				{
 					"type" : "boolean"
 				},
@@ -79769,6 +79904,10 @@
 					"type" : "string"
 				},
 				"resourceOperation" : 
+				{
+					"type" : "string"
+				},
+				"tiers" : 
 				{
 					"type" : "string"
 				}
@@ -86573,7 +86712,7 @@
 			},
 			"get" : 
 			{
-				"operationId" : "HttpAsyncStatus",
+				"operationId" : "Http2AsyncStatus",
 				"parameters" : 
 				[
 					{
@@ -99877,6 +100016,30 @@
 				]
 			}
 		},
+		"/lol-heartbeat/v1/connection-status" : 
+		{
+			"post" : 
+			{
+				"operationId" : "PostLolHeartbeatV1ConnectionStatus",
+				"parameters" : [],
+				"responses" : 
+				{
+					"200" : 
+					{
+						"description" : "Successful response",
+						"schema" : 
+						{
+							"$ref" : "#/definitions/LolHeartbeatLcdsConnection"
+						}
+					}
+				},
+				"tags" : 
+				[
+					"Plugins",
+					"Plugin lol-heartbeat"
+				]
+			}
+		},
 		"/lol-highlights/v1/config" : 
 		{
 			"get" : 
@@ -104623,42 +104786,6 @@
 				]
 			}
 		},
-		"/lol-lobby/v1/lobby/members/localMember/quickplayPlayerState" : 
-		{
-			"put" : 
-			{
-				"operationId" : "PutLolLobbyV1LobbyMembersLocalMemberQuickplayPlayerState",
-				"parameters" : 
-				[
-					{
-						"in" : "body",
-						"name" : "state",
-						"required" : true,
-						"schema" : 
-						{
-							"type" : "string"
-						}
-					}
-				],
-				"responses" : 
-				{
-					"200" : 
-					{
-						"description" : "Successful response",
-						"schema" : 
-						{
-							"additionalProperties" : true,
-							"type" : "object"
-						}
-					}
-				},
-				"tags" : 
-				[
-					"Plugins",
-					"Plugin lol-lobby"
-				]
-			}
-		},
 		"/lol-lobby/v1/parties/active" : 
 		{
 			"put" : 
@@ -105656,6 +105783,41 @@
 							"additionalProperties" : true,
 							"type" : "object"
 						}
+					}
+				},
+				"tags" : 
+				[
+					"Plugins",
+					"Plugin lol-lobby"
+				]
+			}
+		},
+		"/lol-lobby/v2/lobby/quickplayMemberData" : 
+		{
+			"put" : 
+			{
+				"operationId" : "PutLolLobbyV2LobbyQuickplayMemberData",
+				"parameters" : 
+				[
+					{
+						"in" : "body",
+						"name" : "quickplayMemberData",
+						"required" : true,
+						"schema" : 
+						{
+							"additionalProperties" : 
+							{
+								"type" : "string"
+							},
+							"type" : "object"
+						}
+					}
+				],
+				"responses" : 
+				{
+					"204" : 
+					{
+						"description" : "No content"
 					}
 				},
 				"tags" : 
@@ -109445,6 +109607,62 @@
 				]
 			}
 		},
+		"/lol-nacho/v1/banner/active" : 
+		{
+			"get" : 
+			{
+				"operationId" : "GetLolNachoV1BannerActive",
+				"parameters" : [],
+				"responses" : 
+				{
+					"200" : 
+					{
+						"description" : "Successful response",
+						"schema" : 
+						{
+							"$ref" : "#/definitions/LolNachoNachoBannersResponse"
+						}
+					}
+				},
+				"tags" : 
+				[
+					"Plugins",
+					"Plugin lol-nacho"
+				]
+			},
+			"post" : 
+			{
+				"operationId" : "PostLolNachoV1BannerActive",
+				"parameters" : 
+				[
+					{
+						"in" : "body",
+						"name" : "request",
+						"required" : true,
+						"schema" : 
+						{
+							"$ref" : "#/definitions/LolNachoNachoBannersResponse"
+						}
+					}
+				],
+				"responses" : 
+				{
+					"200" : 
+					{
+						"description" : "Successful response",
+						"schema" : 
+						{
+							"$ref" : "#/definitions/LolNachoNachoBannersResponse"
+						}
+					}
+				},
+				"tags" : 
+				[
+					"Plugins",
+					"Plugin lol-nacho"
+				]
+			}
+		},
 		"/lol-nacho/v1/banners" : 
 		{
 			"get" : 
@@ -109629,30 +109847,6 @@
 				]
 			}
 		},
-		"/lol-nacho/v1/pity-counter" : 
-		{
-			"get" : 
-			{
-				"operationId" : "GetLolNachoV1PityCounter",
-				"parameters" : [],
-				"responses" : 
-				{
-					"200" : 
-					{
-						"description" : "Successful response",
-						"schema" : 
-						{
-							"$ref" : "#/definitions/LolNachoCapCounterData"
-						}
-					}
-				},
-				"tags" : 
-				[
-					"Plugins",
-					"Plugin lol-nacho"
-				]
-			}
-		},
 		"/lol-nacho/v1/purchase/blessing-token" : 
 		{
 			"post" : 
@@ -109790,6 +109984,30 @@
 				]
 			}
 		},
+		"/lol-nacho/v1/ready" : 
+		{
+			"get" : 
+			{
+				"operationId" : "GetLolNachoV1Ready",
+				"parameters" : [],
+				"responses" : 
+				{
+					"200" : 
+					{
+						"description" : "Successful response",
+						"schema" : 
+						{
+							"type" : "boolean"
+						}
+					}
+				},
+				"tags" : 
+				[
+					"Plugins",
+					"Plugin lol-nacho"
+				]
+			}
+		},
 		"/lol-nacho/v1/roll-purchase-enabled" : 
 		{
 			"get" : 
@@ -109845,51 +110063,11 @@
 				]
 			}
 		},
-		"/lol-nacho/v1/set-current-catalog-item" : 
-		{
-			"post" : 
-			{
-				"operationId" : "PostLolNachoV1SetCurrentCatalogItem",
-				"parameters" : [],
-				"responses" : 
-				{
-					"204" : 
-					{
-						"description" : "No content"
-					}
-				},
-				"tags" : 
-				[
-					"Plugins",
-					"Plugin lol-nacho"
-				]
-			}
-		},
 		"/lol-nacho/v1/set-product-id" : 
 		{
 			"post" : 
 			{
 				"operationId" : "PostLolNachoV1SetProductId",
-				"parameters" : [],
-				"responses" : 
-				{
-					"204" : 
-					{
-						"description" : "No content"
-					}
-				},
-				"tags" : 
-				[
-					"Plugins",
-					"Plugin lol-nacho"
-				]
-			}
-		},
-		"/lol-nacho/v1/set-store-id" : 
-		{
-			"post" : 
-			{
-				"operationId" : "PostLolNachoV1SetStoreId",
 				"parameters" : [],
 				"responses" : 
 				{
@@ -121361,6 +121539,55 @@
 					"Plugins",
 					"Plugin lol-tft-team-planner"
 				]
+			},
+			"post" : 
+			{
+				"operationId" : "PostLolTftTeamPlannerV1SetsBySetTeamsByTeamChampions",
+				"parameters" : 
+				[
+					{
+						"in" : "path",
+						"name" : "set",
+						"required" : true,
+						"type" : "string"
+					},
+					{
+						"in" : "path",
+						"name" : "team",
+						"required" : true,
+						"type" : "string"
+					},
+					{
+						"in" : "body",
+						"name" : "champions",
+						"required" : true,
+						"schema" : 
+						{
+							"items" : 
+							{
+								"type" : "string"
+							},
+							"type" : "array"
+						}
+					}
+				],
+				"responses" : 
+				{
+					"200" : 
+					{
+						"description" : "Successful response",
+						"schema" : 
+						{
+							"additionalProperties" : true,
+							"type" : "object"
+						}
+					}
+				},
+				"tags" : 
+				[
+					"Plugins",
+					"Plugin lol-tft-team-planner"
+				]
 			}
 		},
 		"/lol-tft-team-planner/v1/sets/{set}/teams/{team}/champions/{championId}" : 
@@ -121744,31 +121971,6 @@
 				]
 			}
 		},
-		"/lol-tft-team-planner/v1/team" : 
-		{
-			"put" : 
-			{
-				"operationId" : "PutLolTftTeamPlannerV1Team",
-				"parameters" : [],
-				"responses" : 
-				{
-					"200" : 
-					{
-						"description" : "Successful response",
-						"schema" : 
-						{
-							"additionalProperties" : true,
-							"type" : "object"
-						}
-					}
-				},
-				"tags" : 
-				[
-					"Plugins",
-					"Plugin lol-tft-team-planner"
-				]
-			}
-		},
 		"/lol-tft-team-planner/v1/team-code/clipboard/{set}" : 
 		{
 			"post" : 
@@ -121791,328 +121993,6 @@
 						"schema" : 
 						{
 							"$ref" : "#/definitions/LolTftTeamPlannerImportedTeamCodeData"
-						}
-					}
-				},
-				"tags" : 
-				[
-					"Plugins",
-					"Plugin lol-tft-team-planner"
-				]
-			}
-		},
-		"/lol-tft-team-planner/v1/team/champions" : 
-		{
-			"delete" : 
-			{
-				"operationId" : "DeleteLolTftTeamPlannerV1TeamChampions",
-				"parameters" : [],
-				"responses" : 
-				{
-					"200" : 
-					{
-						"description" : "Successful response",
-						"schema" : 
-						{
-							"additionalProperties" : true,
-							"type" : "object"
-						}
-					}
-				},
-				"tags" : 
-				[
-					"Plugins",
-					"Plugin lol-tft-team-planner"
-				]
-			},
-			"patch" : 
-			{
-				"operationId" : "PatchLolTftTeamPlannerV1TeamChampions",
-				"parameters" : 
-				[
-					{
-						"in" : "body",
-						"name" : "indices",
-						"required" : true,
-						"schema" : 
-						{
-							"items" : 
-							{
-								"format" : "int64",
-								"type" : "integer"
-							},
-							"type" : "array"
-						}
-					}
-				],
-				"responses" : 
-				{
-					"200" : 
-					{
-						"description" : "Successful response",
-						"schema" : 
-						{
-							"additionalProperties" : true,
-							"type" : "object"
-						}
-					}
-				},
-				"tags" : 
-				[
-					"Plugins",
-					"Plugin lol-tft-team-planner"
-				]
-			}
-		},
-		"/lol-tft-team-planner/v1/team/champions/{index}" : 
-		{
-			"delete" : 
-			{
-				"operationId" : "DeleteLolTftTeamPlannerV1TeamChampionsByIndex",
-				"parameters" : 
-				[
-					{
-						"format" : "int64",
-						"in" : "path",
-						"name" : "index",
-						"required" : true,
-						"type" : "integer"
-					}
-				],
-				"responses" : 
-				{
-					"200" : 
-					{
-						"description" : "Successful response",
-						"schema" : 
-						{
-							"additionalProperties" : true,
-							"type" : "object"
-						}
-					}
-				},
-				"tags" : 
-				[
-					"Plugins",
-					"Plugin lol-tft-team-planner"
-				]
-			},
-			"post" : 
-			{
-				"operationId" : "PostLolTftTeamPlannerV1TeamChampionsByIndex",
-				"parameters" : 
-				[
-					{
-						"format" : "int64",
-						"in" : "path",
-						"name" : "index",
-						"required" : true,
-						"type" : "integer"
-					},
-					{
-						"in" : "body",
-						"name" : "championName",
-						"required" : true,
-						"schema" : 
-						{
-							"type" : "string"
-						}
-					}
-				],
-				"responses" : 
-				{
-					"200" : 
-					{
-						"description" : "Successful response",
-						"schema" : 
-						{
-							"additionalProperties" : true,
-							"type" : "object"
-						}
-					}
-				},
-				"tags" : 
-				[
-					"Plugins",
-					"Plugin lol-tft-team-planner"
-				]
-			}
-		},
-		"/lol-tft-team-planner/v1/team/championsById/{championName}" : 
-		{
-			"delete" : 
-			{
-				"operationId" : "DeleteLolTftTeamPlannerV1TeamChampionsByIdByChampionName",
-				"parameters" : 
-				[
-					{
-						"in" : "path",
-						"name" : "championName",
-						"required" : true,
-						"type" : "string"
-					}
-				],
-				"responses" : 
-				{
-					"200" : 
-					{
-						"description" : "Successful response",
-						"schema" : 
-						{
-							"additionalProperties" : true,
-							"type" : "object"
-						}
-					}
-				},
-				"tags" : 
-				[
-					"Plugins",
-					"Plugin lol-tft-team-planner"
-				]
-			},
-			"post" : 
-			{
-				"operationId" : "PostLolTftTeamPlannerV1TeamChampionsByIdByChampionName",
-				"parameters" : 
-				[
-					{
-						"in" : "path",
-						"name" : "championName",
-						"required" : true,
-						"type" : "string"
-					}
-				],
-				"responses" : 
-				{
-					"200" : 
-					{
-						"description" : "Successful response",
-						"schema" : 
-						{
-							"additionalProperties" : true,
-							"type" : "object"
-						}
-					}
-				},
-				"tags" : 
-				[
-					"Plugins",
-					"Plugin lol-tft-team-planner"
-				]
-			}
-		},
-		"/lol-tft-team-planner/v1/team/dirty" : 
-		{
-			"delete" : 
-			{
-				"operationId" : "DeleteLolTftTeamPlannerV1TeamDirty",
-				"parameters" : [],
-				"responses" : 
-				{
-					"204" : 
-					{
-						"description" : "No content"
-					}
-				},
-				"tags" : 
-				[
-					"Plugins",
-					"Plugin lol-tft-team-planner"
-				]
-			},
-			"get" : 
-			{
-				"operationId" : "GetLolTftTeamPlannerV1TeamDirty",
-				"parameters" : [],
-				"responses" : 
-				{
-					"200" : 
-					{
-						"description" : "Successful response",
-						"schema" : 
-						{
-							"$ref" : "#/definitions/LolTftTeamPlannerTeamPlan"
-						}
-					}
-				},
-				"tags" : 
-				[
-					"Plugins",
-					"Plugin lol-tft-team-planner"
-				]
-			}
-		},
-		"/lol-tft-team-planner/v1/team/local" : 
-		{
-			"get" : 
-			{
-				"operationId" : "GetLolTftTeamPlannerV1TeamLocal",
-				"parameters" : [],
-				"responses" : 
-				{
-					"200" : 
-					{
-						"description" : "Successful response",
-						"schema" : 
-						{
-							"$ref" : "#/definitions/LolTftTeamPlannerTeamSettings"
-						}
-					}
-				},
-				"tags" : 
-				[
-					"Plugins",
-					"Plugin lol-tft-team-planner"
-				]
-			}
-		},
-		"/lol-tft-team-planner/v1/team/reminders" : 
-		{
-			"get" : 
-			{
-				"operationId" : "GetLolTftTeamPlannerV1TeamReminders",
-				"parameters" : [],
-				"responses" : 
-				{
-					"200" : 
-					{
-						"description" : "Successful response",
-						"schema" : 
-						{
-							"type" : "boolean"
-						}
-					}
-				},
-				"tags" : 
-				[
-					"Plugins",
-					"Plugin lol-tft-team-planner"
-				]
-			},
-			"patch" : 
-			{
-				"operationId" : "PatchLolTftTeamPlannerV1TeamReminders",
-				"parameters" : 
-				[
-					{
-						"in" : "body",
-						"name" : "enabled",
-						"required" : true,
-						"schema" : 
-						{
-							"type" : "boolean"
-						}
-					}
-				],
-				"responses" : 
-				{
-					"200" : 
-					{
-						"description" : "Successful response",
-						"schema" : 
-						{
-							"additionalProperties" : true,
-							"type" : "object"
 						}
 					}
 				},
@@ -126208,7 +126088,7 @@
 		{
 			"get" : 
 			{
-				"operationId" : "Http2ApiDocsV1",
+				"operationId" : "HttpApiDocsV1",
 				"parameters" : [],
 				"responses" : 
 				{
@@ -126360,6 +126240,31 @@
 					}
 				},
 				"summary" : "Gets the millisecond UNIX timestamp of when the application was started.",
+				"tags" : []
+			}
+		},
+		"/telemetry/v1/common-data" : 
+		{
+			"get" : 
+			{
+				"operationId" : "GetTelemetryV1CommonData",
+				"parameters" : [],
+				"responses" : 
+				{
+					"200" : 
+					{
+						"description" : "Successful response",
+						"schema" : 
+						{
+							"additionalProperties" : 
+							{
+								"type" : "string"
+							},
+							"type" : "object"
+						}
+					}
+				},
+				"summary" : "Retrieves a copy of all common data.",
 				"tags" : []
 			}
 		},

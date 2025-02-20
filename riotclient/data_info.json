@@ -1686,6 +1686,35 @@
         ],
         "threadSafe": false
     },
+    "DELETE /player-account/mfa/v1/factor/{factor}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "factor",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Remove a provided auth factor from the account",
+        "help": "",
+        "internal": false,
+        "name": "DeletePlayerAccountMfaV1FactorByFactor",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlayerAccountMfaV1DeleteFactorResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "player-account"
+        ],
+        "threadSafe": false
+    },
     "DELETE /player-preferences/v1/debug/caller-id/mock-id": {
         "arguments": [],
         "deprecated": false,
@@ -2521,6 +2550,25 @@
         "tags": [
             "Plugins",
             "Plugin rnet-product-registry"
+        ],
+        "threadSafe": false
+    },
+    "DELETE /rnet-sanitizer/v1/debug/caller-id/mock-id": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Stops mocking the caller ID for Swagger calls",
+        "help": "Deletes the currently set `productId` and `patchlineId`. Plugin APIs will receive `swagger` as the `productId`.",
+        "internal": false,
+        "name": "DeleteRnetSanitizerV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "rnet-sanitizer"
         ],
         "threadSafe": false
     },
@@ -6322,35 +6370,6 @@
         ],
         "threadSafe": false
     },
-    "GET /name-check/v1/validate": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "name",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Verify user input name.",
-        "help": "This API endpoint is deprecated and will be removed by 3/1/2023. Please do not use.",
-        "internal": false,
-        "name": "GetNameCheckV1Validate",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "NameCheckNameValidationResult"
-        },
-        "subscribable": false,
-        "tags": [
-            "name-check"
-        ],
-        "threadSafe": false
-    },
     "GET /nintendo-account/v1/player-nickname": {
         "arguments": [],
         "deprecated": false,
@@ -7388,7 +7407,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "",
-        "help": "This endpoint is used to get the conent of cache.\n",
+        "help": "This endpoint is used to get the content of cache.\n",
         "internal": false,
         "name": "GetPlayerAccountLoginHistoryV1DebugCache",
         "nameSpace": "",
@@ -11692,6 +11711,25 @@
         ],
         "threadSafe": false
     },
+    "GET /rnet-sanitizer/v1/debug/caller-id/mock-id": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Checks the caller ID in use when APIs are called from Swagger",
+        "help": "Returns the `productId` and `patchlineId` being passed to APIs in this plugin when called via Swagger.\n\nReturns 404 if a mock caller ID is not in use.",
+        "internal": false,
+        "name": "GetRnetSanitizerV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RnetSanitizerPluginCallerId_MockCallerId"
+        },
+        "subscribable": false,
+        "tags": [
+            "rnet-sanitizer"
+        ],
+        "threadSafe": false
+    },
     "GET /rnet-sanitizer/v1/status": {
         "arguments": [],
         "deprecated": false,
@@ -15644,25 +15682,6 @@
         ],
         "threadSafe": false
     },
-    "POST /disambiguation/v1/magic-link": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Retrieves the magic disambiguation link for the current auth'd account.",
-        "help": "This API endpoint is deprecated and will be removed by 3/1/2023. Please do not use.",
-        "internal": false,
-        "name": "PostDisambiguationV1MagicLink",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "string"
-        },
-        "subscribable": false,
-        "tags": [
-            "disambiguation"
-        ],
-        "threadSafe": false
-    },
     "POST /eula/v1/agreement/content/retry": {
         "arguments": [],
         "deprecated": false,
@@ -17454,6 +17473,44 @@
         ],
         "threadSafe": false
     },
+    "POST /player-account/mfa/v1/factor/{factor}/verify": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "factor",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "verifyRequest",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlayerAccountMfaV1VerifyFactorRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Verify the provided auth factor with the given otp",
+        "help": "",
+        "internal": false,
+        "name": "PostPlayerAccountMfaV1FactorByFactorVerify",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlayerAccountMfaV1VerifyFactorResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "player-account"
+        ],
+        "threadSafe": false
+    },
     "POST /player-account/promotion/v1/eligibility": {
         "arguments": [],
         "deprecated": false,
@@ -17528,35 +17585,6 @@
         "subscribable": false,
         "tags": [
             "player-account"
-        ],
-        "threadSafe": false
-    },
-    "POST /player-account-service/v1/login-history/history": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "request",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "PlayerAccountServiceV1RequestedPlayersLoginLocationHistory"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "",
-        "help": "This endpoint retrieves location history records for given PUUIDs by making a call to the service. \nFor each PUUID there will be only one location history record - the most recent one. \nThe limit on the list of puuids is 200. If more than 200 PUUIDs are in the request body, the service will return a HTTP 400. \n",
-        "internal": false,
-        "name": "PostPlayerAccountServiceV1LoginHistoryHistory",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "PlayerAccountServiceV1PlayersLoginLocationHistory"
-        },
-        "subscribable": false,
-        "tags": [
-            "player-account-service"
         ],
         "threadSafe": false
     },
@@ -26236,6 +26264,64 @@
         "tags": [
             "Plugins",
             "Plugin rnet-product-registry"
+        ],
+        "threadSafe": false
+    },
+    "PUT /rnet-sanitizer/v1/debug/caller-id/mock-id": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "callerId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RnetSanitizerPluginCallerId_MockCallerId"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Sets the caller ID to use when calling this plugin from Swagger",
+        "help": "Sets the `productId` and `patchlineId` to pass to APIs in this plugin during future calls from Swagger.\n\nUse this functionality to test APIs in this plugin with Swagger, as if they were being called from another product.",
+        "internal": false,
+        "name": "PutRnetSanitizerV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "rnet-sanitizer"
+        ],
+        "threadSafe": false
+    },
+    "PUT /rnet-sanitizer/v1/locale": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "locale",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RnetSanitizerSanitizerLocale"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Set a custom locale for sanitization. Locale should be in language_country format (e.g., zh_CN, ko_KR) and should be one of the available locales for the current region/patchline.",
+        "help": "",
+        "internal": false,
+        "name": "PutRnetSanitizerV1Locale",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "rnet-sanitizer"
         ],
         "threadSafe": false
     },

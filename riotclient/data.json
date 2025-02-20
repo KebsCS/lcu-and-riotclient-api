@@ -213,9 +213,6 @@
         "POST /data-store/v1/reload-product-settings/products/{productId}/patchlines/{patchlineId}",
         "GET /data-store/v1/system-settings/{+path}"
     ],
-    "disambiguation": [
-        "POST /disambiguation/v1/magic-link"
-    ],
     "entitlements": [
         "GET /entitlements/v1/token",
         "GET /entitlements/v2/token"
@@ -346,9 +343,6 @@
         "GET /mobile-push/v1/filters/{application}",
         "POST /mobile-push/v1/register",
         "POST /mobile-push/v1/subscribe-topic"
-    ],
-    "name-check": [
-        "GET /name-check/v1/validate"
     ],
     "native-ux": [
         "POST /native-ux/v1/show-alert"
@@ -482,6 +476,8 @@
         "POST /player-account/lookup/v1/puuids-for-consoleids",
         "POST /player-account/lookup/v2/namesets-for-puuid",
         "POST /player-account/lookup/v2/namesets-for-puuids",
+        "DELETE /player-account/mfa/v1/factor/{factor}",
+        "POST /player-account/mfa/v1/factor/{factor}/verify",
         "GET /player-account/promotion/v1/eligibility",
         "POST /player-account/promotion/v1/eligibility",
         "GET /player-account/promotion/v1/fields",
@@ -495,9 +491,6 @@
         "GET /player-account/vng/v1/status/{productId}",
         "POST /player-account/vng/v1/status/{productId}",
         "POST /player-account/vng/v1/web-url/{productId}"
-    ],
-    "player-account-service": [
-        "POST /player-account-service/v1/login-history/history"
     ],
     "player-affinity": [
         "POST /player-affinity/affinity/v1/token",
@@ -1129,6 +1122,10 @@
     ],
     "rnet-sanitizer": [
         "POST /rnet-sanitizer/v1/containsSanitized",
+        "DELETE /rnet-sanitizer/v1/debug/caller-id/mock-id",
+        "GET /rnet-sanitizer/v1/debug/caller-id/mock-id",
+        "PUT /rnet-sanitizer/v1/debug/caller-id/mock-id",
+        "PUT /rnet-sanitizer/v1/locale",
         "POST /rnet-sanitizer/v1/sanitize",
         "GET /rnet-sanitizer/v1/status"
     ],
