@@ -2,11 +2,16 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>Riot Client Docs</title>
+        <title>Riot Client API Docs</title>
         <link rel="stylesheet" type="text/css" href="https://kebs.dev/lcuapi/style.css" />
     </head>
     <body>
-        <div id="output"></div>
+        <div class="container">
+            <h1>Riot Client API Docs</h1>
+            <p>Updated 20.02.2025</p>
+            <a href="https://github.com/KebsCS/lcu-and-riotclient-api">GitHub repository</a>
+            <div id="output"></div>
+        </div>
 
         <script>
             Promise.all([
@@ -18,73 +23,67 @@
                 const dataInfo = await dataInfoResponse.json();
 
                 const content = `
-                    <div class="container">
-                        <h1>Riot Client API Docs</h1>
-                        <p>Updated 20.02.2025</p>
-                        <a href="https://github.com/KebsCS/lcu-and-riotclient-api">GitHub repository</a>
-
-                        ${Object.keys(data).map(key => `
-                            <h3 id="tag-${key}" class="swagger-summary-tag">Tag: ${key}</h3>
-                            <table class="table table-bordered table-condensed swagger--summary">
-                                <thead>
+                    ${Object.keys(data).map(key => `
+                        <h3 id="tag-${key}" class="swagger-summary-tag">Tag: ${key}</h3>
+                        <table class="table table-bordered table-condensed swagger--summary">
+                            <thead>
+                                <tr>
+                                    <th>Operation</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${data[key].map(value => `
                                     <tr>
-                                        <th>Operation</th>
-                                        <th>Description</th>
+                                        <td><a href="#operation--${value}">${value}</a></td>
+                                        <td><p>${dataInfo[value]?.description || ''}</p></td>
                                     </tr>
-                                </thead>
-                                <tbody>
-                                    ${data[key].map(value => `
-                                        <tr>
-                                            <td><a href="#operation--${value}">${value}</a></td>
-                                            <td><p>${dataInfo[value]?.description || ''}</p></td>
-                                        </tr>
-                                    `).join('')}
-                                </tbody>
-                            </table>
-                        `).join('')}
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    `).join('')}
 
-                        ${Object.keys(dataInfo).map(key => {
-                            const method = key.split(" ")[0].toLowerCase();
-                            return `
-                                <div id="operation--${key}" class="swagger--panel-operation-${method} panel">
-                                    <div class="panel-heading">
-                                        <h3 class="panel-title"><strong>${key}</strong></h3>
-                                        Tags: ${dataInfo[key].tags.map(tag => `<a href="#tag-${tag}">${tag}</a>`).join(', ')}
-                                    </div>
-                                    <div class="panel-body">
-                                        <section class="sw-operation-description">
-                                            <p>${dataInfo[key].description}</p>
-                                        </section>
-                                        ${dataInfo[key].help ? `<p>${dataInfo[key].help}</p>` : ''}
-                                        ${dataInfo[key].arguments.length > 0 ? `
-                                            <section class="sw-request-params">
-                                                <table class="table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Name</th>
-                                                            <th>Description</th>
-                                                            <th>Type</th>
-                                                            <th>Required</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        ${dataInfo[key].arguments.map(arg => `
-                                                            <tr>
-                                                                <td>${arg.name}</td>
-                                                                <td>${arg.description}</td>
-                                                                <td>${arg.type.type}</td>
-                                                                <td>${!arg.optional}</td>
-                                                            </tr>
-                                                        `).join('')}
-                                                    </tbody>
-                                                </table>
-                                            </section>
-                                        ` : ''}
-                                    </div>
+                    ${Object.keys(dataInfo).map(key => {
+                        const method = key.split(" ")[0].toLowerCase();
+                        return `
+                            <div id="operation--${key}" class="swagger--panel-operation-${method} panel">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><strong>${key}</strong></h3>
+                                    Tags: ${dataInfo[key].tags.map(tag => `<a href="#tag-${tag}">${tag}</a>`).join(', ')}
                                 </div>
-                            `;
-                        }).join('')}
-                    </div>
+                                <div class="panel-body">
+                                    <section class="sw-operation-description">
+                                        <p>${dataInfo[key].description}</p>
+                                    </section>
+                                    ${dataInfo[key].help ? `<p>${dataInfo[key].help}</p>` : ''}
+                                    ${dataInfo[key].arguments.length > 0 ? `
+                                        <section class="sw-request-params">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>Description</th>
+                                                        <th>Type</th>
+                                                        <th>Required</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    ${dataInfo[key].arguments.map(arg => `
+                                                        <tr>
+                                                            <td>${arg.name}</td>
+                                                            <td>${arg.description}</td>
+                                                            <td>${arg.type.type}</td>
+                                                            <td>${!arg.optional}</td>
+                                                        </tr>
+                                                    `).join('')}
+                                                </tbody>
+                                            </table>
+                                        </section>
+                                    ` : ''}
+                                </div>
+                            </div>
+                        `;
+                    }).join('')}
                 `;
 
                 document.getElementById("output").innerHTML = content;

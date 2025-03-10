@@ -2,11 +2,17 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>LCU Docs</title>
+        <title>LCU API Docs</title>
         <link rel="stylesheet" type="text/css" href="https://kebs.dev/lcuapi/style.css" />
     </head>
     <body>
-        <div id="output"></div>
+         <div class="container">
+            <h1>League of Legends LCU API Docs</h1>
+            <p>Client Version: 25.05</p>
+            <a href="https://github.com/KebsCS/lcu-and-riotclient-api">GitHub repository</a>
+            | <a href="https://lcu.kebs.dev/swagger.html">Original Swagger (25.04)</a>
+             <div id="output"></div>
+         </div>
 
         <script>
             Promise.all([
@@ -16,13 +22,8 @@
             .then(async ([aa, bb]) => {
                 const data = await aa.json();
                 const dataInfo = await bb.json();
-                const content = `
-                <div class="container">
-                    <h1>League of Legends LCU Docs</h1>
-                    <p>Client Version: 25.04</p>
-                    <a href="https://github.com/KebsCS/lcu-and-riotclient-api">GitHub repository</a>
-                    | <a href="https://lcu.kebs.dev/swagger.html">Original Swagger (25.04)</a>
 
+                const content = `
                     ${Object.keys(data).map(key => `
                         <h3 id="tag-${key}" class="swagger-summary-tag">Tag: ${key}</h3>
                         <table class="table table-bordered table-condensed swagger--summary">
@@ -91,7 +92,6 @@
                             </div>
                         `;
                     }).join('')}
-                </div>
                 `;
                 document.getElementById("output").innerHTML = content;
             })
