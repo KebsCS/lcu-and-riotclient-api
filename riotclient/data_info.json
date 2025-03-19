@@ -11593,45 +11593,6 @@
         ],
         "threadSafe": false
     },
-    "GET /rnet-product-registry/v4/product-size/products/{productId}/patchlines/{patchlineId}": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "productId",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "",
-                "name": "patchlineId",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Retrieves the total size, size after update and the difference for the given product and patchline.",
-        "help": "",
-        "internal": false,
-        "name": "GetRnetProductRegistryV4ProductSizeProductsByProductIdPatchlinesByPatchlineId",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "uint64"
-        },
-        "subscribable": false,
-        "tags": [
-            "Plugins",
-            "Plugin rnet-product-registry"
-        ],
-        "threadSafe": false
-    },
     "GET /rnet-product-registry/v4/products": {
         "arguments": [],
         "deprecated": false,

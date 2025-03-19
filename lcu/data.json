@@ -399,11 +399,6 @@
         "GET /lol-collections/v1/inventories/{summonerId}/ward-skins",
         "GET /lol-collections/v1/inventories/{summonerId}/ward-skins/{wardSkinId}"
     ],
-    "Plugin lol-content-targeting": [
-        "GET /lol-content-targeting/v1/filters",
-        "GET /lol-content-targeting/v1/locale",
-        "GET /lol-content-targeting/v1/protected_filters"
-    ],
     "Plugin lol-cosmetics": [
         "GET /lol-cosmetics/v1/favorites/tft/companions",
         "GET /lol-cosmetics/v1/favorites/tft/damage-skins",
@@ -571,10 +566,6 @@
         "GET /lol-gameflow/v1/watch",
         "POST /lol-gameflow/v1/watch/launch",
         "POST /lol-gameflow/v2/spectate/launch"
-    ],
-    "Plugin lol-geoinfo": [
-        "GET /lol-geoinfo/v1/getlocation",
-        "GET /lol-geoinfo/v1/whereami"
     ],
     "Plugin lol-heartbeat": [
         "POST /lol-heartbeat/v1/connection-status"
@@ -800,6 +791,7 @@
         "PATCH /lol-lobby-team-builder/champ-select/v1/session/my-selection",
         "POST /lol-lobby-team-builder/champ-select/v1/session/my-selection/reroll",
         "GET /lol-lobby-team-builder/champ-select/v1/session/obfuscated-summoner-ids",
+        "POST /lol-lobby-team-builder/champ-select/v1/session/quit",
         "GET /lol-lobby-team-builder/champ-select/v1/session/swaps",
         "GET /lol-lobby-team-builder/champ-select/v1/session/swaps/{id}",
         "POST /lol-lobby-team-builder/champ-select/v1/session/swaps/{id}/accept",
@@ -892,9 +884,9 @@
     ],
     "Plugin lol-mac-graphics-upgrade": [
         "POST /lol-mac-graphics-upgrade/hardware-upgrade-notification/ack",
-        "POST /lol-mac-graphics-upgrade/legacy-mode-notification/ack",
         "GET /lol-mac-graphics-upgrade/needs-hardware-upgrade",
-        "GET /lol-mac-graphics-upgrade/notification-type"
+        "GET /lol-mac-graphics-upgrade/notification-type",
+        "POST /lol-mac-graphics-upgrade/supported-hardware-notification/ack"
     ],
     "Plugin lol-maps": [
         "POST /lol-maps/v1/map",
@@ -1065,11 +1057,6 @@
         "POST /lol-player-behavior/v2/reporter-feedback/{key}",
         "PUT /lol-player-behavior/v3/reform-card/{id}",
         "GET /lol-player-behavior/v3/reform-cards"
-    ],
-    "Plugin lol-player-level-up": [
-        "GET /lol-player-level-up/v1/level-up",
-        "GET /lol-player-level-up/v1/level-up-notifications/{pluginName}",
-        "POST /lol-player-level-up/v1/level-up-notifications/{pluginName}"
     ],
     "Plugin lol-player-messaging": [
         "GET /lol-player-messaging/v1/celebration/notification",
@@ -1861,9 +1848,6 @@
         "GET /lol-collections/v1/inventories/{summonerId}/spells",
         "GET /lol-collections/v1/inventories/{summonerId}/ward-skins",
         "GET /lol-collections/v1/inventories/{summonerId}/ward-skins/{wardSkinId}",
-        "GET /lol-content-targeting/v1/filters",
-        "GET /lol-content-targeting/v1/locale",
-        "GET /lol-content-targeting/v1/protected_filters",
         "GET /lol-cosmetics/v1/favorites/tft/companions",
         "GET /lol-cosmetics/v1/favorites/tft/damage-skins",
         "GET /lol-cosmetics/v1/favorites/tft/map-skins",
@@ -2009,8 +1993,6 @@
         "GET /lol-gameflow/v1/watch",
         "POST /lol-gameflow/v1/watch/launch",
         "POST /lol-gameflow/v2/spectate/launch",
-        "GET /lol-geoinfo/v1/getlocation",
-        "GET /lol-geoinfo/v1/whereami",
         "POST /lol-heartbeat/v1/connection-status",
         "GET /lol-highlights/v1/config",
         "POST /lol-highlights/v1/file-browser/{highlightId}",
@@ -2128,6 +2110,7 @@
         "PATCH /lol-lobby-team-builder/champ-select/v1/session/my-selection",
         "POST /lol-lobby-team-builder/champ-select/v1/session/my-selection/reroll",
         "GET /lol-lobby-team-builder/champ-select/v1/session/obfuscated-summoner-ids",
+        "POST /lol-lobby-team-builder/champ-select/v1/session/quit",
         "GET /lol-lobby-team-builder/champ-select/v1/session/swaps",
         "GET /lol-lobby-team-builder/champ-select/v1/session/swaps/{id}",
         "POST /lol-lobby-team-builder/champ-select/v1/session/swaps/{id}/accept",
@@ -2285,9 +2268,9 @@
         "GET /lol-loyalty/v1/status-notification",
         "POST /lol-loyalty/v1/updateLoyaltyInventory",
         "POST /lol-mac-graphics-upgrade/hardware-upgrade-notification/ack",
-        "POST /lol-mac-graphics-upgrade/legacy-mode-notification/ack",
         "GET /lol-mac-graphics-upgrade/needs-hardware-upgrade",
         "GET /lol-mac-graphics-upgrade/notification-type",
+        "POST /lol-mac-graphics-upgrade/supported-hardware-notification/ack",
         "POST /lol-maps/v1/map",
         "GET /lol-maps/v1/map/{id}",
         "GET /lol-maps/v1/maps",
@@ -2428,9 +2411,6 @@
         "POST /lol-player-behavior/v2/reporter-feedback/{key}",
         "PUT /lol-player-behavior/v3/reform-card/{id}",
         "GET /lol-player-behavior/v3/reform-cards",
-        "GET /lol-player-level-up/v1/level-up",
-        "GET /lol-player-level-up/v1/level-up-notifications/{pluginName}",
-        "POST /lol-player-level-up/v1/level-up-notifications/{pluginName}",
         "GET /lol-player-messaging/v1/celebration/notification",
         "DELETE /lol-player-messaging/v1/celebration/notification/{id}/acknowledge",
         "GET /lol-player-messaging/v1/notification",
