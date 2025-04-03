@@ -213,6 +213,12 @@
         "POST /data-store/v1/reload-product-settings/products/{productId}/patchlines/{patchlineId}",
         "GET /data-store/v1/system-settings/{+path}"
     ],
+    "delete-account": [
+        "POST /delete-account/cancelled",
+        "POST /delete-account/completed",
+        "POST /delete-account/error",
+        "GET /delete-account/v1/status"
+    ],
     "entitlements": [
         "GET /entitlements/v1/token",
         "GET /entitlements/v2/token"
@@ -347,6 +353,12 @@
     "native-ux": [
         "POST /native-ux/v1/show-alert"
     ],
+    "network-connectivity": [
+        "GET /network-connectivity/v1/connectivity",
+        "DELETE /network-connectivity/v1/debug/caller-id/mock-id",
+        "GET /network-connectivity/v1/debug/caller-id/mock-id",
+        "PUT /network-connectivity/v1/debug/caller-id/mock-id"
+    ],
     "nintendo-account": [
         "POST /nintendo-account/v1/authorization",
         "POST /nintendo-account/v1/network-service-accountid-token",
@@ -410,6 +422,7 @@
         "POST /permissions/v1/request",
         "GET /permissions/v1/request/{permissionId}",
         "POST /permissions/v1/user-communication-permissions",
+        "GET /permissions/v1/user-communication-permissions/ready",
         "POST /permissions/v2/user-communication-permissions"
     ],
     "platform-login": [
@@ -438,6 +451,9 @@
         "GET /platform-social/v1/voice-permission"
     ],
     "platform-ui": [
+        "DELETE /platform-ui/v1/delete-account",
+        "GET /platform-ui/v1/delete-account",
+        "POST /platform-ui/v1/delete-account",
         "GET /platform-ui/v1/enabled",
         "DELETE /platform-ui/v1/fre",
         "GET /platform-ui/v1/fre",
@@ -1248,9 +1264,6 @@
         "POST /rso-mobile-ui/v1/riot-id-prompt/initiate",
         "GET /rso-mobile-ui/v1/riot-id-prompt/status",
         "POST /rso-mobile-ui/v1/show-game-out-of-date",
-        "POST /rso-mobile-ui/v1/vng/profile/{productId}",
-        "POST /rso-mobile-ui/v1/vng/register/{productId}",
-        "GET /rso-mobile-ui/v1/vng/status",
         "GET /rso-mobile-ui/v2/eula",
         "POST /rso-mobile-ui/v2/eula/agreement",
         "POST /rso-mobile-ui/v2/eula/initiate",
@@ -1266,9 +1279,14 @@
     "social": [
         "GET /social/v1/blocklist",
         "GET /social/v1/blocklist/patch",
+        "DELETE /social/v1/blocklist/{puuid}",
+        "POST /social/v1/blocklist/{puuid}",
         "DELETE /social/v1/debug/caller-id/mock-id",
         "GET /social/v1/debug/caller-id/mock-id",
         "PUT /social/v1/debug/caller-id/mock-id",
+        "GET /social/v1/friendrequests",
+        "POST /social/v1/friendrequests",
+        "DELETE /social/v1/friendrequests/{puuid}",
         "GET /social/v1/friends",
         "GET /social/v1/friends/patch",
         "POST /social/v1/initialize",
@@ -1306,7 +1324,8 @@
         "GET /vng/v1/profile/{productId}",
         "POST /vng/v1/profile/{productId}",
         "GET /vng/v1/status/ready",
-        "GET /vng/v1/status/{productId}"
+        "GET /vng/v1/status/{productId}",
+        "POST /vng/v1/status/{productId}"
     ],
     "voice-chat": [
         "GET /voice-chat/v1/active-product",

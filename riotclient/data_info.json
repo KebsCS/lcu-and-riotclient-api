@@ -1349,6 +1349,25 @@
         ],
         "threadSafe": false
     },
+    "DELETE /network-connectivity/v1/debug/caller-id/mock-id": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Stops mocking the caller ID for Swagger calls",
+        "help": "Deletes the currently set `productId` and `patchlineId`. Plugin APIs will receive `swagger` as the `productId`.",
+        "internal": false,
+        "name": "DeleteNetworkConnectivityV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "network-connectivity"
+        ],
+        "threadSafe": false
+    },
     "DELETE /nintendo-account/v2/authorization": {
         "arguments": [],
         "deprecated": false,
@@ -1629,6 +1648,25 @@
         ],
         "threadSafe": false
     },
+    "DELETE /platform-ui/v1/delete-account": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Force close Account Deletion UI",
+        "help": "",
+        "internal": false,
+        "name": "DeletePlatformUiV1DeleteAccount",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-ui"
+        ],
+        "threadSafe": false
+    },
     "DELETE /platform-ui/v1/fre": {
         "arguments": [],
         "deprecated": false,
@@ -1707,7 +1745,7 @@
         "nameSpace": "",
         "returns": {
             "elementType": "",
-            "type": "PlayerAccountMfaV1DeleteFactorResponse"
+            "type": ""
         },
         "subscribable": false,
         "tags": [
@@ -2782,6 +2820,35 @@
         ],
         "threadSafe": false
     },
+    "DELETE /social/v1/blocklist/{puuid}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "puuid",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Unblock a player",
+        "help": "",
+        "internal": false,
+        "name": "DeleteSocialV1BlocklistByPuuid",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
     "DELETE /social/v1/debug/caller-id/mock-id": {
         "arguments": [],
         "deprecated": false,
@@ -2790,6 +2857,35 @@
         "help": "Deletes the currently set `productId` and `patchlineId`. Plugin APIs will receive `swagger` as the `productId`.",
         "internal": false,
         "name": "DeleteSocialV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
+    "DELETE /social/v1/friendrequests/{puuid}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "puuid",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Remove or decline friend request",
+        "help": "",
+        "internal": false,
+        "name": "DeleteSocialV1FriendrequestsByPuuid",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -5455,6 +5551,25 @@
         ],
         "threadSafe": false
     },
+    "GET /delete-account/v1/status": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Current status of the account deletion flow, for internal use only",
+        "help": "",
+        "internal": false,
+        "name": "GetDeleteAccountV1Status",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "DeleteAccountDeleteAccountV1StatusResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "delete-account"
+        ],
+        "threadSafe": false
+    },
     "GET /entitlements/v1/token": {
         "arguments": [],
         "deprecated": false,
@@ -6370,6 +6485,44 @@
         ],
         "threadSafe": false
     },
+    "GET /network-connectivity/v1/connectivity": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get the current network connectivity",
+        "help": "\n**Description**\nGet the current network connectivity.\n\nPrefer to subscribe to this instead of polling.\n",
+        "internal": false,
+        "name": "GetNetworkConnectivityV1Connectivity",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "NetworkConnectivityConnectivity"
+        },
+        "subscribable": false,
+        "tags": [
+            "network-connectivity"
+        ],
+        "threadSafe": false
+    },
+    "GET /network-connectivity/v1/debug/caller-id/mock-id": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Checks the caller ID in use when APIs are called from Swagger",
+        "help": "Returns the `productId` and `patchlineId` being passed to APIs in this plugin when called via Swagger.\n\nReturns 404 if a mock caller ID is not in use.",
+        "internal": false,
+        "name": "GetNetworkConnectivityV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "NetworkConnectivityPluginCallerId_MockCallerId"
+        },
+        "subscribable": false,
+        "tags": [
+            "network-connectivity"
+        ],
+        "threadSafe": false
+    },
     "GET /nintendo-account/v1/player-nickname": {
         "arguments": [],
         "deprecated": false,
@@ -6880,6 +7033,25 @@
         ],
         "threadSafe": false
     },
+    "GET /permissions/v1/user-communication-permissions/ready": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Gets the ready status of the user-communication-permissions endpoint",
+        "help": "",
+        "internal": false,
+        "name": "GetPermissionsV1UserCommunicationPermissionsReady",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "bool"
+        },
+        "subscribable": false,
+        "tags": [
+            "permissions"
+        ],
+        "threadSafe": false
+    },
     "GET /platform-login/v1/config": {
         "arguments": [],
         "deprecated": false,
@@ -7152,6 +7324,25 @@
         "subscribable": false,
         "tags": [
             "platform-social"
+        ],
+        "threadSafe": false
+    },
+    "GET /platform-ui/v1/delete-account": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Subscribe to get Account Deletion UI availability and visibility status",
+        "help": "",
+        "internal": false,
+        "name": "GetPlatformUiV1DeleteAccount",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlatformUiPlatformUIAccountDeletionStatus"
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-ui"
         ],
         "threadSafe": false
     },
@@ -7512,7 +7703,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Fetch a VNG profile of the currently signed in player.",
-        "help": "",
+        "help": "Deprecated. To be removed August 2025.",
         "internal": false,
         "name": "GetPlayerAccountVngV1ProfileByProductId",
         "nameSpace": "",
@@ -12269,7 +12460,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Retrieves the current status of the Account Deletion UI initiated via /rso-mobile-ui/v1/delete-account. Most useful for a client to track whether or not an Account Deletion flow was cancelled or completed.",
-        "help": "\n**Response**\n* `status`: the current status of the Delete Account flow. Of type Api::AccountDeletionV1::AccountDeletionUIStatus.\n",
+        "help": "\n**Response**\n* `status`: the current status of the Delete Account flow. Of type Api::AccountDeletionV1::AccountDeletionUIStatus.\n\n\nEndpoint to be deleted July 2025; Migrate to PlatformUI: '/platform-ui/v1/delete-account'.",
         "internal": false,
         "name": "GetRsoMobileUiV1DeleteAccountStatus",
         "nameSpace": "",
@@ -12390,25 +12581,6 @@
         "returns": {
             "elementType": "",
             "type": "RsoMobileUiRiotIDPromptV1RiotIDPrompt"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
-        ],
-        "threadSafe": false
-    },
-    "GET /rso-mobile-ui/v1/vng/status": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "",
-        "help": "Get the current VNG Registration UI status.\n\nEndpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
-        "internal": false,
-        "name": "GetRsoMobileUiV1VngStatus",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "RsoMobileUiVngV1RegistrationUIStatus"
         },
         "subscribable": false,
         "tags": [
@@ -12561,6 +12733,35 @@
         "returns": {
             "elementType": "",
             "type": "SocialPluginCallerId_MockCallerId"
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
+    "GET /social/v1/friendrequests": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "puuid",
+                "optional": true,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get friend requests",
+        "help": "**Response:** named requests root object: a flat list of friend request property groups with 'puuid' and GnT info inside (could have zero or more entries in list):\n\n```\n{\n  \"requests\": [\n    {\n      \"gameName\":     \"[friend gameName]\",\n      \"tagLine\":      \"[friend tagLine]\",\n      \"note\":         \"[friend note]\",     // Can be set to contain information about the friend request. (ex. recofriender saves the player name from social media here)\n      \"puuid\":        \"[friend puuid]\",\n      \"subscription\": \"pending_out\"        //either \"pending_out\" or \"pending_in\" (sent or received request)\n    }\n  ]\n}\n```\n",
+        "internal": false,
+        "name": "GetSocialV1Friendrequests",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "SocialFriendRequestListPuuid"
         },
         "subscribable": false,
         "tags": [
@@ -12928,7 +13129,7 @@
         ],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "Check with VNG if a player must register with the Vietnamese government.",
+        "description": "Check if a player must register with the Vietnamese government.",
         "help": "",
         "internal": false,
         "name": "GetVngV1StatusByProductId",
@@ -15643,6 +15844,63 @@
         ],
         "threadSafe": false
     },
+    "POST /delete-account/cancelled": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Player Support page calls this endpoint when account deletion flow is cancelled",
+        "help": "",
+        "internal": false,
+        "name": "PostDeleteAccountCancelled",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "delete-account"
+        ],
+        "threadSafe": false
+    },
+    "POST /delete-account/completed": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Player Support page calls this endpoint when account deletion is completed",
+        "help": "",
+        "internal": false,
+        "name": "PostDeleteAccountCompleted",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "delete-account"
+        ],
+        "threadSafe": false
+    },
+    "POST /delete-account/error": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Player Support page calls this endpoint when an error occurs during account deletion flow",
+        "help": "",
+        "internal": false,
+        "name": "PostDeleteAccountError",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "delete-account"
+        ],
+        "threadSafe": false
+    },
     "POST /eula/v1/agreement/content/retry": {
         "arguments": [],
         "deprecated": false,
@@ -16923,6 +17181,25 @@
         ],
         "threadSafe": false
     },
+    "POST /platform-ui/v1/delete-account": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Trigger Account Deletion UI",
+        "help": "",
+        "internal": false,
+        "name": "PostPlatformUiV1DeleteAccount",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-ui"
+        ],
+        "threadSafe": false
+    },
     "POST /platform-ui/v1/fre": {
         "arguments": [],
         "deprecated": false,
@@ -17573,7 +17850,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Create a VNG profile for the currently signed in player.",
-        "help": "",
+        "help": "Deprecated. To be removed August 2025.",
         "internal": false,
         "name": "PostPlayerAccountVngV1ProfileByProductId",
         "nameSpace": "",
@@ -21110,7 +21387,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Initiates the Account Deletion UI to delete a player's Riot account. Be careful, this functionality is destructive - making it difficult, if not impossible, to recover an account.",
-        "help": "",
+        "help": "Endpoint to be deleted July 2025; Migrate to PlatformUI: '/platform-ui/v1/delete-account'.",
         "internal": false,
         "name": "PostRsoMobileUiV1DeleteAccount",
         "nameSpace": "",
@@ -21356,64 +21633,6 @@
         ],
         "threadSafe": false
     },
-    "POST /rso-mobile-ui/v1/vng/profile/{productId}": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "productId",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "",
-        "help": "Launches a WebView to edit VNG (Vietnam) profile registration\n\nEndpoint to be deleted December 2024; Please use '/platform-ui/v1/vng-edit-profile' instead.",
-        "internal": false,
-        "name": "PostRsoMobileUiV1VngProfileByProductId",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "map"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
-        ],
-        "threadSafe": false
-    },
-    "POST /rso-mobile-ui/v1/vng/register/{productId}": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "productId",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "",
-        "help": "Launches a WebView (if necessary) to handle initial, one-time, game-specific, required VNG (Vietnam) profile registration\n\nEndpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
-        "internal": false,
-        "name": "PostRsoMobileUiV1VngRegisterByProductId",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "map"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
-        ],
-        "threadSafe": false
-    },
     "POST /rso-mobile-ui/v2/eula/agreement": {
         "arguments": [
             {
@@ -21517,6 +21736,64 @@
         "subscribable": false,
         "tags": [
             "scd"
+        ],
+        "threadSafe": false
+    },
+    "POST /social/v1/blocklist/{puuid}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "puuid",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Block a player",
+        "help": "",
+        "internal": false,
+        "name": "PostSocialV1BlocklistByPuuid",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
+    "POST /social/v1/friendrequests": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "body",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "SocialFriendRequestPost"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Add friend request / invite friend",
+        "help": "",
+        "internal": false,
+        "name": "PostSocialV1Friendrequests",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
         ],
         "threadSafe": false
     },
@@ -21847,6 +22124,35 @@
         "returns": {
             "elementType": "",
             "type": "VngV1SubmitProfileResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "vng"
+        ],
+        "threadSafe": false
+    },
+    "POST /vng/v1/status/{productId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Refresh data from VNG if a player must register with the Vietnamese government.",
+        "help": "",
+        "internal": false,
+        "name": "PostVngV1StatusByProductId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "VngV1StatusResponse"
         },
         "subscribable": false,
         "tags": [
@@ -23688,6 +23994,35 @@
         "subscribable": false,
         "tags": [
             "mailbox"
+        ],
+        "threadSafe": false
+    },
+    "PUT /network-connectivity/v1/debug/caller-id/mock-id": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "callerId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "NetworkConnectivityPluginCallerId_MockCallerId"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Sets the caller ID to use when calling this plugin from Swagger",
+        "help": "Sets the `productId` and `patchlineId` to pass to APIs in this plugin during future calls from Swagger.\n\nUse this functionality to test APIs in this plugin with Swagger, as if they were being called from another product.",
+        "internal": false,
+        "name": "PutNetworkConnectivityV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "network-connectivity"
         ],
         "threadSafe": false
     },
