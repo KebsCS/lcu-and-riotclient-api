@@ -130,6 +130,7 @@
     ],
     "Plugin lol-cap-missions": [
         "GET /lol-cap-missions/v1/getmissions",
+        "POST /lol-cap-missions/v1/markasviewed",
         "GET /lol-cap-missions/v1/ready"
     ],
     "Plugin lol-catalog": [
@@ -821,6 +822,7 @@
         "POST /lol-lobby-team-builder/champ-select/v1/session/quit",
         "GET /lol-lobby-team-builder/champ-select/v1/session/timer",
         "POST /lol-lobby-team-builder/champ-select/v1/simple-inventory",
+        "GET /lol-lobby-team-builder/champ-select/v1/subset-champion-list",
         "GET /lol-lobby-team-builder/champ-select/v1/team-boost",
         "POST /lol-lobby-team-builder/champ-select/v1/team-boost/purchase",
         "GET /lol-lobby-team-builder/v1/matchmaking",
@@ -1165,7 +1167,7 @@
         "GET /lol-ranked/v1/eligibleTiers/queueType/{queueType}",
         "GET /lol-ranked/v1/eos-notifications",
         "POST /lol-ranked/v1/eos-notifications/{id}/acknowledge",
-        "GET /lol-ranked/v1/eos-rewards",
+        "GET /lol-ranked/v1/eos-rewards/{seasonId}",
         "GET /lol-ranked/v1/league-ladders/{puuid}",
         "GET /lol-ranked/v1/notifications",
         "POST /lol-ranked/v1/notifications/{id}/acknowledge",
@@ -1402,6 +1404,7 @@
         "GET /lol-event-mission/v1/event-mission"
     ],
     "Plugin lol-tft-pass": [
+        "GET /lol-tft-pass/v1/active-passes",
         "GET /lol-tft-pass/v1/battle-pass",
         "GET /lol-tft-pass/v1/config-fetched",
         "GET /lol-tft-pass/v1/daily-login-pass",
@@ -1617,6 +1620,7 @@
         "GET /lol-banners/v1/current-summoner/frames/equipped",
         "GET /lol-banners/v1/players/{puuid}/flags/equipped",
         "GET /lol-cap-missions/v1/getmissions",
+        "POST /lol-cap-missions/v1/markasviewed",
         "GET /lol-cap-missions/v1/ready",
         "GET /lol-catalog/v1/item-details",
         "GET /lol-catalog/v1/items",
@@ -2157,6 +2161,7 @@
         "POST /lol-lobby-team-builder/champ-select/v1/session/quit",
         "GET /lol-lobby-team-builder/champ-select/v1/session/timer",
         "POST /lol-lobby-team-builder/champ-select/v1/simple-inventory",
+        "GET /lol-lobby-team-builder/champ-select/v1/subset-champion-list",
         "GET /lol-lobby-team-builder/champ-select/v1/team-boost",
         "POST /lol-lobby-team-builder/champ-select/v1/team-boost/purchase",
         "GET /lol-lobby-team-builder/v1/matchmaking",
@@ -2518,7 +2523,7 @@
         "GET /lol-ranked/v1/eligibleTiers/queueType/{queueType}",
         "GET /lol-ranked/v1/eos-notifications",
         "POST /lol-ranked/v1/eos-notifications/{id}/acknowledge",
-        "GET /lol-ranked/v1/eos-rewards",
+        "GET /lol-ranked/v1/eos-rewards/{seasonId}",
         "GET /lol-ranked/v1/league-ladders/{puuid}",
         "GET /lol-ranked/v1/notifications",
         "POST /lol-ranked/v1/notifications/{id}/acknowledge",
@@ -2699,6 +2704,7 @@
         "GET /lol-tastes/v1/ready",
         "GET /lol-tastes/v1/skins-model",
         "GET /lol-tastes/v1/tft-overview-model",
+        "GET /lol-tft-pass/v1/active-passes",
         "GET /lol-tft-pass/v1/battle-pass",
         "GET /lol-tft-pass/v1/config-fetched",
         "GET /lol-tft-pass/v1/daily-login-pass",
