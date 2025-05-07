@@ -1829,14 +1829,24 @@
         ],
         "threadSafe": false
     },
-    "DELETE /playstation-account/v2/authorization": {
-        "arguments": [],
+    "DELETE /playstation-account/v2/authorization/{recipient}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Deletes the current Playstation authorization session",
         "help": "",
         "internal": false,
-        "name": "DeletePlaystationAccountV2Authorization",
+        "name": "DeletePlaystationAccountV2AuthorizationByRecipient",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -3248,6 +3258,35 @@
         "subscribable": false,
         "tags": [
             "accounts-security"
+        ],
+        "threadSafe": false
+    },
+    "GET /aes/v1/status/{provider}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "provider",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "AesAESProvider"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Return the AES authorization status for the given provider",
+        "help": "",
+        "internal": false,
+        "name": "GetAesV1StatusByProvider",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "AesAESStatusResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "aes"
         ],
         "threadSafe": false
     },
@@ -5016,6 +5055,25 @@
         ],
         "threadSafe": false
     },
+    "GET /client-config/v1/config-loaded/public": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns true if the public config has been loaded from the service or the cache.",
+        "help": "",
+        "internal": false,
+        "name": "GetClientConfigV1ConfigLoadedPublic",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "bool"
+        },
+        "subscribable": false,
+        "tags": [
+            "client-config"
+        ],
+        "threadSafe": false
+    },
     "GET /client-config/v1/first-party-environment": {
         "arguments": [],
         "deprecated": false,
@@ -5028,25 +5086,6 @@
         "returns": {
             "elementType": "",
             "type": "string"
-        },
-        "subscribable": false,
-        "tags": [
-            "client-config"
-        ],
-        "threadSafe": false
-    },
-    "GET /client-config/v1/public-config-loaded": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Returns true if the public config has been loaded from the service or the cache.",
-        "help": "",
-        "internal": false,
-        "name": "GetClientConfigV1PublicConfigLoaded",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "bool"
         },
         "subscribable": false,
         "tags": [
@@ -8300,14 +8339,24 @@
         ],
         "threadSafe": false
     },
-    "GET /playstation-account/v2/authorization": {
-        "arguments": [],
+    "GET /playstation-account/v2/authorization/{recipient}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Gets current Playstation authorization status",
         "help": "",
         "internal": false,
-        "name": "GetPlaystationAccountV2Authorization",
+        "name": "GetPlaystationAccountV2AuthorizationByRecipient",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -13066,6 +13115,26 @@
         ],
         "threadSafe": false
     },
+    "GET /vanguard-session-manager/v1/status": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns the status of the current Riot Client Vanguard Session.",
+        "help": "",
+        "internal": false,
+        "name": "GetVanguardSessionManagerV1Status",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "VanguardSessionManagerHealthCheckResult"
+        },
+        "subscribable": true,
+        "tags": [
+            "Plugins",
+            "Plugin vanguard-session-manager"
+        ],
+        "threadSafe": false
+    },
     "GET /vanguard/v1/status": {
         "arguments": [],
         "deprecated": false,
@@ -17581,7 +17650,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Retrieves the namesets for a single PUUID",
-        "help": "\n**Description**\nRetrieves the namesets for the PUUID provided.\nA Nameset contains the player's name on the given platform.\nExample: SwitchNameset.name would be the Switch username associated with the player's PUUID\n\n** Body Argument **\n\n\"NamesetsForPuuidRequest\"\n* \"puuid\" - PUUID (String)\n\nResponse Body:\nNamesetsForPuuidResponse:\n* \"puuid\" - PUUID (String)\n* \"providerId\" - player's provider id\n* \"switchNameset\" - A SwitchNameset\n* \"playstationNameset\" - A PlaystationNameset\n* \"xboxNameset\" - An XboxNameset\n* \"gnt\" - A Riot ID\n* \"error\" - A String containing any errors\n\nSwitchNameset:\n    \"name\" - A String with the Switch name associated to the requested PUUID\n\nPlaystationNameset:\n    \"name\" - A String with the Playstation name associated to the requested PUUID\n\nXboxNameset:\n    \"name\" - A String with the Xbox name associated to the requested PUUID\n\nRiot ID:\n    \"gameName\" - The player's Game Name (String)\n    \"tagLine\" - The player's Tag Line (String)\n\n",
+        "help": "\n**Description**\nRetrieves the namesets for the PUUID provided.\nA Nameset contains the player's name on the given platform.\nExample: SwitchNameset.name would be the Switch username associated with the player's PUUID\n\n** Body Argument **\n\n\"NamesetsForPuuidRequest\"\n* \"puuid\" - PUUID (String)\n\nResponse Body:\nNamesetsForPuuidResponse:\n* \"puuid\" - PUUID (String)\n* \"providerId\" - player's provider id\n* \"switchNameset\" - A SwitchNameset\n* \"playstationNameset\" - A PlaystationNameset\n* \"xboxNameset\" - An XboxNameset\n* \"gnt\" - A Riot ID\n* \"error\" - A String containing any errors\n\nSwitchNameset:\n    \"name\" - A String with the Switch name associated to the requested PUUID\n\nPlaystationNameset:\n    \"name\" - A String with the Playstation name associated to the requested PUUID\n\nXboxNameset:\n    \"name\" - A String with the Xbox name associated to the requested PUUID\n\nRiot ID:\n    \"gameName\" - The player's Game Name (String)\n    \"tagLine\" - The player's Tag Line (String)\n\n\n\nEndpoint deleted November 2025; Please migrate to V2 endpoint /player-account/lookup/v2/namesets-for-puuid.",
         "internal": false,
         "name": "PostPlayerAccountLookupV1NamesetsForPuuid",
         "nameSpace": "",
@@ -17610,7 +17679,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Retrieves the namesets for each PUUID provided",
-        "help": "\n**Description**\nRetrieves the namesets for each PUUID provided.\nA Nameset contains the player's name on the given platform.\nExample: SwitchNameset.name would be the Switch username associated with the player's PUUID\n\n** Request Arguments **\n\nRequest Body Object:\nNamesetsForPuuidsRequest Object:\n    \"puuids\" - A list of PUUIDs to retrieve namesets for\n\nNamesetsForPuuidsResponse Body:\n    \"namesets\" - A list of NamesetsResponseElements\n\nNamesetsResponseElement:\n* \"puuid\" - PUUID (String)\n* \"providerId\" - player's provider id\n* \"switchNameset\" - A SwitchNameset\n* \"playstationNameset\" - A PlaystationNameset\n* \"xboxNameset\" - An XboxNameset\n* \"gnt\" - A Riot ID\n* \"error\" - A String containing any errors\n\nSwitchNameset:\n    \"name\" - A String with the Switch name associated to the requested PUUID\n\nPlaystationNameset:\n    \"name\" - A String with the Playstation name associated to the requested PUUID\n\nXboxNameset:\n    \"name\" - A String with the Xbox name associated to the requested PUUID\n\nRiot ID:\n    \"gameName\" - The player's Game Name (String)\n    \"tagLine\" - The player's Tag Line (String)\n\n",
+        "help": "\n**Description**\nRetrieves the namesets for each PUUID provided.\nA Nameset contains the player's name on the given platform.\nExample: SwitchNameset.name would be the Switch username associated with the player's PUUID\n\n** Request Arguments **\n\nRequest Body Object:\nNamesetsForPuuidsRequest Object:\n    \"puuids\" - A list of PUUIDs to retrieve namesets for\n\nNamesetsForPuuidsResponse Body:\n    \"namesets\" - A list of NamesetsResponseElements\n\nNamesetsResponseElement:\n* \"puuid\" - PUUID (String)\n* \"providerId\" - player's provider id\n* \"switchNameset\" - A SwitchNameset\n* \"playstationNameset\" - A PlaystationNameset\n* \"xboxNameset\" - An XboxNameset\n* \"gnt\" - A Riot ID\n* \"error\" - A String containing any errors\n\nSwitchNameset:\n    \"name\" - A String with the Switch name associated to the requested PUUID\n\nPlaystationNameset:\n    \"name\" - A String with the Playstation name associated to the requested PUUID\n\nXboxNameset:\n    \"name\" - A String with the Xbox name associated to the requested PUUID\n\nRiot ID:\n    \"gameName\" - The player's Game Name (String)\n    \"tagLine\" - The player's Tag Line (String)\n\n\n\nEndpoint deleted November 2025; Please migrate to V2 endpoint /player-account/lookup/v2/namesets-for-puuids.",
         "internal": false,
         "name": "PostPlayerAccountLookupV1NamesetsForPuuids",
         "nameSpace": "",
@@ -18450,8 +18519,17 @@
         ],
         "threadSafe": false
     },
-    "POST /playstation-account/v2/authorization": {
+    "POST /playstation-account/v2/authorization/{recipient}": {
         "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
             {
                 "description": "",
                 "name": "AuthorizationParameters",
@@ -18467,7 +18545,7 @@
         "description": "Gets authorization from the Playstation Account of the player logged in the Playstation or start authentication with native browser",
         "help": "",
         "internal": false,
-        "name": "PostPlaystationAccountV2Authorization",
+        "name": "PostPlaystationAccountV2AuthorizationByRecipient",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -22131,6 +22209,73 @@
         ],
         "threadSafe": false
     },
+    "POST /vng/v1/profile/verification/send/{productId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Send a verification code to the phone number of the signed in player.",
+        "help": "",
+        "internal": false,
+        "name": "PostVngV1ProfileVerificationSendByProductId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "VngV1SendVerificationCodeResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "vng"
+        ],
+        "threadSafe": false
+    },
+    "POST /vng/v1/profile/verification/verify/{productId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "verification",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "VngV1VerificationDetails"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Submit a players phone number verification details.",
+        "help": "",
+        "internal": false,
+        "name": "PostVngV1ProfileVerificationVerifyByProductId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "VngVProfileVerificationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "vng"
+        ],
+        "threadSafe": false
+    },
     "POST /vng/v1/status/{productId}": {
         "arguments": [
             {
@@ -24702,6 +24847,35 @@
         "subscribable": false,
         "tags": [
             "player-reporting"
+        ],
+        "threadSafe": false
+    },
+    "PUT /player-session-lifecycle/v1/auth-intent": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "UpdateAuthIntentRequest",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlayerSessionLifecycleUpdateAuthIntentRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Set a player's Auth Intent for the current session.",
+        "help": "",
+        "internal": false,
+        "name": "PutPlayerSessionLifecycleV1AuthIntent",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "player-session-lifecycle"
         ],
         "threadSafe": false
     },

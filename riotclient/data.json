@@ -2,6 +2,9 @@
     "accounts-security": [
         "GET /accounts-security/v1/access"
     ],
+    "aes": [
+        "GET /aes/v1/status/{provider}"
+    ],
     "age-restriction": [
         "GET /age-restriction/v1/age-restriction/products/{productId}",
         "PUT /age-restriction/v1/debug/age-restriction/products/{productId}"
@@ -162,10 +165,10 @@
         "DELETE /client-config/v1/authorization",
         "PUT /client-config/v1/authorization",
         "GET /client-config/v1/config",
+        "GET /client-config/v1/config-loaded/public",
         "GET /client-config/v1/config/{name}",
         "GET /client-config/v1/first-party-environment",
         "PUT /client-config/v1/first-party-environment",
-        "GET /client-config/v1/public-config-loaded",
         "PUT /client-config/v1/refresh-config-status",
         "PUT /client-config/v1/sessions",
         "GET /client-config/v1/status/{type}",
@@ -556,6 +559,7 @@
         "POST /player-reporting/v2/report"
     ],
     "player-session-lifecycle": [
+        "PUT /player-session-lifecycle/v1/auth-intent",
         "PUT /player-session-lifecycle/v1/login-strategy",
         "DELETE /player-session-lifecycle/v1/session",
         "GET /player-session-lifecycle/v1/session",
@@ -575,9 +579,9 @@
         "GET /playstation-account/v1/user",
         "POST /playstation-account/v1/user",
         "POST /playstation-account/v1/user/confirm",
-        "DELETE /playstation-account/v2/authorization",
-        "GET /playstation-account/v2/authorization",
-        "POST /playstation-account/v2/authorization"
+        "DELETE /playstation-account/v2/authorization/{recipient}",
+        "GET /playstation-account/v2/authorization/{recipient}",
+        "POST /playstation-account/v2/authorization/{recipient}"
     ],
     "Plugin agent": [
         "POST /agent/v1/connection-info",
@@ -787,6 +791,9 @@
         "GET /vanguard/v1/status",
         "PUT /vanguard/v1/update/products/{productId}"
     ],
+    "Plugin vanguard-session-manager": [
+        "GET /vanguard-session-manager/v1/status"
+    ],
     "Plugins": [
         "POST /agent/v1/connection-info",
         "GET /agent/v1/requests",
@@ -941,6 +948,7 @@
         "PUT /system-info/v1/routine/start",
         "PUT /system-info/v1/routine/stop",
         "PUT /system-tray/v1/native-notification/show",
+        "GET /vanguard-session-manager/v1/status",
         "POST /vanguard/v1/check-vanguard-service",
         "PUT /vanguard/v1/installed-products",
         "GET /vanguard/v1/status",
@@ -1321,6 +1329,8 @@
         "GET /tencent-launcher/v1/update-status"
     ],
     "vng": [
+        "POST /vng/v1/profile/verification/send/{productId}",
+        "POST /vng/v1/profile/verification/verify/{productId}",
         "GET /vng/v1/profile/{productId}",
         "POST /vng/v1/profile/{productId}",
         "GET /vng/v1/status/ready",
