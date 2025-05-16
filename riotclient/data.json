@@ -630,7 +630,14 @@
         "PUT /patch-proxy/v1/patch-jobs/start",
         "PUT /patch-proxy/v1/patch-jobs/stop",
         "GET /patch-proxy/v1/patch-states/products/{productId}/patchlines/{patchlineId}",
-        "PUT /patch-proxy/v1/priority-patch-jobs/products/{productId}/patchlines/{patchlineId}"
+        "PUT /patch-proxy/v1/priority-patch-jobs/products/{productId}/patchlines/{patchlineId}",
+        "DELETE /patch-proxy/v2/patch-jobs/products/{productId}/patchlines/{patchlineId}",
+        "GET /patch-proxy/v2/patch-states/out-of-date",
+        "GET /patch-proxy/v2/patch-states/products/{productId}/patchlines/{patchlineId}",
+        "POST /patch-proxy/v2/patch-states/refresh",
+        "POST /patch-proxy/v2/patch-states/refresh/products/{productId}/patchlines/{patchlineId}",
+        "PUT /patch-proxy/v2/priority-patch/products/{productId}/patchlines/{patchlineId}",
+        "PUT /patch-proxy/v2/queue-patch/products/{productId}/patchlines/{patchlineId}"
     ],
     "Plugin product-launcher": [
         "DELETE /product-launcher/v1/default-product",
@@ -745,6 +752,7 @@
         "DELETE /rnet-product-registry/v4/patch-requests/products/{productId}/patchlines/{patchlineId}",
         "PUT /rnet-product-registry/v4/patch-requests/products/{productId}/patchlines/{patchlineId}",
         "POST /rnet-product-registry/v4/patch-requests/products/{productId}/patchlines/{patchlineId}/cancel-dependencies",
+        "GET /rnet-product-registry/v4/patch-requests/products/{productId}/patchlines/{patchlineId}/dependencies",
         "POST /rnet-product-registry/v4/patch-requests/products/{productId}/patchlines/{patchlineId}/install-dependencies",
         "POST /rnet-product-registry/v4/patch-requests/products/{productId}/patchlines/{patchlineId}/retry-dependencies",
         "GET /rnet-product-registry/v4/patch-states/out-of-date",
@@ -789,7 +797,7 @@
         "POST /vanguard/v1/check-vanguard-service",
         "PUT /vanguard/v1/installed-products",
         "GET /vanguard/v1/status",
-        "PUT /vanguard/v1/update/products/{productId}"
+        "PUT /vanguard/v1/update/products/{productId}/patchlines/{patchlineId}"
     ],
     "Plugin vanguard-session-manager": [
         "GET /vanguard-session-manager/v1/status"
@@ -822,6 +830,13 @@
         "PUT /patch-proxy/v1/patch-jobs/stop",
         "GET /patch-proxy/v1/patch-states/products/{productId}/patchlines/{patchlineId}",
         "PUT /patch-proxy/v1/priority-patch-jobs/products/{productId}/patchlines/{patchlineId}",
+        "DELETE /patch-proxy/v2/patch-jobs/products/{productId}/patchlines/{patchlineId}",
+        "GET /patch-proxy/v2/patch-states/out-of-date",
+        "GET /patch-proxy/v2/patch-states/products/{productId}/patchlines/{patchlineId}",
+        "POST /patch-proxy/v2/patch-states/refresh",
+        "POST /patch-proxy/v2/patch-states/refresh/products/{productId}/patchlines/{patchlineId}",
+        "PUT /patch-proxy/v2/priority-patch/products/{productId}/patchlines/{patchlineId}",
+        "PUT /patch-proxy/v2/queue-patch/products/{productId}/patchlines/{patchlineId}",
         "GET /plugin-manager/v1/status",
         "GET /plugin-manager/v2/descriptions",
         "GET /plugin-manager/v2/descriptions/{plugin}",
@@ -917,6 +932,7 @@
         "DELETE /rnet-product-registry/v4/patch-requests/products/{productId}/patchlines/{patchlineId}",
         "PUT /rnet-product-registry/v4/patch-requests/products/{productId}/patchlines/{patchlineId}",
         "POST /rnet-product-registry/v4/patch-requests/products/{productId}/patchlines/{patchlineId}/cancel-dependencies",
+        "GET /rnet-product-registry/v4/patch-requests/products/{productId}/patchlines/{patchlineId}/dependencies",
         "POST /rnet-product-registry/v4/patch-requests/products/{productId}/patchlines/{patchlineId}/install-dependencies",
         "POST /rnet-product-registry/v4/patch-requests/products/{productId}/patchlines/{patchlineId}/retry-dependencies",
         "GET /rnet-product-registry/v4/patch-states/out-of-date",
@@ -952,7 +968,7 @@
         "POST /vanguard/v1/check-vanguard-service",
         "PUT /vanguard/v1/installed-products",
         "GET /vanguard/v1/status",
-        "PUT /vanguard/v1/update/products/{productId}"
+        "PUT /vanguard/v1/update/products/{productId}/patchlines/{patchlineId}"
     ],
     "privacy": [
         "GET /privacy/v1/tracking",
@@ -1318,6 +1334,7 @@
         "PUT /telemetry/v2/events-extended/{id}",
         "PUT /telemetry/v2/events-schemaless/{id}",
         "PUT /telemetry/v2/events/{id}",
+        "GET /telemetry/v2/metadata/{schemaPrefix}/{metadataEntity}",
         "DELETE /telemetry/v2/metadata/{schemaPrefix}/{metadataEntity}/{propertyName}",
         "POST /telemetry/v2/metadata/{schemaPrefix}/{metadataEntity}/{propertyName}"
     ],

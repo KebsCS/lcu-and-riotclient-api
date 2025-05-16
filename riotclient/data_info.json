@@ -1456,7 +1456,46 @@
         "nameSpace": "",
         "returns": {
             "elementType": "",
-            "type": "PatchProxyPatchProxyRequest"
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "Plugins",
+            "Plugin patch-proxy"
+        ],
+        "threadSafe": false
+    },
+    "DELETE /patch-proxy/v2/patch-jobs/products/{productId}/patchlines/{patchlineId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "patchlineId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Delete patch job from the scheduler. This will stop the current patch job in progress and any related jobs that share the same install ID.",
+        "help": "",
+        "internal": false,
+        "name": "DeletePatchProxyV2PatchJobsProductsByProductIdPatchlinesByPatchlineId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
         },
         "subscribable": false,
         "tags": [
@@ -6698,6 +6737,65 @@
         ],
         "threadSafe": false
     },
+    "GET /patch-proxy/v2/patch-states/out-of-date": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get a list of install ids that are out of date",
+        "help": "",
+        "internal": false,
+        "name": "GetPatchProxyV2PatchStatesOutOfDate",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "PatchProxyProductPatchlineKey",
+            "type": "vector"
+        },
+        "subscribable": false,
+        "tags": [
+            "Plugins",
+            "Plugin patch-proxy"
+        ],
+        "threadSafe": false
+    },
+    "GET /patch-proxy/v2/patch-states/products/{productId}/patchlines/{patchlineId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "patchlineId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get patch state for a product patchline.",
+        "help": "",
+        "internal": false,
+        "name": "GetPatchProxyV2PatchStatesProductsByProductIdPatchlinesByPatchlineId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PatchProxyProductPatchlineStatus"
+        },
+        "subscribable": true,
+        "tags": [
+            "Plugins",
+            "Plugin patch-proxy"
+        ],
+        "threadSafe": false
+    },
     "GET /patch/v1/configuration": {
         "arguments": [],
         "deprecated": false,
@@ -11715,6 +11813,45 @@
         ],
         "threadSafe": false
     },
+    "GET /rnet-product-registry/v4/patch-requests/products/{productId}/patchlines/{patchlineId}/dependencies": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "patchlineId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Fetches whether or not each dependency is installed or not for the specified product/patchline combo.",
+        "help": "",
+        "internal": false,
+        "name": "GetRnetProductRegistryV4PatchRequestsProductsByProductIdPatchlinesByPatchlineIdDependencies",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "bool",
+            "type": "map"
+        },
+        "subscribable": false,
+        "tags": [
+            "Plugins",
+            "Plugin rnet-product-registry"
+        ],
+        "threadSafe": false
+    },
     "GET /rnet-product-registry/v4/patch-states/out-of-date": {
         "arguments": [],
         "deprecated": false,
@@ -13070,6 +13207,44 @@
         "returns": {
             "elementType": "",
             "type": "uint64"
+        },
+        "subscribable": false,
+        "tags": [
+            "telemetry"
+        ],
+        "threadSafe": false
+    },
+    "GET /telemetry/v2/metadata/{schemaPrefix}/{metadataEntity}": {
+        "arguments": [
+            {
+                "description": "The schema 'world' prefix (i.e. riotclient, rtp, etc) to match against incoming AP events.",
+                "name": "schemaPrefix",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "Name of the metadata entity that exists in every schema for the given prefix (i.e. metadata, riotclientMetadata, etc)",
+                "name": "metadataEntity",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get all properties in the metadata",
+        "help": "",
+        "internal": false,
+        "name": "GetTelemetryV2MetadataBySchemaPrefixByMetadataEntity",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "object"
         },
         "subscribable": false,
         "tags": [
@@ -16712,6 +16887,75 @@
         ],
         "threadSafe": false
     },
+    "POST /patch-proxy/v2/patch-states/refresh": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "options",
+                "optional": true,
+                "type": {
+                    "elementType": "",
+                    "type": "PatchProxyRefreshRequestOptions"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Refresh patch states of all products",
+        "help": "",
+        "internal": false,
+        "name": "PostPatchProxyV2PatchStatesRefresh",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "Plugins",
+            "Plugin patch-proxy"
+        ],
+        "threadSafe": false
+    },
+    "POST /patch-proxy/v2/patch-states/refresh/products/{productId}/patchlines/{patchlineId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "patchlineId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Refresh patch state for a product patchline.",
+        "help": "",
+        "internal": false,
+        "name": "PostPatchProxyV2PatchStatesRefreshProductsByProductIdPatchlinesByPatchlineId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PatchProxyProductPatchlineStatus"
+        },
+        "subscribable": false,
+        "tags": [
+            "Plugins",
+            "Plugin patch-proxy"
+        ],
+        "threadSafe": false
+    },
     "POST /pay-mobile/v1/purchase/{productId}": {
         "arguments": [
             {
@@ -20121,7 +20365,7 @@
         ],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "Installs dependencies for the specified product/patchline combo.",
+        "description": "Fetches whether or not each dependency is installed or not for the specified product/patchline combo.",
         "help": "",
         "internal": false,
         "name": "PostRnetProductRegistryV4PatchRequestsProductsByProductIdPatchlinesByPatchlineIdInstallDependencies",
@@ -24363,6 +24607,93 @@
         ],
         "threadSafe": false
     },
+    "PUT /patch-proxy/v2/priority-patch/products/{productId}/patchlines/{patchlineId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "patchlineId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "options",
+                "optional": true,
+                "type": {
+                    "elementType": "",
+                    "type": "PatchProxyPatchRequestOptions"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Starts a priority patch for a product, any active patch jobs will be moved to the back of the queue.",
+        "help": "",
+        "internal": false,
+        "name": "PutPatchProxyV2PriorityPatchProductsByProductIdPatchlinesByPatchlineId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "PatchProxyPatchProxyRequest",
+            "type": "vector"
+        },
+        "subscribable": false,
+        "tags": [
+            "Plugins",
+            "Plugin patch-proxy"
+        ],
+        "threadSafe": false
+    },
+    "PUT /patch-proxy/v2/queue-patch/products/{productId}/patchlines/{patchlineId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "patchlineId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Starts a non-priority patch for a product, active patch jobs are unaffected by the incoming jobs. This is only used by the auto-update feature",
+        "help": "",
+        "internal": false,
+        "name": "PutPatchProxyV2QueuePatchProductsByProductIdPatchlinesByPatchlineId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "PatchProxyPatchProxyRequest",
+            "type": "vector"
+        },
+        "subscribable": false,
+        "tags": [
+            "Plugins",
+            "Plugin patch-proxy"
+        ],
+        "threadSafe": false
+    },
     "PUT /patch/v1/configuration": {
         "arguments": [
             {
@@ -27728,11 +28059,20 @@
         ],
         "threadSafe": false
     },
-    "PUT /vanguard/v1/update/products/{productId}": {
+    "PUT /vanguard/v1/update/products/{productId}/patchlines/{patchlineId}": {
         "arguments": [
             {
                 "description": "",
                 "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "patchlineId",
                 "optional": false,
                 "type": {
                     "elementType": "",
@@ -27745,7 +28085,7 @@
         "description": "Request that Vanguard update, prompting UAC if required.",
         "help": "",
         "internal": false,
-        "name": "PutVanguardV1UpdateProductsByProductId",
+        "name": "PutVanguardV1UpdateProductsByProductIdPatchlinesByPatchlineId",
         "nameSpace": "",
         "returns": {
             "elementType": "",

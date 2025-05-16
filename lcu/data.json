@@ -49,6 +49,11 @@
         "POST /data-store/v1/install-settings/{+path}",
         "GET /data-store/v1/system-settings/{+path}"
     ],
+    "error-monitor": [
+        "POST /error-monitor/v1/logs/batches",
+        "GET /error-monitor/v1/logs/changed",
+        "POST /error-monitor/v1/ux/logs"
+    ],
     "http": [
         "GET /async/v1/result/{asyncToken}",
         "GET /async/v1/result/{asyncToken}",
@@ -504,6 +509,14 @@
         "POST /lol-game-client-chat/v2/instant-messages",
         "GET /lol-game-client-chat/v2/muted-players"
     ],
+    "Plugin lol-game-data-inventory": [
+        "GET /lol-game-data-inventory/v1/items/contentIds",
+        "GET /lol-game-data-inventory/v1/items/contentIds/inventoryTypes/{inventoryType}",
+        "GET /lol-game-data-inventory/v1/items/contentIds/{contentId}",
+        "GET /lol-game-data-inventory/v1/items/itemIds/inventoryTypes/{inventoryType}",
+        "GET /lol-game-data-inventory/v1/items/itemIds/inventoryTypes/{inventoryType}/itemIds/{itemId}",
+        "GET /lol-game-data-inventory/v1/ready"
+    ],
     "Plugin lol-game-queues": [
         "GET /lol-game-queues/v1/custom",
         "GET /lol-game-queues/v1/custom-non-default",
@@ -512,7 +525,8 @@
         "GET /lol-game-queues/v1/game-type-config/{gameTypeConfigId}/map/{mapId}",
         "GET /lol-game-queues/v1/queues",
         "GET /lol-game-queues/v1/queues/type/{queueType}",
-        "GET /lol-game-queues/v1/queues/{id}"
+        "GET /lol-game-queues/v1/queues/{id}",
+        "GET /lol-game-queues/v1/queues/{id}/isCustom"
     ],
     "Plugin lol-game-settings": [
         "GET /lol-game-settings/v1/didreset",
@@ -1168,6 +1182,7 @@
         "GET /lol-ranked/v1/eos-notifications",
         "POST /lol-ranked/v1/eos-notifications/{id}/acknowledge",
         "GET /lol-ranked/v1/eos-rewards/{seasonId}",
+        "GET /lol-ranked/v1/global-notifications",
         "GET /lol-ranked/v1/league-ladders/{puuid}",
         "GET /lol-ranked/v1/notifications",
         "POST /lol-ranked/v1/notifications/{id}/acknowledge",
@@ -1279,6 +1294,14 @@
         "PATCH /lol-settings/v2/local/{category}",
         "GET /lol-settings/v2/ready",
         "POST /lol-settings/v2/reload/{ppType}"
+    ],
+    "Plugin lol-shoppefront": [
+        "POST /lol-shoppefront/v1/purchases",
+        "GET /lol-shoppefront/v1/purchases/{purchaseId}",
+        "GET /lol-shoppefront/v1/ready",
+        "GET /lol-shoppefront/v1/store-digests",
+        "POST /lol-shoppefront/v1/store-digests",
+        "GET /lol-shoppefront/v1/stores"
     ],
     "Plugin lol-shutdown": [
         "GET /lol-shutdown/v1/notification"
@@ -1956,6 +1979,12 @@
         "GET /lol-game-client-chat/v2/ignored-players",
         "POST /lol-game-client-chat/v2/instant-messages",
         "GET /lol-game-client-chat/v2/muted-players",
+        "GET /lol-game-data-inventory/v1/items/contentIds",
+        "GET /lol-game-data-inventory/v1/items/contentIds/inventoryTypes/{inventoryType}",
+        "GET /lol-game-data-inventory/v1/items/contentIds/{contentId}",
+        "GET /lol-game-data-inventory/v1/items/itemIds/inventoryTypes/{inventoryType}",
+        "GET /lol-game-data-inventory/v1/items/itemIds/inventoryTypes/{inventoryType}/itemIds/{itemId}",
+        "GET /lol-game-data-inventory/v1/ready",
         "GET /lol-game-queues/v1/custom",
         "GET /lol-game-queues/v1/custom-non-default",
         "GET /lol-game-queues/v1/customs-in-parties-enabled",
@@ -1964,6 +1993,7 @@
         "GET /lol-game-queues/v1/queues",
         "GET /lol-game-queues/v1/queues/type/{queueType}",
         "GET /lol-game-queues/v1/queues/{id}",
+        "GET /lol-game-queues/v1/queues/{id}/isCustom",
         "GET /lol-game-settings/v1/didreset",
         "GET /lol-game-settings/v1/game-settings",
         "PATCH /lol-game-settings/v1/game-settings",
@@ -2524,6 +2554,7 @@
         "GET /lol-ranked/v1/eos-notifications",
         "POST /lol-ranked/v1/eos-notifications/{id}/acknowledge",
         "GET /lol-ranked/v1/eos-rewards/{seasonId}",
+        "GET /lol-ranked/v1/global-notifications",
         "GET /lol-ranked/v1/league-ladders/{puuid}",
         "GET /lol-ranked/v1/notifications",
         "POST /lol-ranked/v1/notifications/{id}/acknowledge",
@@ -2613,6 +2644,12 @@
         "PATCH /lol-settings/v2/local/{category}",
         "GET /lol-settings/v2/ready",
         "POST /lol-settings/v2/reload/{ppType}",
+        "POST /lol-shoppefront/v1/purchases",
+        "GET /lol-shoppefront/v1/purchases/{purchaseId}",
+        "GET /lol-shoppefront/v1/ready",
+        "GET /lol-shoppefront/v1/store-digests",
+        "POST /lol-shoppefront/v1/store-digests",
+        "GET /lol-shoppefront/v1/stores",
         "GET /lol-shutdown/v1/notification",
         "GET /lol-simple-dialog-messages/v1/messages",
         "POST /lol-simple-dialog-messages/v1/messages",
@@ -2910,8 +2947,6 @@
         "POST /telemetry/v1/common-data/{key}",
         "POST /telemetry/v1/events-with-perf-info/{eventType}",
         "POST /telemetry/v1/events/{eventType}",
-        "POST /telemetry/v3/events-once/{eventType}/{onceTag}",
-        "POST /telemetry/v3/events/{eventType}",
         "PATCH /telemetry/v3/slis/add-bool-diagnostic",
         "PATCH /telemetry/v3/slis/add-double-diagnostic",
         "PATCH /telemetry/v3/slis/add-int-diagnostic",
