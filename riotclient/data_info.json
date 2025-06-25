@@ -1465,6 +1465,26 @@
         ],
         "threadSafe": false
     },
+    "DELETE /patch-proxy/v2/patch-jobs/all": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Delete all patch jobs from the threaded patch scheduler. This will stop patch in progress.",
+        "help": "",
+        "internal": false,
+        "name": "DeletePatchProxyV2PatchJobsAll",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "Plugins",
+            "Plugin patch-proxy"
+        ],
+        "threadSafe": false
+    },
     "DELETE /patch-proxy/v2/patch-jobs/products/{productId}/patchlines/{patchlineId}": {
         "arguments": [
             {
@@ -1897,6 +1917,44 @@
         ],
         "threadSafe": false
     },
+    "DELETE /presences/v1/debug/caller-id/mock-id": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Stops mocking the caller ID for Swagger calls",
+        "help": "Deletes the currently set `productId` and `patchlineId`. Plugin APIs will receive `swagger` as the `productId`.",
+        "internal": false,
+        "name": "DeletePresencesV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "presences"
+        ],
+        "threadSafe": false
+    },
+    "DELETE /presences/v1/session": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Delete the player's presence",
+        "help": "",
+        "internal": false,
+        "name": "DeletePresencesV1Session",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "presences"
+        ],
+        "threadSafe": false
+    },
     "DELETE /private-settings/v1/settings": {
         "arguments": [],
         "deprecated": false,
@@ -2056,6 +2114,45 @@
         "subscribable": false,
         "tags": [
             "product-integration"
+        ],
+        "threadSafe": false
+    },
+    "DELETE /product-launcher/v1/compat-mode/products/{product-id}/patchlines/{patchline-id}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "product-id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "patchline-id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Deletes the compatibility mode registry key value for the given product and patchline.",
+        "help": "",
+        "internal": false,
+        "name": "DeleteProductLauncherV1CompatModeProductsByProductIdPatchlinesByPatchlineId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "Plugins",
+            "Plugin product-launcher"
         ],
         "threadSafe": false
     },
@@ -2932,9 +3029,57 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Remove or decline friend request",
-        "help": "",
+        "help": "Endpoint deleted April 2025; Please use '/social/v2/friendrequests'.",
         "internal": false,
         "name": "DeleteSocialV1FriendrequestsByPuuid",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
+    "DELETE /social/v1/presences/session": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Delete the player's presence",
+        "help": "",
+        "internal": false,
+        "name": "DeleteSocialV1PresencesSession",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
+    "DELETE /social/v2/friendrequests/{puuid}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "puuid",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Remove or decline friend request",
+        "help": "",
+        "internal": false,
+        "name": "DeleteSocialV2FriendrequestsByPuuid",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -3243,14 +3388,24 @@
         ],
         "threadSafe": false
     },
-    "DELETE /xbox-account/v2/authorization": {
-        "arguments": [],
+    "DELETE /xbox-account/v2/authorization/{recipient}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Deletes the current Xbox authorization session",
         "help": "",
         "internal": false,
-        "name": "DeleteXboxAccountV2Authorization",
+        "name": "DeleteXboxAccountV2AuthorizationByRecipient",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -4352,6 +4507,25 @@
         "help": "**Response:** named requests root object: a flat list of friend request property groups with 'puuid' and GnT info inside (could have zero or more entries in list):\n\n```\n{\n  \"requests\": [\n    {\n      \"gameName\":     \"[friend gameName]\",\n      \"tagLine\":      \"[friend tagLine]\",\n      \"note\":         \"[friend note]\",     // Can be set to contain information about the friend request. (ex. recofriender saves the player name from social media here)\n      \"puuid\":        \"[friend puuid]\",\n      \"subscription\": \"pending_out\"        //either \"pending_out\" or \"pending_in\" (sent or received request)\n    }\n  ]\n}\n```\n",
         "internal": false,
         "name": "GetChatV6Friendrequests",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "ChatFriendRequestListPuuid"
+        },
+        "subscribable": false,
+        "tags": [
+            "chat"
+        ],
+        "threadSafe": false
+    },
+    "GET /chat/v6/friendrequests/full": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get friend requests. On update and delete will notify with the full friend requests list.",
+        "help": "**Response:** named requests root object: a flat list of friend request property groups with 'puuid' and GnT info inside (could have zero or more entries in list):\n\n```\n{\n  \"requests\": [\n    {\n      \"gameName\":     \"[friend gameName]\",\n      \"tagLine\":      \"[friend tagLine]\",\n      \"note\":         \"[friend note]\",     // Can be set to contain information about the friend request. (ex. recofriender saves the player name from social media here)\n      \"puuid\":        \"[friend puuid]\",\n      \"subscription\": \"pending_out\"        //either \"pending_out\" or \"pending_in\" (sent or received request)\n    }\n  ]\n}\n```\n",
+        "internal": false,
+        "name": "GetChatV6FriendrequestsFull",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -6796,6 +6970,45 @@
         ],
         "threadSafe": false
     },
+    "GET /patch-proxy/v2/products/{productId}/patchlines/{patchlineId}/dependencies": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "patchlineId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get the dependencies for a product patchline.",
+        "help": "",
+        "internal": false,
+        "name": "GetPatchProxyV2ProductsByProductIdPatchlinesByPatchlineIdDependencies",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "PatchProxyProductPatchlineDependencyState",
+            "type": "vector"
+        },
+        "subscribable": true,
+        "tags": [
+            "Plugins",
+            "Plugin patch-proxy"
+        ],
+        "threadSafe": false
+    },
     "GET /patch/v1/configuration": {
         "arguments": [],
         "deprecated": false,
@@ -8588,6 +8801,44 @@
             "Plugins",
             "Plugin Manager",
             "Plugin Manager Diagnostics"
+        ],
+        "threadSafe": false
+    },
+    "GET /presences/v1/debug/caller-id/mock-id": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Checks the caller ID in use when APIs are called from Swagger",
+        "help": "Returns the `productId` and `patchlineId` being passed to APIs in this plugin when called via Swagger.\n\nReturns 404 if a mock caller ID is not in use.",
+        "internal": false,
+        "name": "GetPresencesV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PresencesPluginCallerId_MockCallerId"
+        },
+        "subscribable": false,
+        "tags": [
+            "presences"
+        ],
+        "threadSafe": false
+    },
+    "GET /presences/v1/friends": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get the presences of the player's friends",
+        "help": "",
+        "internal": false,
+        "name": "GetPresencesV1Friends",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PresencesFriendsPresences"
+        },
+        "subscribable": false,
+        "tags": [
+            "presences"
         ],
         "threadSafe": false
     },
@@ -12941,7 +13192,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Get friend requests",
-        "help": "**Response:** named requests root object: a flat list of friend request property groups with 'puuid' and GnT info inside (could have zero or more entries in list):\n\n```\n{\n  \"requests\": [\n    {\n      \"gameName\":     \"[friend gameName]\",\n      \"tagLine\":      \"[friend tagLine]\",\n      \"note\":         \"[friend note]\",     // Can be set to contain information about the friend request. (ex. recofriender saves the player name from social media here)\n      \"puuid\":        \"[friend puuid]\",\n      \"subscription\": \"pending_out\"        //either \"pending_out\" or \"pending_in\" (sent or received request)\n    }\n  ]\n}\n```\n",
+        "help": "**Response:** named requests root object: a flat list of friend request property groups with 'puuid' and GnT info inside (could have zero or more entries in list):\n\n```\n{\n  \"requests\": [\n    {\n      \"gameName\":     \"[friend gameName]\",\n      \"tagLine\":      \"[friend tagLine]\",\n      \"note\":         \"[friend note]\",     // Can be set to contain information about the friend request. (ex. recofriender saves the player name from social media here)\n      \"puuid\":        \"[friend puuid]\",\n      \"subscription\": \"pending_out\"        //either \"pending_out\" or \"pending_in\" (sent or received request)\n    }\n  ]\n}\n```\n\n\nEndpoint deleted April 2025; Please use '/social/v2/friendrequests'.",
         "internal": false,
         "name": "GetSocialV1Friendrequests",
         "nameSpace": "",
@@ -12993,6 +13244,25 @@
         ],
         "threadSafe": false
     },
+    "GET /social/v1/presences/session": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get the player's presence",
+        "help": "",
+        "internal": false,
+        "name": "GetSocialV1PresencesSession",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "SocialPresenceSessionV1"
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
     "GET /social/v1/ready": {
         "arguments": [],
         "deprecated": false,
@@ -13005,6 +13275,54 @@
         "returns": {
             "elementType": "",
             "type": "bool"
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
+    "GET /social/v2/friendrequests": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "puuid",
+                "optional": true,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get friend requests",
+        "help": "**Response:** named requests root object: a flat list of friend request property groups with 'puuid' and GnT info inside (could have zero or more entries in list):\n\n```\n{\n  \"requests\": [\n    {\n      \"gameName\":     \"[friend gameName]\",\n      \"tagLine\":      \"[friend tagLine]\",\n      \"note\":         \"[friend note]\",     // Can be set to contain information about the friend request. (ex. recofriender saves the player name from social media here)\n      \"puuid\":        \"[friend puuid]\",\n      \"subscription\": \"pending_out\"        //either \"pending_out\" or \"pending_in\" (sent or received request)\n    }\n  ]\n}\n```\n",
+        "internal": false,
+        "name": "GetSocialV2Friendrequests",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "SocialFriendRequestListPuuid"
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
+    "GET /social/v2/friendrequests/patch": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "For subscriptions only. On update and delete will notify with patches (changed elements only) rather than the full list. For a simple GET use the non-patch version of this URL.",
+        "help": "",
+        "internal": false,
+        "name": "GetSocialV2FriendrequestsPatch",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "SocialFriendRequestListPuuid"
         },
         "subscribable": false,
         "tags": [
@@ -13081,6 +13399,44 @@
         "returns": {
             "elementType": "",
             "type": "SocialFriendListV3"
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
+    "GET /social/v4/friends": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "When subscribed to this endpoint will notify with the entire friend list on every create/update/delete.",
+        "help": "",
+        "internal": false,
+        "name": "GetSocialV4Friends",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "SocialFriendListV4"
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
+    "GET /social/v4/friends/patch": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "For subscriptions only. On update and delete will notify with patches (changed elements only) rather than the full list. For a simple GET use the non-patch version of this URL.",
+        "help": "",
+        "internal": false,
+        "name": "GetSocialV4FriendsPatch",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "SocialFriendListV4"
         },
         "subscribable": false,
         "tags": [
@@ -14179,14 +14535,24 @@
         ],
         "threadSafe": false
     },
-    "GET /xbox-account/v2/authorization": {
-        "arguments": [],
+    "GET /xbox-account/v2/authorization/{recipient}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Gets current Xbox authorization status",
         "help": "",
         "internal": false,
-        "name": "GetXboxAccountV2Authorization",
+        "name": "GetXboxAccountV2AuthorizationByRecipient",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -16771,6 +17137,63 @@
         ],
         "threadSafe": false
     },
+    "POST /network-connectivity/v1/debug/disable-os-connectivity-provider": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "[FOR TESTING ONLY] Test endpoint to disable OS Connectivity Integration",
+        "help": "",
+        "internal": false,
+        "name": "PostNetworkConnectivityV1DebugDisableOsConnectivityProvider",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "network-connectivity"
+        ],
+        "threadSafe": false
+    },
+    "POST /network-connectivity/v1/debug/mock-connectivity-data/{dataSource}/{newConnectivity}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "dataSource",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "NetworkConnectivityConnectivityDataSource"
+                }
+            },
+            {
+                "description": "",
+                "name": "newConnectivity",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "NetworkConnectivityConnectivityState"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "[FOR TESTING ONLY] Test endpoint to mock connectivity data",
+        "help": "",
+        "internal": false,
+        "name": "PostNetworkConnectivityV1DebugMockConnectivityDataByDataSourceByNewConnectivity",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "network-connectivity"
+        ],
+        "threadSafe": false
+    },
     "POST /nintendo-account/v1/authorization": {
         "arguments": [
             {
@@ -18605,7 +19028,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "",
-        "help": "\nUsed to submit a player report when no signed token is available\n**Data**\n* `offenderId`: The id of the offender. For players this is their puuid.\n* `categories`: List of category strings that player is reporting another player for. Different products use different categories.\n* `location`: The location where the offending behavior occurred. Example: `in-game`.\n* `comment`: Player written comment associated with this report.\n* `conversationContext`: (OPTIONAL) The ID and type of conversation from where the report was filed\n* `unstructuredContext`: (OPTIONAL) An additional payload where game teams can pass in custom payload to CPD for analysis\n",
+        "help": "\nUsed to submit a player report when no signed token is available\n**Data**\n* `offenderId`: The id of the offender. For players this is their puuid.\n* `categories`: List of category strings that player is reporting another player for. Different products use different categories.\n* `location`: The location where the offending behavior occurred. Example: `in-game`.\n* `comment`: Player written comment associated with this report.\n* `conversationContext`: (OPTIONAL) The ID and type of conversation from where the report was filed\n* `unstructuredContext`: (OPTIONAL) An additional payload where game teams can pass in custom payload to CPD for analysis\n* `incidentTimestampMillis`: (OPTIONAL) The timestamp of the reported incident (e.g., timestamp of the chat message)\n",
         "internal": false,
         "name": "PostPlayerReportingV1UnsignedReport",
         "nameSpace": "",
@@ -21047,6 +21470,35 @@
         ],
         "threadSafe": false
     },
+    "POST /rso-authenticator/v1/authentication/keypair": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "keypair",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1AuthenticateKeypairInput"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Authenticate a player with key-pair generated during One-Tap Play signup by the device's secure key-store.",
+        "help": "",
+        "internal": false,
+        "name": "PostRsoAuthenticatorV1AuthenticationKeypair",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
     "POST /rso-authenticator/v1/authentication/multifactor": {
         "arguments": [
             {
@@ -21210,6 +21662,35 @@
         "help": "",
         "internal": false,
         "name": "PostRsoAuthenticatorV1AuthenticationRiotIdentityComplete",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "POST /rso-authenticator/v1/authentication/riot-identity/create": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "authStartInput",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1RiotIdentitySignupStartInput"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Create a new Riot Identity for the currently authorized account.",
+        "help": "",
+        "internal": false,
+        "name": "PostRsoAuthenticatorV1AuthenticationRiotIdentityCreate",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -22105,7 +22586,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Add friend request / invite friend",
-        "help": "",
+        "help": "Endpoint deleted April 2025; Please use '/social/v2/friendrequests'.",
         "internal": false,
         "name": "PostSocialV1Friendrequests",
         "nameSpace": "",
@@ -22166,6 +22647,35 @@
         "help": "",
         "internal": false,
         "name": "PostSocialV1ViewProfileByPuuid",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
+    "POST /social/v2/friendrequests": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "body",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "SocialFriendRequestPost"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Add friend request / invite friend",
+        "help": "",
+        "internal": false,
+        "name": "PostSocialV2Friendrequests",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -22943,8 +23453,17 @@
         ],
         "threadSafe": false
     },
-    "POST /xbox-account/v2/authorization": {
+    "POST /xbox-account/v2/authorization/{recipient}": {
         "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
             {
                 "description": "",
                 "name": "AuthorizationParameters",
@@ -22960,7 +23479,7 @@
         "description": "Gets authorization from the Xbox Account of the player logged in the Xbox or start authentication with native browser",
         "help": "",
         "internal": false,
-        "name": "PostXboxAccountV2Authorization",
+        "name": "PostXboxAccountV2AuthorizationByRecipient",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -25297,6 +25816,93 @@
         ],
         "threadSafe": false
     },
+    "PUT /presences/v1/debug/caller-id/mock-id": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "callerId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PresencesPluginCallerId_MockCallerId"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Sets the caller ID to use when calling this plugin from Swagger",
+        "help": "Sets the `productId` and `patchlineId` to pass to APIs in this plugin during future calls from Swagger.\n\nUse this functionality to test APIs in this plugin with Swagger, as if they were being called from another product.",
+        "internal": false,
+        "name": "PutPresencesV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "presences"
+        ],
+        "threadSafe": false
+    },
+    "PUT /presences/v1/session": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "presence",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PresencesPresenceUpdate"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Update the player's presence",
+        "help": "",
+        "internal": false,
+        "name": "PutPresencesV1Session",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "presences"
+        ],
+        "threadSafe": false
+    },
+    "PUT /presences/v1/status-message": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "statusMessage",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PresencesStatusMessageUpdate"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Update the presence status message",
+        "help": "The update to the presence status message is persisted between sessions and is global across all products and devices",
+        "internal": false,
+        "name": "PutPresencesV1StatusMessage",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "presences"
+        ],
+        "threadSafe": false
+    },
     "PUT /private-settings/v1/settings/{userid}/{key}": {
         "arguments": [
             {
@@ -27048,6 +27654,15 @@
                     "elementType": "",
                     "type": "string"
                 }
+            },
+            {
+                "description": "",
+                "name": "isExclusive",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "bool"
+                }
             }
         ],
         "deprecated": false,
@@ -27784,6 +28399,93 @@
         "help": "Sets the `productId` and `patchlineId` to pass to APIs in this plugin during future calls from Swagger.\n\nUse this functionality to test APIs in this plugin with Swagger, as if they were being called from another product.",
         "internal": false,
         "name": "PutSocialV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
+    "PUT /social/v1/presences/debug/mock-client-time": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "clientTimeMsUnix",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "uint64"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Mock the client time",
+        "help": "",
+        "internal": false,
+        "name": "PutSocialV1PresencesDebugMockClientTime",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
+    "PUT /social/v1/presences/session": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "presence",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "SocialPresenceUpdateV1"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Update the player's presence",
+        "help": "",
+        "internal": false,
+        "name": "PutSocialV1PresencesSession",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
+    "PUT /social/v1/presences/status-message": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "statusMessage",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "SocialStatusMessageUpdateV1"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Update the presence status message",
+        "help": "The update to the presence status message is persisted between sessions and is global across all products and devices",
+        "internal": false,
+        "name": "PutSocialV1PresencesStatusMessage",
         "nameSpace": "",
         "returns": {
             "elementType": "",

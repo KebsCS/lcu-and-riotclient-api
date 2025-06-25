@@ -879,6 +879,7 @@
         "GET /lol-loot/v1/loot-grants",
         "DELETE /lol-loot/v1/loot-grants/{id}",
         "GET /lol-loot/v1/loot-items",
+        "GET /lol-loot/v1/loot-items/{lootName}",
         "PUT /lol-loot/v1/loot-odds/evaluateQuery",
         "GET /lol-loot/v1/loot-odds/{recipeName}",
         "GET /lol-loot/v1/loot-odds/{recipeName}/visibility",
@@ -914,10 +915,8 @@
         "POST /lol-loyalty/v1/updateLoyaltyInventory"
     ],
     "Plugin lol-mac-graphics-upgrade": [
-        "POST /lol-mac-graphics-upgrade/hardware-upgrade-notification/ack",
         "GET /lol-mac-graphics-upgrade/needs-hardware-upgrade",
-        "GET /lol-mac-graphics-upgrade/notification-type",
-        "POST /lol-mac-graphics-upgrade/supported-hardware-notification/ack"
+        "GET /lol-mac-graphics-upgrade/notification-type"
     ],
     "Plugin lol-maps": [
         "POST /lol-maps/v1/map",
@@ -939,7 +938,8 @@
         "POST /lol-marketplace/v1/products/{product}/purchases",
         "POST /lol-marketplace/v1/products/{product}/refunds",
         "GET /lol-marketplace/v1/products/{product}/stores",
-        "GET /lol-marketplace/v1/purchases/{purchaseId}"
+        "GET /lol-marketplace/v1/purchases/{purchaseId}",
+        "GET /lol-marketplace/v1/ready"
     ],
     "Plugin lol-match-history": [
         "POST /lol-match-history/v1/acs-endpoint-override",
@@ -968,7 +968,9 @@
         "GET /lol-missions/v1/data",
         "POST /lol-missions/v1/force",
         "GET /lol-missions/v1/missions",
+        "GET /lol-missions/v1/missions/multiseries",
         "GET /lol-missions/v1/missions/series/{seriesName}",
+        "GET /lol-missions/v1/missions/seriesId",
         "PUT /lol-missions/v1/player",
         "PUT /lol-missions/v1/player/{missionId}",
         "GET /lol-missions/v1/series",
@@ -980,16 +982,12 @@
         "POST /lol-nacho/v1/banner/active",
         "GET /lol-nacho/v1/banners",
         "GET /lol-nacho/v1/get-active-store-catalog",
-        "GET /lol-nacho/v1/get-active-stores",
         "GET /lol-nacho/v1/get-current-catalog-item",
-        "GET /lol-nacho/v1/get-store-digests",
         "POST /lol-nacho/v1/purchase/blessing-token",
-        "POST /lol-nacho/v1/purchase/catalog-item",
         "POST /lol-nacho/v1/purchase/roll",
         "GET /lol-nacho/v1/purchases/{purchaseId}",
         "GET /lol-nacho/v1/ready",
         "GET /lol-nacho/v1/roll-purchase-enabled",
-        "POST /lol-nacho/v1/set-active-stores",
         "POST /lol-nacho/v1/set-product-id"
     ],
     "Plugin lol-npe-rewards": [
@@ -1021,6 +1019,7 @@
         "GET /lol-patch/v1/game-version",
         "GET /lol-patch/v1/notifications",
         "DELETE /lol-patch/v1/notifications/{id}",
+        "GET /lol-patch/v1/product-integration/app-update/status",
         "POST /lol-patch/v1/products/league_of_legends/detect-corruption-request",
         "GET /lol-patch/v1/products/league_of_legends/install-location",
         "POST /lol-patch/v1/products/league_of_legends/partial-repair-request",
@@ -1301,7 +1300,9 @@
         "GET /lol-shoppefront/v1/ready",
         "GET /lol-shoppefront/v1/store-digests",
         "POST /lol-shoppefront/v1/store-digests",
-        "GET /lol-shoppefront/v1/stores"
+        "GET /lol-shoppefront/v1/stores",
+        "GET /lol-shoppefront/v1/stores/{shoppefrontId}",
+        "GET /lol-shoppefront/v1/velocity"
     ],
     "Plugin lol-shutdown": [
         "GET /lol-shutdown/v1/notification"
@@ -1407,6 +1408,9 @@
         "POST /lol-summoner/v2/summoners/puuid",
         "GET /lol-summoner/v2/summoners/puuid/{puuid}"
     ],
+    "Plugin lol-summoner-profiles": [
+        "GET /lol-summoner-profiles/v1/get-summoner-level-view"
+    ],
     "Plugin lol-tastes": [
         "GET /lol-tastes/v1/ready",
         "GET /lol-tastes/v1/skins-model",
@@ -1433,6 +1437,7 @@
         "GET /lol-tft-pass/v1/daily-login-pass",
         "GET /lol-tft-pass/v1/enabled",
         "GET /lol-tft-pass/v1/event-pass",
+        "GET /lol-tft-pass/v1/objectives-banner/{id}",
         "POST /lol-tft-pass/v1/pass/{id}",
         "PUT /lol-tft-pass/v1/pass/{id}/milestone/claimAllRewards",
         "PUT /lol-tft-pass/v1/pass/{id}/milestone/{milestoneId}/reward",
@@ -2303,6 +2308,7 @@
         "GET /lol-loot/v1/loot-grants",
         "DELETE /lol-loot/v1/loot-grants/{id}",
         "GET /lol-loot/v1/loot-items",
+        "GET /lol-loot/v1/loot-items/{lootName}",
         "PUT /lol-loot/v1/loot-odds/evaluateQuery",
         "GET /lol-loot/v1/loot-odds/{recipeName}",
         "GET /lol-loot/v1/loot-odds/{recipeName}/visibility",
@@ -2334,10 +2340,8 @@
         "GET /lol-loot/v2/player-loot-map",
         "GET /lol-loyalty/v1/status-notification",
         "POST /lol-loyalty/v1/updateLoyaltyInventory",
-        "POST /lol-mac-graphics-upgrade/hardware-upgrade-notification/ack",
         "GET /lol-mac-graphics-upgrade/needs-hardware-upgrade",
         "GET /lol-mac-graphics-upgrade/notification-type",
-        "POST /lol-mac-graphics-upgrade/supported-hardware-notification/ack",
         "POST /lol-maps/v1/map",
         "GET /lol-maps/v1/map/{id}",
         "GET /lol-maps/v1/maps",
@@ -2354,6 +2358,7 @@
         "POST /lol-marketplace/v1/products/{product}/refunds",
         "GET /lol-marketplace/v1/products/{product}/stores",
         "GET /lol-marketplace/v1/purchases/{purchaseId}",
+        "GET /lol-marketplace/v1/ready",
         "POST /lol-match-history/v1/acs-endpoint-override",
         "GET /lol-match-history/v1/delta",
         "GET /lol-match-history/v1/game-timelines/{gameId}",
@@ -2376,7 +2381,9 @@
         "GET /lol-missions/v1/data",
         "POST /lol-missions/v1/force",
         "GET /lol-missions/v1/missions",
+        "GET /lol-missions/v1/missions/multiseries",
         "GET /lol-missions/v1/missions/series/{seriesName}",
+        "GET /lol-missions/v1/missions/seriesId",
         "PUT /lol-missions/v1/player",
         "PUT /lol-missions/v1/player/{missionId}",
         "GET /lol-missions/v1/series",
@@ -2386,16 +2393,12 @@
         "POST /lol-nacho/v1/banner/active",
         "GET /lol-nacho/v1/banners",
         "GET /lol-nacho/v1/get-active-store-catalog",
-        "GET /lol-nacho/v1/get-active-stores",
         "GET /lol-nacho/v1/get-current-catalog-item",
-        "GET /lol-nacho/v1/get-store-digests",
         "POST /lol-nacho/v1/purchase/blessing-token",
-        "POST /lol-nacho/v1/purchase/catalog-item",
         "POST /lol-nacho/v1/purchase/roll",
         "GET /lol-nacho/v1/purchases/{purchaseId}",
         "GET /lol-nacho/v1/ready",
         "GET /lol-nacho/v1/roll-purchase-enabled",
-        "POST /lol-nacho/v1/set-active-stores",
         "POST /lol-nacho/v1/set-product-id",
         "POST /lol-npe-rewards/v1/challenges/opt",
         "GET /lol-npe-rewards/v1/challenges/progress",
@@ -2419,6 +2422,7 @@
         "GET /lol-patch/v1/game-version",
         "GET /lol-patch/v1/notifications",
         "DELETE /lol-patch/v1/notifications/{id}",
+        "GET /lol-patch/v1/product-integration/app-update/status",
         "POST /lol-patch/v1/products/league_of_legends/detect-corruption-request",
         "GET /lol-patch/v1/products/league_of_legends/install-location",
         "POST /lol-patch/v1/products/league_of_legends/partial-repair-request",
@@ -2650,6 +2654,8 @@
         "GET /lol-shoppefront/v1/store-digests",
         "POST /lol-shoppefront/v1/store-digests",
         "GET /lol-shoppefront/v1/stores",
+        "GET /lol-shoppefront/v1/stores/{shoppefrontId}",
+        "GET /lol-shoppefront/v1/velocity",
         "GET /lol-shutdown/v1/notification",
         "GET /lol-simple-dialog-messages/v1/messages",
         "POST /lol-simple-dialog-messages/v1/messages",
@@ -2701,6 +2707,7 @@
         "GET /lol-suggested-players/v1/suggested-players",
         "DELETE /lol-suggested-players/v1/suggested-players/{summonerId}",
         "POST /lol-suggested-players/v1/victorious-comrade",
+        "GET /lol-summoner-profiles/v1/get-summoner-level-view",
         "GET /lol-summoner/v1/alias/lookup",
         "GET /lol-summoner/v1/check-name-availability-new-summoners/{name}",
         "GET /lol-summoner/v1/check-name-availability/{name}",
@@ -2747,6 +2754,7 @@
         "GET /lol-tft-pass/v1/daily-login-pass",
         "GET /lol-tft-pass/v1/enabled",
         "GET /lol-tft-pass/v1/event-pass",
+        "GET /lol-tft-pass/v1/objectives-banner/{id}",
         "POST /lol-tft-pass/v1/pass/{id}",
         "PUT /lol-tft-pass/v1/pass/{id}/milestone/claimAllRewards",
         "PUT /lol-tft-pass/v1/pass/{id}/milestone/{milestoneId}/reward",
