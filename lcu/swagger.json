@@ -31274,6 +31274,10 @@
 				{
 					"type" : "boolean"
 				},
+				"isLimitedTimeQueue" : 
+				{
+					"type" : "boolean"
+				},
 				"isRanked" : 
 				{
 					"type" : "boolean"
@@ -31682,6 +31686,10 @@
 				{
 					"format" : "int32",
 					"type" : "integer"
+				},
+				"isLimitedTimeQueue" : 
+				{
+					"type" : "boolean"
 				},
 				"isSkillTreeQueue" : 
 				{
@@ -46189,33 +46197,6 @@
 			},
 			"type" : "object"
 		},
-		"LolMatchHistoryAcsEndPoint" : 
-		{
-			"properties" : 
-			{
-				"url" : 
-				{
-					"type" : "string"
-				}
-			},
-			"type" : "object"
-		},
-		"LolMatchHistoryAcsPlayer" : 
-		{
-			"properties" : 
-			{
-				"accountId" : 
-				{
-					"format" : "int64",
-					"type" : "integer"
-				},
-				"platformId" : 
-				{
-					"type" : "string"
-				}
-			},
-			"type" : "object"
-		},
 		"LolMatchHistoryAlias" : 
 		{
 			"properties" : 
@@ -46349,31 +46330,6 @@
 				"ERROR"
 			],
 			"type" : "string"
-		},
-		"LolMatchHistoryMHSummoner" : 
-		{
-			"properties" : 
-			{
-				"accountId" : 
-				{
-					"format" : "int64",
-					"type" : "integer"
-				},
-				"displayName" : 
-				{
-					"type" : "string"
-				},
-				"puuid" : 
-				{
-					"type" : "string"
-				},
-				"summonerId" : 
-				{
-					"format" : "int64",
-					"type" : "integer"
-				}
-			},
-			"type" : "object"
 		},
 		"LolMatchHistoryMatchHistoryEvent" : 
 		{
@@ -47321,124 +47277,6 @@
 			},
 			"type" : "object"
 		},
-		"LolMatchHistoryMatchHistoryPlayerChampMasteryDelta" : 
-		{
-			"properties" : 
-			{
-				"grade" : 
-				{
-					"type" : "string"
-				}
-			},
-			"type" : "object"
-		},
-		"LolMatchHistoryMatchHistoryPlayerDelta" : 
-		{
-			"properties" : 
-			{
-				"deltas" : 
-				{
-					"items" : 
-					{
-						"$ref" : "#/definitions/LolMatchHistoryMatchHistoryPlayerGameDelta"
-					},
-					"type" : "array"
-				},
-				"originalAccountId" : 
-				{
-					"format" : "int64",
-					"type" : "integer"
-				},
-				"originalPlatformId" : 
-				{
-					"type" : "string"
-				}
-			},
-			"type" : "object"
-		},
-		"LolMatchHistoryMatchHistoryPlayerGameDelta" : 
-		{
-			"properties" : 
-			{
-				"champMastery" : 
-				{
-					"$ref" : "#/definitions/LolMatchHistoryMatchHistoryPlayerChampMasteryDelta"
-				},
-				"gameId" : 
-				{
-					"format" : "int64",
-					"type" : "integer"
-				},
-				"gamePlatformId" : 
-				{
-					"type" : "string"
-				},
-				"leagueDelta" : 
-				{
-					"$ref" : "#/definitions/LolMatchHistoryMatchHistoryPlayerLeagueDelta"
-				},
-				"platformDelta" : 
-				{
-					"$ref" : "#/definitions/LolMatchHistoryMatchHistoryPlayerPlatformDelta"
-				}
-			},
-			"type" : "object"
-		},
-		"LolMatchHistoryMatchHistoryPlayerLeagueDelta" : 
-		{
-			"properties" : 
-			{
-				"leaguePointDelta" : 
-				{
-					"format" : "int64",
-					"type" : "integer"
-				},
-				"miniSeriesProgress" : 
-				{
-					"items" : 
-					{
-						"type" : "string"
-					},
-					"type" : "array"
-				},
-				"reason" : 
-				{
-					"type" : "string"
-				},
-				"timestamp" : 
-				{
-					"format" : "int64",
-					"type" : "integer"
-				}
-			},
-			"type" : "object"
-		},
-		"LolMatchHistoryMatchHistoryPlayerPlatformDelta" : 
-		{
-			"properties" : 
-			{
-				"compensationModeEnabled" : 
-				{
-					"type" : "boolean"
-				},
-				"ipDelta" : 
-				{
-					"format" : "int64",
-					"type" : "integer"
-				},
-				"timestamp" : 
-				{
-					"format" : "int64",
-					"type" : "integer"
-				},
-				"xpDelta" : 
-				{
-					"format" : "int64",
-					"type" : "integer"
-				}
-			},
-			"type" : "object"
-		},
 		"LolMatchHistoryMatchHistoryPosition" : 
 		{
 			"properties" : 
@@ -47729,6 +47567,11 @@
 		{
 			"properties" : 
 			{
+				"accountId" : 
+				{
+					"format" : "int64",
+					"type" : "integer"
+				},
 				"displayName" : 
 				{
 					"type" : "string"
@@ -47740,6 +47583,11 @@
 				"puuid" : 
 				{
 					"type" : "string"
+				},
+				"summonerId" : 
+				{
+					"format" : "int64",
+					"type" : "integer"
 				},
 				"tagLine" : 
 				{
@@ -88910,6 +88758,11 @@
 					},
 					"type" : "array"
 				},
+				"queueId" : 
+				{
+					"format" : "int32",
+					"type" : "integer"
+				},
 				"rerollsRemaining" : 
 				{
 					"format" : "int64",
@@ -90300,10 +90153,51 @@
 		{
 			"properties" : 
 			{
+				"inventoryType" : 
+				{
+					"type" : "string"
+				},
 				"itemId" : 
 				{
-					"format" : "int64",
+					"format" : "int32",
 					"type" : "integer"
+				}
+			},
+			"type" : "object"
+		},
+		"TeamBuilderDirect-InventoryItemDTO" : 
+		{
+			"properties" : 
+			{
+				"f2p" : 
+				{
+					"type" : "boolean"
+				},
+				"inventoryType" : 
+				{
+					"type" : "string"
+				},
+				"itemId" : 
+				{
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"loyalty" : 
+				{
+					"type" : "boolean"
+				},
+				"lsb" : 
+				{
+					"type" : "boolean"
+				},
+				"payload" : 
+				{
+					"additionalProperties" : true,
+					"type" : "object"
+				},
+				"rental" : 
+				{
+					"type" : "boolean"
 				}
 			},
 			"type" : "object"
@@ -90312,15 +90206,35 @@
 		{
 			"properties" : 
 			{
+				"f2p" : 
+				{
+					"type" : "boolean"
+				},
+				"inventoryType" : 
+				{
+					"type" : "string"
+				},
 				"itemId" : 
 				{
-					"format" : "int64",
+					"format" : "int32",
 					"type" : "integer"
+				},
+				"loyalty" : 
+				{
+					"type" : "boolean"
+				},
+				"owned" : 
+				{
+					"type" : "boolean"
 				},
 				"payload" : 
 				{
 					"additionalProperties" : true,
 					"type" : "object"
+				},
+				"rental" : 
+				{
+					"type" : "boolean"
 				}
 			},
 			"type" : "object"
@@ -90484,6 +90398,11 @@
 		{
 			"properties" : 
 			{
+				"autoAccept" : 
+				{
+					"description" : "Auto-accept and skip ready check, used for custom lobbies",
+					"type" : "boolean"
+				},
 				"declinerIds" : 
 				{
 					"description" : "People in my party that failed ready check",
@@ -90709,6 +90628,41 @@
 				"summonerId" : 
 				{
 					"format" : "int64",
+					"type" : "integer"
+				}
+			},
+			"type" : "object"
+		},
+		"TeamBuilderDirect-OperationalQueueConfig" : 
+		{
+			"description" : "The container for all the operational queue configs",
+			"properties" : 
+			{
+				"f2pRotations" : 
+				{
+					"type" : "string"
+				},
+				"isEnabled" : 
+				{
+					"type" : "boolean"
+				},
+				"isSpectatable" : 
+				{
+					"description" : "A flag to indicate if a field is spectatable",
+					"type" : "boolean"
+				},
+				"isVisibleInClient" : 
+				{
+					"description" : "A flag to indicate if the queue is visible",
+					"type" : "boolean"
+				},
+				"mutators" : 
+				{
+					"type" : "string"
+				},
+				"queueId" : 
+				{
+					"format" : "int32",
 					"type" : "integer"
 				}
 			},
@@ -94163,7 +94117,7 @@
 			},
 			"get" : 
 			{
-				"operationId" : "Http2AsyncStatus",
+				"operationId" : "HttpAsyncStatus",
 				"parameters" : 
 				[
 					{
@@ -108401,6 +108355,26 @@
 				]
 			}
 		},
+		"/lol-honor-v2/v1/ballot/refresh" : 
+		{
+			"post" : 
+			{
+				"operationId" : "PostLolHonorV2V1BallotRefresh",
+				"parameters" : [],
+				"responses" : 
+				{
+					"204" : 
+					{
+						"description" : "No content"
+					}
+				},
+				"tags" : 
+				[
+					"Plugins",
+					"Plugin lol-honor-v2"
+				]
+			}
+		},
 		"/lol-honor-v2/v1/config" : 
 		{
 			"get" : 
@@ -111062,6 +111036,35 @@
 				]
 			}
 		},
+		"/lol-lobby-team-builder/champ-select/v1/f2p-rotation-for-current-queue" : 
+		{
+			"get" : 
+			{
+				"operationId" : "GetLolLobbyTeamBuilderChampSelectV1F2pRotationForCurrentQueue",
+				"parameters" : [],
+				"responses" : 
+				{
+					"200" : 
+					{
+						"description" : "Successful response",
+						"schema" : 
+						{
+							"items" : 
+							{
+								"format" : "int32",
+								"type" : "integer"
+							},
+							"type" : "array"
+						}
+					}
+				},
+				"tags" : 
+				[
+					"Plugins",
+					"Plugin lol-lobby-team-builder"
+				]
+			}
+		},
 		"/lol-lobby-team-builder/champ-select/v1/has-auto-assigned-smite" : 
 		{
 			"get" : 
@@ -112262,6 +112265,30 @@
 						{
 							"additionalProperties" : true,
 							"type" : "object"
+						}
+					}
+				},
+				"tags" : 
+				[
+					"Plugins",
+					"Plugin lol-lobby-team-builder"
+				]
+			}
+		},
+		"/lol-lobby-team-builder/v1/ready-check/isAutoAccept" : 
+		{
+			"get" : 
+			{
+				"operationId" : "GetLolLobbyTeamBuilderV1ReadyCheckIsAutoAccept",
+				"parameters" : [],
+				"responses" : 
+				{
+					"200" : 
+					{
+						"description" : "Successful response",
+						"schema" : 
+						{
+							"type" : "boolean"
 						}
 					}
 				},
@@ -117020,66 +117047,6 @@
 				]
 			}
 		},
-		"/lol-match-history/v1/acs-endpoint-override" : 
-		{
-			"post" : 
-			{
-				"operationId" : "PostLolMatchHistoryV1AcsEndpointOverride",
-				"parameters" : 
-				[
-					{
-						"in" : "body",
-						"name" : "data",
-						"required" : true,
-						"schema" : 
-						{
-							"$ref" : "#/definitions/LolMatchHistoryAcsEndPoint"
-						}
-					}
-				],
-				"responses" : 
-				{
-					"200" : 
-					{
-						"description" : "Successful response",
-						"schema" : 
-						{
-							"additionalProperties" : true,
-							"type" : "object"
-						}
-					}
-				},
-				"tags" : 
-				[
-					"Plugins",
-					"Plugin lol-match-history"
-				]
-			}
-		},
-		"/lol-match-history/v1/delta" : 
-		{
-			"get" : 
-			{
-				"operationId" : "GetLolMatchHistoryV1Delta",
-				"parameters" : [],
-				"responses" : 
-				{
-					"200" : 
-					{
-						"description" : "Successful response",
-						"schema" : 
-						{
-							"$ref" : "#/definitions/LolMatchHistoryMatchHistoryPlayerDelta"
-						}
-					}
-				},
-				"tags" : 
-				[
-					"Plugins",
-					"Plugin lol-match-history"
-				]
-			}
-		},
 		"/lol-match-history/v1/game-timelines/{gameId}" : 
 		{
 			"get" : 
@@ -117306,77 +117273,6 @@
 								"$ref" : "#/definitions/LolMatchHistoryRecentlyPlayedSummoner"
 							},
 							"type" : "array"
-						}
-					}
-				},
-				"tags" : 
-				[
-					"Plugins",
-					"Plugin lol-match-history"
-				]
-			}
-		},
-		"/lol-match-history/v1/web-url" : 
-		{
-			"get" : 
-			{
-				"operationId" : "GetLolMatchHistoryV1WebUrl",
-				"parameters" : [],
-				"responses" : 
-				{
-					"200" : 
-					{
-						"description" : "Successful response",
-						"schema" : 
-						{
-							"type" : "string"
-						}
-					}
-				},
-				"tags" : 
-				[
-					"Plugins",
-					"Plugin lol-match-history"
-				]
-			}
-		},
-		"/lol-match-history/v3/matchlist/account/{accountId}" : 
-		{
-			"get" : 
-			{
-				"operationId" : "GetLolMatchHistoryV3MatchlistAccountByAccountId",
-				"parameters" : 
-				[
-					{
-						"format" : "int64",
-						"in" : "path",
-						"name" : "accountId",
-						"required" : true,
-						"type" : "integer"
-					},
-					{
-						"format" : "int32",
-						"in" : "query",
-						"name" : "begIndex",
-						"required" : false,
-						"type" : "integer"
-					},
-					{
-						"format" : "int32",
-						"in" : "query",
-						"name" : "endIndex",
-						"required" : false,
-						"type" : "integer"
-					}
-				],
-				"responses" : 
-				{
-					"200" : 
-					{
-						"description" : "Successful response",
-						"schema" : 
-						{
-							"$ref" : "#/definitions/LolMatchHistoryMatchHistoryList"
 						}
 					}
 				},
@@ -134539,7 +134435,7 @@
 		{
 			"get" : 
 			{
-				"operationId" : "Http2ApiDocsV1",
+				"operationId" : "HttpApiDocsV1",
 				"parameters" : [],
 				"responses" : 
 				{
@@ -134605,7 +134501,7 @@
 		{
 			"get" : 
 			{
-				"operationId" : "HttpApiDocsV2",
+				"operationId" : "Http2ApiDocsV2",
 				"parameters" : [],
 				"responses" : 
 				{
@@ -134630,7 +134526,7 @@
 		{
 			"get" : 
 			{
-				"operationId" : "Http2ApiDocsV3",
+				"operationId" : "HttpApiDocsV3",
 				"parameters" : [],
 				"responses" : 
 				{
