@@ -966,6 +966,35 @@
         ],
         "threadSafe": false
     },
+    "DELETE /discord-account/v1/authorization/{recipient}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Deletes the current Discord authorization session",
+        "help": "",
+        "internal": false,
+        "name": "DeleteDiscordAccountV1AuthorizationByRecipient",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "discord-account"
+        ],
+        "threadSafe": false
+    },
     "DELETE /eula/v1/product-context": {
         "arguments": [],
         "deprecated": false,
@@ -1292,6 +1321,25 @@
         ],
         "threadSafe": false
     },
+    "DELETE /keypair-account/v1/authorization": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Delete authorization status for KeyPair Account",
+        "help": "",
+        "internal": false,
+        "name": "DeleteKeypairAccountV1Authorization",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "keypair-account"
+        ],
+        "threadSafe": false
+    },
     "DELETE /mailbox/v1/debug/caller-id/mock-id": {
         "arguments": [],
         "deprecated": false,
@@ -1539,7 +1587,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Delete the install resource",
-        "help": "\nDelete an install resource. All outstanding requests will be cancelled but the files on disk will be left intact.\n",
+        "help": "\nDelete an install resource. All outstanding requests will be cancelled but the files on disk will be left intact.\n\n\nThis endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
         "internal": false,
         "name": "DeletePatchV1InstallsByInstallId",
         "nameSpace": "",
@@ -1568,7 +1616,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Delete patch request for install",
-        "help": "\nDelete the patch request, interrupting any ongoing patching operations.\n",
+        "help": "\nDelete the patch request, interrupting any ongoing patching operations.\n\n\nThis endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
         "internal": false,
         "name": "DeletePatchV1InstallsByInstallIdRequestsPatch",
         "nameSpace": "",
@@ -1597,7 +1645,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Delete preview request for install",
-        "help": "\nDelete the preview request, interrupting any ongoing preview operations.\n",
+        "help": "\nDelete the preview request, interrupting any ongoing preview operations.\n\n\nThis endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
         "internal": false,
         "name": "DeletePatchV1InstallsByInstallIdRequestsPreview",
         "nameSpace": "",
@@ -1626,7 +1674,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Delete the repair request, interrupting any ongoing repair operations.",
-        "help": "",
+        "help": "This endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
         "internal": false,
         "name": "DeletePatchV1InstallsByInstallIdRequestsRepair",
         "nameSpace": "",
@@ -1655,7 +1703,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Delete seed request for install",
-        "help": "\nDelete the seed request, interrupting any ongoing seed operations.\n",
+        "help": "\nDelete the seed request, interrupting any ongoing seed operations.\n\n\nThis endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
         "internal": false,
         "name": "DeletePatchV1InstallsByInstallIdRequestsSeed",
         "nameSpace": "",
@@ -1707,6 +1755,25 @@
         ],
         "threadSafe": false
     },
+    "DELETE /platform-ui/v1/account-linking": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Force close Account Linking UI",
+        "help": "",
+        "internal": false,
+        "name": "DeletePlatformUiV1AccountLinking",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-ui"
+        ],
+        "threadSafe": false
+    },
     "DELETE /platform-ui/v1/delete-account": {
         "arguments": [],
         "deprecated": false,
@@ -1715,6 +1782,25 @@
         "help": "",
         "internal": false,
         "name": "DeletePlatformUiV1DeleteAccount",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-ui"
+        ],
+        "threadSafe": false
+    },
+    "DELETE /platform-ui/v1/discord-link": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Disable Discord Account linking UI. While it aborts on-going Discord authorizations, it does not disable their UI.",
+        "help": "",
+        "internal": false,
+        "name": "DeletePlatformUiV1DiscordLink",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -3158,6 +3244,25 @@
         ],
         "threadSafe": false
     },
+    "DELETE /tracing/v1/debug/caller-id/mock-id": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Stops mocking the caller ID for Swagger calls",
+        "help": "Deletes the currently set `productId` and `patchlineId`. Plugin APIs will receive `swagger` as the `productId`.",
+        "internal": false,
+        "name": "DeleteTracingV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "tracing"
+        ],
+        "threadSafe": false
+    },
     "DELETE /voice-chat/v1/block-list/users": {
         "arguments": [
             {
@@ -3441,7 +3546,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Returns the action need to be done and outbound URL for it",
-        "help": "",
+        "help": "Endpoint to be deleted September 2025.",
         "internal": false,
         "name": "GetAccountsSecurityV1Access",
         "nameSpace": "",
@@ -3452,6 +3557,35 @@
         "subscribable": false,
         "tags": [
             "accounts-security"
+        ],
+        "threadSafe": false
+    },
+    "GET /aes/v1/config/{provider}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "provider",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "AesAESProvider"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Return the provider authorization configuration for the given provider",
+        "help": "",
+        "internal": false,
+        "name": "GetAesV1ConfigByProvider",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "AesAESProviderConfig"
+        },
+        "subscribable": false,
+        "tags": [
+            "aes"
         ],
         "threadSafe": false
     },
@@ -5822,6 +5956,35 @@
         ],
         "threadSafe": false
     },
+    "GET /discord-account/v1/authorization/{recipient}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Gets authorization status from Discord.",
+        "help": "",
+        "internal": false,
+        "name": "GetDiscordAccountV1AuthorizationByRecipient",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "DiscordAccountDiscordAuthorizationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "discord-account"
+        ],
+        "threadSafe": false
+    },
     "GET /entitlements/v1/token": {
         "arguments": [],
         "deprecated": false,
@@ -6226,7 +6389,7 @@
         "arguments": [],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "Gets a list of all available clusters. Cluster IDs arrive asynchronously and may not be immediately avaiable. The logic of selecting the optimal cluster for a player is up to the game team.",
+        "description": "Gets a list of all available clusters. Cluster IDs arrive asynchronously and may not be immediately available. The logic of selecting the optimal cluster for a player is up to the game team.",
         "help": "",
         "internal": false,
         "name": "GetGameSessionV1Clusters",
@@ -6346,6 +6509,25 @@
         ],
         "threadSafe": false
     },
+    "GET /integration-test/v1/observed-mode-manager-states": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "[FOR TESTING ONLY] Returns a list of observed mode manager notifications, used in suspend-resume flow tests.",
+        "help": "",
+        "internal": false,
+        "name": "GetIntegrationTestV1ObservedModeManagerStates",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "IntegrationTestMode",
+            "type": "vector"
+        },
+        "subscribable": false,
+        "tags": [
+            "integration-test"
+        ],
+        "threadSafe": false
+    },
     "GET /jwt-authenticator/v1/headers": {
         "arguments": [],
         "deprecated": false,
@@ -6362,6 +6544,44 @@
         "subscribable": false,
         "tags": [
             "jwt-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "GET /keypair-account/v1/authorization": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Retrieve authorization from the KeyPair Account",
+        "help": "",
+        "internal": false,
+        "name": "GetKeypairAccountV1Authorization",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "KeypairAccountKeyPairAuthorizationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "keypair-account"
+        ],
+        "threadSafe": false
+    },
+    "GET /keypair-account/v1/status": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Retrieve the device attestation status",
+        "help": "",
+        "internal": false,
+        "name": "GetKeypairAccountV1Status",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "KeypairAccountKeyPairStatus"
+        },
+        "subscribable": false,
+        "tags": [
+            "keypair-account"
         ],
         "threadSafe": false
     },
@@ -6575,25 +6795,6 @@
         ],
         "threadSafe": false
     },
-    "GET /mailbox/v1/enabled": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Returns whether or not the mailbox feature is enabled for this environment",
-        "help": "\n**Description**\n\nThis API is subscribable and use to verify the feature is enabled in the current loaded cluster config.\n\n",
-        "internal": false,
-        "name": "GetMailboxV1Enabled",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "bool"
-        },
-        "subscribable": false,
-        "tags": [
-            "mailbox"
-        ],
-        "threadSafe": false
-    },
     "GET /mailbox/v1/ready": {
         "arguments": [],
         "deprecated": false,
@@ -6734,6 +6935,25 @@
         "subscribable": false,
         "tags": [
             "mobile-push"
+        ],
+        "threadSafe": false
+    },
+    "GET /mode-manager/mode": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Gets the current mode.",
+        "help": "",
+        "internal": false,
+        "name": "GetModeManagerMode",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "ModeManagerMode"
+        },
+        "subscribable": false,
+        "tags": [
+            "mode-manager"
         ],
         "threadSafe": false
     },
@@ -6911,6 +7131,26 @@
         ],
         "threadSafe": false
     },
+    "GET /patch-proxy/v2/install-states": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get install states for all product patchlines.",
+        "help": "",
+        "internal": false,
+        "name": "GetPatchProxyV2InstallStates",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "PatchProxyProductPatchlineInstallState",
+            "type": "vector"
+        },
+        "subscribable": true,
+        "tags": [
+            "Plugins",
+            "Plugin patch-proxy"
+        ],
+        "threadSafe": false
+    },
     "GET /patch-proxy/v2/patch-states/out-of-date": {
         "arguments": [],
         "deprecated": false,
@@ -7014,7 +7254,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Retrieve the configuration",
-        "help": "",
+        "help": "This endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
         "internal": false,
         "name": "GetPatchV1Configuration",
         "nameSpace": "",
@@ -7033,7 +7273,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Get list of installs on disk",
-        "help": "",
+        "help": "This endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
         "internal": false,
         "name": "GetPatchV1Installs",
         "nameSpace": "",
@@ -7062,7 +7302,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Get detailed information about an install, including current requests and status.",
-        "help": "",
+        "help": "This endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
         "internal": false,
         "name": "GetPatchV1InstallsByInstallId",
         "nameSpace": "",
@@ -7091,7 +7331,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Retrieve the current patch, preview and seed statuses of an install resource",
-        "help": "\n**Note**\n* The status is always relative to a manifest and set of tags, specified by the `url` and `tags` fields respectively.\n* If there is any work in progress, `url` and `tags` will match those from the request.\n* If there are no pending requests, `url` and `tags` will match the files in the install folder.\n\n**Responses**\n\n**Patch**\n* `updating`: Currently performing a patching / seeding request.\n* `out_of_date`: The last request was partially completed and more work needs to be done before all files are in sync with the release manifest.\n* `up_to_date`: The last request completed successfully and files are in sync with the release manifest.\n* `not_installed`: The last request completed successfully and detected that the install-id is not installed.\n* `pending_verify`: The last request has not completed verification step.\n\n**Seed**\n* `seeding`: Currently performing a seeding request.\n* `out_of_date`: The last request was partially completed and more work needs to be done before all data needed to update the install has been downloaded.\n* `up_to_date`: The last request completed successfully and all data needed to update the install has been downloaded.\n* `pending_verify`: The last request has not completed verification step.\n\n**Preview**\n* `pending`: The preview request has not finished.\n* `done`: The last preview request completed successfully.\n\n**Repair**\n* `manifest_url`: the url of the release manifest.\n* `repair_progress`: The progress of the repair operation. Contains:\n    * `bytes_to_repair`: Total number of bytes to read.\n    * `files_to_repair`: Total number of files to read.\n    * `repaired_bytes`: Number of bytes read from disk so far.\n    * `repaired_files`: Number of files read from disk so far.\n* `state`: The overall state of the repair operation. Possible states include:\n    * `pending`: No repair requests have been made.\n    * `in_progress`: Repair is in progress.\n    * `canceled`: The repair operation was canceled.\n    * `done`: Repair operation is complete.\n",
+        "help": "\n**Note**\n* The status is always relative to a manifest and set of tags, specified by the `url` and `tags` fields respectively.\n* If there is any work in progress, `url` and `tags` will match those from the request.\n* If there are no pending requests, `url` and `tags` will match the files in the install folder.\n\n**Responses**\n\n**Patch**\n* `updating`: Currently performing a patching / seeding request.\n* `out_of_date`: The last request was partially completed and more work needs to be done before all files are in sync with the release manifest.\n* `up_to_date`: The last request completed successfully and files are in sync with the release manifest.\n* `not_installed`: The last request completed successfully and detected that the install-id is not installed.\n* `pending_verify`: The last request has not completed verification step.\n\n**Seed**\n* `seeding`: Currently performing a seeding request.\n* `out_of_date`: The last request was partially completed and more work needs to be done before all data needed to update the install has been downloaded.\n* `up_to_date`: The last request completed successfully and all data needed to update the install has been downloaded.\n* `pending_verify`: The last request has not completed verification step.\n\n**Preview**\n* `pending`: The preview request has not finished.\n* `done`: The last preview request completed successfully.\n\n**Repair**\n* `manifest_url`: the url of the release manifest.\n* `repair_progress`: The progress of the repair operation. Contains:\n    * `bytes_to_repair`: Total number of bytes to read.\n    * `files_to_repair`: Total number of files to read.\n    * `repaired_bytes`: Number of bytes read from disk so far.\n    * `repaired_files`: Number of files read from disk so far.\n* `state`: The overall state of the repair operation. Possible states include:\n    * `pending`: No repair requests have been made.\n    * `in_progress`: Repair is in progress.\n    * `canceled`: The repair operation was canceled.\n    * `done`: Repair operation is complete.\n\n\nThis endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
         "internal": false,
         "name": "GetPatchV1InstallsByInstallIdStatus",
         "nameSpace": "",
@@ -7120,7 +7360,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Retrieve the current patch status of an install.",
-        "help": "\n**Notes**\n* The status is always relative to a manifest and set of tags, specified by the `url` and `tags` fields respectively.\n* If there is any work in progress, `url` and `tags` will match those from the request.\n* If there are no pending requests, `url` and `tags` will match the files in the install folder.\n\n**Response**\n\nThe `state` field will is populated based on the current work with the following values:\n* `updating`: Currently performing a patching / seeding request.\n* `out_of_date`: The last request was partially completed and more work needs to be done before all files are in sync with the release manifest.\n* `up_to_date`: The last request completed successfully and files are in sync with the release manifest.\n* `not_installed`: The last request completed successfully and detected that the install-id is not installed.\n* `pending_verify`: The last request has not completed verification step.\n",
+        "help": "\n**Notes**\n* The status is always relative to a manifest and set of tags, specified by the `url` and `tags` fields respectively.\n* If there is any work in progress, `url` and `tags` will match those from the request.\n* If there are no pending requests, `url` and `tags` will match the files in the install folder.\n\n**Response**\n\nThe `state` field will is populated based on the current work with the following values:\n* `updating`: Currently performing a patching / seeding request.\n* `out_of_date`: The last request was partially completed and more work needs to be done before all files are in sync with the release manifest.\n* `up_to_date`: The last request completed successfully and files are in sync with the release manifest.\n* `not_installed`: The last request completed successfully and detected that the install-id is not installed.\n* `pending_verify`: The last request has not completed verification step.\n\n\nThis endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
         "internal": false,
         "name": "GetPatchV1InstallsByInstallIdStatusPatch",
         "nameSpace": "",
@@ -7149,7 +7389,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Retrieve the current preview status of an install.",
-        "help": "\n**Response**\n\nThe `state` field will is populated based on the current work with the following values:\n* `pending`: The preview request has not finished.\n* `done`: The last preview request completed successfully.\n",
+        "help": "\n**Response**\n\nThe `state` field will is populated based on the current work with the following values:\n* `pending`: The preview request has not finished.\n* `done`: The last preview request completed successfully.\n\n\nThis endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
         "internal": false,
         "name": "GetPatchV1InstallsByInstallIdStatusPreview",
         "nameSpace": "",
@@ -7178,7 +7418,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Retrieve the current repair status of an install.",
-        "help": "\n**Response**\n* `manifest_url`: the url of the release manifest.\n* `repair_progress`: The progress of the repair operation. Contains:\n    * `bytes_to_repair`: Total number of bytes to read.\n    * `files_to_repair`: Total number of files to read.\n    * `repaired_bytes`: Number of bytes read from disk so far.\n    * `repaired_files`: Number of files read from disk so far.\n* `state`: The overall state of the repair operation.\n    * `pending`: No repair requests have been made.\n    * `in_progress`: Repair is in progress.\n    * `canceled`: The repair operation was canceled.\n    * `done`: Repair operation is complete.\n",
+        "help": "\n**Response**\n* `manifest_url`: the url of the release manifest.\n* `repair_progress`: The progress of the repair operation. Contains:\n    * `bytes_to_repair`: Total number of bytes to read.\n    * `files_to_repair`: Total number of files to read.\n    * `repaired_bytes`: Number of bytes read from disk so far.\n    * `repaired_files`: Number of files read from disk so far.\n* `state`: The overall state of the repair operation.\n    * `pending`: No repair requests have been made.\n    * `in_progress`: Repair is in progress.\n    * `canceled`: The repair operation was canceled.\n    * `done`: Repair operation is complete.\n\n\nThis endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
         "internal": false,
         "name": "GetPatchV1InstallsByInstallIdStatusRepair",
         "nameSpace": "",
@@ -7207,7 +7447,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Retrieve the current seed status of an install.",
-        "help": "\n**Notes**\n* If there is any work in progress, `url` and `tags` will match those from the request.\n* If there are no pending requests, `url` and `tags` will match the files in the install folder.\n\n**Response**\n\nThe `state` field will is populated based on the current work with the following values:\n* `seeding`: Currently performing a seeding request.\n* `out_of_date`: The last request was partially completed and more work needs to be done before all files are in sync with the release manifest.\n* `up_to_date`: The last request completed successfully and files are in sync with the release manifest.\n* `pending_verify`: The last request has not completed verification step.\n",
+        "help": "\n**Notes**\n* If there is any work in progress, `url` and `tags` will match those from the request.\n* If there are no pending requests, `url` and `tags` will match the files in the install folder.\n\n**Response**\n\nThe `state` field will is populated based on the current work with the following values:\n* `seeding`: Currently performing a seeding request.\n* `out_of_date`: The last request was partially completed and more work needs to be done before all files are in sync with the release manifest.\n* `up_to_date`: The last request completed successfully and files are in sync with the release manifest.\n* `pending_verify`: The last request has not completed verification step.\n\n\nThis endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
         "internal": false,
         "name": "GetPatchV1InstallsByInstallIdStatusSeed",
         "nameSpace": "",
@@ -7677,6 +7917,25 @@
         ],
         "threadSafe": false
     },
+    "GET /platform-ui/v1/account-linking": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Subscribe to get Account Linking UI availability and visibility status",
+        "help": "",
+        "internal": false,
+        "name": "GetPlatformUiV1AccountLinking",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlatformUiPlatformUIAccountLinkingStatus"
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-ui"
+        ],
+        "threadSafe": false
+    },
     "GET /platform-ui/v1/delete-account": {
         "arguments": [],
         "deprecated": false,
@@ -7689,6 +7948,25 @@
         "returns": {
             "elementType": "",
             "type": "PlatformUiPlatformUIAccountDeletionStatus"
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-ui"
+        ],
+        "threadSafe": false
+    },
+    "GET /platform-ui/v1/discord-link": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Subscribe to get Discord Link availability and visibility status",
+        "help": "",
+        "internal": false,
+        "name": "GetPlatformUiV1DiscordLink",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlatformUiPlatformUILinkDiscordStatus"
         },
         "subscribable": false,
         "tags": [
@@ -8835,6 +9113,25 @@
         "returns": {
             "elementType": "",
             "type": "PresencesFriendsPresences"
+        },
+        "subscribable": false,
+        "tags": [
+            "presences"
+        ],
+        "threadSafe": false
+    },
+    "GET /presences/v1/status-message": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get the presence status message",
+        "help": "",
+        "internal": false,
+        "name": "GetPresencesV1StatusMessage",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PresencesPresencesStatusMessage"
         },
         "subscribable": false,
         "tags": [
@@ -10380,7 +10677,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "The player's home base country",
-        "help": "*Internal Riot Client API. Please don't use outside of Riot Client.*\n\nProvides the home base country provided by RSO, intended for internal use by plugins that don't provide game-specific data.",
+        "help": "*Internal Riot Client API. Please don't use outside of Riot Client.*\n\nProvides the home base country provided by RSO, intended for internal use by plugins that don't provide game-specific data.\n\nThis endpoint is deprecated and will be removed February 2026; Please use PSL session state's country field instead.",
         "internal": false,
         "name": "GetRiotClientAuthV1HomeBaseCountry",
         "nameSpace": "",
@@ -12383,7 +12680,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Returns a list of supported authentication strategies.",
-        "help": "",
+        "help": "Endpoint to be deleted December 2025; This endpoint has no function anymore.",
         "internal": false,
         "name": "GetRsoAuthConfigurationV3AmrValuesSupported",
         "nameSpace": "",
@@ -12440,7 +12737,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Returns a partner auth config",
-        "help": "",
+        "help": "Endpoint to be deleted December 2025; This endpoint has no function anymore.",
         "internal": false,
         "name": "GetRsoAuthConfigurationV3PartnerAuthConfig",
         "nameSpace": "",
@@ -12516,7 +12813,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Retrieve a player's access token.",
-        "help": "If the player has a valid authorization, this API will return the player's access token, as well as their approximate expiration time and scope. This token can be used as the `Bearer` value of an `Authorization` header in order to make requets against services protected by RSO tokens. This token represents permission sets granted to the application by the player.\n\nAccess tokens expire. This plugin will handle refreshing access tokens automatically, but it's up to your plugin to either request an access token for each request, or subscribe to resource updated events for the token.\n\nAccess tokens are intended to be server-authoritative, despite being verifiable client-side as well. Scopes are included as a means for UIs to anticipate which scopes are available.\n\n**Note:** This API returns the token's expiry as seconds since the unix epoch. Do not trust this value locally in the client, as the player's system clock may be incorrect. This value is *deprecated*, and may be removed in a future version.\n\n",
+        "help": "If the player has a valid authorization, this API will return the player's access token, as well as their approximate expiration time and scope. This token can be used as the `Bearer` value of an `Authorization` header in order to make requests against services protected by RSO tokens. This token represents permission sets granted to the application by the player.\n\nAccess tokens expire. This plugin will handle refreshing access tokens automatically, but it's up to your plugin to either request an access token for each request, or subscribe to resource updated events for the token.\n\nAccess tokens are intended to be server-authoritative, despite being verifiable client-side as well. Scopes are included as a means for UIs to anticipate which scopes are available.\n\n**Note:** This API returns the token's expiry as seconds since the unix epoch. Do not trust this value locally in the client, as the player's system clock may be incorrect. This value is *deprecated*, and may be removed in a future version.\n\n",
         "internal": false,
         "name": "GetRsoAuthV1AuthorizationAccessToken",
         "nameSpace": "",
@@ -12687,7 +12984,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Get the current RSO status message",
-        "help": "",
+        "help": "Endpoint to be deleted December 2025; This endpoint has no function anymore.",
         "internal": false,
         "name": "GetRsoAuthV1StatusMessage",
         "nameSpace": "",
@@ -13177,6 +13474,25 @@
         ],
         "threadSafe": false
     },
+    "GET /social/v1/debug/discord-registered-apps": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "For internal use. Gets the list of registered Discord apps.",
+        "help": "",
+        "internal": false,
+        "name": "GetSocialV1DebugDiscordRegisteredApps",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "SocialDiscordRegisteredApplicationsV1"
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
     "GET /social/v1/friendrequests": {
         "arguments": [
             {
@@ -13643,6 +13959,44 @@
         "subscribable": false,
         "tags": [
             "tencent-launcher"
+        ],
+        "threadSafe": false
+    },
+    "GET /tracing/v1/context": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get the telemetry context from the SDK",
+        "help": "\n**Description**\nGet the telemetry context from the SDK. This endpoints returns an object that consists of two parts:\n\n* `traceStateHeader` - an that has header key and header body, that can be attached to your outgoing requests.\n* `traceStateComponents` - a map containing all individual elements stored in `traceStateHeader`, each element is a key-value pair:\n    * key: element identifier\n        * componentType: enum with information about the source of element\n        * value: element value\n\nPrefer to subscribe to this instead of polling.\n",
+        "internal": false,
+        "name": "GetTracingV1Context",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "TracingV1TraceContext"
+        },
+        "subscribable": false,
+        "tags": [
+            "tracing"
+        ],
+        "threadSafe": false
+    },
+    "GET /tracing/v1/debug/caller-id/mock-id": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Checks the caller ID in use when APIs are called from Swagger",
+        "help": "Returns the `productId` and `patchlineId` being passed to APIs in this plugin when called via Swagger.\n\nReturns 404 if a mock caller ID is not in use.",
+        "internal": false,
+        "name": "GetTracingV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "TracingPluginCallerId_MockCallerId"
+        },
+        "subscribable": false,
+        "tags": [
+            "tracing"
         ],
         "threadSafe": false
     },
@@ -16511,6 +16865,44 @@
         ],
         "threadSafe": false
     },
+    "POST /discord-account/v1/authorization/{recipient}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "AuthorizationParameters",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "DiscordAccountDiscordAuthorizationParameters"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Starts a new authorization request with Discord",
+        "help": "",
+        "internal": false,
+        "name": "PostDiscordAccountV1AuthorizationByRecipient",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "discord-account"
+        ],
+        "threadSafe": false
+    },
     "POST /eula/v1/agreement/content/retry": {
         "arguments": [],
         "deprecated": false,
@@ -16884,6 +17276,73 @@
         "subscribable": false,
         "tags": [
             "jwt-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "POST /keypair-account/v1/attestation-start": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Triggers attestation",
+        "help": "",
+        "internal": false,
+        "name": "PostKeypairAccountV1AttestationStart",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "keypair-account"
+        ],
+        "threadSafe": false
+    },
+    "POST /keypair-account/v1/authorization": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "AuthorizationParameters",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "KeypairAccountKeyPairAuthorizationParameters"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Create authorization with KeyPair Account from the stored key pair",
+        "help": "",
+        "internal": false,
+        "name": "PostKeypairAccountV1Authorization",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "keypair-account"
+        ],
+        "threadSafe": false
+    },
+    "POST /keypair-account/v1/force-unsupported": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Let the plugin know that attestation created by the device failed",
+        "help": "",
+        "internal": false,
+        "name": "PostKeypairAccountV1ForceUnsupported",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "KeypairAccountKeyPairStatus"
+        },
+        "subscribable": false,
+        "tags": [
+            "keypair-account"
         ],
         "threadSafe": false
     },
@@ -17358,6 +17817,15 @@
                 "type": {
                     "elementType": "",
                     "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "options",
+                "optional": true,
+                "type": {
+                    "elementType": "",
+                    "type": "PatchProxyRefreshRequestOptions"
                 }
             }
         ],
@@ -17917,6 +18385,25 @@
         ],
         "threadSafe": false
     },
+    "POST /platform-ui/v1/account-linking": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Trigger Account Linking UI",
+        "help": "",
+        "internal": false,
+        "name": "PostPlatformUiV1AccountLinking",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-ui"
+        ],
+        "threadSafe": false
+    },
     "POST /platform-ui/v1/delete-account": {
         "arguments": [],
         "deprecated": false,
@@ -17925,6 +18412,25 @@
         "help": "",
         "internal": false,
         "name": "PostPlatformUiV1DeleteAccount",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-ui"
+        ],
+        "threadSafe": false
+    },
+    "POST /platform-ui/v1/discord-link": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Enable Discord Account linking UI",
+        "help": "",
+        "internal": false,
+        "name": "PostPlatformUiV1DiscordLink",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -19068,6 +19574,83 @@
         "subscribable": false,
         "tags": [
             "player-reporting"
+        ],
+        "threadSafe": false
+    },
+    "POST /player-session-lifecycle/v1/force-login-token-exchange": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "LoginToken",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlayerSessionLifecycleUpdateLoginTokenRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Attempt to force an updated login token exchange. ",
+        "help": "",
+        "internal": false,
+        "name": "PostPlayerSessionLifecycleV1ForceLoginTokenExchange",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "player-session-lifecycle"
+        ],
+        "threadSafe": false
+    },
+    "POST /player-session-lifecycle/v1/require-recoverable-account": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Inform the SDK that the current player should be prompted to make their account recoverable when possible.",
+        "help": "Set a requirement for that current player should be prompted to address any issues with their account that prevent it from being recoverable. This currently means that the player's account should either have the ability to authenticate with username/password (ie. Riot Identity) or with an acceptable federated auth provider (ex. Google, Facebook, etc.). Forcing recoverable accounts is desirable when the player has spent money or a significant amount of time, so accidental account loss would be very undesirable.",
+        "internal": false,
+        "name": "PostPlayerSessionLifecycleV1RequireRecoverableAccount",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "player-session-lifecycle"
+        ],
+        "threadSafe": false
+    },
+    "POST /player-session-lifecycle/v1/riot-identity-login": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "RiotIdentityLoginRequest",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlayerSessionLifecycleRiotIdentityLoginRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Submit the sign-in request with Riot Identity credentials (dev flow only when captcha is known).",
+        "help": "",
+        "internal": false,
+        "name": "PostPlayerSessionLifecycleV1RiotIdentityLogin",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlayerSessionLifecycleRiotIdentityLoginResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "player-session-lifecycle"
         ],
         "threadSafe": false
     },
@@ -20978,35 +21561,6 @@
         ],
         "threadSafe": false
     },
-    "POST /rso-auth/v1/authorization/simulate-error": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "errorCode",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "int32"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Set simulated error response code for logging in",
-        "help": "Sets a simulated error response code to be used next time `POST`:`/rso-auth/v1/authorization/gas` occurs. Then resets to normal functionality",
-        "internal": false,
-        "name": "PostRsoAuthV1AuthorizationSimulateError",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-auth"
-        ],
-        "threadSafe": false
-    },
     "POST /rso-auth/v1/authorization/token-exchange": {
         "arguments": [
             {
@@ -21048,25 +21602,6 @@
         "returns": {
             "elementType": "",
             "type": "RsoAuthUserInfo"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-auth"
-        ],
-        "threadSafe": false
-    },
-    "POST /rso-auth/v1/device-id": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Retrieves device ID configuration.",
-        "help": "Provides client-side settings for collecting device ID information, including a session id, collector server and merchant id. The session ID is programmatically generated by the plugin at startup.\n\nThis endpoint is not available until the OpenID configuration is retrieved.\n\nEndpoint to be deleted March 2025; This endpoint has no function anymore.",
-        "internal": false,
-        "name": "PostRsoAuthV1DeviceId",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "RsoAuthDeviceId"
         },
         "subscribable": false,
         "tags": [
@@ -21118,7 +21653,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Update the RSO auth status",
-        "help": "",
+        "help": "Endpoint to be deleted December 2025; This endpoint has no function anymore.",
         "internal": false,
         "name": "PostRsoAuthV1StatusMessage",
         "nameSpace": "",
@@ -22560,6 +23095,35 @@
         "help": "",
         "internal": false,
         "name": "PostSocialV1BlocklistByPuuid",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
+    "POST /social/v1/discord/register-launch-commands": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "request",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "SocialDiscordRegisterLaunchCommandsRequestV1"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Registers Discord launch commands using the cached Discord application ID list from AES.",
+        "help": "",
+        "internal": false,
+        "name": "PostSocialV1DiscordRegisterLaunchCommands",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -24905,6 +25469,35 @@
         ],
         "threadSafe": false
     },
+    "PUT /mode-manager/mode": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "mode",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "ModeManagerSetModeRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Sets the current mode. The call will immediately return, but the mode will take some time to finish transitioning to.",
+        "help": "",
+        "internal": false,
+        "name": "PutModeManagerMode",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "mode-manager"
+        ],
+        "threadSafe": false
+    },
     "PUT /network-connectivity/v1/debug/caller-id/mock-id": {
         "arguments": [
             {
@@ -25228,7 +25821,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Configure plugin settings such as cache size and location",
-        "help": "\n**Data**\n* `cache_path`:  Path to the global cache used to store downloaded chunks.\n* `cache_size`: Cache size in bytes.\n",
+        "help": "\n**Data**\n* `cache_path`:  Path to the global cache used to store downloaded chunks.\n* `cache_size`: Cache size in bytes.\n\n\nThis endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
         "internal": false,
         "name": "PutPatchV1Configuration",
         "nameSpace": "",
@@ -25266,7 +25859,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Register a new install",
-        "help": "\n**Data**\n* `excluded_paths`: List of paths (relative to the install root) that are excluded from the update. Files under these paths won't be checked during the verification and repair processes.\n* `metadata_path`:  The location for the install .db and .manifest files. The extension will be directly appended to this path.\n* `seed_path`: The location where updated chunks will be stored for this install when performing a seed operation, and the location where chunks will be sourced from when performing a patch operation.\n",
+        "help": "\n**Data**\n* `excluded_paths`: List of paths (relative to the install root) that are excluded from the update. Files under these paths won't be checked during the verification and repair processes.\n* `metadata_path`:  The location for the install .db and .manifest files. The extension will be directly appended to this path.\n* `seed_path`: The location where updated chunks will be stored for this install when performing a seed operation, and the location where chunks will be sourced from when performing a patch operation.\n\n\nThis endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
         "internal": false,
         "name": "PutPatchV1InstallsByInstallId",
         "nameSpace": "",
@@ -25304,7 +25897,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Submit patch request for install",
-        "help": "\n**Note**\n* If a request already exists it will be replaced by the new resource.\n\n**Data**\n* `headers`: Headers to send with every request. If the manifest url is behind SCD then a Cookie header is required.\n* `url`: Url for the release manifest.\n* `max_download_speed`: Maximum download speed, in bytes/sec. If zero then no limits will be applied.\n* `repair`: Whether a full repair should be performed prior to the update.\n* `tags`: Tags to filter which content gets patched. https://riotsdk.rpg.riotgames.com/docs/for-users/patching/onboarding/localization/\n* `stage`: Only patch up to the specified stage.\n* `temp_path`: (Optional) Custom directory to use for working storage during patching.\n* `delete_foreign_paths`:  (optional) If true, paths that are not considered part of the install will be checked during the verification and repair processes and removed.\n",
+        "help": "\n**Note**\n* If a request already exists it will be replaced by the new resource.\n\n**Data**\n* `headers`: Headers to send with every request. If the manifest url is behind SCD then a Cookie header is required.\n* `url`: Url for the release manifest.\n* `max_download_speed`: Maximum download speed, in bytes/sec. If zero then no limits will be applied.\n* `repair`: Whether a full repair should be performed prior to the update.\n* `tags`: Tags to filter which content gets patched. https://riotsdk.rpg.riotgames.com/docs/for-users/patching/onboarding/localization/\n* `stage`: Only patch up to the specified stage.\n* `temp_path`: (Optional) Custom directory to use for working storage during patching.\n* `delete_foreign_paths`:  (optional) If true, paths that are not considered part of the install will be checked during the verification and repair processes and removed.\n\n\nThis endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
         "internal": false,
         "name": "PutPatchV1InstallsByInstallIdRequestsPatch",
         "nameSpace": "",
@@ -25342,7 +25935,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Submit preview request for install",
-        "help": "\n**Notes**\n* The request contains all the info needed, including the full url to the release manifest, http headers and tags.\n* If a request already exists it will be replaced by the new resource.\n\n**Data**\n* `headers`: Headers to send with every request. If the manifest url is behind SCD then a Cookie header is required.\n* `url`: Url for the release manifest.\n* `stage`: Only patch up to the specified stage.\n* `fast`: Whether to perform a fast (but less accurate) estimation.\n* `tags`: Tags to filter which content gets patched. https://riotsdk.rpg.riotgames.com/docs/for-users/patching/onboarding/localization/\n",
+        "help": "\n**Notes**\n* The request contains all the info needed, including the full url to the release manifest, http headers and tags.\n* If a request already exists it will be replaced by the new resource.\n\n**Data**\n* `headers`: Headers to send with every request. If the manifest url is behind SCD then a Cookie header is required.\n* `url`: Url for the release manifest.\n* `stage`: Only patch up to the specified stage.\n* `fast`: Whether to perform a fast (but less accurate) estimation.\n* `tags`: Tags to filter which content gets patched. https://riotsdk.rpg.riotgames.com/docs/for-users/patching/onboarding/localization/\n\n\nThis endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
         "internal": false,
         "name": "PutPatchV1InstallsByInstallIdRequestsPreview",
         "nameSpace": "",
@@ -25380,7 +25973,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Triggers a repair operation",
-        "help": "\n**Notes**\n* Allows you to perform a repair on a set of files or a full repair without having to wait or game client to exit. Only use this if you're\nabsolutely certain that the files are not currently in use.\n* Game is responsible for displaying repair progress and can get progress using the GET /patch/v1/installs/{install-id}/status/repair endpoint.\n\n**Data**\n* `files`: a list of file paths for files that need to be repaired. If none specified then the patcher will perform a full repair. File paths must\nbe relative to the install root.\n* `manifest_url`: Url for the release manifest.\n* `headers`: Headers to send with every request. If the manifest url is behind SCD then a Cookie header is required.\n* `max_download_speed`: Maximum download speed, in bytes/sec. If zero then no limits will be applied.\n* `allowed_http_fallback_hostnames`: List of hostnames for which we'll fall back to HTTP instead of HTTPS if they resolve to an RFC1918 private IP address.\n* `delete_foreign_paths`:  (optional) If true, paths that are not considered part of the install will be checked during the verification and repair processes and removed.\n",
+        "help": "\n**Notes**\n* Allows you to perform a repair on a set of files or a full repair without having to wait or game client to exit. Only use this if you're\nabsolutely certain that the files are not currently in use.\n* Game is responsible for displaying repair progress and can get progress using the GET /patch/v1/installs/{install-id}/status/repair endpoint.\n\n**Data**\n* `files`: a list of file paths for files that need to be repaired. If none specified then the patcher will perform a full repair. File paths must\nbe relative to the install root.\n* `manifest_url`: Url for the release manifest.\n* `headers`: Headers to send with every request. If the manifest url is behind SCD then a Cookie header is required.\n* `max_download_speed`: Maximum download speed, in bytes/sec. If zero then no limits will be applied.\n* `allowed_http_fallback_hostnames`: List of hostnames for which we'll fall back to HTTP instead of HTTPS if they resolve to an RFC1918 private IP address.\n* `delete_foreign_paths`:  (optional) If true, paths that are not considered part of the install will be checked during the verification and repair processes and removed.\n\n\nThis endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
         "internal": false,
         "name": "PutPatchV1InstallsByInstallIdRequestsRepair",
         "nameSpace": "",
@@ -25418,7 +26011,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Submit seed request for install",
-        "help": "\n**Notes**\n* Seeding will download any chunks needed to the seed path, but will not modify any files in the install directory. The seed path is specified in the install.\n* If a request already exists it will be replaced by the new resource. https://riotsdk.rpg.riotgames.com/docs/for-users/patching/concepts/seeding/\n\n**Data**\n* `headers`: Headers to send with every request. If the manifest url is behind SCD then a Cookie header is required.\n* `url`: Url for the release manifest.\n* `max_download_speed`: Maximum download speed, in bytes/sec. If zero then no limits will be applied.\n* `stage`: Only patch up to the specified stage.\n* `tags`: Tags to filter which content gets patched. https://riotsdk.rpg.riotgames.com/docs/for-users/patching/onboarding/localization/\n* `delete_foreign_paths`:  (optional) If true, paths that are not considered part of the install will be checked during the verification and repair processes and removed.\n",
+        "help": "\n**Notes**\n* Seeding will download any chunks needed to the seed path, but will not modify any files in the install directory. The seed path is specified in the install.\n* If a request already exists it will be replaced by the new resource. https://riotsdk.rpg.riotgames.com/docs/for-users/patching/concepts/seeding/\n\n**Data**\n* `headers`: Headers to send with every request. If the manifest url is behind SCD then a Cookie header is required.\n* `url`: Url for the release manifest.\n* `max_download_speed`: Maximum download speed, in bytes/sec. If zero then no limits will be applied.\n* `stage`: Only patch up to the specified stage.\n* `tags`: Tags to filter which content gets patched. https://riotsdk.rpg.riotgames.com/docs/for-users/patching/onboarding/localization/\n* `delete_foreign_paths`:  (optional) If true, paths that are not considered part of the install will be checked during the verification and repair processes and removed.\n\n\nThis endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
         "internal": false,
         "name": "PutPatchV1InstallsByInstallIdRequestsSeed",
         "nameSpace": "",
@@ -28000,7 +28593,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Update an authentication session with a token from signup-api.",
-        "help": "Authenticates a player using a token from signup-api",
+        "help": "Authenticates a player using a token from signup-api\n\nEndpoint to be deleted December 2025; This endpoint has no function anymore.",
         "internal": false,
         "name": "PutRsoAuthV1SessionSignupToken",
         "nameSpace": "",
@@ -28728,6 +29321,35 @@
         "subscribable": false,
         "tags": [
             "telemetry"
+        ],
+        "threadSafe": false
+    },
+    "PUT /tracing/v1/debug/caller-id/mock-id": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "callerId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "TracingPluginCallerId_MockCallerId"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Sets the caller ID to use when calling this plugin from Swagger",
+        "help": "Sets the `productId` and `patchlineId` to pass to APIs in this plugin during future calls from Swagger.\n\nUse this functionality to test APIs in this plugin with Swagger, as if they were being called from another product.",
+        "internal": false,
+        "name": "PutTracingV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "tracing"
         ],
         "threadSafe": false
     },

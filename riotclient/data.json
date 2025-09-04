@@ -3,6 +3,7 @@
         "GET /accounts-security/v1/access"
     ],
     "aes": [
+        "GET /aes/v1/config/{provider}",
         "GET /aes/v1/status/{provider}"
     ],
     "age-restriction": [
@@ -223,6 +224,11 @@
         "POST /delete-account/error",
         "GET /delete-account/v1/status"
     ],
+    "discord-account": [
+        "DELETE /discord-account/v1/authorization/{recipient}",
+        "GET /discord-account/v1/authorization/{recipient}",
+        "POST /discord-account/v1/authorization/{recipient}"
+    ],
     "entitlements": [
         "GET /entitlements/v1/token",
         "GET /entitlements/v2/token"
@@ -307,12 +313,21 @@
     ],
     "integration-test": [
         "POST /integration-test/v1/external-request/async",
-        "POST /integration-test/v1/external-request/sync"
+        "POST /integration-test/v1/external-request/sync",
+        "GET /integration-test/v1/observed-mode-manager-states"
     ],
     "jwt-authenticator": [
         "GET /jwt-authenticator/v1/headers",
         "POST /jwt-authenticator/v1/issue",
         "POST /jwt-authenticator/v1/verify"
+    ],
+    "keypair-account": [
+        "POST /keypair-account/v1/attestation-start",
+        "DELETE /keypair-account/v1/authorization",
+        "GET /keypair-account/v1/authorization",
+        "POST /keypair-account/v1/authorization",
+        "POST /keypair-account/v1/force-unsupported",
+        "GET /keypair-account/v1/status"
     ],
     "kr-account": [
         "GET /kr-account/config/v1/config",
@@ -334,7 +349,6 @@
         "DELETE /mailbox/v1/debug/caller-id/mock-id",
         "GET /mailbox/v1/debug/caller-id/mock-id",
         "PUT /mailbox/v1/debug/caller-id/mock-id",
-        "GET /mailbox/v1/enabled",
         "POST /mailbox/v1/mail",
         "PUT /mailbox/v1/mail-state",
         "POST /mailbox/v1/mail/{productId}",
@@ -353,6 +367,10 @@
         "GET /mobile-push/v1/filters/{application}",
         "POST /mobile-push/v1/register",
         "POST /mobile-push/v1/subscribe-topic"
+    ],
+    "mode-manager": [
+        "GET /mode-manager/mode",
+        "PUT /mode-manager/mode"
     ],
     "native-ux": [
         "POST /native-ux/v1/show-alert"
@@ -457,9 +475,15 @@
         "GET /platform-social/v1/voice-permission"
     ],
     "platform-ui": [
+        "DELETE /platform-ui/v1/account-linking",
+        "GET /platform-ui/v1/account-linking",
+        "POST /platform-ui/v1/account-linking",
         "DELETE /platform-ui/v1/delete-account",
         "GET /platform-ui/v1/delete-account",
         "POST /platform-ui/v1/delete-account",
+        "DELETE /platform-ui/v1/discord-link",
+        "GET /platform-ui/v1/discord-link",
+        "POST /platform-ui/v1/discord-link",
         "GET /platform-ui/v1/enabled",
         "DELETE /platform-ui/v1/fre",
         "GET /platform-ui/v1/fre",
@@ -563,7 +587,10 @@
     ],
     "player-session-lifecycle": [
         "PUT /player-session-lifecycle/v1/auth-intent",
+        "POST /player-session-lifecycle/v1/force-login-token-exchange",
         "PUT /player-session-lifecycle/v1/login-strategy",
+        "POST /player-session-lifecycle/v1/require-recoverable-account",
+        "POST /player-session-lifecycle/v1/riot-identity-login",
         "DELETE /player-session-lifecycle/v1/session",
         "GET /player-session-lifecycle/v1/session",
         "POST /player-session-lifecycle/v1/session",
@@ -634,6 +661,7 @@
         "PUT /patch-proxy/v1/patch-jobs/stop",
         "GET /patch-proxy/v1/patch-states/products/{productId}/patchlines/{patchlineId}",
         "PUT /patch-proxy/v1/priority-patch-jobs/products/{productId}/patchlines/{patchlineId}",
+        "GET /patch-proxy/v2/install-states",
         "DELETE /patch-proxy/v2/patch-jobs/all",
         "DELETE /patch-proxy/v2/patch-jobs/products/{productId}/patchlines/{patchlineId}",
         "GET /patch-proxy/v2/patch-states/out-of-date",
@@ -836,6 +864,7 @@
         "PUT /patch-proxy/v1/patch-jobs/stop",
         "GET /patch-proxy/v1/patch-states/products/{productId}/patchlines/{patchlineId}",
         "PUT /patch-proxy/v1/priority-patch-jobs/products/{productId}/patchlines/{patchlineId}",
+        "GET /patch-proxy/v2/install-states",
         "DELETE /patch-proxy/v2/patch-jobs/all",
         "DELETE /patch-proxy/v2/patch-jobs/products/{productId}/patchlines/{patchlineId}",
         "GET /patch-proxy/v2/patch-states/out-of-date",
@@ -986,6 +1015,7 @@
         "GET /presences/v1/friends",
         "DELETE /presences/v1/session",
         "PUT /presences/v1/session",
+        "GET /presences/v1/status-message",
         "PUT /presences/v1/status-message"
     ],
     "privacy": [
@@ -1203,12 +1233,10 @@
         "POST /rso-auth/v1/authorization/refresh",
         "GET /rso-auth/v1/authorization/refresh-token",
         "PUT /rso-auth/v1/authorization/refresh-token",
-        "POST /rso-auth/v1/authorization/simulate-error",
         "POST /rso-auth/v1/authorization/token-exchange",
         "DELETE /rso-auth/v1/authorization/userinfo",
         "GET /rso-auth/v1/authorization/userinfo",
         "POST /rso-auth/v1/authorization/userinfo",
-        "POST /rso-auth/v1/device-id",
         "GET /rso-auth/v1/home-base-country",
         "POST /rso-auth/v1/key/request",
         "GET /rso-auth/v1/logout-reason",
@@ -1328,6 +1356,8 @@
         "DELETE /social/v1/debug/caller-id/mock-id",
         "GET /social/v1/debug/caller-id/mock-id",
         "PUT /social/v1/debug/caller-id/mock-id",
+        "GET /social/v1/debug/discord-registered-apps",
+        "POST /social/v1/discord/register-launch-commands",
         "GET /social/v1/friendrequests",
         "POST /social/v1/friendrequests",
         "DELETE /social/v1/friendrequests/{puuid}",
@@ -1375,6 +1405,12 @@
         "GET /tencent-launcher/v1/login-info",
         "POST /tencent-launcher/v1/repair-on-shutdown",
         "GET /tencent-launcher/v1/update-status"
+    ],
+    "tracing": [
+        "GET /tracing/v1/context",
+        "DELETE /tracing/v1/debug/caller-id/mock-id",
+        "GET /tracing/v1/debug/caller-id/mock-id",
+        "PUT /tracing/v1/debug/caller-id/mock-id"
     ],
     "vng": [
         "POST /vng/v1/profile/verification/send/{productId}",

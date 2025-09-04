@@ -3,20 +3,20 @@
     <head>
         <meta charset="UTF-8" />
         <title>Riot Client API Docs</title>
-        <link rel="stylesheet" type="text/css" href="https://kebs.dev/lcuapi/style.css" />
+        <link rel="stylesheet" type="text/css" href="https://riotclient.kebs.dev/style.css" />
     </head>
     <body>
         <div class="container">
             <h1>Riot Client API Docs</h1>
-            <p>Updated 26.06.2025</p>
+            <p>Updated 4 September 2025</p>
             <a href="https://github.com/KebsCS/lcu-and-riotclient-api">GitHub repository</a>
             <div id="output"></div>
         </div>
 
         <script>
             Promise.all([
-                fetch("https://kebs.dev/lcuapi/proxy.php?url=riotclient/data.json"),
-                fetch("https://kebs.dev/lcuapi/proxy.php?url=riotclient/data_info.json")
+                fetch("https://raw.githubusercontent.com/KebsCS/lcu-and-riotclient-api/refs/heads/main/riotclient/data.json"),
+                fetch("https://raw.githubusercontent.com/KebsCS/lcu-and-riotclient-api/refs/heads/main/riotclient/data_info.json")
             ])
             .then(async ([dataResponse, dataInfoResponse]) => {
                 const data = await dataResponse.json();
