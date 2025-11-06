@@ -1,6 +1,14 @@
 {
-    "accounts-security": [
-        "GET /accounts-security/v1/access"
+    "activity-gateway": [
+        "GET /activity-gateway/v1/activities",
+        "GET /activity-gateway/v1/activities/patch",
+        "POST /activity-gateway/v1/activities/{activityId}/join",
+        "POST /activity-gateway/v1/activities/{activityId}/request-invite",
+        "GET /activity-gateway/v1/activity-invite-requests",
+        "GET /activity-gateway/v1/activity-join-intents",
+        "DELETE /activity-gateway/v1/debug/caller-id/mock-id",
+        "GET /activity-gateway/v1/debug/caller-id/mock-id",
+        "PUT /activity-gateway/v1/debug/caller-id/mock-id"
     ],
     "aes": [
         "GET /aes/v1/config/{provider}",
@@ -257,6 +265,13 @@
     "first-party-fulfillment": [
         "POST /first-party-fulfillment/v1/fulfill"
     ],
+    "friends-forever": [
+        "DELETE /friends-forever/v1/debug/caller-id/mock-id",
+        "GET /friends-forever/v1/debug/caller-id/mock-id",
+        "PUT /friends-forever/v1/debug/caller-id/mock-id",
+        "GET /friends-forever/v1/platform-links",
+        "GET /friends-forever/v1/platform-links/patch"
+    ],
     "ga-restriction": [
         "DELETE /ga-restriction/v1/debug/caller-id/mock-id",
         "GET /ga-restriction/v1/debug/caller-id/mock-id",
@@ -312,9 +327,17 @@
         "POST /info-radiator/v1/time-sample/{phaseName}/start"
     ],
     "integration-test": [
+        "GET /integration-test/v1/caller-id/sessions",
+        "POST /integration-test/v1/caller-id/sessions",
+        "POST /integration-test/v1/cancel-jobs",
+        "DELETE /integration-test/v1/debug/caller-id/mock-id",
+        "GET /integration-test/v1/debug/caller-id/mock-id",
+        "PUT /integration-test/v1/debug/caller-id/mock-id",
+        "GET /integration-test/v1/emit-notifications",
         "POST /integration-test/v1/external-request/async",
         "POST /integration-test/v1/external-request/sync",
-        "GET /integration-test/v1/observed-mode-manager-states"
+        "GET /integration-test/v1/observed-mode-manager-states",
+        "POST /integration-test/v1/wait-on-background"
     ],
     "jwt-authenticator": [
         "GET /jwt-authenticator/v1/headers",
@@ -369,8 +392,8 @@
         "POST /mobile-push/v1/subscribe-topic"
     ],
     "mode-manager": [
-        "GET /mode-manager/mode",
-        "PUT /mode-manager/mode"
+        "GET /mode-manager/v1/mode",
+        "PUT /mode-manager/v1/mode"
     ],
     "native-ux": [
         "POST /native-ux/v1/show-alert"
@@ -428,6 +451,7 @@
         "GET /pay-mobile/v2/productListResult",
         "POST /pay-mobile/v2/purchase/{productId}",
         "GET /pay-mobile/v2/purchaseResult",
+        "POST /pay-mobile/v2/request-external-pmc-start-url",
         "POST /pay-mobile/v2/request-external-products",
         "POST /pay-mobile/v2/request-price-point-products",
         "POST /pay-mobile/v2/session/resume"
@@ -587,8 +611,10 @@
     ],
     "player-session-lifecycle": [
         "PUT /player-session-lifecycle/v1/auth-intent",
-        "POST /player-session-lifecycle/v1/force-login-token-exchange",
         "PUT /player-session-lifecycle/v1/login-strategy",
+        "PUT /player-session-lifecycle/v1/login-token",
+        "DELETE /player-session-lifecycle/v1/product-context",
+        "PUT /player-session-lifecycle/v1/product-context",
         "POST /player-session-lifecycle/v1/require-recoverable-account",
         "POST /player-session-lifecycle/v1/riot-identity-login",
         "DELETE /player-session-lifecycle/v1/session",
@@ -1055,7 +1081,11 @@
         "PUT /product-integration/v1/locale",
         "GET /product-integration/v1/locale/products/{productId}/patchlines/{patchlineId}",
         "PUT /product-integration/v1/locale/products/{productId}/patchlines/{patchlineId}",
+        "DELETE /product-integration/v1/psl-id",
+        "GET /product-integration/v1/psl-id",
+        "PUT /product-integration/v1/psl-id",
         "POST /product-integration/v1/settings-token",
+        "GET /product-integration/v1/signout",
         "POST /product-integration/v1/signout",
         "GET /product-integration/v1/signout/permission"
     ],
@@ -1255,6 +1285,8 @@
         "DELETE /rso-auth/v1/userinfo/{client-id}",
         "GET /rso-auth/v1/userinfo/{client-id}",
         "POST /rso-auth/v1/userinfo/{client-id}",
+        "DELETE /rso-auth/v2/authorization/userinfo",
+        "GET /rso-auth/v2/authorization/userinfo",
         "POST /rso-auth/v2/authorizations",
         "DELETE /rso-auth/v2/authorizations/{client-id}",
         "GET /rso-auth/v2/authorizations/{client-id}",
@@ -1263,6 +1295,8 @@
         "DELETE /rso-auth/v2/config",
         "POST /rso-auth/v2/config",
         "POST /rso-auth/v2/partner-auth",
+        "DELETE /rso-auth/v2/userinfo/{client-id}",
+        "GET /rso-auth/v2/userinfo/{client-id}",
         "POST /rso-auth/v3/partner-auth"
     ],
     "rso-authenticator": [
@@ -1301,10 +1335,42 @@
         "POST /rso-authenticator/v1/authentication/xbox",
         "GET /rso-authenticator/v1/config",
         "POST /rso-authenticator/v1/login",
+        "POST /rso-authenticator/v1/login-token",
+        "GET /rso-authenticator/v1/login/config",
         "POST /rso-authenticator/v1/session/authentication",
         "GET /rso-authenticator/v1/session/info",
         "POST /rso-authenticator/v1/username-validation",
-        "POST /rso-authenticator/v1/web-authentication-url"
+        "POST /rso-authenticator/v1/web-authentication-url",
+        "DELETE /rso-authenticator/v2/authentication/{recipient}",
+        "GET /rso-authenticator/v2/authentication/{recipient}",
+        "PUT /rso-authenticator/v2/authentication/{recipient}",
+        "POST /rso-authenticator/v2/authentication/{recipient}/apple",
+        "POST /rso-authenticator/v2/authentication/{recipient}/code",
+        "POST /rso-authenticator/v2/authentication/{recipient}/facebook",
+        "POST /rso-authenticator/v2/authentication/{recipient}/gamecenter",
+        "POST /rso-authenticator/v2/authentication/{recipient}/google",
+        "POST /rso-authenticator/v2/authentication/{recipient}/keypair",
+        "PUT /rso-authenticator/v2/authentication/{recipient}/link/apple",
+        "PUT /rso-authenticator/v2/authentication/{recipient}/link/code",
+        "PUT /rso-authenticator/v2/authentication/{recipient}/link/facebook",
+        "PUT /rso-authenticator/v2/authentication/{recipient}/link/gamecenter",
+        "PUT /rso-authenticator/v2/authentication/{recipient}/link/google",
+        "PUT /rso-authenticator/v2/authentication/{recipient}/link/nintendo",
+        "PUT /rso-authenticator/v2/authentication/{recipient}/link/playstation",
+        "PUT /rso-authenticator/v2/authentication/{recipient}/link/riot-identity",
+        "PUT /rso-authenticator/v2/authentication/{recipient}/link/rso",
+        "DELETE /rso-authenticator/v2/authentication/{recipient}/link/status",
+        "GET /rso-authenticator/v2/authentication/{recipient}/link/status",
+        "PUT /rso-authenticator/v2/authentication/{recipient}/link/xbox",
+        "POST /rso-authenticator/v2/authentication/{recipient}/multifactor",
+        "POST /rso-authenticator/v2/authentication/{recipient}/nintendo",
+        "POST /rso-authenticator/v2/authentication/{recipient}/playstation",
+        "POST /rso-authenticator/v2/authentication/{recipient}/riot-identity-signup/complete",
+        "POST /rso-authenticator/v2/authentication/{recipient}/riot-identity-signup/start",
+        "POST /rso-authenticator/v2/authentication/{recipient}/riot-identity/complete",
+        "POST /rso-authenticator/v2/authentication/{recipient}/riot-identity/create",
+        "POST /rso-authenticator/v2/authentication/{recipient}/riot-identity/start",
+        "POST /rso-authenticator/v2/authentication/{recipient}/xbox"
     ],
     "rso-mobile-ui": [
         "POST /rso-mobile-ui/v1/account-promotion/initiate",
@@ -1356,6 +1422,7 @@
         "DELETE /social/v1/debug/caller-id/mock-id",
         "GET /social/v1/debug/caller-id/mock-id",
         "PUT /social/v1/debug/caller-id/mock-id",
+        "GET /social/v1/debug/discord-activity-invites",
         "GET /social/v1/debug/discord-registered-apps",
         "POST /social/v1/discord/register-launch-commands",
         "GET /social/v1/friendrequests",

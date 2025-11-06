@@ -1,4 +1,23 @@
 {
+    "DELETE /activity-gateway/v1/debug/caller-id/mock-id": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Stops mocking the caller ID for Swagger calls",
+        "help": "Deletes the currently set `productId` and `patchlineId`. Plugin APIs will receive `swagger` as the `productId`.",
+        "internal": false,
+        "name": "DeleteActivityGatewayV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "activity-gateway"
+        ],
+        "threadSafe": false
+    },
     "DELETE /agent/v1/requests/third-party-dependency/{requestId}": {
         "arguments": [
             {
@@ -1053,6 +1072,25 @@
         ],
         "threadSafe": false
     },
+    "DELETE /friends-forever/v1/debug/caller-id/mock-id": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Stops mocking the caller ID for Swagger calls",
+        "help": "Deletes the currently set `productId` and `patchlineId`. Plugin APIs will receive `swagger` as the `productId`.",
+        "internal": false,
+        "name": "DeleteFriendsForeverV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "friends-forever"
+        ],
+        "threadSafe": false
+    },
     "DELETE /ga-restriction/v1/debug/caller-id/mock-id": {
         "arguments": [],
         "deprecated": false,
@@ -1318,6 +1356,25 @@
         "subscribable": false,
         "tags": [
             "info-radiator"
+        ],
+        "threadSafe": false
+    },
+    "DELETE /integration-test/v1/debug/caller-id/mock-id": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Stops mocking the caller ID for Swagger calls",
+        "help": "Deletes the currently set `productId` and `patchlineId`. Plugin APIs will receive `swagger` as the `productId`.",
+        "internal": false,
+        "name": "DeleteIntegrationTestV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "integration-test"
         ],
         "threadSafe": false
     },
@@ -1936,11 +1993,30 @@
         ],
         "threadSafe": false
     },
+    "DELETE /player-session-lifecycle/v1/product-context": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Clear product context for the current session.",
+        "help": "",
+        "internal": false,
+        "name": "DeletePlayerSessionLifecycleV1ProductContext",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "player-session-lifecycle"
+        ],
+        "threadSafe": false
+    },
     "DELETE /player-session-lifecycle/v1/session": {
         "arguments": [],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "Delete the current lifecycle session",
+        "description": "Delete the current lifecycle session. On multitenant mode on Desktop this will check Signout permission and will fail to delete the session if the permission is not granted. On Standalone this will always delete the session.",
         "help": "",
         "internal": false,
         "name": "DeletePlayerSessionLifecycleV1Session",
@@ -2192,6 +2268,25 @@
         "help": "The session id should match one from a running game",
         "internal": false,
         "name": "DeleteProductIntegrationV1DebugAppRepairApply",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "product-integration"
+        ],
+        "threadSafe": false
+    },
+    "DELETE /product-integration/v1/psl-id": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Deletes the Player Session Lifecycle ID for the current product instance.",
+        "help": "Deletes the Player Session Lifecycle ID for the current product instance. This is used to track the session in the Player Session Lifecycle plugin.",
+        "internal": false,
+        "name": "DeleteProductIntegrationV1PslId",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -2947,6 +3042,25 @@
         ],
         "threadSafe": false
     },
+    "DELETE /rso-auth/v2/authorization/userinfo": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Delete the player userinfo",
+        "help": "This endpoint is not available until the OpenID configuration is retrieved.",
+        "internal": false,
+        "name": "DeleteRsoAuthV2AuthorizationUserinfo",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-auth"
+        ],
+        "threadSafe": false
+    },
     "DELETE /rso-auth/v2/authorizations/{client-id}": {
         "arguments": [
             {
@@ -2995,6 +3109,35 @@
         ],
         "threadSafe": false
     },
+    "DELETE /rso-auth/v2/userinfo/{client-id}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "client-id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "This endpoint is not available until the OpenID configuration is retrieved.",
+        "help": "",
+        "internal": false,
+        "name": "DeleteRsoAuthV2UserinfoByClientId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-auth"
+        ],
+        "threadSafe": false
+    },
     "DELETE /rso-authenticator/v1/authentication": {
         "arguments": [],
         "deprecated": false,
@@ -3022,6 +3165,64 @@
         "help": "",
         "internal": false,
         "name": "DeleteRsoAuthenticatorV1AuthenticationLinkStatus",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "DELETE /rso-authenticator/v2/authentication/{recipient}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Delete the current authentication session.",
+        "help": "",
+        "internal": false,
+        "name": "DeleteRsoAuthenticatorV2AuthenticationByRecipient",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "DELETE /rso-authenticator/v2/authentication/{recipient}/link/status": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Delete the current web linking code.",
+        "help": "",
+        "internal": false,
+        "name": "DeleteRsoAuthenticatorV2AuthenticationByRecipientLinkStatus",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -3541,22 +3742,98 @@
         ],
         "threadSafe": true
     },
-    "GET /accounts-security/v1/access": {
+    "GET /activity-gateway/v1/activities": {
         "arguments": [],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "Returns the action need to be done and outbound URL for it",
-        "help": "Endpoint to be deleted September 2025.",
+        "description": "Get the player's list of activities.",
+        "help": "",
         "internal": false,
-        "name": "GetAccountsSecurityV1Access",
+        "name": "GetActivityGatewayV1Activities",
         "nameSpace": "",
         "returns": {
             "elementType": "",
-            "type": "AccountsSecurityAccountsSecurity"
+            "type": "ActivitiesMapV1"
         },
         "subscribable": false,
         "tags": [
-            "accounts-security"
+            "activity-gateway"
+        ],
+        "threadSafe": false
+    },
+    "GET /activity-gateway/v1/activities/patch": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "For subscriptions only. This will notify with changed elements only rather than a full list. For a full list use the non-patch version of this URL.",
+        "help": "",
+        "internal": false,
+        "name": "GetActivityGatewayV1ActivitiesPatch",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "ActivitiesMapV1"
+        },
+        "subscribable": false,
+        "tags": [
+            "activity-gateway"
+        ],
+        "threadSafe": false
+    },
+    "GET /activity-gateway/v1/activity-invite-requests": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get the player's list of activity invite requests.",
+        "help": "",
+        "internal": false,
+        "name": "GetActivityGatewayV1ActivityInviteRequests",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "ActivityInviteRequestsV1"
+        },
+        "subscribable": false,
+        "tags": [
+            "activity-gateway"
+        ],
+        "threadSafe": false
+    },
+    "GET /activity-gateway/v1/activity-join-intents": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get the player's list of activity join intents.",
+        "help": "",
+        "internal": false,
+        "name": "GetActivityGatewayV1ActivityJoinIntents",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "ActivityJoinIntentsV1"
+        },
+        "subscribable": false,
+        "tags": [
+            "activity-gateway"
+        ],
+        "threadSafe": false
+    },
+    "GET /activity-gateway/v1/debug/caller-id/mock-id": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Checks the caller ID in use when APIs are called from Swagger",
+        "help": "Returns the `productId` and `patchlineId` being passed to APIs in this plugin when called via Swagger.\n\nReturns 404 if a mock caller ID is not in use.",
+        "internal": false,
+        "name": "GetActivityGatewayV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "ActivityGatewayPluginCallerId_MockCallerId"
+        },
+        "subscribable": false,
+        "tags": [
+            "activity-gateway"
         ],
         "threadSafe": false
     },
@@ -6195,6 +6472,73 @@
         ],
         "threadSafe": false
     },
+    "GET /friends-forever/v1/debug/caller-id/mock-id": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Checks the caller ID in use when APIs are called from Swagger",
+        "help": "Returns the `productId` and `patchlineId` being passed to APIs in this plugin when called via Swagger.\n\nReturns 404 if a mock caller ID is not in use.",
+        "internal": false,
+        "name": "GetFriendsForeverV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "FriendsForeverPluginCallerId_MockCallerId"
+        },
+        "subscribable": false,
+        "tags": [
+            "friends-forever"
+        ],
+        "threadSafe": false
+    },
+    "GET /friends-forever/v1/platform-links": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "puuid",
+                "optional": true,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get the platform link statuses of the player's friends",
+        "help": "",
+        "internal": false,
+        "name": "GetFriendsForeverV1PlatformLinks",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlatformLinksListV1"
+        },
+        "subscribable": false,
+        "tags": [
+            "friends-forever"
+        ],
+        "threadSafe": false
+    },
+    "GET /friends-forever/v1/platform-links/patch": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "For subscriptions only. This will notify with changed elements only rather than a full list. For a full list use the non-patch version of this URL.",
+        "help": "",
+        "internal": false,
+        "name": "GetFriendsForeverV1PlatformLinksPatch",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlatformLinksListV1"
+        },
+        "subscribable": false,
+        "tags": [
+            "friends-forever"
+        ],
+        "threadSafe": false
+    },
     "GET /ga-restriction/v1/debug/caller-id/mock-id": {
         "arguments": [],
         "deprecated": false,
@@ -6509,11 +6853,68 @@
         ],
         "threadSafe": false
     },
+    "GET /integration-test/v1/caller-id/sessions": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "[FOR TESTING ONLY] Returns all registered sessions.",
+        "help": "",
+        "internal": false,
+        "name": "GetIntegrationTestV1CallerIdSessions",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "IntegrationTestV1CallerIdSessions",
+            "type": "vector"
+        },
+        "subscribable": false,
+        "tags": [
+            "integration-test"
+        ],
+        "threadSafe": false
+    },
+    "GET /integration-test/v1/debug/caller-id/mock-id": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Checks the caller ID in use when APIs are called from Swagger",
+        "help": "Returns the `productId` and `patchlineId` being passed to APIs in this plugin when called via Swagger.\n\nReturns 404 if a mock caller ID is not in use.",
+        "internal": false,
+        "name": "GetIntegrationTestV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "IntegrationTestPluginCallerId_MockCallerId"
+        },
+        "subscribable": false,
+        "tags": [
+            "integration-test"
+        ],
+        "threadSafe": false
+    },
+    "GET /integration-test/v1/emit-notifications": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "[FOR TESTING ONLY] Test endpoint to dispatch an 1000 notifications to verify their ordering",
+        "help": "",
+        "internal": false,
+        "name": "GetIntegrationTestV1EmitNotifications",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "uint64"
+        },
+        "subscribable": false,
+        "tags": [
+            "integration-test"
+        ],
+        "threadSafe": false
+    },
     "GET /integration-test/v1/observed-mode-manager-states": {
         "arguments": [],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "[FOR TESTING ONLY] Returns a list of observed mode manager notifications, used in suspend-resume flow tests.",
+        "description": "[FOR TESTING ONLY] Returns a list of observed mode manager notifications, used in background-resume flow tests.",
         "help": "",
         "internal": false,
         "name": "GetIntegrationTestV1ObservedModeManagerStates",
@@ -6938,14 +7339,14 @@
         ],
         "threadSafe": false
     },
-    "GET /mode-manager/mode": {
+    "GET /mode-manager/v1/mode": {
         "arguments": [],
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Gets the current mode.",
         "help": "",
         "internal": false,
-        "name": "GetModeManagerMode",
+        "name": "GetModeManagerV1Mode",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -9539,6 +9940,44 @@
         ],
         "threadSafe": false
     },
+    "GET /product-integration/v1/psl-id": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Gets the Player Session Lifecycle ID for the current product instance.",
+        "help": "Gets the Player Session Lifecycle ID for the current product instance. This is used to track the session in the Player Session Lifecycle plugin.",
+        "internal": false,
+        "name": "GetProductIntegrationV1PslId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "string"
+        },
+        "subscribable": false,
+        "tags": [
+            "product-integration"
+        ],
+        "threadSafe": false
+    },
+    "GET /product-integration/v1/signout": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Broadcasts a sessionId of product requesting signout from the Riot Platform for all running products.",
+        "help": "",
+        "internal": false,
+        "name": "GetProductIntegrationV1Signout",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "string"
+        },
+        "subscribable": false,
+        "tags": [
+            "product-integration"
+        ],
+        "threadSafe": false
+    },
     "GET /product-integration/v1/signout/permission": {
         "arguments": [],
         "deprecated": false,
@@ -10658,7 +11097,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "The player's RSO tokens",
-        "help": "*Internal Riot Client API. Please don't use outside of Riot Client.*\n\nProvides the RSO Access Token for the SDK, intended for internal use by plugins that don't provide game-specific data.",
+        "help": "*Internal Riot Client API. Please don't use outside of Riot Client.*\n\nProvides the RSO Access Token for the SDK, intended for internal use by plugins that don't provide game-specific data.\n\nThis endpoint is deprecated and will be removed February 2026; Please use rso-auth endpoints instead",
         "internal": false,
         "name": "GetRiotClientAuthV1Authorization",
         "nameSpace": "",
@@ -10696,7 +11135,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "The player's login country",
-        "help": "*Internal Riot Client API. Please don't use outside of Riot Client.*\n\nProvides the login country provided by RSO, intended for internal use by plugins that don't provide game-specific data.",
+        "help": "*Internal Riot Client API. Please don't use outside of Riot Client.*\n\nProvides the login country provided by RSO, intended for internal use by plugins that don't provide game-specific data.\n\nThis endpoint is deprecated and will be removed February 2026; Please use rso-auth endpoints instead.",
         "internal": false,
         "name": "GetRiotClientAuthV1LoginCountry",
         "nameSpace": "",
@@ -13012,10 +13451,29 @@
         ],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "Retrieve a player's userinfo using the implicit grant mode managed client-id and access-token.",
-        "help": "If the client-id has a valid access token managed by the implicit grant mode manager, this API will return the userinfo of the player for the client-id as specified by the access token's scopes.\n\nThis endpoint is not available until the OpenID configuration is retrieved.",
+        "description": "Retrieve a player's userinfo using managed client-id and access-token.",
+        "help": "If the client-id has a valid access token managed, this API will return the userinfo of the player for the client-id as specified by the access token's scopes.\n\nThis endpoint is not available until the OpenID configuration is retrieved.",
         "internal": false,
         "name": "GetRsoAuthV1UserinfoByClientId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthUserInfo"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-auth"
+        ],
+        "threadSafe": false
+    },
+    "GET /rso-auth/v2/authorization/userinfo": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Retrieve a player's userinfo.",
+        "help": "If the player has a valid access token, and the userinfo has previously been fetched, this API will return the userinfo of the player as specified by the access token's scopes. As opposed to the synchronous v1 endpoint, this endpoint is asynchronous. If cached value is available, the result is returned immediately, otherwise the call will fail and the subscription will be used to send the actual userinfo.\n\nThis endpoint is not available until the OpenID configuration is retrieved.",
+        "internal": false,
+        "name": "GetRsoAuthV2AuthorizationUserinfo",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -13049,6 +13507,35 @@
         "returns": {
             "elementType": "",
             "type": "RsoAuthAuthorizationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-auth"
+        ],
+        "threadSafe": false
+    },
+    "GET /rso-auth/v2/userinfo/{client-id}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "client-id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Retrieve a player's userinfo using managed client-id and access-token. As opposed to the synchronous v1 endpoint, this endpoint is asynchronous. If cached value is available, the result is returned immediately, otherwise the call will fail and the subscription will be used to send the actual userinfo.",
+        "help": "If the client-id has a valid access token managed, this API will return the userinfo of the player for the client-id as specified by the access token's scopes.\n\nThis endpoint is not available until the OpenID configuration is retrieved.",
+        "internal": false,
+        "name": "GetRsoAuthV2UserinfoByClientId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthUserInfo"
         },
         "subscribable": false,
         "tags": [
@@ -13113,6 +13600,25 @@
         ],
         "threadSafe": false
     },
+    "GET /rso-authenticator/v1/login/config": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get login configuration for current session",
+        "help": "",
+        "internal": false,
+        "name": "GetRsoAuthenticatorV1LoginConfig",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1LoginConfig"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
     "GET /rso-authenticator/v1/session/info": {
         "arguments": [
             {
@@ -13151,12 +13657,70 @@
         ],
         "threadSafe": false
     },
+    "GET /rso-authenticator/v2/authentication/{recipient}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get the current state of authentication.",
+        "help": "",
+        "internal": false,
+        "name": "GetRsoAuthenticatorV2AuthenticationByRecipient",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "GET /rso-authenticator/v2/authentication/{recipient}/link/status": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get the current status of web linking.",
+        "help": "",
+        "internal": false,
+        "name": "GetRsoAuthenticatorV2AuthenticationByRecipientLinkStatus",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1WebLinkingStatusResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
     "GET /rso-mobile-ui/v1/account-promotion/status": {
         "arguments": [],
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Get the current account promotion UI status",
-        "help": "",
+        "help": "Endpoint to be deleted March 2026; This flow has been replaced by the new Account Linking flow in PlatformUI. Please see the Platform Docs to learn more about migrating to /platform-ui/v1/account-linking.",
         "internal": false,
         "name": "GetRsoMobileUiV1AccountPromotionStatus",
         "nameSpace": "",
@@ -13467,6 +14031,25 @@
         "returns": {
             "elementType": "",
             "type": "SocialPluginCallerId_MockCallerId"
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
+    "GET /social/v1/debug/discord-activity-invites": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "For internal use only. Gets the last RMS Discord activity invite message that was handled successfully.",
+        "help": "",
+        "internal": false,
+        "name": "GetSocialV1DebugDiscordActivityInvites",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "SocialDiscordActivityRMSUpdate"
         },
         "subscribable": false,
         "tags": [
@@ -14227,7 +14810,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Get the status of the voice-chat plugin to know whether or not to expect if the feature is usable.",
-        "help": "\n**Description**\nGet the status of the voice-chat plugin to know whether or not to expect if the feature is usable. Game teams are encouraged to subscribe\nto this endpoint so that the game can behave correctly depending on what the current state of the plugin is. For example, if the status of\nthe plugin is `permissionDenied`, game teams should not attempt to join voice sessions since the player does not have permissions to do so,\npossibly due to behavioural restrictions or parental control settings.\n\n** Returns **\n\nA PluginStatus value representing the current status of the plugin.\n* `PluginStatus` values:\n    * `unknown`: The status of the plugin is currently unknown. This is the default value while the plugin is initializing and its status has yet to be determined.\n    * `awaitingAuth`: The player has not signed in, so the plugin does not have the information required to join a voice session.\n    * `permissionUnknown`: The player has signed in, but the plugin is unable to look up whether or not the player has permission to use voice chat.\n         Attempting to join a voice session will not work until the permission query succeeds.\n    * `permissionDenied`: The player has signed in, but the player does not have permission to use voice chat. Attempting to join a voice session will always\n         return an error and existing sessions will be left.\n    * `ready`: Voice chat is usable and voice sessions can be joined.\n",
+        "help": "\n**Description**\nGet the status of the voice-chat plugin to know whether or not to expect if the feature is usable. Game teams are encouraged to subscribe\nto this endpoint so that the game can behave correctly depending on what the current state of the plugin is. For example, if the status of\nthe plugin is `permissionDenied`, game teams should not attempt to join voice sessions since the player does not have permissions to do so,\npossibly due to behavioural restrictions or parental control settings.\n\n** Returns **\n\nA PluginStatus value representing the current status of the plugin.\n* `PluginStatus` values:\n    * `unknown`: The status of the plugin is currently unknown. This is the default value while the plugin is initializing and its status has yet to be determined.\n    * `awaitingAuth`: The player has not signed in, so the plugin does not have the information required to join a voice session.\n    * `permissionUnknown`: The player has signed in, but the plugin is unable to look up whether or not the player has permission to use voice chat.\n         Attempting to join a voice session will not work until the permission query succeeds.\n    * `permissionDenied`: The player has signed in, but the player does not have permission to use voice chat. Attempting to join a voice session will always\n         return an error and existing sessions will be left.\n    * `networkUnavailable`: The player has signed in, but network connection is not available. Attempting to join a voice session will return an error\n    * `ready`: Voice chat is usable and voice sessions can be joined.\n",
         "internal": false,
         "name": "GetVoiceChatV1Status",
         "nameSpace": "",
@@ -15071,6 +15654,73 @@
         ],
         "threadSafe": false
     },
+    "POST /activity-gateway/v1/activities/{activityId}/join": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "activityId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Try to join the activity for the player.",
+        "help": "",
+        "internal": false,
+        "name": "PostActivityGatewayV1ActivitiesByActivityIdJoin",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "ActivityV1"
+        },
+        "subscribable": false,
+        "tags": [
+            "activity-gateway"
+        ],
+        "threadSafe": false
+    },
+    "POST /activity-gateway/v1/activities/{activityId}/request-invite": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "activityId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "body",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "ActivityRequestInviteRequestV1"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Try to request an invite to the activity for the player. This is only necessary for an Activity with 'invite only' joinability. The game party service is responsible for accepting the invite.",
+        "help": "",
+        "internal": false,
+        "name": "PostActivityGatewayV1ActivitiesByActivityIdRequestInvite",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "activity-gateway"
+        ],
+        "threadSafe": false
+    },
     "POST /agent/v1/connection-info": {
         "arguments": [
             {
@@ -15390,7 +16040,7 @@
         "arguments": [],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "Resume operations, connect to the chat service, and perform other operations specified on suspend",
+        "description": "Resume operations, connect to the chat service, and perform other operations specified on resume",
         "help": "",
         "internal": false,
         "name": "PostChatV1Resume",
@@ -17163,6 +17813,44 @@
         ],
         "threadSafe": false
     },
+    "POST /integration-test/v1/caller-id/sessions": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "[FOR TESTING ONLY] Registers session by retrieving it's information from CallerId.",
+        "help": "",
+        "internal": false,
+        "name": "PostIntegrationTestV1CallerIdSessions",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "integration-test"
+        ],
+        "threadSafe": false
+    },
+    "POST /integration-test/v1/cancel-jobs": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "[FOR TESTING ONLY] If called, will verify if job cancellation works as expected",
+        "help": "",
+        "internal": false,
+        "name": "PostIntegrationTestV1CancelJobs",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "uint64"
+        },
+        "subscribable": false,
+        "tags": [
+            "integration-test"
+        ],
+        "threadSafe": false
+    },
     "POST /integration-test/v1/external-request/async": {
         "arguments": [
             {
@@ -17214,6 +17902,35 @@
         "returns": {
             "elementType": "",
             "type": "IntegrationTestV1ExternalResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "integration-test"
+        ],
+        "threadSafe": false
+    },
+    "POST /integration-test/v1/wait-on-background": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "Time",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "uint64"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "",
+        "help": "",
+        "internal": false,
+        "name": "PostIntegrationTestV1WaitOnBackground",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
         },
         "subscribable": false,
         "tags": [
@@ -18009,6 +18726,35 @@
         ],
         "threadSafe": false
     },
+    "POST /pay-mobile/v2/request-external-pmc-start-url": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "pricePointId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Retrieve the External PMC Start Url that will open up the External Storefront using this URL. This URL comes from the PMC Service Endpoint.",
+        "help": "",
+        "internal": false,
+        "name": "PostPayMobileV2RequestExternalPmcStartUrl",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "string"
+        },
+        "subscribable": false,
+        "tags": [
+            "pay-mobile"
+        ],
+        "threadSafe": false
+    },
     "POST /pay-mobile/v2/request-external-products": {
         "arguments": [
             {
@@ -18306,7 +19052,7 @@
                 "optional": false,
                 "type": {
                     "elementType": "",
-                    "type": "string"
+                    "type": "PlatformSocialPlatformSocialBlockList"
                 }
             }
         ],
@@ -19574,35 +20320,6 @@
         "subscribable": false,
         "tags": [
             "player-reporting"
-        ],
-        "threadSafe": false
-    },
-    "POST /player-session-lifecycle/v1/force-login-token-exchange": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "LoginToken",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "PlayerSessionLifecycleUpdateLoginTokenRequest"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Attempt to force an updated login token exchange. ",
-        "help": "",
-        "internal": false,
-        "name": "PostPlayerSessionLifecycleV1ForceLoginTokenExchange",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "player-session-lifecycle"
         ],
         "threadSafe": false
     },
@@ -21681,8 +22398,8 @@
         ],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "Refresh a player's userinfo using the implicit grant mode managed client-id and access-token.",
-        "help": "If the client-id has a valid access token managed by the implicit grant mode manager, this API will return the userinfo of the player for the client-id as specified by the access token's scopes.\n\nThis endpoint is not available until the OpenID configuration is retrieved.",
+        "description": "Refresh a player's userinfo using the managed client-id and access-token.",
+        "help": "If the client-id has a valid access token managed, this API will return the userinfo of the player for the client-id as specified by the access token's scopes.\n\nThis endpoint is not available until the OpenID configuration is retrieved.",
         "internal": false,
         "name": "PostRsoAuthV1UserinfoByClientId",
         "nameSpace": "",
@@ -22382,6 +23099,25 @@
         ],
         "threadSafe": false
     },
+    "POST /rso-authenticator/v1/login-token": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Requests a login token for the current authorization",
+        "help": "",
+        "internal": false,
+        "name": "PostRsoAuthenticatorV1LoginToken",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "string"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
     "POST /rso-authenticator/v1/session/authentication": {
         "arguments": [
             {
@@ -22469,12 +23205,582 @@
         ],
         "threadSafe": false
     },
+    "POST /rso-authenticator/v2/authentication/{recipient}/apple": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "openId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1AuthenticateOpenIdConnectInput"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Authenticate a player with apple open id token.",
+        "help": "",
+        "internal": false,
+        "name": "PostRsoAuthenticatorV2AuthenticationByRecipientApple",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "POST /rso-authenticator/v2/authentication/{recipient}/code": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "codeExchange",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1AuthenticateCodeInput"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Create a new authentication session with code from a previous federated authentication.",
+        "help": "",
+        "internal": false,
+        "name": "PostRsoAuthenticatorV2AuthenticationByRecipientCode",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "POST /rso-authenticator/v2/authentication/{recipient}/facebook": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "facebook",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1AuthenticateFacebookInput"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Authenticate a player with facebook access token.",
+        "help": "",
+        "internal": false,
+        "name": "PostRsoAuthenticatorV2AuthenticationByRecipientFacebook",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "POST /rso-authenticator/v2/authentication/{recipient}/gamecenter": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "gamecenter",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1AuthenticateGameCenterInput"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Authenticate a player with gamecenter credentials.",
+        "help": "",
+        "internal": false,
+        "name": "PostRsoAuthenticatorV2AuthenticationByRecipientGamecenter",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "POST /rso-authenticator/v2/authentication/{recipient}/google": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "openId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1AuthenticateOpenIdConnectInput"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Authenticate a player with google open id token.",
+        "help": "",
+        "internal": false,
+        "name": "PostRsoAuthenticatorV2AuthenticationByRecipientGoogle",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "POST /rso-authenticator/v2/authentication/{recipient}/keypair": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "keypair",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1AuthenticateKeypairInput"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Authenticate a player with key-pair generated during One-Tap Play signup by the device's secure key-store.",
+        "help": "",
+        "internal": false,
+        "name": "PostRsoAuthenticatorV2AuthenticationByRecipientKeypair",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "POST /rso-authenticator/v2/authentication/{recipient}/multifactor": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "multifactor",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1AuthenticateMultifactorInput"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Linking player's social to their multifactor enabled riot account.",
+        "help": "",
+        "internal": false,
+        "name": "PostRsoAuthenticatorV2AuthenticationByRecipientMultifactor",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "POST /rso-authenticator/v2/authentication/{recipient}/nintendo": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "openId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1AuthenticateNintendoInput"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Authenticate a player with nintendo open id tokens.",
+        "help": "",
+        "internal": false,
+        "name": "PostRsoAuthenticatorV2AuthenticationByRecipientNintendo",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "POST /rso-authenticator/v2/authentication/{recipient}/playstation": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "id_token",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1AuthenticatePlaystationInput"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Authenticate a player with Playstation id token.",
+        "help": "",
+        "internal": false,
+        "name": "PostRsoAuthenticatorV2AuthenticationByRecipientPlaystation",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "POST /rso-authenticator/v2/authentication/{recipient}/riot-identity/complete": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "authCompleteInput",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1RiotIdentityAuthCompleteInput"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Complete a new Riot Identity authentication session.",
+        "help": "",
+        "internal": false,
+        "name": "PostRsoAuthenticatorV2AuthenticationByRecipientRiotIdentityComplete",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "POST /rso-authenticator/v2/authentication/{recipient}/riot-identity/create": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "authStartInput",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1RiotIdentitySignupStartInput"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Create a new Riot Identity for the currently authorized account.",
+        "help": "",
+        "internal": false,
+        "name": "PostRsoAuthenticatorV2AuthenticationByRecipientRiotIdentityCreate",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "POST /rso-authenticator/v2/authentication/{recipient}/riot-identity-signup/complete": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "signupCompleteInput",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1RiotIdentitySignupCompleteInput"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Complete a new Riot Identity Signup authentication session.",
+        "help": "",
+        "internal": false,
+        "name": "PostRsoAuthenticatorV2AuthenticationByRecipientRiotIdentitySignupComplete",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "POST /rso-authenticator/v2/authentication/{recipient}/riot-identity-signup/start": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "signupStartInput",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1RiotIdentitySignupStartInput"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Start a new Riot Identity Signup authentication session.",
+        "help": "",
+        "internal": false,
+        "name": "PostRsoAuthenticatorV2AuthenticationByRecipientRiotIdentitySignupStart",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "POST /rso-authenticator/v2/authentication/{recipient}/riot-identity/start": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "authStartInput",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1RiotIdentityAuthStartInput"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Start a new Riot Identity authentication session.",
+        "help": "",
+        "internal": false,
+        "name": "PostRsoAuthenticatorV2AuthenticationByRecipientRiotIdentityStart",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "POST /rso-authenticator/v2/authentication/{recipient}/xbox": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "xbox",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1AuthenticateXboxInput"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Authenticate a player with Xbox xsts token and user hash",
+        "help": "",
+        "internal": false,
+        "name": "PostRsoAuthenticatorV2AuthenticationByRecipientXbox",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
     "POST /rso-mobile-ui/v1/account-promotion/initiate": {
         "arguments": [],
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "",
-        "help": "Launches a UI for handling account promotion",
+        "help": "Launches a UI for handling account promotion\n\nEndpoint to be deleted March 2026; This flow has been replaced by the new Account Linking flow in PlatformUI. Please see the Platform Docs to learn more about migrating to /platform-ui/v1/account-linking.",
         "internal": false,
         "name": "PostRsoMobileUiV1AccountPromotionInitiate",
         "nameSpace": "",
@@ -24055,6 +25361,35 @@
         ],
         "threadSafe": false
     },
+    "PUT /activity-gateway/v1/debug/caller-id/mock-id": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "callerId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "ActivityGatewayPluginCallerId_MockCallerId"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Sets the caller ID to use when calling this plugin from Swagger",
+        "help": "Sets the `productId` and `patchlineId` to pass to APIs in this plugin during future calls from Swagger.\n\nUse this functionality to test APIs in this plugin with Swagger, as if they were being called from another product.",
+        "internal": false,
+        "name": "PutActivityGatewayV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "activity-gateway"
+        ],
+        "threadSafe": false
+    },
     "PUT /age-restriction/v1/debug/age-restriction/products/{productId}": {
         "arguments": [
             {
@@ -25161,6 +26496,35 @@
         ],
         "threadSafe": false
     },
+    "PUT /friends-forever/v1/debug/caller-id/mock-id": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "callerId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "FriendsForeverPluginCallerId_MockCallerId"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Sets the caller ID to use when calling this plugin from Swagger",
+        "help": "Sets the `productId` and `patchlineId` to pass to APIs in this plugin during future calls from Swagger.\n\nUse this functionality to test APIs in this plugin with Swagger, as if they were being called from another product.",
+        "internal": false,
+        "name": "PutFriendsForeverV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "friends-forever"
+        ],
+        "threadSafe": false
+    },
     "PUT /ga-restriction/v1/debug/caller-id/mock-id": {
         "arguments": [
             {
@@ -25411,6 +26775,35 @@
         ],
         "threadSafe": false
     },
+    "PUT /integration-test/v1/debug/caller-id/mock-id": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "callerId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "IntegrationTestPluginCallerId_MockCallerId"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Sets the caller ID to use when calling this plugin from Swagger",
+        "help": "Sets the `productId` and `patchlineId` to pass to APIs in this plugin during future calls from Swagger.\n\nUse this functionality to test APIs in this plugin with Swagger, as if they were being called from another product.",
+        "internal": false,
+        "name": "PutIntegrationTestV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "integration-test"
+        ],
+        "threadSafe": false
+    },
     "PUT /mailbox/v1/debug/caller-id/mock-id": {
         "arguments": [
             {
@@ -25469,7 +26862,7 @@
         ],
         "threadSafe": false
     },
-    "PUT /mode-manager/mode": {
+    "PUT /mode-manager/v1/mode": {
         "arguments": [
             {
                 "description": "",
@@ -25483,10 +26876,10 @@
         ],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "Sets the current mode. The call will immediately return, but the mode will take some time to finish transitioning to.",
+        "description": "Sets the current mode. The call will immediately return, but the mode will take some time to finish transitioning to. For state changes, subscribe to the mode-manager mode.",
         "help": "",
         "internal": false,
-        "name": "PutModeManagerMode",
+        "name": "PutModeManagerV1Mode",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -26351,6 +27744,64 @@
         ],
         "threadSafe": false
     },
+    "PUT /player-session-lifecycle/v1/login-token": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "UpdateLoginTokenRequest",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlayerSessionLifecycleLoginTokenRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Use an existing Login Token for the current session.",
+        "help": "",
+        "internal": false,
+        "name": "PutPlayerSessionLifecycleV1LoginToken",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "player-session-lifecycle"
+        ],
+        "threadSafe": false
+    },
+    "PUT /player-session-lifecycle/v1/product-context": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "UpdateProductContextRequest",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlayerSessionLifecycleUpdateProductContextRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Set product context for the current session. This is required for multi-tenant sessions.",
+        "help": "",
+        "internal": false,
+        "name": "PutPlayerSessionLifecycleV1ProductContext",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "player-session-lifecycle"
+        ],
+        "threadSafe": false
+    },
     "PUT /player-session-lifecycle/v1/session": {
         "arguments": [
             {
@@ -26931,6 +28382,35 @@
         "help": "\n## Context\nThis endpoint is similar to the `PUT /product-integration/v1/locale` endpoint except that the product and patchline IDs are provided. Note that the product and patchline IDs are only used if Standalone mode is NOT enabled since it takes priority.\n\nThis endpoint was added to give game teams the flexibility to switch between Standalone mode and Riot Client mode via configuration (no code changes). As soon as all games have migrated to Standalone mode, we can remove this endpoint.\n",
         "internal": false,
         "name": "PutProductIntegrationV1LocaleProductsByProductIdPatchlinesByPatchlineId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "product-integration"
+        ],
+        "threadSafe": false
+    },
+    "PUT /product-integration/v1/psl-id": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "sessionId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Sets the Player Session Lifecycle ID for the current product instance.",
+        "help": "Sets the Player Session Lifecycle ID for the current product instance. This is used to track the session in the Player Session Lifecycle plugin.",
+        "internal": false,
+        "name": "PutProductIntegrationV1PslId",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -28448,7 +29928,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Update an authentication session with credentials to login.",
-        "help": "Progresses the login flow for the session with the required player credentials.\n\nThis API should be called when prompted for `needs_authentication` from the `/rso-auth/v2/authorizations` API. Along with the user's credentials, this API will also take the `trustDevice` boolean to tell the RSO service whether or not to record this device as a trusted device to remember for use when determining trust level requirements.\n\nThis API returns a response that contains a type to determine how to follow up in the login process. If the credentials are accepted then the type will be set to `authenticated`.\n\nIf further verification is required then the type may be set to `needs_multifactor_verification`, in which case details can be found in the `MultifactorDetails`, and the required input should be PUT to `/rso-auth/v2/authentication/multifactor`\n\nIn some error cases, the `error` string may be set to indicate more information about the authentication state.\n",
+        "help": "Progresses the login flow for the session with the required player credentials.\n\nThis API should be called when prompted for `needs_authentication` from the `/rso-auth/v2/authorizations` API. Along with the user's credentials, this API will also take the `trustDevice` boolean to tell the RSO service whether or not to record this device as a trusted device to remember for use when determining trust level requirements.\n\nThis API returns a response that contains a type to determine how to follow up in the login process. If the credentials are accepted then the type will be set to `authenticated`.\n\nIf further verification is required then the type may be set to `needs_multifactor_verification`, in which case details can be found in the `MultifactorDetails`, and the required input should be PUT to `/rso-auth/v2/authentication/multifactor`\n\nIn some error cases, the `error` string may be set to indicate more information about the authentication state.\n\n\nUse the `riot_identity` login strategy available in the player-session-lifecycle instead.\nThis endpoint will be deleted Q2 2026.",
         "internal": false,
         "name": "PutRsoAuthV1SessionCredentials",
         "nameSpace": "",
@@ -28506,7 +29986,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Update an authentication session with multifactor input to complete login.",
-        "help": "Progresses the login flow for the session with the required multifactor authentication.\n\nThis API should be called when prompted for `needs_multifactor_verification` after providing credentials through `/rso-auth/v2/authentication/credentials`.\n\nThe `retry` boolean can be set when calling this API to cause MFA to push the multifactor message to the user again.\nIn some error cases, the `error` string may be set to indicate more information about the authentication state.\n",
+        "help": "Progresses the login flow for the session with the required multifactor authentication.\n\nThis API should be called when prompted for `needs_multifactor_verification` after providing credentials through `/rso-auth/v2/authentication/credentials`.\n\nThe `retry` boolean can be set when calling this API to cause MFA to push the multifactor message to the user again.\nIn some error cases, the `error` string may be set to indicate more information about the authentication state.\n\n\nUse the multifactor capabilities available in the player-session-lifecycle.\nThis endpoint will be deleted Q2 2026.",
         "internal": false,
         "name": "PutRsoAuthV1SessionMultifactor",
         "nameSpace": "",
@@ -28564,7 +30044,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Update an authentication session with player password to reauthenticate.",
-        "help": "Reauthenticates the session with the player password.\n\nThis API should be called when prompted for `needs_reauthentication` from the `/rso-auth/v2/authorizations` API\n\nIf the password is accepted, then the type will be set to `authenticated`.\n\nIn some error cases, the `error` string may be set to indicate more information about the authentication state.\n",
+        "help": "Reauthenticates the session with the player password.\n\nThis API should be called when prompted for `needs_reauthentication` from the `/rso-auth/v2/authorizations` API\n\nIf the password is accepted, then the type will be set to `authenticated`.\n\nIn some error cases, the `error` string may be set to indicate more information about the authentication state.\n\n\nUse the `riot_identity` login strategy available in the player-session-lifecycle instead.\nThis endpoint will be deleted Q2 2026.",
         "internal": false,
         "name": "PutRsoAuthV1SessionReauthentication",
         "nameSpace": "",
@@ -28934,6 +30414,424 @@
         "help": "",
         "internal": false,
         "name": "PutRsoAuthenticatorV1AuthenticationLinkXbox",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "PUT /rso-authenticator/v2/authentication/{recipient}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "authenticationPrompt",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "map"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Update the current prompt for authentication.",
+        "help": "",
+        "internal": false,
+        "name": "PutRsoAuthenticatorV2AuthenticationByRecipient",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "PUT /rso-authenticator/v2/authentication/{recipient}/link/apple": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "openId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1OpenIdConnectInput"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Link the current authentication with an existing account with apple open id token.",
+        "help": "",
+        "internal": false,
+        "name": "PutRsoAuthenticatorV2AuthenticationByRecipientLinkApple",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "PUT /rso-authenticator/v2/authentication/{recipient}/link/code": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "codeExchange",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Link the current authentication with a code from a previous federated authentication.",
+        "help": "",
+        "internal": false,
+        "name": "PutRsoAuthenticatorV2AuthenticationByRecipientLinkCode",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "PUT /rso-authenticator/v2/authentication/{recipient}/link/facebook": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "facebook",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1FacebookInput"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Link the current authentication with an existing account with facebook access token.",
+        "help": "",
+        "internal": false,
+        "name": "PutRsoAuthenticatorV2AuthenticationByRecipientLinkFacebook",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "PUT /rso-authenticator/v2/authentication/{recipient}/link/gamecenter": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "gamecenter",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1GameCenterInput"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Link the current authentication with an existing account with gamecenter credentials.",
+        "help": "",
+        "internal": false,
+        "name": "PutRsoAuthenticatorV2AuthenticationByRecipientLinkGamecenter",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "PUT /rso-authenticator/v2/authentication/{recipient}/link/google": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "openId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1OpenIdConnectInput"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Link the current authentication with an existing account with google open id token.",
+        "help": "",
+        "internal": false,
+        "name": "PutRsoAuthenticatorV2AuthenticationByRecipientLinkGoogle",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "PUT /rso-authenticator/v2/authentication/{recipient}/link/nintendo": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "openId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1NintendoInput"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Link the current authentication with an existing account with nintendo open id tokens.",
+        "help": "",
+        "internal": false,
+        "name": "PutRsoAuthenticatorV2AuthenticationByRecipientLinkNintendo",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "PUT /rso-authenticator/v2/authentication/{recipient}/link/playstation": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "playstation",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1PlaystationInput"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Link the current authentication with an existing account with playstation authorization code.",
+        "help": "",
+        "internal": false,
+        "name": "PutRsoAuthenticatorV2AuthenticationByRecipientLinkPlaystation",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "PUT /rso-authenticator/v2/authentication/{recipient}/link/riot-identity": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "riotIdentity",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1RiotIdentityInput"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Link the current authentication with an existing account with riot identity.",
+        "help": "",
+        "internal": false,
+        "name": "PutRsoAuthenticatorV2AuthenticationByRecipientLinkRiotIdentity",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "PUT /rso-authenticator/v2/authentication/{recipient}/link/rso": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "rso",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1RsoInput"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Link the current authentication with an existing RSO account with access and id tokens.",
+        "help": "",
+        "internal": false,
+        "name": "PutRsoAuthenticatorV2AuthenticationByRecipientLinkRso",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "PUT /rso-authenticator/v2/authentication/{recipient}/link/xbox": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "xbox",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1XboxInput"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Link the current authentication with an existing account with xbox tokens.",
+        "help": "",
+        "internal": false,
+        "name": "PutRsoAuthenticatorV2AuthenticationByRecipientLinkXbox",
         "nameSpace": "",
         "returns": {
             "elementType": "",

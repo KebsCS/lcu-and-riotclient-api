@@ -139,8 +139,8 @@
         "GET /lol-catalog/v1/items",
         "GET /lol-catalog/v1/items-list-details",
         "GET /lol-catalog/v1/items-list-details/skip-cache",
-        "GET /lol-catalog/v1/items/get-related-skins",
-        "GET /lol-catalog/v1/items/{inventoryType}"
+        "GET /lol-catalog/v1/items/{inventoryType}",
+        "GET /lol-catalog/v1/items/{skinId}/related-bundles"
     ],
     "Plugin lol-challenges": [
         "POST /lol-challenges/v1/ack-challenge-update/{id}",
@@ -285,6 +285,7 @@
         "POST /lol-chat/v1/conversations/{id}/messages",
         "GET /lol-chat/v1/conversations/{id}/participants",
         "GET /lol-chat/v1/conversations/{id}/participants/{pid}",
+        "POST /lol-chat/v1/discord-link",
         "GET /lol-chat/v1/errors",
         "DELETE /lol-chat/v1/errors/{id}",
         "GET /lol-chat/v1/friend-counts",
@@ -299,6 +300,8 @@
         "DELETE /lol-chat/v1/friends/{id}",
         "GET /lol-chat/v1/friends/{id}",
         "PUT /lol-chat/v1/friends/{id}",
+        "GET /lol-chat/v1/is-discord-link-available",
+        "GET /lol-chat/v1/is-discord-linked",
         "GET /lol-chat/v1/me",
         "PUT /lol-chat/v1/me",
         "DELETE /lol-chat/v1/player-mutes",
@@ -709,12 +712,7 @@
     ],
     "Plugin lol-license-agreement": [
         "GET /lol-license-agreement/v1/agreement",
-        "GET /lol-license-agreement/v1/agreements",
-        "POST /lol-license-agreement/v1/agreements/{id}/accept",
-        "POST /lol-license-agreement/v1/agreements/{id}/decline",
-        "GET /lol-license-agreement/v1/all-agreements",
-        "GET /lol-license-agreement/v1/privacy-policy",
-        "GET /lol-license-agreement/v1/serve-location"
+        "GET /lol-license-agreement/v1/privacy-policy"
     ],
     "Plugin lol-loadouts": [
         "GET /lol-loadouts/v1/loadouts-ready",
@@ -807,7 +805,6 @@
         "GET /lol-lobby-team-builder/champ-select/v1/crowd-favorte-champion-list",
         "GET /lol-lobby-team-builder/champ-select/v1/current-champion",
         "GET /lol-lobby-team-builder/champ-select/v1/disabled-champion-ids",
-        "GET /lol-lobby-team-builder/champ-select/v1/f2p-rotation-for-current-queue",
         "GET /lol-lobby-team-builder/champ-select/v1/has-auto-assigned-smite",
         "GET /lol-lobby-team-builder/champ-select/v1/implementation-active",
         "GET /lol-lobby-team-builder/champ-select/v1/pickable-champion-ids",
@@ -1168,7 +1165,7 @@
     ],
     "Plugin lol-purchase-widget": [
         "GET /lol-purchase-widget/v1/configuration",
-        "GET /lol-purchase-widget/v1/get-related-skins",
+        "GET /lol-purchase-widget/v1/items/{skinId}/related-bundles",
         "GET /lol-purchase-widget/v1/order-notifications",
         "GET /lol-purchase-widget/v1/purchasable-item",
         "POST /lol-purchase-widget/v1/purchasable-items/{inventoryType}",
@@ -1181,6 +1178,7 @@
     ],
     "Plugin lol-ranked": [
         "GET /lol-ranked/v1/apex-leagues/{queueType}/{tier}",
+        "GET /lol-ranked/v1/cached-ranked-stats/{puuid}",
         "GET /lol-ranked/v1/challenger-ladders-enabled",
         "GET /lol-ranked/v1/current-lp-change-notification",
         "GET /lol-ranked/v1/current-ranked-stats",
@@ -1302,6 +1300,7 @@
         "POST /lol-settings/v2/reload/{ppType}"
     ],
     "Plugin lol-shoppefront": [
+        "POST /lol-shoppefront/v1/bulk-purchases",
         "POST /lol-shoppefront/v1/purchases",
         "GET /lol-shoppefront/v1/purchases/{purchaseId}",
         "GET /lol-shoppefront/v1/ready",
@@ -1329,6 +1328,7 @@
         "GET /lol-spectator/v1/spectate/config",
         "POST /lol-spectator/v1/spectate/launch",
         "POST /lol-spectator/v2/buddy/spectate",
+        "GET /lol-spectator/v3/buddy/can-spectate/{puuid}/{spectatorKey}",
         "POST /lol-spectator/v3/buddy/spectate"
     ],
     "Plugin lol-statstones": [
@@ -1418,6 +1418,8 @@
     "Plugin lol-summoner-profiles": [
         "GET /lol-summoner-profiles/v1/get-champion-mastery-view",
         "GET /lol-summoner-profiles/v1/get-honor-view",
+        "GET /lol-summoner-profiles/v1/get-lol-eos-rewards-view",
+        "GET /lol-summoner-profiles/v1/get-privacy-view",
         "GET /lol-summoner-profiles/v1/get-summoner-level-view",
         "POST /lol-summoner-profiles/v1/pco/{category}"
     ],
@@ -1518,7 +1520,6 @@
     ],
     "Plugin lol-tft-troves": [
         "GET /lol-tft-troves/v1/banners",
-        "GET /lol-tft-troves/v1/catalog-banners",
         "GET /lol-tft-troves/v1/config",
         "GET /lol-tft-troves/v1/loot-odds/{dropTableId}",
         "GET /lol-tft-troves/v1/milestone-notifications",
@@ -1527,7 +1528,8 @@
         "POST /lol-tft-troves/v1/roll",
         "DELETE /lol-tft-troves/v1/roll-rewards",
         "GET /lol-tft-troves/v1/roll-rewards",
-        "GET /lol-tft-troves/v1/status-notifications"
+        "GET /lol-tft-troves/v1/status-notifications",
+        "POST /lol-tft-troves/v2/roll"
     ],
     "Plugin lol-trophies": [
         "GET /lol-trophies/v1/current-summoner/trophies/profile",
@@ -1679,8 +1681,8 @@
         "GET /lol-catalog/v1/items",
         "GET /lol-catalog/v1/items-list-details",
         "GET /lol-catalog/v1/items-list-details/skip-cache",
-        "GET /lol-catalog/v1/items/get-related-skins",
         "GET /lol-catalog/v1/items/{inventoryType}",
+        "GET /lol-catalog/v1/items/{skinId}/related-bundles",
         "POST /lol-challenges/v1/ack-challenge-update/{id}",
         "GET /lol-challenges/v1/available-queue-ids",
         "GET /lol-challenges/v1/challenges/category-data",
@@ -1813,6 +1815,7 @@
         "POST /lol-chat/v1/conversations/{id}/messages",
         "GET /lol-chat/v1/conversations/{id}/participants",
         "GET /lol-chat/v1/conversations/{id}/participants/{pid}",
+        "POST /lol-chat/v1/discord-link",
         "GET /lol-chat/v1/errors",
         "DELETE /lol-chat/v1/errors/{id}",
         "GET /lol-chat/v1/friend-counts",
@@ -1827,6 +1830,8 @@
         "DELETE /lol-chat/v1/friends/{id}",
         "GET /lol-chat/v1/friends/{id}",
         "PUT /lol-chat/v1/friends/{id}",
+        "GET /lol-chat/v1/is-discord-link-available",
+        "GET /lol-chat/v1/is-discord-linked",
         "GET /lol-chat/v1/me",
         "PUT /lol-chat/v1/me",
         "DELETE /lol-chat/v1/player-mutes",
@@ -2181,12 +2186,7 @@
         "GET /lol-leaver-buster/v1/notifications/{id}",
         "GET /lol-leaver-buster/v1/ranked-restriction",
         "GET /lol-license-agreement/v1/agreement",
-        "GET /lol-license-agreement/v1/agreements",
-        "POST /lol-license-agreement/v1/agreements/{id}/accept",
-        "POST /lol-license-agreement/v1/agreements/{id}/decline",
-        "GET /lol-license-agreement/v1/all-agreements",
         "GET /lol-license-agreement/v1/privacy-policy",
-        "GET /lol-license-agreement/v1/serve-location",
         "GET /lol-loadouts/v1/loadouts-ready",
         "GET /lol-loadouts/v4/loadouts/scope/account",
         "GET /lol-loadouts/v4/loadouts/scope/{scope}/{scopeItemId}",
@@ -2198,7 +2198,6 @@
         "GET /lol-lobby-team-builder/champ-select/v1/crowd-favorte-champion-list",
         "GET /lol-lobby-team-builder/champ-select/v1/current-champion",
         "GET /lol-lobby-team-builder/champ-select/v1/disabled-champion-ids",
-        "GET /lol-lobby-team-builder/champ-select/v1/f2p-rotation-for-current-queue",
         "GET /lol-lobby-team-builder/champ-select/v1/has-auto-assigned-smite",
         "GET /lol-lobby-team-builder/champ-select/v1/implementation-active",
         "GET /lol-lobby-team-builder/champ-select/v1/pickable-champion-ids",
@@ -2578,7 +2577,7 @@
         "GET /lol-publishing-content/v1/settings",
         "GET /lol-publishing-content/v1/tft-hub-cards",
         "GET /lol-purchase-widget/v1/configuration",
-        "GET /lol-purchase-widget/v1/get-related-skins",
+        "GET /lol-purchase-widget/v1/items/{skinId}/related-bundles",
         "GET /lol-purchase-widget/v1/order-notifications",
         "GET /lol-purchase-widget/v1/purchasable-item",
         "POST /lol-purchase-widget/v1/purchasable-items/{inventoryType}",
@@ -2589,6 +2588,7 @@
         "POST /lol-purchase-widget/v3/purchaseOfferViaCap",
         "POST /lol-purchase-widget/v3/validateOffer",
         "GET /lol-ranked/v1/apex-leagues/{queueType}/{tier}",
+        "GET /lol-ranked/v1/cached-ranked-stats/{puuid}",
         "GET /lol-ranked/v1/challenger-ladders-enabled",
         "GET /lol-ranked/v1/current-lp-change-notification",
         "GET /lol-ranked/v1/current-ranked-stats",
@@ -2686,6 +2686,7 @@
         "PATCH /lol-settings/v2/local/{category}",
         "GET /lol-settings/v2/ready",
         "POST /lol-settings/v2/reload/{ppType}",
+        "POST /lol-shoppefront/v1/bulk-purchases",
         "POST /lol-shoppefront/v1/purchases",
         "GET /lol-shoppefront/v1/purchases/{purchaseId}",
         "GET /lol-shoppefront/v1/ready",
@@ -2705,6 +2706,7 @@
         "GET /lol-spectator/v1/spectate/config",
         "POST /lol-spectator/v1/spectate/launch",
         "POST /lol-spectator/v2/buddy/spectate",
+        "GET /lol-spectator/v3/buddy/can-spectate/{puuid}/{spectatorKey}",
         "POST /lol-spectator/v3/buddy/spectate",
         "GET /lol-statstones/v1/eog-notifications/{gameId}",
         "GET /lol-statstones/v1/featured-champion-statstones/{championItemId}",
@@ -2747,6 +2749,8 @@
         "POST /lol-suggested-players/v1/victorious-comrade",
         "GET /lol-summoner-profiles/v1/get-champion-mastery-view",
         "GET /lol-summoner-profiles/v1/get-honor-view",
+        "GET /lol-summoner-profiles/v1/get-lol-eos-rewards-view",
+        "GET /lol-summoner-profiles/v1/get-privacy-view",
         "GET /lol-summoner-profiles/v1/get-summoner-level-view",
         "POST /lol-summoner-profiles/v1/pco/{category}",
         "GET /lol-summoner/v1/alias/lookup",
@@ -2858,7 +2862,6 @@
         "POST /lol-tft-team-planner/v1/team-code/clipboard/{set}",
         "GET /lol-tft-team-planner/v2/reminders",
         "GET /lol-tft-troves/v1/banners",
-        "GET /lol-tft-troves/v1/catalog-banners",
         "GET /lol-tft-troves/v1/config",
         "GET /lol-tft-troves/v1/loot-odds/{dropTableId}",
         "GET /lol-tft-troves/v1/milestone-notifications",
@@ -2868,6 +2871,7 @@
         "DELETE /lol-tft-troves/v1/roll-rewards",
         "GET /lol-tft-troves/v1/roll-rewards",
         "GET /lol-tft-troves/v1/status-notifications",
+        "POST /lol-tft-troves/v2/roll",
         "GET /lol-tft/v1/tft/backgrounds",
         "GET /lol-tft/v1/tft/battlePassHub",
         "GET /lol-tft/v1/tft/events",
