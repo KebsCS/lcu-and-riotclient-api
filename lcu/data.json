@@ -101,6 +101,7 @@
         "GET /deep-links/v1/settings"
     ],
     "Plugin entitlements": [
+        "GET /entitlements/v1/entitlements",
         "GET /entitlements/v1/token"
     ],
     "Plugin lol-account-verification": [
@@ -139,6 +140,7 @@
         "GET /lol-catalog/v1/items",
         "GET /lol-catalog/v1/items-list-details",
         "GET /lol-catalog/v1/items-list-details/skip-cache",
+        "GET /lol-catalog/v1/items/{bundleId}/related-items",
         "GET /lol-catalog/v1/items/{inventoryType}",
         "GET /lol-catalog/v1/items/{skinId}/related-bundles"
     ],
@@ -312,6 +314,7 @@
         "GET /lol-chat/v1/settings",
         "PUT /lol-chat/v1/settings",
         "POST /lol-chat/v1/system-mutes",
+        "GET /lol-chat/v2/friend-exists/{puuid}",
         "GET /lol-chat/v2/friend-requests",
         "POST /lol-chat/v2/friend-requests",
         "DELETE /lol-chat/v2/friend-requests/{id}",
@@ -798,7 +801,11 @@
         "GET /lol-lobby/v2/received-invitations",
         "POST /lol-lobby/v2/received-invitations/{invitationId}/accept",
         "POST /lol-lobby/v2/received-invitations/{invitationId}/decline",
-        "GET /lol-lobby/v2/registration-status"
+        "GET /lol-lobby/v2/registration-status",
+        "POST /lol-lobby/v3/lobby/members/{puuid}/grant-invite",
+        "POST /lol-lobby/v3/lobby/members/{puuid}/kick",
+        "POST /lol-lobby/v3/lobby/members/{puuid}/promote",
+        "POST /lol-lobby/v3/lobby/members/{puuid}/revoke-invite"
     ],
     "Plugin lol-lobby-team-builder": [
         "GET /lol-lobby-team-builder/champ-select/v1/bannable-champion-ids",
@@ -1165,7 +1172,7 @@
     ],
     "Plugin lol-purchase-widget": [
         "GET /lol-purchase-widget/v1/configuration",
-        "GET /lol-purchase-widget/v1/items/{skinId}/related-bundles",
+        "GET /lol-purchase-widget/v1/items/{itemId}/related-bundles",
         "GET /lol-purchase-widget/v1/order-notifications",
         "GET /lol-purchase-widget/v1/purchasable-item",
         "POST /lol-purchase-widget/v1/purchasable-items/{inventoryType}",
@@ -1655,6 +1662,7 @@
         "GET /client-config/v2/namespace/{namespace}/public",
         "POST /deep-links/v1/launch-lor-link",
         "GET /deep-links/v1/settings",
+        "GET /entitlements/v1/entitlements",
         "GET /entitlements/v1/token",
         "POST /lol-account-verification/v1/confirmActivationPin",
         "POST /lol-account-verification/v1/confirmDeactivationPin",
@@ -1681,6 +1689,7 @@
         "GET /lol-catalog/v1/items",
         "GET /lol-catalog/v1/items-list-details",
         "GET /lol-catalog/v1/items-list-details/skip-cache",
+        "GET /lol-catalog/v1/items/{bundleId}/related-items",
         "GET /lol-catalog/v1/items/{inventoryType}",
         "GET /lol-catalog/v1/items/{skinId}/related-bundles",
         "POST /lol-challenges/v1/ack-challenge-update/{id}",
@@ -1842,6 +1851,7 @@
         "GET /lol-chat/v1/settings",
         "PUT /lol-chat/v1/settings",
         "POST /lol-chat/v1/system-mutes",
+        "GET /lol-chat/v2/friend-exists/{puuid}",
         "GET /lol-chat/v2/friend-requests",
         "POST /lol-chat/v2/friend-requests",
         "DELETE /lol-chat/v2/friend-requests/{id}",
@@ -2315,6 +2325,10 @@
         "POST /lol-lobby/v2/received-invitations/{invitationId}/accept",
         "POST /lol-lobby/v2/received-invitations/{invitationId}/decline",
         "GET /lol-lobby/v2/registration-status",
+        "POST /lol-lobby/v3/lobby/members/{puuid}/grant-invite",
+        "POST /lol-lobby/v3/lobby/members/{puuid}/kick",
+        "POST /lol-lobby/v3/lobby/members/{puuid}/promote",
+        "POST /lol-lobby/v3/lobby/members/{puuid}/revoke-invite",
         "GET /lol-lock-and-load/v1/home-hubs-waits",
         "GET /lol-lock-and-load/v1/should-show-progress-bar-text",
         "GET /lol-lock-and-load/v1/should-wait-for-home-hubs",
@@ -2577,7 +2591,7 @@
         "GET /lol-publishing-content/v1/settings",
         "GET /lol-publishing-content/v1/tft-hub-cards",
         "GET /lol-purchase-widget/v1/configuration",
-        "GET /lol-purchase-widget/v1/items/{skinId}/related-bundles",
+        "GET /lol-purchase-widget/v1/items/{itemId}/related-bundles",
         "GET /lol-purchase-widget/v1/order-notifications",
         "GET /lol-purchase-widget/v1/purchasable-item",
         "POST /lol-purchase-widget/v1/purchasable-items/{inventoryType}",

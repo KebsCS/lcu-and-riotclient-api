@@ -2,6 +2,7 @@
     "activity-gateway": [
         "GET /activity-gateway/v1/activities",
         "GET /activity-gateway/v1/activities/patch",
+        "POST /activity-gateway/v1/activities/{activityId}/decline",
         "POST /activity-gateway/v1/activities/{activityId}/join",
         "POST /activity-gateway/v1/activities/{activityId}/request-invite",
         "GET /activity-gateway/v1/activity-invite-requests",
@@ -513,6 +514,7 @@
         "GET /platform-ui/v1/fre",
         "POST /platform-ui/v1/fre",
         "POST /platform-ui/v1/fre/telemetry",
+        "GET /platform-ui/v1/fre/text-to-speech",
         "DELETE /platform-ui/v1/riot-id-change",
         "GET /platform-ui/v1/riot-id-change",
         "POST /platform-ui/v1/riot-id-change",
@@ -705,6 +707,7 @@
         "POST /product-launcher/v1/default-product/flash",
         "POST /product-launcher/v1/default-product/focus",
         "POST /product-launcher/v1/default-product/minimize",
+        "GET /product-launcher/v1/is-launch-request-pending",
         "GET /product-launcher/v1/launching_from_xbgp",
         "POST /product-launcher/v1/launching_from_xbgp",
         "DELETE /product-launcher/v1/partner-product",
@@ -755,6 +758,7 @@
         "GET /riot-client-lifecycle/v1/product-context",
         "PUT /riot-client-lifecycle/v1/product-context",
         "GET /riot-client-lifecycle/v1/product-context-phase",
+        "GET /riot-client-lifecycle/v1/psl-enabled",
         "POST /riot-client-lifecycle/v1/quit",
         "POST /riot-client-lifecycle/v1/quit/switch-background-mode",
         "POST /riot-client-lifecycle/v1/restart",
@@ -911,6 +915,7 @@
         "POST /product-launcher/v1/default-product/flash",
         "POST /product-launcher/v1/default-product/focus",
         "POST /product-launcher/v1/default-product/minimize",
+        "GET /product-launcher/v1/is-launch-request-pending",
         "GET /product-launcher/v1/launching_from_xbgp",
         "POST /product-launcher/v1/launching_from_xbgp",
         "DELETE /product-launcher/v1/partner-product",
@@ -952,6 +957,7 @@
         "GET /riot-client-lifecycle/v1/product-context",
         "PUT /riot-client-lifecycle/v1/product-context",
         "GET /riot-client-lifecycle/v1/product-context-phase",
+        "GET /riot-client-lifecycle/v1/psl-enabled",
         "POST /riot-client-lifecycle/v1/quit",
         "POST /riot-client-lifecycle/v1/quit/switch-background-mode",
         "POST /riot-client-lifecycle/v1/restart",
@@ -1545,8 +1551,10 @@
         "DELETE /voice-chat/v4/sessions/{productName}/{id}",
         "GET /voice-chat/v4/sessions/{productName}/{id}",
         "PUT /voice-chat/v4/sessions/{productName}/{id}",
+        "POST /voice-chat/v4/sessions/{productName}/{sessionId}/participants/report",
         "GET /voice-chat/v4/sessions/{productName}/{sessionId}/participants/{participantId}",
-        "PUT /voice-chat/v4/sessions/{productName}/{sessionId}/participants/{participantId}"
+        "PUT /voice-chat/v4/sessions/{productName}/{sessionId}/participants/{participantId}",
+        "POST /voice-chat/v4/sessions/{productName}/{sessionId}/participants/{participantId}/report"
     ],
     "websocket": [
         "WebSocketFormat"

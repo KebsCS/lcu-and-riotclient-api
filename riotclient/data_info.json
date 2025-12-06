@@ -6524,7 +6524,7 @@
         "arguments": [],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "For subscriptions only. This will notify with changed elements only rather than a full list. For a full list use the non-patch version of this URL.",
+        "description": "For subscriptions only. This will notify with changed elements only rather than a full list.For a full list use the non-patch version of this URL.",
         "help": "",
         "internal": false,
         "name": "GetFriendsForeverV1PlatformLinksPatch",
@@ -8413,6 +8413,25 @@
         ],
         "threadSafe": false
     },
+    "GET /platform-ui/v1/fre/text-to-speech": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Subscribe to get Text-To-Speech elements",
+        "help": "",
+        "internal": false,
+        "name": "GetPlatformUiV1FreTextToSpeech",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlatformUiTextToSpeech"
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-ui"
+        ],
+        "threadSafe": false
+    },
     "GET /platform-ui/v1/riot-id-change": {
         "arguments": [],
         "deprecated": false,
@@ -9997,6 +10016,26 @@
         ],
         "threadSafe": false
     },
+    "GET /product-launcher/v1/is-launch-request-pending": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "returns a boolean value indicating whether a launch request is pending",
+        "help": "",
+        "internal": false,
+        "name": "GetProductLauncherV1IsLaunchRequestPending",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "bool"
+        },
+        "subscribable": true,
+        "tags": [
+            "Plugins",
+            "Plugin product-launcher"
+        ],
+        "threadSafe": false
+    },
     "GET /product-launcher/v1/launching_from_xbgp": {
         "arguments": [],
         "deprecated": false,
@@ -11356,6 +11395,26 @@
         "returns": {
             "elementType": "",
             "type": "string"
+        },
+        "subscribable": false,
+        "tags": [
+            "Plugins",
+            "Plugin riot-client-lifecycle"
+        ],
+        "threadSafe": false
+    },
+    "GET /riot-client-lifecycle/v1/psl-enabled": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns whether PSL has been enabled for this session",
+        "help": "",
+        "internal": false,
+        "name": "GetRiotClientLifecycleV1PslEnabled",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "bool"
         },
         "subscribable": false,
         "tags": [
@@ -15651,6 +15710,35 @@
         "subscribable": false,
         "tags": [
             "rso-auth"
+        ],
+        "threadSafe": false
+    },
+    "POST /activity-gateway/v1/activities/{activityId}/decline": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "activityId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Try to decline the activity for the player.",
+        "help": "",
+        "internal": false,
+        "name": "PostActivityGatewayV1ActivitiesByActivityIdDecline",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "activity-gateway"
         ],
         "threadSafe": false
     },
@@ -25239,6 +25327,91 @@
         "returns": {
             "elementType": "",
             "type": "VoiceChatSessionResource"
+        },
+        "subscribable": false,
+        "tags": [
+            "voice-chat"
+        ],
+        "threadSafe": false
+    },
+    "POST /voice-chat/v4/sessions/{productName}/{sessionId}/participants/{participantId}/report": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productName",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "sessionId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "participantId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Reports a player for voice infringement",
+        "help": "",
+        "internal": false,
+        "name": "PostVoiceChatV4SessionsByProductNameBySessionIdParticipantsByParticipantIdReport",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "voice-chat"
+        ],
+        "threadSafe": false
+    },
+    "POST /voice-chat/v4/sessions/{productName}/{sessionId}/participants/report": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productName",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "sessionId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Reports all players for voice infringement",
+        "help": "",
+        "internal": false,
+        "name": "PostVoiceChatV4SessionsByProductNameBySessionIdParticipantsReport",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
         },
         "subscribable": false,
         "tags": [
