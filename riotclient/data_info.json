@@ -1,4 +1,33 @@
 {
+    "DELETE /activity-gateway/v1/activities/{activityId}/join-code/shared": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "activityId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Delete the activity's shared join code. The player must be the leader of the activity.",
+        "help": "",
+        "internal": false,
+        "name": "DeleteActivityGatewayV1ActivitiesByActivityIdJoinCodeShared",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "activity-gateway"
+        ],
+        "threadSafe": false
+    },
     "DELETE /activity-gateway/v1/debug/caller-id/mock-id": {
         "arguments": [],
         "deprecated": false,
@@ -1644,7 +1673,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Delete the install resource",
-        "help": "\nDelete an install resource. All outstanding requests will be cancelled but the files on disk will be left intact.\n\n\nThis endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
+        "help": "\nDelete an install resource. All outstanding requests will be cancelled but the files on disk will be left intact.\n\n\nThis endpoint is deprecated and will be removed December 2026. Please use the rpatch C API instead.",
         "internal": false,
         "name": "DeletePatchV1InstallsByInstallId",
         "nameSpace": "",
@@ -1673,7 +1702,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Delete patch request for install",
-        "help": "\nDelete the patch request, interrupting any ongoing patching operations.\n\n\nThis endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
+        "help": "\nDelete the patch request, interrupting any ongoing patching operations.\n\n\nThis endpoint is deprecated and will be removed December 2026. Please use the rpatch C API instead.",
         "internal": false,
         "name": "DeletePatchV1InstallsByInstallIdRequestsPatch",
         "nameSpace": "",
@@ -1702,7 +1731,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Delete preview request for install",
-        "help": "\nDelete the preview request, interrupting any ongoing preview operations.\n\n\nThis endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
+        "help": "\nDelete the preview request, interrupting any ongoing preview operations.\n\n\nThis endpoint is deprecated and will be removed December 2026. Please use the rpatch C API instead.",
         "internal": false,
         "name": "DeletePatchV1InstallsByInstallIdRequestsPreview",
         "nameSpace": "",
@@ -1731,7 +1760,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Delete the repair request, interrupting any ongoing repair operations.",
-        "help": "This endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
+        "help": "This endpoint is deprecated and will be removed December 2026. Please use the rpatch C API instead.",
         "internal": false,
         "name": "DeletePatchV1InstallsByInstallIdRequestsRepair",
         "nameSpace": "",
@@ -1760,7 +1789,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Delete seed request for install",
-        "help": "\nDelete the seed request, interrupting any ongoing seed operations.\n\n\nThis endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
+        "help": "\nDelete the seed request, interrupting any ongoing seed operations.\n\n\nThis endpoint is deprecated and will be removed December 2026. Please use the rpatch C API instead.",
         "internal": false,
         "name": "DeletePatchV1InstallsByInstallIdRequestsSeed",
         "nameSpace": "",
@@ -2761,6 +2790,25 @@
         ],
         "threadSafe": false
     },
+    "DELETE /riotclientapp/v1/direct-launc-args": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Deletes the direct launch args for Riot Client",
+        "help": "",
+        "internal": false,
+        "name": "DeleteRiotclientappV1DirectLauncArgs",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "riotclientapp"
+        ],
+        "threadSafe": false
+    },
     "DELETE /rnet-lifecycle/v1/product-context": {
         "arguments": [],
         "deprecated": false,
@@ -3157,6 +3205,25 @@
         ],
         "threadSafe": false
     },
+    "DELETE /rso-authenticator/v1/authentication/age-verification/status": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Delete the current web age verification session.",
+        "help": "",
+        "internal": false,
+        "name": "DeleteRsoAuthenticatorV1AuthenticationAgeVerificationStatus",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
     "DELETE /rso-authenticator/v1/authentication/link/status": {
         "arguments": [],
         "deprecated": false,
@@ -3194,6 +3261,35 @@
         "help": "",
         "internal": false,
         "name": "DeleteRsoAuthenticatorV2AuthenticationByRecipient",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "DELETE /rso-authenticator/v2/authentication/{recipient}/age-verification/status": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Delete the current web age verification session.",
+        "help": "",
+        "internal": false,
+        "name": "DeleteRsoAuthenticatorV2AuthenticationByRecipientAgeVerificationStatus",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -3367,6 +3463,35 @@
         "help": "",
         "internal": false,
         "name": "DeleteSocialV2FriendrequestsByPuuid",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
+    "DELETE /social/v4/friends/{puuid}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "puuid",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Remove friend",
+        "help": "",
+        "internal": false,
+        "name": "DeleteSocialV4FriendsByPuuid",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -3754,6 +3879,64 @@
         "returns": {
             "elementType": "",
             "type": "ActivitiesMapV1"
+        },
+        "subscribable": false,
+        "tags": [
+            "activity-gateway"
+        ],
+        "threadSafe": false
+    },
+    "GET /activity-gateway/v1/activities/{activityId}/join-code/shared": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "activityId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get the activity's shared join code.",
+        "help": "",
+        "internal": false,
+        "name": "GetActivityGatewayV1ActivitiesByActivityIdJoinCodeShared",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "JoinCodeV1"
+        },
+        "subscribable": false,
+        "tags": [
+            "activity-gateway"
+        ],
+        "threadSafe": false
+    },
+    "GET /activity-gateway/v1/activities/{activityId}/lookup": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "activityId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Lookup the activity. If the activity is found, this does not mean the player has relationship to the activity. This is intended for usage with Smart URLs and join codes, where a player can use the join code flow to join the activity.",
+        "help": "",
+        "internal": false,
+        "name": "GetActivityGatewayV1ActivitiesByActivityIdLookup",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "ActivityV1"
         },
         "subscribable": false,
         "tags": [
@@ -4151,7 +4334,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Get the account settings related to chat",
-        "help": "**Response:**\n\n```\n{\n  \"bounceDockIconEnabled\": [bounceDockIconEnabled], // If the dock icon will bounce when receiving a new message, game invite, etc\n  \"chat-status-message\": \"[status_message]\",      // The player's status message. This gets updated within chat when the \"status\" of the player is changed\n  \"chatFilterDisabled\": [chatFilterDisabled],       // If bad language is filtered in chat messages\n  \"chatGroupMobile\": [chatGroupMobile],             // If mobile friends are grouped in their own \"MOBILE\" folder\n  \"chatGroupOffline\": [chatGroupOffline],           // If offline friends are grouped in their own \"OFFLINE\" folder\n  \"chatWindow\": {                                   // The chat window settings\n    \"detached\": [detached],                         // If the chat window is docked or popped out\n    \"height\": [height],                             // The height of the chat window\n    \"left\": [left],                                 // The location of the left side of the chat window\n    \"top\": [top],                                   // The location of the top side of the chat window\n    \"width\": [width]                                // The width of the chat window\n  },\n  \"closed-conversations\": {                         // Which conversations have been closed. Used within chat to determine which recent convos to remove on startup. This gets updated\n                                                      // within chat when a conversation is deleted\n    \"[convo_id]\": [closed_timestamp],\n    ...\n  },\n  \"friendRequestToastsDisabled\": [friendRequestToastsDisabled], // If a toast appears when you receive a friend request\n  \"linkClickWarningEnabled\": [linkClickWarningEnabled],         // If a link warning will appear when clicking on links\n  \"messageNotificationsEnabled\": [messageNotificationsEnabled], // If a native toast or regular toast appears when receiving a message\n  \"moreUnreadsEnabled\": [moreUnreadsEnabled],                   // If a \"more unreads\" indicator appears for unread items not currently in scroll view\n  \"muted-conversations\": {                                      // A list of 1:1 muted conversations. This gets updated within chat when the \"muted\" state of a conversation is changed\n    \"[convo_id]\": 1\n  },                       \n  \"recentlyPlayedOpen\": [recentlyPlayedOpen],                  // If the \"recently played\" folder is open\n  \"roster-group-collapsed\": {                                  // A list of each folder's collapsed state. This gets updated within chat when the \"collapsed\" state of a group is changed\n    \"[group_folder_name]\": [collapsed],\n    ...\n  },\n  \"showWhenTypingEnabled\": [showWhenTypingEnabled],            // If an indicator is shown to other players when writing a message to them\n  \"sortBy\": \"[sort_type]\"                                    // How to sort friends in the friends list (ex. by \"availability\" vs \"alphabetical\")\n}\n```\n\nMost of these chat settings are straightforward and only require an update when a player enables or disables a setting. For example, when they check or uncheck a box for the setting.\n",
+        "help": "**Response:**\n\n```\n{\n  \"bounceDockIconEnabled\": [bounceDockIconEnabled], // If the dock icon will bounce when receiving a new message, game invite, etc\n  \"chat-status-message\": \"[status_message]\",      // The player's status message. This gets updated within chat when the \"status\" of the player is changed\n  \"chatFilterDisabled\": [chatFilterDisabled],       // If bad language is filtered in chat messages\n  \"chatGroupMobile\": [chatGroupMobile],             // If mobile friends are grouped in their own \"MOBILE\" folder\n  \"chatGroupOffline\": [chatGroupOffline],           // If offline friends are grouped in their own \"OFFLINE\" folder\n  \"chatGroupDiscord\": [chatGroupDiscord],           // If the \"DISCORD\" folder is available in '/chat/vX/groups`. The product is responsible for grouping Discord friends using the '/social/v4/friends.discordInfo' field.\n  \"chatWindow\": {                                   // The chat window settings\n    \"detached\": [detached],                         // If the chat window is docked or popped out\n    \"height\": [height],                             // The height of the chat window\n    \"left\": [left],                                 // The location of the left side of the chat window\n    \"top\": [top],                                   // The location of the top side of the chat window\n    \"width\": [width]                                // The width of the chat window\n  },\n  \"closed-conversations\": {                         // Which conversations have been closed. Used within chat to determine which recent convos to remove on startup. This gets updated\n                                                      // within chat when a conversation is deleted\n    \"[convo_id]\": [closed_timestamp],\n    ...\n  },\n  \"friendRequestToastsDisabled\": [friendRequestToastsDisabled], // If a toast appears when you receive a friend request\n  \"linkClickWarningEnabled\": [linkClickWarningEnabled],         // If a link warning will appear when clicking on links\n  \"messageNotificationsEnabled\": [messageNotificationsEnabled], // If a native toast or regular toast appears when receiving a message\n  \"moreUnreadsEnabled\": [moreUnreadsEnabled],                   // If a \"more unreads\" indicator appears for unread items not currently in scroll view\n  \"muted-conversations\": {                                      // A list of 1:1 muted conversations. This gets updated within chat when the \"muted\" state of a conversation is changed\n    \"[convo_id]\": 1\n  },                       \n  \"recentlyPlayedOpen\": [recentlyPlayedOpen],                  // If the \"recently played\" folder is open\n  \"roster-group-collapsed\": {                                  // A list of each folder's collapsed state. This gets updated within chat when the \"collapsed\" state of a group is changed\n    \"[group_folder_name]\": [collapsed],\n    ...\n  },\n  \"showWhenTypingEnabled\": [showWhenTypingEnabled],            // If an indicator is shown to other players when writing a message to them\n  \"sortBy\": \"[sort_type]\"                                    // How to sort friends in the friends list (ex. by \"availability\" vs \"alphabetical\")\n}\n```\n\nMost of these chat settings are straightforward and only require an update when a player enables or disables a setting. For example, when they check or uncheck a box for the setting.\n",
         "internal": false,
         "name": "GetChatV1Settings",
         "nameSpace": "",
@@ -5517,7 +5700,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Get the status of the chatbox plugin to know whether or not to expect if the feature is usable.",
-        "help": "\n**Description**\nGet the status of the chatbox plugin to know whether or not to expect if the feature is usable. Game teams are encouraged to subscribe\nto this endpoint so that the game can behave correctly depending on what the current state of the plugin is. For example, if the status of\nthe plugin is `permissionDenied`, game teams should not attempt to create a chatbox instance since the player does not have permissions to do so,\npossibly due to behavioural restrictions or parental control settings.\n\n** Returns **\n\nA PluginStatus value representing the current status of the plugin.\n* `PluginStatus` values:\n    * `unknown`: The status of the plugin is currently unknown. This is the default value while the plugin is initializing and its status has yet to be determined.\n    * `awaitingChatConnection`: The player has not been connected to the chat service, so the plugin will not be able to create functional chatboxes.\n    * `permissionUnknown`: The chat session has been established, but the plugin is unable to look up whether or not the player has permission to use text chat.\n         Attempting to create a chatbox will not work until the permission query succeeds.\n    * `permissionDenied`: The player does not have permission to use text chat. Attempting to use the plugin will always return an error and\n         existing chatbox instances will be destroyed.\n    * `ready`: The plugin is usable and chatboxes can be created.\n",
+        "help": "\n**Description**\nGet the status of the chatbox plugin to know whether or not to expect if the feature is usable. Game teams are encouraged to subscribe\nto this endpoint so that the game can behave correctly depending on what the current state of the plugin is. For example, if the status of\nthe plugin is `permissionDenied`, game teams should not attempt to create a chatbox instance since the player does not have permissions to do so,\npossibly due to behavioral restrictions or parental control settings.\n\n** Returns **\n\nA PluginStatus value representing the current status of the plugin.\n* `PluginStatus` values:\n    * `unknown`: The status of the plugin is currently unknown. This is the default value while the plugin is initializing and its status has yet to be determined.\n    * `awaitingChatConnection`: The player has not been connected to the chat service, so the plugin will not be able to create functional chatboxes.\n    * `permissionUnknown`: The chat session has been established, but the plugin is unable to look up whether or not the player has permission to use text chat.\n         Attempting to create a chatbox will not work until the permission query succeeds.\n    * `permissionDenied`: The player does not have permission to use text chat. Attempting to use the plugin will always return an error and\n         existing chatbox instances will be destroyed.\n    * `ready`: The plugin is usable and chatboxes can be created.\n",
         "internal": false,
         "name": "GetChatboxV1Status",
         "nameSpace": "",
@@ -6891,6 +7074,35 @@
         ],
         "threadSafe": false
     },
+    "GET /integration-test/v1/echo/{message}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "message",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "[FOR TESTING ONLY] Echoes back the provided message.",
+        "help": "",
+        "internal": false,
+        "name": "GetIntegrationTestV1EchoByMessage",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "string"
+        },
+        "subscribable": false,
+        "tags": [
+            "integration-test"
+        ],
+        "threadSafe": false
+    },
     "GET /integration-test/v1/emit-notifications": {
         "arguments": [],
         "deprecated": false,
@@ -7463,7 +7675,7 @@
         "name": "GetPatchProxyV1ActiveUpdates",
         "nameSpace": "",
         "returns": {
-            "elementType": "PatchProxyProductPatchlineKey",
+            "elementType": "ProductPatchlineKey",
             "type": "vector"
         },
         "subscribable": true,
@@ -7483,7 +7695,7 @@
         "name": "GetPatchProxyV1PatchJobs",
         "nameSpace": "",
         "returns": {
-            "elementType": "PatchProxyJobInfo",
+            "elementType": "JobInfo",
             "type": "vector"
         },
         "subscribable": false,
@@ -7523,7 +7735,7 @@
         "nameSpace": "",
         "returns": {
             "elementType": "",
-            "type": "PatchProxyPatchingResource"
+            "type": "PatchingResource"
         },
         "subscribable": true,
         "tags": [
@@ -7542,7 +7754,7 @@
         "name": "GetPatchProxyV2InstallStates",
         "nameSpace": "",
         "returns": {
-            "elementType": "PatchProxyProductPatchlineInstallState",
+            "elementType": "ProductPatchlineInstallState",
             "type": "vector"
         },
         "subscribable": true,
@@ -7562,7 +7774,7 @@
         "name": "GetPatchProxyV2PatchStatesOutOfDate",
         "nameSpace": "",
         "returns": {
-            "elementType": "PatchProxyProductPatchlineKey",
+            "elementType": "ProductPatchlineKey",
             "type": "vector"
         },
         "subscribable": false,
@@ -7602,7 +7814,7 @@
         "nameSpace": "",
         "returns": {
             "elementType": "",
-            "type": "PatchProxyProductPatchlineStatus"
+            "type": "ProductPatchlineStatus"
         },
         "subscribable": true,
         "tags": [
@@ -7640,7 +7852,7 @@
         "name": "GetPatchProxyV2ProductsByProductIdPatchlinesByPatchlineIdDependencies",
         "nameSpace": "",
         "returns": {
-            "elementType": "PatchProxyProductPatchlineDependencyState",
+            "elementType": "ProductPatchlineDependencyState",
             "type": "vector"
         },
         "subscribable": true,
@@ -7655,7 +7867,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Retrieve the configuration",
-        "help": "This endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
+        "help": "This endpoint is deprecated and will be removed December 2026. Please use the rpatch C API instead.",
         "internal": false,
         "name": "GetPatchV1Configuration",
         "nameSpace": "",
@@ -7674,7 +7886,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Get list of installs on disk",
-        "help": "This endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
+        "help": "This endpoint is deprecated and will be removed December 2026. Please use the rpatch C API instead.",
         "internal": false,
         "name": "GetPatchV1Installs",
         "nameSpace": "",
@@ -7703,7 +7915,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Get detailed information about an install, including current requests and status.",
-        "help": "This endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
+        "help": "This endpoint is deprecated and will be removed December 2026. Please use the rpatch C API instead.",
         "internal": false,
         "name": "GetPatchV1InstallsByInstallId",
         "nameSpace": "",
@@ -7732,7 +7944,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Retrieve the current patch, preview and seed statuses of an install resource",
-        "help": "\n**Note**\n* The status is always relative to a manifest and set of tags, specified by the `url` and `tags` fields respectively.\n* If there is any work in progress, `url` and `tags` will match those from the request.\n* If there are no pending requests, `url` and `tags` will match the files in the install folder.\n\n**Responses**\n\n**Patch**\n* `updating`: Currently performing a patching / seeding request.\n* `out_of_date`: The last request was partially completed and more work needs to be done before all files are in sync with the release manifest.\n* `up_to_date`: The last request completed successfully and files are in sync with the release manifest.\n* `not_installed`: The last request completed successfully and detected that the install-id is not installed.\n* `pending_verify`: The last request has not completed verification step.\n\n**Seed**\n* `seeding`: Currently performing a seeding request.\n* `out_of_date`: The last request was partially completed and more work needs to be done before all data needed to update the install has been downloaded.\n* `up_to_date`: The last request completed successfully and all data needed to update the install has been downloaded.\n* `pending_verify`: The last request has not completed verification step.\n\n**Preview**\n* `pending`: The preview request has not finished.\n* `done`: The last preview request completed successfully.\n\n**Repair**\n* `manifest_url`: the url of the release manifest.\n* `repair_progress`: The progress of the repair operation. Contains:\n    * `bytes_to_repair`: Total number of bytes to read.\n    * `files_to_repair`: Total number of files to read.\n    * `repaired_bytes`: Number of bytes read from disk so far.\n    * `repaired_files`: Number of files read from disk so far.\n* `state`: The overall state of the repair operation. Possible states include:\n    * `pending`: No repair requests have been made.\n    * `in_progress`: Repair is in progress.\n    * `canceled`: The repair operation was canceled.\n    * `done`: Repair operation is complete.\n\n\nThis endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
+        "help": "\n**Note**\n* The status is always relative to a manifest and set of tags, specified by the `url` and `tags` fields respectively.\n* If there is any work in progress, `url` and `tags` will match those from the request.\n* If there are no pending requests, `url` and `tags` will match the files in the install folder.\n\n**Responses**\n\n**Patch**\n* `updating`: Currently performing a patching / seeding request.\n* `out_of_date`: The last request was partially completed and more work needs to be done before all files are in sync with the release manifest.\n* `up_to_date`: The last request completed successfully and files are in sync with the release manifest.\n* `not_installed`: The last request completed successfully and detected that the install-id is not installed.\n* `pending_verify`: The last request has not completed verification step.\n\n**Seed**\n* `seeding`: Currently performing a seeding request.\n* `out_of_date`: The last request was partially completed and more work needs to be done before all data needed to update the install has been downloaded.\n* `up_to_date`: The last request completed successfully and all data needed to update the install has been downloaded.\n* `pending_verify`: The last request has not completed verification step.\n\n**Preview**\n* `pending`: The preview request has not finished.\n* `done`: The last preview request completed successfully.\n\n**Repair**\n* `manifest_url`: the url of the release manifest.\n* `repair_progress`: The progress of the repair operation. Contains:\n    * `bytes_to_repair`: Total number of bytes to read.\n    * `files_to_repair`: Total number of files to read.\n    * `repaired_bytes`: Number of bytes read from disk so far.\n    * `repaired_files`: Number of files read from disk so far.\n* `state`: The overall state of the repair operation. Possible states include:\n    * `pending`: No repair requests have been made.\n    * `in_progress`: Repair is in progress.\n    * `canceled`: The repair operation was canceled.\n    * `done`: Repair operation is complete.\n\n\nThis endpoint is deprecated and will be removed December 2026. Please use the rpatch C API instead.",
         "internal": false,
         "name": "GetPatchV1InstallsByInstallIdStatus",
         "nameSpace": "",
@@ -7761,7 +7973,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Retrieve the current patch status of an install.",
-        "help": "\n**Notes**\n* The status is always relative to a manifest and set of tags, specified by the `url` and `tags` fields respectively.\n* If there is any work in progress, `url` and `tags` will match those from the request.\n* If there are no pending requests, `url` and `tags` will match the files in the install folder.\n\n**Response**\n\nThe `state` field will is populated based on the current work with the following values:\n* `updating`: Currently performing a patching / seeding request.\n* `out_of_date`: The last request was partially completed and more work needs to be done before all files are in sync with the release manifest.\n* `up_to_date`: The last request completed successfully and files are in sync with the release manifest.\n* `not_installed`: The last request completed successfully and detected that the install-id is not installed.\n* `pending_verify`: The last request has not completed verification step.\n\n\nThis endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
+        "help": "\n**Notes**\n* The status is always relative to a manifest and set of tags, specified by the `url` and `tags` fields respectively.\n* If there is any work in progress, `url` and `tags` will match those from the request.\n* If there are no pending requests, `url` and `tags` will match the files in the install folder.\n\n**Response**\n\nThe `state` field will is populated based on the current work with the following values:\n* `updating`: Currently performing a patching / seeding request.\n* `out_of_date`: The last request was partially completed and more work needs to be done before all files are in sync with the release manifest.\n* `up_to_date`: The last request completed successfully and files are in sync with the release manifest.\n* `not_installed`: The last request completed successfully and detected that the install-id is not installed.\n* `pending_verify`: The last request has not completed verification step.\n\n\nThis endpoint is deprecated and will be removed December 2026. Please use the rpatch C API instead.",
         "internal": false,
         "name": "GetPatchV1InstallsByInstallIdStatusPatch",
         "nameSpace": "",
@@ -7790,7 +8002,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Retrieve the current preview status of an install.",
-        "help": "\n**Response**\n\nThe `state` field will is populated based on the current work with the following values:\n* `pending`: The preview request has not finished.\n* `done`: The last preview request completed successfully.\n\n\nThis endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
+        "help": "\n**Response**\n\nThe `state` field will is populated based on the current work with the following values:\n* `pending`: The preview request has not finished.\n* `done`: The last preview request completed successfully.\n\n\nThis endpoint is deprecated and will be removed December 2026. Please use the rpatch C API instead.",
         "internal": false,
         "name": "GetPatchV1InstallsByInstallIdStatusPreview",
         "nameSpace": "",
@@ -7819,7 +8031,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Retrieve the current repair status of an install.",
-        "help": "\n**Response**\n* `manifest_url`: the url of the release manifest.\n* `repair_progress`: The progress of the repair operation. Contains:\n    * `bytes_to_repair`: Total number of bytes to read.\n    * `files_to_repair`: Total number of files to read.\n    * `repaired_bytes`: Number of bytes read from disk so far.\n    * `repaired_files`: Number of files read from disk so far.\n* `state`: The overall state of the repair operation.\n    * `pending`: No repair requests have been made.\n    * `in_progress`: Repair is in progress.\n    * `canceled`: The repair operation was canceled.\n    * `done`: Repair operation is complete.\n\n\nThis endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
+        "help": "\n**Response**\n* `manifest_url`: the url of the release manifest.\n* `repair_progress`: The progress of the repair operation. Contains:\n    * `bytes_to_repair`: Total number of bytes to read.\n    * `files_to_repair`: Total number of files to read.\n    * `repaired_bytes`: Number of bytes read from disk so far.\n    * `repaired_files`: Number of files read from disk so far.\n* `state`: The overall state of the repair operation.\n    * `pending`: No repair requests have been made.\n    * `in_progress`: Repair is in progress.\n    * `canceled`: The repair operation was canceled.\n    * `done`: Repair operation is complete.\n\n\nThis endpoint is deprecated and will be removed December 2026. Please use the rpatch C API instead.",
         "internal": false,
         "name": "GetPatchV1InstallsByInstallIdStatusRepair",
         "nameSpace": "",
@@ -7848,7 +8060,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Retrieve the current seed status of an install.",
-        "help": "\n**Notes**\n* If there is any work in progress, `url` and `tags` will match those from the request.\n* If there are no pending requests, `url` and `tags` will match the files in the install folder.\n\n**Response**\n\nThe `state` field will is populated based on the current work with the following values:\n* `seeding`: Currently performing a seeding request.\n* `out_of_date`: The last request was partially completed and more work needs to be done before all files are in sync with the release manifest.\n* `up_to_date`: The last request completed successfully and files are in sync with the release manifest.\n* `pending_verify`: The last request has not completed verification step.\n\n\nThis endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
+        "help": "\n**Notes**\n* If there is any work in progress, `url` and `tags` will match those from the request.\n* If there are no pending requests, `url` and `tags` will match the files in the install folder.\n\n**Response**\n\nThe `state` field will is populated based on the current work with the following values:\n* `seeding`: Currently performing a seeding request.\n* `out_of_date`: The last request was partially completed and more work needs to be done before all files are in sync with the release manifest.\n* `up_to_date`: The last request completed successfully and files are in sync with the release manifest.\n* `pending_verify`: The last request has not completed verification step.\n\n\nThis endpoint is deprecated and will be removed December 2026. Please use the rpatch C API instead.",
         "internal": false,
         "name": "GetPatchV1InstallsByInstallIdStatusSeed",
         "nameSpace": "",
@@ -8043,12 +8255,79 @@
         ],
         "threadSafe": false
     },
+    "GET /permissions/v2/batch-config": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns the currently configured permissions batch payload.",
+        "help": "",
+        "internal": false,
+        "name": "GetPermissionsV2BatchConfig",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PermissionsBatchPermissionsConfig"
+        },
+        "subscribable": false,
+        "tags": [
+            "permissions"
+        ],
+        "threadSafe": false
+    },
+    "GET /permissions/v2/batch-request": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns permissions for all configured products and permissions.",
+        "help": "",
+        "internal": false,
+        "name": "GetPermissionsV2BatchRequest",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "PermissionsBatchPermissionsProduct",
+            "type": "vector"
+        },
+        "subscribable": false,
+        "tags": [
+            "permissions"
+        ],
+        "threadSafe": false
+    },
+    "GET /permissions/v2/request/{permissionId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "permissionId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "",
+        "help": "",
+        "internal": false,
+        "name": "GetPermissionsV2RequestByPermissionId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PermissionsPermissionRequestV2Response"
+        },
+        "subscribable": false,
+        "tags": [
+            "permissions"
+        ],
+        "threadSafe": false
+    },
     "GET /platform-login/v1/config": {
         "arguments": [],
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Returns the plugin config and enabled status",
-        "help": "",
+        "help": "This endpoint is deprecated and will be removed June 2026; Please use player-session-lifecycle instead.",
         "internal": false,
         "name": "GetPlatformLoginV1Config",
         "nameSpace": "",
@@ -8067,7 +8346,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Returns the current login state of the client",
-        "help": "",
+        "help": "This endpoint is deprecated and will be removed June 2026; Please use player-session-lifecycle instead.",
         "internal": false,
         "name": "GetPlatformLoginV1Status",
         "nameSpace": "",
@@ -10056,6 +10335,45 @@
         ],
         "threadSafe": false
     },
+    "GET /product-launcher/v1/products/{product-id}/patchlines/{patchline-id}/eligibility": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "product-id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "patchline-id",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Check if a product-patchline is eligible to be launched. Returns true if eligible, or an error with the x-riot-error-code header if not.",
+        "help": "",
+        "internal": false,
+        "name": "GetProductLauncherV1ProductsByProductIdPatchlinesByPatchlineIdEligibility",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "bool"
+        },
+        "subscribable": false,
+        "tags": [
+            "Plugins",
+            "Plugin product-launcher"
+        ],
+        "threadSafe": false
+    },
     "GET /product-localization/v1/data": {
         "arguments": [],
         "deprecated": false,
@@ -11467,7 +11785,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Returns the plugin config and enabled status",
-        "help": "",
+        "help": "This endpoint is deprecated and will be removed June 2026; Please use player-session-lifecycle instead.",
         "internal": false,
         "name": "GetRiotLoginV1Config",
         "nameSpace": "",
@@ -11486,7 +11804,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Returns the current login state of the client",
-        "help": "",
+        "help": "This endpoint is deprecated and will be removed June 2026; Please use player-session-lifecycle instead.",
         "internal": false,
         "name": "GetRiotLoginV1Status",
         "nameSpace": "",
@@ -13621,6 +13939,44 @@
         ],
         "threadSafe": false
     },
+    "GET /rso-authenticator/v1/authentication/age-verification/status": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get the current cached status of web age verification.",
+        "help": "",
+        "internal": false,
+        "name": "GetRsoAuthenticatorV1AuthenticationAgeVerificationStatus",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AgeVerificationStatusResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "GET /rso-authenticator/v1/authentication/age-verification/status/auto-refresh": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get the current configuration state of auto-refresh for age restriction status",
+        "help": "",
+        "internal": false,
+        "name": "GetRsoAuthenticatorV1AuthenticationAgeVerificationStatusAutoRefresh",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "bool"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
     "GET /rso-authenticator/v1/authentication/link/status": {
         "arguments": [],
         "deprecated": false,
@@ -13738,6 +14094,64 @@
         "returns": {
             "elementType": "",
             "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "GET /rso-authenticator/v2/authentication/{recipient}/age-verification/status": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get the current cached status of web age verification.",
+        "help": "",
+        "internal": false,
+        "name": "GetRsoAuthenticatorV2AuthenticationByRecipientAgeVerificationStatus",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AgeVerificationStatusResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "GET /rso-authenticator/v2/authentication/{recipient}/age-verification/status/auto-refresh": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get the current configuration state of auto-refresh for age restriction status",
+        "help": "",
+        "internal": false,
+        "name": "GetRsoAuthenticatorV2AuthenticationByRecipientAgeVerificationStatusAutoRefresh",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "bool"
         },
         "subscribable": false,
         "tags": [
@@ -14040,6 +14454,25 @@
         ],
         "threadSafe": false
     },
+    "GET /significant-change/v1/state": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get current significant change state and parental controls status",
+        "help": "",
+        "internal": false,
+        "name": "GetSignificantChangeV1State",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "SignificantChangeSignificantChangeState"
+        },
+        "subscribable": false,
+        "tags": [
+            "significant-change"
+        ],
+        "threadSafe": false
+    },
     "GET /social/v1/blocklist": {
         "arguments": [],
         "deprecated": false,
@@ -14135,6 +14568,25 @@
         ],
         "threadSafe": false
     },
+    "GET /social/v1/debug/discord-timestamp": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "For internal use only. Gets the current Discord timestamp used for rich presence.",
+        "help": "",
+        "internal": false,
+        "name": "GetSocialV1DebugDiscordTimestamp",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "uint64"
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
     "GET /social/v1/friendrequests": {
         "arguments": [
             {
@@ -14207,7 +14659,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Get the player's presence",
-        "help": "",
+        "help": "Includes Discord username and display name information (if connected) and status message (if it exists)",
         "internal": false,
         "name": "GetSocialV1PresencesSession",
         "nameSpace": "",
@@ -14604,25 +15056,6 @@
         ],
         "threadSafe": false
     },
-    "GET /tracing/v1/context": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Get the telemetry context from the SDK",
-        "help": "\n**Description**\nGet the telemetry context from the SDK. This endpoints returns an object that consists of two parts:\n\n* `traceStateHeader` - an that has header key and header body, that can be attached to your outgoing requests.\n* `traceStateComponents` - a map containing all individual elements stored in `traceStateHeader`, each element is a key-value pair:\n    * key: element identifier\n        * componentType: enum with information about the source of element\n        * value: element value\n\nPrefer to subscribe to this instead of polling.\n",
-        "internal": false,
-        "name": "GetTracingV1Context",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "TracingV1TraceContext"
-        },
-        "subscribable": false,
-        "tags": [
-            "tracing"
-        ],
-        "threadSafe": false
-    },
     "GET /tracing/v1/debug/caller-id/mock-id": {
         "arguments": [],
         "deprecated": false,
@@ -14635,6 +15068,63 @@
         "returns": {
             "elementType": "",
             "type": "TracingPluginCallerId_MockCallerId"
+        },
+        "subscribable": false,
+        "tags": [
+            "tracing"
+        ],
+        "threadSafe": false
+    },
+    "GET /tracing/v1/log-context": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get the log context from the SDK",
+        "help": "",
+        "internal": false,
+        "name": "GetTracingV1LogContext",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "TracingV1LogContext"
+        },
+        "subscribable": false,
+        "tags": [
+            "tracing"
+        ],
+        "threadSafe": false
+    },
+    "GET /tracing/v1/sampling-context": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get the sampling context from the SDK",
+        "help": "",
+        "internal": false,
+        "name": "GetTracingV1SamplingContext",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "TracingV1SamplingContext"
+        },
+        "subscribable": false,
+        "tags": [
+            "tracing"
+        ],
+        "threadSafe": false
+    },
+    "GET /tracing/v1/trace-context": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get the telemetry context from RiotGamesApi whose fields you can use to instrument your own HTTP requests and OTel telemetry to allow you and other Rioters to easily co-relate app and services interaction end to end.",
+        "help": "\n            The [integration on the platform docs hub]() on the easi\nThe recommended path is to:\n1.  On game and application startup, after initializaing RiotGamesApi initialization, subscribe to this end-point.\n1.  When this end-point delivers a `TracingContext`, capture the `traceStateHeader` and `spanAttributes`.\n1.  When ever you:\n    * Send a HTTP request, include the `traceStateHeader`in your HTTP Request so any services can attach to the same tracing.\n    * Send a trace to OTel,\n* `traceStateHeader` - an that has header key and header body, that can be attached to your outgoing requests.\n* `traceStateComponents` - a map containing all individual elements stored in `traceStateHeader`, each element is a key-value pair:\n    * key: element identifier\n        * componentType: enum with information about the source of element\n        * value: element value\n\nPrefer to subscribe to this instead of polling.\n",
+        "internal": false,
+        "name": "GetTracingV1TraceContext",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "TracingV1TraceContext"
         },
         "subscribable": false,
         "tags": [
@@ -15417,6 +15907,63 @@
         ],
         "threadSafe": false
     },
+    "GET /voice-chat/v4/sessions/{productName}/{sessionId}/transcriptions": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productName",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "sessionId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "For subscriptions only. Sends update notifications for each transcribed message of a session.",
+        "help": "",
+        "internal": false,
+        "name": "GetVoiceChatV4SessionsByProductNameBySessionIdTranscriptions",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "VoiceChatTranscribedMessageResource"
+        },
+        "subscribable": false,
+        "tags": [
+            "voice-chat"
+        ],
+        "threadSafe": false
+    },
+    "GET /voice-chat/v4/sessions/transcription-language": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get the current Speech-To-Text transcription language of the local player.",
+        "help": "",
+        "internal": false,
+        "name": "GetVoiceChatV4SessionsTranscriptionLanguage",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "string"
+        },
+        "subscribable": false,
+        "tags": [
+            "voice-chat"
+        ],
+        "threadSafe": false
+    },
     "GET /xbox-account/v1/authorization-consent": {
         "arguments": [],
         "deprecated": false,
@@ -15752,11 +16299,20 @@
                     "elementType": "",
                     "type": "string"
                 }
+            },
+            {
+                "description": "",
+                "name": "body",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "ActivityJoinRequestV1"
+                }
             }
         ],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "Try to join the activity for the player.",
+        "description": "Try to join the activity for the player. The activity gateway service will check game eligibility with the game party service. For Smart URLs, the join code body parameter can be used to bypass the activity's joinability rules.",
         "help": "",
         "internal": false,
         "name": "PostActivityGatewayV1ActivitiesByActivityIdJoin",
@@ -15764,6 +16320,35 @@
         "returns": {
             "elementType": "",
             "type": "ActivityV1"
+        },
+        "subscribable": false,
+        "tags": [
+            "activity-gateway"
+        ],
+        "threadSafe": false
+    },
+    "POST /activity-gateway/v1/activities/{activityId}/join-code/shared": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "activityId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Create the activity's shared join code. The player must be the leader of the activity.",
+        "help": "",
+        "internal": false,
+        "name": "PostActivityGatewayV1ActivitiesByActivityIdJoinCodeShared",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "JoinCodeV1"
         },
         "subscribable": false,
         "tags": [
@@ -15802,6 +16387,64 @@
         "returns": {
             "elementType": "",
             "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "activity-gateway"
+        ],
+        "threadSafe": false
+    },
+    "POST /activity-gateway/v1/resolve-join-code": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "body",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "ResolveJoinCodeRequestV1"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get a resolved join code using a join code.",
+        "help": "",
+        "internal": false,
+        "name": "PostActivityGatewayV1ResolveJoinCode",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "ResolvedJoinCodeV1"
+        },
+        "subscribable": false,
+        "tags": [
+            "activity-gateway"
+        ],
+        "threadSafe": false
+    },
+    "POST /activity-gateway/v1/resolve-smart-url": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "body",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "ResolveSmartUrlRequestV1"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get a resolved join code using a smart URL.",
+        "help": "",
+        "internal": false,
+        "name": "PostActivityGatewayV1ResolveSmartUrl",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "ResolvedJoinCodeV1"
         },
         "subscribable": false,
         "tags": [
@@ -17766,6 +18409,66 @@
         ],
         "threadSafe": false
     },
+    "POST /game-activity/v1/smarturl/join": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "smartUrl",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Process a SmartURL join request and show the join modal",
+        "help": "",
+        "internal": false,
+        "name": "PostGameActivityV1SmarturlJoin",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "Plugins",
+            "Plugin game-activity"
+        ],
+        "threadSafe": false
+    },
+    "POST /game-activity/v1/smarturl/resolve": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "smartUrl",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Resolve a Smart URL into a product and patchline",
+        "help": "",
+        "internal": false,
+        "name": "PostGameActivityV1SmarturlResolve",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "ResolvedJoinCodeV1"
+        },
+        "subscribable": false,
+        "tags": [
+            "Plugins",
+            "Plugin game-activity"
+        ],
+        "threadSafe": false
+    },
     "POST /game-session/v1/sessions": {
         "arguments": [
             {
@@ -18582,7 +19285,7 @@
                 "optional": true,
                 "type": {
                     "elementType": "",
-                    "type": "PatchProxyRefreshRequestOptions"
+                    "type": "RefreshRequestOptions"
                 }
             }
         ],
@@ -18630,7 +19333,7 @@
                 "optional": true,
                 "type": {
                     "elementType": "",
-                    "type": "PatchProxyRefreshRequestOptions"
+                    "type": "RefreshRequestOptions"
                 }
             }
         ],
@@ -18643,7 +19346,7 @@
         "nameSpace": "",
         "returns": {
             "elementType": "",
-            "type": "PatchProxyProductPatchlineStatus"
+            "type": "ProductPatchlineStatus"
         },
         "subscribable": false,
         "tags": [
@@ -19067,6 +19770,35 @@
         "returns": {
             "elementType": "PermissionsUserCommunicationPermissions",
             "type": "vector"
+        },
+        "subscribable": false,
+        "tags": [
+            "permissions"
+        ],
+        "threadSafe": false
+    },
+    "POST /permissions/v2/batch-config": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "config",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PermissionsBatchPermissionsConfig"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Configures the permissions batch request payload.",
+        "help": "",
+        "internal": false,
+        "name": "PostPermissionsV2BatchConfig",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
         },
         "subscribable": false,
         "tags": [
@@ -22665,6 +23397,54 @@
         ],
         "threadSafe": false
     },
+    "POST /rso-authenticator/v1/authentication/age-verification/status": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get the current status of web age verification by fetching from the service",
+        "help": "",
+        "internal": false,
+        "name": "PostRsoAuthenticatorV1AuthenticationAgeVerificationStatus",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AgeVerificationStatusResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "POST /rso-authenticator/v1/authentication/age-verification/status/auto-refresh": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "autoRefresh",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1AgeVerificationAutoRefreshRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Enables or disables auto-refresh for the status change. rso-authenticator will automatically poll the service at the intervals specified by the Retry-After header.",
+        "help": "",
+        "internal": false,
+        "name": "PostRsoAuthenticatorV1AuthenticationAgeVerificationStatusAutoRefresh",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
     "POST /rso-authenticator/v1/authentication/apple": {
         "arguments": [
             {
@@ -22984,6 +23764,25 @@
         ],
         "threadSafe": false
     },
+    "POST /rso-authenticator/v1/authentication/refresh": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Force refresh the current state of authentication, by querying the service.",
+        "help": "",
+        "internal": false,
+        "name": "PostRsoAuthenticatorV1AuthenticationRefresh",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
     "POST /rso-authenticator/v1/authentication/riot-identity/complete": {
         "arguments": [
             {
@@ -23118,6 +23917,35 @@
         "help": "",
         "internal": false,
         "name": "PostRsoAuthenticatorV1AuthenticationRiotIdentityStart",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "POST /rso-authenticator/v1/authentication/rso": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "authParameters",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1RsoAuthenticationParameters"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Authenticate using current RSO authorization tokens.",
+        "help": "",
+        "internal": false,
+        "name": "PostRsoAuthenticatorV1AuthenticationRso",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -23286,6 +24114,73 @@
         "returns": {
             "elementType": "",
             "type": "string"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "POST /rso-authenticator/v2/authentication/{recipient}/age-verification/status": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get the current status of web age verification by fetching from the service",
+        "help": "",
+        "internal": false,
+        "name": "PostRsoAuthenticatorV2AuthenticationByRecipientAgeVerificationStatus",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AgeVerificationStatusResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "POST /rso-authenticator/v2/authentication/{recipient}/age-verification/status/auto-refresh": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "autoRefresh",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1AgeVerificationAutoRefreshRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Enables or disables auto-refresh for the status change. rso-authenticator will automatically poll the service at the intervals specified by the Retry-After header.",
+        "help": "",
+        "internal": false,
+        "name": "PostRsoAuthenticatorV2AuthenticationByRecipientAgeVerificationStatusAutoRefresh",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
         },
         "subscribable": false,
         "tags": [
@@ -23635,6 +24530,35 @@
         ],
         "threadSafe": false
     },
+    "POST /rso-authenticator/v2/authentication/{recipient}/refresh": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Force refresh the current state of authentication.",
+        "help": "",
+        "internal": false,
+        "name": "PostRsoAuthenticatorV2AuthenticationByRecipientRefresh",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
     "POST /rso-authenticator/v2/authentication/{recipient}/riot-identity/complete": {
         "arguments": [
             {
@@ -23814,6 +24738,44 @@
         "help": "",
         "internal": false,
         "name": "PostRsoAuthenticatorV2AuthenticationByRecipientRiotIdentityStart",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "POST /rso-authenticator/v2/authentication/{recipient}/rso": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "authParameters",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1RsoAuthenticationParameters"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Authenticate using current RSO authorization tokens.",
+        "help": "",
+        "internal": false,
+        "name": "PostRsoAuthenticatorV2AuthenticationByRecipientRso",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -24471,6 +25433,64 @@
         ],
         "threadSafe": false
     },
+    "POST /significant-change/v1/approve": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "request",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "SignificantChangeApproveSignificantChangeRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Manually record significant change decision. Use on non-iOS platforms or when not using native iOS PermissionKit flow",
+        "help": "",
+        "internal": false,
+        "name": "PostSignificantChangeV1Approve",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "SignificantChangeApproveSignificantChangeResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "significant-change"
+        ],
+        "threadSafe": false
+    },
+    "POST /significant-change/v1/start": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "request",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "SignificantChangeInitiateSignificantChangeRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "iOS only: Initiate native iOS PermissionKit significant change flow",
+        "help": "",
+        "internal": false,
+        "name": "PostSignificantChangeV1Start",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "SignificantChangeInitiateSignificantChangeResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "significant-change"
+        ],
+        "threadSafe": false
+    },
     "POST /social/v1/blocklist/{puuid}": {
         "arguments": [
             {
@@ -24587,6 +25607,35 @@
         ],
         "threadSafe": false
     },
+    "POST /social/v1/presences/session/format-details": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "body",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "SocialPresenceFormatDetailsRequestV1"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get the player's formatted presence details",
+        "help": "",
+        "internal": false,
+        "name": "PostSocialV1PresencesSessionFormatDetails",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "string"
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
     "POST /social/v1/view-profile/{puuid}": {
         "arguments": [
             {
@@ -24657,6 +25706,35 @@
         "returns": {
             "elementType": "",
             "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
+    "POST /social/v4/friends/format-details": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "body",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "SocialFriendsFormatDetailsRequestV4"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get the player's formatted presence details",
+        "help": "",
+        "internal": false,
+        "name": "PostSocialV4FriendsFormatDetails",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "string"
         },
         "subscribable": false,
         "tags": [
@@ -26177,6 +27255,44 @@
         ],
         "threadSafe": false
     },
+    "PUT /chatbox/v1/participants/{puuid}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "puuid",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "updateState",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "ChatboxParticipantUpdate"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Update the state of the specified participant across all conversations.",
+        "help": "",
+        "internal": false,
+        "name": "PutChatboxV1ParticipantsByPuuid",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "chatbox"
+        ],
+        "threadSafe": false
+    },
     "PUT /client-config/v1/authorization": {
         "arguments": [
             {
@@ -27139,7 +28255,7 @@
                 "optional": true,
                 "type": {
                     "elementType": "",
-                    "type": "PatchProxyPatchRequestOptions"
+                    "type": "PatchRequestOptions"
                 }
             },
             {
@@ -27170,7 +28286,7 @@
         "nameSpace": "",
         "returns": {
             "elementType": "",
-            "type": "PatchProxyPatchProxyRequest"
+            "type": "PatchProxyRequest"
         },
         "subscribable": false,
         "tags": [
@@ -27245,7 +28361,7 @@
                 "optional": true,
                 "type": {
                     "elementType": "",
-                    "type": "PatchProxyPatchRequestOptions"
+                    "type": "PatchRequestOptions"
                 }
             },
             {
@@ -27276,7 +28392,7 @@
         "nameSpace": "",
         "returns": {
             "elementType": "",
-            "type": "PatchProxyPatchProxyRequest"
+            "type": "PatchProxyRequest"
         },
         "subscribable": false,
         "tags": [
@@ -27311,7 +28427,7 @@
                 "optional": true,
                 "type": {
                     "elementType": "",
-                    "type": "PatchProxyPatchRequestOptions"
+                    "type": "PatchRequestOptions"
                 }
             }
         ],
@@ -27323,7 +28439,7 @@
         "name": "PutPatchProxyV2PriorityPatchProductsByProductIdPatchlinesByPatchlineId",
         "nameSpace": "",
         "returns": {
-            "elementType": "PatchProxyPatchProxyRequest",
+            "elementType": "PatchProxyRequest",
             "type": "vector"
         },
         "subscribable": false,
@@ -27362,7 +28478,7 @@
         "name": "PutPatchProxyV2QueuePatchProductsByProductIdPatchlinesByPatchlineId",
         "nameSpace": "",
         "returns": {
-            "elementType": "PatchProxyPatchProxyRequest",
+            "elementType": "PatchProxyRequest",
             "type": "vector"
         },
         "subscribable": false,
@@ -27387,7 +28503,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Configure plugin settings such as cache size and location",
-        "help": "\n**Data**\n* `cache_path`:  Path to the global cache used to store downloaded chunks.\n* `cache_size`: Cache size in bytes.\n\n\nThis endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
+        "help": "\n**Data**\n* `cache_path`:  Path to the global cache used to store downloaded chunks.\n* `cache_size`: Cache size in bytes.\n\n\nThis endpoint is deprecated and will be removed December 2026. Please use the rpatch C API instead.",
         "internal": false,
         "name": "PutPatchV1Configuration",
         "nameSpace": "",
@@ -27425,7 +28541,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Register a new install",
-        "help": "\n**Data**\n* `excluded_paths`: List of paths (relative to the install root) that are excluded from the update. Files under these paths won't be checked during the verification and repair processes.\n* `metadata_path`:  The location for the install .db and .manifest files. The extension will be directly appended to this path.\n* `seed_path`: The location where updated chunks will be stored for this install when performing a seed operation, and the location where chunks will be sourced from when performing a patch operation.\n\n\nThis endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
+        "help": "\n**Data**\n* `excluded_paths`: List of paths (relative to the install root) that are excluded from the update. Files under these paths won't be checked during the verification and repair processes.\n* `metadata_path`:  The location for the install .db and .manifest files. The extension will be directly appended to this path.\n* `seed_path`: The location where updated chunks will be stored for this install when performing a seed operation, and the location where chunks will be sourced from when performing a patch operation.\n\n\nThis endpoint is deprecated and will be removed December 2026. Please use the rpatch C API instead.",
         "internal": false,
         "name": "PutPatchV1InstallsByInstallId",
         "nameSpace": "",
@@ -27463,7 +28579,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Submit patch request for install",
-        "help": "\n**Note**\n* If a request already exists it will be replaced by the new resource.\n\n**Data**\n* `headers`: Headers to send with every request. If the manifest url is behind SCD then a Cookie header is required.\n* `url`: Url for the release manifest.\n* `max_download_speed`: Maximum download speed, in bytes/sec. If zero then no limits will be applied.\n* `repair`: Whether a full repair should be performed prior to the update.\n* `tags`: Tags to filter which content gets patched. https://riotsdk.rpg.riotgames.com/docs/for-users/patching/onboarding/localization/\n* `stage`: Only patch up to the specified stage.\n* `temp_path`: (Optional) Custom directory to use for working storage during patching.\n* `delete_foreign_paths`:  (optional) If true, paths that are not considered part of the install will be checked during the verification and repair processes and removed.\n\n\nThis endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
+        "help": "\n**Note**\n* If a request already exists it will be replaced by the new resource.\n\n**Data**\n* `headers`: Headers to send with every request. If the manifest url is behind SCD then a Cookie header is required.\n* `url`: Url for the release manifest.\n* `max_download_speed`: Maximum download speed, in bytes/sec. If zero then no limits will be applied.\n* `repair`: Whether a full repair should be performed prior to the update.\n* `tags`: Tags to filter which content gets patched. https://riotsdk.rpg.riotgames.com/docs/for-users/patching/onboarding/localization/\n* `stage`: Only patch up to the specified stage.\n* `temp_path`: (Optional) Custom directory to use for working storage during patching.\n* `delete_foreign_paths`:  (optional) If true, paths that are not considered part of the install will be checked during the verification and repair processes and removed.\n\n\nThis endpoint is deprecated and will be removed December 2026. Please use the rpatch C API instead.",
         "internal": false,
         "name": "PutPatchV1InstallsByInstallIdRequestsPatch",
         "nameSpace": "",
@@ -27501,7 +28617,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Submit preview request for install",
-        "help": "\n**Notes**\n* The request contains all the info needed, including the full url to the release manifest, http headers and tags.\n* If a request already exists it will be replaced by the new resource.\n\n**Data**\n* `headers`: Headers to send with every request. If the manifest url is behind SCD then a Cookie header is required.\n* `url`: Url for the release manifest.\n* `stage`: Only patch up to the specified stage.\n* `fast`: Whether to perform a fast (but less accurate) estimation.\n* `tags`: Tags to filter which content gets patched. https://riotsdk.rpg.riotgames.com/docs/for-users/patching/onboarding/localization/\n\n\nThis endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
+        "help": "\n**Notes**\n* The request contains all the info needed, including the full url to the release manifest, http headers and tags.\n* If a request already exists it will be replaced by the new resource.\n\n**Data**\n* `headers`: Headers to send with every request. If the manifest url is behind SCD then a Cookie header is required.\n* `url`: Url for the release manifest.\n* `stage`: Only patch up to the specified stage.\n* `fast`: Whether to perform a fast (but less accurate) estimation.\n* `tags`: Tags to filter which content gets patched. https://riotsdk.rpg.riotgames.com/docs/for-users/patching/onboarding/localization/\n\n\nThis endpoint is deprecated and will be removed December 2026. Please use the rpatch C API instead.",
         "internal": false,
         "name": "PutPatchV1InstallsByInstallIdRequestsPreview",
         "nameSpace": "",
@@ -27539,7 +28655,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Triggers a repair operation",
-        "help": "\n**Notes**\n* Allows you to perform a repair on a set of files or a full repair without having to wait or game client to exit. Only use this if you're\nabsolutely certain that the files are not currently in use.\n* Game is responsible for displaying repair progress and can get progress using the GET /patch/v1/installs/{install-id}/status/repair endpoint.\n\n**Data**\n* `files`: a list of file paths for files that need to be repaired. If none specified then the patcher will perform a full repair. File paths must\nbe relative to the install root.\n* `manifest_url`: Url for the release manifest.\n* `headers`: Headers to send with every request. If the manifest url is behind SCD then a Cookie header is required.\n* `max_download_speed`: Maximum download speed, in bytes/sec. If zero then no limits will be applied.\n* `allowed_http_fallback_hostnames`: List of hostnames for which we'll fall back to HTTP instead of HTTPS if they resolve to an RFC1918 private IP address.\n* `delete_foreign_paths`:  (optional) If true, paths that are not considered part of the install will be checked during the verification and repair processes and removed.\n\n\nThis endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
+        "help": "\n**Notes**\n* Allows you to perform a repair on a set of files or a full repair without having to wait or game client to exit. Only use this if you're\nabsolutely certain that the files are not currently in use.\n* Game is responsible for displaying repair progress and can get progress using the GET /patch/v1/installs/{install-id}/status/repair endpoint.\n\n**Data**\n* `files`: a list of file paths for files that need to be repaired. If none specified then the patcher will perform a full repair. File paths must\nbe relative to the install root.\n* `manifest_url`: Url for the release manifest.\n* `headers`: Headers to send with every request. If the manifest url is behind SCD then a Cookie header is required.\n* `max_download_speed`: Maximum download speed, in bytes/sec. If zero then no limits will be applied.\n* `allowed_http_fallback_hostnames`: List of hostnames for which we'll fall back to HTTP instead of HTTPS if they resolve to an RFC1918 private IP address.\n* `delete_foreign_paths`:  (optional) If true, paths that are not considered part of the install will be checked during the verification and repair processes and removed.\n\n\nThis endpoint is deprecated and will be removed December 2026. Please use the rpatch C API instead.",
         "internal": false,
         "name": "PutPatchV1InstallsByInstallIdRequestsRepair",
         "nameSpace": "",
@@ -27577,7 +28693,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Submit seed request for install",
-        "help": "\n**Notes**\n* Seeding will download any chunks needed to the seed path, but will not modify any files in the install directory. The seed path is specified in the install.\n* If a request already exists it will be replaced by the new resource. https://riotsdk.rpg.riotgames.com/docs/for-users/patching/concepts/seeding/\n\n**Data**\n* `headers`: Headers to send with every request. If the manifest url is behind SCD then a Cookie header is required.\n* `url`: Url for the release manifest.\n* `max_download_speed`: Maximum download speed, in bytes/sec. If zero then no limits will be applied.\n* `stage`: Only patch up to the specified stage.\n* `tags`: Tags to filter which content gets patched. https://riotsdk.rpg.riotgames.com/docs/for-users/patching/onboarding/localization/\n* `delete_foreign_paths`:  (optional) If true, paths that are not considered part of the install will be checked during the verification and repair processes and removed.\n\n\nThis endpoint is deprecated and will be removed December 2025. Please use the rpatch C API instead.",
+        "help": "\n**Notes**\n* Seeding will download any chunks needed to the seed path, but will not modify any files in the install directory. The seed path is specified in the install.\n* If a request already exists it will be replaced by the new resource. https://riotsdk.rpg.riotgames.com/docs/for-users/patching/concepts/seeding/\n\n**Data**\n* `headers`: Headers to send with every request. If the manifest url is behind SCD then a Cookie header is required.\n* `url`: Url for the release manifest.\n* `max_download_speed`: Maximum download speed, in bytes/sec. If zero then no limits will be applied.\n* `stage`: Only patch up to the specified stage.\n* `tags`: Tags to filter which content gets patched. https://riotsdk.rpg.riotgames.com/docs/for-users/patching/onboarding/localization/\n* `delete_foreign_paths`:  (optional) If true, paths that are not considered part of the install will be checked during the verification and repair processes and removed.\n\n\nThis endpoint is deprecated and will be removed December 2026. Please use the rpatch C API instead.",
         "internal": false,
         "name": "PutPatchV1InstallsByInstallIdRequestsSeed",
         "nameSpace": "",
@@ -27606,7 +28722,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Allows to modify the plugin config (e.g. enable or disable login persistence)",
-        "help": "",
+        "help": "This endpoint is deprecated and will be removed June 2026; Please use player-session-lifecycle instead.",
         "internal": false,
         "name": "PutPlatformLoginV1Config",
         "nameSpace": "",
@@ -29029,7 +30145,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Allows to modify the plugin config (e.g. enable or disable login persistence)",
-        "help": "",
+        "help": "This endpoint is deprecated and will be removed June 2026; Please use player-session-lifecycle instead.",
         "internal": false,
         "name": "PutRiotLoginV1Config",
         "nameSpace": "",
@@ -29577,15 +30693,6 @@
             {
                 "description": "",
                 "name": "tempPath",
-                "optional": true,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "",
-                "name": "internalRequestSource",
                 "optional": true,
                 "type": {
                     "elementType": "",
@@ -32154,6 +33261,82 @@
         "help": "",
         "internal": false,
         "name": "PutVoiceChatV4SessionsByProductNameBySessionIdParticipantsByParticipantId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "voice-chat"
+        ],
+        "threadSafe": false
+    },
+    "PUT /voice-chat/v4/sessions/{productName}/{sessionId}/transcriptions": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productName",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "sessionId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "transcriptionResource",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "VoiceChatSetTranscriptionsEnabledResource"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Enable/Disable Speech-To-Text transcriptions for a session",
+        "help": "",
+        "internal": false,
+        "name": "PutVoiceChatV4SessionsByProductNameBySessionIdTranscriptions",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "voice-chat"
+        ],
+        "threadSafe": false
+    },
+    "PUT /voice-chat/v4/sessions/transcription-language/{languageCode}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "languageCode",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Update the Speech-To-Text transcription language of the local player.\nLanguage code should be in the form of language ('en') or BCP-47 language-country ('en-US', 'en_US') format.\nBy default, the language code is the product locale already used by the RiotGamesApi SDK.\nThere is no advanced validation for the language code. An invalid code will cause the language to default to English.",
+        "help": "",
+        "internal": false,
+        "name": "PutVoiceChatV4SessionsTranscriptionLanguageByLanguageCode",
         "nameSpace": "",
         "returns": {
             "elementType": "",
