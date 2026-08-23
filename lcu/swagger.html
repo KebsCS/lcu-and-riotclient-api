@@ -6,13 +6,13 @@
     <title>Swagger UI</title>
 
     <!-- Link to Swagger UI CSS -->
-    <link rel="stylesheet" type="text/css" href="swagger-ui.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist@5/swagger-ui.css">
 </head>
 <body>
 
 	<div>
         <p>Original LCU Swagger, retrieved by patching the executable</p>
-		<p>Client Version: 25.24</p>
+		<p>Client Version: 26.16</p>
         <a href="https://github.com/KebsCS/lcu-and-riotclient-api">GitHub repository</a>
     </div>
 
@@ -20,14 +20,14 @@
     <div id="swagger-ui"></div>
 
     <!-- Swagger UI JavaScript bundles -->
-    <script src="swagger-ui-bundle.js"></script>
-    <script src="swagger-ui-standalone-preset.js"></script>
+    <script src="https://unpkg.com/swagger-ui-dist@5/swagger-ui-bundle.js"></script>
+    <script src="https://unpkg.com/swagger-ui-dist@5/swagger-ui-standalone-preset.js"></script>
 
     <!-- Initialize Swagger UI -->
     <script>
     window.onload = function() {
       const ui = SwaggerUIBundle({
-        url: "https://lcu.kebs.dev/swagger.json",
+        url: "https://raw.githubusercontent.com/KebsCS/lcu-and-riotclient-api/refs/heads/main/lcu/swagger.json",
         dom_id: '#swagger-ui',
         presets: [
           SwaggerUIBundle.presets.apis,
