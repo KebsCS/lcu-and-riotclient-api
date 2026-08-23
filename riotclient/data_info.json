@@ -28,6 +28,35 @@
         ],
         "threadSafe": false
     },
+    "DELETE /activity-gateway/v1/activity-invite-requests": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "body",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "DeleteActivityInviteRequestsRequestV1"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Remove activity invite requests matching the given puuid or alias. This should be used when you have sent an invite to this person, so we can remove the request to join / activity invite request from the cache",
+        "help": "",
+        "internal": false,
+        "name": "DeleteActivityGatewayV1ActivityInviteRequests",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "activity-gateway"
+        ],
+        "threadSafe": false
+    },
     "DELETE /activity-gateway/v1/debug/caller-id/mock-id": {
         "arguments": [],
         "deprecated": false,
@@ -44,6 +73,35 @@
         "subscribable": false,
         "tags": [
             "activity-gateway"
+        ],
+        "threadSafe": false
+    },
+    "DELETE /aes/v1/status/{provider}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "provider",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "AesAESProvider"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Reset the AES provider state. Implementation details vary by provider.",
+        "help": "",
+        "internal": false,
+        "name": "DeleteAesV1StatusByProvider",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "AesAESStatusResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "aes"
         ],
         "threadSafe": false
     },
@@ -1047,8 +1105,8 @@
         "arguments": [],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "Resets the current product context.",
-        "help": "",
+        "description": "Clears the legacy product context. This endpoint is retained for compatibility and no longer affects EULA locale resolution.",
+        "help": "Endpoint deprecated April 2026; EULA locale is now driven by '/localization/v1/hybrid-locale'. This endpoint is retained only for legacy compatibility and no longer affects EULA locale resolution.",
         "internal": false,
         "name": "DeleteEulaV1ProductContext",
         "nameSpace": "",
@@ -1445,6 +1503,35 @@
         ],
         "threadSafe": false
     },
+    "DELETE /mailbox/v1/mail/{mailId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "mailId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Delete a mailbox message for the signed-in player.",
+        "help": "\n**Description**\n\nDeletes the specified mailbox message for the signed-in player.\n\nDelete success is communicated only through this DELETE response. This endpoint does not publish mailbox\nresource notifications.\n\nBy default, transient failures (5xx and 429) are retried using the mailbox HTTP retry options.\nSpecific status codes can be excluded from retries via the `mailbox.http_retry.non_retryable_http_codes` config.\n\nService responses are interpreted as follows:\n- any 2xx: deleted successfully\n- 404: treated as success because the mail is already deleted upstream\n- any other failure: retried per the configured HTTP retry options, unless excluded by config\n",
+        "internal": false,
+        "name": "DeleteMailboxV1MailByMailId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "mailbox"
+        ],
+        "threadSafe": false
+    },
     "DELETE /mobile-push/v1/filter/{application}/{filterId}": {
         "arguments": [
             {
@@ -1480,6 +1567,25 @@
         "subscribable": false,
         "tags": [
             "mobile-push"
+        ],
+        "threadSafe": false
+    },
+    "DELETE /msdk-account/v1/authorization": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Delete the current MSDK authorization session.",
+        "help": "",
+        "internal": false,
+        "name": "DeleteMsdkAccountV1Authorization",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "msdk-account"
         ],
         "threadSafe": false
     },
@@ -1917,6 +2023,25 @@
         ],
         "threadSafe": false
     },
+    "DELETE /platform-ui/v1/healup-account": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Force close the optional account healup prompt UI.",
+        "help": "",
+        "internal": false,
+        "name": "DeletePlatformUiV1HealupAccount",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-ui"
+        ],
+        "threadSafe": false
+    },
     "DELETE /platform-ui/v1/riot-id-change": {
         "arguments": [],
         "deprecated": false,
@@ -1981,6 +2106,25 @@
         "subscribable": false,
         "tags": [
             "player-account"
+        ],
+        "threadSafe": false
+    },
+    "DELETE /player-feedback-tool/v1/debug/caller-id/mock-id": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Stops mocking the caller ID for Swagger calls",
+        "help": "Deletes the currently set `productId` and `patchlineId`. Plugin APIs will receive `swagger` as the `productId`.",
+        "internal": false,
+        "name": "DeletePlayerFeedbackToolV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "player-feedback-tool"
         ],
         "threadSafe": false
     },
@@ -3589,6 +3733,25 @@
         ],
         "threadSafe": false
     },
+    "DELETE /voice-chat/v1/authentication": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Leave active voice sessions and log the local player out from initialized voice providers",
+        "help": "",
+        "internal": false,
+        "name": "DeleteVoiceChatV1Authentication",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "voice-chat"
+        ],
+        "threadSafe": false
+    },
     "DELETE /voice-chat/v1/block-list/users": {
         "arguments": [
             {
@@ -3967,7 +4130,7 @@
         "arguments": [],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "Get the player's list of activity invite requests.",
+        "description": "Get the player's list of activity invite requests. Note: For discord ask to join invites, you must be either a discord friend or riot friend to see the invite request.",
         "help": "",
         "internal": false,
         "name": "GetActivityGatewayV1ActivityInviteRequests",
@@ -4013,6 +4176,25 @@
         "returns": {
             "elementType": "",
             "type": "ActivityGatewayPluginCallerId_MockCallerId"
+        },
+        "subscribable": false,
+        "tags": [
+            "activity-gateway"
+        ],
+        "threadSafe": false
+    },
+    "GET /activity-gateway/v1/ready": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "",
+        "help": "",
+        "internal": false,
+        "name": "GetActivityGatewayV1Ready",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "bool"
         },
         "subscribable": false,
         "tags": [
@@ -6264,6 +6446,25 @@
         ],
         "threadSafe": false
     },
+    "GET /data-store/v1/internal/region-changed": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns whether the authoritative region has changed during this session.",
+        "help": "",
+        "internal": false,
+        "name": "GetDataStoreV1InternalRegionChanged",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "bool"
+        },
+        "subscribable": false,
+        "tags": [
+            "data-store"
+        ],
+        "threadSafe": false
+    },
     "GET /data-store/v1/paths": {
         "arguments": [],
         "deprecated": false,
@@ -6601,8 +6802,8 @@
         "arguments": [],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "Gets the current product context.",
-        "help": "",
+        "description": "Gets the legacy product context. This endpoint is retained for compatibility and no longer affects EULA locale resolution.",
+        "help": "Endpoint deprecated April 2026; EULA locale is now driven by '/localization/v1/hybrid-locale'. This endpoint is retained only for legacy compatibility and no longer affects EULA locale resolution.",
         "internal": false,
         "name": "GetEulaV1ProductContext",
         "nameSpace": "",
@@ -6652,6 +6853,25 @@
         "subscribable": false,
         "tags": [
             "facebook-account"
+        ],
+        "threadSafe": false
+    },
+    "GET /first-party-fulfillment/v1/last-fulfilled-items": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get the list of items fulfilled by the latest fulfillment attempt.",
+        "help": "",
+        "internal": false,
+        "name": "GetFirstPartyFulfillmentV1LastFulfilledItems",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "FirstPartyFulfillmentFirstPartyFulfillmentItemFulfillmentSuccessInfo",
+            "type": "vector"
+        },
+        "subscribable": false,
+        "tags": [
+            "first-party-fulfillment"
         ],
         "threadSafe": false
     },
@@ -6715,6 +6935,25 @@
         "returns": {
             "elementType": "",
             "type": "PlatformLinksListV1"
+        },
+        "subscribable": false,
+        "tags": [
+            "friends-forever"
+        ],
+        "threadSafe": false
+    },
+    "GET /friends-forever/v1/ready": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "",
+        "help": "",
+        "internal": false,
+        "name": "GetFriendsForeverV1Ready",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "bool"
         },
         "subscribable": false,
         "tags": [
@@ -6909,6 +7148,26 @@
         "subscribable": false,
         "tags": [
             "ga-warning"
+        ],
+        "threadSafe": false
+    },
+    "GET /game-activity/v1/join-intent-processing-state": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns per-activity join-intent processing states.",
+        "help": "",
+        "internal": false,
+        "name": "GetGameActivityV1JoinIntentProcessingState",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "JoinIntentProcessingStateMap"
+        },
+        "subscribable": true,
+        "tags": [
+            "Plugins",
+            "Plugin game-activity"
         ],
         "threadSafe": false
     },
@@ -7122,6 +7381,35 @@
         ],
         "threadSafe": false
     },
+    "GET /integration-test/v1/hang/{durationMs}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "durationMs",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "uint32"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "[FOR TESTING ONLY] Intentionally blocks a dispatcher long enough to trigger watchdog capture.",
+        "help": "",
+        "internal": false,
+        "name": "GetIntegrationTestV1HangByDurationMs",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "integration-test"
+        ],
+        "threadSafe": false
+    },
     "GET /integration-test/v1/observed-mode-manager-states": {
         "arguments": [],
         "deprecated": false,
@@ -7319,6 +7607,63 @@
         "subscribable": false,
         "tags": [
             "launch-restriction"
+        ],
+        "threadSafe": false
+    },
+    "GET /localization/v1/hybrid-locale": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns the internal effective locale state. In standalone, this aliases /localization/v1/locale. In multitenant, this resolves product-locale when set, otherwise locale, otherwise defaults.",
+        "help": "",
+        "internal": false,
+        "name": "GetLocalizationV1HybridLocale",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "LocalizationLocalizationLocaleV1"
+        },
+        "subscribable": false,
+        "tags": [
+            "localization"
+        ],
+        "threadSafe": false
+    },
+    "GET /localization/v1/locale": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns the authoritative locale state. In standalone, this is the single locale state used across the SDK. In multitenant, this represents the Riot Client locale state.",
+        "help": "\n## Context\nIn standalone, `/localization/v1/locale` is the public locale resource for the SDK.\n\nIn multitenant, this endpoint represents the Riot Client locale state. Product-specific or effective-locale behavior is exposed through `/localization/v1/product-locale` and `/localization/v1/hybrid-locale`, so consumers do not need to branch on standalone versus multitenant behavior.\n\n### Legacy compatibility\nLegacy endpoints such as `/riotclient/region-locale` and `/product-integration/v1/locale` adapt to localization-owned resources. New consumers that need the public locale state should read `/localization/v1/locale` directly.\n",
+        "internal": false,
+        "name": "GetLocalizationV1Locale",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "LocalizationLocalizationLocaleV1"
+        },
+        "subscribable": false,
+        "tags": [
+            "localization"
+        ],
+        "threadSafe": false
+    },
+    "GET /localization/v1/product-locale": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns the internal product locale state. In standalone, this aliases /localization/v1/locale. In multitenant, this exposes the product-specific locale state, including configured startup fallback behavior when no explicit product locale has been written.",
+        "help": "",
+        "internal": false,
+        "name": "GetLocalizationV1ProductLocale",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "LocalizationLocalizationLocaleV1"
+        },
+        "subscribable": false,
+        "tags": [
+            "localization"
         ],
         "threadSafe": false
     },
@@ -7567,6 +7912,25 @@
         "subscribable": false,
         "tags": [
             "mode-manager"
+        ],
+        "threadSafe": false
+    },
+    "GET /msdk-account/v1/authorization": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Gets the current MSDK authorization status.",
+        "help": "",
+        "internal": false,
+        "name": "GetMsdkAccountV1Authorization",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "MsdkAccountMSDKAuthorizationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "msdk-account"
         ],
         "threadSafe": false
     },
@@ -8417,6 +8781,25 @@
         ],
         "threadSafe": false
     },
+    "GET /platform-social/v1/crossplatform-interactions": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns if the current player has permissions for crossplatform interactions, why that is the case.",
+        "help": "",
+        "internal": false,
+        "name": "GetPlatformSocialV1CrossplatformInteractions",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlatformSocialPlatformSocialCrossPlatformInteractionPermissionDetails"
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-social"
+        ],
+        "threadSafe": false
+    },
     "GET /platform-social/v1/crossplay-permission": {
         "arguments": [],
         "deprecated": false,
@@ -8711,6 +9094,25 @@
         ],
         "threadSafe": false
     },
+    "GET /platform-ui/v1/healup-account": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Subscribe to get the optional recoverable account prompt availability and visibility status",
+        "help": "",
+        "internal": false,
+        "name": "GetPlatformUiV1HealupAccount",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlatformUiPlatformUIHealupAccountStatus"
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-ui"
+        ],
+        "threadSafe": false
+    },
     "GET /platform-ui/v1/riot-id-change": {
         "arguments": [],
         "deprecated": false,
@@ -8723,6 +9125,25 @@
         "returns": {
             "elementType": "",
             "type": "PlatformUiPlatformUIRiotIDStatus"
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-ui"
+        ],
+        "threadSafe": false
+    },
+    "GET /platform-ui/v1/riotclient-bridge": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "For internal use only. Subscribe to receive asynchronous subscription notifications from the riotclient bridge",
+        "help": "",
+        "internal": false,
+        "name": "GetPlatformUiV1RiotclientBridge",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "map"
         },
         "subscribable": false,
         "tags": [
@@ -9300,6 +9721,25 @@
         "subscribable": false,
         "tags": [
             "player-behavior-token"
+        ],
+        "threadSafe": false
+    },
+    "GET /player-feedback-tool/v1/debug/caller-id/mock-id": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Checks the caller ID in use when APIs are called from Swagger",
+        "help": "Returns the `productId` and `patchlineId` being passed to APIs in this plugin when called via Swagger.\n\nReturns 404 if a mock caller ID is not in use.",
+        "internal": false,
+        "name": "GetPlayerFeedbackToolV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlayerFeedbackToolPluginCallerId_MockCallerId"
+        },
+        "subscribable": false,
+        "tags": [
+            "player-feedback-tool"
         ],
         "threadSafe": false
     },
@@ -11721,26 +12161,6 @@
         ],
         "threadSafe": false
     },
-    "GET /riot-client-lifecycle/v1/psl-enabled": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Returns whether PSL has been enabled for this session",
-        "help": "",
-        "internal": false,
-        "name": "GetRiotClientLifecycleV1PslEnabled",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "bool"
-        },
-        "subscribable": false,
-        "tags": [
-            "Plugins",
-            "Plugin riot-client-lifecycle"
-        ],
-        "threadSafe": false
-    },
     "GET /riot-client-lifecycle/v1/ux-command": {
         "arguments": [],
         "deprecated": false,
@@ -12206,6 +12626,25 @@
         "returns": {
             "elementType": "",
             "type": "RiotMessagingServiceState"
+        },
+        "subscribable": false,
+        "tags": [
+            "riot-messaging-service"
+        ],
+        "threadSafe": false
+    },
+    "GET /riot-messaging-service/v1/time-drift": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Return the current RMS time drift estimate in milliseconds.",
+        "help": "",
+        "internal": false,
+        "name": "GetRiotMessagingServiceV1TimeDrift",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RiotMessagingServiceTimeDrift"
         },
         "subscribable": false,
         "tags": [
@@ -14534,14 +14973,14 @@
         "arguments": [],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "For internal use only. Gets the last RMS Discord activity invite message that was handled successfully.",
+        "description": "For internal use only. Gets Discord activity invite debug state.",
         "help": "",
         "internal": false,
         "name": "GetSocialV1DebugDiscordActivityInvites",
         "nameSpace": "",
         "returns": {
             "elementType": "",
-            "type": "SocialDiscordActivityRMSUpdate"
+            "type": "SocialDiscordActivityInviteRMSDebugState"
         },
         "subscribable": false,
         "tags": [
@@ -14647,6 +15086,44 @@
         "returns": {
             "elementType": "",
             "type": "SocialFriendListV1"
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
+    "GET /social/v1/preferences": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get social player preferences.",
+        "help": "**Response:** The social preferences for the player\n\n```\n{\n   \"appearOffline\":     true|false,\n}\n```\nNote: At this time the subscription only fires when the value is initially retrieved or locally updated.",
+        "internal": false,
+        "name": "GetSocialV1Preferences",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "SocialSocialPreferencesV1"
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
+    "GET /social/v1/presences/multigame": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Multi-game self-presences from other logged-in products.",
+        "help": "",
+        "internal": false,
+        "name": "GetSocialV1PresencesMultigame",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "SocialMultigamePresences"
         },
         "subscribable": false,
         "tags": [
@@ -15023,7 +15500,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Retrieves the mSDK credentials from the Tencent Launcher",
-        "help": "**Requirements**\nThis should only be used by products launched via the Tencent Launcher.\n\nThis function is disabled unless the following configuration is passedto the SDK at startup:\n* `publisher`: must be set to `tencent`\n* `auth-via-tencent-launcher`: must be set to `true`\n\nRequires ACLSDK.dll to be present. If absent, calling this functionwill return a `501` error code.\n\n\n            **Description**\n            Retrieves the Tencent Launcher LoginInfo (credentials) from the\n            ACLSDK. If logged in, the response will contain the required tokens\n            for RSO auth, or for auth with other Tencent services like Midas.\n\n            This endpoint may be subscribed to, and a notification will be\n            generated when:\n            * `/login` is successfully called, containing the Tencent-specific\n              credentials,\n            * The Tencent Launcher performs a periodic refresh of the credentials.\n\n            **Returns**\n            If `/login` has not yet successfully been called, a `404` error\n            code is returned.\n\n            If the login information is available, a structure is returned\n            containing the fields:\n            * `openid`\n            * `token`\n            * `channel`\n            * `ext`\n\n            These fields should be treated as opaque.\n        ",
+        "help": "**Requirements**\nThis should only be used by products launched via the Tencent Launcher.\n\nThis function is disabled unless the following configuration is passedto the SDK at startup:\n* `publisher`: must be set to `tencent`\n* either `player-session-lifecycle.msdk_provider` must be set to `aclos` or `auth-via-tencent-launcher` must be set to `true`\n\nRequires ACLSDK.dll to be present. If absent, calling this functionwill return a `501` error code.\n\n\n            **Description**\n            Retrieves the Tencent Launcher LoginInfo (credentials) from the\n            ACLSDK. If logged in, the response will contain the required tokens\n            for RSO auth, or for auth with other Tencent services like Midas.\n\n            This endpoint may be subscribed to, and a notification will be\n            generated when:\n            * `/tencent-launcher/v1/init-aclsdk` (or the deprecated `/tencent-launcher/v1/login`) is successfully called, containing the Tencent-specific\n              credentials,\n            * The Tencent Launcher performs a periodic refresh of the credentials.\n\n            **Returns**\n            If `/tencent-launcher/v1/init-aclsdk` (or the deprecated `/tencent-launcher/v1/login`) has not yet successfully been called, a `404` error\n            code is returned.\n\n            If the login information is available, a structure is returned\n            containing the fields:\n            * `openid`\n            * `token`\n            * `channel`\n            * `ext`\n\n            These fields should be treated as opaque.\n        ",
         "internal": false,
         "name": "GetTencentLauncherV1LoginInfo",
         "nameSpace": "",
@@ -15053,6 +15530,25 @@
         "subscribable": false,
         "tags": [
             "tencent-launcher"
+        ],
+        "threadSafe": false
+    },
+    "GET /tracing/v1/client-metadata": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get client metadata from the SDK.",
+        "help": "",
+        "internal": false,
+        "name": "GetTracingV1ClientMetadata",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "TracingV1ClientMetadata"
+        },
+        "subscribable": false,
+        "tags": [
+            "tracing"
         ],
         "threadSafe": false
     },
@@ -15287,6 +15783,25 @@
         ],
         "threadSafe": false
     },
+    "GET /voice-chat/v1/authentication": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get whether the local player is currently authenticated with a voice provider",
+        "help": "",
+        "internal": false,
+        "name": "GetVoiceChatV1Authentication",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "VoiceChatGetAuthenticationResource"
+        },
+        "subscribable": false,
+        "tags": [
+            "voice-chat"
+        ],
+        "threadSafe": false
+    },
     "GET /voice-chat/v1/block-list/{providerName}": {
         "arguments": [
             {
@@ -15359,7 +15874,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Get the status of the voice-chat plugin to know whether or not to expect if the feature is usable.",
-        "help": "\n**Description**\nGet the status of the voice-chat plugin to know whether or not to expect if the feature is usable. Game teams are encouraged to subscribe\nto this endpoint so that the game can behave correctly depending on what the current state of the plugin is. For example, if the status of\nthe plugin is `permissionDenied`, game teams should not attempt to join voice sessions since the player does not have permissions to do so,\npossibly due to behavioural restrictions or parental control settings.\n\n** Returns **\n\nA PluginStatus value representing the current status of the plugin.\n* `PluginStatus` values:\n    * `unknown`: The status of the plugin is currently unknown. This is the default value while the plugin is initializing and its status has yet to be determined.\n    * `awaitingAuth`: The player has not signed in, so the plugin does not have the information required to join a voice session.\n    * `permissionUnknown`: The player has signed in, but the plugin is unable to look up whether or not the player has permission to use voice chat.\n         Attempting to join a voice session will not work until the permission query succeeds.\n    * `permissionDenied`: The player has signed in, but the player does not have permission to use voice chat. Attempting to join a voice session will always\n         return an error and existing sessions will be left.\n    * `networkUnavailable`: The player has signed in, but network connection is not available. Attempting to join a voice session will return an error\n    * `ready`: Voice chat is usable and voice sessions can be joined.\n",
+        "help": "\n**Description**\nGet the status of the voice-chat plugin to know whether or not to expect if the feature is usable. Game teams are encouraged to subscribe\nto this endpoint so that the game can behave correctly depending on what the current state of the plugin is. For example, if the status of\nthe plugin is `permissionDenied`, game teams should not attempt to join voice sessions since the player does not have permissions to do so,\npossibly due to behavioural restrictions or parental control settings.\n\n** Returns **\n\nA PluginStatus value representing the current status of the plugin.\n* `PluginStatus` values:\n    * `unknown`: The status of the plugin is currently unknown. This is the default value while the plugin is initializing and its status has yet to be determined.\n    * `awaitingAuth`: The player has not signed in, so the plugin does not have the information required to join a voice session.\n    * `permissionUnknown`: The player has signed in, but the plugin is unable to look up whether or not the player has permission to use voice chat.\n         Attempting to join a voice session will not work until the permission query succeeds.\n    * `permissionDenied`: The player has signed in, but the player does not have permission to use voice chat. Attempting to join a voice session will always\n         return an error and existing sessions will be left.\n    * `networkUnavailable`: The player has signed in, but network connection is not available. Attempting to join a voice session will return an error\n    * `noProviders`: No voice providers available. Provider libraries are missing or not loadable on this build/platform.\n         Attempting to join a voice session will return an error.\n    * `ready`: Voice chat is usable and voice sessions can be joined.\n",
         "internal": false,
         "name": "GetVoiceChatV1Status",
         "nameSpace": "",
@@ -15964,6 +16479,91 @@
         ],
         "threadSafe": false
     },
+    "GET /voice-chat/v5/sessions/{productName}/{sessionId}/participants/{participantId}/report": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productName",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "sessionId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "participantId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "For subscriptions only. Direct GET returns an empty resource. Sends the final status of report-single requests via notifications.",
+        "help": "",
+        "internal": false,
+        "name": "GetVoiceChatV5SessionsByProductNameBySessionIdParticipantsByParticipantIdReport",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "VoiceChatParticipantReportResultResource"
+        },
+        "subscribable": false,
+        "tags": [
+            "voice-chat"
+        ],
+        "threadSafe": false
+    },
+    "GET /voice-chat/v5/sessions/{productName}/{sessionId}/participants/report": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productName",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "sessionId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "For subscriptions only. Direct GET returns an empty resource. Sends the final status of report-all requests via notifications.",
+        "help": "",
+        "internal": false,
+        "name": "GetVoiceChatV5SessionsByProductNameBySessionIdParticipantsReport",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "VoiceChatParticipantReportResultResource"
+        },
+        "subscribable": false,
+        "tags": [
+            "voice-chat"
+        ],
+        "threadSafe": false
+    },
     "GET /xbox-account/v1/authorization-consent": {
         "arguments": [],
         "deprecated": false,
@@ -16171,6 +16771,35 @@
         "subscribable": false,
         "tags": [
             "chat"
+        ],
+        "threadSafe": false
+    },
+    "PATCH /permissions/v2/batch-config": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "config",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PermissionsBatchPermissionsConfig"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Extends the batch config incrementally by merging products and permissions with the existing config.",
+        "help": "",
+        "internal": false,
+        "name": "PatchPermissionsV2BatchConfig",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "permissions"
         ],
         "threadSafe": false
     },
@@ -16383,6 +17012,35 @@
         "help": "",
         "internal": false,
         "name": "PostActivityGatewayV1ActivitiesByActivityIdRequestInvite",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "activity-gateway"
+        ],
+        "threadSafe": false
+    },
+    "POST /activity-gateway/v1/debug/members-state-update": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "body",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "MembersStateRMSUpdate"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Debug endpoint to simulate a members state RMS update.",
+        "help": "",
+        "internal": false,
+        "name": "PostActivityGatewayV1DebugMembersStateUpdate",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -18048,6 +18706,35 @@
         ],
         "threadSafe": false
     },
+    "POST /data-store/v1/internal/region-changed": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "regionChanged",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "bool"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Mirrors Localization's session-scoped League locale override state into DataStore.",
+        "help": "",
+        "internal": false,
+        "name": "PostDataStoreV1InternalRegionChanged",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "data-store"
+        ],
+        "threadSafe": false
+    },
     "POST /data-store/v1/product-settings/products/{productId}/patchlines/{patchlineId}": {
         "arguments": [
             {
@@ -18380,6 +19067,25 @@
         ],
         "threadSafe": false
     },
+    "POST /friends-forever/v1/platform-links/hydrate": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Request hydration of the platform-links cache. Triggers a buffered service fetch; the resulting data is delivered through the existing platform-links resource notifications.",
+        "help": "",
+        "internal": false,
+        "name": "PostFriendsForeverV1PlatformLinksHydrate",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "friends-forever"
+        ],
+        "threadSafe": false
+    },
     "POST /ga-warning/v1/debug/simulate-warning/{category}": {
         "arguments": [
             {
@@ -18431,36 +19137,6 @@
         "returns": {
             "elementType": "",
             "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "Plugins",
-            "Plugin game-activity"
-        ],
-        "threadSafe": false
-    },
-    "POST /game-activity/v1/smarturl/resolve": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "smartUrl",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Resolve a Smart URL into a product and patchline",
-        "help": "",
-        "internal": false,
-        "name": "PostGameActivityV1SmarturlResolve",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "ResolvedJoinCodeV1"
         },
         "subscribable": false,
         "tags": [
@@ -18543,6 +19219,64 @@
         "subscribable": false,
         "tags": [
             "google-account"
+        ],
+        "threadSafe": false
+    },
+    "POST /graphql-client/v1/fetch": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "request",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "GraphqlClientGraphQLFetchRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Execute a GraphQL request with a pre-encoded JSON body",
+        "help": "",
+        "internal": false,
+        "name": "PostGraphqlClientV1Fetch",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "GraphqlClientGraphQLResult"
+        },
+        "subscribable": false,
+        "tags": [
+            "graphql-client"
+        ],
+        "threadSafe": false
+    },
+    "POST /graphql-client/v1/query": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "request",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "GraphqlClientGraphQLQueryRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Execute a GraphQL query against the specified endpoint",
+        "help": "",
+        "internal": false,
+        "name": "PostGraphqlClientV1Query",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "GraphqlClientGraphQLResult"
+        },
+        "subscribable": false,
+        "tags": [
+            "graphql-client"
         ],
         "threadSafe": false
     },
@@ -18693,6 +19427,35 @@
         "returns": {
             "elementType": "",
             "type": "IntegrationTestV1ExternalResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "integration-test"
+        ],
+        "threadSafe": false
+    },
+    "POST /integration-test/v1/graphql/execute": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "GraphQLTestRequest",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "IntegrationTestV1GraphQLTestRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "[FOR TESTING ONLY] Executes a codegen-defined GraphQL operation via the graphql-client plugin.",
+        "help": "",
+        "internal": false,
+        "name": "PostIntegrationTestV1GraphqlExecute",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "IntegrationTestGraphQLResult"
         },
         "subscribable": false,
         "tags": [
@@ -18912,7 +19675,7 @@
         ],
         "threadSafe": false
     },
-    "POST /mailbox/v1/mail/{productId}": {
+    "POST /mailbox/v1/product/{productId}": {
         "arguments": [
             {
                 "description": "",
@@ -18938,7 +19701,7 @@
         "description": "Fetch mail for a player on behalf of a product.",
         "help": "\n**Description**\n\nThis API allows for retrieving mail. Here, the productId is required. This is an internal API to be used by other plugins.\n\nRequired arguments:\n```\nproductId: A standard [product identifier](https://gh.riotgames.com/shared-static-data/rpg/tree/master/products)\n```\n",
         "internal": false,
-        "name": "PostMailboxV1MailByProductId",
+        "name": "PostMailboxV1ProductByProductId",
         "nameSpace": "",
         "returns": {
             "elementType": "MailboxMail",
@@ -19063,6 +19826,35 @@
         "subscribable": false,
         "tags": [
             "mobile-push"
+        ],
+        "threadSafe": false
+    },
+    "POST /msdk-account/v1/authorization": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "AuthorizationRequestParameters",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "MsdkAccountMSDKAuthorizationParameters"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Start an authorization request using MSDK (either WeGame SDK or ACLSDK) credentials.",
+        "help": "",
+        "internal": false,
+        "name": "PostMsdkAccountV1Authorization",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "msdk-account"
         ],
         "threadSafe": false
     },
@@ -19274,6 +20066,36 @@
         "subscribable": false,
         "tags": [
             "okta-account"
+        ],
+        "threadSafe": false
+    },
+    "POST /patch-proxy/v1/launch-active": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "active",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "bool"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Internal: set by product-launcher around its pre-launch refresh. Concurrent refreshes return cached status while set.",
+        "help": "",
+        "internal": true,
+        "name": "PostPatchProxyV1LaunchActive",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "object"
+        },
+        "subscribable": false,
+        "tags": [
+            "Plugins",
+            "Plugin patch-proxy"
         ],
         "threadSafe": false
     },
@@ -19864,6 +20686,35 @@
         ],
         "threadSafe": false
     },
+    "POST /platform-social/v1/crossplatform-interactions": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "interactionPermission",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlatformSocialPlatformSocialCrossPlatformInteractionPermissionDetails"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Set whether 'crossplatform-interactions' is allowed for the player.",
+        "help": "",
+        "internal": false,
+        "name": "PostPlatformSocialV1CrossplatformInteractions",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-social"
+        ],
+        "threadSafe": false
+    },
     "POST /platform-social/v1/debug/mock-block-list": {
         "arguments": [
             {
@@ -20056,6 +20907,25 @@
         ],
         "threadSafe": false
     },
+    "POST /platform-ui/v1/healup-account": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Trigger the optional account healup prompt UI. This will prompt the player to provide an email address if they do not have one attached to their account.",
+        "help": "",
+        "internal": false,
+        "name": "PostPlatformUiV1HealupAccount",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-ui"
+        ],
+        "threadSafe": false
+    },
     "POST /platform-ui/v1/riot-id-change": {
         "arguments": [],
         "deprecated": false,
@@ -20068,6 +20938,35 @@
         "returns": {
             "elementType": "",
             "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "platform-ui"
+        ],
+        "threadSafe": false
+    },
+    "POST /platform-ui/v1/riotclient-bridge": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "message",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "map"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "For internal use only. Route requests and subscriptions through the WebView SDK proxy messaging interface",
+        "help": "",
+        "internal": false,
+        "name": "PostPlatformUiV1RiotclientBridge",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "map"
         },
         "subscribable": false,
         "tags": [
@@ -20932,6 +21831,64 @@
         ],
         "threadSafe": false
     },
+    "POST /player-feedback-tool/v1/result": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "request",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlayerFeedbackToolResultRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Posts survey state updates and responses to the backend",
+        "help": "",
+        "internal": false,
+        "name": "PostPlayerFeedbackToolV1Result",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "map"
+        },
+        "subscribable": false,
+        "tags": [
+            "player-feedback-tool"
+        ],
+        "threadSafe": false
+    },
+    "POST /player-feedback-tool/v1/survey": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "request",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlayerFeedbackToolSurveyRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Requests a survey based on an event type and game-provided metadata",
+        "help": "",
+        "internal": false,
+        "name": "PostPlayerFeedbackToolV1Survey",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "map"
+        },
+        "subscribable": false,
+        "tags": [
+            "player-feedback-tool"
+        ],
+        "threadSafe": false
+    },
     "POST /player-reporting/v1/debug/simulate-bystander-feedback/product/{productId}/category/{category}": {
         "arguments": [
             {
@@ -21100,7 +22057,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "",
-        "help": "\nUsed to submit a player report when no signed token is available\n**Data**\n* `offenderId`: The id of the offender. For players this is their puuid.\n* `categories`: List of category strings that player is reporting another player for. Different products use different categories.\n* `location`: The location where the offending behavior occurred. Example: `in-game`.\n* `comment`: Player written comment associated with this report.\n* `conversationContext`: (OPTIONAL) The ID and type of conversation from where the report was filed\n* `unstructuredContext`: (OPTIONAL) An additional payload where game teams can pass in custom payload to CPD for analysis\n* `incidentTimestampMillis`: (OPTIONAL) The timestamp of the reported incident (e.g., timestamp of the chat message)\n",
+        "help": "\nUsed to submit a player report when no signed token is available\n**Data**\n* `offenderId`: The id of the offender. For players this is their puuid.\n* `categories`: List of category strings that player is reporting another player for. Different products use different categories.\n* `location`: The location where the offending behavior occurred. Example: `in-game`.\n* `comment`: Player written comment associated with this report.\n* `region`: (OPTIONAL) If provided, this region is used for the unsigned report. If omitted, player affinity is used.\n* `conversationContext`: (OPTIONAL) The ID and type of conversation from where the report was filed\n* `unstructuredContext`: (OPTIONAL) An additional payload where game teams can pass in custom payload to CPD for analysis\n* `incidentTimestampMillis`: (OPTIONAL) The timestamp of the reported incident (e.g., timestamp of the chat message)\n",
         "internal": false,
         "name": "PostPlayerReportingV1UnsignedReport",
         "nameSpace": "",
@@ -21143,12 +22100,41 @@
         ],
         "threadSafe": false
     },
+    "POST /player-session-lifecycle/v1/require-account-healup": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "Reason",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlayerSessionLifecycleRequireAccountHealupRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Inform the SDK that the current player should be prompted to provide email address when possible. If the player already has an email address, this will have no effect. This endpoint is meant to be used to heal-up console accounts lacking email. Those accounts result from simplified signup flow which lacks email collection step.",
+        "help": "",
+        "internal": false,
+        "name": "PostPlayerSessionLifecycleV1RequireAccountHealup",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "player-session-lifecycle"
+        ],
+        "threadSafe": false
+    },
     "POST /player-session-lifecycle/v1/require-recoverable-account": {
         "arguments": [],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "Inform the SDK that the current player should be prompted to make their account recoverable when possible.",
-        "help": "Set a requirement for that current player should be prompted to address any issues with their account that prevent it from being recoverable. This currently means that the player's account should either have the ability to authenticate with username/password (ie. Riot Identity) or with an acceptable federated auth provider (ex. Google, Facebook, etc.). Forcing recoverable accounts is desirable when the player has spent money or a significant amount of time, so accidental account loss would be very undesirable.",
+        "description": "Inform the SDK that the current player should be prompted to make their account recoverable when possible. On MobileFRE this means the player should be prompted to make their account recoverable. On ConsoleFRE this means the player should be prompted to provide a missing email_address.",
+        "help": "Set a requirement for that current player should be prompted to address any issues with their account that prevent it from being recoverable. On MobileFRE this currently means that the player's account should either have the ability to authenticate with username/password (ie. Riot Identity) or with an acceptable federated auth provider (ex. Google, Facebook, etc.). On ConsoleFRE this currently means that the player should be prompted to provide a missing email_address through the healup flow. Forcing recoverable accounts is desirable when the player has spent money or a significant amount of time, so accidental account loss would be very undesirable.",
         "internal": false,
         "name": "PostPlayerSessionLifecycleV1RequireRecoverableAccount",
         "nameSpace": "",
@@ -21220,6 +22206,35 @@
         ],
         "threadSafe": false
     },
+    "POST /player-session-lifecycle/v1/session/confirm": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "ConfirmLoginStateRequest",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlayerSessionLifecycleConfirmLoginStateRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Provide player confirmation for the given login state.",
+        "help": "",
+        "internal": false,
+        "name": "PostPlayerSessionLifecycleV1SessionConfirm",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "player-session-lifecycle"
+        ],
+        "threadSafe": false
+    },
     "POST /player-session-lifecycle/v1/session/retry": {
         "arguments": [],
         "deprecated": false,
@@ -21228,6 +22243,35 @@
         "help": "",
         "internal": false,
         "name": "PostPlayerSessionLifecycleV1SessionRetry",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "player-session-lifecycle"
+        ],
+        "threadSafe": false
+    },
+    "POST /player-session-lifecycle/v2/require-recoverable-account": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "Reason",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlayerSessionLifecycleRequireRecoverableAccountRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Inform the SDK that the current player should be prompted to make their account recoverable when possible. On MobileFRE this means the player should be prompted to make their account recoverable. On ConsoleFRE this means the player should be prompted to provide a missing email_address.",
+        "help": "Set a requirement for that current player should be prompted to address any issues with their account that prevent it from being recoverable. On MobileFRE this currently means that the player's account should either have the ability to authenticate with username/password (ie. Riot Identity) or with an acceptable federated auth provider (ex. Google, Facebook, etc.). On ConsoleFRE this currently means that the player should be prompted to provide a missing email_address through the healup flow. Forcing recoverable accounts is desirable when the player has spent money or a significant amount of time, so accidental account loss would be very undesirable.",
+        "internal": false,
+        "name": "PostPlayerSessionLifecycleV2RequireRecoverableAccount",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -21645,6 +22689,24 @@
                     "elementType": "",
                     "type": "string"
                 }
+            },
+            {
+                "description": "",
+                "name": "body",
+                "optional": true,
+                "type": {
+                    "elementType": "",
+                    "type": "ProductLauncherLaunchProductBody"
+                }
+            },
+            {
+                "description": "",
+                "name": "clickWallMs",
+                "optional": true,
+                "type": {
+                    "elementType": "",
+                    "type": "int64"
+                }
             }
         ],
         "deprecated": false,
@@ -21662,35 +22724,6 @@
         "tags": [
             "Plugins",
             "Plugin product-launcher"
-        ],
-        "threadSafe": false
-    },
-    "POST /product-localization/v1/translate": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "request",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "ProductLocalizationTranslateRequest"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "DEPRECATED - Returns a translation string(s) for given keys, if found, in Riot Client's locale",
-        "help": "",
-        "internal": false,
-        "name": "PostProductLocalizationV1Translate",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "ProductLocalizationTranslateResponse"
-        },
-        "subscribable": false,
-        "tags": [
-            "product-localization"
         ],
         "threadSafe": false
     },
@@ -21939,7 +22972,7 @@
         ],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "Mark the end of the time phase sample and send an event to Analytics Platform conforming to the `riotclient__TimeSample__v4` schema.",
+        "description": "Mark the end of the time phase sample and send an event to Analytics Platform conforming to the `riotclient__TimeSample__v10` schema.",
         "help": "",
         "internal": false,
         "name": "PostRcInfoRadiatorV1TimeSampleByPhaseNameEnd",
@@ -22063,6 +23096,36 @@
         "help": "",
         "internal": false,
         "name": "PostRiotClientLifecycleV1LeagueRegionElection",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RegionAssignmentResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "Plugins",
+            "Plugin riot-client-lifecycle"
+        ],
+        "threadSafe": false
+    },
+    "POST /riot-client-lifecycle/v1/league-region-election/by-context": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "data",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RegionElectionContext"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Elects the region declared by the given product/patchline's rso_claims (rgn_<rso_platform_id>). Used for products like TFT that disambiguate region via patchline config rather than the patchline id.",
+        "help": "",
+        "internal": false,
+        "name": "PostRiotClientLifecycleV1LeagueRegionElectionByContext",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -22317,6 +23380,25 @@
         "help": "",
         "internal": false,
         "name": "PostRiotMessagingServiceV1SimulateMessage",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "riot-messaging-service"
+        ],
+        "threadSafe": false
+    },
+    "POST /riot-messaging-service/v1/simulate-out-of-sync": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Simulate an out-of-sync notification. For debug purposes only.",
+        "help": "",
+        "internal": false,
+        "name": "PostRiotMessagingServiceV1SimulateOutOfSync",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -23079,6 +24161,35 @@
         ],
         "threadSafe": false
     },
+    "POST /rso-auth/v1/authorization/key-exchange": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "authorizationKeyExchangeRequest",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthAuthorizationKeyExchangeRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Creates an authorization from an authorization key.",
+        "help": "",
+        "internal": false,
+        "name": "PostRsoAuthV1AuthorizationKeyExchange",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthAuthorizationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-auth"
+        ],
+        "threadSafe": false
+    },
     "POST /rso-auth/v1/authorization/refresh": {
         "arguments": [],
         "deprecated": false,
@@ -23608,6 +24719,35 @@
         "help": "",
         "internal": false,
         "name": "PostRsoAuthenticatorV1AuthenticationKeypair",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "POST /rso-authenticator/v1/authentication/msdk": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "msdk",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1AuthenticateMSDKInput"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Authenticate a player with MSDK (WeGame or ACLOS) credentials.",
+        "help": "",
+        "internal": false,
+        "name": "PostRsoAuthenticatorV1AuthenticationMsdk",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -24405,6 +25545,44 @@
         "help": "",
         "internal": false,
         "name": "PostRsoAuthenticatorV2AuthenticationByRecipientKeypair",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1AuthenticationResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-authenticator"
+        ],
+        "threadSafe": false
+    },
+    "POST /rso-authenticator/v2/authentication/{recipient}/msdk": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "recipient",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "msdk",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RsoAuthenticatorV1AuthenticateMSDKInput"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Authenticate a player with MSDK (WeGame or ACLOS) credentials.",
+        "help": "",
+        "internal": false,
+        "name": "PostRsoAuthenticatorV2AuthenticationByRecipientMsdk",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -25520,35 +26698,6 @@
         ],
         "threadSafe": false
     },
-    "POST /social/v1/discord/register-launch-commands": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "request",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "SocialDiscordRegisterLaunchCommandsRequestV1"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Registers Discord launch commands using the cached Discord application ID list from AES.",
-        "help": "",
-        "internal": false,
-        "name": "PostSocialV1DiscordRegisterLaunchCommands",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "social"
-        ],
-        "threadSafe": false
-    },
     "POST /social/v1/friendrequests": {
         "arguments": [
             {
@@ -25607,6 +26756,35 @@
         ],
         "threadSafe": false
     },
+    "POST /social/v1/preferences": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "body",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "SocialSocialPreferencesParametersV1"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Update a player's social preferences.",
+        "help": "",
+        "internal": false,
+        "name": "PostSocialV1Preferences",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
     "POST /social/v1/presences/session/format-details": {
         "arguments": [
             {
@@ -25654,6 +26832,35 @@
         "help": "",
         "internal": false,
         "name": "PostSocialV1ViewProfileByPuuid",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "social"
+        ],
+        "threadSafe": false
+    },
+    "POST /social/v2/discord/register-launch-command": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "request",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "SocialDiscordRegisterLaunchCommandRequestV2"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Registers Discord launch command. It is validated against the cached Discord application ID list from AES.",
+        "help": "",
+        "internal": false,
+        "name": "PostSocialV2DiscordRegisterLaunchCommand",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -25893,6 +27100,35 @@
         ],
         "threadSafe": false
     },
+    "POST /tencent-launcher/v1/init-aclsdk": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "arguments",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "TencentLauncherTencentLauncherLoginArguments"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Initialize ACLSDK.",
+        "help": "**Requirements**\nThis should only be used by products launched via the Tencent Launcher.\n\nThis function is disabled unless the following configuration is passedto the SDK at startup:\n* `publisher`: must be set to `tencent`\n* either `player-session-lifecycle.msdk_provider` must be set to `aclos` or `auth-via-tencent-launcher` must be set to `true`\n\nRequires ACLSDK.dll to be present. If absent, calling this functionwill return a `501` error code.\n\n\n            **Description**\n\n            Initializes ACLSDK.\n\n            **Request Arguments**\n            * `tencentGameId` - The Tencent-supplied game ID\n            * `tencentGameKey` - The Tencent-supplied game key\n        ",
+        "internal": false,
+        "name": "PostTencentLauncherV1InitAclsdk",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "tencent-launcher"
+        ],
+        "threadSafe": false
+    },
     "POST /tencent-launcher/v1/login": {
         "arguments": [
             {
@@ -25908,7 +27144,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Initialize RSO login using mSDK credentials from the Tencent Launcher",
-        "help": "**Requirements**\nThis should only be used by products launched via the Tencent Launcher.\n\nThis function is disabled unless the following configuration is passedto the SDK at startup:\n* `publisher`: must be set to `tencent`\n* `auth-via-tencent-launcher`: must be set to `true`\n\nRequires ACLSDK.dll to be present. If absent, calling this functionwill return a `501` error code.\n\n\n            **Description**\n\n            Initializes the ACLSDK, retrieves the player's Tencent credentials\n            from the Tencent Launcher, and uses them to auth with RSO via the\n            partner-auth API.\n\n            **Request Arguments**\n            * `tencentGameId` - The Tencent-supplied game ID\n            * `tencentGameKey` - The Tencent-supplied game key\n\n            **Returns**\n            A successful return indicates that the player has successfully authed\n            with RSO.\n\n            A failed return indicates an error, either with ACLSDK, or the resulting\n            RSO auth.\n        ",
+        "help": "**Requirements**\nThis should only be used by products launched via the Tencent Launcher.\n\nThis function is disabled unless the following configuration is passedto the SDK at startup:\n* `publisher`: must be set to `tencent`\n* either `player-session-lifecycle.msdk_provider` must be set to `aclos` or `auth-via-tencent-launcher` must be set to `true`\n\nRequires ACLSDK.dll to be present. If absent, calling this functionwill return a `501` error code.\n\n\n            **Description**\n\n            Initializes the ACLSDK, retrieves the player's Tencent credentials\n            from the Tencent Launcher, and uses them to auth with RSO via the\n            partner-auth API.\n\n            **Request Arguments**\n            * `tencentGameId` - The Tencent-supplied game ID\n            * `tencentGameKey` - The Tencent-supplied game key\n\n            **Returns**\n            A successful return indicates that the player has successfully authed\n            with RSO.\n\n            A failed return indicates an error, either with ACLSDK, or the resulting\n            RSO auth.\n        \n\nDeprecated on 2026/6/5, and will be deleted on 2027/6/5. Instead, use Player Session Lifecycle with login strategy `msdk`.",
         "internal": false,
         "name": "PostTencentLauncherV1Login",
         "nameSpace": "",
@@ -25949,6 +27185,36 @@
         "help": "",
         "internal": false,
         "name": "PostVanguardV1CheckVanguardService",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "VanguardPluginState"
+        },
+        "subscribable": false,
+        "tags": [
+            "Plugins",
+            "Plugin vanguard"
+        ],
+        "threadSafe": false
+    },
+    "POST /vanguard/v1/check-vanguard-service/products/{productId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Check if Vanguard requires a restart for a specific product",
+        "help": "",
+        "internal": false,
+        "name": "PostVanguardV1CheckVanguardServiceProductsByProductId",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -26092,6 +27358,35 @@
         "subscribable": false,
         "tags": [
             "vng"
+        ],
+        "threadSafe": false
+    },
+    "POST /voice-chat/v1/authentication": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "authentication",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "VoiceChatPostAuthenticationResource"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Authenticate the local player before joining a voice session.WARNING: Vivox bills the company according to the peak number of CCUs in a month.Make sure to contact the Social Infra team before using this endpoint for early authentication.",
+        "help": "`logoutAfterAllSessionsLeft` controls whether the player is automatically logged out from voice after leaving the final active voice session.",
+        "internal": false,
+        "name": "PostVoiceChatV1Authentication",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "voice-chat"
         ],
         "threadSafe": false
     },
@@ -26445,7 +27740,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Reports a player for voice infringement",
-        "help": "",
+        "help": "This endpoint is deprecated. Use /voice-chat/v5/sessions/{productName}/{sessionId}/participants/{participantId}/report",
         "internal": false,
         "name": "PostVoiceChatV4SessionsByProductNameBySessionIdParticipantsByParticipantIdReport",
         "nameSpace": "",
@@ -26483,9 +27778,94 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Reports all players for voice infringement",
-        "help": "",
+        "help": "This endpoint is deprecated. Use /voice-chat/v5/sessions/{productName}/{sessionId}/participants/report",
         "internal": false,
         "name": "PostVoiceChatV4SessionsByProductNameBySessionIdParticipantsReport",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "voice-chat"
+        ],
+        "threadSafe": false
+    },
+    "POST /voice-chat/v5/sessions/{productName}/{sessionId}/participants/{participantId}/report": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productName",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "sessionId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "participantId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Reports a player for voice infringement asynchronously",
+        "help": "This endpoint returns 202 once the report request is accepted for asynchronous processing by the SDK.\nSubscribe to GET /voice-chat/v5/sessions/{productName}/{sessionId}/participants/{participantId}/report to receive the final completion status.",
+        "internal": false,
+        "name": "PostVoiceChatV5SessionsByProductNameBySessionIdParticipantsByParticipantIdReport",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "voice-chat"
+        ],
+        "threadSafe": false
+    },
+    "POST /voice-chat/v5/sessions/{productName}/{sessionId}/participants/report": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productName",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "sessionId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Reports all players for voice infringement asynchronously",
+        "help": "This endpoint returns 202 once the report request is accepted for asynchronous processing by the SDK.\nSubscribe to GET /voice-chat/v5/sessions/{productName}/{sessionId}/participants/report to receive the final completion status.",
+        "internal": false,
+        "name": "PostVoiceChatV5SessionsByProductNameBySessionIdParticipantsReport",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -27662,8 +29042,8 @@
         ],
         "deprecated": false,
         "deprecatedHelp": "",
-        "description": "Set the current product context.",
-        "help": "",
+        "description": "Updates the legacy product context. This endpoint is retained for compatibility and no longer affects EULA locale resolution.",
+        "help": "Endpoint deprecated April 2026; EULA locale is now driven by '/localization/v1/hybrid-locale'. This endpoint is retained only for legacy compatibility and no longer affects EULA locale resolution.",
         "internal": false,
         "name": "PutEulaV1ProductContext",
         "nameSpace": "",
@@ -28090,6 +29470,93 @@
         "subscribable": false,
         "tags": [
             "integration-test"
+        ],
+        "threadSafe": false
+    },
+    "PUT /localization/v1/locale": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "locale",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "LocalizationLocalizationLocaleV1"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Updates the authoritative locale state. In standalone, this updates the single locale state used across the SDK. In multitenant, this updates the Riot Client locale state.",
+        "help": "\n## Context\nIn standalone, this updates the one authoritative locale state for the SDK. The internal product-locale and hybrid-locale resources alias the same underlying state, and legacy compatibility endpoints adapt from this state.\n\nIn multitenant, this updates the Riot Client locale state. Backwards compatibility with legacy endpoints is maintained, but new consumers should read and write through this resource directly.\n\n### Validation\nThe request locale is normalized to standard casing and validated against the configured region data before the state is applied.\n\n## Arguments\n- locale: locale configuration to set. `locale` is required and `region` is optional.\n",
+        "internal": false,
+        "name": "PutLocalizationV1Locale",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "localization"
+        ],
+        "threadSafe": false
+    },
+    "PUT /localization/v1/locale-pre-validated": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "locale",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "LocalizationLocalizationLocaleV1"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Internal ingestion path for already-validated locale writes.",
+        "help": "",
+        "internal": false,
+        "name": "PutLocalizationV1LocalePreValidated",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "localization"
+        ],
+        "threadSafe": false
+    },
+    "PUT /localization/v1/product-locale": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "locale",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "LocalizationLocalizationLocaleV1"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Internal update of the product locale state using already-validated inputs. In standalone, this aliases /localization/v1/locale. In multitenant, this updates the dedicated product locale state.",
+        "help": "",
+        "internal": false,
+        "name": "PutLocalizationV1ProductLocale",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "localization"
         ],
         "threadSafe": false
     },
@@ -28791,6 +30258,35 @@
         "subscribable": false,
         "tags": [
             "player-affinity"
+        ],
+        "threadSafe": false
+    },
+    "PUT /player-feedback-tool/v1/debug/caller-id/mock-id": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "callerId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PlayerFeedbackToolPluginCallerId_MockCallerId"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Sets the caller ID to use when calling this plugin from Swagger",
+        "help": "Sets the `productId` and `patchlineId` to pass to APIs in this plugin during future calls from Swagger.\n\nUse this functionality to test APIs in this plugin with Swagger, as if they were being called from another product.",
+        "internal": false,
+        "name": "PutPlayerFeedbackToolV1DebugCallerIdMockId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "player-feedback-tool"
         ],
         "threadSafe": false
     },
@@ -30255,7 +31751,17 @@
         "threadSafe": false
     },
     "PUT /riotclient/ux-load-complete": {
-        "arguments": [],
+        "arguments": [
+            {
+                "description": "Optional JS-side startup phases to merge into the StartupPerf ui_ready event.",
+                "name": "phases",
+                "optional": true,
+                "type": {
+                    "elementType": "",
+                    "type": "object"
+                }
+            }
+        ],
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Ux notification that it has completed loading the main window.",
@@ -33308,6 +34814,53 @@
         "help": "",
         "internal": false,
         "name": "PutVoiceChatV4SessionsByProductNameBySessionIdTranscriptions",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "voice-chat"
+        ],
+        "threadSafe": false
+    },
+    "PUT /voice-chat/v4/sessions/{productName}/participants/{participantId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productName",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "participantId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "participant",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "VoiceChatUpdateParticipantResource"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Update local participant details across all sessions",
+        "help": "",
+        "internal": false,
+        "name": "PutVoiceChatV4SessionsByProductNameParticipantsByParticipantId",
         "nameSpace": "",
         "returns": {
             "elementType": "",

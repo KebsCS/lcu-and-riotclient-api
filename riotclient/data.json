@@ -9,16 +9,20 @@
         "POST /activity-gateway/v1/activities/{activityId}/join-code/shared",
         "GET /activity-gateway/v1/activities/{activityId}/lookup",
         "POST /activity-gateway/v1/activities/{activityId}/request-invite",
+        "DELETE /activity-gateway/v1/activity-invite-requests",
         "GET /activity-gateway/v1/activity-invite-requests",
         "GET /activity-gateway/v1/activity-join-intents",
         "DELETE /activity-gateway/v1/debug/caller-id/mock-id",
         "GET /activity-gateway/v1/debug/caller-id/mock-id",
         "PUT /activity-gateway/v1/debug/caller-id/mock-id",
+        "POST /activity-gateway/v1/debug/members-state-update",
+        "GET /activity-gateway/v1/ready",
         "POST /activity-gateway/v1/resolve-join-code",
         "POST /activity-gateway/v1/resolve-smart-url"
     ],
     "aes": [
         "GET /aes/v1/config/{provider}",
+        "DELETE /aes/v1/status/{provider}",
         "GET /aes/v1/status/{provider}"
     ],
     "age-restriction": [
@@ -226,6 +230,8 @@
     "data-store": [
         "GET /data-store/v1/install-settings/{+path}",
         "POST /data-store/v1/install-settings/{+path}",
+        "GET /data-store/v1/internal/region-changed",
+        "POST /data-store/v1/internal/region-changed",
         "GET /data-store/v1/paths",
         "GET /data-store/v1/product-settings/products/{productId}/patchlines/{patchlineId}",
         "POST /data-store/v1/product-settings/products/{productId}/patchlines/{patchlineId}",
@@ -271,14 +277,17 @@
         "POST /facebook-account/v1/authorization"
     ],
     "first-party-fulfillment": [
-        "POST /first-party-fulfillment/v1/fulfill"
+        "POST /first-party-fulfillment/v1/fulfill",
+        "GET /first-party-fulfillment/v1/last-fulfilled-items"
     ],
     "friends-forever": [
         "DELETE /friends-forever/v1/debug/caller-id/mock-id",
         "GET /friends-forever/v1/debug/caller-id/mock-id",
         "PUT /friends-forever/v1/debug/caller-id/mock-id",
         "GET /friends-forever/v1/platform-links",
-        "GET /friends-forever/v1/platform-links/patch"
+        "POST /friends-forever/v1/platform-links/hydrate",
+        "GET /friends-forever/v1/platform-links/patch",
+        "GET /friends-forever/v1/ready"
     ],
     "ga-restriction": [
         "DELETE /ga-restriction/v1/debug/caller-id/mock-id",
@@ -328,6 +337,10 @@
         "GET /google-account/v1/authorization",
         "POST /google-account/v1/authorization"
     ],
+    "graphql-client": [
+        "POST /graphql-client/v1/fetch",
+        "POST /graphql-client/v1/query"
+    ],
     "info-radiator": [
         "DELETE /info-radiator/v1/custom-heartbeat-metric/{name}",
         "PUT /info-radiator/v1/custom-heartbeat-metric/{name}",
@@ -345,6 +358,8 @@
         "GET /integration-test/v1/emit-notifications",
         "POST /integration-test/v1/external-request/async",
         "POST /integration-test/v1/external-request/sync",
+        "POST /integration-test/v1/graphql/execute",
+        "GET /integration-test/v1/hang/{durationMs}",
         "GET /integration-test/v1/observed-mode-manager-states",
         "POST /integration-test/v1/wait-on-background"
     ],
@@ -371,6 +386,14 @@
         "GET /launch-restriction/v1/restrictions",
         "GET /launch-restriction/v1/restrictions/{product-id}"
     ],
+    "localization": [
+        "GET /localization/v1/hybrid-locale",
+        "GET /localization/v1/locale",
+        "PUT /localization/v1/locale",
+        "PUT /localization/v1/locale-pre-validated",
+        "GET /localization/v1/product-locale",
+        "PUT /localization/v1/product-locale"
+    ],
     "loyalty": [
         "POST /loyalty/v1/debug/set-loyalty-resource/{pcbId}",
         "GET /loyalty/v1/loyalty-resource"
@@ -383,7 +406,8 @@
         "PUT /mailbox/v1/debug/caller-id/mock-id",
         "POST /mailbox/v1/mail",
         "PUT /mailbox/v1/mail-state",
-        "POST /mailbox/v1/mail/{productId}",
+        "DELETE /mailbox/v1/mail/{mailId}",
+        "POST /mailbox/v1/product/{productId}",
         "GET /mailbox/v1/ready"
     ],
     "mobile-product-registry": [
@@ -403,6 +427,11 @@
     "mode-manager": [
         "GET /mode-manager/v1/mode",
         "PUT /mode-manager/v1/mode"
+    ],
+    "msdk-account": [
+        "DELETE /msdk-account/v1/authorization",
+        "GET /msdk-account/v1/authorization",
+        "POST /msdk-account/v1/authorization"
     ],
     "native-ux": [
         "POST /native-ux/v1/show-alert"
@@ -481,6 +510,7 @@
         "POST /permissions/v1/user-communication-permissions",
         "GET /permissions/v1/user-communication-permissions/ready",
         "GET /permissions/v2/batch-config",
+        "PATCH /permissions/v2/batch-config",
         "POST /permissions/v2/batch-config",
         "GET /permissions/v2/batch-request",
         "GET /permissions/v2/request/{permissionId}",
@@ -499,6 +529,8 @@
     "platform-social": [
         "GET /platform-social/v1/block-list",
         "GET /platform-social/v1/block-list/patch",
+        "GET /platform-social/v1/crossplatform-interactions",
+        "POST /platform-social/v1/crossplatform-interactions",
         "GET /platform-social/v1/crossplay-permission",
         "POST /platform-social/v1/debug/mock-block-list",
         "GET /platform-social/v1/friend-list",
@@ -527,9 +559,14 @@
         "POST /platform-ui/v1/fre",
         "POST /platform-ui/v1/fre/telemetry",
         "GET /platform-ui/v1/fre/text-to-speech",
+        "DELETE /platform-ui/v1/healup-account",
+        "GET /platform-ui/v1/healup-account",
+        "POST /platform-ui/v1/healup-account",
         "DELETE /platform-ui/v1/riot-id-change",
         "GET /platform-ui/v1/riot-id-change",
         "POST /platform-ui/v1/riot-id-change",
+        "GET /platform-ui/v1/riotclient-bridge",
+        "POST /platform-ui/v1/riotclient-bridge",
         "GET /platform-ui/v1/sdk-instance-id",
         "GET /platform-ui/v1/status",
         "DELETE /platform-ui/v1/vng-edit-profile",
@@ -597,6 +634,13 @@
         "GET /player-behavior-token/v1/jwt/payload",
         "GET /player-behavior-token/v1/ready"
     ],
+    "player-feedback-tool": [
+        "DELETE /player-feedback-tool/v1/debug/caller-id/mock-id",
+        "GET /player-feedback-tool/v1/debug/caller-id/mock-id",
+        "PUT /player-feedback-tool/v1/debug/caller-id/mock-id",
+        "POST /player-feedback-tool/v1/result",
+        "POST /player-feedback-tool/v1/survey"
+    ],
     "player-preferences": [
         "GET /player-preferences/v1/data-json/productId/{productId}/type/{type}",
         "PUT /player-preferences/v1/data-json/productId/{productId}/type/{type}",
@@ -629,13 +673,16 @@
         "PUT /player-session-lifecycle/v1/login-token",
         "DELETE /player-session-lifecycle/v1/product-context",
         "PUT /player-session-lifecycle/v1/product-context",
+        "POST /player-session-lifecycle/v1/require-account-healup",
         "POST /player-session-lifecycle/v1/require-recoverable-account",
         "POST /player-session-lifecycle/v1/riot-identity-login",
         "DELETE /player-session-lifecycle/v1/session",
         "GET /player-session-lifecycle/v1/session",
         "POST /player-session-lifecycle/v1/session",
         "PUT /player-session-lifecycle/v1/session",
-        "POST /player-session-lifecycle/v1/session/retry"
+        "POST /player-session-lifecycle/v1/session/confirm",
+        "POST /player-session-lifecycle/v1/session/retry",
+        "POST /player-session-lifecycle/v2/require-recoverable-account"
     ],
     "playstation-account": [
         "POST /playstation-account/v1/authorization",
@@ -675,8 +722,8 @@
         "PUT /external-message-handler/v1/patch-request/products/{productId}/patchlines/{patchlineId}/resume"
     ],
     "Plugin game-activity": [
-        "POST /game-activity/v1/smarturl/join",
-        "POST /game-activity/v1/smarturl/resolve"
+        "GET /game-activity/v1/join-intent-processing-state",
+        "POST /game-activity/v1/smarturl/join"
     ],
     "Plugin Manager": [
         "GET /plugin-manager/v1/status",
@@ -696,6 +743,7 @@
     ],
     "Plugin patch-proxy": [
         "GET /patch-proxy/v1/active-updates",
+        "POST /patch-proxy/v1/launch-active",
         "GET /patch-proxy/v1/patch-jobs",
         "DELETE /patch-proxy/v1/patch-jobs/all",
         "PUT /patch-proxy/v1/patch-jobs/cancel-active",
@@ -771,11 +819,11 @@
         "POST /riot-client-lifecycle/v1/hide",
         "GET /riot-client-lifecycle/v1/league-region-election",
         "POST /riot-client-lifecycle/v1/league-region-election",
+        "POST /riot-client-lifecycle/v1/league-region-election/by-context",
         "DELETE /riot-client-lifecycle/v1/product-context",
         "GET /riot-client-lifecycle/v1/product-context",
         "PUT /riot-client-lifecycle/v1/product-context",
         "GET /riot-client-lifecycle/v1/product-context-phase",
-        "GET /riot-client-lifecycle/v1/psl-enabled",
         "POST /riot-client-lifecycle/v1/quit",
         "POST /riot-client-lifecycle/v1/quit/switch-background-mode",
         "POST /riot-client-lifecycle/v1/restart",
@@ -876,6 +924,7 @@
     ],
     "Plugin vanguard": [
         "POST /vanguard/v1/check-vanguard-service",
+        "POST /vanguard/v1/check-vanguard-service/products/{productId}",
         "PUT /vanguard/v1/installed-products",
         "GET /vanguard/v1/status",
         "PUT /vanguard/v1/update/products/{productId}/patchlines/{patchlineId}"
@@ -901,9 +950,10 @@
         "GET /external-message-handler/v1/patch-request",
         "PUT /external-message-handler/v1/patch-request/products/{productId}/patchlines/{patchlineId}/pause",
         "PUT /external-message-handler/v1/patch-request/products/{productId}/patchlines/{patchlineId}/resume",
+        "GET /game-activity/v1/join-intent-processing-state",
         "POST /game-activity/v1/smarturl/join",
-        "POST /game-activity/v1/smarturl/resolve",
         "GET /patch-proxy/v1/active-updates",
+        "POST /patch-proxy/v1/launch-active",
         "GET /patch-proxy/v1/patch-jobs",
         "DELETE /patch-proxy/v1/patch-jobs/all",
         "PUT /patch-proxy/v1/patch-jobs/cancel-active",
@@ -973,11 +1023,11 @@
         "POST /riot-client-lifecycle/v1/hide",
         "GET /riot-client-lifecycle/v1/league-region-election",
         "POST /riot-client-lifecycle/v1/league-region-election",
+        "POST /riot-client-lifecycle/v1/league-region-election/by-context",
         "DELETE /riot-client-lifecycle/v1/product-context",
         "GET /riot-client-lifecycle/v1/product-context",
         "PUT /riot-client-lifecycle/v1/product-context",
         "GET /riot-client-lifecycle/v1/product-context-phase",
-        "GET /riot-client-lifecycle/v1/psl-enabled",
         "POST /riot-client-lifecycle/v1/quit",
         "POST /riot-client-lifecycle/v1/quit/switch-background-mode",
         "POST /riot-client-lifecycle/v1/restart",
@@ -1056,6 +1106,7 @@
         "PUT /system-tray/v1/native-notification/show",
         "GET /vanguard-session-manager/v1/status",
         "POST /vanguard/v1/check-vanguard-service",
+        "POST /vanguard/v1/check-vanguard-service/products/{productId}",
         "PUT /vanguard/v1/installed-products",
         "GET /vanguard/v1/status",
         "PUT /vanguard/v1/update/products/{productId}/patchlines/{patchlineId}"
@@ -1129,7 +1180,6 @@
         "GET /product-localization/v1/data",
         "GET /product-localization/v1/products/{productId}/patchlines/{patchlineId}/translations/{locale}",
         "GET /product-localization/v1/products/{productId}/translations/{locale}",
-        "POST /product-localization/v1/translate",
         "POST /product-localization/v2/translate"
     ],
     "product-metadata": [
@@ -1208,9 +1258,11 @@
         "DELETE /riot-messaging-service/v1/session",
         "GET /riot-messaging-service/v1/session",
         "POST /riot-messaging-service/v1/simulate-message",
+        "POST /riot-messaging-service/v1/simulate-out-of-sync",
         "DELETE /riot-messaging-service/v1/socket",
         "GET /riot-messaging-service/v1/state",
         "POST /riot-messaging-service/v1/switch-servers",
+        "GET /riot-messaging-service/v1/time-drift",
         "POST /riot-messaging-service/v1/token/refresh",
         "GET /riot-messaging-service/v1/user",
         "POST /riot-messaging-service/v2/simulate-message"
@@ -1287,6 +1339,7 @@
         "GET /rso-auth/v1/authorization/error",
         "POST /rso-auth/v1/authorization/gas",
         "GET /rso-auth/v1/authorization/id-token",
+        "POST /rso-auth/v1/authorization/key-exchange",
         "POST /rso-auth/v1/authorization/refresh",
         "GET /rso-auth/v1/authorization/refresh-token",
         "PUT /rso-auth/v1/authorization/refresh-token",
@@ -1354,6 +1407,7 @@
         "DELETE /rso-authenticator/v1/authentication/link/status",
         "GET /rso-authenticator/v1/authentication/link/status",
         "PUT /rso-authenticator/v1/authentication/link/xbox",
+        "POST /rso-authenticator/v1/authentication/msdk",
         "POST /rso-authenticator/v1/authentication/multifactor",
         "POST /rso-authenticator/v1/authentication/nintendo",
         "POST /rso-authenticator/v1/authentication/playstation",
@@ -1401,6 +1455,7 @@
         "DELETE /rso-authenticator/v2/authentication/{recipient}/link/status",
         "GET /rso-authenticator/v2/authentication/{recipient}/link/status",
         "PUT /rso-authenticator/v2/authentication/{recipient}/link/xbox",
+        "POST /rso-authenticator/v2/authentication/{recipient}/msdk",
         "POST /rso-authenticator/v2/authentication/{recipient}/multifactor",
         "POST /rso-authenticator/v2/authentication/{recipient}/nintendo",
         "POST /rso-authenticator/v2/authentication/{recipient}/playstation",
@@ -1471,14 +1526,16 @@
         "GET /social/v1/debug/discord-activity-invites",
         "GET /social/v1/debug/discord-registered-apps",
         "GET /social/v1/debug/discord-timestamp",
-        "POST /social/v1/discord/register-launch-commands",
         "GET /social/v1/friendrequests",
         "POST /social/v1/friendrequests",
         "DELETE /social/v1/friendrequests/{puuid}",
         "GET /social/v1/friends",
         "GET /social/v1/friends/patch",
         "POST /social/v1/initialize",
+        "GET /social/v1/preferences",
+        "POST /social/v1/preferences",
         "PUT /social/v1/presences/debug/mock-client-time",
+        "GET /social/v1/presences/multigame",
         "DELETE /social/v1/presences/session",
         "GET /social/v1/presences/session",
         "PUT /social/v1/presences/session",
@@ -1486,6 +1543,7 @@
         "PUT /social/v1/presences/status-message",
         "GET /social/v1/ready",
         "POST /social/v1/view-profile/{puuid}",
+        "POST /social/v2/discord/register-launch-command",
         "GET /social/v2/friendrequests",
         "POST /social/v2/friendrequests",
         "GET /social/v2/friendrequests/patch",
@@ -1518,12 +1576,14 @@
     ],
     "tencent-launcher": [
         "POST /tencent-launcher/v1/debug/force-load",
+        "POST /tencent-launcher/v1/init-aclsdk",
         "POST /tencent-launcher/v1/login",
         "GET /tencent-launcher/v1/login-info",
         "POST /tencent-launcher/v1/repair-on-shutdown",
         "GET /tencent-launcher/v1/update-status"
     ],
     "tracing": [
+        "GET /tracing/v1/client-metadata",
         "DELETE /tracing/v1/debug/caller-id/mock-id",
         "GET /tracing/v1/debug/caller-id/mock-id",
         "PUT /tracing/v1/debug/caller-id/mock-id",
@@ -1543,6 +1603,9 @@
     "voice-chat": [
         "GET /voice-chat/v1/active-product",
         "GET /voice-chat/v1/audio-properties",
+        "DELETE /voice-chat/v1/authentication",
+        "GET /voice-chat/v1/authentication",
+        "POST /voice-chat/v1/authentication",
         "DELETE /voice-chat/v1/block-list/users",
         "POST /voice-chat/v1/block-list/users",
         "GET /voice-chat/v1/block-list/{providerName}",
@@ -1596,6 +1659,7 @@
         "GET /voice-chat/v4/sessions/{productName}",
         "POST /voice-chat/v4/sessions/{productName}",
         "PUT /voice-chat/v4/sessions/{productName}",
+        "PUT /voice-chat/v4/sessions/{productName}/participants/{participantId}",
         "DELETE /voice-chat/v4/sessions/{productName}/{id}",
         "GET /voice-chat/v4/sessions/{productName}/{id}",
         "PUT /voice-chat/v4/sessions/{productName}/{id}",
@@ -1604,7 +1668,11 @@
         "PUT /voice-chat/v4/sessions/{productName}/{sessionId}/participants/{participantId}",
         "POST /voice-chat/v4/sessions/{productName}/{sessionId}/participants/{participantId}/report",
         "GET /voice-chat/v4/sessions/{productName}/{sessionId}/transcriptions",
-        "PUT /voice-chat/v4/sessions/{productName}/{sessionId}/transcriptions"
+        "PUT /voice-chat/v4/sessions/{productName}/{sessionId}/transcriptions",
+        "GET /voice-chat/v5/sessions/{productName}/{sessionId}/participants/report",
+        "POST /voice-chat/v5/sessions/{productName}/{sessionId}/participants/report",
+        "GET /voice-chat/v5/sessions/{productName}/{sessionId}/participants/{participantId}/report",
+        "POST /voice-chat/v5/sessions/{productName}/{sessionId}/participants/{participantId}/report"
     ],
     "websocket": [
         "WebSocketFormat"
