@@ -1518,7 +1518,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Delete a mailbox message for the signed-in player.",
-        "help": "\n**Description**\n\nDeletes the specified mailbox message for the signed-in player.\n\nDelete success is communicated only through this DELETE response. This endpoint does not publish mailbox\nresource notifications.\n\nBy default, transient failures (5xx and 429) are retried using the mailbox HTTP retry options.\nSpecific status codes can be excluded from retries via the `mailbox.http_retry.non_retryable_http_codes` config.\n\nService responses are interpreted as follows:\n- any 2xx: deleted successfully\n- 404: treated as success because the mail is already deleted upstream\n- any other failure: retried per the configured HTTP retry options, unless excluded by config\n",
+        "help": "\n**Description**\n\nDeletes the specified mailbox message for the signed-in player.\n\nDelete success is communicated only through this DELETE response when the `mailbox.cache.enabled` client-config\nflag is off (the default). With the cache enabled, a successful delete -- including the `404` case below --\nalso evicts any cached copy of the mail and notifies `/mailbox/v2/product/{productId}` and its `/patch` variant.\n\nBy default, transient failures (5xx and 429) are retried using the mailbox HTTP retry options.\nSpecific status codes can be excluded from retries via the `mailbox.http_retry.non_retryable_http_codes` config.\n\nService responses are interpreted as follows:\n- any 2xx: deleted successfully\n- 404: treated as success because the mail is already deleted upstream\n- any other failure: retried per the configured HTTP retry options, unless excluded by config\n",
         "internal": false,
         "name": "DeleteMailboxV1MailByMailId",
         "nameSpace": "",
@@ -1764,6 +1764,45 @@
         ],
         "threadSafe": false
     },
+    "DELETE /patch-proxy/v2/session-patch-lock/products/{productId}/patchline/{patchlineId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "patchlineId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Releases a session patch lock for the product-patchline.",
+        "help": "",
+        "internal": false,
+        "name": "DeletePatchProxyV2SessionPatchLockProductsByProductIdPatchlineByPatchlineId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "Plugins",
+            "Plugin patch-proxy"
+        ],
+        "threadSafe": false
+    },
     "DELETE /patch/v1/installs/{install-id}": {
         "arguments": [
             {
@@ -1925,25 +1964,6 @@
         "subscribable": false,
         "tags": [
             "payments"
-        ],
-        "threadSafe": false
-    },
-    "DELETE /platform-login/v1/persistence": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Deletes stored session data",
-        "help": "",
-        "internal": false,
-        "name": "DeletePlatformLoginV1Persistence",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "platform-login"
         ],
         "threadSafe": false
     },
@@ -2772,25 +2792,6 @@
         ],
         "threadSafe": false
     },
-    "DELETE /riot-login/v1/persistence": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Deletes stored session data",
-        "help": "",
-        "internal": false,
-        "name": "DeleteRiotLoginV1Persistence",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "riot-login"
-        ],
-        "threadSafe": false
-    },
     "DELETE /riot-messaging-service/v1/connect": {
         "arguments": [],
         "deprecated": false,
@@ -3059,45 +3060,6 @@
         "help": "",
         "internal": false,
         "name": "DeleteRnetProductRegistryV4PriorityPatchRequestsProductsByProductIdPatchlinesByPatchlineId",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "Plugins",
-            "Plugin rnet-product-registry"
-        ],
-        "threadSafe": false
-    },
-    "DELETE /rnet-product-registry/v4/session-patch-lock/products/{productId}/patchline/{patchlineId}": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "productId",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "",
-                "name": "patchlineId",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Releases a shared session patch lock for the product-patchline",
-        "help": "",
-        "internal": false,
-        "name": "DeleteRnetProductRegistryV4SessionPatchLockProductsByProductIdPatchlineByPatchlineId",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -3474,25 +3436,6 @@
         ],
         "threadSafe": false
     },
-    "DELETE /rso-mobile-ui/v1/region-election": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Programmatically dismiss the Region Election UI. Note that this endpoit returns immediately, but the resource is finalized synchronously.",
-        "help": "Endpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
-        "internal": false,
-        "name": "DeleteRsoMobileUiV1RegionElection",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "RsoMobileUiRegionElectionV1RegionElection"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
-        ],
-        "threadSafe": false
-    },
     "DELETE /social/v1/blocklist/{puuid}": {
         "arguments": [
             {
@@ -3786,7 +3729,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Leave all joined sessions",
-        "help": "Endpoint deleted March 2021.",
+        "help": "Returns 503 while network or voice provider connectivity is recovering; retry after recovery completes.\n\nEndpoint deleted March 2021.",
         "internal": false,
         "name": "DeleteVoiceChatV2Sessions",
         "nameSpace": "",
@@ -3815,7 +3758,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Leave a session",
-        "help": "Endpoint deleted March 2021.",
+        "help": "Returns 503 while network or voice provider connectivity is recovering; retry after recovery completes.\n\nEndpoint deleted March 2021.",
         "internal": false,
         "name": "DeleteVoiceChatV2SessionsById",
         "nameSpace": "",
@@ -3844,7 +3787,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Leave all joined sessions",
-        "help": "Endpoint deprecated and will be deleted November 2022.  Please use /voice-chat/v4/sessions/{productName}",
+        "help": "Returns 503 while network or voice provider connectivity is recovering; retry after recovery completes.\n\nEndpoint deprecated and will be deleted November 2022.  Please use /voice-chat/v4/sessions/{productName}",
         "internal": false,
         "name": "DeleteVoiceChatV3SessionsByProductName",
         "nameSpace": "",
@@ -3882,7 +3825,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Leave a session",
-        "help": "Endpoint deprecated and will be deleted November 2022.  Please use /voice-chat/v4/sessions/{productName}",
+        "help": "Returns 503 while network or voice provider connectivity is recovering; retry after recovery completes.\n\nEndpoint deprecated and will be deleted November 2022.  Please use /voice-chat/v4/sessions/{productName}",
         "internal": false,
         "name": "DeleteVoiceChatV3SessionsByProductNameById",
         "nameSpace": "",
@@ -3911,7 +3854,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Leave all joined sessions",
-        "help": "",
+        "help": "Returns 503 while network or voice provider connectivity is recovering; retry after recovery completes.",
         "internal": false,
         "name": "DeleteVoiceChatV4SessionsByProductName",
         "nameSpace": "",
@@ -3949,7 +3892,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Leave a session",
-        "help": "",
+        "help": "Returns 503 while network or voice provider connectivity is recovering; retry after recovery completes.",
         "internal": false,
         "name": "DeleteVoiceChatV4SessionsByProductNameById",
         "nameSpace": "",
@@ -7333,6 +7276,44 @@
         ],
         "threadSafe": false
     },
+    "GET /integration-test/v1/discord/observed-status-changes": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "[FOR TESTING ONLY] Returns Discord status changes observed via the Discord provider callback.",
+        "help": "",
+        "internal": false,
+        "name": "GetIntegrationTestV1DiscordObservedStatusChanges",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "string",
+            "type": "vector"
+        },
+        "subscribable": false,
+        "tags": [
+            "integration-test"
+        ],
+        "threadSafe": false
+    },
+    "GET /integration-test/v1/discord/status": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "[FOR TESTING ONLY] Returns the current Discord client status.",
+        "help": "",
+        "internal": false,
+        "name": "GetIntegrationTestV1DiscordStatus",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "string"
+        },
+        "subscribable": false,
+        "tags": [
+            "integration-test"
+        ],
+        "threadSafe": false
+    },
     "GET /integration-test/v1/echo/{message}": {
         "arguments": [
             {
@@ -7691,7 +7672,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Returns if the mailbox has new mail",
-        "help": "\n**Description**\n\nThis API is subscribable and for notifications that new mail is available.\n",
+        "help": "\n**Description**\n\nThis API is subscribable and for notifications that new mail is available.\n\n**Campaign mail does not notify this resource.** Campaign mail arrives on a separate RMS topic and is\npublished only to `/mailbox/v2/check-new-product-mail/{productId}`. The flow this resource drives --\nnotification, then fetch by tag -- has no way to stagger itself, and a campaign reaches every client at\nonce, so v1 subscribers are deliberately left out of it. Subscribe to the v2 resource if you need to\nsee campaign mail.\n\nThis applies to the notification, not the value: a direct GET reads the same last-update record the v2\nresource does, so it still reflects campaign mail.\n",
         "internal": false,
         "name": "GetMailboxV1CheckNewMail",
         "nameSpace": "",
@@ -7720,7 +7701,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Returns if the mailbox has new mail",
-        "help": "\n**Description**\n\nThis API is subscribable and for notifications that new mail is available. This is the internal implementation meant to be used by other plugins.\n\nRequired arguments:\n```\nproductId: A standard [product identifier](https://gh.riotgames.com/shared-static-data/rpg/tree/master/products)\n```\n",
+        "help": "\n**Description**\n\nThis API is subscribable and for notifications that new mail is available. This is the internal implementation meant to be used by other plugins.\n\nAs with `/mailbox/v1/check-new-mail`, campaign mail does not notify this resource -- it is published only\nto `/mailbox/v2/check-new-product-mail/{productId}`. A direct GET still reflects campaign mail, since\nboth versions read the same last-update record.\n\nRequired arguments:\n```\nproductId: A standard [product identifier](https://gh.riotgames.com/shared-static-data/rpg/tree/master/products)\n```\n",
         "internal": false,
         "name": "GetMailboxV1CheckNewProductMailByProductId",
         "nameSpace": "",
@@ -7753,6 +7734,82 @@
         ],
         "threadSafe": false
     },
+    "GET /mailbox/v1/product-mail/{productId}/tag/{tag}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "tag",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns the new, read, and acknowledged mail for a specific product and tag",
+        "help": "\n**Description**\n\nThis API is subscribable and returns the actual new, read, and acknowledged mail for a product scoped to a specific tag. When new mail\narrives, subscribers are notified with the updated list of mail for their tag.\n\nThe URI is templated on both product and tag, so consumers subscribe to a specific product and tag, e.g.:\n```\n/mailbox/v1/product-mail/riot/tag/ga-warning-notification\n```\n\nRequired arguments:\n```\nproductId: A standard [product identifier](https://gh.riotgames.com/shared-static-data/rpg/tree/master/products)\ntag: The mail tag to scope the messages to.\n```\n",
+        "internal": false,
+        "name": "GetMailboxV1ProductMailByProductIdTagByTag",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "MailboxMail",
+            "type": "vector"
+        },
+        "subscribable": false,
+        "tags": [
+            "mailbox"
+        ],
+        "threadSafe": false
+    },
+    "GET /mailbox/v1/product-mail/{productId}/tag/{tag}/patch": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "tag",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "For subscriptions only. This will notify with changed elements only rather than a full list. For a full list use the non-patch version of this URL.",
+        "help": "\n**Description**\n\nThis is the patch (delta) variant of the per-product-and-tag mail subscription. Subscribers receive\nnotifications only when mail changes:\n\n- **Create**: newly arrived mail\n- **Update**: mail whose state changed (e.g. NEW -> READ)\n- **Delete**: mail that was removed\n\nEach notification payload is ordered most-recent-first by `createdAt`, matching the non-patch endpoint.\n\nFor a complete snapshot of current mail, subscribe to the non-patch endpoint instead.\n\nRequired arguments:\n```\nproductId: A standard product identifier\ntag: The mail tag to scope the messages to.\n```\n",
+        "internal": false,
+        "name": "GetMailboxV1ProductMailByProductIdTagByTagPatch",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "MailboxMail",
+            "type": "vector"
+        },
+        "subscribable": false,
+        "tags": [
+            "mailbox"
+        ],
+        "threadSafe": false
+    },
     "GET /mailbox/v1/ready": {
         "arguments": [],
         "deprecated": false,
@@ -7765,6 +7822,131 @@
         "returns": {
             "elementType": "",
             "type": "bool"
+        },
+        "subscribable": false,
+        "tags": [
+            "mailbox"
+        ],
+        "threadSafe": false
+    },
+    "GET /mailbox/v2/check-new-product-mail/{productId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns mailbox status for a product",
+        "help": "\n**Description**\n\nThis API is subscribable and for notifications that new product mail is available.\nNotifications may be delayed by the mailbox plugin to stagger mailbox fetches and reduce service load.\n\nThis is the only check-new-mail resource campaign mail notifies; the v1 resources are deliberately left\nout of it. Prefer this resource over `/mailbox/v1/check-new-mail`.\n",
+        "internal": false,
+        "name": "GetMailboxV2CheckNewProductMailByProductId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "MailboxMailboxStatusUpdatedV2"
+        },
+        "subscribable": false,
+        "tags": [
+            "mailbox"
+        ],
+        "threadSafe": false
+    },
+    "GET /mailbox/v2/product/{productId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns all new, read, and acknowledged mail for a product.",
+        "help": "\n**Description**\n\nReturns every mail for a product, across all tags. Unlike `POST /mailbox/v1/mail`, this endpoint takes no\nrequest parameters.\n\nMail is ordered most-recent-first by `createdAt`, with `mailId` breaking ties so the order is stable\nacross calls.\n\nWhen subscribed, notifications carry the complete, current list of mail for the product on every change.\nFor deltas only, subscribe to the `/patch` version of this URL instead.\n\nRequires the `mailbox.cache.enabled` client-config flag. With it enabled, the cache is populated on\nthe first call for a product, kept current as mail arrives, is read, is acknowledged, or is deleted,\nand cleared on sign-out. With it disabled (the default) each call fetches live and subscriptions\nnever fire.\n\nRequired arguments:\n```\nproductId: A standard [product identifier](https://gh.riotgames.com/shared-static-data/rpg/tree/master/products)\n```\n",
+        "internal": false,
+        "name": "GetMailboxV2ProductByProductId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "MailboxMail",
+            "type": "vector"
+        },
+        "subscribable": false,
+        "tags": [
+            "mailbox"
+        ],
+        "threadSafe": false
+    },
+    "GET /mailbox/v2/product/{productId}/mail/{mailId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "mailId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Fetch a specific mail for a player on behalf of a product.",
+        "help": "\n**Description**\n\nThis API allows for retrieving a single mail.\n\nRequired arguments:\n```\nproductId: A standard [product identifier](https://gh.riotgames.com/shared-static-data/rpg/tree/master/products)\nmailId: The unique identifier for the mail to fetch\n```\n",
+        "internal": false,
+        "name": "GetMailboxV2ProductByProductIdMailByMailId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "MailboxMail"
+        },
+        "subscribable": false,
+        "tags": [
+            "mailbox"
+        ],
+        "threadSafe": false
+    },
+    "GET /mailbox/v2/product/{productId}/patch": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "For subscriptions only. This will notify with changed elements only rather than a full list. For a full list use the non-patch version of this URL.",
+        "help": "\n**Description**\n\nThis is the patch (delta) variant of the per-product mail subscription. Subscribers receive\nnotifications only when mail changes:\n\n- **Create**: newly arrived mail\n- **Update**: mail whose state changed (e.g. NEW -> READ)\n- **Delete**: mail that was removed\n\nEach notification payload is ordered most-recent-first by `createdAt`, matching the non-patch endpoint.\n\nA direct GET returns an empty list. For a complete snapshot of current mail, subscribe to the\nnon-patch endpoint instead.\n\nRequires the `mailbox.cache.enabled` client-config flag; with it disabled (the default) these\nnotifications never fire.\n\nRequired arguments:\n```\nproductId: A standard [product identifier](https://gh.riotgames.com/shared-static-data/rpg/tree/master/products)\n```\n",
+        "internal": false,
+        "name": "GetMailboxV2ProductByProductIdPatch",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "MailboxMail",
+            "type": "vector"
         },
         "subscribable": false,
         "tags": [
@@ -8683,44 +8865,6 @@
         "subscribable": false,
         "tags": [
             "permissions"
-        ],
-        "threadSafe": false
-    },
-    "GET /platform-login/v1/config": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Returns the plugin config and enabled status",
-        "help": "This endpoint is deprecated and will be removed June 2026; Please use player-session-lifecycle instead.",
-        "internal": false,
-        "name": "GetPlatformLoginV1Config",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "PlatformLoginLoginPersistenceConfig"
-        },
-        "subscribable": false,
-        "tags": [
-            "platform-login"
-        ],
-        "threadSafe": false
-    },
-    "GET /platform-login/v1/status": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Returns the current login state of the client",
-        "help": "This endpoint is deprecated and will be removed June 2026; Please use player-session-lifecycle instead.",
-        "internal": false,
-        "name": "GetPlatformLoginV1Status",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "PlatformLoginLoginStatus"
-        },
-        "subscribable": false,
-        "tags": [
-            "platform-login"
         ],
         "threadSafe": false
     },
@@ -9931,6 +10075,25 @@
         "subscribable": false,
         "tags": [
             "player-reporting"
+        ],
+        "threadSafe": false
+    },
+    "GET /player-session-lifecycle/v1/require-recoverable-account": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get the current require-recoverable-account status and trigger reason.",
+        "help": "",
+        "internal": false,
+        "name": "GetPlayerSessionLifecycleV1RequireRecoverableAccount",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PlayerSessionLifecycleRequireRecoverableAccountStatus"
+        },
+        "subscribable": false,
+        "tags": [
+            "player-session-lifecycle"
         ],
         "threadSafe": false
     },
@@ -12200,44 +12363,6 @@
         ],
         "threadSafe": false
     },
-    "GET /riot-login/v1/config": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Returns the plugin config and enabled status",
-        "help": "This endpoint is deprecated and will be removed June 2026; Please use player-session-lifecycle instead.",
-        "internal": false,
-        "name": "GetRiotLoginV1Config",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "RiotLoginLoginPersistenceConfig"
-        },
-        "subscribable": false,
-        "tags": [
-            "riot-login"
-        ],
-        "threadSafe": false
-    },
-    "GET /riot-login/v1/status": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Returns the current login state of the client",
-        "help": "This endpoint is deprecated and will be removed June 2026; Please use player-session-lifecycle instead.",
-        "internal": false,
-        "name": "GetRiotLoginV1Status",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "RiotLoginLoginStatus"
-        },
-        "subscribable": false,
-        "tags": [
-            "riot-login"
-        ],
-        "threadSafe": false
-    },
     "GET /riot-messaging-service/v1/message/{a}": {
         "arguments": [
             {
@@ -13930,25 +14055,6 @@
         ],
         "threadSafe": false
     },
-    "GET /rso-auth/configuration/v3/amr-values-supported": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Returns a list of supported authentication strategies.",
-        "help": "Endpoint to be deleted December 2025; This endpoint has no function anymore.",
-        "internal": false,
-        "name": "GetRsoAuthConfigurationV3AmrValuesSupported",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "RsoAuthConfigV3AMRValuesSupported"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-auth"
-        ],
-        "threadSafe": false
-    },
     "GET /rso-auth/configuration/v3/client-id": {
         "arguments": [],
         "deprecated": false,
@@ -13987,25 +14093,6 @@
         ],
         "threadSafe": false
     },
-    "GET /rso-auth/configuration/v3/partner-auth-config": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Returns a partner auth config",
-        "help": "Endpoint to be deleted December 2025; This endpoint has no function anymore.",
-        "internal": false,
-        "name": "GetRsoAuthConfigurationV3PartnerAuthConfig",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "RsoAuthConfigV3PartnerAuthConfig"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-auth"
-        ],
-        "threadSafe": false
-    },
     "GET /rso-auth/configuration/v3/ready-state": {
         "arguments": [],
         "deprecated": false,
@@ -14018,6 +14105,25 @@
         "returns": {
             "elementType": "",
             "type": "RsoAuthConfigV3ReadyState"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-auth"
+        ],
+        "threadSafe": false
+    },
+    "GET /rso-auth/v1/additional-permissions": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get additional permissions list.",
+        "help": "",
+        "internal": false,
+        "name": "GetRsoAuthV1AdditionalPermissions",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "string",
+            "type": "vector"
         },
         "subscribable": false,
         "tags": [
@@ -14087,7 +14193,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Retrieves any error received from RSO during the last authorization attempt.",
-        "help": "If the player has failed to log in via RSO, and the HTTP error code cannot uniquely disambiguate the error encountered, provides more information about the error encountered in the form of the error and errorDescription provided from RSO via OAuth errors.\n",
+        "help": "If the player has failed to log in via RSO, and the HTTP error code cannot uniquely disambiguate the error encountered, provides more information about the error encountered in the form of the error and errorDescription provided from RSO via OAuth errors.\n\n\nEndpoint to be deleted April 2027.",
         "internal": false,
         "name": "GetRsoAuthV1AuthorizationError",
         "nameSpace": "",
@@ -14196,6 +14302,25 @@
         ],
         "threadSafe": false
     },
+    "GET /rso-auth/v1/request-permissions": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Returns request permissions.",
+        "help": "",
+        "internal": false,
+        "name": "GetRsoAuthV1RequestPermissions",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "string",
+            "type": "vector"
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-auth"
+        ],
+        "threadSafe": false
+    },
     "GET /rso-auth/v1/session": {
         "arguments": [],
         "deprecated": false,
@@ -14208,44 +14333,6 @@
         "returns": {
             "elementType": "",
             "type": "RsoAuthSessionResponse"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-auth"
-        ],
-        "threadSafe": false
-    },
-    "GET /rso-auth/v1/session/persistence": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Retrieves the persistence value of this session as a `BindingProperty` which can be serialized to local storage.",
-        "help": "Returns a `BindingProperty` representing the serialized cookies that maintains the current session that can later be `PUT` back to restore the session.\n\nThis endpoint is only available to Internal calls (plugin-to-plugin)\n",
-        "internal": false,
-        "name": "GetRsoAuthV1SessionPersistence",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "map"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-auth"
-        ],
-        "threadSafe": false
-    },
-    "GET /rso-auth/v1/status-message": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Get the current RSO status message",
-        "help": "Endpoint to be deleted December 2025; This endpoint has no function anymore.",
-        "internal": false,
-        "name": "GetRsoAuthV1StatusMessage",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "RsoAuthStatusMessage"
         },
         "subscribable": false,
         "tags": [
@@ -14624,215 +14711,6 @@
         "subscribable": false,
         "tags": [
             "rso-authenticator"
-        ],
-        "threadSafe": false
-    },
-    "GET /rso-mobile-ui/v1/account-promotion/status": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Get the current account promotion UI status",
-        "help": "Endpoint to be deleted March 2026; This flow has been replaced by the new Account Linking flow in PlatformUI. Please see the Platform Docs to learn more about migrating to /platform-ui/v1/account-linking.",
-        "internal": false,
-        "name": "GetRsoMobileUiV1AccountPromotionStatus",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "RsoMobileUiAccountPromotionStatus"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
-        ],
-        "threadSafe": false
-    },
-    "GET /rso-mobile-ui/v1/debug/configurations": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Introspect the current configuration",
-        "help": "",
-        "internal": false,
-        "name": "GetRsoMobileUiV1DebugConfigurations",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "map"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
-        ],
-        "threadSafe": false
-    },
-    "GET /rso-mobile-ui/v1/delete-account/status": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Retrieves the current status of the Account Deletion UI initiated via /rso-mobile-ui/v1/delete-account. Most useful for a client to track whether or not an Account Deletion flow was cancelled or completed.",
-        "help": "\n**Response**\n* `status`: the current status of the Delete Account flow. Of type Api::AccountDeletionV1::AccountDeletionUIStatus.\n\n\nEndpoint to be deleted July 2025; Migrate to PlatformUI: '/platform-ui/v1/delete-account'.",
-        "internal": false,
-        "name": "GetRsoMobileUiV1DeleteAccountStatus",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "RsoMobileUiAccountDeletionV1AccountDeletionUIStatus"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
-        ],
-        "threadSafe": false
-    },
-    "GET /rso-mobile-ui/v1/eula/status": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "",
-        "help": "Get the current EULA UI status.\n\nEndpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
-        "internal": false,
-        "name": "GetRsoMobileUiV1EulaStatus",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "RsoMobileUiEULAUIStatus"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
-        ],
-        "threadSafe": false
-    },
-    "GET /rso-mobile-ui/v1/login/status": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Get the current login UI status",
-        "help": "Endpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
-        "internal": false,
-        "name": "GetRsoMobileUiV1LoginStatus",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "RsoMobileUiLoginStatus"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
-        ],
-        "threadSafe": false
-    },
-    "GET /rso-mobile-ui/v1/login/strategies": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "",
-        "help": "Returns a list of strategies supported by the rso-mobile-ui plugin for this SDK version and client id\n\nEndpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
-        "internal": false,
-        "name": "GetRsoMobileUiV1LoginStrategies",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "RsoMobileUiLoginStrategyInfo",
-            "type": "vector"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
-        ],
-        "threadSafe": false
-    },
-    "GET /rso-mobile-ui/v1/region-election": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Fetches the state of the Region Election UI",
-        "help": "Endpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
-        "internal": false,
-        "name": "GetRsoMobileUiV1RegionElection",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "RsoMobileUiRegionElectionV1RegionElection"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
-        ],
-        "threadSafe": false
-    },
-    "GET /rso-mobile-ui/v1/region-election/eligibility": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Check if a player is eligible for region election with UI",
-        "help": "Endpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
-        "internal": false,
-        "name": "GetRsoMobileUiV1RegionElectionEligibility",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "RsoMobileUiRegionElectionV1EligibilityResponse"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
-        ],
-        "threadSafe": false
-    },
-    "GET /rso-mobile-ui/v1/riot-id-prompt/status": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "",
-        "help": "Get the current Riot ID Prompt UI status.\n\nEndpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
-        "internal": false,
-        "name": "GetRsoMobileUiV1RiotIdPromptStatus",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "RsoMobileUiRiotIDPromptV1RiotIDPrompt"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
-        ],
-        "threadSafe": false
-    },
-    "GET /rso-mobile-ui/v2/eula": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "",
-        "help": "Get the current EULA UI V2 content.\n\nEndpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
-        "internal": false,
-        "name": "GetRsoMobileUiV2Eula",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "RsoMobileUiEULAUIV2Config"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
-        ],
-        "threadSafe": false
-    },
-    "GET /rso-mobile-ui/v2/eula/status": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "",
-        "help": "Get the current EULA UI V2 status.\n\nEndpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
-        "internal": false,
-        "name": "GetRsoMobileUiV2EulaStatus",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "RsoMobileUiEULAUIV2Status"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
         ],
         "threadSafe": false
     },
@@ -15850,6 +15728,25 @@
         ],
         "threadSafe": false
     },
+    "GET /voice-chat/v1/license-status/voicemod": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get the current VoiceMod license status after VoiceMod has been initialized",
+        "help": "",
+        "internal": false,
+        "name": "GetVoiceChatV1LicenseStatusVoicemod",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "VoiceChatVoiceModLicenseStatusResource"
+        },
+        "subscribable": false,
+        "tags": [
+            "voice-chat"
+        ],
+        "threadSafe": false
+    },
     "GET /voice-chat/v1/push-to-talk": {
         "arguments": [],
         "deprecated": false,
@@ -15881,6 +15778,73 @@
         "returns": {
             "elementType": "",
             "type": "VoiceChatPluginStatus"
+        },
+        "subscribable": false,
+        "tags": [
+            "voice-chat"
+        ],
+        "threadSafe": false
+    },
+    "GET /voice-chat/v1/voice-fonts/{productName}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productName",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get cached available voice fonts and localized display names for a product",
+        "help": "",
+        "internal": false,
+        "name": "GetVoiceChatV1VoiceFontsByProductName",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "VoiceChatVoiceFontResource",
+            "type": "vector"
+        },
+        "subscribable": false,
+        "tags": [
+            "voice-chat"
+        ],
+        "threadSafe": false
+    },
+    "GET /voice-chat/v1/voice-fonts/{productName}/{voiceFontId}/parameters": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productName",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "voiceFontId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Get configurable parameters for the active voice font",
+        "help": "",
+        "internal": false,
+        "name": "GetVoiceChatV1VoiceFontsByProductNameByVoiceFontIdParameters",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "VoiceChatVoiceFontParametersResource"
         },
         "subscribable": false,
         "tags": [
@@ -19101,7 +19065,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Simulate sending a game-agnostic warning message to this player with a specific category. Endpoint not available in public builds.",
-        "help": "\n**Data**\n\n* `category`: The category is a key used to create the localized message for the player. As an example, `INAPPROPRIATE_TEXT` is the category\nsent when a player was flagged for inappropriate chat. If the category is unrecognized, a fallback message will be used.\n",
+        "help": "\n**Data**\n\n* `category`: The category is a key used to create the localized message for the player. As an example, `INAPPROPRIATE_TEXT` is the category\nsent when a player was flagged for inappropriate chat. If the category-specific body is unavailable, the generic fallback body is used when translate returns it.\n",
         "internal": false,
         "name": "PostGaWarningV1DebugSimulateWarningByCategory",
         "nameSpace": "",
@@ -19376,6 +19340,25 @@
         ],
         "threadSafe": false
     },
+    "POST /integration-test/v1/discord/observe-status-changes": {
+        "arguments": [],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "[FOR TESTING ONLY] Registers a Discord status observer on the Discord provider.",
+        "help": "",
+        "internal": false,
+        "name": "PostIntegrationTestV1DiscordObserveStatusChanges",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "integration-test"
+        ],
+        "threadSafe": false
+    },
     "POST /integration-test/v1/external-request/async": {
         "arguments": [
             {
@@ -19398,6 +19381,35 @@
         "returns": {
             "elementType": "",
             "type": "IntegrationTestV1ExternalResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "integration-test"
+        ],
+        "threadSafe": false
+    },
+    "POST /integration-test/v1/external-request/detached": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "ExternalRequest",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "IntegrationTestV1ExternalRequest"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "[FOR TESTING ONLY] Test endpoint to dispatch an external HTTP request without waiting for its result, so the request (and any retry it schedules) is still in flight when the endpoint returns",
+        "help": "",
+        "internal": false,
+        "name": "PostIntegrationTestV1ExternalRequestDetached",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
         },
         "subscribable": false,
         "tags": [
@@ -19598,6 +19610,35 @@
         ],
         "threadSafe": false
     },
+    "POST /keypair-account/v1/external-attestation": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "ExternalAttestation",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "KeypairAccountExternalAttestation"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Stores an attestation supplied by an external provider",
+        "help": "",
+        "internal": false,
+        "name": "PostKeypairAccountV1ExternalAttestation",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "keypair-account"
+        ],
+        "threadSafe": false
+    },
     "POST /keypair-account/v1/force-unsupported": {
         "arguments": [],
         "deprecated": false,
@@ -19661,7 +19702,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Returns a list of player's mail.",
-        "help": "\n**Description**\n\nThis API allows for retrieving mail and the product ID is inferred.\n\nRequired request parameters:\n```\nincludedStates : A list of message states, like READ or ACKNOWLEDGED, that should be included.\n```\n",
+        "help": "\n**Description**\n\nThis API allows for retrieving mail and the product ID is inferred.\n\nRequired request parameters:\n```\nincludedStates : A list of message states, like READ or ACKNOWLEDGED, that should be included.\n```\n\nWhere this mail comes from depends on client config. By default every call is a live fetch against the mailbox\nservice, which applies the request's filters. With both `mailbox.cache.enabled` and\n`mailbox.cache.serve_caller_mail_reads` set, it is answered from the plugin's mail cache instead and the same\nfilters are applied locally. The request and response are identical either way.\n",
         "internal": false,
         "name": "PostMailboxV1Mail",
         "nameSpace": "",
@@ -19699,7 +19740,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Fetch mail for a player on behalf of a product.",
-        "help": "\n**Description**\n\nThis API allows for retrieving mail. Here, the productId is required. This is an internal API to be used by other plugins.\n\nRequired arguments:\n```\nproductId: A standard [product identifier](https://gh.riotgames.com/shared-static-data/rpg/tree/master/products)\n```\n",
+        "help": "\n**Description**\n\nThis API allows for retrieving mail. Here, the productId is required. This is an internal API to be used by other plugins.\n\nRequired arguments:\n```\nproductId: A standard [product identifier](https://gh.riotgames.com/shared-static-data/rpg/tree/master/products)\n```\n\nWhere this mail comes from depends on client config. By default every call is a live fetch against the mailbox\nservice, which applies the request's filters. With both `mailbox.cache.enabled` and\n`mailbox.cache.serve_product_mail_reads` set, it is answered from the plugin's mail cache instead and the same\nfilters are applied locally. Request and response are identical either way, except that a cached read answers `503`\nwhile the plugin is not ready.\n",
         "internal": false,
         "name": "PostMailboxV1ProductByProductId",
         "nameSpace": "",
@@ -20472,6 +20513,35 @@
         "help": "",
         "internal": false,
         "name": "PostPaymentsV1InitializePurchase",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "PaymentsInitializedPurchase"
+        },
+        "subscribable": false,
+        "tags": [
+            "payments"
+        ],
+        "threadSafe": false
+    },
+    "POST /payments/v1/initialize-purchase-for-product": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "initializePurchaseRequestForProduct",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "PaymentsInitializePurchaseRequestForProduct"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Begin the purchase flow with a preselected Product ID and Patchline/Environment ID, receiving the URL to the payment service to start the purchase.",
+        "help": "\n**Description**\n\nBegin the purchase flow with a preselected Product ID and Patchline/Environment ID, receiving the URL to the payment service to start the purchase\n\n** Request Arguments **\n\nRequest Body:\n* `InitializePurchaseRequestForProduct` Object:\n    * `productId`: A Product ID that will preselected.\n    * `patchlineOrEnvironmentId`: A Patchline/Environment ID that will preselected.\n    *\n** Returns **\n\nResponse Body:\n* `InitializedPurchase` Object:\n    * `purchaseStartUrl`: The URL to the payments service to start the purchase flow in an embedded or external web browser.\n    *\n",
+        "internal": false,
+        "name": "PostPaymentsV1InitializePurchaseForProduct",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -24103,6 +24173,35 @@
         ],
         "threadSafe": false
     },
+    "POST /rso-auth/v1/additional-permissions": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "additionalPermissions",
+                "optional": false,
+                "type": {
+                    "elementType": "string",
+                    "type": "vector"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Sets additional permissions list.",
+        "help": "",
+        "internal": false,
+        "name": "PostRsoAuthV1AdditionalPermissions",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "rso-auth"
+        ],
+        "threadSafe": false
+    },
     "POST /rso-auth/v1/auth-hints/hint": {
         "arguments": [
             {
@@ -24279,35 +24378,6 @@
         "returns": {
             "elementType": "",
             "type": "RsoAuthAuthorizationKey"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-auth"
-        ],
-        "threadSafe": false
-    },
-    "POST /rso-auth/v1/status-message": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "statusMessage",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "RsoAuthStatusMessage"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Update the RSO auth status",
-        "help": "Endpoint to be deleted December 2025; This endpoint has no function anymore.",
-        "internal": false,
-        "name": "PostRsoAuthV1StatusMessage",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
         },
         "subscribable": false,
         "tags": [
@@ -25141,7 +25211,7 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Completes authentication given a login token",
-        "help": "",
+        "help": "Endpoint to be deleted April 2027.",
         "internal": false,
         "name": "PostRsoAuthenticatorV1Login",
         "nameSpace": "",
@@ -26000,556 +26070,6 @@
         "subscribable": false,
         "tags": [
             "rso-authenticator"
-        ],
-        "threadSafe": false
-    },
-    "POST /rso-mobile-ui/v1/account-promotion/initiate": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "",
-        "help": "Launches a UI for handling account promotion\n\nEndpoint to be deleted March 2026; This flow has been replaced by the new Account Linking flow in PlatformUI. Please see the Platform Docs to learn more about migrating to /platform-ui/v1/account-linking.",
-        "internal": false,
-        "name": "PostRsoMobileUiV1AccountPromotionInitiate",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
-        ],
-        "threadSafe": false
-    },
-    "POST /rso-mobile-ui/v1/authentication-redirect": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "redirectRequest",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "RsoMobileUiAuthenticationRedirectRequest"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "",
-        "help": "Internal endpoint for triggering redirect of the current authentication to a given url.",
-        "internal": false,
-        "name": "PostRsoMobileUiV1AuthenticationRedirect",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
-        ],
-        "threadSafe": false
-    },
-    "POST /rso-mobile-ui/v1/debug/browser/redirect": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "debug",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "RsoMobileUiIOSEventInfo"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "",
-        "help": "",
-        "internal": false,
-        "name": "PostRsoMobileUiV1DebugBrowserRedirect",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "bool"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
-        ],
-        "threadSafe": false
-    },
-    "POST /rso-mobile-ui/v1/debug/sdk": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "debug",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "map"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "",
-        "help": "",
-        "internal": false,
-        "name": "PostRsoMobileUiV1DebugSdk",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "map"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
-        ],
-        "threadSafe": false
-    },
-    "POST /rso-mobile-ui/v1/debug/webview/decide-navigation-policy": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "debug",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "map"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "",
-        "help": "",
-        "internal": false,
-        "name": "PostRsoMobileUiV1DebugWebviewDecideNavigationPolicy",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "string"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
-        ],
-        "threadSafe": false
-    },
-    "POST /rso-mobile-ui/v1/debug/webview/javascript-message": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "debug",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "map"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "",
-        "help": "",
-        "internal": false,
-        "name": "PostRsoMobileUiV1DebugWebviewJavascriptMessage",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
-        ],
-        "threadSafe": false
-    },
-    "POST /rso-mobile-ui/v1/debug/webview/launch": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "debug",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "map"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Debug endpoint to detect page launches",
-        "help": "",
-        "internal": false,
-        "name": "PostRsoMobileUiV1DebugWebviewLaunch",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "map"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
-        ],
-        "threadSafe": false
-    },
-    "POST /rso-mobile-ui/v1/debug/webview/load-error-page": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "debug",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "map"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "",
-        "help": "",
-        "internal": false,
-        "name": "PostRsoMobileUiV1DebugWebviewLoadErrorPage",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "map"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
-        ],
-        "threadSafe": false
-    },
-    "POST /rso-mobile-ui/v1/debug/webview/simulate-onfinish": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "arg",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "map"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Simulates the callback from the web view closing",
-        "help": "",
-        "internal": false,
-        "name": "PostRsoMobileUiV1DebugWebviewSimulateOnfinish",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "map"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
-        ],
-        "threadSafe": false
-    },
-    "POST /rso-mobile-ui/v1/delete-account": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Initiates the Account Deletion UI to delete a player's Riot account. Be careful, this functionality is destructive - making it difficult, if not impossible, to recover an account.",
-        "help": "Endpoint to be deleted July 2025; Migrate to PlatformUI: '/platform-ui/v1/delete-account'.",
-        "internal": false,
-        "name": "PostRsoMobileUiV1DeleteAccount",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "map"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
-        ],
-        "threadSafe": false
-    },
-    "POST /rso-mobile-ui/v1/eula/initiate": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "dialog",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "RsoMobileUiEULAUIInitiate"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "",
-        "help": "Launches a dialog UI for requesting player acceptance to the current EULA from rcp-be-eula\n\nEndpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
-        "internal": false,
-        "name": "PostRsoMobileUiV1EulaInitiate",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
-        ],
-        "threadSafe": false
-    },
-    "POST /rso-mobile-ui/v1/federated-login": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "strategy",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "RsoMobileUiFederatedLoginRequest"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "",
-        "help": "Internal endpoint for triggering federated logins for account linking.",
-        "internal": false,
-        "name": "PostRsoMobileUiV1FederatedLogin",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
-        ],
-        "threadSafe": false
-    },
-    "POST /rso-mobile-ui/v1/internal/display-error-page": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "errorCode",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "",
-        "help": "Launches a WebView to display an error page. Used by `platform-ui` as a temporary solution before it handles error pages on it's own. DON'T USE IT!\n\nEndpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
-        "internal": false,
-        "name": "PostRsoMobileUiV1InternalDisplayErrorPage",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "map"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
-        ],
-        "threadSafe": false
-    },
-    "POST /rso-mobile-ui/v1/ios-auth-redirect": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "request",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "RsoMobileUiIOSEventInfo"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "iOS application open url event",
-        "help": "Endpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
-        "internal": false,
-        "name": "PostRsoMobileUiV1IosAuthRedirect",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "bool"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
-        ],
-        "threadSafe": false
-    },
-    "POST /rso-mobile-ui/v1/login/initiate": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "strategy",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "RsoMobileUiLoginInitiateRequest"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "",
-        "help": "Launches an Android Activity or iOS UIView to display a login flow to the player using a WebView\n\nEndpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
-        "internal": false,
-        "name": "PostRsoMobileUiV1LoginInitiate",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
-        ],
-        "threadSafe": false
-    },
-    "POST /rso-mobile-ui/v1/region-election": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "request",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "RsoMobileUiRegionElectionV1InitiateRequest"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Initiates the display of the Region Election UI",
-        "help": "Endpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
-        "internal": false,
-        "name": "PostRsoMobileUiV1RegionElection",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "RsoMobileUiRegionElectionV1RegionElection"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
-        ],
-        "threadSafe": false
-    },
-    "POST /rso-mobile-ui/v1/riot-id-prompt/initiate": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "request",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "RsoMobileUiRiotIDPromptV1InitiateRequest"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "",
-        "help": "Launches a UI to prompt user to set a RiotID for their account\n\nEndpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
-        "internal": false,
-        "name": "PostRsoMobileUiV1RiotIdPromptInitiate",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "RsoMobileUiRiotIDPromptV1RiotIDPrompt"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
-        ],
-        "threadSafe": false
-    },
-    "POST /rso-mobile-ui/v1/show-game-out-of-date": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "request",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "RsoMobileUiGameOutOfDateUIInitiate"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Show a native dialog displaying game is out of date and redirecting user to app store",
-        "help": "Endpoint to be deleted December 2024; There are no known customers of this endpoint. If you require similar functionality, please contact the SDK Account Experiences team.",
-        "internal": false,
-        "name": "PostRsoMobileUiV1ShowGameOutOfDate",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
-        ],
-        "threadSafe": false
-    },
-    "POST /rso-mobile-ui/v2/eula/agreement": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "isAccepted",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "RsoMobileUiEULAUIV2Agreement"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "",
-        "help": "Saves agreement status\n\nEndpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
-        "internal": false,
-        "name": "PostRsoMobileUiV2EulaAgreement",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
-        ],
-        "threadSafe": false
-    },
-    "POST /rso-mobile-ui/v2/eula/initiate": {
-        "arguments": [],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "",
-        "help": "Launches a WebView for requesting player acceptance to the current EULA from rcp-be-eula\n\nEndpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
-        "internal": false,
-        "name": "PostRsoMobileUiV2EulaInitiate",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
         ],
         "threadSafe": false
     },
@@ -27470,6 +26990,35 @@
         "returns": {
             "elementType": "",
             "type": "VoiceChatDebugCSRFileWritingResponse"
+        },
+        "subscribable": false,
+        "tags": [
+            "voice-chat"
+        ],
+        "threadSafe": false
+    },
+    "POST /voice-chat/v1/initialize-dependency/voicemod": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "voiceMod",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "VoiceChatInitializeVoiceModResource"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Initialize and opt in to the VoiceMod SDK used by voice-chat",
+        "help": "",
+        "internal": false,
+        "name": "PostVoiceChatV1InitializeDependencyVoicemod",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
         },
         "subscribable": false,
         "tags": [
@@ -29955,6 +29504,54 @@
         ],
         "threadSafe": false
     },
+    "PUT /patch-proxy/v2/session-patch-lock/products/{productId}/patchline/{patchlineId}": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "patchlineId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "isExclusive",
+                "optional": true,
+                "type": {
+                    "elementType": "",
+                    "type": "bool"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Acquires a session patch lock for the product-patchline.",
+        "help": "",
+        "internal": false,
+        "name": "PutPatchProxyV2SessionPatchLockProductsByProductIdPatchlineByPatchlineId",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
+        },
+        "subscribable": false,
+        "tags": [
+            "Plugins",
+            "Plugin patch-proxy"
+        ],
+        "threadSafe": false
+    },
     "PUT /patch/v1/configuration": {
         "arguments": [
             {
@@ -30171,35 +29768,6 @@
         "subscribable": false,
         "tags": [
             "patch"
-        ],
-        "threadSafe": false
-    },
-    "PUT /platform-login/v1/config": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "LoginPersistenceConfig",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "PlatformLoginLoginPersistenceConfig"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Allows to modify the plugin config (e.g. enable or disable login persistence)",
-        "help": "This endpoint is deprecated and will be removed June 2026; Please use player-session-lifecycle instead.",
-        "internal": false,
-        "name": "PutPlatformLoginV1Config",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "platform-login"
         ],
         "threadSafe": false
     },
@@ -31576,6 +31144,24 @@
                     "elementType": "",
                     "type": "ProductPatchline"
                 }
+            },
+            {
+                "description": "",
+                "name": "discordJoinLaunch",
+                "optional": true,
+                "type": {
+                    "elementType": "",
+                    "type": "bool"
+                }
+            },
+            {
+                "description": "",
+                "name": "clickWallMs",
+                "optional": true,
+                "type": {
+                    "elementType": "",
+                    "type": "int64"
+                }
             }
         ],
         "deprecated": false,
@@ -31623,35 +31209,6 @@
         "tags": [
             "Plugins",
             "Plugin riot-client-lifecycle"
-        ],
-        "threadSafe": false
-    },
-    "PUT /riot-login/v1/config": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "LoginPersistenceConfig",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "RiotLoginLoginPersistenceConfig"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Allows to modify the plugin config (e.g. enable or disable login persistence)",
-        "help": "This endpoint is deprecated and will be removed June 2026; Please use player-session-lifecycle instead.",
-        "internal": false,
-        "name": "PutRiotLoginV1Config",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "riot-login"
         ],
         "threadSafe": false
     },
@@ -32320,6 +31877,54 @@
         ],
         "threadSafe": false
     },
+    "PUT /rnet-product-registry/v4/products/{productId}/patchlines/{patchlineId}/install-path": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "patchlineId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "installPaths",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "RnetProductRegistryInstallPathUpdate"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Updates product install paths directly, bypassing installDir recomputation",
+        "help": "",
+        "internal": false,
+        "name": "PutRnetProductRegistryV4ProductsByProductIdPatchlinesByPatchlineIdInstallPath",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": "object"
+        },
+        "subscribable": false,
+        "tags": [
+            "Plugins",
+            "Plugin rnet-product-registry"
+        ],
+        "threadSafe": false
+    },
     "PUT /rnet-product-registry/v4/products/{productId}/patchlines/{patchlineId}/root-path": {
         "arguments": [
             {
@@ -32494,54 +32099,6 @@
         ],
         "threadSafe": false
     },
-    "PUT /rnet-product-registry/v4/session-patch-lock/products/{productId}/patchline/{patchlineId}": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "productId",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "",
-                "name": "patchlineId",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "string"
-                }
-            },
-            {
-                "description": "",
-                "name": "isExclusive",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "bool"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Acquires a shared session patch lock for the product-patchline",
-        "help": "",
-        "internal": false,
-        "name": "PutRnetProductRegistryV4SessionPatchLockProductsByProductIdPatchlineByPatchlineId",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "Plugins",
-            "Plugin rnet-product-registry"
-        ],
-        "threadSafe": false
-    },
     "PUT /rnet-sanitizer/v1/debug/caller-id/mock-id": {
         "arguments": [
             {
@@ -32699,35 +32256,6 @@
         ],
         "threadSafe": false
     },
-    "PUT /rso-auth/v1/session/credentials": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "sessionCredentials",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "RsoAuthSessionCredentials"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Update an authentication session with credentials to login.",
-        "help": "Progresses the login flow for the session with the required player credentials.\n\nThis API should be called when prompted for `needs_authentication` from the `/rso-auth/v2/authorizations` API. Along with the user's credentials, this API will also take the `trustDevice` boolean to tell the RSO service whether or not to record this device as a trusted device to remember for use when determining trust level requirements.\n\nThis API returns a response that contains a type to determine how to follow up in the login process. If the credentials are accepted then the type will be set to `authenticated`.\n\nIf further verification is required then the type may be set to `needs_multifactor_verification`, in which case details can be found in the `MultifactorDetails`, and the required input should be PUT to `/rso-auth/v2/authentication/multifactor`\n\nIn some error cases, the `error` string may be set to indicate more information about the authentication state.\n\n\nUse the `riot_identity` login strategy available in the player-session-lifecycle instead.\nThis endpoint will be deleted Q2 2026.",
-        "internal": false,
-        "name": "PutRsoAuthV1SessionCredentials",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "RsoAuthSessionResponse"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-auth"
-        ],
-        "threadSafe": false
-    },
     "PUT /rso-auth/v1/session/login-token": {
         "arguments": [
             {
@@ -32743,125 +32271,9 @@
         "deprecated": false,
         "deprecatedHelp": "",
         "description": "Update an authentication session with a token from rso-authenticator.",
-        "help": "Authenticates a player using a token from rso-authenticator.\n\nThe `authentication_type` value should be `SSOAuth` for social/3rd party authentication tokens (e.g. Google, Facebook, etc), and `Riot Auth` for Riot Games authentication tokens.\n",
+        "help": "Authenticates a player using a token from rso-authenticator.\n\nThe `authentication_type` value should be `SSOAuth` for social/3rd party authentication tokens (e.g. Google, Facebook, etc), and `Riot Auth` for Riot Games authentication tokens.\n\n\nEndpoint to be deleted April 2027.",
         "internal": false,
         "name": "PutRsoAuthV1SessionLoginToken",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "RsoAuthSessionResponse"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-auth"
-        ],
-        "threadSafe": false
-    },
-    "PUT /rso-auth/v1/session/multifactor": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "sessionMultifactor",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "RsoAuthSessionMultifactor"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Update an authentication session with multifactor input to complete login.",
-        "help": "Progresses the login flow for the session with the required multifactor authentication.\n\nThis API should be called when prompted for `needs_multifactor_verification` after providing credentials through `/rso-auth/v2/authentication/credentials`.\n\nThe `retry` boolean can be set when calling this API to cause MFA to push the multifactor message to the user again.\nIn some error cases, the `error` string may be set to indicate more information about the authentication state.\n\n\nUse the multifactor capabilities available in the player-session-lifecycle.\nThis endpoint will be deleted Q2 2026.",
-        "internal": false,
-        "name": "PutRsoAuthV1SessionMultifactor",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "RsoAuthSessionResponse"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-auth"
-        ],
-        "threadSafe": false
-    },
-    "PUT /rso-auth/v1/session/persistence": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "persistentSession",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "map"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Takes a `BindingProperty` and restores the session state.",
-        "help": "Takes the `BindingProperty` and tries to rehydrate the cookies to restore the session state which can be retrieved by doing a `GET` on this endpoint.\n\nThese cookies will automatically be appended to calls to `/v2/authorizations` and `/v1/session` endpoints as part of the session to restore, refresh and continue to use the session.\n\nThis endpoint is only available to Internal calls (plugin-to-plugin)\n",
-        "internal": false,
-        "name": "PutRsoAuthV1SessionPersistence",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": ""
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-auth"
-        ],
-        "threadSafe": false
-    },
-    "PUT /rso-auth/v1/session/reauthentication": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "sessionReauthentication",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "RsoAuthSessionReauthentication"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Update an authentication session with player password to reauthenticate.",
-        "help": "Reauthenticates the session with the player password.\n\nThis API should be called when prompted for `needs_reauthentication` from the `/rso-auth/v2/authorizations` API\n\nIf the password is accepted, then the type will be set to `authenticated`.\n\nIn some error cases, the `error` string may be set to indicate more information about the authentication state.\n\n\nUse the `riot_identity` login strategy available in the player-session-lifecycle instead.\nThis endpoint will be deleted Q2 2026.",
-        "internal": false,
-        "name": "PutRsoAuthV1SessionReauthentication",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "RsoAuthSessionResponse"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-auth"
-        ],
-        "threadSafe": false
-    },
-    "PUT /rso-auth/v1/session/signup-token": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "sessionSignup",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "RsoAuthSessionSignup"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Update an authentication session with a token from signup-api.",
-        "help": "Authenticates a player using a token from signup-api\n\nEndpoint to be deleted December 2025; This endpoint has no function anymore.",
-        "internal": false,
-        "name": "PutRsoAuthV1SessionSignupToken",
         "nameSpace": "",
         "returns": {
             "elementType": "",
@@ -33629,35 +33041,6 @@
         ],
         "threadSafe": false
     },
-    "PUT /rso-mobile-ui/v1/region-election": {
-        "arguments": [
-            {
-                "description": "",
-                "name": "request",
-                "optional": false,
-                "type": {
-                    "elementType": "",
-                    "type": "RsoMobileUiRegionElectionV1UpdateRequest"
-                }
-            }
-        ],
-        "deprecated": false,
-        "deprecatedHelp": "",
-        "description": "Programmatically update the state of the Region Election UI",
-        "help": "Endpoint to be deleted December 2024; No action required if you migrated to PlatformUI MobileFRE.",
-        "internal": false,
-        "name": "PutRsoMobileUiV1RegionElection",
-        "nameSpace": "",
-        "returns": {
-            "elementType": "",
-            "type": "RsoMobileUiRegionElectionV1RegionElection"
-        },
-        "subscribable": false,
-        "tags": [
-            "rso-mobile-ui"
-        ],
-        "threadSafe": false
-    },
     "PUT /social/v1/debug/caller-id/mock-id": {
         "arguments": [
             {
@@ -34166,6 +33549,53 @@
         "returns": {
             "elementType": "",
             "type": "VoiceChatSettingsResource"
+        },
+        "subscribable": false,
+        "tags": [
+            "voice-chat"
+        ],
+        "threadSafe": false
+    },
+    "PUT /voice-chat/v1/voice-fonts/{productName}/{voiceFontId}/parameters": {
+        "arguments": [
+            {
+                "description": "",
+                "name": "productName",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "voiceFontId",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "string"
+                }
+            },
+            {
+                "description": "",
+                "name": "update",
+                "optional": false,
+                "type": {
+                    "elementType": "",
+                    "type": "VoiceChatUpdateVoiceFontParametersResource"
+                }
+            }
+        ],
+        "deprecated": false,
+        "deprecatedHelp": "",
+        "description": "Update configurable parameters for the active voice font",
+        "help": "",
+        "internal": false,
+        "name": "PutVoiceChatV1VoiceFontsByProductNameByVoiceFontIdParameters",
+        "nameSpace": "",
+        "returns": {
+            "elementType": "",
+            "type": ""
         },
         "subscribable": false,
         "tags": [
